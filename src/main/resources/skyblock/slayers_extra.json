@@ -1,0 +1,32 @@
+[
+  {
+    "id": "BLAZE",
+    "weightModifier": 0.0,
+    "weightDivider": 0
+  },
+  {
+    "id": "ENDERMAN",
+    "weightModifier": 0.017,
+    "weightDivider": 1430
+  },
+  {
+    "id": "SPIDER",
+    "weightModifier": 0.08,
+    "weightDivider": 2118
+  },
+  {
+    "id": "VAMPIRE",
+    "weightModifier": 0.0,
+    "weightDivider": 0
+  },
+  {
+    "id": "WOLF",
+    "weightModifier": 0.015,
+    "weightDivider": 1962
+  },
+  {
+    "id": "ZOMBIE",
+    "weightModifier": 0.15,
+    "weightDivider": 2208
+  }
+]
