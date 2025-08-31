@@ -1,0 +1,117 @@
+[
+  {
+    "id": "airborne",
+    "char": "✈",
+    "color": "gray"
+  },
+  {
+    "id": "animal",
+    "char": "☮",
+    "color": "green"
+  },
+  {
+    "id": "aquatic",
+    "char": "⚓",
+    "color": "blue"
+  },
+  {
+    "id": "arcane",
+    "char": "♃",
+    "color": "dark_purple"
+  },
+  {
+    "id": "arthropod",
+    "char": "Ж",
+    "color": "dark_red"
+  },
+  {
+    "id": "construct",
+    "char": "⚙",
+    "color": "gray"
+  },
+  {
+    "id": "cubic",
+    "char": "⚂",
+    "color": "green"
+  },
+  {
+    "id": "elusive",
+    "char": "♣",
+    "color": "light_purple"
+  },
+  {
+    "id": "ender",
+    "char": "⊙",
+    "color": "dark_purple"
+  },
+  {
+    "id": "frozen",
+    "char": "☃",
+    "color": "white"
+  },
+  {
+    "id": "glacial",
+    "char": "❄",
+    "color": "aqua"
+  },
+  {
+    "id": "humanoid",
+    "char": "✰",
+    "color": "yellow"
+  },
+  {
+    "id": "infernal",
+    "char": "♨",
+    "color": "dark_red"
+  },
+  {
+    "id": "magmatic",
+    "char": "♆",
+    "color": "red"
+  },
+  {
+    "id": "mythological",
+    "char": "✿",
+    "color": "dark_green"
+  },
+  {
+    "id": "pest",
+    "char": "ൠ",
+    "color": "dark_green"
+  },
+  {
+    "id": "shielded",
+    "char": "⛨",
+    "color": "yellow"
+  },
+  {
+    "id": "skeletal",
+    "char": "\uD83E\uDDB4",
+    "color": "white"
+  },
+  {
+    "id": "spooky",
+    "char": "☽",
+    "color": "gold"
+  },
+  {
+    "id": "subterranean",
+    "char": "⛏",
+    "color": "gold"
+  },
+  {
+    "id": "undead",
+    "char": "༕",
+    "color": "dark_green"
+  },
+  {
+    "id": "wither",
+    "char": "☠",
+    "color": "dark_gray"
+  },
+  {
+    "id": "woodland",
+    "char": "⸙",
+    "color": "dark_green"
+  }
+]

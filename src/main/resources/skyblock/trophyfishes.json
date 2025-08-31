@@ -1,0 +1,99 @@
+[
+  {
+    "id": "blobfish",
+    "name": "Blobfish",
+    "rarity": "common"
+  },
+  {
+    "id": "gusher",
+    "name": "Gusher",
+    "rarity": "common",
+    "location": "blazing_volcano"
+  },
+  {
+    "id": "obfuscated_fish_1",
+    "name": "Obfuscated 1",
+    "rarity": "common"
+  },
+  {
+    "id": "steaming_hot_flounder",
+    "name": "Steaming-Hot Flounder",
+    "rarity": "common",
+    "location": "blazing_volcano"
+  },
+  {
+    "id": "sulphur_skitter",
+    "name": "Sulphur Skitter",
+    "rarity": "common"
+  },
+  {
+    "id": "flyfish",
+    "name": "Flyfish",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "obfuscated_fish_2",
+    "name": "Obfuscated 2",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "slugfish",
+    "name": "Slugfish",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "lava_horse",
+    "name": "Lava Horse",
+    "rarity": "rare"
+  },
+  {
+    "id": "mana_ray",
+    "name": "Mana Ray",
+    "rarity": "rare"
+  },
+  {
+    "id": "obfuscated_fish_3",
+    "name": "Obfuscated 3",
+    "rarity": "rare"
+  },
+  {
+    "id": "vanille",
+    "name": "Vanille",
+    "rarity": "rare"
+  },
+  {
+    "id": "volcanic_stonefish",
+    "name": "Volcanic Stonefish",
+    "rarity": "rare",
+    "location": "blazing_volcano"
+  },
+  {
+    "id": "karate_fish",
+    "name": "Karate Fish",
+    "rarity": "epic",
+    "location": "dojo"
+  },
+  {
+    "id": "moldfin",
+    "name": "Moldfin",
+    "rarity": "epic",
+    "location": "mystic_marsh"
+  },
+  {
+    "id": "skeleton_fish",
+    "name": "Skeleton Fish",
+    "rarity": "epic",
+    "location": "burning_desert"
+  },
+  {
+    "id": "soul_fish",
+    "name": "Soul Fish",
+    "rarity": "epic",
+    "location": "stronghold"
+  },
+  {
+    "id": "golden_fish",
+    "name": "Golden Fish",
+    "rarity": "legendary"
+  }
+]
