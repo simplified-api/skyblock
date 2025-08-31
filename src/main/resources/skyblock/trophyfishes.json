@@ -1,99 +1,99 @@
 [
   {
-    "id": "blobfish",
+    "id": "BLOBFISH",
     "name": "Blobfish",
-    "rarity": "common"
+    "format": "COMMON"
   },
   {
-    "id": "gusher",
+    "id": "GUSHER",
     "name": "Gusher",
-    "rarity": "common",
-    "location": "blazing_volcano"
+    "format": "COMMON",
+    "location": "BLAZING_VOLCANO"
   },
   {
-    "id": "obfuscated_fish_1",
+    "id": "OBFUSCATED_FISH_1",
     "name": "Obfuscated 1",
-    "rarity": "common"
+    "format": "COMMON"
   },
   {
-    "id": "steaming_hot_flounder",
+    "id": "STEAMING_HOT_FLOUNDER",
     "name": "Steaming-Hot Flounder",
-    "rarity": "common",
-    "location": "blazing_volcano"
+    "format": "COMMON",
+    "location": "BLAZING_VOLCANO"
   },
   {
-    "id": "sulphur_skitter",
+    "id": "SULPHUR_SKITTER",
     "name": "Sulphur Skitter",
-    "rarity": "common"
+    "format": "COMMON"
   },
   {
-    "id": "flyfish",
+    "id": "FLYFISH",
     "name": "Flyfish",
-    "rarity": "uncommon"
+    "format": "UNCOMMON"
   },
   {
-    "id": "obfuscated_fish_2",
+    "id": "OBFUSCATED_FISH_2",
     "name": "Obfuscated 2",
-    "rarity": "uncommon"
+    "format": "UNCOMMON"
   },
   {
-    "id": "slugfish",
+    "id": "SLUGFISH",
     "name": "Slugfish",
-    "rarity": "uncommon"
+    "format": "UNCOMMON"
   },
   {
-    "id": "lava_horse",
+    "id": "LAVA_HORSE",
     "name": "Lava Horse",
-    "rarity": "rare"
+    "format": "RARE"
   },
   {
-    "id": "mana_ray",
+    "id": "MANA_RAY",
     "name": "Mana Ray",
-    "rarity": "rare"
+    "format": "RARE"
   },
   {
-    "id": "obfuscated_fish_3",
+    "id": "OBFUSCATED_FISH_3",
     "name": "Obfuscated 3",
-    "rarity": "rare"
+    "format": "RARE"
   },
   {
-    "id": "vanille",
+    "id": "VANILLE",
     "name": "Vanille",
-    "rarity": "rare"
+    "format": "RARE"
   },
   {
-    "id": "volcanic_stonefish",
+    "id": "VOLCANIC_STONEFISH",
     "name": "Volcanic Stonefish",
-    "rarity": "rare",
-    "location": "blazing_volcano"
+    "format": "RARE",
+    "location": "BLAZING_VOLCANO"
   },
   {
-    "id": "karate_fish",
+    "id": "KARATE_FISH",
     "name": "Karate Fish",
-    "rarity": "epic",
-    "location": "dojo"
+    "format": "EPIC",
+    "location": "DOJO"
   },
   {
-    "id": "moldfin",
+    "id": "MOLDFIN",
     "name": "Moldfin",
-    "rarity": "epic",
-    "location": "mystic_marsh"
+    "format": "EPIC",
+    "location": "MYSTIC_MARSH"
   },
   {
-    "id": "skeleton_fish",
+    "id": "SKELETON_FISH",
     "name": "Skeleton Fish",
-    "rarity": "epic",
-    "location": "burning_desert"
+    "format": "EPIC",
+    "location": "BURNING_DESERT"
   },
   {
-    "id": "soul_fish",
+    "id": "SOUL_FISH",
     "name": "Soul Fish",
-    "rarity": "epic",
-    "location": "stronghold"
+    "format": "EPIC",
+    "location": "STRONGHOLD"
   },
   {
-    "id": "golden_fish",
+    "id": "GOLDEN_FISH",
     "name": "Golden Fish",
-    "rarity": "legendary"
+    "format": "LEGENDARY"
   }
 ]
