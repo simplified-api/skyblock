@@ -1,0 +1,74 @@
+[
+  {
+    "id": "COMBAT",
+    "cosmetic": false,
+    "weightExponent": 1.15797687265,
+    "weightDivider": 275862
+  },
+  {
+    "id": "FARMING",
+    "cosmetic": false,
+    "weightExponent": 1.217848139,
+    "weightDivider": 275862
+  },
+  {
+    "id": "FISHING",
+    "cosmetic": false,
+    "weightExponent": 1.406418,
+    "weightDivider": 88274
+  },
+  {
+    "id": "MINING",
+    "cosmetic": false,
+    "weightExponent": 1.18207448,
+    "weightDivider": 259634
+  },
+  {
+    "id": "FORAGING",
+    "cosmetic": false,
+    "weightExponent": 1.232826,
+    "weightDivider": 259634
+  },
+  {
+    "id": "ENCHANTING",
+    "cosmetic": false,
+    "weightExponent": 0.96976583,
+    "weightDivider": 882758
+  },
+  {
+    "id": "ALCHEMY",
+    "cosmetic": false,
+    "weightExponent": 1.0,
+    "weightDivider": 1103448
+  },
+  {
+    "id": "CARPENTRY",
+    "cosmetic": true,
+    "weightExponent": 0.0,
+    "weightDivider": 0
+  },
+  {
+    "id": "RUNECRAFTING",
+    "cosmetic": true,
+    "weightExponent": 0.0,
+    "weightDivider": 0
+  },
+  {
+    "id": "TAMING",
+    "cosmetic": false,
+    "weightExponent": 1.14744,
+    "weightDivider": 441379
+  },
+  {
+    "id": "SOCIAL",
+    "cosmetic": true,
+    "weightExponent": 0.0,
+    "weightDivider": 0
+  },
+  {
+    "id": "HUNTING",
+    "cosmetic": false,
+    "weightExponent": 0.0,
+    "weightDivider": 0
+  }
+]
