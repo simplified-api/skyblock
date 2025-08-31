@@ -1,6 +1,6 @@
 [
   {
-    "id": "farming",
+    "id": "FARMING",
     "name": "Farming",
     "description": "Harvest crops and shear sheep to earn Farming XP!",
     "maxLevel": 60,
@@ -610,7 +610,7 @@
     ]
   },
   {
-    "id": "mining",
+    "id": "MINING",
     "name": "Mining",
     "description": "Dive into deep caves and find rare ores and valuable materials to earn Mining XP!",
     "maxLevel": 60,
@@ -1289,7 +1289,7 @@
     ]
   },
   {
-    "id": "combat",
+    "id": "COMBAT",
     "name": "Combat",
     "description": "Fight mobs and special bosses to earn Combat XP!",
     "maxLevel": 60,
@@ -1923,7 +1923,7 @@
     ]
   },
   {
-    "id": "foraging",
+    "id": "FORAGING",
     "name": "Foraging",
     "description": "Cut trees and forage for other plants to earn Foraging XP!",
     "maxLevel": 54,
@@ -2473,7 +2473,7 @@
     ]
   },
   {
-    "id": "fishing",
+    "id": "FISHING",
     "name": "Fishing",
     "description": "Visit your local pond to fish and earn Fishing XP!",
     "maxLevel": 50,
@@ -3052,7 +3052,7 @@
     ]
   },
   {
-    "id": "enchanting",
+    "id": "ENCHANTING",
     "name": "Enchanting",
     "description": "Enchant items to earn Enchanting XP!",
     "maxLevel": 60,
@@ -3814,7 +3814,7 @@
     ]
   },
   {
-    "id": "alchemy",
+    "id": "ALCHEMY",
     "name": "Alchemy",
     "description": "Brew potions to earn Alchemy XP!",
     "maxLevel": 50,
@@ -4322,7 +4322,7 @@
     ]
   },
   {
-    "id": "carpentry",
+    "id": "CARPENTRY",
     "name": "Carpentry",
     "description": "Craft items to earn Carpentry XP!",
     "maxLevel": 50,
@@ -4843,7 +4843,7 @@
     ]
   },
   {
-    "id": "runecrafting",
+    "id": "RUNECRAFTING",
     "name": "Runecrafting",
     "description": "Slay bosses and runic mobs, and fuse runes to earn Runecrafting XP!",
     "maxLevel": 25,
@@ -5026,7 +5026,7 @@
     ]
   },
   {
-    "id": "social",
+    "id": "SOCIAL",
     "name": "Social",
     "description": "Gain Social XP for every new unique guest, hosting guests, and visiting islands!",
     "maxLevel": 25,
@@ -5220,7 +5220,7 @@
     ]
   },
   {
-    "id": "taming",
+    "id": "TAMING",
     "name": "Taming",
     "description": "Level up pets to earn Taming XP!",
     "maxLevel": 60,
@@ -5894,7 +5894,7 @@
     ]
   },
   {
-    "id": "hunting",
+    "id": "HUNTING",
     "name": "Hunting",
     "description": "Hunt various monsters to earn Hunting XP!",
     "maxLevel": 25,

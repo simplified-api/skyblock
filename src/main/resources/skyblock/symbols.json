@@ -1,120 +1,120 @@
 [
   {
-    "id": "abiphone",
-    "char": "✆",
-    "color": "aqua"
+    "id": "ABIPHONE",
+    "symbol": "✆",
+    "format": "aqua"
   },
   {
-    "id": "bingo",
-    "char": "ⓑ",
-    "color": "dark_purple"
+    "id": "BINGO",
+    "symbol": "ⓑ",
+    "format": "dark_purple"
   },
   {
-    "id": "dot",
-    "char": "•",
-    "color": "gray"
+    "id": "DOT",
+    "symbol": "•",
+    "format": "gray"
   },
   {
-    "id": "fragged",
-    "char": "⚚",
-    "color": "gold"
+    "id": "FRAGGED",
+    "symbol": "⚚",
+    "format": "gold"
   },
   {
-    "id": "global_fortune",
-    "char": "☘",
-    "color": "gold"
+    "id": "GLOBAL_FORTUNE",
+    "symbol": "☘",
+    "format": "gold"
   },
   {
-    "id": "star",
-    "char": "✪",
-    "color": "gold"
+    "id": "STAR",
+    "symbol": "✪",
+    "format": "gold"
   },
   {
-    "id": "starred",
-    "char": "⚚",
-    "color": "gold"
+    "id": "STARRED",
+    "symbol": "⚚",
+    "format": "gold"
   },
   {
-    "id": "ticker",
-    "char": "ⓞ",
-    "color": "gray"
+    "id": "TICKER",
+    "symbol": "ⓞ",
+    "format": "gray"
   },
   {
-    "id": "zombie_charge",
-    "char": "ⓩ",
-    "color": "yellow"
+    "id": "ZOMBIE_CHARGE",
+    "symbol": "ⓩ",
+    "format": "yellow"
   },
   {
-    "id": "zone",
-    "char": "⏣",
-    "color": "gray"
-  },
-
-  {
-    "id": "fighting_booster",
-    "char": "४",
-    "color": "aqua"
-  },
-  {
-    "id": "foraging_wisdom_booster",
-    "char": "⸙",
-    "color": "aqua"
-  },
-  {
-    "id": "foraging_fortune_booster",
-    "char": "⎋",
-    "color": "aqua"
-  },
-  {
-    "id": "luck_booster",
-    "char": "ꆤ",
-    "color": "aqua"
-  },
-  {
-    "id": "sweep_booster",
-    "char": "ꕮ",
-    "color": "aqua"
+    "id": "ZONE",
+    "symbol": "⏣",
+    "format": "gray"
   },
 
   {
-    "id": "mithril_powder",
-    "char": "᠅",
-    "color": "dark_green"
+    "id": "FIGHTING_BOOSTER",
+    "symbol": "४",
+    "format": "aqua"
   },
   {
-    "id": "gemstone_powder",
-    "char": "᠅",
-    "color": "light_purple"
+    "id": "FORAGING_WISDOM_BOOSTER",
+    "symbol": "⸙",
+    "format": "aqua"
   },
   {
-    "id": "glacite_powder",
-    "char": "᠅",
-    "color": "aqua"
+    "id": "FORAGING_FORTUNE_BOOSTER",
+    "symbol": "⎋",
+    "format": "aqua"
+  },
+  {
+    "id": "LUCK_BOOSTER",
+    "symbol": "ꆤ",
+    "format": "aqua"
+  },
+  {
+    "id": "SWEEP_BOOSTER",
+    "symbol": "ꕮ",
+    "format": "aqua"
   },
 
   {
-    "id": "chisel",
-    "char": "❥",
-    "color": "gold"
+    "id": "MITHRIL_POWDER",
+    "symbol": "᠅",
+    "format": "dark_green"
   },
   {
-    "id": "combat",
-    "char": "⚔",
-    "color": "dark_red"
+    "id": "GEMSTONE_POWDER",
+    "symbol": "᠅",
+    "format": "light_purple"
   },
   {
-    "id": "defensive",
-    "char": "☤",
-    "color": "green"
+    "id": "GLACITE_POWDER",
+    "symbol": "᠅",
+    "format": "aqua"
+  },
+
+  {
+    "id": "CHISEL",
+    "symbol": "❥",
+    "format": "gold"
   },
   {
-    "id": "mining",
-    "char": "✦",
-    "color": "dark_purple"
+    "id": "COMBAT",
+    "symbol": "⚔",
+    "format": "dark_red"
   },
   {
-    "id": "universal",
-    "char": "❂",
-    "color": "white"
+    "id": "DEFENSIVE",
+    "symbol": "☤",
+    "format": "green"
+  },
+  {
+    "id": "MINING",
+    "symbol": "✦",
+    "format": "dark_purple"
+  },
+  {
+    "id": "UNIVERSAL",
+    "symbol": "❂",
+    "format": "white"
   }
 ]

@@ -1,6 +1,6 @@
 [
   {
-    "id": "farming",
+    "id": "FARMING",
     "name": "Farming",
     "items": {
       "INK_SACK:3": {
@@ -1447,7 +1447,7 @@
     }
   },
   {
-    "id": "mining",
+    "id": "MINING",
     "name": "Mining",
     "items": {
       "INK_SACK:4": {
@@ -3584,7 +3584,7 @@
     }
   },
   {
-    "id": "combat",
+    "id": "COMBAT",
     "name": "Combat",
     "items": {
       "ENDER_PEARL": {
@@ -4455,7 +4455,7 @@
     }
   },
   {
-    "id": "foraging",
+    "id": "FORAGING",
     "name": "Foraging",
     "items": {
       "SEA_LUMIES": {
@@ -5400,7 +5400,7 @@
     }
   },
   {
-    "id": "fishing",
+    "id": "FISHING",
     "name": "Fishing",
     "items": {
       "WATER_LILY": {
@@ -6275,7 +6275,7 @@
     }
   },
   {
-    "id": "rift",
+    "id": "RIFT",
     "name": "Rift",
     "items": {
       "WILTED_BERBERIS": {

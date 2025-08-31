@@ -1,117 +1,140 @@
 [
   {
-    "id": "airborne",
-    "char": "✈",
-    "color": "gray"
+    "id": "AIRBORNE",
+    "name": "Airborne",
+    "symbol": "✈",
+    "format": "GRAY"
   },
   {
-    "id": "animal",
-    "char": "☮",
-    "color": "green"
+    "id": "ANIMAL",
+    "name": "Animal",
+    "symbol": "☮",
+    "format": "GREEN"
   },
   {
-    "id": "aquatic",
-    "char": "⚓",
-    "color": "blue"
+    "id": "AQUATIC",
+    "name": "Aquatic",
+    "symbol": "⚓",
+    "format": "BLUE"
   },
   {
-    "id": "arcane",
-    "char": "♃",
-    "color": "dark_purple"
+    "id": "ARCANE",
+    "name": "Arcane",
+    "symbol": "♃",
+    "format": "DARK_PURPLE"
   },
   {
-    "id": "arthropod",
-    "char": "Ж",
-    "color": "dark_red"
+    "id": "ARTHROPOD",
+    "name": "Arthropod",
+    "symbol": "Ж",
+    "format": "DARK_RED"
   },
   {
-    "id": "construct",
-    "char": "⚙",
-    "color": "gray"
+    "id": "CONSTRUCT",
+    "name": "Construct",
+    "symbol": "⚙",
+    "format": "GRAY"
   },
   {
-    "id": "cubic",
-    "char": "⚂",
-    "color": "green"
+    "id": "CUBIC",
+    "name": "Cubic",
+    "symbol": "⚂",
+    "format": "GREEN"
   },
   {
-    "id": "elusive",
-    "char": "♣",
-    "color": "light_purple"
+    "id": "ELUSIVE",
+    "name": "Elusive",
+    "symbol": "♣",
+    "format": "LIGHT_PURPLE"
   },
   {
-    "id": "ender",
-    "char": "⊙",
-    "color": "dark_purple"
+    "id": "ENDER",
+    "name": "Ender",
+    "symbol": "⊙",
+    "format": "DARK_PURPLE"
   },
   {
-    "id": "frozen",
-    "char": "☃",
-    "color": "white"
+    "id": "FROZEN",
+    "name": "Frozen",
+    "symbol": "☃",
+    "format": "WHITE"
   },
   {
-    "id": "glacial",
-    "char": "❄",
-    "color": "aqua"
+    "id": "GLACIAL",
+    "name": "Glacial",
+    "symbol": "❄",
+    "format": "AQUA"
   },
   {
-    "id": "humanoid",
-    "char": "✰",
-    "color": "yellow"
+    "id": "HUMANOID",
+    "name": "Humanoid",
+    "symbol": "✰",
+    "format": "YELLOW"
   },
   {
-    "id": "infernal",
-    "char": "♨",
-    "color": "dark_red"
+    "id": "INFERNAL",
+    "name": "Infernal",
+    "symbol": "♨",
+    "format": "DARK_RED"
   },
   {
-    "id": "magmatic",
-    "char": "♆",
-    "color": "red"
+    "id": "MAGMATIC",
+    "name": "Magmatic",
+    "symbol": "♆",
+    "format": "RED"
   },
   {
-    "id": "mythological",
-    "char": "✿",
-    "color": "dark_green"
+    "id": "MYTHOLOGICAL",
+    "name": "Mythological",
+    "symbol": "✿",
+    "format": "DARK_GREEN"
   },
   {
-    "id": "pest",
-    "char": "ൠ",
-    "color": "dark_green"
+    "id": "PEST",
+    "name": "Pest",
+    "symbol": "ൠ",
+    "format": "DARK_GREEN"
   },
   {
-    "id": "shielded",
-    "char": "⛨",
-    "color": "yellow"
+    "id": "SHIELDED",
+    "name": "Shielded",
+    "symbol": "⛨",
+    "format": "YELLOW"
   },
   {
-    "id": "skeletal",
-    "char": "\uD83E\uDDB4",
-    "color": "white"
+    "id": "SKELETAL",
+    "name": "Skeletal",
+    "symbol": "\uD83E\uDDB4",
+    "format": "WHITE"
   },
   {
-    "id": "spooky",
-    "char": "☽",
-    "color": "gold"
+    "id": "SPOOKY",
+    "name": "Spooky",
+    "symbol": "☽",
+    "format": "GOLD"
   },
   {
-    "id": "subterranean",
-    "char": "⛏",
-    "color": "gold"
+    "id": "SUBTERRANEAN",
+    "name": "Subterranean",
+    "symbol": "⛏",
+    "format": "GOLD"
   },
   {
-    "id": "undead",
-    "char": "༕",
-    "color": "dark_green"
+    "id": "UNDEAD",
+    "name": "Undead",
+    "symbol": "༕",
+    "format": "DARK_GREEN"
   },
   {
-    "id": "wither",
-    "char": "☠",
-    "color": "dark_gray"
+    "id": "WITHER",
+    "name": "Wither",
+    "symbol": "☠",
+    "format": "DARK_GRAY"
   },
   {
-    "id": "woodland",
-    "char": "⸙",
-    "color": "dark_green"
+    "id": "WOODLAND",
+    "name": "Woodland",
+    "symbol": "⸙",
+    "format": "DARK_GREEN"
   }
 ]

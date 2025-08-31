@@ -1,9 +1,10 @@
 [
   {
-    "id": "amber",
-    "char": "⸕",
-    "color": "gold",
-    "stat": "mining_speed",
+    "id": "AMBER",
+    "name": "Amber",
+    "symbol": "⸕",
+    "format": "GOLD",
+    "stat": "MINING_SPEED",
     "values": {
       "rough": {
         "common": 4,
@@ -53,10 +54,11 @@
     }
   },
   {
-    "id": "amethyst",
-    "char": "❈",
-    "color": "dark_purple",
-    "stat": "defense",
+    "id": "AMETHYST",
+    "name": "Amethyst",
+    "symbol": "❈",
+    "format": "DARK_PURPLE",
+    "stat": "DEFENSE",
     "values": {
       "rough": {
         "common": 1,
@@ -106,10 +108,11 @@
     }
   },
   {
-    "id": "aquamarine",
-    "char": "α",
-    "color": "blue",
-    "stat": "fishing_speed",
+    "id": "AQUAMARINE",
+    "name": "Aquamarine",
+    "symbol": "α",
+    "format": "BLUE",
+    "stat": "FISHING_SPEED",
     "values": {
       "rough": {
         "common": 0.5,
@@ -159,10 +162,11 @@
     }
   },
   {
-    "id": "citrine",
-    "char": "☘",
-    "color": "gold",
-    "stat": "foraging_fortune",
+    "id": "CITRINE",
+    "name": "Citrine",
+    "symbol": "☘",
+    "format": "GOLD",
+    "stat": "FORAGING_FORTUNE",
     "values": {
       "rough": {
         "common": 1,
@@ -212,10 +216,11 @@
     }
   },
   {
-    "id": "jade",
-    "char": "☘",
-    "color": "green",
-    "stat": "mining_fortune",
+    "id": "JADE",
+    "name": "Jade",
+    "symbol": "☘",
+    "format": "GREEN",
+    "stat": "MINING_FORTUNE",
     "values": {
       "rough": {
         "common": 2,
@@ -265,10 +270,11 @@
     }
   },
   {
-    "id": "jasper",
-    "char": "❁",
-    "color": "light_purple",
-    "stat": "strength",
+    "id": "JASPER",
+    "name": "Jasper",
+    "symbol": "❁",
+    "format": "LIGHT_PURPLE",
+    "stat": "STRENGTH",
     "values": {
       "rough": {
         "common": 1,
@@ -318,10 +324,11 @@
     }
   },
   {
-    "id": "onyx",
-    "char": "☠",
-    "color": "dark_gray",
-    "stat": "crit_damage",
+    "id": "ONYX",
+    "name": "Onyx",
+    "symbol": "☠",
+    "format": "DARK_GRAY",
+    "stat": "CRIT_DAMAGE",
     "values": {
       "rough": {
         "common": 1,
@@ -371,10 +378,11 @@
     }
   },
   {
-    "id": "opal",
-    "char": "❂",
-    "color": "white",
-    "stat": "true_defense",
+    "id": "OPAL",
+    "name": "Opal",
+    "symbol": "❂",
+    "format": "WHITE",
+    "stat": "TRUE_DEFENSE",
     "values": {
       "rough": {
         "common": 1,
@@ -424,10 +432,11 @@
     }
   },
   {
-    "id": "peridot",
-    "char": "☘",
-    "color": "dark_green",
-    "stat": "farming_fortune",
+    "id": "PERIDOT",
+    "name": "Peridot",
+    "symbol": "☘",
+    "format": "DARK_GREEN",
+    "stat": "FARMING_FORTUNE",
     "values": {
       "rough": {
         "common": 0.5,
@@ -477,10 +486,11 @@
     }
   },
   {
-    "id": "ruby",
-    "char": "❤",
-    "color": "red",
-    "stat": "health",
+    "id": "RUBY",
+    "name": "Ruby",
+    "symbol": "❤",
+    "format": "RED",
+    "stat": "HEALTH",
     "values": {
       "rough": {
         "common": 1,
@@ -530,10 +540,11 @@
     }
   },
   {
-    "id": "sapphire",
-    "char": "✎",
-    "color": "aqua",
-    "stat": "intelligence",
+    "id": "SAPPHIRE",
+    "name": "Sapphire",
+    "symbol": "✎",
+    "format": "AQUA",
+    "stat": "INTELLIGENCE",
     "values": {
       "rough": {
         "common": 2,
@@ -583,10 +594,11 @@
     }
   },
   {
-    "id": "topaz",
-    "char": "✧",
-    "color": "yellow",
-    "stat": "pristine",
+    "id": "TOPAZ",
+    "name": "Topaz",
+    "symbol": "✧",
+    "format": "YELLOW",
+    "stat": "PRISTINE",
     "values": {
       "rough": {
         "common": 0.4,
