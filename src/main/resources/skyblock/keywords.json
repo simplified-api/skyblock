@@ -1,0 +1,212 @@
+[
+  {
+    "id": "",
+    "name": "",
+    "symbol": "",
+    "format": ""
+  },
+  {
+    "id": "ABIPHONE",
+    "name": "Abiphone",
+    "symbol": "✆",
+    "format": "AQUA"
+  },
+  {
+    "id": "ABYSSAL_ARMOR",
+    "name": "Abyssal Armor",
+    "symbol": "",
+    "format": "GREEN"
+  },
+  {
+    "id": "BINGO",
+    "name": "Bingo",
+    "symbol": "ⓑ",
+    "format": "DARK_PURPLE"
+  },
+  {
+    "id": "CHISEL",
+    "name": "Chisel",
+    "symbol": "❥",
+    "format": "GOLD"
+  },
+  {
+    "id": "CRYSTAL_HOLLOWS",
+    "name": "Crystal Hollows",
+    "symbol": "",
+    "format": "DARK_PURPLE"
+  },
+  {
+    "id": "DIVER_ARMOR",
+    "name": "Diver Armor",
+    "symbol": "",
+    "format": "GREEN"
+  },
+  {
+    "id": "DOT",
+    "name": "",
+    "symbol": "•",
+    "format": "GRAY"
+  },
+  {
+    "id": "EGG",
+    "name": "Egg",
+    "symbol": "",
+    "format": "WHITE"
+  },
+  {
+    "id": "FIGHTING_BOOSTER",
+    "name": "Fighting Booster",
+    "symbol": "४",
+    "format": "AQUA"
+  },
+  {
+    "id": "FORAGING_WISDOM_BOOSTER",
+    "name": "Foraging Wisdom Booster",
+    "symbol": "⸙",
+    "format": "AQUA"
+  },
+  {
+    "id": "FORAGING_FORTUNE_BOOSTER",
+    "name": "Foraging Fortune Booster",
+    "symbol": "⎋",
+    "format": "AQUA"
+  },
+  {
+    "id": "FRAGGED",
+    "name": "",
+    "symbol": "⚚",
+    "format": "GOLD"
+  },
+  {
+    "id": "GEMSTONE",
+    "name": "Gemstone",
+    "symbol": "",
+    "format": "LIGHT_PURPLE"
+  },
+  {
+    "id": "GEMSTONE_POWDER",
+    "name": "Gemstone Powder",
+    "symbol": "᠅",
+    "format": "LIGHT_PURPLE"
+  },
+  {
+    "id": "GLACITE_POWDER",
+    "name": "Glacite Powder",
+    "symbol": "᠅",
+    "format": "AQUA"
+  },
+  {
+    "id": "GLOBAL_FORTUNE",
+    "name": "Global Fortune",
+    "symbol": "☘",
+    "format": "GOLD"
+  },
+  {
+    "id": "GREAT_SPOOK_ARMOR",
+    "name": "Great Spook Armor",
+    "symbol": "",
+    "format": "DARK_PURPLE"
+  },
+  {
+    "id": "HEART_OF_THE_MOUNTAIN",
+    "name": "Heart of the Mountain",
+    "symbol": "",
+    "format": "DARK_PURPLE"
+  },
+  {
+    "id": "LUCK_BOOSTER",
+    "name": "Luck Booster",
+    "symbol": "ꆤ",
+    "format": "AQUA"
+  },
+  {
+    "id": "MAGMA_LORD_ARMOR",
+    "name": "Magma Lord Armor",
+    "symbol": "",
+    "format": "GREEN"
+  },
+  {
+    "id": "MITHRIL_POWDER",
+    "name": "Mithril Powder",
+    "symbol": "᠅",
+    "format": "DARK_GREEN"
+  },
+  {
+    "id": "PERCENT",
+    "name": "%",
+    "symbol": "",
+    "format": "GREEN"
+  },
+  {
+    "id": "PRIMAL_FEARS",
+    "name": "Primal Fears",
+    "symbol": "",
+    "format": "RED"
+  },
+  {
+    "id": "SEA_CREATURES",
+    "name": "Sea Creatures",
+    "symbol": "",
+    "format": "DARK_AQUA"
+  },
+  {
+    "id": "SPOOKY",
+    "name": "Spooky",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
+    "id": "SPOOKY_FESTIVAL",
+    "name": "Spooky Festival",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
+    "id": "STAR",
+    "name": "",
+    "symbol": "✪",
+    "format": "GOLD"
+  },
+  {
+    "id": "STARRED",
+    "name": "",
+    "symbol": "⚚",
+    "format": "GOLD"
+  },
+  {
+    "id": "SWEEP_BOOSTER",
+    "name": "Sweep Booster",
+    "symbol": "ꕮ",
+    "format": "AQUA"
+  },
+  {
+    "id": "TRANSMISSION_ABILITIES",
+    "name": "Transmission Abilities",
+    "symbol": "",
+    "format": "BLUE"
+  },
+  {
+    "id": "TICKER",
+    "name": "",
+    "symbol": "ⓞ",
+    "format": "GRAY"
+  },
+  {
+    "id": "WARDROBE",
+    "name": "Wardrobe",
+    "symbol": "",
+    "format": "AQUA"
+  },
+  {
+    "id": "ZOMBIE_CHARGE",
+    "name": "",
+    "symbol": "ⓩ",
+    "format": "YELLOW"
+  },
+  {
+    "id": "ZONE",
+    "name": "",
+    "symbol": "⏣",
+    "format": "GRAY"
+  }
+]
