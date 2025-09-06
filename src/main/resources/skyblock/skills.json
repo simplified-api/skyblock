@@ -4,6 +4,9 @@
     "name": "Farming",
     "description": "Harvest crops and shear sheep to earn Farming XP!",
     "maxLevel": 60,
+    "cosmetic": false,
+    "weightExponent": 1.217848139,
+    "weightDivider": 275862,
     "levels": [
       {
         "level": 1,
@@ -614,6 +617,9 @@
     "name": "Mining",
     "description": "Dive into deep caves and find rare ores and valuable materials to earn Mining XP!",
     "maxLevel": 60,
+    "cosmetic": false,
+    "weightExponent": 1.18207448,
+    "weightDivider": 259634,
     "levels": [
       {
         "level": 1,
@@ -1293,6 +1299,9 @@
     "name": "Combat",
     "description": "Fight mobs and special bosses to earn Combat XP!",
     "maxLevel": 60,
+    "cosmetic": false,
+    "weightExponent": 1.15797687265,
+    "weightDivider": 275862,
     "levels": [
       {
         "level": 1,
@@ -1927,6 +1936,9 @@
     "name": "Foraging",
     "description": "Cut trees and forage for other plants to earn Foraging XP!",
     "maxLevel": 54,
+    "cosmetic": false,
+    "weightExponent": 1.232826,
+    "weightDivider": 259634,
     "levels": [
       {
         "level": 1,
@@ -2477,6 +2489,9 @@
     "name": "Fishing",
     "description": "Visit your local pond to fish and earn Fishing XP!",
     "maxLevel": 50,
+    "cosmetic": false,
+    "weightExponent": 1.406418,
+    "weightDivider": 88274,
     "levels": [
       {
         "level": 1,
@@ -3056,6 +3071,9 @@
     "name": "Enchanting",
     "description": "Enchant items to earn Enchanting XP!",
     "maxLevel": 60,
+    "cosmetic": false,
+    "weightExponent": 0.96976583,
+    "weightDivider": 882758,
     "levels": [
       {
         "level": 1,
@@ -3818,6 +3836,9 @@
     "name": "Alchemy",
     "description": "Brew potions to earn Alchemy XP!",
     "maxLevel": 50,
+    "cosmetic": false,
+    "weightExponent": 1.0,
+    "weightDivider": 1103448,
     "levels": [
       {
         "level": 1,
@@ -4326,6 +4347,9 @@
     "name": "Carpentry",
     "description": "Craft items to earn Carpentry XP!",
     "maxLevel": 50,
+    "cosmetic": true,
+    "weightExponent": 0.0,
+    "weightDivider": 0,
     "levels": [
       {
         "level": 1,
@@ -4847,6 +4871,9 @@
     "name": "Runecrafting",
     "description": "Slay bosses and runic mobs, and fuse runes to earn Runecrafting XP!",
     "maxLevel": 25,
+    "cosmetic": true,
+    "weightExponent": 0.0,
+    "weightDivider": 0,
     "levels": [
       {
         "level": 1,
@@ -5030,6 +5057,9 @@
     "name": "Social",
     "description": "Gain Social XP for every new unique guest, hosting guests, and visiting islands!",
     "maxLevel": 25,
+    "cosmetic": true,
+    "weightExponent": 0.0,
+    "weightDivider": 0,
     "levels": [
       {
         "level": 1,
@@ -5224,6 +5254,9 @@
     "name": "Taming",
     "description": "Level up pets to earn Taming XP!",
     "maxLevel": 60,
+    "cosmetic": false,
+    "weightExponent": 1.14744,
+    "weightDivider": 441379,
     "levels": [
       {
         "level": 1,
@@ -5898,6 +5931,9 @@
     "name": "Hunting",
     "description": "Hunt various monsters to earn Hunting XP!",
     "maxLevel": 25,
+    "cosmetic": false,
+    "weightExponent": 0.0,
+    "weightDivider": 0,
     "levels": [
       {
         "level": 1,

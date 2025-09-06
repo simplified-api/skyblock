@@ -6,6 +6,8 @@
     "maxLevel": 9,
     "maxTier": 4,
     "mobType": "INFERNAL",
+    "weightModifier": 0.0,
+    "weightDivider": 0,
     "levels": [
       {
         "level": 1,
@@ -124,6 +126,8 @@
     "maxLevel": 9,
     "maxTier": 4,
     "mobType": "ENDER",
+    "weightModifier": 0.017,
+    "weightDivider": 1430,
     "levels": [
       {
         "level": 1,
@@ -244,6 +248,8 @@
     "maxLevel": 9,
     "maxTier": 5,
     "mobType": "ARTHROPOD",
+    "weightModifier": 0.08,
+    "weightDivider": 2118,
     "levels": [
       {
         "level": 1,
@@ -362,6 +368,8 @@
     "maxLevel": 5,
     "maxTier": 5,
     "mobType": "",
+    "weightModifier": 0.0,
+    "weightDivider": 0,
     "levels": [
       {
         "level": 1,
@@ -435,6 +443,8 @@
     "maxLevel": 9,
     "maxTier": 4,
     "mobType": "ANIMAL",
+    "weightModifier": 0.015,
+    "weightDivider": 1962,
     "levels": [
       {
         "level": 1,
@@ -552,6 +562,8 @@
     "maxLevel": 9,
     "maxTier": 5,
     "mobType": "UNDEAD",
+    "weightModifier": 0.15,
+    "weightDivider": 2208,
     "levels": [
       {
         "level": 1,
