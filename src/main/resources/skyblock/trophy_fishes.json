@@ -8,7 +8,7 @@
     "id": "GUSHER",
     "name": "Gusher",
     "format": "COMMON",
-    "location": "BLAZING_VOLCANO"
+    "zone": "BLAZING_VOLCANO"
   },
   {
     "id": "OBFUSCATED_FISH_1",
@@ -19,7 +19,7 @@
     "id": "STEAMING_HOT_FLOUNDER",
     "name": "Steaming-Hot Flounder",
     "format": "COMMON",
-    "location": "BLAZING_VOLCANO"
+    "zone": "BLAZING_VOLCANO"
   },
   {
     "id": "SULPHUR_SKITTER",
@@ -65,31 +65,31 @@
     "id": "VOLCANIC_STONEFISH",
     "name": "Volcanic Stonefish",
     "format": "RARE",
-    "location": "BLAZING_VOLCANO"
+    "zone": "BLAZING_VOLCANO"
   },
   {
     "id": "KARATE_FISH",
     "name": "Karate Fish",
     "format": "EPIC",
-    "location": "DOJO"
+    "zone": "DOJO"
   },
   {
     "id": "MOLDFIN",
     "name": "Moldfin",
     "format": "EPIC",
-    "location": "MYSTIC_MARSH"
+    "zone": "MYSTIC_MARSH"
   },
   {
     "id": "SKELETON_FISH",
     "name": "Skeleton Fish",
     "format": "EPIC",
-    "location": "BURNING_DESERT"
+    "zone": "BURNING_DESERT"
   },
   {
     "id": "SOUL_FISH",
     "name": "Soul Fish",
     "format": "EPIC",
-    "location": "STRONGHOLD"
+    "zone": "STRONGHOLD"
   },
   {
     "id": "GOLDEN_FISH",
