@@ -1,11 +1,5 @@
 [
   {
-    "id": "",
-    "name": "",
-    "symbol": "",
-    "format": ""
-  },
-  {
     "id": "ABIPHONE",
     "name": "Abiphone",
     "symbol": "✆",
@@ -18,16 +12,52 @@
     "format": "GREEN"
   },
   {
+    "id": "AUTOMATONS",
+    "name": "Automatons",
+    "symbol": "",
+    "format": "BLUE"
+  },
+  {
     "id": "BINGO",
     "name": "Bingo",
     "symbol": "ⓑ",
     "format": "DARK_PURPLE"
   },
   {
+    "id": "CHEESE",
+    "name": "CHEESE",
+    "symbol": "",
+    "format": "YELLOW"
+  },
+  {
     "id": "CHISEL",
     "name": "Chisel",
     "symbol": "❥",
     "format": "GOLD"
+  },
+  {
+    "id": "CHOCOLATE",
+    "name": "Chocolate",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
+    "id": "CHOCOLATE_FACTORY",
+    "name": "Chocolate Factory",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
+    "id": "CHOCOLATE_RABBITS",
+    "name": "Chocolate Rabbits",
+    "symbol": "",
+    "format": "GREEN"
+  },
+  {
+    "id": "COMBAT",
+    "name": "Combat",
+    "symbol": "",
+    "format": "RED"
   },
   {
     "id": "CRYSTAL_HOLLOWS",
@@ -54,9 +84,21 @@
     "format": "WHITE"
   },
   {
+    "id": "EXP",
+    "name": "EXP",
+    "symbol": "",
+    "format": "GREEN"
+  },
+  {
     "id": "FIGHTING_BOOSTER",
     "name": "Fighting Booster",
     "symbol": "४",
+    "format": "AQUA"
+  },
+  {
+    "id": "FISHING_FESTIVAL",
+    "name": "Fishing Festival",
+    "symbol": "",
     "format": "AQUA"
   },
   {
@@ -72,10 +114,22 @@
     "format": "AQUA"
   },
   {
+    "id": "FOREST",
+    "name": "Forest",
+    "symbol": "",
+    "format": "DARK_GREEN"
+  },
+  {
     "id": "FRAGGED",
     "name": "",
     "symbol": "⚚",
     "format": "GOLD"
+  },
+  {
+    "id": "FROZEN_CORPSE",
+    "name": "Frozen Corpse",
+    "symbol": "",
+    "format": "AQUA"
   },
   {
     "id": "GEMSTONE",
@@ -88,6 +142,12 @@
     "name": "Gemstone Powder",
     "symbol": "᠅",
     "format": "LIGHT_PURPLE"
+  },
+  {
+    "id": "GIFT_ATTACK",
+    "name": "Gift Attack",
+    "symbol": "",
+    "format": "RED"
   },
   {
     "id": "GLACITE_POWDER",
@@ -114,6 +174,12 @@
     "format": "DARK_PURPLE"
   },
   {
+    "id": "HOTSPOT_SEA_CREATURES",
+    "name": "Hotspot Sea Creatures",
+    "symbol": "",
+    "format": "LIGHT_PURPLE"
+  },
+  {
     "id": "LUCK_BOOSTER",
     "name": "Luck Booster",
     "symbol": "ꆤ",
@@ -126,10 +192,40 @@
     "format": "GREEN"
   },
   {
+    "id": "MINING_ISLANDS",
+    "name": "Mining Islands",
+    "symbol": "",
+    "format": "AQUA"
+  },
+  {
+    "id": "MITHRIL",
+    "name": "Mithril",
+    "symbol": "",
+    "format": "DARK_GREEN"
+  },
+  {
     "id": "MITHRIL_POWDER",
     "name": "Mithril Powder",
     "symbol": "᠅",
     "format": "DARK_GREEN"
+  },
+  {
+    "id": "MORPH",
+    "name": "Right-click your summoned pet to morph into it!",
+    "symbol": "",
+    "format": "GRAY"
+  },
+  {
+    "id": "MYTHOLOGICAL_CREATURES",
+    "name": "Mythological Creatures",
+    "symbol": "",
+    "format": "DARK_GREEN"
+  },
+  {
+    "id": "ORES",
+    "name": "Ores",
+    "symbol": "",
+    "format": "GOLD"
   },
   {
     "id": "PERCENT",
@@ -140,6 +236,24 @@
   {
     "id": "PRIMAL_FEARS",
     "name": "Primal Fears",
+    "symbol": "",
+    "format": "RED"
+  },
+  {
+    "id": "REKINDLED_EMBER_ARMOR",
+    "name": "Rekindled Ember Armor",
+    "symbol": "",
+    "format": "DARK_PURPLE"
+  },
+  {
+    "id": "RIDABLE",
+    "name": "Right-click your summoned pet to ride it!",
+    "symbol": "",
+    "format": "GRAY"
+  },
+  {
+    "id": "SCAVENGED_ITEMS",
+    "name": "Scavenged Items",
     "symbol": "",
     "format": "RED"
   },
@@ -180,10 +294,10 @@
     "format": "AQUA"
   },
   {
-    "id": "TRANSMISSION_ABILITIES",
-    "name": "Transmission Abilities",
+    "id": "SUPERPAIRS",
+    "name": "Superpairs",
     "symbol": "",
-    "format": "BLUE"
+    "format": "LIGHT_PURPLE"
   },
   {
     "id": "TICKER",
@@ -192,10 +306,52 @@
     "format": "GRAY"
   },
   {
+    "id": "TRANSMISSION_ABILITIES",
+    "name": "Transmission Abilities",
+    "symbol": "",
+    "format": "BLUE"
+  },
+  {
+    "id": "TREASURE",
+    "name": "Treasure",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
+    "id": "TREASURE_CHESTS",
+    "name": "Treasure Chests",
+    "symbol": "",
+    "format": "YELLOW"
+  },
+  {
+    "id": "TREASURE_GREAT",
+    "name": "GREAT",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
+    "id": "TREASURE_OUTSTANDING",
+    "name": "OUTSTANDING",
+    "symbol": "",
+    "format": "LIGHT_PURPLE"
+  },
+  {
     "id": "WARDROBE",
     "name": "Wardrobe",
     "symbol": "",
     "format": "AQUA"
+  },
+  {
+    "id": "WATER",
+    "name": "Water",
+    "symbol": "",
+    "format": "AQUA"
+  },
+  {
+    "id": "WISH",
+    "name": "Wish",
+    "symbol": "",
+    "format": "GREEN"
   },
   {
     "id": "ZOMBIE_CHARGE",
