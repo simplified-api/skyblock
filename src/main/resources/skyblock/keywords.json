@@ -24,6 +24,12 @@
     "format": "DARK_PURPLE"
   },
   {
+    "id": "CATACOMBS",
+    "name": "Catacombs",
+    "symbol": "",
+    "format": "RED"
+  },
+  {
     "id": "CHEESE",
     "name": "CHEESE",
     "symbol": "",
@@ -52,6 +58,12 @@
     "name": "Chocolate Rabbits",
     "symbol": "",
     "format": "GREEN"
+  },
+  {
+    "id": "CLASS",
+    "name": "Class",
+    "symbol": "",
+    "format": "DARK_AQUA"
   },
   {
     "id": "COMBAT",
@@ -186,6 +198,12 @@
     "format": "AQUA"
   },
   {
+    "id": "MAGICAL_POWER",
+    "name": "Magical Power",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
     "id": "MAGMA_LORD_ARMOR",
     "name": "Magma Lord Armor",
     "symbol": "",
@@ -262,6 +280,12 @@
     "name": "Sea Creatures",
     "symbol": "",
     "format": "DARK_AQUA"
+  },
+  {
+    "id": "S_PLUS",
+    "name": "S+",
+    "symbol": "",
+    "format": "AQUA"
   },
   {
     "id": "SPOOKY",
@@ -346,6 +370,12 @@
     "name": "Water",
     "symbol": "",
     "format": "AQUA"
+  },
+  {
+    "id": "WISDOM",
+    "name": "Widom",
+    "symbol": "",
+    "format": "DARK_AQUA"
   },
   {
     "id": "WISH",
