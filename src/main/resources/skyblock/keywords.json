@@ -312,6 +312,13 @@
     "format": "DARK_AQUA"
   },
   {
+    "id": "SMOLDERING_POLARIZATION",
+    "name": "Smoldering Polarization",
+    "plural": "",
+    "symbol": "",
+    "format": "GREEN"
+  },
+  {
     "id": "S_PLUS",
     "name": "S+",
     "plural": "",

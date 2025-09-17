@@ -1774,7 +1774,7 @@
       {
         "id": "SPLASH_SURPRISE",
         "name": "Splash Surprise",
-        "description": "Stun %{KEYWORD:SEA_CREATURES} for %{VALUE:DEFAULT}s after fishing them up.",
+        "description": "Stun %{KEYWORDS:SEA_CREATURE} for %{VALUE:DEFAULT}s after fishing them up.",
         "flatStat": false,
         "stats": [
           {
@@ -1906,7 +1906,7 @@
       {
         "id": "FEARCREASING",
         "name": "Fearcreasing",
-        "description": "Gives %{VALUE:DEFAULT} %{STAT:FEAR} for every %{VALUE:GROUP_KILLED} %{KEYWORD:PRIMAL_FEARS} killed, up to %{VALUE:TOTAL_KILLED} %{KEYWORD:PRIMAL_FEARS}.\n%{FORMAT:RED}Primal Fear Kills%{FORMAT:GRAY}: (%{FORMAT:GREEN}X/%{VALUE:TOTAL_KILLED})",
+        "description": "Gives %{VALUE:DEFAULT} %{STAT:FEAR} for every %{VALUE:GROUP_KILLED} %{KEYWORDS:PRIMAL_FEAR} killed, up to %{VALUE:TOTAL_KILLED} %{KEYWORD:PRIMAL_FEARS}.\n%{FORMAT:RED}Primal Fear Kills%{FORMAT:GRAY}: (%{FORMAT:GREEN}X/%{VALUE:TOTAL_KILLED})",
         "flatStat": false,
         "stats": [
           {
@@ -2499,7 +2499,7 @@
       {
         "id": "DAILY_COMMUTER",
         "name": "Daily Commuter",
-        "description": "%{KEYWORD:TRANSMISSION_ABILITIES} cost %{VALUE:DEFAULT} less mana",
+        "description": "%{KEYWORDS:TRANSMISSION_ABILITY} cost %{VALUE:DEFAULT} less mana",
         "flatStat": false,
         "stats": [
           {
@@ -2871,7 +2871,7 @@
       {
         "id": "HUNTING_ENJOYER",
         "name": "Hunting Enjoyer",
-        "description": "Increases your chance to catch %{KEYWORD:FOREST} %{KEYWORD:WATER}, and %{KEYWORD:COMBAT} Shards by %{VALUE:DEFAULT}.",
+        "description": "Increases your chance to catch %{KEYWORD:FOREST} %{KEYWORD:WATER}, and %{STAT_CATEGORY:COMBAT} Shards by %{VALUE:DEFAULT}.",
         "flatStat": false,
         "stats": [
           {
@@ -3531,7 +3531,7 @@
       {
         "id": "GRUNT_WORK",
         "name": "Grunt Work",
-        "description": "Gain %{VALUE:MINING_SPEED} %{STAT:MINING_SPEED} when mining %{KEYWORD:ORES}.",
+        "description": "Gain %{VALUE:MINING_SPEED} %{STAT:MINING_SPEED} when mining %{KEYWORDS:ORE}.",
         "flatStat": false,
         "stats": [
           {
@@ -4434,7 +4434,7 @@
       {
         "id": "ODYSSEY",
         "name": "Odyssey",
-        "description": "%{KEYWORD:MYTHOLOGICAL_CREATURES} you find and burrows you dig scale in %{FORMAT:RED}difficulty %{FORMAT:GRAY}and %{FORMAT:GOLD}rewards %{FORMAT:GRAY}based on your equipped Griffin's rarity.",
+        "description": "%{KEYWORDS:MYTHOLOGICAL_CREATURE} you find and burrows you dig scale in %{FORMAT:RED}difficulty %{FORMAT:GRAY}and %{FORMAT:GOLD}rewards %{FORMAT:GRAY}based on your equipped Griffin's rarity.",
         "flatStat": false,
         "stats": [
           {
@@ -4728,7 +4728,7 @@
       {
         "id": "LUCKY_SEVEN",
         "name": "Lucky Seven",
-        "description": "Gain %{VALUE:CHANCE} chance to find %{FORMAT:DARK_PURPLE}ultra rare %{FORMAT:GRAY}books in %{KEYWORD:SUPERPAIRS}.",
+        "description": "Gain %{VALUE:CHANCE} chance to find %{FORMAT:DARK_PURPLE}ultra rare %{FORMAT:GRAY}books in %{KEYWORDS:SUPERPAIR}.",
         "flatStat": false,
         "stats": [
           {
@@ -5086,7 +5086,7 @@
       {
         "id": "HOTSPOT_HAZARD",
         "name": "Hotspot Hazard",
-        "description": "Increases the chance of catching %{KEYWORD:HOTSPOT_SEA_CREATURES} by %{VALUE:DEFAULT}.",
+        "description": "Increases the chance of catching %{KEYWORDS:HOTSPOT_SEA_CREATURE} by %{VALUE:DEFAULT}.",
         "flatStat": false,
         "stats": [
           {
@@ -6869,7 +6869,7 @@
       {
         "id": "ARCHAEOLOGIST",
         "name": "Archaeologist",
-        "description": "%{KEYWORD:SCAVENGED_ITEMS} appear %{VALUE:DEFAULT} more often while in the %{ZONE:MINES_OF_DIVAN}.",
+        "description": "%{KEYWORDS:SCAVENGED_ITEM} appear %{VALUE:DEFAULT} more often while in the %{ZONE:MINES_OF_DIVAN}.",
         "flatStat": false,
         "stats": [
           {
@@ -6888,7 +6888,7 @@
       {
         "id": "MAGNETIC_NOSE",
         "name": "Magnetic Nose",
-        "description": "%{KEYWORD:AUTOMATONS} drop their parts %{VALUE:DEFAULT} more frequently.",
+        "description": "%{KEYWORDS:AUTOMATON} drop their parts %{VALUE:DEFAULT} more frequently.",
         "flatStat": false,
         "stats": [
           {
@@ -8447,7 +8447,7 @@
       {
         "id": "CHOCOLATE_INJECTIONS",
         "name": "Chocolate Injections",
-        "description": "Increases %{KEYWORD:CHOCOLATE_FACTORY} production by %{VALUE:PRODUCTION}. Duplicate %{KEYWORD:CHOCOLATE_RABBITS} that you find grant %{VALUE:CHOCOLATE} %{KEYWORD:CHOCOLATE}.",
+        "description": "Increases %{KEYWORD:CHOCOLATE_FACTORY} production by %{VALUE:PRODUCTION}. Duplicate %{KEYWORDS:CHOCOLATE_RABBIT} that you find grant %{VALUE:CHOCOLATE} %{KEYWORD:CHOCOLATE}.",
         "flatStat": false,
         "stats": [
           {
@@ -9031,7 +9031,7 @@
       {
         "id": "BURROWING",
         "name": "Burrowing",
-        "description": "Grants a %{VALUE:CHANCE} chance to find %{KEYWORD:TREASURE_CHESTS} while mining.",
+        "description": "Grants a %{VALUE:CHANCE} chance to find %{KEYWORDS:TREASURE_CHEST} while mining.",
         "flatStat": false,
         "stats": [
           {
@@ -10393,7 +10393,7 @@
       {
         "id": "SHARP_ATTITUDE",
         "name": "Sharp Attitude",
-        "description": "%{KEYWORD:SEA_CREATURES} spawn with %{VALUE:MISSING_HEALTH} of their maximum health missing.",
+        "description": "%{KEYWORDS:SEA_CREATURE} spawn with %{VALUE:MISSING_HEALTH} of their maximum health missing.",
         "flatStat": false,
         "stats": [
           {
@@ -10412,7 +10412,7 @@
       {
         "id": "PURSUIT",
         "name": "Pursuit",
-        "description": "Gain %{VALUE:MAGIC_FIND} %{STAT:MAGIC_FIND} against %{KEYWORD:SEA_CREATURES}.",
+        "description": "Gain %{VALUE:MAGIC_FIND} %{STAT:MAGIC_FIND} against %{KEYWORDS:SEA_CREATURE}.",
         "flatStat": false,
         "stats": [
           {
