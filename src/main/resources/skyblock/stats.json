@@ -203,8 +203,8 @@
     "visible": true
   },
   {
-    "id": "MELON_FORTUNE",
-    "name": "Melon Fortune",
+    "id": "MELON_SLICE_FORTUNE",
+    "name": "Melon Slice Fortune",
     "symbol": "☘",
     "format": "GOLD",
     "category": "FARMING",
