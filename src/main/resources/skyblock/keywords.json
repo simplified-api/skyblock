@@ -105,6 +105,13 @@
     "format": "GREEN"
   },
   {
+    "id": "EXTRAVAGANT_ITEM",
+    "name": "extravagant item",
+    "plural": "extravagant items",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
     "id": "FIGHTING_BOOSTER",
     "name": "Fighting Booster",
     "plural": "Fighting Boosters",
@@ -187,6 +194,13 @@
     "format": "GOLD"
   },
   {
+    "id": "GLOSSY_GEMSTONES",
+    "name": "Glossy Gemstones",
+    "plural": "",
+    "symbol": "",
+    "format": ""
+  },
+  {
     "id": "GREAT_SPOOK_ARMOR",
     "name": "Great Spook Armor",
     "plural": "Great Spook Armor",
@@ -214,6 +228,13 @@
     "format": "LIGHT_PURPLE"
   },
   {
+    "id": "JACOBS_CONTEST",
+    "name": "Jacob's Farming Contest",
+    "plural": "Jacob's Farming Contests",
+    "symbol": "",
+    "format": "YELLOW"
+  },
+  {
     "id": "LUCK_BOOSTER",
     "name": "Luck Booster",
     "plural": "Luck Boosters",
@@ -233,6 +254,13 @@
     "plural": "Magma Lord Armor",
     "symbol": "",
     "format": "GREEN"
+  },
+  {
+    "id": "MINING_FIESTA",
+    "name": "Mining Fiesta",
+    "plural": "",
+    "symbol": "",
+    "format": "GOLD"
   },
   {
     "id": "MINING_ISLANDS",
@@ -277,6 +305,13 @@
     "format": "GOLD"
   },
   {
+    "id": "PELT",
+    "name": "Pelt",
+    "plural": "Pelts",
+    "symbol": "",
+    "format": "DARK_PURPLE"
+  },
+  {
     "id": "PRIMAL_FEAR",
     "name": "Primal Fear",
     "plural": "Primal Fears",
@@ -296,6 +331,13 @@
     "plural": "",
     "symbol": "",
     "format": "GRAY"
+  },
+  {
+    "id": "REFINED_MINERALS",
+    "name": "Refined Minerals",
+    "plural": "",
+    "symbol": "",
+    "format": ""
   },
   {
     "id": "SCAVENGED_ITEM",
@@ -415,6 +457,20 @@
     "plural": "",
     "symbol": "",
     "format": "LIGHT_PURPLE"
+  },
+  {
+    "id": "UNIQUE_ITEM",
+    "name": "unique item",
+    "plural": "unique items",
+    "symbol": "",
+    "format": "YELLOW"
+  },
+  {
+    "id": "UNIQUE_LOOT",
+    "name": "unique loot",
+    "plural": "",
+    "symbol": "",
+    "format": "YELLOW"
   },
   {
     "id": "WARDROBE",
