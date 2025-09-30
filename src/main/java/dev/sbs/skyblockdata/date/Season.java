@@ -1,5 +1,6 @@
 package dev.sbs.minecraftapi.skyblock.date;
 
+import dev.sbs.minecraftapi.text.ChatFormat;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
@@ -11,19 +12,20 @@ import org.jetbrains.annotations.NotNull;
 @RequiredArgsConstructor
 public enum Season {
 
-    EARLY_SPRING("Early Spring"),
-    SPRING("Spring"),
-    LATE_SPRING("Late Spring"),
-    EARLY_SUMMER("Early Summer"),
-    SUMMER("Summer"),
-    LATE_SUMMER("Late Summer"),
-    EARLY_AUTUMN("Early Autumn"),
-    AUTUMN("Autumn"),
-    LATE_AUTUMN("Late Autumn"),
-    EARLY_WINTER("Early Winter"),
-    WINTER("Winter"),
-    LATE_WINTER("Late Winter");
+    EARLY_SPRING("Early Spring", ChatFormat.GREEN),
+    SPRING("Spring", ChatFormat.GREEN),
+    LATE_SPRING("Late Spring", ChatFormat.GREEN),
+    EARLY_SUMMER("Early Summer", ChatFormat.YELLOW),
+    SUMMER("Summer", ChatFormat.YELLOW),
+    LATE_SUMMER("Late Summer", ChatFormat.YELLOW),
+    EARLY_AUTUMN("Early Autumn", ChatFormat.GOLD),
+    AUTUMN("Autumn", ChatFormat.GOLD),
+    LATE_AUTUMN("Late Autumn", ChatFormat.GOLD),
+    EARLY_WINTER("Early Winter", ChatFormat.AQUA),
+    WINTER("Winter", ChatFormat.AQUA),
+    LATE_WINTER("Late Winter", ChatFormat.AQUA);
 
     private final @NotNull String name;
+    private final @NotNull ChatFormat format;
 
 }
