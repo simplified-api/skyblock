@@ -18461,7 +18461,7 @@
     "category": "FISHING_ROD",
     "tier": "LEGENDARY",
     "stats": {
-      "double_hook_chance": 20
+      "double_hook_chance": 10
     },
     "museum": true,
     "id": "GIANT_FISHING_ROD"
@@ -19220,6 +19220,201 @@
       "game_stage": "MASTER"
     },
     "id": "FLAMING_FLAY"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NTcwNTI3NTE1NSwKICAicHJvZmlsZUlkIiA6ICJhODEzMzJmNjA5MmE0NDQ1Yjk1YzVhZGFjNDA2OTQzYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJTbmFwcHliM2FzdCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9kMjU2NTg0ZWVhNjgyNTE1MGE0MTVmYzE4ZGFhNTMyYjkxMzljY2E0NTRmOTY5ZjIyMTAzNTVkZTEwYTE1YTQiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
+      "signature": "wdx6h0NyDu32QDRJsDz68M1VpQMeJDhtTbGyr6zhB+SmgPIbCq22aXLSmnPZmzGYgEXfSnFqG8uuSK8Pez+gHqVmt8C0F0R2lCe8HZ7ieTtNO2uZw7vfrYZYcEqCSGHz5RUywhEqAq3Byoit4RFn7aBx/N+Oi+IzDfXdLUWKooyp3hpk/6AsvFoFeudSX8JcG9eOUuP5zJV9ZbZSEzlvlpHBoCkMBpO+d1drra/qmJZ2BT0mai1NI43FqR33CqEBDcbCUf04DTtJqMZIDiwE0NFIX/4CAmCvksUOzEIvtZ87B8Oc4dA/kBSpoZZcrs9SHBUjXt4fy8sJ5ZUn80UMTDN7FJYGf5881TGNBmkWogao00uu6JRzc94TkDoEqW2jXyFWGaqaRdxwvVy8F8+xUlTE/S+elQL9rsME5BSDvpWJjKOHkL+XJqLHCF4ehJSpZYsSazLAcIz+8++9dDRL/s41r0PV9JaLl+mdX/Qa1DjBVKinRlgBWV17hTB6eQ84YI93+2ygerOhgg8/oo98wbC1PqOuA+Zz9U6qD8ZvMJ8dCEb2VimHM0nS6k/Ayl7fBTPbUNOKU0BNjtZX0tggevud0bpH2bTkGSobFewrL6oSouxKyOKUVE+OFWpYNeBeDhN+JTokYopLW19XOKAjWTugDWYTKoF+ErUl+6m5Nxg="
+    },
+    "name": "Abiphone X Red",
+    "tier": "UNCOMMON",
+    "item_specific": {
+      "max_contacts": 7,
+      "model": "abiphone_x"
+    },
+    "double_tap_to_drop": true,
+    "id": "ABIPHONE_X_PLUS"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NTcwNTI3MzkwNywKICAicHJvZmlsZUlkIiA6ICIyMWUzNjdkNzI1Y2Y0ZTNiYjI2OTJjNGEzMDBhNGRlYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJHZXlzZXJNQyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS83NjExNmE0Y2I1ZDFjOWMyZTljMzkxMmYxMTgyMDZiMmE4YjBjNDhlNmRhYTRhMWY0ODk4MjFlYjU4MjY0MjI0IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
+      "signature": "DTw1xDyRbIBnBn6UYARsco8tW8EbxVdobcPKLWFIqE6tEe0GEL/0J32A0ti79xmLlMuhH0gAVP6gc6uazdqpXQO/IHYr3JaW4rminhrelZ0LJ7Cbj2X3el3Wg1eBetoCZF/gYa0cwAOrlXIRjDhqlbrQu5267exYWCOurgbSmQsPjuNrL53u7lRxk0KCCQcRlaz6RGqm1kFmiQqHc+2UAfGlauOhcNgCDtBhheiEK7LxU/ZNpiPkJDr8grvjGyHzzCkVaToPdhViHbMyXd8LyYJotNY3j34oxhpRtvmEFRqtO1eogAD/uYMEzfXQRjVuUv9BROHgbZb0brSc8rR7Ib1HZjCasQjz8LpQ1MjMbzGwX0eO4wO8xGgyRTBuyLwXDZibSIUPMzgUK9XRXqefbf9/2pWNTTzyCO/cCtNCniJgLhUNQggK+bwG9fwAWc8YgyCusF1BjpJR/JjYtfv4RgNW/tqB3OGzkt6j78Esj20BoEvvV7vvDX3YKQ2bMCdBEw2v/P0CdX0LOwtTTjpG4WBy/EdTBPgbdjCbjZtpsov4bwGc8+gVj2QO50X8HPGiiLKugIcQPjdKJ5/6N5UAiJjVieNIN2X0Hcx0bRI6D5Eu7kWeDnjj5lcsPNtPGotW+At693ivcNO6CNWX4VnKkMJuW9d0sIijN7LXv+O4f+w="
+    },
+    "name": "Abiphone X Blue",
+    "tier": "UNCOMMON",
+    "item_specific": {
+      "max_contacts": 7,
+      "model": "abiphone_x"
+    },
+    "double_tap_to_drop": true,
+    "id": "ABIPHONE_X_PLUS_SPECIAL_EDITION"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NjA1MDE2Mzc0MSwKICAicHJvZmlsZUlkIiA6ICJiODQ5ZjE2MmRkNTE0ZjllYTUwZDlhNjRlZGUwZGIxNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJ4WF9Ob19JbmNvbWVfWHgiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTQ3MWM2NzNhODc1NDI1NDI4ZDRiNWVjZjc4YTI0ZDg2ZWE2NWFlNjU5OTYzM2U2NTE0YmJhYWZkN2ZhNTYxZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
+      "signature": "O/+jYJabWZwV7n11d5ycY1ZsOJz6LJoCg2DuGc2ld/4tb0wP+xyiTFOXJFK/ruPj2WTLDq7Q7N/hknGg3KMqSMk5TI6phPiyeTHMaeDIKMy3dF5IJKPYSrHF3esWPXC2nZBMfYds0HOiTISu8z+mSzYpCrVu9rJra9aGbXDoHCCvHOTLoEu5ZD60GeFepafGHE92N0HxQJt3QKJyyQMqniVjjNPIoWjjOayByvDSJPogVPxF9woCWqWJSalDPi6E/g1s7fM5vvag7I8ehv8gpH21XD9gtmRo3mB39yh4C45O9W8qJjcpi6ra1EfPihcvjzX2QWGaD0xCLrU7IE5DSkynbhmNTn4vywURvxuQpAhuDeroTSIwoPcltUowdw6fg6I65HlEhujG+8k5P+OW0bdFxJcWUlIlIfog4r1IE/rD9xORzzBzPSPcPlNnMKRHRyNZpdOrmcpD/zFtOF+AJcH3fDI63D+w1UWVe/qwX0BZBlUmBRCTBP+OVra1+kVccWSa6b+4O5Dae3JO4NAA3xU4DTszNIWH2TjfY+1nEXyz+UIi3DU4WlRDTjircqN7Cnsc0qkELtGtK6N2MP+77xA4OPgKQex4wIUmxyTYm5JzFpIn08A1HX3kgHCrs9VWO+FRBQvrDonQlfe0ZLEf56r9Vzcg/D+l7ArmutqHLeo="
+    },
+    "name": "Abiphone Basic",
+    "tier": "COMMON",
+    "item_specific": {
+      "max_contacts": 6,
+      "has_contact_directory": true
+    },
+    "double_tap_to_drop": true,
+    "id": "ABIPHONE_BASIC"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NTcwNTI2OTExOSwKICAicHJvZmlsZUlkIiA6ICI5MjI1NDBlMTRjZjI0NDI3YmExYmZjOTk3NWVmNGQ0YiIsCiAgInByb2ZpbGVOYW1lIiA6ICJfRmxhbnR5XyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS81Y2Y1Yzg5YzJjYmNmY2Y2OTBmMzk2NGY5ZmNkMDhjZmIwYjA3Mjk4MTBhN2Y3YTE4MTYzNGQ4ZjcyYTk0NTJlIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
+      "signature": "hi6cHWnsiIRE+bP0hF1DqRs8zOWdLNXg4izdhfcXDMMiGt4djOqeN6tPz7hC5PIzdZBAhbJnyGf4sU7ScgkHR+BBSI8LJaKhQg92PZuZdSGw4ZgAbEGXJqq7bBC5wEZI1KhDUj8m+hstVNDASKFoHdFfeiAX61fUoGQX4QXZvbZSq0usAvj43zzVNOQ3C5zzyD+hfujhOu7N1gplDxSvyy07iGjTpoJMh6Ek+jn4LdG2K2pm9dVRo6BYfaYXE/d9f0UvkMqzcUcJhCGahGGsHiqJtUHHwAFxEytEfN8OScdTCxMqbKLTw8Y4HHbt/REDA8nGj4cr55m5QEDOmrNZrgOILZjNqXz+1bWRVlGcTCt75FGS7MZFkpO10Sstv+48rT0UpFapdQHFcy2vhzBp6GezDDYEVRNZ5lm4sIRvhRbJLugHIYwEc42UORSOd75yLhhVJ64UUezfK5l7L69XUTWyOPMOdbrq0sGYmiJNFDNqPIPssfr/4MFXkVaBFRiDGMLGYrEKQP7YCyTyyy8YruNrvFaPxgzJbW9RmuQRqOFYZDHfuU2/Vrk4qJ8oSoffnGmkbxR+hG3dx6bl+CTiC6LvtgXv92mR+D5a/JOj+RLzDm1S/2U8pHcdg+lzPdkIib5wjIA/E2he46R3XCuuMlnxzgSdLD85V/4KDpmfUxg="
+    },
+    "name": "Abiphone XIII Sapphire",
+    "tier": "RARE",
+    "item_specific": {
+      "max_contacts": 10,
+      "max_musicdiscs": 20,
+      "model": "abiphone_xiii"
+    },
+    "id": "ABIPHONE_XIII_PRO_GIGA"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NTcwNTI2NjkwNiwKICAicHJvZmlsZUlkIiA6ICI5N2VmNDYyMzdhNGY0ZTQxYWY2ZTljYjg2MTdmNzc2OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJtaWtvclBMIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3YTA1MTc3MWRhZTE4YTdiMDRlNzhkNTAwYzVhNTNlNzQxZWFhN2VjYTk5NzgwZjM3NzI3NzdkYWUxNmNiNWMiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
+      "signature": "vZqqOj4MJgrfNCjvJxRDaWn+lxw9pfeldEQUQKGncQKl0CAxkjFLjDmqdK6oqb2luoOWoBH4d/rwUvz2UdHr1f0r3MHGkMfjMh5c6s0OnXvuKQfKqJEfJDdXx6djfvkATgY3ou8QRo+caGX17k+bwFtloGTBDY+HO/0f1X6207hefqxWjxEQ5cQo292HoRFWNq19q8DAIUd7n87oHx7n4PfFJM5aofNl72p4Gur1tr2J2RRRrxgRwPv8LoKKeVEEqI8oiGenn2Q+m5bXVjMPCF5LDKNE8l70J7OjPACFgSgqQq4SwUyGqK6pKDrKGU2wBl3p0S0h27j1CDgjOD0VOPH7rDnh63IZdP4ZByFaFkw4tNpomHK0fsdwQJLWwf6fKWy8T3FQnz2VvtS/qGQWpFoFjP69cr6s8ceFjrs78FmAbF5Voxov4nHxzvLjOfm+RtTRZB19nZK4fqkVBd36QXOPv8bQY7YlJcnUaYgx5/VlPTEb+DMrbcyIAR9YNyREFpE7Q0VeZ9nE1SvBt3VqisVHf6TuKhygZV1A3cJwoYu38qgVuAe5rxUtc0cXwv3U+NNFMg1XDsPNi9uSiiw1ir1rUdz6b8sOJ3G9gGsY/HQ6lIscLKzG8n63ulTptH6YmFjMfBe1dkoommxDBzuyZ9fecsgOXnbYKy6Vpk5Ppbc="
+    },
+    "name": "Abiphone XIII Jade",
+    "tier": "RARE",
+    "item_specific": {
+      "max_contacts": 10,
+      "max_musicdiscs": 15,
+      "model": "abiphone_xiii"
+    },
+    "id": "ABIPHONE_XIII_PRO"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NTcwODA3MzA3NCwKICAicHJvZmlsZUlkIiA6ICI3ZjU2ZjY1MDI2NjY0ZmM1OWFjNWYyYjVjMTNlZGY3NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJNYXhBbnRvbnkiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWJjNWIzMWI4Njk0MmZkYWQ1ZWZjMGE5Nzc2OTI1NDQ4MTEyY2M2YjBkMGVlZTkyZTU2YTlkNWYxZTYwN2NhZCIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
+      "signature": "cymvNpalJ8sBzpO9zOju55K4Z97MwntyTZtoxJIYM3fm34Q5zuqNjco3g38WeOCBDaWX91GCO+Nqmk6/jG303UsiwfKeETlkSazAH/syeS5nWXJx7w79Uo1dfcM2togJxA3v33oOdCNKl64eTYOIAphvFB2pp2W/3g9orTYMUXp8mKWJVofl9N406dB+nUQ3L4av3bml0Dn559R8AgksAkwWglGkuDQfF3kU7H0jXnUwxTBHoxIGcXdD3QVbu9FUtelMW6Spb+pPb948u5Nv6qDIe6ueZVSskIMNrI6YYepaHIf8Hji55y4izrPzboWB0DO1a/dVdO5b1nI6eHC+KM31pInNivARoNtTaZKtZwJTJEG7xk6rkDw1jOsaEX8UTFc5VG2My4OkHfe7BRvZVHVrUagh5pbvYIX3acmqyJ3Rhvzz5cRGeqA5SAWThLun+tWt+4QfHL8FphZgNxwRUJOVfEnxun5cfj5YtjfA9zHdIj+0Z7jmoAIH6E9M3o7k1JgF/eVBR3Mnuhl6pPPT4weRSZw2Kf/pZBz9g5ymreRINnpLD9ftIsSdNRE8aFfdjtHMqpIX6XF0Ub83ZMG7vHEJs8Nh4/sorryLggUcB2edAVgQ5tTg/RB99JuKWzx4mAoyRyYVkgL11QGvF3W1rgZYf6RAyECxFMbCAAkHLbg="
+    },
+    "name": "Abiphone XIV Orange",
+    "tier": "EPIC",
+    "item_specific": {
+      "max_contacts": 11,
+      "max_musicdiscs": 25,
+      "model": "abiphone_xiv"
+    },
+    "id": "ABIPHONE_XIV_ENORMOUS"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY2MjQwNTE4NTEzMSwKICAicHJvZmlsZUlkIiA6ICJmNTgyNGRmNGIwMTU0MDA4OGRhMzUyYTQxODU1MDQ0NCIsCiAgInByb2ZpbGVOYW1lIiA6ICJGb3hHYW1lcjUzOTIiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGMyNDRhNGUzMDZmZDE0NzQwNWViYTZiZjY3MDIxZDUwYjgxNWQxMDdjYzE1ZDk3YjgwMmI3ODUyMTAwOTllNiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
+      "signature": "QFZIs0zh7NO+X5NvYPo6JSziIIRN/fesg/CayU7q2BFXtc3BeZjG0G4ecmY1oQA1qoruFdA6rj7CGej4ybS4AGxE8h83G3JtE6Ia3YzNhxX4PkhX4/oUiyEQGbomXgPD3Cr3ZPD8kTlmxql63l32Vq0z7Rtt3EtEMqWS7YdEHLHXBHAQ/OlKL2BUaafIT1+CIF4X2ol3+d/qU+uCz6CSPTrxD9hqM/0DIyclg6oYEL2VTNRS59jz+9WwbJ2dOST5qggQLalA9s+cbMmpdNzKM8PPlbI04D2hvS+3cG+OBbbLUNiPuEiYQjEY5k/qJ+YAu74ltoy2/lD6fyygdCkJAzeTvfZ0GpX/hmoKKF8RUi2cXbj9936U4RJpzpeA0IxsAYQd6AJaZHXKXHAzpg0Je0L4RxB0aSc4DPexW4YdUvVX/gZGhJPMfVOc7ow/jsS3FJmVEyKmvuglcl52FJGbedFK/CTnVXhAsuDfftxwv+vWbephrlmigHSnTJ0TBN/9aNwFO/LKCKrHeeJB/0bD8NEMiaWwKhoWwGZYJgfTKFnGi0ibNx7JDH0X+Ky/o7Xn/CJKR/2gaYM66Q4dEalrXaT1GxNGqrwH05IYk+gcyRYUU8TqFbqYDik/6fcRlsysAeXW6mMu2sibW+F/fbZpo2RWVqaacSDt6kmmGNQ67mM="
+    },
+    "name": "Abiphone XIV Purple",
+    "tier": "EPIC",
+    "item_specific": {
+      "max_contacts": 11,
+      "max_musicdiscs": 25,
+      "model": "abiphone_xiv"
+    },
+    "id": "ABIPHONE_XIV_ENORMOUS_PURPLE"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY2MjQwNTIxNTk5NCwKICAicHJvZmlsZUlkIiA6ICIwODFiZTAxZmZlMmU0ODMyODI3MDIwMjBlNmI1M2ExNyIsCiAgInByb2ZpbGVOYW1lIiA6ICJMeXJpY1BsYXRlMjUyNDIiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTI1YWNhNjFlMWI4YmVjYTliZWZjYWRkMDgyNjJjNTgyMWUyNzViZTQxNGQ5NGYwYjI3ZTg1ODBmMjBkYmYzYSIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
+      "signature": "MzmEd6O5lBZjls4qLgE7qJDxBGEIHwq5Ad8Rn1RyktEQwjUw5MjV7fOnctspmOHPv9s4gn7TPJryqrDsdDtIGvbWlGDj5wvMOrA1FjZWwDlr3Kw6v1swkzmPpDTJ2xjammoX3eKGPYMVoY+Y+lmSCo0JWB80JhNnszklrwJxOILBplGw32tZbdilL308OFmqGLyD8u0JNGyjkIcrmr3OwJSMx488NX2Gg6csyhL0++l1U/7yGGgxE/Z/6rD19qQoT2ec+MOJvJJBDBB/FNMIJL2oeHTh1hB3wGsx3DUE/SKfbp9cxgIUnqmoFQMNXZOoNktp+kYr2I+ISfUMtPHb/x/9BqVXOvzVHH1zeYL3qXYA4pxLAfk5nd8azkdx4Mzm5pchusYzYe7/6bzbbmZ48N0A++mM6gXAxTzPaTvFjCtHHL2mbFXUE6RHNvqqv5bTGULIWIBvIDRcsi1z0xuTpnD3E/3o44n/VF+psnlANDzibT0w8pafyqcF6t7H+a4vKcUmtZSU1rREH/yefKvrexNe/pAxZbjavigTnhTJi+ajRB0Tn9WqGlj/ZtCak4fogZSJW+ZJ4tixLhxzDM+oleEISDCO7TPYx6mm5R4yTpLOGAnLKjzSOQ4fJqiFeQqCdn8alsxigT+l2hR9ICNvNlIF8XMXw5nOL7hLMmN9O6s="
+    },
+    "name": "Abiphone XIV Black",
+    "tier": "EPIC",
+    "item_specific": {
+      "max_contacts": 11,
+      "max_musicdiscs": 25,
+      "model": "abiphone_xiv"
+    },
+    "id": "ABIPHONE_XIV_ENORMOUS_BLACK"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NTcwNTI3MDQ4MCwKICAicHJvZmlsZUlkIiA6ICI5ZjJiY2M1M2U4YzM0OTY4YTc5Yzc0NTExYWQ2NmQyYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJLYWJveWlvIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RmNGRlNWU1MjJhMzRhNTM0MDM5YzI5ZWVlMzY4ZGZjYzFhZDBkNDNhMmQ4MjY0YzE3NTFhOGI1OTZjYmVhN2IiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
+      "signature": "VrKbL0ItBMpDRcq9QHqhuAc51JalS+gpJ+d4FC02t2VrqB6aM4+D4I369rjZ3eJk4EM8nzIeYsl2eznDt7kDi/fnz8m1fzM6YWmZgnlpGZqhDT7Cfk0daffCU2JqJ++Sg9YcylzHbNt7x9EYmNiIQZbhvFzlu5mLP3oPYYJtkNMWqLDUp6icsKbdWQtVJqoHxOy2cHje41ZNwqMLpaqlU/Z77WURN4swBcC1uvvoTWqNsnJWC9AkYxA16kRyJUFw1bgEY9q9afpNiCRx3Ns75PcffDs2Hxg8/L++9hY5qZk0YR4kEPmWbZuZm9xYg1lX1XEcT4D/p9t0yLAx/fDWCXdpaMCkbdCfCabPtNsjxup4tdeu9hrCLS1kCiK0oEPj7sEgdhf8CE1fKowdisOOAKGkasqh4t2xrVXDaQL6VJgUSdAiJ3gkJua6VlV8wGXfJUAFccexpHPi7nYjlQOJ4rd6cXjJp9ySpAK8PDeucWLdKz77OTAmmkmDGdFLKJVJu1rwAa02orX0ffHMsbnTUQpur8EG6bIaJvLUEzopHO1Om+NT0IPLN/hDtDVXzO+04+Mn/LCCeJsSniEOig2E14ElfqnEnVWhO887pMJlEiO7OeBwar91j87PoX5hgUCKQ5LjzpXJRWLt583m74ifqTj29iZXn/d5/olhM8hDE58="
+    },
+    "name": "Abiphone XII Amethyst",
+    "tier": "RARE",
+    "item_specific": {
+      "max_contacts": 9,
+      "max_musicdiscs": 10,
+      "model": "abiphone_xii"
+    },
+    "id": "ABIPHONE_XII_MEGA_COLOR"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NTcwNTI3MjY4OCwKICAicHJvZmlsZUlkIiA6ICJjZjc4YzFkZjE3ZTI0Y2Q5YTIxYmU4NWQ0NDk5ZWE4ZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJNYXR0c0FybW9yU3RhbmRzIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2MzODYyNjJkYmE5YWNhZmIwMDRhMjUyNWUwMjc4OWU2Zjk0NDhjZTg5NTQxNDQxYzdmYmNlNDAxZmQ2NjU4OGEiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
+      "signature": "WlwXhYtdRaSQZmfXs8f9GydxR3AcaUMXt4bYln3u1+srd2B7QInwK01zC76dGKW/hemIwPQh6SZ6AlrOZ0OYH5K9oyV4D5hiqo64zxyY2+7GYP7UiZg4KTWaY2BabWNXbjzsB6IjPgsYuMF2RvwEAe3EuA/6u2UV/i9/qOkMNujEDsaE2QM3Ja/41t9slI48h55XSP0DIaDYfJInMcjRSPtyG3Vpc2mofVYjAgIKorou3GWgS3gFNAiv5R7jaAd/DmDJcl2+157nOZ3E6tPJ0rqq7bulWV0Mr7oeDvPvXgIW95tLNCXMglRXvh6kX/tf2CGYNlesyjXIXOY5cfZXqncXyvRM0o9Oa4f6FsiOCh+EGZLVngBLKz3+UttuQJQqm8rINuosxtNDat8FKshNfUjUHpAAflpZrzNwucWONWeMNj+kJ7DLhyZsWvaRhqUt5K8OPwrLhMucY6o9Z5boUYOCZugQnC5eSLOfhwfh80BtjcVCkJ44ahVBLoNdvdDeCUZ+TXBuCZ9YqmV+qTDnQ/8MGmOodCxH+SeVOkIY9aWrAPkOjFL27XEDwr37je/H//hVkVjFqsCkVW1xHxfpl3aNi20ltQA00o9gokGcYfVX6mLOmXZNVU5S1H8rMOsYS6UIsU1aqowZhwhbkqKCrMvFVUY8usJnFIqR4fdjxLM="
+    },
+    "name": "Abiphone XII Amber",
+    "tier": "RARE",
+    "item_specific": {
+      "max_contacts": 9,
+      "max_musicdiscs": 10,
+      "model": "abiphone_xii"
+    },
+    "double_tap_to_drop": true,
+    "id": "ABIPHONE_XII_MEGA"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NTcwNTI2ODA2MywKICAicHJvZmlsZUlkIiA6ICIwMzBlMDA1OWQwY2M0YTZhODY3N2RkZWU3MjEzMjg1MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJTbXVnRm9vZGllIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVlMDY1YTJiNjFhODllOTZlMzAyNzM3YTdjOTI4ZTI0YmZkM2I3YWU0OTgyMTAzMjRjY2QwZTg0MzMyMDQ2ZjYiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
+      "signature": "RjBLAgUy4q2v4VdmViLai91d+YFRZb+hKmHo0xP0PDADUA4jM6YUKgDpX68gOB1l8rPg9PZEZGI2KqUmfWxxv+bD0VV7VI8bIwaPBZV+2D6DtM4ySoBdYwF5ySTUlHbgqRngbjXTSox53V7sC2lCCHCm2QDwd9SyA/ESOsJZ2UlTecAiGHjWvaOjDcNYqJ1Wy6AX2uSsmZyAiT8FzhtciatMM3wLjx59XQiQCWH8OelLG8r5lWHlofYDLJvUh+gA//GBqOtPgaS5CpeeZMB5nU5Z88/hyMWuk07vueUieHkW6qisys5/K5ra+mKQc7cPo8coFrqBFLDKXo/7QgsM5TrYYXed7KMAdtSUbMJUmU1VcGiQZyTwdbOGqBnAvjpNQpLZDqx/3n4lI55K5zSltNCr0mFJnT5I2L6jD9mvbaX2rqkD5qjAfHoGUfERnJXdrtUAxB5YErgednL72grceh/ZpWrJ7UtQEpb/uxfMFrcvF9oykjHZnIjkGDad6JTKs4aY7EGBU5+N/bLEggQmZ5x5cn0NJ0fP3pJGDqZ3lcfqgI3T0hlX2IxlYnzSLj+rBREWglXIK1wpfUMLgsYiME8vgWATiOcK2WJbKZgmxD3SBum8pegVZIGkUzMLcUKBGNgdJGFtxuhyLN/Q7dHhZB15+DPbuM5P9H10scsEqZY="
+    },
+    "name": "Abiphone XI Yellow",
+    "tier": "UNCOMMON",
+    "item_specific": {
+      "max_contacts": 8,
+      "max_musicdiscs": 5,
+      "model": "abiphone_xi"
+    },
+    "double_tap_to_drop": true,
+    "id": "ABIPHONE_XI_ULTRA"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDI0NjkxNzgxMSwKICAicHJvZmlsZUlkIiA6ICJjNTZlMjI0MmNiZWY0MWE2ODdlMzI2MGRjMGNmOTM2MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJMSlI3MzEwMCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS82NWExZjE4NzMxODM4OGVkNWQwMDEzODNlYTQzNDNiNzg3MWI4MzI4NDM4MjE5M2NjNjgwMjc0MTA1ZTFiNyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
+      "signature": "d4XNxfXT0xguf0ZjleqDyrUrlGJXZ0nGRdLM+btkCskHpgMsXcpbBI23iSsR1XJAP+Ea9S3MCSNx0PUXJB5LzaiblK31YyGNMKH88z+fvSeIFJjq+qBO3ZDrqvn+gqgsRIU773Dagv5uF1jAsqP9cOZtuxeO5jv97gjoVaLPM1LyZyhsUGW3dsC2/x2TbJUsfzsxgAZ3gQ3IHfoui6YkTO4AQU+ShESMqaJY6n98A68yiHYNdbmkJBN8VgtMB07wtOByQQjG4ANNfyxbidib8pDaCq85RtO7kOcJZkOiSUdbSKaIINvIfo7ZGzwICrADt/xLEoQ12pjJUOrom1X+007xkyMz6x9t7s52BPWrzQ3EwOQx7kYMlmHxWHVIc6rw6028wpCwnLSHj2nWOFN425B1y3P0v7Zq0xPs8+77Jo/up0w74sFXZNJpU4SuDtmXuhJyPMxO+Q6bdax8gzs2iBczBXM85l52b09GcuV2SSDHOD+5WqsKfr+RtyHiSy5zOBm+cCbm5LzVNEM04lDm81dlYor498VO2R/vvLV2x4viQ/K7E68IOQnA5YoHvLCrSoQSgHGgSL5BQ812dA/U7twBQ4vlB+Ggw3hIFfWH6gmH6T44EeM0mhHfPyXG2H5ayrWEh5yxx25DQ3IPbtDF/2yPRTahv3W1quAHu7w/yw8="
+    },
+    "name": "Abiphone XI Green",
+    "tier": "UNCOMMON",
+    "item_specific": {
+      "max_contacts": 8,
+      "max_musicdiscs": 5,
+      "model": "abiphone_xi"
+    },
+    "double_tap_to_drop": true,
+    "id": "ABIPHONE_XI_ULTRA_STYLE"
   },
   {
     "material": "SKULL_ITEM",
@@ -21421,7 +21616,7 @@
       "value": "ewogICJ0aW1lc3RhbXAiIDogMTcwMzE5NTAxMzMxMiwKICAicHJvZmlsZUlkIiA6ICI1MDYyYmRjMTM5ZTM0ZDkyYTUwZWM3YTRmZWVmODc5YyIsCiAgInByb2ZpbGVOYW1lIiA6ICJQU3RlY3prYSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9iNDM0NWViODI5OWM2MDY2Mzg0MDk0ZmYzYzQxNmI2NDVkOTQ5NmJmMjY5OGY3N2NkYzY4ODk4ZDhhZTQ5N2IzIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
       "signature": "lbnpowngXbj1ooKI0zmdJp4bygmnAJT+uHVZv/Mm/vVUhQzKHsHFWDo2SuHgmw1hPU8LRVB8cTj9f4xrxHS+NqgLsM9NimgoMD2vYNBNoFvpRdHi0PrQeAQ1LzyaTjeFQouNpzjYYVdE8F5QNQ9fdNbJ0j3BZmPpWTLCeU7jxUIaC81HZ7V7fjEBJsMdp9ZErUF6lZ968IKQzce1W+UeJ15UzvkfbINrCjodsJcEdp397MmZPK/nOLbzA1Xc5S0VQIQo8acEhtuMSEESS9Z1TF/URorjU/sWjrqZ8/jepVZeqd0YuhwE2C8VvacLTj6lStXQzQMpb3rIHW9NtjP0QPJXfE5WE3yxTKO27DrSnNyu5Y+/xn5j/mtDDdST7SS5yK8NR6Nhb8xPsifndB3THxXoom4h1LV5AO3g6ylaFi0+6cgRQI8AmXYTo7LjhQR0ykxQvYtKrwYXkoU+zb3HeAw0s4bYd/UCysxHLDvSj5Cg7nRhFh+N6DdVsXZFb+BEJq344az1/0cqOVPyep56Lg+mha44bChIFcspo56t2Ljah+BH6MOtYBXBMARgGfLUzadf1RXl0GiZW2V6NU7SAseM2uAVUEY9nPtV2lhBE8w61PIUFP3CgAI5N1TbbkPEB21Lgbh7Pd8ly1Y0zkMo7fznndadSMFss/ISjLuU61Q="
     },
-    "name": "Clownfish Cloak",
+    "name": "Tropical Cloak",
     "tier": "UNCOMMON",
     "category": "CLOAK",
     "stats": {
@@ -31500,7 +31695,7 @@
   },
   {
     "material": "CLAY_BALL",
-    "name": "Enchanted Clay",
+    "name": "Enchanted Clay Ball",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 480,
@@ -31954,7 +32149,7 @@
   },
   {
     "material": "RAW_FISH",
-    "name": "Enchanted Raw Fish",
+    "name": "Enchanted Raw Cod",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 960,
@@ -31970,7 +32165,7 @@
   },
   {
     "material": "MELON",
-    "name": "Melon",
+    "name": "Melon Slice",
     "npc_sell_price": 2,
     "id": "MELON"
   },
@@ -33351,7 +33546,7 @@
     "material": "BAKED_POTATO",
     "name": "Enchanted Baked Potato",
     "glowing": true,
-    "tier": "UNCOMMON",
+    "tier": "RARE",
     "npc_sell_price": 76800,
     "id": "ENCHANTED_BAKED_POTATO"
   },
@@ -36755,7 +36950,7 @@
       "value": "ewogICJ0aW1lc3RhbXAiIDogMTcyMDA1Mjk2NTQ0NiwKICAicHJvZmlsZUlkIiA6ICJjYzU2NjAzYmZiZjg0OGJmOTM3MzY1N2VjYzUyNGI4NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJpc2FhYWFhYV8iLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjQ5NDg4Y2NjOWM5NGYxNGFmYjc1NzQxODYwZWFmODBmNGNlY2I0ZTdkYjE3ODdjOWRiNzRjNjYxMzBmYWYzZCIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
       "signature": "mW9V/JpxNjutuxnrZs2fi8eBO7EVMmNvPC5TqNb54R2WohpkLOWrmIc+49UmEr2bet3qHLT0ki48aHGn7vKQOwwRDmuuko2o+kIHagNtzrrSZyI2pDTaPEby28DdN/DROGJ1uNEuX0dpQcGqOlSzSznSVzBQM84rUMQXdj+/A1NVqYMw3TCjz7mbh3L4GyvuMWPt6QBDiLm+kpQB050/DffmbU5+ULKP4RUEySjSfTXILV48vyvxEflGq4zDB5HggqcckDM6Uft6BtTtD7Yw/QcguvKP1eJXvo3/IE2voa1STaPAXkmKHObYR9WWMr1uX7ZljO50ncfZ33eDcxw5mFs9soicwJ9dSLTNUrJRTEcdP2B48+897BE60yFRxMUwASuI1uAqTG6ONxBoFDm+mdqqanxng/HBWy/nEcTjQ+9uvj0rEWo6dqPNBZjRImYRGxxB10XdVetHqEG5Pl/MWDixLxPEfYmH7MTq3P7aFdbuAwoP4UZRg4snK52DhQeLaO9jRODlO2j22Wen1IoeOM2KiwDqFNIxvyljW+I4nwoN3ZyYVKSWiPLMKz6rfodbf+X8bkw67SXXe17EScBED89FXfTvAH5xjkkjARM1QIqX7CtHOidgndzqyZJRvtG9GxLAIwbOjqICZTceXvwaevh1cRNAEra9e2CIoQOIQmc="
     },
-    "name": "Mini Fish Bowl",
+    "name": "Aquarium Diorama",
     "description": "%%dark_gray%%Decoration item\n\n%%gray%%Obtained during the %%yellow%%Carnival%%gray%% for placing within the %%green%%Top 500 %%gray%%in %%dark_aqua%%Catch a Fish%%gray%%.",
     "tier": "LEGENDARY",
     "can_place": true,
@@ -39272,7 +39467,7 @@
   },
   {
     "material": "LAPIS_BLOCK",
-    "name": "Enchanted Lapis Block",
+    "name": "Enchanted Lapis Lazuli Block",
     "glowing": true,
     "tier": "RARE",
     "npc_sell_price": 25600,
@@ -39428,7 +39623,7 @@
   },
   {
     "material": "COOKED_FISH",
-    "name": "Enchanted Cooked Fish",
+    "name": "Enchanted Cooked Cod",
     "glowing": true,
     "tier": "RARE",
     "npc_sell_price": 150000,
@@ -39896,7 +40091,7 @@
   {
     "material": "RAW_FISH",
     "durability": 2,
-    "name": "Enchanted Clownfish",
+    "name": "Enchanted Tropical Fish",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 3200,
@@ -44256,7 +44451,8 @@
       "WALK_SPEED": 15,
       "DEFENSE": 150,
       "TRUE_DEFENSE": 10,
-      "MINING_SPEED": 10
+      "MINING_SPEED": 10,
+      "MINING_FORTUNE": 5
     },
     "npc_sell_price": 1750,
     "rarity_salvageable": true,
@@ -45249,35 +45445,35 @@
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 10
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 20
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 40
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 80
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 160
         }
       ]
@@ -46070,7 +46266,7 @@
   },
   {
     "material": "SPECKLED_MELON",
-    "name": "Glistering Melon",
+    "name": "Glistering Melon Slice",
     "npc_sell_price": 3.5,
     "id": "SPECKLED_MELON"
   },
@@ -46391,7 +46587,7 @@
   },
   {
     "material": "QUARTZ",
-    "name": "Enchanted Quartz",
+    "name": "Enchanted Nether Quartz",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 640,
@@ -51190,7 +51386,7 @@
     "material": "GOLDEN_CARROT",
     "name": "Enchanted Golden Carrot",
     "glowing": true,
-    "tier": "UNCOMMON",
+    "tier": "RARE",
     "npc_sell_price": 61440,
     "id": "ENCHANTED_GOLDEN_CARROT"
   },
@@ -51373,7 +51569,7 @@
   },
   {
     "material": "REDSTONE",
-    "name": "Enchanted Redstone",
+    "name": "Enchanted Redstone Dust",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 160,
@@ -56100,7 +56296,7 @@
   },
   {
     "material": "GOLD_INGOT",
-    "name": "Enchanted Gold",
+    "name": "Enchanted Gold Ingot",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 480,
@@ -58020,7 +58216,7 @@
     "material": "GOLD_SWORD",
     "name": "Giant Cleaver",
     "category": "SWORD",
-    "tier": "EPIC",
+    "tier": "LEGENDARY",
     "stats": {
       "DAMAGE": 235,
       "STRENGTH": 120,
@@ -60267,7 +60463,7 @@
   },
   {
     "material": "MELON_BLOCK",
-    "name": "Enchanted Melon Block",
+    "name": "Enchanted Melon",
     "glowing": true,
     "tier": "RARE",
     "npc_sell_price": 51200,
@@ -60552,7 +60748,7 @@
   },
   {
     "material": "REDSTONE",
-    "name": "Redstone",
+    "name": "Redstone Dust",
     "npc_sell_price": 1,
     "id": "REDSTONE"
   },
@@ -61172,7 +61368,7 @@
   },
   {
     "material": "SPECKLED_MELON",
-    "name": "Enchanted Glistering Melon",
+    "name": "Enchanted Glistering Melon Slice",
     "glowing": true,
     "tier": "RARE",
     "npc_sell_price": 1000,
@@ -62101,7 +62297,7 @@
   {
     "material": "RAW_FISH",
     "durability": 2,
-    "name": "Clownfish",
+    "name": "Tropical Fish",
     "npc_sell_price": 20,
     "id": "RAW_FISH:2"
   },
@@ -62791,7 +62987,7 @@
   },
   {
     "material": "IRON_INGOT",
-    "name": "Enchanted Iron",
+    "name": "Enchanted Iron Ingot",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 320,
@@ -64216,7 +64412,8 @@
       "WALK_SPEED": 10,
       "DEFENSE": 70,
       "TRUE_DEFENSE": 5,
-      "MINING_SPEED": 10
+      "MINING_SPEED": 10,
+      "MINING_FORTUNE": 5
     },
     "npc_sell_price": 1750,
     "rarity_salvageable": true,
@@ -64363,7 +64560,7 @@
   },
   {
     "material": "RAW_FISH",
-    "name": "Raw Fish",
+    "name": "Raw Cod",
     "npc_sell_price": 6,
     "id": "RAW_FISH"
   },
@@ -65063,7 +65260,7 @@
   },
   {
     "material": "PORK",
-    "name": "Enchanted Pork",
+    "name": "Enchanted Raw Porkchop",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 800,
@@ -66409,7 +66606,7 @@
   },
   {
     "material": "MELON_BLOCK",
-    "name": "Melon Block",
+    "name": "Melon",
     "npc_sell_price": 18,
     "id": "MELON_BLOCK"
   },
@@ -66738,7 +66935,7 @@
       "value": "ewogICJ0aW1lc3RhbXAiIDogMTU5MjA5OTU5MzE1NSwKICAicHJvZmlsZUlkIiA6ICJiNzQ3OWJhZTI5YzQ0YjIzYmE1NjI4MzM3OGYwZTNjNiIsCiAgInByb2ZpbGVOYW1lIiA6ICJTeWxlZXgiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWVjMDRmZTNkODM0MThkYjBmMzZiYzhmZDdkNTBlNGJjMWI1N2Y1Y2I2NDMyNDFkYWM0MzE3OWUyYzAxNmI3NyIKICAgIH0KICB9Cn0=",
       "signature": "x0zlYH3DGdr7DyrSbo0Wuw70wZIGxty5qB6IzQiNa5WiEFWW3hSEBG6ZNpwmzPZMSLyRbM1H6C4ksrP04pNQGfhvSLQ6z59nz/G76lJT94u3nnHFwRHotJNJLBzeVZQ3+Ipf257TLFi8WnPxN7adQYJMzUadXQcZ5ziWxZS5NdPFaneQAAUKo9Cp7NECTDmDC8owd/pcg2xTfUrLC6lgCiyQAbvXCHnJPEj6VKlPqNnZLGr983eDD5HGqxtHefDFuYcl82uJUMdyKZqX0WvxAap/v3iThQb3g7VEq9SOOcw1pz6ugSi1yDL+YfKkE8VSMkB9/Hw3oL9gm7dBEUxHpRuEnCGGlmRqY8eiwTwBDxH8iVLvZJhPRU/GRBrRxqcQRCHHF78QOdZalT9CFkFTjvdXr1eP9/nNrPWIwg79hox8V3kJGeqgyeI6UNldUSZb4i9/gqesAS37L7m18dFb4fy2ZyiXVagK1HaizsBBOci5fMjKFdsAnKb+K+8nQUmPtEzjWEMmAOrkyz+KxFt3kN5M6vckSNqOiXhZlsQnNTj/dpV8PuCWZlPcMV2C/lrbv8Hj8OJQ+NXzhYexxShD0uNt9Q1cVrEcVYADEALiuxouJ4+fLBSVaftXSQR06HRIQuF1Wdwwo2l60gIHLZehQB7vMnxFNUq7yHeS4YhsJA8="
     },
-    "name": "Clownfish Hat",
+    "name": "Tropical Fish Hat",
     "category": "HELMET",
     "tier": "UNCOMMON",
     "stats": {
@@ -70507,35 +70704,35 @@
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 40
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 80
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 150
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 300
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 600
         }
       ]
@@ -70747,6 +70944,15 @@
     "name": "Cracked Stone Bricks",
     "npc_sell_price": 1,
     "id": "SMOOTH_BRICK:2"
+  },
+  {
+    "material": "DIAMOND_AXE",
+    "name": "%%green%%Axe Preview %%gray%%(Right-Click)",
+    "description": "Use to preview the current axe rune!",
+    "soulbound": "SOLO",
+    "tier": "SPECIAL",
+    "serializable": false,
+    "id": "AXE_PREVIEW"
   },
   {
     "material": "SKULL_ITEM",
@@ -73123,7 +73329,7 @@
   },
   {
     "material": "LAPIS_BLOCK",
-    "name": "Lapis Lazuli Block",
+    "name": "Block of Lapis Lazuli",
     "npc_sell_price": 9,
     "id": "LAPIS_BLOCK"
   },
@@ -76041,7 +76247,7 @@
     "material": "BLAZE_ROD",
     "name": "Enchanted Blaze Rod",
     "glowing": true,
-    "tier": "UNCOMMON",
+    "tier": "RARE",
     "npc_sell_price": 230400,
     "id": "ENCHANTED_BLAZE_ROD"
   },
@@ -77131,7 +77337,7 @@
       "value": "ewogICJ0aW1lc3RhbXAiIDogMTU5MTgxMzQ4NTE3MiwKICAicHJvZmlsZUlkIiA6ICI5MThhMDI5NTU5ZGQ0Y2U2YjE2ZjdhNWQ1M2VmYjQxMiIsCiAgInByb2ZpbGVOYW1lIiA6ICJCZWV2ZWxvcGVyIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzExOTgxMmNjNTdiNzhjMzM2NmQwNzY3Nzg3NDVmN2Q4MWU5MzY3NjlhOGQyOGNhYzY4ZDQ4MzZmZmU5NTgxMjEiCiAgICB9CiAgfQp9",
       "signature": "W5AzLFxcjaiToMuJn/ZJ3awS6tTqTbQHqRMPTI+4D5zpG7h46RIx1/zsudPaDhbraz6owpABCD0q7pedFHFMvkcbVIZgenBfXKMuJf2E8o+7Zo4P/XdA7lBDRyLuHqYisEwszI9Cfl+dClCZej1d36vEzmlQDmGb8tFCUdvgcnxYyFJTo5WE2uzQlk4slms/NXgfHo9805lHQsT84TtjAYsYooDqm3cj7U6JgPJwYBsw29ibNY7NRQeIo/x+lGJpRP8T5a+3/SCc5Z8Qjzk2tblifGRBWydX4UFnJW9+8T7mRb30x/e3IautJXzeFesScZF+PUuTk3dYQkanpuSaVs5uO+Ap2HfousveqICnkT2s/0G7UbERZI5FGexVhWCd2qMO64yICFLi8EHntm3h6Mq8au4PQEdePNUDQSTjX3eRonbolTkWqGnINJ5DRjIH9BBCJQp0KI0nuEvKsonOAUE7wLJOCAaJXbBCaVvLcPnN9G2yT4UkVMVhlcC9NgiVMrsaRqn6KMDpX7k8tcUWNHhi0cFimd7t/MsKvSd0PJ2baTiPC1uMktZ26+vR/9QXfs1SdnNtz5fzMRCnHLFWn+TPBNRVYgxkI+0NK7eOqmAmcqhcDc7oBsp7Lg0I2mn7mrW+b9BKy+9jIj7twG3gewQHmcecpMl2NYpW3BNvg44="
     },
-    "name": "Clownfish Minion Skin",
+    "name": "Tropical Fish Minion Skin",
     "category": "COSMETIC",
     "museum": true,
     "id": "CLOWNFISH_PERSONALITY"
@@ -77578,7 +77784,7 @@
   },
   {
     "material": "MUTTON",
-    "name": "Enchanted Mutton",
+    "name": "Enchanted Raw Mutton",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 800,
@@ -77861,7 +78067,7 @@
   },
   {
     "material": "CLAY_BALL",
-    "name": "Clay",
+    "name": "Clay Ball",
     "npc_sell_price": 3,
     "id": "CLAY_BALL"
   },
@@ -78385,7 +78591,8 @@
       "WALK_SPEED": 15,
       "DEFENSE": 125,
       "TRUE_DEFENSE": 10,
-      "MINING_SPEED": 10
+      "MINING_SPEED": 10,
+      "MINING_FORTUNE": 5
     },
     "npc_sell_price": 1750,
     "rarity_salvageable": true,
@@ -79222,14 +79429,11 @@
     "material": "IRON_SWORD",
     "name": "Undead Sword",
     "category": "SWORD",
+    "is_upgradeable_without_soulbinding": true,
     "stats": {
       "DAMAGE": 30
     },
     "npc_sell_price": 5,
-    "dungeon_item_conversion_cost": {
-      "essence_type": "UNDEAD",
-      "amount": 10
-    },
     "upgrade_costs": [
       [
         {
@@ -81797,7 +82001,8 @@
       "WALK_SPEED": 10,
       "DEFENSE": 70,
       "TRUE_DEFENSE": 5,
-      "MINING_SPEED": 10
+      "MINING_SPEED": 10,
+      "MINING_FORTUNE": 5
     },
     "npc_sell_price": 1750,
     "rarity_salvageable": true,
@@ -82453,7 +82658,7 @@
   },
   {
     "material": "MELON",
-    "name": "Enchanted Melon",
+    "name": "Enchanted Melon Slice",
     "glowing": true,
     "tier": "UNCOMMON",
     "npc_sell_price": 320,
@@ -82513,7 +82718,7 @@
   },
   {
     "material": "GRILLED_PORK",
-    "name": "Enchanted Grilled Pork",
+    "name": "Enchanted Cooked Porkchop",
     "glowing": true,
     "tier": "RARE",
     "npc_sell_price": 128000,
@@ -83146,7 +83351,7 @@
   },
   {
     "material": "MUTTON",
-    "name": "Mutton",
+    "name": "Raw Mutton",
     "npc_sell_price": 5,
     "id": "MUTTON"
   },
@@ -83846,35 +84051,35 @@
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 20
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 40
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 80
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 150
         }
       ],
       [
         {
           "type": "ESSENCE",
-          "essence_type": "UNDEAD",
+          "essence_type": "WITHER",
           "amount": 300
         }
       ]
@@ -87330,7 +87535,7 @@
   },
   {
     "material": "RED_ROSE",
-    "name": "Endstone Rose",
+    "name": "End Stone Rose",
     "glowing": true,
     "tier": "RARE",
     "npc_sell_price": 3000,
@@ -87896,7 +88101,7 @@
       "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDc2NjQ5MTIzNSwKICAicHJvZmlsZUlkIiA6ICI3Yjk5ZDIwZDc3YmU0MGViOTMxN2NmN2FhYzM5MTI1NSIsCiAgInByb2ZpbGVOYW1lIiA6ICJHb2F0bWFuVmlpIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZiMTlkMTBhMzJkZjkzYTEzOTE1MGI2ZmI3NWJhY2Q1NWNhNDhlYmJiOGUxYWMyMzBjYjkyODdkMDE1ZGJkYjIiCiAgICB9CiAgfQp9",
       "signature": "w2Cgcd7r8PWz/HPiaJTmJPQzNC0U5i6daZbOHaLNqf/6zMtORuYWEmQ3MtcHNu/SCY3yOsaSVoB5TWJehLJ/xhBlLNiKeVb2AvReADAIfs8Nz+YJS9KLr/1V9MgZ+lzpXup+MZPhxfdThNiKxX82bDTpdzHodl4ZDD418xpBmLi8/c4R66PZdl73NKXAEltrTra0CulNADnQVEX6RkqapE3ulwGKOAtpXJHvFBITmAfHhAgzo+W4mORIgTDra5ks3PafCh1pZZ0s6EPOnXCQ3KW2ulvQ2dAxObwIGaJgSYnkRieYy40bjWREr0M2dLA4Wt2K3BkNpjnnTIctLsOOAAmIXHsVKQg/4UN319ldQMcx1xGtwXk7/3ZsXS5GAJ2jDa+eEyrt3wXqY8RS9Lv5wW9280X15btSD6L+vdrIVc9egO/dVd7pz+hsiGX2VuhlUxM5o2lgUEkDqgitXk+Lk013NW0N5YFZ+13NI6JHIMmCcY4tYgkKMzHd6xiYUguO0cf0pZYKnlS7ribRG8GmHkvhwZwcx3jvIKzS71IvjNtekVcmh4x+3W0hdkwHNqewOaCu4bSX+yibAFmsg03KI7jcIJHbAPYdshjBKJ+q2nERaBHfNGEVxQktiIeUgWO1e9WNqpWOe2M32A32Zr2ZeCYCbmS//h7Yr5flnE2udo4="
     },
-    "name": "Endstone Chest+",
+    "name": "End Stone Chest+",
     "furniture": "ENDSTONE_CHEST",
     "tier": "RARE",
     "id": "ENDSTONE_CHEST"
@@ -92614,10 +92819,7 @@
     },
     "category": "BELT",
     "tier": "LEGENDARY",
-    "dungeon_item_conversion_cost": {
-      "essence_type": "SPIDER",
-      "amount": 100
-    },
+    "is_upgradeable_without_soulbinding": true,
     "upgrade_costs": [
       [
         {
@@ -92707,7 +92909,7 @@
       {
         "type": "SLAYER",
         "slayer_boss_type": "spider",
-        "level": 7
+        "level": 6
       }
     ],
     "id": "SPIDER_ARTIFACT"
@@ -92737,206 +92939,8 @@
     "category": "SWORD",
     "tier": "EPIC",
     "stats": {
-      "DAMAGE": 80,
-      "STRENGTH": 65,
-      "VITALITY": 5
-    },
-    "requirements": [
-      {
-        "type": "SLAYER",
-        "slayer_boss_type": "spider",
-        "level": 6
-      }
-    ],
-    "dungeon_item_conversion_cost": {
-      "essence_type": "SPIDER",
-      "amount": 50
-    },
-    "upgrade_costs": [
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 20
-        }
-      ],
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 40
-        }
-      ],
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 60
-        }
-      ],
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 80
-        }
-      ],
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 100
-        }
-      ]
-    ],
-    "gemstone_slots": [
-      {
-        "slot_type": "COMBAT"
-      }
-    ],
-    "museum_data": {
-      "donation_xp": 5,
-      "type": "WEAPONS",
-      "parent": {},
-      "mapped_item_ids": [],
-      "game_stage": "SKILLED"
-    },
-    "id": "SCORPION_FOIL"
-  },
-  {
-    "material": "IRON_SWORD",
-    "name": "Sting",
-    "category": "SWORD",
-    "tier": "LEGENDARY",
-    "stats": {
-      "DAMAGE": 150,
+      "DAMAGE": 120,
       "STRENGTH": 60,
-      "CRITICAL_DAMAGE": 40
-    },
-    "requirements": [
-      {
-        "type": "SLAYER",
-        "slayer_boss_type": "spider",
-        "level": 8
-      }
-    ],
-    "dungeon_item_conversion_cost": {
-      "essence_type": "SPIDER",
-      "amount": 100
-    },
-    "upgrade_costs": [
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 50
-        }
-      ],
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 100
-        }
-      ],
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 150
-        }
-      ],
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 200
-        }
-      ],
-      [
-        {
-          "type": "ESSENCE",
-          "essence_type": "SPIDER",
-          "amount": 250
-        }
-      ]
-    ],
-    "gemstone_slots": [
-      {
-        "slot_type": "COMBAT",
-        "costs": [
-          {
-            "type": "COINS",
-            "coins": 50000
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_JASPER_GEM",
-            "amount": 20
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_RUBY_GEM",
-            "amount": 20
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_SAPPHIRE_GEM",
-            "amount": 20
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_AMETHYST_GEM",
-            "amount": 20
-          }
-        ]
-      },
-      {
-        "slot_type": "COMBAT",
-        "costs": [
-          {
-            "type": "COINS",
-            "coins": 100000
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_JASPER_GEM",
-            "amount": 40
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_RUBY_GEM",
-            "amount": 40
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_SAPPHIRE_GEM",
-            "amount": 40
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_AMETHYST_GEM",
-            "amount": 40
-          }
-        ]
-      }
-    ],
-    "museum_data": {
-      "donation_xp": 10,
-      "type": "WEAPONS",
-      "parent": {},
-      "mapped_item_ids": [],
-      "game_stage": "EXPERT"
-    },
-    "id": "STING"
-  },
-  {
-    "material": "IRON_SWORD",
-    "name": "Tarantula Fang",
-    "category": "SWORD",
-    "stats": {
-      "DAMAGE": 130,
-      "STRENGTH": 40,
       "CRITICAL_DAMAGE": 30
     },
     "requirements": [
@@ -92989,41 +92993,189 @@
     ],
     "gemstone_slots": [
       {
-        "slot_type": "COMBAT",
-        "costs": [
-          {
-            "type": "COINS",
-            "coins": 50000
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_JASPER_GEM",
-            "amount": 20
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_RUBY_GEM",
-            "amount": 20
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_SAPPHIRE_GEM",
-            "amount": 20
-          },
-          {
-            "type": "ITEM",
-            "item_id": "FINE_AMETHYST_GEM",
-            "amount": 20
-          }
-        ]
+        "slot_type": "COMBAT"
       }
     ],
-    "tier": "EPIC",
     "museum_data": {
       "donation_xp": 7,
       "type": "WEAPONS",
       "parent": {
-        "TARANTULA_FANG": "STING"
+        "SCORPION_FOIL": "STING"
+      },
+      "mapped_item_ids": [],
+      "game_stage": "SKILLED"
+    },
+    "id": "SCORPION_FOIL"
+  },
+  {
+    "material": "IRON_SWORD",
+    "name": "Sting",
+    "category": "SWORD",
+    "tier": "LEGENDARY",
+    "stats": {
+      "DAMAGE": 150,
+      "STRENGTH": 75,
+      "CRITICAL_DAMAGE": 40
+    },
+    "requirements": [
+      {
+        "type": "SLAYER",
+        "slayer_boss_type": "spider",
+        "level": 8
+      }
+    ],
+    "dungeon_item_conversion_cost": {
+      "essence_type": "SPIDER",
+      "amount": 100
+    },
+    "upgrade_costs": [
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 50
+        }
+      ],
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 100
+        }
+      ],
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 150
+        }
+      ],
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 200
+        }
+      ],
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 250
+        }
+      ]
+    ],
+    "gemstone_slots": [
+      {
+        "slot_type": "COMBAT"
+      },
+      {
+        "slot_type": "COMBAT",
+        "costs": [
+          {
+            "type": "COINS",
+            "coins": 100000
+          },
+          {
+            "type": "ITEM",
+            "item_id": "FINE_JASPER_GEM",
+            "amount": 40
+          },
+          {
+            "type": "ITEM",
+            "item_id": "FINE_RUBY_GEM",
+            "amount": 40
+          },
+          {
+            "type": "ITEM",
+            "item_id": "FINE_SAPPHIRE_GEM",
+            "amount": 40
+          },
+          {
+            "type": "ITEM",
+            "item_id": "FINE_AMETHYST_GEM",
+            "amount": 40
+          }
+        ]
+      }
+    ],
+    "museum_data": {
+      "donation_xp": 10,
+      "type": "WEAPONS",
+      "parent": {},
+      "mapped_item_ids": [],
+      "game_stage": "EXPERT"
+    },
+    "id": "STING"
+  },
+  {
+    "material": "STONE_SWORD",
+    "name": "Tarantula Fang",
+    "category": "SWORD",
+    "stats": {
+      "DAMAGE": 90,
+      "STRENGTH": 45,
+      "CRITICAL_DAMAGE": 20
+    },
+    "requirements": [
+      {
+        "type": "SLAYER",
+        "slayer_boss_type": "spider",
+        "level": 4
+      }
+    ],
+    "dungeon_item_conversion_cost": {
+      "essence_type": "SPIDER",
+      "amount": 100
+    },
+    "upgrade_costs": [
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 50
+        }
+      ],
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 100
+        }
+      ],
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 150
+        }
+      ],
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 200
+        }
+      ],
+      [
+        {
+          "type": "ESSENCE",
+          "essence_type": "SPIDER",
+          "amount": 250
+        }
+      ]
+    ],
+    "gemstone_slots": [
+      {
+        "slot_type": "COMBAT"
+      }
+    ],
+    "tier": "RARE",
+    "museum_data": {
+      "donation_xp": 5,
+      "type": "WEAPONS",
+      "parent": {
+        "TARANTULA_FANG": "SCORPION_FOIL"
       },
       "mapped_item_ids": [],
       "game_stage": "INTERMEDIATE"
@@ -94139,11 +94291,8 @@
       "DAMAGE": 140,
       "STRENGTH": 115
     },
-    "dungeon_item_conversion_cost": {
-      "essence_type": "UNDEAD",
-      "amount": 500
-    },
     "can_have_power_scroll": true,
+    "is_upgradeable_without_soulbinding": true,
     "upgrade_costs": [
       [
         {
@@ -94254,14 +94403,11 @@
     "name": "Revenant Falchion",
     "category": "SWORD",
     "tier": "RARE",
+    "is_upgradeable_without_soulbinding": true,
     "stats": {
       "DAMAGE": 90,
       "STRENGTH": 50,
       "INTELLIGENCE": 100
-    },
-    "dungeon_item_conversion_cost": {
-      "essence_type": "UNDEAD",
-      "amount": 500
     },
     "upgrade_costs": [
       [
@@ -94330,14 +94476,11 @@
     "name": "Reaper Falchion",
     "category": "SWORD",
     "tier": "EPIC",
+    "is_upgradeable_without_soulbinding": true,
     "stats": {
       "DAMAGE": 120,
       "STRENGTH": 100,
       "INTELLIGENCE": 200
-    },
-    "dungeon_item_conversion_cost": {
-      "essence_type": "UNDEAD",
-      "amount": 500
     },
     "upgrade_costs": [
       [
@@ -94423,13 +94566,10 @@
     "category": "SWORD",
     "sword_type": "SCYTHE",
     "tier": "LEGENDARY",
+    "is_upgradeable_without_soulbinding": true,
     "stats": {
       "WALK_SPEED": 10,
       "DAMAGE": 333
-    },
-    "dungeon_item_conversion_cost": {
-      "essence_type": "UNDEAD",
-      "amount": 200
     },
     "upgrade_costs": [
       [
@@ -98026,6 +98166,18 @@
       "signature": "T6gbSWIoLPJ+JvUodyHhLM2NAkk9oB4lil92oqV+RjhaA4eq2RSqtf2p4M7tZ/ZVQ64vCJz4/vH3oCTA/Kx1JJBUKXCLtsGYlTFFXU/1QyqAE42JEREjUc21MophsEoR/Z8knh2MPpD2gVeI2jzE3ajbkhInnArs3L6FXtaaTma17uA9h5lbUnn2Xk/AztGWotKHvYZfFJgxhz24Ol+W/Rs0UOMiVRV4CJuFDEg9ntdVNToCJs1fa2zNdcl8Vm6/CMNPZy2oHnwFfXt8PCmhb46YBAF9uBKzIBbFSh9rLRqRWjgj06RVnO3r/5Tj7DqAfJlbfyVDqRHjYfCSMoqcpgTXzk3GIlLPgeejLpKex1AzIzGLXHzKpMr2Vu72Abdk9ASI6vWPb5rlET82gyLvQmNuUNz46d4YyibaJtZSnuI8nY4lMLft++otXQLV3xJVx1E+X14EgLAQ34fCTispRLVj3Kuq8gOkFA/HMuOEkLavu+iX1RAkdjCWo7RYMMkpzQvYgkvjcDSWivFzoTWprleTQK3FuM5piJia2fga4ElAi1xOeogDp84exTyTls4z0K6FgKIuvdwYpC+EHnQ/NoMDZTYuRd6oWtIgArKCCrdvjtLG8rT6VZF8ZKkXx4RZ9sbUUpI2xuZLYmQGK6TStHpKCaCZNOhlu/owFT5APjU="
     },
     "id": "BUTTERFLY_BARN_SKIN"
+  },
+  {
+    "material": "SKULL_ITEM",
+    "durability": 3,
+    "name": "Turkey Barn Skin",
+    "skin": {
+      "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1NzcwNzMwODc0NSwKICAicHJvZmlsZUlkIiA6ICJjN2Y2Nzk3ZmE4ZGM0NTdiYTkxNTU0NWIwMGU3M2UzMSIsCiAgInByb2ZpbGVOYW1lIiA6ICJlZGd5c3BlbmNlIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M3N2E3NzA2Y2VkZDg4MWFmMzE1MTc3ZjgxNjE5MzU1MGRiN2E0YTQ1NDJhNWRiYzliMGNlYzZkMmU4OGJkNzEiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
+      "signature": "n2NFJW/4WZ1r4yJ/KtDTcfQtBTpGNBfDun9rb/ALvewuYlUBBgVwYy264I5wXemK1rDm6mVU3p7B0/znRrwvEZpSbCuTBo9D8B2eBXjRB1DszbiTnJGzJj5pxwpDuwDy4sKytS5dw0+GgiKLLosk7nUeMoqoGB26VMo0983nqsmeUc2AV9gsUqhK18R0BSBQCPNH8InnSUOaPmCLsXuxXXfECSy+Z6FE61ez1JQYwDHW+OnsN/PHLvPMhNvEjVa3tLoBEomjQRkItqrU3XF+1eDstM9ZfmcifQ05ZFp0W+OGzuf+WD6i2YNDoyCxwtuwA6Jl5f416tH+bRqRXzcgDusC+tcojkm57/WRUu8AQlhs30RMXPUYcOmKJwa6y21f0lwOUoWhqS+6kE1mPdpgoU2e2zFm/E7QMDxuFBq88NfnAW3HIzqRwFHSKH4ePCmgAhUqJYrXHtdt+9xg+34FEvwCnBpNPrLTgHVJoNcCnEgKzksfn4PpE/Slk1OGOFdFxRB6e9PZ/w7PEZaCFp8E9Lat/wrzeQjAR7i8Get2/NqjF5eO3hpkOGcVPeDj/dgJL0ZBz5wtu6ONXChwXsIq3bcjkxnqcHZgppoF8Wz4Uhcy6V2aakcQYYEK/fO/GYDdC161NbziMNjZ6pmqPARvRwEz4ne/WOS7HQlHX+ygypE="
+    },
+    "tier": "LEGENDARY",
+    "category": "COSMETIC",
+    "id": "TURKEY_BARN_SKIN"
   },
   {
     "material": "SKULL_ITEM",
@@ -105568,7 +105720,7 @@
       {
         "type": "SKILL",
         "skill": "FORAGING",
-        "level": 8
+        "level": 12
       }
     ],
     "museum_data": {
@@ -105604,7 +105756,7 @@
       {
         "type": "SKILL",
         "skill": "FORAGING",
-        "level": 8
+        "level": 12
       }
     ],
     "museum_data": {
@@ -105636,7 +105788,7 @@
       {
         "type": "SKILL",
         "skill": "FORAGING",
-        "level": 8
+        "level": 12
       }
     ],
     "museum_data": {
@@ -105668,7 +105820,7 @@
       {
         "type": "SKILL",
         "skill": "FORAGING",
-        "level": 8
+        "level": 12
       }
     ],
     "museum_data": {
@@ -105751,7 +105903,7 @@
       {
         "type": "SKILL",
         "skill": "FORAGING",
-        "level": 12
+        "level": 15
       }
     ],
     "npc_sell_price": 5600,
@@ -105845,7 +105997,7 @@
       {
         "type": "SKILL",
         "skill": "FORAGING",
-        "level": 12
+        "level": 15
       }
     ],
     "npc_sell_price": 4480,
@@ -110006,196 +110158,6 @@
     "unstackable": true,
     "soulbound": "SOLO",
     "id": "KUUDRA_FOLLOWER_ARTIFACT"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY2MjQwNTAzODIzNCwKICAicHJvZmlsZUlkIiA6ICIzY2MxMTY3MWU0MTM0ODM0YjhjMmZjMTY1OGE4OWU3OCIsCiAgInByb2ZpbGVOYW1lIiA6ICJSb3NzaTU2IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2FjYWIwOTY1YzIwZjFkZTAzZTc5OTgxM2FlOWNiNWUwOTQyZWJmNmVkZmU5OWEwMzAyNTQ3NzU1Y2JhNzg5NzEiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
-      "signature": "PrsmaaYybQczuXCXwyFvFWhDBCjunBfvIC1Oy3wEWmSqJoyKBNtpiO8m8abkw5lv2JFIzpt17ZwuAlrdY1Xq5ZXALV7uPlPfaRhzGQtivFRNPA9X330xGkv8ijq20SkbmsX42BH8nOIFsOemKp2OElClHJY9XzNwFp8MY0omiBurxcNpjLk/rlusaYsvvJJJ0dka7xRwobqTzAzYvrfxCmZLvBObCIK3C6GTlYjkf267p+4x43ppMLnhINUMWoQ1Kw52++CF35SOkLFvwMk9fV387Va6NZbPbC6kc/rY1msXfVWxYg0mpvGMpsqRc1ol0eH5otsuuXYWPLQA7qf7qCSpiYJACFfoUX4r0D1Qx55x48SX8fOZ5+1eCgpSLj6N0I+4oCVwVs1qhurBsNGYzPUY/9pA5a5aH3piI1V/IIQ3YQ2DwXRdGItluK3bj76VS1eG4lcIWt9W3j0nylDFpNcZD4Rvj6R5W9yT2d6CEzQ0Kjncg+AetpFceZLp2O6QgJmGJZpEuJmeBve4ucE51xEQ7GEysl1MW7hEyEM06Msw9iiQOmSXkrHULZioaV55UxcRoOCAfZY+bSK/rDxGu3MKosqAaoghmkDbL/teqIB3iw5V3z5lTg3FKtwdfub0hKAqntCGbkAsRviRHDRnmIFQDSaQMTLrcundyW0L7+c="
-    },
-    "name": "Abiphone XIV Enormous",
-    "tier": "LEGENDARY",
-    "item_specific": {
-      "max_contacts": 11,
-      "max_musicdiscs": 25,
-      "has_contact_directory": true,
-      "can_play_tictactoe": true,
-      "can_play_snake": true,
-      "has_dnd": true
-    },
-    "id": "ABIPHONE_XIV_ENORMOUS"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDI0Njg5ODk5NiwKICAicHJvZmlsZUlkIiA6ICI0M2NmNWJkNjUyMDM0YzU5ODVjMDIwYWI3NDE0OGQxYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJrYW1pbDQ0NSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9lNjllYmI2YzQ1NGMyZTIwZDJmNTMxN2FhOGYwOWNkODMzMzYxNGRhOWViMGRjYzI3Y2ZkYzdmYTAwMDBjNGExIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
-      "signature": "lqwqWp2Bo+4QTrzKg7KF4OdlA0x/KVFmYAxSEycbB6FeF7LdA+gNOy9yEiAejqPiXxgagmiz9dJJ23TDe4Allq0+e1zdhy8zLQ6rOn+ZZ3DGReGu5GTBupb8m5puYRvS1aiXqsaoL6ZqtR1Ft1yOiW5SjCN70gQjpDurnpNgv7jKYuBKT/qGT6JemdKb6FmJqP+tSYuck5Uj5OCxAdqUYfBj2PuFwyLcoqaFS4RuANjTX0zkCjRo+sTrzUkwiUMCxJTKeRTHsvQo8XK6KokvrLoV3tmEjRzrOtupbk3RIw7Vl+d1hSwZIjzF04qU9NLqEyfv86+x0tc+UH6JQ2dFA4Awwz4Mdg4XqmeqhsTAuDv8KAPYu4Etjsn6YoeCw3M58BIQBwBPh+LlKdD1r4Sf3oX2ozTP1TIpHhVmDGvzkXlwphF8QDZK+8gAxN5hl+8VyabyRJCsmNqNmIVuG1nZ5nGcv0PtemO+AJP++ubm+GCuhf1bseY62bT8ZBYVCQpFJOxlWVybI2U4FQzZZ5jW5QADaE/T8DpVsL3z75iyP09cVaIpk4F1JzbPsm4CVEvRCoOQ2nb46eG4MeRCQLYkwTYa8WDHmUffhftwC/5QBsMz1Mkg26sDNyU5RAsg81bqbvlkQ6ds+3zCgC1KpNI4mMwEyHQ8Wpbyxn8o3xMJjms="
-    },
-    "name": "Abiphone XI Ultra",
-    "tier": "UNCOMMON",
-    "item_specific": {
-      "max_contacts": 6,
-      "max_musicdiscs": 2
-    },
-    "double_tap_to_drop": true,
-    "id": "ABIPHONE_XI_ULTRA"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDI0NzAwNDAxOCwKICAicHJvZmlsZUlkIiA6ICJiMGQ0YjI4YmMxZDc0ODg5YWYwZTg2NjFjZWU5NmFhYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJNaW5lU2tpbl9vcmciLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg1ZDE1N2RiNmM5ZmNjMWE1YmIyNGM0NTkwOTg4ODQ5OTMzYmQzNTU2MDhjYWUzYTZhNDIwNjYwNjc2YmMzMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
-      "signature": "ay9Xa/9BISzNDeJGk6J4FAG9h54svPhdzuESNpmeq/q5aRagb6FJHsULMHmHdx2tVOv7yeIDetR5GNaYACIl7vOvAosHdZ+Ar2msmqeEqenJp4ZBvkJYx9IWgL6QvF0BSH8qsy4vRnrsSfKjuUXc89EGIMHBwCzhtUGWOL8AXSR31yexUW3GxPGfgHBoPYwcO1k8t5pPYjyTNUA0j9kFD5E1/HgDT4I1eOvPCDS0z78M1d5WjtDwDqAgsHL3vNdSm3G9aid/ox4Vj7+0dtaZbTcNn8GH+2uEg2DNJWEkbOO8bSix97+Drff7A6WkPCAIWrBhw0xP0j0gOEK+BO/HltCMegEHZWtf0Jlhtm/U7R0ivxsK4Epz64WUeXgXM+l2pyz7wATj0sAGHZNaxv0+JP63/shTtxVZE9e5fO3BFDjq8VC1aEURM9qJJCaprJsqczvulnEd9GF/S3sZXKop8saJgdAxoXajnmKcdNHOBfcu9TwMX5dbSGb7bQWltET+pv9szN1JLf+13/Kx95qjN62HEIKrwvaygoELdLbQehXORy2WCBRIWl/HDYQq1mYsk0MnCxqleNAgI79jI4DW87+Ftol2UoArvTq3YXeLelYDvoRcicT2AQ4WCM7G3vLE3nSJ2DAoY6yiY4BqwSk7Phjs6yn47rjCqgVI8jJw3W4="
-    },
-    "name": "Abiphone XIII Pro Giga",
-    "tier": "EPIC",
-    "item_specific": {
-      "max_contacts": 10,
-      "max_musicdiscs": 20,
-      "has_contact_directory": true,
-      "can_play_tictactoe": true,
-      "can_play_snake": true,
-      "has_dnd": true
-    },
-    "id": "ABIPHONE_XIII_PRO_GIGA"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY2MjQwNTE4NTEzMSwKICAicHJvZmlsZUlkIiA6ICJmNTgyNGRmNGIwMTU0MDA4OGRhMzUyYTQxODU1MDQ0NCIsCiAgInByb2ZpbGVOYW1lIiA6ICJGb3hHYW1lcjUzOTIiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGMyNDRhNGUzMDZmZDE0NzQwNWViYTZiZjY3MDIxZDUwYjgxNWQxMDdjYzE1ZDk3YjgwMmI3ODUyMTAwOTllNiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
-      "signature": "QFZIs0zh7NO+X5NvYPo6JSziIIRN/fesg/CayU7q2BFXtc3BeZjG0G4ecmY1oQA1qoruFdA6rj7CGej4ybS4AGxE8h83G3JtE6Ia3YzNhxX4PkhX4/oUiyEQGbomXgPD3Cr3ZPD8kTlmxql63l32Vq0z7Rtt3EtEMqWS7YdEHLHXBHAQ/OlKL2BUaafIT1+CIF4X2ol3+d/qU+uCz6CSPTrxD9hqM/0DIyclg6oYEL2VTNRS59jz+9WwbJ2dOST5qggQLalA9s+cbMmpdNzKM8PPlbI04D2hvS+3cG+OBbbLUNiPuEiYQjEY5k/qJ+YAu74ltoy2/lD6fyygdCkJAzeTvfZ0GpX/hmoKKF8RUi2cXbj9936U4RJpzpeA0IxsAYQd6AJaZHXKXHAzpg0Je0L4RxB0aSc4DPexW4YdUvVX/gZGhJPMfVOc7ow/jsS3FJmVEyKmvuglcl52FJGbedFK/CTnVXhAsuDfftxwv+vWbephrlmigHSnTJ0TBN/9aNwFO/LKCKrHeeJB/0bD8NEMiaWwKhoWwGZYJgfTKFnGi0ibNx7JDH0X+Ky/o7Xn/CJKR/2gaYM66Q4dEalrXaT1GxNGqrwH05IYk+gcyRYUU8TqFbqYDik/6fcRlsysAeXW6mMu2sibW+F/fbZpo2RWVqaacSDt6kmmGNQ67mM="
-    },
-    "name": "Abiphone XIV Enormous Purple",
-    "tier": "LEGENDARY",
-    "item_specific": {
-      "max_contacts": 11,
-      "max_musicdiscs": 25,
-      "has_contact_directory": true,
-      "can_play_tictactoe": true,
-      "can_play_snake": true,
-      "has_dnd": true
-    },
-    "id": "ABIPHONE_XIV_ENORMOUS_PURPLE"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDI0Njg0MzAwMSwKICAicHJvZmlsZUlkIiA6ICI5NTE3OTkxNjljYzE0MGY1OGM2MmRjOGZmZTU3NjBiZCIsCiAgInByb2ZpbGVOYW1lIiA6ICJPcmRpbmFsQ2FyZGluYWwiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzdhMzZiMmU2ZTA3MGMzZGZhMWMyNTcxOWIzNzZmYTAyZDU4NGQ3MDIwNmQxOGE1NjlhNzliYWE3MmU3MDkyOCIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
-      "signature": "B1a8h8rGNnvcJ9vkGGssjp7o8w5EGRdYHG8GIDQu5zio0SZVRugBr2dd2k7KyimW7Aiyu9Jbk3jxnRpERbQYy0utNquTR0q/G++avI62R6NaTk0YjQIJncH308v1w5Zxv2QUkCoxXRbGL5GOCUWtiYK+SwxKZsuoOjbzw5NQL+oza1Oyh7mYkHJf7GOcu4BLVgQwi10+WiWh/ejygF2Q0/XfWWMr6VxsM1gSj4xRyzwAo/7LvpunRuNTcGA52teCNz0nGDukNvnkmOn6maawperU6f+f26JYMpHPo88gKIJpjDdlm2VDN4XlmDCzMGzEXXx7nL7lfW+K14hk/nFb+rsARficOjhofOtgj1PZ2Eh/wT4/OKGbJn9xhsLqvHYHhNtvdqV2LHsl9/A95Oox3dD9bzQyC4g3jSFvCMTNitRAmgKSSlzfwVwzbo1Mm7faoe3AUs3QA0dnc6TH2moidSCrLpXO+tTOglLh81LW++ggEmWkV0ZE78AjjHlS7RjG93Z8dOWK8JTlseeiYZkwPJQFI/32yypq6Xmv7EqD+SsHDJJV7Q+47mlI4zhRlBkTsyjARI3JsD6EiT47ZaSf4Nw2G2pLw/ZceUQoJ3hict+ya3KLYz46XxZyJ916AtUOUoXcSUPqEaYgVUimoUMGvPWFtqw8Lq6oJ/nGwkrlMuI="
-    },
-    "name": "Abiphone X Plus",
-    "tier": "UNCOMMON",
-    "item_specific": {
-      "max_contacts": 5
-    },
-    "double_tap_to_drop": true,
-    "id": "ABIPHONE_X_PLUS"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY2MjQwNTIxNTk5NCwKICAicHJvZmlsZUlkIiA6ICIwODFiZTAxZmZlMmU0ODMyODI3MDIwMjBlNmI1M2ExNyIsCiAgInByb2ZpbGVOYW1lIiA6ICJMeXJpY1BsYXRlMjUyNDIiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTI1YWNhNjFlMWI4YmVjYTliZWZjYWRkMDgyNjJjNTgyMWUyNzViZTQxNGQ5NGYwYjI3ZTg1ODBmMjBkYmYzYSIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
-      "signature": "MzmEd6O5lBZjls4qLgE7qJDxBGEIHwq5Ad8Rn1RyktEQwjUw5MjV7fOnctspmOHPv9s4gn7TPJryqrDsdDtIGvbWlGDj5wvMOrA1FjZWwDlr3Kw6v1swkzmPpDTJ2xjammoX3eKGPYMVoY+Y+lmSCo0JWB80JhNnszklrwJxOILBplGw32tZbdilL308OFmqGLyD8u0JNGyjkIcrmr3OwJSMx488NX2Gg6csyhL0++l1U/7yGGgxE/Z/6rD19qQoT2ec+MOJvJJBDBB/FNMIJL2oeHTh1hB3wGsx3DUE/SKfbp9cxgIUnqmoFQMNXZOoNktp+kYr2I+ISfUMtPHb/x/9BqVXOvzVHH1zeYL3qXYA4pxLAfk5nd8azkdx4Mzm5pchusYzYe7/6bzbbmZ48N0A++mM6gXAxTzPaTvFjCtHHL2mbFXUE6RHNvqqv5bTGULIWIBvIDRcsi1z0xuTpnD3E/3o44n/VF+psnlANDzibT0w8pafyqcF6t7H+a4vKcUmtZSU1rREH/yefKvrexNe/pAxZbjavigTnhTJi+ajRB0Tn9WqGlj/ZtCak4fogZSJW+ZJ4tixLhxzDM+oleEISDCO7TPYx6mm5R4yTpLOGAnLKjzSOQ4fJqiFeQqCdn8alsxigT+l2hR9ICNvNlIF8XMXw5nOL7hLMmN9O6s="
-    },
-    "name": "Abiphone XIV Enormous Black",
-    "tier": "LEGENDARY",
-    "item_specific": {
-      "max_contacts": 11,
-      "max_musicdiscs": 25,
-      "has_contact_directory": true,
-      "can_play_tictactoe": true,
-      "can_play_snake": true,
-      "has_dnd": true
-    },
-    "id": "ABIPHONE_XIV_ENORMOUS_BLACK"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDI0Njk4NTU3NCwKICAicHJvZmlsZUlkIiA6ICI5ZDIyZGRhOTVmZGI0MjFmOGZhNjAzNTI1YThkZmE4ZCIsCiAgInByb2ZpbGVOYW1lIiA6ICJTYWZlRHJpZnQ0OCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9hODQ2ZTdmNjZiNDNhYjAxOWY1MTYyNjZlNjc2NDZjODZjZTM2MDJhYjg0YTQ0MzQ5N2Q4YjE1ZWE1NDZjMjFmIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
-      "signature": "cW4cMEjExhT7vLQfEEq8ZVIOpyHhY63PuDgOusC+wUTngfHxorQJEvu8APZW5waLdg8PGFTpMZKIUPfmIU/pwkT8HWVwE5uWAkvF/RchoAkE4zp96Xbx+gc6K1dCMcEcOi5MoizkBnrgpN0lBjeXnMUrmNFzdRy3I4D0PH0mRbv1I0+CyVgd56TSloSl59yoCpYjXVlbQcU0QK3fYshg3Kb5BzlpDhVOutPEYVnpNsBEbfj62jnSsN+B2l0PqM1B3twLF/6V8BPSxhBOUxiJ1YtcbNWp3jUjYrBk4uqiIr1Q9KcSxzi/R3WSmkzOZXQ5RixwLZUQ6Ftv56FmHBRT4thQmPLuRxxv2hsxbmSdvELEr+BUk5QB90LHhC0HefIWzaLMgae2HGtxo6q6L/rc7c2gKd566qy2M4k3gs+yRN91fEF48wVPSGboD7xU4uFWzguMly8aOhXswQtrcqhdbg34XjpyfYpkZlfm7ESFaSwPun2Xlr2aOxijITr3UQGWZJpwqRiC5h1WgcAbkJaXAkp+3sY6J3gZ2ghwgZ6ZVi/bRMHxvdh0e81J9xLQzCsLA5MBQgZHIro2sUlOqlwrV/30wzV0dkgEyRe30mAZCqZrc5E53vNPMCE2bmDPoNtXYWdIB9yvKjAEqJbuJij4JkfPTnCAF9COeklUJZPVdks="
-    },
-    "name": "Abiphone XIII Pro",
-    "tier": "EPIC",
-    "item_specific": {
-      "max_contacts": 8,
-      "max_musicdiscs": 10,
-      "has_contact_directory": true,
-      "can_play_tictactoe": true
-    },
-    "id": "ABIPHONE_XIII_PRO"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDI0Njk2Mzc1NSwKICAicHJvZmlsZUlkIiA6ICJiNjc3NTgwYzExYmU0ZjNiODI1OGM0YjBkNzNhNzg0ZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJPZmZpY2lhbGx5SksiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWZjY2JjOTM5NmRkYzJhMWIwNzg0Njg0MmMwZDY1NjFkYjEzZDFjYjQ1ZDYyOTljMmZkOTgxYTIzMWYwNTc0NCIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
-      "signature": "Uvhm/8IMlLgq+PbCS8hgaJIG/RaSXh7SSfBDoo+qDaAVcdElSq8QtthQ9hq4uGV0Iys6aT501i0dq32dOYHc+tf7wl0CXCtHPsXMhM0LwREU8i7tztfWfK2WRb49xCnlmCqKDIhV0u/qJhO29eoL/+7zgCQFwMaJtQgS9DqbQCsBkqgyJP0qRMFWqr3M5S+gt4wObtZOsY0KIbRV2P6R8En54urG6C3waCGHgUaJRiA+7NZvFnYdp0z+kiFK2XmJ1SZNb2+KLMjxpE/03XACf2W2NnsLNuPK8v/I5oSgvUQymgLgcBfF0kbVQQ8MN1cNfCZxNrZBBsnR8byotHCkzj2n6D41wYo9xGhz808dZOG8xUk6oQDcbpUqo/lmw7jvpDmIOsAJxlLI46VxwBPaLuETfyG+o21lJAq2z+o2KrZr4JTCb1+IAciNuZq68j9Ilig+WYFAV34dRJILZxZF+9IPKYRczhr/cV82JSDKxfUqJWVF9zLvbZc2bGAbqHvFmD2IvM4auhok9Sv51dKIQrTbANiI/EhXKDtANEPjuf/rs2fAusMHAtPSYDccEsiJFV2D3FmeFHrI/Eu0BL2z6pcgqLk3y53BrwqayfpZoNTdesOQJygcsmpi+sz57DEYJ3H5mQ9YnA2imF/LlHrd00lwEN3pgPOEUNibVg74J+Y="
-    },
-    "name": "Abiphone XII Mega Color",
-    "tier": "EPIC",
-    "item_specific": {
-      "max_contacts": 7,
-      "max_musicdiscs": 4,
-      "has_contact_directory": true,
-      "can_play_tictactoe": true
-    },
-    "id": "ABIPHONE_XII_MEGA_COLOR"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDI0Njk0NDczOCwKICAicHJvZmlsZUlkIiA6ICI4MmM2MDZjNWM2NTI0Yjc5OGI5MWExMmQzYTYxNjk3NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJOb3ROb3RvcmlvdXNOZW1vIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU4YWEwNmU4NmQ4NjcxZWFmOWFkZTViNmViOWUwMjhhZTU4MTAyYjk5M2ZjOTYxM2IxMDU1YjE0YWU5MTIxZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
-      "signature": "wtjNOiK59Sj8jhCSRJ1sAAk7UlBujigwlLThEeC9Q0MTNVQt+BF/yDdEnG6tXnP8yEFHJmUqTl2cAVjd6ZivKwaRauA8Zamuhw2TJs8b94p3JTJgTvGhGUvJ70DrqmhVNmircO5J6fRG4t6oonc6FslArNVHaJxedwpgKCX05FFZ4lSA7lQz9LC1ugd0VGWLUt7untLA+zN9KObDVAO6VE8UJkbYPPS5wvdzeBZBwtpnShz/Pq1qCsBu3fZv+i+r3xGdJTp8aHgu2kPwRIKT45w31eQBFQYY+xm4n0n59wcylqcvZ9pJLYLPAVVvYDGP6aWfDYObPTLdci/NK+t4dBLxMq1kzPY1/NrfTSxgV9drsygj47F4zP4DuORf+2P9Aw7QonRwuXyvhKzbUPVzgUBcSKhC1W2xwQ1s7AOL1Y0/QbLrjV83WahC4je9ycqElKK8Qc2tPR5AfeYPDRa/I1iZJALc1vZRZmpOxsnXwvubeJX1sQDDfn2Mo99m3yMsQn09Cq8QK19oiSDN6PD4rYtKqyPnn7sDsOQEyt0T1x/XNTiOCouCwZ9bmjpHqLruvZmqi3gI9Ev1T60oow4kUuGmu2bHDYzUzjEuS+vtAYDWq/aOS5OQNoFjBGxbn6fLDCTIpi9ggY0eFns+KsDV9ngoJvjWlcJZi8g5X49az3k="
-    },
-    "name": "Abiphone XII Mega",
-    "tier": "RARE",
-    "item_specific": {
-      "max_contacts": 7,
-      "max_musicdiscs": 4,
-      "has_contact_directory": true
-    },
-    "double_tap_to_drop": true,
-    "id": "ABIPHONE_XII_MEGA"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDI0Njg4MDI1OSwKICAicHJvZmlsZUlkIiA6ICIxYWZhZjc2NWI1ZGY0NjA3YmY3ZjY1ZGYzYWIwODhhOCIsCiAgInByb2ZpbGVOYW1lIiA6ICJMb3lfQmxvb2RBbmdlbCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS84YzEwZTlkMzY0M2NlYzYxYTMwMDc3ZDQxODE0MzViNmVjZmU4YTg4NGU0YzM3NjQ5M2JlMTNhZjgyZjNlMmI4IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
-      "signature": "A+K4UeaDaDbTrSg6+C9RFzZ8z1B9uk9K+WxyBu2OaWP/jdS4oPkwuA6kvR9uUUIkG0zONBLqnmhC+SKNXgvZBklflJo/DLFTGxK+oJB1hkMojx2KddKDnpqbx8HbNibyd70pytTxespoFl5pYGA0mfzLJhgFuYn3yrlc5Xl0PxActzXderG1uEYwdtBdYdb8WEH/uw/CcdtWhrSTKgYj+TP6OafMt5ykNPJGew/WIImCu1irzT5Rb+eIhA8y6hJAsyBNlU78DUNv41+erhpjuzownJNbqaHRiCZ9tJ5q42arPiwKk3Jw0v/PB5OvjfgAD7yZCSlddxX7ST7q5EFgDeT8UvNWskF0dOyWZYxobf4j2sNkLk10U8S8wQARZTu4O1LY95XsyucMKOIq2WuyuYhcMuCqxNWZ9jeCuS+PcHBEYEePLld115XMfBS9uw5OA0eiyzb0DjHarI/xhOckl9qOrsnt6STjgRj1YcelfRTF2aBFmRhny/oBh1T2t7T6nhyxKi7onyxn/uY6WvJrbum5MDT+n6pOqOGSEG0cGCXRCJrt+mj6LTg1DiiMOwzRmjJeDizAywL6QwWdonfhAkgaGOJ8qG7UeX79gxPKzxnsesFg1TvAaW4jrPRlJxWSK3pDJ1p9TZbxpr/KkctefaVi48B/S+2aOLffbaiBfeQ="
-    },
-    "name": "Abiphone X Plus Special Edition",
-    "tier": "UNCOMMON",
-    "item_specific": {
-      "max_contacts": 5
-    },
-    "double_tap_to_drop": true,
-    "id": "ABIPHONE_X_PLUS_SPECIAL_EDITION"
-  },
-  {
-    "material": "SKULL_ITEM",
-    "durability": 3,
-    "skin": {
-      "value": "ewogICJ0aW1lc3RhbXAiIDogMTY0NDI0NjkxNzgxMSwKICAicHJvZmlsZUlkIiA6ICJjNTZlMjI0MmNiZWY0MWE2ODdlMzI2MGRjMGNmOTM2MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJMSlI3MzEwMCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS82NWExZjE4NzMxODM4OGVkNWQwMDEzODNlYTQzNDNiNzg3MWI4MzI4NDM4MjE5M2NjNjgwMjc0MTA1ZTFiNyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
-      "signature": "d4XNxfXT0xguf0ZjleqDyrUrlGJXZ0nGRdLM+btkCskHpgMsXcpbBI23iSsR1XJAP+Ea9S3MCSNx0PUXJB5LzaiblK31YyGNMKH88z+fvSeIFJjq+qBO3ZDrqvn+gqgsRIU773Dagv5uF1jAsqP9cOZtuxeO5jv97gjoVaLPM1LyZyhsUGW3dsC2/x2TbJUsfzsxgAZ3gQ3IHfoui6YkTO4AQU+ShESMqaJY6n98A68yiHYNdbmkJBN8VgtMB07wtOByQQjG4ANNfyxbidib8pDaCq85RtO7kOcJZkOiSUdbSKaIINvIfo7ZGzwICrADt/xLEoQ12pjJUOrom1X+007xkyMz6x9t7s52BPWrzQ3EwOQx7kYMlmHxWHVIc6rw6028wpCwnLSHj2nWOFN425B1y3P0v7Zq0xPs8+77Jo/up0w74sFXZNJpU4SuDtmXuhJyPMxO+Q6bdax8gzs2iBczBXM85l52b09GcuV2SSDHOD+5WqsKfr+RtyHiSy5zOBm+cCbm5LzVNEM04lDm81dlYor498VO2R/vvLV2x4viQ/K7E68IOQnA5YoHvLCrSoQSgHGgSL5BQ812dA/U7twBQ4vlB+Ggw3hIFfWH6gmH6T44EeM0mhHfPyXG2H5ayrWEh5yxx25DQ3IPbtDF/2yPRTahv3W1quAHu7w/yw8="
-    },
-    "name": "Abiphone XI Ultra Style",
-    "tier": "RARE",
-    "item_specific": {
-      "max_contacts": 6,
-      "max_musicdiscs": 2,
-      "has_contact_directory": true
-    },
-    "double_tap_to_drop": true,
-    "id": "ABIPHONE_XI_ULTRA_STYLE"
   },
   {
     "material": "LEATHER_CHESTPLATE",
