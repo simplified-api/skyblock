@@ -14,6 +14,20 @@
     "format": "GREEN"
   },
   {
+    "id": "ACCESSORY_BAG",
+    "name": "Accessory Bag",
+    "plural": "",
+    "symbol": "",
+    "format": "GREEN"
+  },
+  {
+    "id": "AUCTION_HOUSE",
+    "name": "Auction House",
+    "plural": "",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
     "id": "AUTOMATON",
     "name": "Automaton",
     "plural": "Automatons",
@@ -26,6 +40,13 @@
     "plural": "Bingos",
     "symbol": "ⓑ",
     "format": "DARK_PURPLE"
+  },
+  {
+    "id": "CARNIVAL_MASK",
+    "name": "Carnival Mask",
+    "plural": "Carnival Masks",
+    "symbol": "",
+    "format": "YELLOW"
   },
   {
     "id": "CATACOMB",
@@ -77,6 +98,13 @@
     "format": "DARK_AQUA"
   },
   {
+    "id": "CRUX_FORTUNE",
+    "name": "Crux Fortune",
+    "plural": "",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
     "id": "DIVER_ARMOR",
     "name": "Diver Armor",
     "plural": "Diver Armor",
@@ -91,11 +119,32 @@
     "format": "GRAY"
   },
   {
+    "id": "DRAGON",
+    "name": "Dragon",
+    "plural": "Dragons",
+    "symbol": "",
+    "format": "DARK_PURPLE"
+  },
+  {
+    "id": "ENDANGERED",
+    "name": "Endangered",
+    "plural": "",
+    "symbol": "",
+    "format": "DARK_PURPLE"
+  },
+  {
     "id": "EGG",
     "name": "Egg",
     "plural": "Eggs",
     "symbol": "",
     "format": "WHITE"
+  },
+  {
+    "id": "ELUSIVE",
+    "name": "Elusive",
+    "plural": "",
+    "symbol": "",
+    "format": "GOLD"
   },
   {
     "id": "EXP",
@@ -117,6 +166,13 @@
     "plural": "Fighting Boosters",
     "symbol": "४",
     "format": "AQUA"
+  },
+  {
+    "id": "FIRE",
+    "name": "Fire",
+    "plural": "",
+    "symbol": "",
+    "format": "RED"
   },
   {
     "id": "FISHING_FESTIVAL",
@@ -214,6 +270,13 @@
     "format": "DARK_GRAY"
   },
   {
+    "id": "HAM_RADIO",
+    "name": "Blazetekk™ Ham Radio",
+    "plural": "",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
     "id": "HEART_OF_THE_MOUNTAIN",
     "name": "Heart of the Mountain",
     "plural": "",
@@ -235,6 +298,20 @@
     "format": "YELLOW"
   },
   {
+    "id": "LARVA_SILK",
+    "name": "Larva Silk",
+    "plural": "",
+    "symbol": "",
+    "format": "WHITE"
+  },
+  {
+    "id": "LAVA",
+    "name": "Lava",
+    "plural": "",
+    "symbol": "",
+    "format": "RED"
+  },
+  {
     "id": "LUCK_BOOSTER",
     "name": "Luck Booster",
     "plural": "Luck Boosters",
@@ -254,6 +331,13 @@
     "plural": "Magma Lord Armor",
     "symbol": "",
     "format": "GREEN"
+  },
+  {
+    "id": "MASTER_MODE",
+    "name": "Master Mode",
+    "plural": "",
+    "symbol": "",
+    "format": "RED"
   },
   {
     "id": "MINING_FIESTA",
@@ -298,6 +382,13 @@
     "format": "DARK_GREEN"
   },
   {
+    "id": "NEW_YEAR_CAKE",
+    "name": "New Year Cake",
+    "plural": "New Year Cakes",
+    "symbol": "",
+    "format": "RED"
+  },
+  {
     "id": "ORE",
     "name": "Ore",
     "plural": "Ores",
@@ -310,6 +401,13 @@
     "plural": "Pelts",
     "symbol": "",
     "format": "DARK_PURPLE"
+  },
+  {
+    "id": "POINTED_STAR",
+    "name": "",
+    "plural": "",
+    "symbol": "✧",
+    "format": "GRAY"
   },
   {
     "id": "PRIMAL_FEAR",
@@ -340,6 +438,13 @@
     "format": ""
   },
   {
+    "id": "RELIC",
+    "name": "Relic",
+    "plural": "Relics",
+    "symbol": "",
+    "format": "AQUA"
+  },
+  {
     "id": "SCAVENGED_ITEM",
     "name": "Scavenged Item",
     "plural": "Scavenged Items",
@@ -352,6 +457,13 @@
     "plural": "Sea Creatures",
     "symbol": "",
     "format": "DARK_AQUA"
+  },
+  {
+    "id": "SHEN",
+    "name": "Shen",
+    "plural": "Shens",
+    "symbol": "",
+    "format": "GOLD"
   },
   {
     "id": "SMOLDERING_POLARIZATION",
@@ -415,6 +527,13 @@
     "plural": "Suspicious Scraps",
     "symbol": "",
     "format": "BLUE"
+  },
+  {
+    "id": "THUNDER_BOTTLE",
+    "name": "Thunder in a Bottle",
+    "plural": "",
+    "symbol": "",
+    "format": "YELLOW"
   },
   {
     "id": "TICKER",
