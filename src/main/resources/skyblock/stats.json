@@ -15,8 +15,9 @@
     "format": "RED",
     "category": "COMBAT",
     "visible": true,
-    "accessoryEnrichment": 3.0,
-    "tuningMultiplier": 1.4,
+    "enrichment": 3.0,
+    "powerMultiplier": 1.4,
+    "tuningMultiplier": 5.0,
     "base": 100
   },
   {
@@ -26,7 +27,8 @@
     "format": "GREEN",
     "category": "COMBAT",
     "visible": true,
-    "accessoryEnrichment": 1.0,
+    "enrichment": 1.0,
+    "powerMultiplier": 1.0,
     "tuningMultiplier": 1.0
   },
   {
@@ -36,7 +38,7 @@
     "format": "WHITE",
     "category": "COMBAT",
     "visible": true,
-    "tuningMultiplier": 0.27
+    "powerMultiplier": 0.27
   },
   {
     "id": "STRENGTH",
@@ -45,7 +47,8 @@
     "format": "RED",
     "category": "COMBAT",
     "visible": true,
-    "accessoryEnrichment": 1.0,
+    "enrichment": 1.0,
+    "powerMultiplier": 1.0,
     "tuningMultiplier": 1.0
   },
   {
@@ -55,8 +58,9 @@
     "format": "BLUE",
     "category": "COMBAT",
     "visible": true,
-    "accessoryEnrichment": 1.0,
-    "tuningMultiplier": 0.4,
+    "enrichment": 1.0,
+    "powerMultiplier": 0.4,
+    "tuningMultiplier": 0.2,
     "base": 30
   },
   {
@@ -66,7 +70,8 @@
     "format": "BLUE",
     "category": "COMBAT",
     "visible": true,
-    "accessoryEnrichment": 1.0,
+    "enrichment": 1.0,
+    "powerMultiplier": 1.0,
     "tuningMultiplier": 1.0,
     "base": 50
   },
@@ -77,7 +82,8 @@
     "format": "YELLOW",
     "category": "COMBAT",
     "visible": true,
-    "accessoryEnrichment": 0.5,
+    "enrichment": 0.5,
+    "powerMultiplier": 0.3,
     "tuningMultiplier": 0.3
   },
   {
@@ -87,7 +93,7 @@
     "format": "RED",
     "category": "COMBAT",
     "visible": true,
-    "accessoryEnrichment": 0.3,
+    "enrichment": 0.3,
     "cap": 500
   },
   {
@@ -106,7 +112,9 @@
     "format": "AQUA",
     "category": "COMBAT",
     "visible": true,
-    "accessoryEnrichment": 2.0
+    "enrichment": 2.0,
+    "powerMultiplier": 1.5,
+    "tuningMultiplier": 2.0
   },
   {
     "id": "MANA_REGEN",
@@ -140,7 +148,7 @@
     "format": "DARK_RED",
     "category": "COMBAT",
     "visible": true,
-    "tuningMultiplier": 0.333,
+    "powerMultiplier": 0.333,
     "base": 100
   },
   {
@@ -150,7 +158,7 @@
     "format": "GREEN",
     "category": "COMBAT",
     "visible": true,
-    "tuningMultiplier": 0.25,
+    "powerMultiplier": 0.25,
     "base": 100
   },
 
@@ -266,7 +274,7 @@
     "format": "DARK_AQUA",
     "category": "FISHING",
     "visible": true,
-    "accessoryEnrichment": 0.3,
+    "enrichment": 0.3,
     "base": 20
   },
   {
@@ -529,8 +537,9 @@
     "format": "WHITE",
     "category": "MISCELLANEOUS",
     "visible": true,
-    "accessoryEnrichment": 1.0,
-    "tuningMultiplier": 0.5,
+    "enrichment": 1.0,
+    "powerMultiplier": 0.5,
+    "tuningMultiplier": 1.5,
     "base": 100,
     "cap": 400
   },
@@ -541,7 +550,7 @@
     "format": "AQUA",
     "category": "MISCELLANEOUS",
     "visible": true,
-    "accessoryEnrichment": 0.5
+    "enrichment": 0.5
   },
   {
     "id": "PET_LUCK",
