@@ -6,50 +6,50 @@
     "format": "GOLD",
     "stat": "MINING_SPEED",
     "values": {
-      "rough": {
-        "common": 4,
-        "uncommon": 8,
-        "rare": 12,
-        "epic": 16,
-        "legendary": 20,
-        "mythic": 24,
-        "divine": 28
+      "ROUGH": {
+        "COMMON": 4,
+        "UNCOMMON": 8,
+        "RARE": 12,
+        "EPIC": 16,
+        "LEGENDARY": 20,
+        "MYTHIC": 24,
+        "DIVINE": 28
       },
-      "flawed": {
-        "common": 6,
-        "uncommon": 10,
-        "rare": 14,
-        "epic": 18,
-        "legendary": 24,
-        "mythic": 30,
-        "divine": 36
+      "FLAWED": {
+        "COMMON": 6,
+        "UNCOMMON": 10,
+        "RARE": 14,
+        "EPIC": 18,
+        "LEGENDARY": 24,
+        "MYTHIC": 30,
+        "DIVINE": 36
       },
-      "fine": {
-        "common": 10,
-        "uncommon": 14,
-        "rare": 20,
-        "epic": 28,
-        "legendary": 36,
-        "mythic": 45,
-        "divine": 54
+      "FINE": {
+        "COMMON": 10,
+        "UNCOMMON": 14,
+        "RARE": 20,
+        "EPIC": 28,
+        "LEGENDARY": 36,
+        "MYTHIC": 45,
+        "DIVINE": 54
       },
-      "flawless": {
-        "common": 14,
-        "uncommon": 20,
-        "rare": 30,
-        "epic": 44,
-        "legendary": 58,
-        "mythic": 75,
-        "divine": 92
+      "FLAWLESS": {
+        "COMMON": 14,
+        "UNCOMMON": 20,
+        "RARE": 30,
+        "EPIC": 44,
+        "LEGENDARY": 58,
+        "MYTHIC": 75,
+        "DIVINE": 92
       },
-      "perfect": {
-        "common": 20,
-        "uncommon": 28,
-        "rare": 40,
-        "epic": 60,
-        "legendary": 80,
-        "mythic": 100,
-        "divine": 120
+      "PERFECT": {
+        "COMMON": 20,
+        "UNCOMMON": 28,
+        "RARE": 40,
+        "EPIC": 60,
+        "LEGENDARY": 80,
+        "MYTHIC": 100,
+        "DIVINE": 120
       }
     }
   },
@@ -60,50 +60,50 @@
     "format": "DARK_PURPLE",
     "stat": "DEFENSE",
     "values": {
-      "rough": {
-        "common": 1,
-        "uncommon": 2,
-        "rare": 3,
-        "epic": 4,
-        "legendary": 5,
-        "mythic": 7,
-        "divine": 0
+      "ROUGH": {
+        "COMMON": 1,
+        "UNCOMMON": 2,
+        "RARE": 3,
+        "EPIC": 4,
+        "LEGENDARY": 5,
+        "MYTHIC": 7,
+        "DIVINE": 0
       },
-      "flawed": {
-        "common": 3,
-        "uncommon": 4,
-        "rare": 5,
-        "epic": 6,
-        "legendary": 8,
-        "mythic": 10,
-        "divine": 0
+      "FLAWED": {
+        "COMMON": 3,
+        "UNCOMMON": 4,
+        "RARE": 5,
+        "EPIC": 6,
+        "LEGENDARY": 8,
+        "MYTHIC": 10,
+        "DIVINE": 0
       },
-      "fine": {
-        "common": 4,
-        "uncommon": 5,
-        "rare": 6,
-        "epic": 8,
-        "legendary": 10,
-        "mythic": 14,
-        "divine": 0
+      "FINE": {
+        "COMMON": 4,
+        "UNCOMMON": 5,
+        "RARE": 6,
+        "EPIC": 8,
+        "LEGENDARY": 10,
+        "MYTHIC": 14,
+        "DIVINE": 0
       },
-      "flawless": {
-        "common": 5,
-        "uncommon": 7,
-        "rare": 10,
-        "epic": 14,
-        "legendary": 18,
-        "mythic": 22,
-        "divine": 0
+      "FLAWLESS": {
+        "COMMON": 5,
+        "UNCOMMON": 7,
+        "RARE": 10,
+        "EPIC": 14,
+        "LEGENDARY": 18,
+        "MYTHIC": 22,
+        "DIVINE": 0
       },
-      "perfect": {
-        "common": 6,
-        "uncommon": 9,
-        "rare": 13,
-        "epic": 18,
-        "legendary": 24,
-        "mythic": 30,
-        "divine": 0
+      "PERFECT": {
+        "COMMON": 6,
+        "UNCOMMON": 9,
+        "RARE": 13,
+        "EPIC": 18,
+        "LEGENDARY": 24,
+        "MYTHIC": 30,
+        "DIVINE": 0
       }
     }
   },
@@ -114,50 +114,50 @@
     "format": "BLUE",
     "stat": "FISHING_SPEED",
     "values": {
-      "rough": {
-        "common": 0.5,
-        "uncommon": 0.5,
-        "rare": 1,
-        "epic": 1,
-        "legendary": 1.5,
-        "mythic": 2,
-        "divine": 0
+      "ROUGH": {
+        "COMMON": 0.5,
+        "UNCOMMON": 0.5,
+        "RARE": 1,
+        "EPIC": 1,
+        "LEGENDARY": 1.5,
+        "MYTHIC": 2,
+        "DIVINE": 0
       },
-      "flawed": {
-        "common": 1,
-        "uncommon": 1,
-        "rare": 1.5,
-        "epic": 1.5,
-        "legendary": 2,
-        "mythic": 2.5,
-        "divine": 0
+      "FLAWED": {
+        "COMMON": 1,
+        "UNCOMMON": 1,
+        "RARE": 1.5,
+        "EPIC": 1.5,
+        "LEGENDARY": 2,
+        "MYTHIC": 2.5,
+        "DIVINE": 0
       },
-      "fine": {
-        "common": 1.5,
-        "uncommon": 1.5,
-        "rare": 2,
-        "epic": 2,
-        "legendary": 2.5,
-        "mythic": 3,
-        "divine": 0
+      "FINE": {
+        "COMMON": 1.5,
+        "UNCOMMON": 1.5,
+        "RARE": 2,
+        "EPIC": 2,
+        "LEGENDARY": 2.5,
+        "MYTHIC": 3,
+        "DIVINE": 0
       },
-      "flawless": {
-        "common": 2,
-        "uncommon": 2,
-        "rare": 2.5,
-        "epic": 3,
-        "legendary": 3.5,
-        "mythic": 4,
-        "divine": 0
+      "FLAWLESS": {
+        "COMMON": 2,
+        "UNCOMMON": 2,
+        "RARE": 2.5,
+        "EPIC": 3,
+        "LEGENDARY": 3.5,
+        "MYTHIC": 4,
+        "DIVINE": 0
       },
-      "perfect": {
-        "common": 2.5,
-        "uncommon": 2.5,
-        "rare": 3.5,
-        "epic": 4,
-        "legendary": 4.5,
-        "mythic": 5,
-        "divine": 0
+      "PERFECT": {
+        "COMMON": 2.5,
+        "UNCOMMON": 2.5,
+        "RARE": 3.5,
+        "EPIC": 4,
+        "LEGENDARY": 4.5,
+        "MYTHIC": 5,
+        "DIVINE": 0
       }
     }
   },
@@ -168,50 +168,50 @@
     "format": "GOLD",
     "stat": "FORAGING_FORTUNE",
     "values": {
-      "rough": {
-        "common": 1,
-        "uncommon": 2,
-        "rare": 3,
-        "epic": 4,
-        "legendary": 5,
-        "mythic": 6,
-        "divine": 0
+      "ROUGH": {
+        "COMMON": 1,
+        "UNCOMMON": 2,
+        "RARE": 3,
+        "EPIC": 4,
+        "LEGENDARY": 5,
+        "MYTHIC": 6,
+        "DIVINE": 0
       },
-      "flawed": {
-        "common": 2,
-        "uncommon": 3,
-        "rare": 4,
-        "epic": 5,
-        "legendary": 6,
-        "mythic": 8,
-        "divine": 0
+      "FLAWED": {
+        "COMMON": 2,
+        "UNCOMMON": 3,
+        "RARE": 4,
+        "EPIC": 5,
+        "LEGENDARY": 6,
+        "MYTHIC": 8,
+        "DIVINE": 0
       },
-      "fine": {
-        "common": 3,
-        "uncommon": 4,
-        "rare": 6,
-        "epic": 8,
-        "legendary": 10,
-        "mythic": 12,
-        "divine": 0
+      "FINE": {
+        "COMMON": 3,
+        "UNCOMMON": 4,
+        "RARE": 6,
+        "EPIC": 8,
+        "LEGENDARY": 10,
+        "MYTHIC": 12,
+        "DIVINE": 0
       },
-      "flawless": {
-        "common": 4,
-        "uncommon": 6,
-        "rare": 8,
-        "epic": 10,
-        "legendary": 12,
-        "mythic": 16,
-        "divine": 0
+      "FLAWLESS": {
+        "COMMON": 4,
+        "UNCOMMON": 6,
+        "RARE": 8,
+        "EPIC": 10,
+        "LEGENDARY": 12,
+        "MYTHIC": 16,
+        "DIVINE": 0
       },
-      "perfect": {
-        "common": 6,
-        "uncommon": 8,
-        "rare": 10,
-        "epic": 12,
-        "legendary": 16,
-        "mythic": 20,
-        "divine": 0
+      "PERFECT": {
+        "COMMON": 6,
+        "UNCOMMON": 8,
+        "RARE": 10,
+        "EPIC": 12,
+        "LEGENDARY": 16,
+        "MYTHIC": 20,
+        "DIVINE": 0
       }
     }
   },
@@ -222,50 +222,50 @@
     "format": "GREEN",
     "stat": "MINING_FORTUNE",
     "values": {
-      "rough": {
-        "common": 2,
-        "uncommon": 4,
-        "rare": 6,
-        "epic": 8,
-        "legendary": 10,
-        "mythic": 12,
-        "divine": 14
+      "ROUGH": {
+        "COMMON": 2,
+        "UNCOMMON": 4,
+        "RARE": 6,
+        "EPIC": 8,
+        "LEGENDARY": 10,
+        "MYTHIC": 12,
+        "DIVINE": 14
       },
-      "flawed": {
-        "common": 3,
-        "uncommon": 5,
-        "rare": 7,
-        "epic": 10,
-        "legendary": 14,
-        "mythic": 18,
-        "divine": 22
+      "FLAWED": {
+        "COMMON": 3,
+        "UNCOMMON": 5,
+        "RARE": 7,
+        "EPIC": 10,
+        "LEGENDARY": 14,
+        "MYTHIC": 18,
+        "DIVINE": 22
       },
-      "fine": {
-        "common": 5,
-        "uncommon": 7,
-        "rare": 10,
-        "epic": 15,
-        "legendary": 20,
-        "mythic": 25,
-        "divine": 30
+      "FINE": {
+        "COMMON": 5,
+        "UNCOMMON": 7,
+        "RARE": 10,
+        "EPIC": 15,
+        "LEGENDARY": 20,
+        "MYTHIC": 25,
+        "DIVINE": 30
       },
-      "flawless": {
-        "common": 7,
-        "uncommon": 10,
-        "rare": 15,
-        "epic": 20,
-        "legendary": 27,
-        "mythic": 35,
-        "divine": 44
+      "FLAWLESS": {
+        "COMMON": 7,
+        "UNCOMMON": 10,
+        "RARE": 15,
+        "EPIC": 20,
+        "LEGENDARY": 27,
+        "MYTHIC": 35,
+        "DIVINE": 44
       },
-      "perfect": {
-        "common": 10,
-        "uncommon": 14,
-        "rare": 20,
-        "epic": 30,
-        "legendary": 40,
-        "mythic": 50,
-        "divine": 60
+      "PERFECT": {
+        "COMMON": 10,
+        "UNCOMMON": 14,
+        "RARE": 20,
+        "EPIC": 30,
+        "LEGENDARY": 40,
+        "MYTHIC": 50,
+        "DIVINE": 60
       }
     }
   },
@@ -276,50 +276,50 @@
     "format": "LIGHT_PURPLE",
     "stat": "STRENGTH",
     "values": {
-      "rough": {
-        "common": 1,
-        "uncommon": 1,
-        "rare": 1,
-        "epic": 2,
-        "legendary": 3,
-        "mythic": 4,
-        "divine": 0
+      "ROUGH": {
+        "COMMON": 1,
+        "UNCOMMON": 1,
+        "RARE": 1,
+        "EPIC": 2,
+        "LEGENDARY": 3,
+        "MYTHIC": 4,
+        "DIVINE": 0
       },
-      "flawed": {
-        "common": 2,
-        "uncommon": 2,
-        "rare": 3,
-        "epic": 4,
-        "legendary": 4,
-        "mythic": 5,
-        "divine": 0
+      "FLAWED": {
+        "COMMON": 2,
+        "UNCOMMON": 2,
+        "RARE": 3,
+        "EPIC": 4,
+        "LEGENDARY": 4,
+        "MYTHIC": 5,
+        "DIVINE": 0
       },
-      "fine": {
-        "common": 3,
-        "uncommon": 3,
-        "rare": 4,
-        "epic": 5,
-        "legendary": 6,
-        "mythic": 7,
-        "divine": 0
+      "FINE": {
+        "COMMON": 3,
+        "UNCOMMON": 3,
+        "RARE": 4,
+        "EPIC": 5,
+        "LEGENDARY": 6,
+        "MYTHIC": 7,
+        "DIVINE": 0
       },
-      "flawless": {
-        "common": 5,
-        "uncommon": 6,
-        "rare": 7,
-        "epic": 8,
-        "legendary": 10,
-        "mythic": 12,
-        "divine": 0
+      "FLAWLESS": {
+        "COMMON": 5,
+        "UNCOMMON": 6,
+        "RARE": 7,
+        "EPIC": 8,
+        "LEGENDARY": 10,
+        "MYTHIC": 12,
+        "DIVINE": 0
       },
-      "perfect": {
-        "common": 6,
-        "uncommon": 7,
-        "rare": 9,
-        "epic": 11,
-        "legendary": 13,
-        "mythic": 16,
-        "divine": 0
+      "PERFECT": {
+        "COMMON": 6,
+        "UNCOMMON": 7,
+        "RARE": 9,
+        "EPIC": 11,
+        "LEGENDARY": 13,
+        "MYTHIC": 16,
+        "DIVINE": 0
       }
     }
   },
@@ -330,50 +330,50 @@
     "format": "DARK_GRAY",
     "stat": "CRIT_DAMAGE",
     "values": {
-      "rough": {
-        "common": 1,
-        "uncommon": 1,
-        "rare": 2,
-        "epic": 2,
-        "legendary": 3,
-        "mythic": 4,
-        "divine": 0
+      "ROUGH": {
+        "COMMON": 1,
+        "UNCOMMON": 1,
+        "RARE": 2,
+        "EPIC": 2,
+        "LEGENDARY": 3,
+        "MYTHIC": 4,
+        "DIVINE": 0
       },
-      "flawed": {
-        "common": 2,
-        "uncommon": 2,
-        "rare": 3,
-        "epic": 3,
-        "legendary": 4,
-        "mythic": 6,
-        "divine": 0
+      "FLAWED": {
+        "COMMON": 2,
+        "UNCOMMON": 2,
+        "RARE": 3,
+        "EPIC": 3,
+        "LEGENDARY": 4,
+        "MYTHIC": 6,
+        "DIVINE": 0
       },
-      "fine": {
-        "common": 3,
-        "uncommon": 3,
-        "rare": 4,
-        "epic": 5,
-        "legendary": 6,
-        "mythic": 8,
-        "divine": 0
+      "FINE": {
+        "COMMON": 3,
+        "UNCOMMON": 3,
+        "RARE": 4,
+        "EPIC": 5,
+        "LEGENDARY": 6,
+        "MYTHIC": 8,
+        "DIVINE": 0
       },
-      "flawless": {
-        "common": 4,
-        "uncommon": 5,
-        "rare": 6,
-        "epic": 7,
-        "legendary": 8,
-        "mythic": 10,
-        "divine": 0
+      "FLAWLESS": {
+        "COMMON": 4,
+        "UNCOMMON": 5,
+        "RARE": 6,
+        "EPIC": 7,
+        "LEGENDARY": 8,
+        "MYTHIC": 10,
+        "DIVINE": 0
       },
-      "perfect": {
-        "common": 5,
-        "uncommon": 6,
-        "rare": 7,
-        "epic": 8,
-        "legendary": 10,
-        "mythic": 12,
-        "divine": 0
+      "PERFECT": {
+        "COMMON": 5,
+        "UNCOMMON": 6,
+        "RARE": 7,
+        "EPIC": 8,
+        "LEGENDARY": 10,
+        "MYTHIC": 12,
+        "DIVINE": 0
       }
     }
   },
@@ -384,50 +384,50 @@
     "format": "WHITE",
     "stat": "TRUE_DEFENSE",
     "values": {
-      "rough": {
-        "common": 1,
-        "uncommon": 1,
-        "rare": 1,
-        "epic": 2,
-        "legendary": 2,
-        "mythic": 3,
-        "divine": 0
+      "ROUGH": {
+        "COMMON": 1,
+        "UNCOMMON": 1,
+        "RARE": 1,
+        "EPIC": 2,
+        "LEGENDARY": 2,
+        "MYTHIC": 3,
+        "DIVINE": 0
       },
-      "flawed": {
-        "common": 2,
-        "uncommon": 2,
-        "rare": 2,
-        "epic": 3,
-        "legendary": 3,
-        "mythic": 4,
-        "divine": 0
+      "FLAWED": {
+        "COMMON": 2,
+        "UNCOMMON": 2,
+        "RARE": 2,
+        "EPIC": 3,
+        "LEGENDARY": 3,
+        "MYTHIC": 4,
+        "DIVINE": 0
       },
-      "fine": {
-        "common": 3,
-        "uncommon": 3,
-        "rare": 3,
-        "epic": 4,
-        "legendary": 4,
-        "mythic": 5,
-        "divine": 0
+      "FINE": {
+        "COMMON": 3,
+        "UNCOMMON": 3,
+        "RARE": 3,
+        "EPIC": 4,
+        "LEGENDARY": 4,
+        "MYTHIC": 5,
+        "DIVINE": 0
       },
-      "flawless": {
-        "common": 4,
-        "uncommon": 4,
-        "rare": 5,
-        "epic": 6,
-        "legendary": 8,
-        "mythic": 9,
-        "divine": 0
+      "FLAWLESS": {
+        "COMMON": 4,
+        "UNCOMMON": 4,
+        "RARE": 5,
+        "EPIC": 6,
+        "LEGENDARY": 8,
+        "MYTHIC": 9,
+        "DIVINE": 0
       },
-      "perfect": {
-        "common": 5,
-        "uncommon": 6,
-        "rare": 7,
-        "epic": 9,
-        "legendary": 11,
-        "mythic": 13,
-        "divine": 0
+      "PERFECT": {
+        "COMMON": 5,
+        "UNCOMMON": 6,
+        "RARE": 7,
+        "EPIC": 9,
+        "LEGENDARY": 11,
+        "MYTHIC": 13,
+        "DIVINE": 0
       }
     }
   },
@@ -438,50 +438,50 @@
     "format": "DARK_GREEN",
     "stat": "FARMING_FORTUNE",
     "values": {
-      "rough": {
-        "common": 0.5,
-        "uncommon": 1,
-        "rare": 1.5,
-        "epic": 2,
-        "legendary": 2.5,
-        "mythic": 3,
-        "divine": 0
+      "ROUGH": {
+        "COMMON": 0.5,
+        "UNCOMMON": 1,
+        "RARE": 1.5,
+        "EPIC": 2,
+        "LEGENDARY": 2.5,
+        "MYTHIC": 3,
+        "DIVINE": 0
       },
-      "flawed": {
-        "common": 1,
-        "uncommon": 1.5,
-        "rare": 2,
-        "epic": 2.5,
-        "legendary": 3,
-        "mythic": 4,
-        "divine": 0
+      "FLAWED": {
+        "COMMON": 1,
+        "UNCOMMON": 1.5,
+        "RARE": 2,
+        "EPIC": 2.5,
+        "LEGENDARY": 3,
+        "MYTHIC": 4,
+        "DIVINE": 0
       },
-      "fine": {
-        "common": 1.5,
-        "uncommon": 2,
-        "rare": 3,
-        "epic": 4,
-        "legendary": 5,
-        "mythic": 6,
-        "divine": 0
+      "FINE": {
+        "COMMON": 1.5,
+        "UNCOMMON": 2,
+        "RARE": 3,
+        "EPIC": 4,
+        "LEGENDARY": 5,
+        "MYTHIC": 6,
+        "DIVINE": 0
       },
-      "flawless": {
-        "common": 2,
-        "uncommon": 3,
-        "rare": 4,
-        "epic": 5,
-        "legendary": 6,
-        "mythic": 8,
-        "divine": 0
+      "FLAWLESS": {
+        "COMMON": 2,
+        "UNCOMMON": 3,
+        "RARE": 4,
+        "EPIC": 5,
+        "LEGENDARY": 6,
+        "MYTHIC": 8,
+        "DIVINE": 0
       },
-      "perfect": {
-        "common": 3,
-        "uncommon": 4,
-        "rare": 5,
-        "epic": 6,
-        "legendary": 8,
-        "mythic": 10,
-        "divine": 0
+      "PERFECT": {
+        "COMMON": 3,
+        "UNCOMMON": 4,
+        "RARE": 5,
+        "EPIC": 6,
+        "LEGENDARY": 8,
+        "MYTHIC": 10,
+        "DIVINE": 0
       }
     }
   },
@@ -492,50 +492,50 @@
     "format": "RED",
     "stat": "HEALTH",
     "values": {
-      "rough": {
-        "common": 1,
-        "uncommon": 2,
-        "rare": 3,
-        "epic": 4,
-        "legendary": 5,
-        "mythic": 7,
-        "divine": 0
+      "ROUGH": {
+        "COMMON": 1,
+        "UNCOMMON": 2,
+        "RARE": 3,
+        "EPIC": 4,
+        "LEGENDARY": 5,
+        "MYTHIC": 7,
+        "DIVINE": 0
       },
-      "flawed": {
-        "common": 3,
-        "uncommon": 4,
-        "rare": 5,
-        "epic": 6,
-        "legendary": 8,
-        "mythic": 10,
-        "divine": 0
+      "FLAWED": {
+        "COMMON": 3,
+        "UNCOMMON": 4,
+        "RARE": 5,
+        "EPIC": 6,
+        "LEGENDARY": 8,
+        "MYTHIC": 10,
+        "DIVINE": 0
       },
-      "fine": {
-        "common": 4,
-        "uncommon": 5,
-        "rare": 6,
-        "epic": 8,
-        "legendary": 10,
-        "mythic": 14,
-        "divine": 0
+      "FINE": {
+        "COMMON": 4,
+        "UNCOMMON": 5,
+        "RARE": 6,
+        "EPIC": 8,
+        "LEGENDARY": 10,
+        "MYTHIC": 14,
+        "DIVINE": 0
       },
-      "flawless": {
-        "common": 5,
-        "uncommon": 7,
-        "rare": 10,
-        "epic": 14,
-        "legendary": 18,
-        "mythic": 22,
-        "divine": 0
+      "FLAWLESS": {
+        "COMMON": 5,
+        "UNCOMMON": 7,
+        "RARE": 10,
+        "EPIC": 14,
+        "LEGENDARY": 18,
+        "MYTHIC": 22,
+        "DIVINE": 0
       },
-      "perfect": {
-        "common": 6,
-        "uncommon": 9,
-        "rare": 13,
-        "epic": 18,
-        "legendary": 24,
-        "mythic": 30,
-        "divine": 0
+      "PERFECT": {
+        "COMMON": 6,
+        "UNCOMMON": 9,
+        "RARE": 13,
+        "EPIC": 18,
+        "LEGENDARY": 24,
+        "MYTHIC": 30,
+        "DIVINE": 0
       }
     }
   },
@@ -546,50 +546,50 @@
     "format": "AQUA",
     "stat": "INTELLIGENCE",
     "values": {
-      "rough": {
-        "common": 2,
-        "uncommon": 3,
-        "rare": 4,
-        "epic": 5,
-        "legendary": 6,
-        "mythic": 7,
-        "divine": 0
+      "ROUGH": {
+        "COMMON": 2,
+        "UNCOMMON": 3,
+        "RARE": 4,
+        "EPIC": 5,
+        "LEGENDARY": 6,
+        "MYTHIC": 7,
+        "DIVINE": 0
       },
-      "flawed": {
-        "common": 5,
-        "uncommon": 5,
-        "rare": 6,
-        "epic": 7,
-        "legendary": 8,
-        "mythic": 10,
-        "divine": 0
+      "FLAWED": {
+        "COMMON": 5,
+        "UNCOMMON": 5,
+        "RARE": 6,
+        "EPIC": 7,
+        "LEGENDARY": 8,
+        "MYTHIC": 10,
+        "DIVINE": 0
       },
-      "fine": {
-        "common": 7,
-        "uncommon": 8,
-        "rare": 9,
-        "epic": 10,
-        "legendary": 11,
-        "mythic": 12,
-        "divine": 0
+      "FINE": {
+        "COMMON": 7,
+        "UNCOMMON": 8,
+        "RARE": 9,
+        "EPIC": 10,
+        "LEGENDARY": 11,
+        "MYTHIC": 12,
+        "DIVINE": 0
       },
-      "flawless": {
-        "common": 10,
-        "uncommon": 11,
-        "rare": 12,
-        "epic": 14,
-        "legendary": 17,
-        "mythic": 20,
-        "divine": 0
+      "FLAWLESS": {
+        "COMMON": 10,
+        "UNCOMMON": 11,
+        "RARE": 12,
+        "EPIC": 14,
+        "LEGENDARY": 17,
+        "MYTHIC": 20,
+        "DIVINE": 0
       },
-      "perfect": {
-        "common": 12,
-        "uncommon": 14,
-        "rare": 17,
-        "epic": 20,
-        "legendary": 24,
-        "mythic": 30,
-        "divine": 0
+      "PERFECT": {
+        "COMMON": 12,
+        "UNCOMMON": 14,
+        "RARE": 17,
+        "EPIC": 20,
+        "LEGENDARY": 24,
+        "MYTHIC": 30,
+        "DIVINE": 0
       }
     }
   },
@@ -600,50 +600,50 @@
     "format": "YELLOW",
     "stat": "PRISTINE",
     "values": {
-      "rough": {
-        "common": 0.4,
-        "uncommon": 0.4,
-        "rare": 0.4,
-        "epic": 0.4,
-        "legendary": 0.4,
-        "mythic": 0.4,
-        "divine": 0.5
+      "ROUGH": {
+        "COMMON": 0.4,
+        "UNCOMMON": 0.4,
+        "RARE": 0.4,
+        "EPIC": 0.4,
+        "LEGENDARY": 0.4,
+        "MYTHIC": 0.4,
+        "DIVINE": 0.5
       },
-      "flawed": {
-        "common": 0.8,
-        "uncommon": 0.8,
-        "rare": 0.8,
-        "epic": 0.8,
-        "legendary": 0.8,
-        "mythic": 0.8,
-        "divine": 0.9
+      "FLAWED": {
+        "COMMON": 0.8,
+        "UNCOMMON": 0.8,
+        "RARE": 0.8,
+        "EPIC": 0.8,
+        "LEGENDARY": 0.8,
+        "MYTHIC": 0.8,
+        "DIVINE": 0.9
       },
-      "fine": {
-        "common": 1.2,
-        "uncommon": 1.2,
-        "rare": 1.2,
-        "epic": 1.2,
-        "legendary": 1.2,
-        "mythic": 1.2,
-        "divine": 1.3
+      "FINE": {
+        "COMMON": 1.2,
+        "UNCOMMON": 1.2,
+        "RARE": 1.2,
+        "EPIC": 1.2,
+        "LEGENDARY": 1.2,
+        "MYTHIC": 1.2,
+        "DIVINE": 1.3
       },
-      "flawless": {
-        "common": 1.6,
-        "uncommon": 1.6,
-        "rare": 1.6,
-        "epic": 1.6,
-        "legendary": 1.6,
-        "mythic": 1.6,
-        "divine": 1.8
+      "FLAWLESS": {
+        "COMMON": 1.6,
+        "UNCOMMON": 1.6,
+        "RARE": 1.6,
+        "EPIC": 1.6,
+        "LEGENDARY": 1.6,
+        "MYTHIC": 1.6,
+        "DIVINE": 1.8
       },
-      "perfect": {
-        "common": 2,
-        "uncommon": 2,
-        "rare": 2,
-        "epic": 2,
-        "legendary": 2,
-        "mythic": 2,
-        "divine": 2.2
+      "PERFECT": {
+        "COMMON": 2,
+        "UNCOMMON": 2,
+        "RARE": 2,
+        "EPIC": 2,
+        "LEGENDARY": 2,
+        "MYTHIC": 2,
+        "DIVINE": 2.2
       }
     }
   }
