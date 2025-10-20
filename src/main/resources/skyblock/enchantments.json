@@ -8456,7 +8456,7 @@
     "mobTypes": []
   },
   {
-    "id": "ULTIMATE_NO_PAIN_NO_GAIN",
+    "id": "ULTIMATE_NOPAINNOGAIN",
     "name": "No Pain No Gain",
     "description": "You have %{VALUE:CHANCE} chance to gain %{VALUE:XP_ORBS} experience orbs every time you take hits from mobs.",
     "type": "ULTIMATE",
