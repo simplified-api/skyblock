@@ -5,7 +5,6 @@
     "description": "Grants %{VALUE:FORAGING_WISDOM} %{STAT:FORAGING_WISDOM} and %{VALUE:FORAGING_FORTUNE} %{STAT:FORAGING_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE"
     ],
@@ -88,8 +87,7 @@
           "10": 20
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ANGLER",
@@ -97,7 +95,6 @@
     "description": "Grants %{VALUE:SEA_CREATURE_CHANCE} %{STAT:SEA_CREATURE_CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 4,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -153,8 +150,7 @@
           "6": 6
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "AQUA_AFFINITY",
@@ -162,7 +158,6 @@
     "description": "Increases your underwater mining rate.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK"
@@ -184,8 +179,7 @@
           "1": 1
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "BANE_OF_ARTHROPODS",
@@ -193,7 +187,6 @@
     "description": "Increases damage dealt to %{MOB_TYPE:ARTHROPOD} mobs by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -259,8 +252,7 @@
           "7": 100
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "BIG_BRAIN",
@@ -268,7 +260,6 @@
     "description": "Grants %{VALUE:INTELLIGENCE} %{STAT:INTELLIGENCE}.",
     "type": "NORMAL",
     "requiredLevel": 21,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK"
@@ -304,8 +295,7 @@
           "3": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "BLAST_PROTECTION",
@@ -313,7 +303,6 @@
     "description": "Grants %{VALUE:EXPLOSION_DEFENSE} %{STAT:DEFENSE} against explosions.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -380,8 +369,7 @@
           "7": 210
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "BLESSING",
@@ -389,7 +377,6 @@
     "description": "Increases the chance for %{KEYWORD:TREASURE} catches to be %{KEYWORD:TREASURE_GREAT} or %{KEYWORD:TREASURE_OUSTANDING} by %{VALUE:CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 9,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -445,8 +432,7 @@
           "6": 12
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "CASTER",
@@ -454,7 +440,6 @@
     "description": "%{VALUE:CHANCE} chance to not consume bait.",
     "type": "NORMAL",
     "requiredLevel": 15,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -510,8 +495,7 @@
           "6": 30
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "CAYENNE",
@@ -519,7 +503,6 @@
     "description": "Grants %{VALUE:HEALTH_SCALAR} %{STAT:HEALTH} and %{VALUE:TRUE_DEFENSE_SCALAR} %{STAT:TRUE_DEFENSE} per digit in your %{KEYWORD:MAGICAL_POWER}",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "NECKLACE",
       "CLOAK",
@@ -560,8 +543,7 @@
           "5": 0.5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "CHAMPION",
@@ -569,7 +551,6 @@
     "description": "Gain %{VALUE:COMBAT_XP} extra Combat XP. The 2nd hit on a mob grants %{VALUE:COINS} & %{VALUE:XP_ORBS} exp orbs.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -671,8 +652,7 @@
           "10": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "CHANCE",
@@ -680,7 +660,6 @@
     "description": "Increases the chance of a Monster dropping an item by %{VALUE:DROP_CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 11,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -731,8 +710,7 @@
           "7": 7
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "CHARM",
@@ -740,7 +718,6 @@
     "description": "Increases the chance to receive higher-tiered Trophy Fish by %{VALUE:CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 25,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -797,8 +774,7 @@
           "6": 12
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "CLEAVE",
@@ -806,7 +782,6 @@
     "description": "Deals up to %{VALUE:MORE_DAMAGE} of your damage dealt to other monsters within %{VALUE:DISTANCE} blocks of the target.",
     "type": "NORMAL",
     "requiredLevel": 4,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -877,8 +852,7 @@
           "6": 6.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "COMPACT",
@@ -886,7 +860,6 @@
     "description": "Gain %{VALUE:MINING_WISDOM} %{STAT:MINING_WISDOM} and a %{VALUE:CHANCE} to drop an enchanted item.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "DRILL",
       "GAUNTLET",
@@ -971,8 +944,7 @@
           "10": 0.57
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "CORRUPTION",
@@ -980,7 +952,6 @@
     "description": "Gain a %{VALUE:CHANCE} to spawn a Corrupted Sea Creature.",
     "type": "NORMAL",
     "requiredLevel": 25,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -1029,8 +1000,7 @@
           "5": 5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "COUNTER_STRIKE",
@@ -1038,7 +1008,6 @@
     "description": "Gain %{VALUE:COUNTER_DEFENSE} %{STAT:DEFENSE} for %{VALUE:DURATION} on the first hit from an enemy.",
     "type": "NORMAL",
     "requiredLevel": 22,
-    "conflict": "",
     "categories": [
       "CHESTPLATE"
     ],
@@ -1083,8 +1052,7 @@
           "5": 7
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "CRITICAL",
@@ -1092,7 +1060,6 @@
     "description": "Increases %{STAT:CRIT_DAMAGE} by %{VALUE:CRIT_DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 9,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -1157,8 +1124,7 @@
           "7": 100
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "CUBISM",
@@ -1166,12 +1132,14 @@
     "description": "Increases damage dealt to %{MOB_TYPE:CUBIC} mobs by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 3,
-    "conflict": "",
     "categories": [
       "BOW",
       "GAUNTLET",
       "LONGSWORD",
       "SWORD"
+    ],
+    "mobTypes": [
+      "CUBIC"
     ],
     "levels": [
       {
@@ -1225,9 +1193,6 @@
           "6": 80
         }
       }
-    ],
-    "mobTypes": [
-      "CUBIC"
     ]
   },
   {
@@ -1236,7 +1201,6 @@
     "description": "Grants %{VALUE:FARMING_WISDOM} %{STAT:FARMING_WISDOM} and %{VALUE:FARMING_FORTUNE} %{STAT:FARMING_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE",
       "HOE"
@@ -1320,8 +1284,7 @@
           "10": 20
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "DEDICATION",
@@ -1329,7 +1292,6 @@
     "description": "Grants %{VALUE:FARMING_FORTUNE_SCALAR} %{STAT:FARMING_FORTUNE} for crops, multiplied by your %{ZONE:GARDEN} ",
     "type": "NORMAL",
     "requiredLevel": 12,
-    "conflict": "",
     "categories": [
       "AXE",
       "HOE"
@@ -1372,8 +1334,7 @@
           "4": 2.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "DELICATE",
@@ -1381,7 +1342,6 @@
     "description": "Avoids breaking stems and baby crops.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE",
       "HOE"
@@ -1394,8 +1354,7 @@
         }
       }
     ],
-    "stats": [],
-    "mobTypes": []
+    "stats": []
   },
   {
     "id": "DEPTH_STRIDER",
@@ -1403,7 +1362,6 @@
     "description": "Reduces how much you are slowed in the water by %{VALUE:WATER_SPEED}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "BOOTS"
     ],
@@ -1438,8 +1396,7 @@
           "3": 100
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "DIVINE_GIFT",
@@ -1447,7 +1404,6 @@
     "description": "Grants %{VALUE:MAGIC_FIND} %{STAT:MAGIC_FIND}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "BOW",
       "GAUNTLET",
@@ -1485,8 +1441,7 @@
           "3": 6
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "DRAGON_TRACER",
@@ -1494,7 +1449,6 @@
     "description": "Arrows home towards dragons if they are within %{VALUE:DISTANCE} blocks.",
     "type": "NORMAL",
     "requiredLevel": 8,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -1543,8 +1497,7 @@
           "5": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "DRAIN",
@@ -1628,8 +1581,7 @@
           "5": 1000
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "EFFICIENCY",
@@ -1637,7 +1589,6 @@
     "description": "Grants %{VALUE:MINING_SPEED} %{STAT:MINING_SPEED}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE",
       "DRILL",
@@ -1726,8 +1677,7 @@
           "10": 210
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ENDER_SLAYER",
@@ -1735,11 +1685,13 @@
     "description": "Increases damage dealt to %{MOB_TYPE:ENDER} mobs by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 11,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
       "SWORD"
+    ],
+    "mobTypes": [
+      "ENDER"
     ],
     "levels": [
       {
@@ -1801,9 +1753,6 @@
           "7": 130
         }
       }
-    ],
-    "mobTypes": [
-      "ENDER"
     ]
   },
   {
@@ -1870,8 +1819,7 @@
           "6": 1.25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "EXPERIENCE",
@@ -1879,7 +1827,6 @@
     "description": "Grants a %{VALUE:CHANCE} chance for mobs and ores to drop double experience.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "DRILL",
       "GAUNTLET",
@@ -1932,8 +1879,7 @@
           "5": 62.5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "EXPERTISE",
@@ -1941,7 +1887,6 @@
     "description": "Grants %{VALUE:SEA_CREATURE_CHANCE} %{STAT:SEA_CREATURE_CHANCE} and %{VALUE:FISHING_WISDOM} %{STAT:FISHING_WISDOM} when killing Sea Creatures.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -2024,8 +1969,7 @@
           "10": 20
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "FEATHER_FALLING",
@@ -2033,7 +1977,6 @@
     "description": "Increases how high you can fall before taking fall damage by %{VALUE:FALL_DISTANCE} and reduces fall damage by %{VALUE:FALL_DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "BOOTS"
     ],
@@ -2134,8 +2077,7 @@
           "10": 50
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "FEROCIOUS_MANA",
@@ -2143,7 +2085,6 @@
     "description": "Gain %{VALUE:MANA_STAT} of mana used near you as %{STAT:FEROCITY} for 10 seconds, capped at 50 %{STAT:FEROCITY}.",
     "type": "NORMAL",
     "requiredLevel": 22,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -2231,8 +2172,7 @@
           "10": 0.5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "FIRE_ASPECT",
@@ -2240,7 +2180,6 @@
     "description": "Ignites your enemies for %{VALUE:DURATION}, dealing %{VALUE:FIRE_DAMAGE} of your damage per second.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -2287,8 +2226,7 @@
           "3": 9
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "FIRE_PROTECTION",
@@ -2296,7 +2234,6 @@
     "description": "Grants %{VALUE:FIRE_DEFENSE} %{STAT:TRUE_DEFENSE} against fire and lava.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -2363,8 +2300,7 @@
           "7": 14
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "FIRST_STRIKE",
@@ -2423,8 +2359,7 @@
           "5": 125
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "FLAME",
@@ -2432,7 +2367,6 @@
     "description": "Arrows ignite your enemies for %{VALUE:DURATION}, dealing %{VALUE:FIRE_DAMAGE} of your damage per second.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -2469,8 +2403,7 @@
           "2": 6
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "FOREST_PLEDGE",
@@ -2478,7 +2411,6 @@
     "description": "Grants %{VALUE:FORAGING_FORTUNE} %{STAT:FORAGING_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 15,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -2517,8 +2449,7 @@
           "5": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "FORTUNE",
@@ -2568,8 +2499,7 @@
           "4": 45
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "FRAIL",
@@ -2577,7 +2507,6 @@
     "description": "Sea Creatures start with %{VALUE:LESS_HEALTH} reduced health.",
     "type": "NORMAL",
     "requiredLevel": 14,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -2641,8 +2570,7 @@
           "7": 17.5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "GIANT_KILLER",
@@ -2730,8 +2658,7 @@
           "7": 65
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "GRAVITY",
@@ -2739,12 +2666,14 @@
     "description": "Increases damage dealt to %{MOB_TYPE:AIRBORNE} mobs by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 8,
-    "conflict": "",
     "categories": [
       "BOW",
       "GAUNTLET",
       "LONGSWORD",
       "SWORD"
+    ],
+    "mobTypes": [
+      "AIRBORNE"
     ],
     "levels": [
       {
@@ -2798,9 +2727,6 @@
           "6": 80
         }
       }
-    ],
-    "mobTypes": [
-      "AIRBORNE"
     ]
   },
   {
@@ -2809,7 +2735,6 @@
     "description": "Grants %{VALUE:FARMING_FORTUNE} %{STAT:FARMING_FORTUNE} pet unique visitor served.",
     "type": "NORMAL",
     "requiredLevel": 24,
-    "conflict": "",
     "categories": [
       "NECKLACE",
       "CLOAK",
@@ -2862,8 +2787,7 @@
           "5": 0.25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "GROWTH",
@@ -2871,7 +2795,6 @@
     "description": "Grants %{VALUE:HEALTH} %{STAT:HEALTH}.",
     "type": "NORMAL",
     "requiredLevel": 5,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -2938,8 +2861,7 @@
           "7": 105
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "HARDENED_MANA",
@@ -2947,7 +2869,6 @@
     "description": "Gain %{VALUE:MANA_STAT} of mana used near you as %{STAT:DEFENSE} for 10 seconds, capped at 400 %{STAT:DEFENSE}.",
     "type": "NORMAL",
     "requiredLevel": 22,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -3035,8 +2956,7 @@
           "10": 1.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "HARVESTING",
@@ -3044,7 +2964,6 @@
     "description": "Grants %{VALUE:FARMING_FORTUNE} %{STAT:FARMING_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 2,
-    "conflict": "",
     "categories": [
       "HOE"
     ],
@@ -3100,8 +3019,7 @@
           "6": 75.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "HECATOMB",
@@ -3109,7 +3027,6 @@
     "description": "Gain %{VALUE:CATACOMBS_XP} %{KEYWORDS:CATACOMB} XP & %{VALUE:CLASS_XP} %{KEYWORD:CLASS} XP, doubled on %{KEYWORD:S_PLUS} runs.\nGrants %{VALUE:HEALTH}%{SYMBOL:HEALTH} per 10 %{KEYWORD:CATACOMBS} levels.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK"
@@ -3210,8 +3127,7 @@
           "10": 8.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ICE_COLD",
@@ -3219,7 +3135,6 @@
     "description": "Grants %{VALUE:COLD_RESISTANCE} %{STAT:COLD_RESISTANCE}.",
     "type": "NORMAL",
     "requiredLevel": 30,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -3272,8 +3187,7 @@
           "5": 5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "INFINITE_QUIVER",
@@ -3281,7 +3195,6 @@
     "description": "Saves arrows %{VALUE:ARROW_SAVE} of the time when you fire your bow. Disabled while sneaking.",
     "type": "NORMAL",
     "requiredLevel": 2,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -3365,8 +3278,7 @@
           "10": 30
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "IMPALING",
@@ -3374,13 +3286,15 @@
     "description": "Increases damage dealt to %{MOB_TYPE:AQUATIC} mobs by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 12,
-    "conflict": "",
     "categories": [
       "BOW",
       "FISHING_ROD",
       "GAUNTLET",
       "LONGSWORD",
       "SWORD"
+    ],
+    "mobTypes": [
+      "AQUATIC"
     ],
     "levels": [
       {
@@ -3427,9 +3341,6 @@
           "5": 50
         }
       }
-    ],
-    "mobTypes": [
-      "AQUATIC"
     ]
   },
   {
@@ -3438,7 +3349,6 @@
     "description": "Increases knockback by %{VALUE:DISTANCE} blocks.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -3468,8 +3378,7 @@
           "2": 6
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "LAPIDARY",
@@ -3477,7 +3386,6 @@
     "description": "Grants %{VALUE:GEMSTONE_FORTUNE} %{STAT:GEMSTONE_FORTUNE} and %{VALUE:GEMSTONE_MINING_SPEED} %{STAT:MINING_SPEED} while mining Gemstones.",
     "type": "NORMAL",
     "requiredLevel": 22,
-    "conflict": "",
     "categories": [
       "DRILL",
       "GAUNTLET",
@@ -3540,8 +3448,7 @@
           "5": 100
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "LETHALITY",
@@ -3549,7 +3456,6 @@
     "description": "Reduces the %{STAT:DEFENSE} of your target by %{VALUE:REDUCED} for %{VALUE:DURATION} each time you hit them with melee. Stacks up to %{VALUE:MAX_STACKS} times.",
     "type": "NORMAL",
     "requiredLevel": 14,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -3633,8 +3539,7 @@
           "6": 4
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "LIFE_STEAL",
@@ -3693,8 +3598,7 @@
           "5": 2.5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "LOOTING",
@@ -3702,7 +3606,6 @@
     "description": "Increases the chance of a Monster dropping an item by %{VALUE:DROP_CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "FISHING_ROD",
       "GAUNTLET",
@@ -3754,8 +3657,7 @@
           "5": 75
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "LUCK",
@@ -3763,7 +3665,6 @@
     "description": "Increases the chance for Monsters to drop their armor by %{VALUE:CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 3,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -3828,8 +3729,7 @@
           "7": 35
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "LUCK_OF_THE_SEA",
@@ -3837,7 +3737,6 @@
     "description": "Grants %{VALUE:TREASURE_CHANCE} %{STAT:TREASURE_CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -3901,8 +3800,7 @@
           "7": 3.5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "LURE",
@@ -3910,7 +3808,6 @@
     "description": "Shortens the maximum time it takes to catch something by %{VALUE:TIME_REDUCTION}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -3966,8 +3863,7 @@
           "6": 30
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "MANA_STEAL",
@@ -4012,8 +3908,7 @@
           "3": 0.75
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "MANA_VAMPIRE",
@@ -4021,7 +3916,6 @@
     "description": "Heal for %{VALUE:MANA_STAT} of mana used near you.",
     "type": "NORMAL",
     "requiredLevel": 22,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -4109,8 +4003,7 @@
           "10": 5.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "MAGNET",
@@ -4118,7 +4011,6 @@
     "description": "Grants %{VALUE:MORE_EXP} additional experience orbs every time you successfully catch a fish.",
     "type": "NORMAL",
     "requiredLevel": 13,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -4174,8 +4066,7 @@
           "6": 6
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "OVERLOAD",
@@ -4183,7 +4074,6 @@
     "description": "Increases %{STAT:CRIT_DAMAGE} by %{VALUE:CRIT_DAMAGE} and %{STAT:CRIT_CHANCE} by %{VALUE:CRIT_CHANCE}. Having a Critical chance above %{VALUE:ABOVE_100} grants a chance to perform a Mega Critical Hit dealing %{VALUE:MEGA_CRIT_DAMAGE} extra damage.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -4268,8 +4158,7 @@
           "5": 50
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PALEONTOLOGIST",
@@ -4277,7 +4166,6 @@
     "description": "Increases chances of finding a %{KEYWORD:SUSPICIOUS_SCRAP} when mining in %{ZONE:GLACITE_MINESHAFT} by %{VALUE:CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 27,
-    "conflict": "",
     "categories": [
       "DRILL",
       "GAUNTLET",
@@ -4328,8 +4216,7 @@
           "5": 12.5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PESTERMINATOR",
@@ -4337,7 +4224,6 @@
     "description": "Grants %{VALUE:FARMING_FORTUNE} %{STAT:FARMING_FORTUNE} and %{VALUE:BONUS_PEST_CHANCE} %{STAT:BONUS_PEST_CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 10,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -4411,8 +4297,7 @@
           "6": 6
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PIERCING",
@@ -4420,7 +4305,6 @@
     "description": "Arrows travel through enemies. The extra targets take %{VALUE:PIERCING_DAMAGE} of the damage.",
     "type": "NORMAL",
     "requiredLevel": 17,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -4441,8 +4325,7 @@
           "1": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PISCARY",
@@ -4450,7 +4333,6 @@
     "description": "Grants %{VALUE:FISHING_SPEED} %{STAT:FISHING_SPEED}.",
     "type": "NORMAL",
     "requiredLevel": 8,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -4514,8 +4396,7 @@
           "7": 7
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "POWER",
@@ -4523,7 +4404,6 @@
     "description": "Increases bow damage by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -4586,8 +4466,7 @@
           "7": 65
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PRISMATIC",
@@ -4595,7 +4474,6 @@
     "description": "Grants %{VALUE:PRISTINE} %{STAT:PRISTINE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "DRILL",
       "GAUNTLET",
@@ -4646,8 +4524,7 @@
           "5": 2.5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PROJECTILE_PROTECTION",
@@ -4655,7 +4532,6 @@
     "description": "Grants %{VALUE:PROJECTILE_DEFENSE} %{STAT:DEFENSE} against projectiles.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -4722,8 +4598,7 @@
           "7": 49
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PROSECUTE",
@@ -4789,8 +4664,7 @@
           "6": 1.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PROSPERITY",
@@ -4798,7 +4672,6 @@
     "description": "Grants %{VALUE:HEALTH} %{STAT:HEALTH}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "NECKLACE",
       "CLOAK",
@@ -4851,8 +4724,7 @@
           "5": 15
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PROTECTION",
@@ -4860,7 +4732,6 @@
     "description": "Grants %{VALUE:DEFENSE} %{STAT:DEFENSE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -4927,8 +4798,7 @@
           "7": 30
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "PUNCH",
@@ -4936,7 +4806,6 @@
     "description": "Increases arrow knockback by %{VALUE:KNOCKBACK} blocks.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -4964,8 +4833,7 @@
           "2": 6
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "QUANTUM",
@@ -4973,7 +4841,6 @@
     "description": "Grants %{VALUE:WEEKDAY_VITALITY} %{STAT:VITALITY} on weekdays and %{VALUE:WEEKEND_WISDOM}%{SYMBOL:COMBAT_WISDOM} of a random %{KEYWORD:WISDOM} stat on weekends.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "NECKLACE"
     ],
@@ -5018,8 +4885,7 @@
           "5": 2.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "QUICK_BITE",
@@ -5027,7 +4893,6 @@
     "description": "Makes fish swim %{VALUE:SWIM_SPEED} faster towards your bobber.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -5076,8 +4941,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "REFLECTION",
@@ -5085,7 +4949,6 @@
     "description": "Grants %{VALUE:INTELLIGENCE} %{STAT:INTELLIGENCE}.\nGrants %{VALUE:TRUE_DEFENSE} %{STAT:TRUE_DEFENSE}.\nWhen damage by an arrow, deal %{VALUE:INTEL_MULTIPLIER} your %{STAT:INTELLIGENCE} to its shooter.",
     "type": "NORMAL",
     "requiredLevel": 24,
-    "conflict": "",
     "categories": [
       "CHESTPLATE"
     ],
@@ -5158,8 +5021,7 @@
           "5": 30
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "REJUVENATE",
@@ -5167,7 +5029,6 @@
     "description": "Grants %{VALUE:HEALTH_REGEN} %{STAT:HEALTH_REGEN}.",
     "type": "NORMAL",
     "requiredLevel": 10,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -5220,8 +5081,7 @@
           "5": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "REPLENISH",
@@ -5229,7 +5089,6 @@
     "description": "Upon breaking crops, nether wart, or cocoa, automatically replant from materials in your inventory.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE",
       "HOE"
@@ -5242,8 +5101,7 @@
         }
       }
     ],
-    "stats": [],
-    "mobTypes": []
+    "stats": []
   },
   {
     "id": "RESPIRATION",
@@ -5251,7 +5109,6 @@
     "description": "Grants %{VALUE:RESPIRATION} %{STAT:RESPIRATION}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK"
@@ -5294,8 +5151,7 @@
           "4": 60
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "RESPITE",
@@ -5303,7 +5159,6 @@
     "description": "Grants %{VALUE:HEALTH_REGEN} %{STAT:HEALTH_REGEN} while out of combat.",
     "type": "NORMAL",
     "requiredLevel": 23,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -5356,8 +5211,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SCAVENGER",
@@ -5365,7 +5219,6 @@
     "description": "Scavenge %{VALUE:COINS} per monster level on kill.",
     "type": "NORMAL",
     "requiredLevel": 1,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -5424,8 +5277,7 @@
           "6": 1.8
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SCUBA",
@@ -5433,7 +5285,6 @@
     "description": "Grants %{VALUE:PRESSURE_RESISTANCE} %{STAT:PRESSURE_RESISTANCE}.",
     "type": "NORMAL",
     "requiredLevel": 5,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -5486,8 +5337,7 @@
           "5": 5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SHARPNESS",
@@ -5495,7 +5345,6 @@
     "description": "Increases melee damage dealt by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -5560,8 +5409,7 @@
           "7": 65
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SILK_TOUCH",
@@ -5586,8 +5434,7 @@
         }
       }
     ],
-    "stats": [],
-    "mobTypes": []
+    "stats": []
   },
   {
     "id": "SMALL_BRAIN",
@@ -5595,7 +5442,6 @@
     "description": "Grants %{VALUE:INTELLIGENCE} %{STAT:INTELLIGENCE} and %{VALUE:TRUE_DEFENSE} %{STAT:TRUE_DEFENSE}.",
     "type": "NORMAL",
     "requiredLevel": 21,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -5644,8 +5490,7 @@
           "5": 3
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SMARTY_PANTS",
@@ -5653,7 +5498,6 @@
     "description": "Grants %{VALUE:INTELLIGENCE} %{STAT:INTELLIGENCE}.",
     "type": "NORMAL",
     "requiredLevel": 21,
-    "conflict": "",
     "categories": [
       "LEGGINGS"
     ],
@@ -5702,8 +5546,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SMELTING_TOUCH",
@@ -5711,7 +5554,6 @@
     "description": "Automatically smelts broken blocks into their smelted form.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE",
       "DRILL",
@@ -5728,8 +5570,7 @@
         }
       }
     ],
-    "stats": [],
-    "mobTypes": []
+    "stats": []
   },
   {
     "id": "SMITE",
@@ -5737,11 +5578,15 @@
     "description": "Increases damage dealt to %{MOB_TYPE:WITHER}, %{MOB_TYPE:SKELETAL} and %{MOB_TYPE:UNDEAD} mobs by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
       "SWORD"
+    ],
+    "mobTypes": [
+      "SKELETAL",
+      "UNDEAD",
+      "WITHER"
     ],
     "levels": [
       {
@@ -5803,11 +5648,6 @@
           "7": 100
         }
       }
-    ],
-    "mobTypes": [
-      "SKELETAL",
-      "UNDEAD",
-      "WITHER"
     ]
   },
   {
@@ -5816,7 +5656,6 @@
     "description": "Increases damage dealt to %{MOB_TYPE:INFERNAL} mobs by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 23,
-    "conflict": "",
     "categories": [
       "BOW",
       "GAUNTLET",
@@ -5868,8 +5707,7 @@
           "5": 15
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SNIPE",
@@ -5877,7 +5715,6 @@
     "description": "Arrows deal %{VALUE:DISTANCE_DAMAGE} damage for every %{VALUE:DISTANCE} blocks traveled.",
     "type": "NORMAL",
     "requiredLevel": 6,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -5930,8 +5767,7 @@
           "4": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SPIKED_HOOK",
@@ -5939,7 +5775,6 @@
     "description": "Fishing rod deals %{VALUE:MORE_DAMAGE} more damage to monsters.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "FISHING_ROD"
     ],
@@ -6003,8 +5838,7 @@
           "7": 35
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "STEALTH",
@@ -6012,7 +5846,6 @@
     "description": "Causes timid creatures that normally flee to remain still.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "BOOTS"
     ],
@@ -6031,8 +5864,7 @@
           "1": 1
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "STRONG_MANA",
@@ -6040,7 +5872,6 @@
     "description": "Gain %{VALUE:MANA_STAT} of mana used near you as %{STAT:STRENGTH} for 10 seconds, capped at 100 %{STAT:STRENGTH}.",
     "type": "NORMAL",
     "requiredLevel": 22,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -6128,8 +5959,7 @@
           "10": 1.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SUGAR_RUSH",
@@ -6137,7 +5967,6 @@
     "description": "Grants %{VALUE:WALK_SPEED} %{STAT:WALK_SPEED}.",
     "type": "NORMAL",
     "requiredLevel": 7,
-    "conflict": "",
     "categories": [
       "BOOTS"
     ],
@@ -6172,8 +6001,7 @@
           "3": 6
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "SUNDER",
@@ -6181,7 +6009,6 @@
     "description": "Grants %{VALUE:FARMING_FORTUNE} %{STAT:FARMING_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 2,
-    "conflict": "",
     "categories": [
       "AXE"
     ],
@@ -6237,8 +6064,7 @@
           "6": 75.0
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TABASCO",
@@ -6246,7 +6072,6 @@
     "description": "Grants %{VALUE:WEAPON_DAMAGE} weapon damage if you don't have a %{FORMAT:DARK_PURPLE}Dragon %{FORMAT:GRAY}pet equipped.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE",
       "BOW",
@@ -6279,8 +6104,7 @@
           "3": 3
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "THORNS",
@@ -6288,7 +6112,6 @@
     "description": "Grants a %{VALUE:CHANCE} to rebound %{VALUE:REFLECT_DAMAGE} of damage dealt back at the attacker.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK",
@@ -6337,8 +6160,7 @@
           "3": 9
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "THUNDERBOLT",
@@ -6425,8 +6247,7 @@
           "7": 30
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "THUNDERLORD",
@@ -6513,8 +6334,7 @@
           "7": 60
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TIDAL",
@@ -6522,7 +6342,6 @@
     "description": "Increases your %{STAT:DEFENSE} by %{VALUE:SCC_DEFENSE} against Sea Creatures.",
     "type": "NORMAL",
     "requiredLevel": 13,
-    "conflict": "",
     "categories": [
       "LEGGINGS"
     ],
@@ -6557,8 +6376,7 @@
           "3": 15
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TITAN_KILLER",
@@ -6645,8 +6463,7 @@
           "7": 80
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TOXOPHILITE",
@@ -6654,7 +6471,6 @@
     "description": "Gain %{VALUE:COMBAT_XP} extra Combat XP. Grants %{VALUE:CRIT_CHANCE} %{STAT:CRIT_CHANCE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "BOW"
     ],
@@ -6737,8 +6553,7 @@
           "10": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TRANSYLVANIAN",
@@ -6746,7 +6561,6 @@
     "description": "Heal %{VALUE:HEAL_SCALE}%{SYMBOL:HEALTH}/s per enemy within %{VALUE:DISTANCE} blocks, up to %{VALUE:HEAL_MAX}%{SYMBOL:HEALTH}/s.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HELMET",
       "CARNIVAL_MASK"
@@ -6793,8 +6607,7 @@
           "5": 30
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TRUE_PROTECTION",
@@ -6802,7 +6615,6 @@
     "description": "Grants %{VALUE:TRUE_DEFENSE} %{STAT:TRUE_DEFENSE}.",
     "type": "NORMAL",
     "requiredLevel": 15,
-    "conflict": "",
     "categories": [
       "CHESTPLATE"
     ],
@@ -6823,8 +6635,7 @@
           "1": 5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TRIPLE_STRIKE",
@@ -6883,8 +6694,7 @@
           "5": 50
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_CACTUS",
@@ -6892,7 +6702,6 @@
     "description": "Grants %{VALUE:CACTUS_FORTUNE} %{STAT:CACTUS_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE",
       "HOE"
@@ -6942,8 +6751,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_CANE",
@@ -6951,7 +6759,6 @@
     "description": "Grants %{VALUE:SUGAR_CANE_FORTUNE} %{STAT:SUGAR_CANE_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HOE"
     ],
@@ -7000,8 +6807,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_CARROT",
@@ -7009,7 +6815,6 @@
     "description": "Grants %{VALUE:CARROT_FORTUNE} %{STAT:CARROT_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HOE"
     ],
@@ -7058,8 +6863,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_COCOA",
@@ -7067,7 +6871,6 @@
     "description": "Grants %{VALUE:COCOA_BEANS_FORTUNE} %{STAT:COCOA_BEANS_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE"
     ],
@@ -7116,8 +6919,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_MELON",
@@ -7125,7 +6927,6 @@
     "description": "Grants %{VALUE:MELON_SLICE_FORTUNE} %{STAT:MELON_SLICE_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE"
     ],
@@ -7174,8 +6975,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_MUSHROOMS",
@@ -7183,7 +6983,6 @@
     "description": "Grants %{VALUE:MUSHROOM_FORTUNE} %{STAT:MUSHROOM_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HOE"
     ],
@@ -7232,8 +7031,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_POTATO",
@@ -7241,7 +7039,6 @@
     "description": "Grants %{VALUE:POTATO_FORTUNE} %{STAT:POTATO_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HOE"
     ],
@@ -7290,8 +7087,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_PUMPKIN",
@@ -7299,7 +7095,6 @@
     "description": "Grants %{VALUE:PUMPKIN_FORTUNE} %{STAT:PUMPKIN_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "AXE"
     ],
@@ -7348,8 +7143,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_WARTS",
@@ -7357,7 +7151,6 @@
     "description": "Grants %{VALUE:NETHER_WART_FORTUNE} %{STAT:NETHER_WART_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HOE"
     ],
@@ -7406,8 +7199,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "TURBO_WHEAT",
@@ -7415,7 +7207,6 @@
     "description": "Grants %{VALUE:WHEAT_FORTUNE} %{STAT:WHEAT_FORTUNE}.",
     "type": "NORMAL",
     "requiredLevel": 0,
-    "conflict": "",
     "categories": [
       "HOE"
     ],
@@ -7464,8 +7255,7 @@
           "5": 25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_BANK",
@@ -7538,8 +7328,7 @@
           "5": 2.5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_BOBBIN_TIME",
@@ -7606,8 +7395,7 @@
           "5": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_CHIMERA",
@@ -7666,8 +7454,7 @@
           "5": 100
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_COMBO",
@@ -7750,8 +7537,7 @@
           "5": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_FATAL_TEMPO",
@@ -7825,8 +7611,7 @@
           "5": 200
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_FIRST_IMPRESSION",
@@ -7895,8 +7680,7 @@
           "5": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_FLASH",
@@ -7953,8 +7737,7 @@
           "5": 5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_FLOWSTATE",
@@ -8019,8 +7802,7 @@
           "3": 200
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_HABANERO_TACTICS",
@@ -8087,8 +7869,7 @@
           "5": 15
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_INFERNO",
@@ -8174,8 +7955,7 @@
           "5": 2.25
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_JERRY",
@@ -8234,8 +8014,7 @@
           "5": 5000
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_LAST_STAND",
@@ -8308,8 +8087,7 @@
           "5": 40
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_LEGION",
@@ -8394,8 +8172,7 @@
           "5": 20
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_MISSILE",
@@ -8452,8 +8229,7 @@
           "5": 50
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_NOPAINNOGAIN",
@@ -8526,8 +8302,7 @@
           "5": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_ONE_FOR_ALL",
@@ -8557,8 +8332,7 @@
           "1": 500
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_REFRIGERATE",
@@ -8643,8 +8417,7 @@
           "5": 1000
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_REITERATE",
@@ -8725,8 +8498,7 @@
           "5": 60
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_REND",
@@ -8807,8 +8579,7 @@
           "5": 2
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_SOUL_EATER",
@@ -8867,8 +8638,7 @@
           "5": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_SWARM",
@@ -8951,8 +8721,7 @@
           "5": 10
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_THE_ONE",
@@ -8997,8 +8766,7 @@
           "5": 0.2
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_WISE",
@@ -9068,8 +8836,7 @@
           "5": 50
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "ULTIMATE_WISDOM",
@@ -9154,8 +8921,7 @@
           "5": 100
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "VAMPIRISM",
@@ -9163,7 +8929,6 @@
     "description": "Heals for %{VALUE:HEAL} of your missing health whenever you kill an enemy.",
     "type": "NORMAL",
     "requiredLevel": 15,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -9221,8 +8986,7 @@
           "6": 6
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "VENOMOUS",
@@ -9230,7 +8994,6 @@
     "description": "Reduces the target's walk speed by %{VALUE:REDUCED} and deals %{VALUE:DPS} of your damage per second per hit, stacking globally up to %{VALUE:MAX_HITS}. Lasts %{VALUE:DURATION}.",
     "type": "NORMAL",
     "requiredLevel": 17,
-    "conflict": "",
     "categories": [
       "GAUNTLET",
       "LONGSWORD",
@@ -9327,8 +9090,7 @@
           "6": 5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "VICIOUS",
@@ -9336,7 +9098,6 @@
     "description": "Grants %{VALUE:FEROCITY} %{STAT:FEROCITY}.",
     "type": "NORMAL",
     "requiredLevel": 26,
-    "conflict": "",
     "categories": [
       "BOW",
       "GAUNTLET",
@@ -9374,8 +9135,7 @@
           "5": 5
         }
       }
-    ],
-    "mobTypes": []
+    ]
   },
   {
     "id": "WOODSPLITTER",
@@ -9383,9 +9143,11 @@
     "description": "Increases damage dealt to %{MOB_TYPE:WOODLAND} mobs by %{VALUE:DAMAGE}.",
     "type": "NORMAL",
     "requiredLevel": 5,
-    "conflict": "",
     "categories": [
       "AXE"
+    ],
+    "mobTypes": [
+      "WOODLAND"
     ],
     "levels": [
       {
@@ -9439,9 +9201,6 @@
           "6": 80
         }
       }
-    ],
-    "mobTypes": [
-      "WOODLAND"
     ]
   }
 ]
