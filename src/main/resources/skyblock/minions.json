@@ -132,9 +132,9 @@
         "item": "BLAZE_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_BLAZE_ROD": 16
@@ -1088,9 +1088,9 @@
         "item": "REVENANT_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "REVENANT_VISCERA": 64
@@ -1629,9 +1629,9 @@
         "item": "TARANTULA_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "TARANTULA_SILK": 64
@@ -2171,9 +2171,9 @@
         "item": "CACTUS_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_CACTUS": 32
@@ -2315,9 +2315,9 @@
         "item": "CARROT_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_GOLDEN_CARROT": 32
@@ -2459,9 +2459,9 @@
         "item": "CHICKEN_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_RAW_CHICKEN": 1024
@@ -2603,9 +2603,9 @@
         "item": "COCOA_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_COOKIE": 16
@@ -2747,9 +2747,9 @@
         "item": "COW_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_LEATHER": 1024
@@ -3028,9 +3028,9 @@
         "item": "MELON_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_MELON_BLOCK": 32
@@ -3172,9 +3172,9 @@
         "item": "MUSHROOM_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_RED_MUSHROOM": 512
@@ -3316,9 +3316,9 @@
         "item": "NETHER_WARTS_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_NETHER_STALK": 1024
@@ -3460,9 +3460,9 @@
         "item": "PIG_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_GRILLED_PORK": 16
@@ -3604,9 +3604,9 @@
         "item": "POTATO_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_BAKED_POTATO": 32
@@ -3748,9 +3748,9 @@
         "item": "PUMPKIN_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_PUMPKIN": 1024
@@ -3892,9 +3892,9 @@
         "item": "RABBIT_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_COOKED_RABBIT": 16
@@ -4036,9 +4036,9 @@
         "item": "SHEEP_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_COOKED_MUTTON": 16
@@ -4180,9 +4180,9 @@
         "item": "SUGAR_CANE_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_COOKED_SUGAR_CANE": 32
@@ -4324,9 +4324,9 @@
         "item": "WHEAT_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 0.0,
-            "pelts": 75,
-            "northStars": 0
+            "COINS": 0.0,
+            "PELTS": 75,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_WHEAT": 1024
@@ -4469,9 +4469,9 @@
         "item": "CLAY_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "FISHY_TREAT": 256,
@@ -4614,9 +4614,9 @@
         "item": "FISHING_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "FISHY_TREAT": 256,
@@ -4760,9 +4760,9 @@
         "item": "COAL_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_COAL_BLOCK": 16
@@ -4904,9 +4904,9 @@
         "item": "COBBLESTONE_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_COBBLESTONE": 1024
@@ -5048,9 +5048,9 @@
         "item": "DIAMOND_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_DIAMOND_BLOCK": 16
@@ -5192,9 +5192,9 @@
         "item": "EMERALD_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_EMERALD_BLOCK": 16
@@ -5594,9 +5594,9 @@
         "item": "GOLD_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_GOLD_BLOCK": 16
@@ -5867,9 +5867,9 @@
         "item": "HARD_STONE_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "CONCENTRATED_STONE": 32
@@ -6011,9 +6011,9 @@
         "item": "ICE_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 1000000,
-            "pelts": 0,
-            "northStars": 300
+            "COINS": 1000000,
+            "PELTS": 0,
+            "NORTH_STARS": 300
           },
           "items": {
             "ENCHANTED_ICE": 1024
@@ -6155,9 +6155,9 @@
         "item": "IRON_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_IRON_BLOCK": 16
@@ -6299,9 +6299,9 @@
         "item": "LAPIS_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_LAPIS_LAZULI_BLOCK": 64
@@ -6443,9 +6443,9 @@
         "item": "MITHRIL_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "REFINED_MITHRIL": 16
@@ -6727,9 +6727,9 @@
         "item": "OBSIDIAN_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_OBSIDIAN": 1024
@@ -7000,9 +7000,9 @@
         "item": "REDSTONE_GENERATOR_11",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 0
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 0
           },
           "items": {
             "ENCHANTED_REDSTONE_BLOCK": 32
@@ -7410,9 +7410,9 @@
         "item": "SNOW_GENERATOR_12",
         "upgradeCost": {
           "currencies": {
-            "coins": 2000000,
-            "pelts": 0,
-            "northStars": 500
+            "COINS": 2000000,
+            "PELTS": 0,
+            "NORTH_STARS": 500
           },
           "items": {
             "ENCHANTED_SNOW_BLOCK": 1024
