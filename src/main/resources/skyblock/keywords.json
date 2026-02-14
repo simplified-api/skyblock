@@ -105,6 +105,13 @@
     "format": "GOLD"
   },
   {
+    "id": "DIAMOND_GOBLIN",
+    "name": "Diamond Goblin",
+    "plural": "",
+    "symbol": "",
+    "format": "AQUA"
+  },
+  {
     "id": "DIVER_ARMOR",
     "name": "Diver Armor",
     "plural": "Diver Armor",
@@ -257,6 +264,13 @@
     "format": ""
   },
   {
+    "id": "GOLDEN_GOBLIN",
+    "name": "Golden Goblin",
+    "plural": "",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
     "id": "GREAT_SPOOK_ARMOR",
     "name": "Great Spook Armor",
     "plural": "Great Spook Armor",
@@ -296,6 +310,27 @@
     "plural": "Jacob's Farming Contests",
     "symbol": "",
     "format": "YELLOW"
+  },
+  {
+    "id": "KUUDRA_BOSS_FIGHT",
+    "name": "Kuudra Boss Fight",
+    "plural": "",
+    "symbol": "",
+    "format": "RED"
+  },
+  {
+    "id": "KUUDRA_TOKEN",
+    "name": "Token",
+    "plural": "Tokens",
+    "symbol": "",
+    "format": "DARK_PURPLE"
+  },
+  {
+    "id": "KUUDRAS_MINION",
+    "name": "Kuudra's Minion",
+    "plural": "Kuudra's Minions",
+    "symbol": "",
+    "format": "RED"
   },
   {
     "id": "LARVA_SILK",
@@ -576,6 +611,41 @@
     "plural": "",
     "symbol": "",
     "format": "LIGHT_PURPLE"
+  },
+  {
+    "id": "TROPHY_FISH",
+    "name": "Trophy Fish",
+    "plural": "",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
+    "id": "TROPHY_FISH_BRONZE",
+    "name": "Bronze Trophy Fish",
+    "plural": "",
+    "symbol": "",
+    "format": "DARK_GRAY"
+  },
+  {
+    "id": "TROPHY_FISH_DIAMOND",
+    "name": "Diamond Trophy Fish",
+    "plural": "",
+    "symbol": "",
+    "format": "AQUA"
+  },
+  {
+    "id": "TROPHY_FISH_GOLD",
+    "name": "Gold Trophy Fish",
+    "plural": "",
+    "symbol": "",
+    "format": "GOLD"
+  },
+  {
+    "id": "TROPHY_FISH_SILVER",
+    "name": "Silver Trophy Fish",
+    "plural": "",
+    "symbol": "",
+    "format": "GRAY"
   },
   {
     "id": "UNIQUE_ITEM",
