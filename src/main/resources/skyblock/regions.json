@@ -1,96 +1,115 @@
 [
   {
     "id": "PRIVATE_ISLAND",
+    "remoteId": "DYNAMIC",
     "name": "Private Island",
     "format": "GREEN"
   },
   {
     "id": "THE_GARDEN",
+    "remoteId": "GARDEN",
     "name": "The Garden",
     "format": "GREEN"
   },
   {
     "id": "HUB",
+    "remoteId": "HUB",
     "name": "Hub",
     "format": "WHITE"
   },
   {
     "id": "THE_PARK",
+    "remoteId": "FORAGING_1",
     "name": "The Park",
     "format": "AQUA"
   },
   {
     "id": "GALATEA",
+    "remoteId": "FORAGING_2",
     "name": "Galatea",
-    "format": "LIGHT_GREEN"
+    "format": "GREEN"
   },
   {
-    "id": "THE_BARN",
-    "name": "The Barn",
-    "format": "AQUA"
-  },
-  {
-    "id": "MUSHROOM_DESERT",
-    "name": "Mushroom Desert",
-    "format": "YELLOW"
+    "id": "THE_FARMING_ISLANDS",
+    "remoteId": "FARMING_1",
+    "name": "The Farming Islands",
+    "format": "GREEN"
   },
   {
     "id": "SPIDERS_DEN",
+    "remoteId": "COMBAT_1",
     "name": "Spider's Den",
     "format": "RED"
   },
   {
     "id": "THE_END",
+    "remoteId": "COMBAT_3",
     "name": "The End",
     "format": "LIGHT_PURPLE"
   },
   {
     "id": "CRIMSON_ISLE",
+    "remoteId": "CRIMSON_ISLE",
     "name": "Crimson Isle",
     "format": "RED"
   },
   {
     "id": "GOLD_MINE",
+    "remoteId": "MINING_1",
     "name": "Gold Mine",
     "format": "GOLD"
   },
   {
     "id": "DEEP_CAVERNS",
+    "remoteId": "MINING_2",
     "name": "Deep Caverns",
     "format": "AQUA"
   },
   {
     "id": "DWARVEN_MINES",
+    "remoteId": "MINING_3",
     "name": "Dwarven Mines",
     "format": "DARK_GREEN"
   },
   {
     "id": "CRYSTAL_HOLLOWS",
+    "remoteId": "CRYSTAL_HOLLOWS",
     "name": "Crystal Hollows",
     "format": "DARK_PURPLE"
   },
   {
-    "id": "FISHING_ISLANDS",
-    "name": "Fishing Islands",
-    "format": "WHITE"
+    "id": "BACKWATER_BAYOU",
+    "remoteId": "FISHING_1",
+    "name": "Backwater Bayou",
+    "format": "GREEN"
   },
   {
     "id": "JERRYS_WORKSHOP",
+    "remoteId": "WINTER",
     "name": "Jerry's Workshop",
     "format": "RED"
   },
   {
-    "id": "RIFT_DIMENSION",
-    "name": "Rift Dimension",
-    "format": "LIGHT_PURPLE"
+    "id": "THE_RIFT",
+    "remoteId": "RIFT",
+    "name": "The Rift",
+    "format": "GREEN"
   },
   {
     "id": "DUNGEON_HUB",
+    "remoteId": "DUNGEON_HUB",
     "name": "Dungeon Hub",
     "format": "RED"
   },
   {
+    "id": "LOBBY",
+    "remoteId": "LOBBY",
+    "name": "Network Lobby",
+    "format": "AQUA"
+  },
+  {
     "id": "LIMBO",
+    "remoteId": "LIMBO",
     "name": "Limbo",
     "format": "AQUA"
   }

@@ -579,67 +579,67 @@
     "id": "THE_BARN",
     "name": "The Barn",
     "format": "AQUA",
-    "region": "THE_BARN"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "WINDMILL",
     "name": "Windmill",
     "format": "AQUA",
-    "region": "THE_BARN"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "MUSHROOM_DESERT",
     "name": "Mushroom Desert",
     "format": "YELLOW",
-    "region": "MUSHROOM_DESERT"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "DESERT_SETTLEMENT",
     "name": "Desert Settlement",
     "format": "YELLOW",
-    "region": "MUSHROOM_DESERT"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "OASIS",
     "name": "Oasis",
     "format": "AQUA",
-    "region": "MUSHROOM_DESERT"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "SHEPHERDS_KEEP",
     "name": "Shepherd's Keep",
     "format": "AQUA",
-    "region": "MUSHROOM_DESERT"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "TRAPPERS_DEN",
     "name": "Trapper's Den",
     "format": "AQUA",
-    "region": "MUSHROOM_DESERT"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "JAKES_HOUSE",
     "name": "Jake's House",
     "format": "AQUA",
-    "region": "MUSHROOM_DESERT"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "MUSHROOM_GORGE",
     "name": "Mushroom Gorge",
     "format": "AQUA",
-    "region": "MUSHROOM_DESERT"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "OVERGROWN_MUSHROOM_CAVE",
     "name": "Overgrown Mushroom Cave",
     "format": "DARK_GREEN",
-    "region": "MUSHROOM_DESERT"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "GLOWING_MUSHROOM_CAVE",
     "name": "Glowing Mushroom Cave",
     "format": "DARK_GREEN",
-    "region": "MUSHROOM_DESERT"
+    "region": "THE_FARMING_ISLANDS"
   },
   {
     "id": "SPIDERS_DEN",
