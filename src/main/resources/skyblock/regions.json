@@ -18,6 +18,12 @@
     "format": "WHITE"
   },
   {
+    "id": "DARK_AUCTION",
+    "remoteId": "DARK_AUCTION",
+    "name": "Dark Auction",
+    "format": "DARK_PURPLE"
+  },
+  {
     "id": "THE_PARK",
     "remoteId": "FORAGING_1",
     "name": "The Park",
@@ -51,6 +57,18 @@
     "id": "CRIMSON_ISLE",
     "remoteId": "CRIMSON_ISLE",
     "name": "Crimson Isle",
+    "format": "RED"
+  },
+  {
+    "id": "KUUDRAS_HOLLOW",
+    "remoteId": "INSTANCED",
+    "name": "Kuudra's Hollow",
+    "format": "RED"
+  },
+  {
+    "id": "DUNGEONS",
+    "remoteId": "DUNGEON",
+    "name": "Dungeons",
     "format": "RED"
   },
   {
