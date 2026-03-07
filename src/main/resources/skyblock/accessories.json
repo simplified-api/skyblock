@@ -2,27 +2,11 @@
   {
     "id": "ABICASE",
     "description": "Grants %{VALUE:MP_INCREASE} %{KEYWORD:MAGICAL_POWER} per %{VALUE:PER_CONTACT} contacts in your Abiphone.",
-    "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "NPC"
   },
   {
     "id": "AGARIMOO_TALISMAN",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "AGARIMOO",
       "rank": 0
@@ -31,14 +15,6 @@
   {
     "id": "AGARIMOO_RING",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "AGARIMOO",
       "rank": 1
@@ -47,14 +23,6 @@
   {
     "id": "AGARIMOO_ARTIFACT",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "AGARIMOO",
       "rank": 2
@@ -64,14 +32,6 @@
     "id": "ANITA_TALISMAN",
     "description": "Grants a random %{VALUE:FORTUNE} %{STAT:FARMING_FORTUNE} stat during %{KEYWORD:JACOBS_CONTEST}.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "ANITA",
       "rank": 0
@@ -81,14 +41,6 @@
     "id": "ANITA_RING",
     "description": "Grants a random %{VALUE:FORTUNE} %{STAT:FARMING_FORTUNE} stat during %{KEYWORD:JACOBS_CONTEST}.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "ANITA",
       "rank": 1
@@ -98,14 +50,6 @@
     "id": "ANITA_ARTIFACT",
     "description": "Grants a random %{VALUE:FORTUNE} %{STAT:FARMING_FORTUNE} stat during %{KEYWORD:JACOBS_CONTEST}.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "ANITA",
       "rank": 2
@@ -114,69 +58,27 @@
   {
     "id": "ARCHAEOLOGIST_COMPASS",
     "description": "Right-click to point towards the nearest %{KEYWORD:RELIC}!",
-    "source": "QUEST",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    }
+    "source": "QUEST"
   },
   {
     "id": "ARTIFACT_OF_CONTROL",
     "description": "Holding this artifact will grant you %{VALUE:VOTES} voting power in Mayor Elections!",
-    "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MISCELLANEOUS"
   },
   {
     "id": "ATMOSPHERIC_FILTER",
     "description": "While on your %{ZONE:GARDEN}, grants a buff depending on the current SkyBlock season.\n %{KEYWORD:POINTED_STAR} %{SEASON:SPRING}\n  Grants %{VALUE:SEASONAL_FARMING_FORTUNE} %{STAT:FARMING_FORTUNE}.\n %{KEYWORD:POINTED_STAR} %{SEASON:SUMMER}\n  Grants %{VALUE:SEASONAL_FARMING_WISDOM} %{STAT:FARMING_WISDOM}.\n %{KEYWORD:POINTED_STAR} %{SEASON:FALL}\n  %{KEYWORDS:PEST} spawn %{VALUE:SEASONAL_PEST_CHANCE} more often.\n %{KEYWORD:POINTED_STAR} %{SEASON:WINTER}\n  Visitors give %{VALUE:SEASONAL_COPPER} more Copper.",
-    "source": "MOB_DROP",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MOB_DROP"
   },
   {
     "id": "AUTO_RECOMBOBULATOR",
     "description": "Grants a %{VALUE:CHANCE} chance to automatically recombobulate drops you get from enemies.",
-    "source": "DUNGEON",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    }
+    "source": "DUNGEON"
   },
   {
     "id": "BAIT_RING",
     "description": "%{VALUE:CHANCE} chance not to consume bait.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BAIT",
       "rank": 0
@@ -186,14 +88,6 @@
     "id": "BAT_TALISMAN",
     "description": null,
     "source": "MOB_DROP",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BAT",
       "rank": 0
@@ -203,14 +97,6 @@
     "id": "BAT_RING",
     "description": null,
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BAT",
       "rank": 1
@@ -220,14 +106,6 @@
     "id": "BAT_ARTIFACT",
     "description": null,
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BAT",
       "rank": 2
@@ -237,14 +115,6 @@
     "id": "BAT_PERSON_TALISMAN",
     "description": "Gain %{VALUE:BONUS_STAT} %{STAT:DEFENSE}, %{STAT:STRENGTH}, and %{STAT:INTELLIGENCE} for each bat you have summoned.\n\nWorks with %{ITEM:SPIRIT_SCEPTRE}, %{ITEM:WITCH_MASK}, and the %{PET:BAT} pet.",
     "source": "MOB_DROP",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BAT_PERSON",
       "rank": 0
@@ -254,14 +124,6 @@
     "id": "BAT_PERSON_RING",
     "description": "Gain %{VALUE:BONUS_STAT} %{STAT:DEFENSE}, %{STAT:STRENGTH}, and %{STAT:INTELLIGENCE} for each bat you have summoned.\n\nWorks with %{ITEM:SPIRIT_SCEPTRE}, %{ITEM:WITCH_MASK}, and the %{PET:BAT} pet.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BAT_PERSON",
       "rank": 1
@@ -271,14 +133,6 @@
     "id": "BAT_PERSON_ARTIFACT",
     "description": "Gain %{VALUE:BONUS_STAT} %{STAT:DEFENSE}, %{STAT:STRENGTH}, and %{STAT:INTELLIGENCE} for each bat you have summoned.\n\nWorks with %{ITEM:SPIRIT_SCEPTRE}, %{ITEM:WITCH_MASK}, and the %{PET:BAT} pet.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BAT_PERSON",
       "rank": 2
@@ -288,14 +142,6 @@
     "id": "BEASTMASTER_CREST_COMMON",
     "description": "Pet Exp Boost: %{VALUE:PET_EXP_BOOST}\n\nGains stats based on how many mythological creatures and Minos followers you've slain.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BEASTMASTER",
       "rank": 0
@@ -305,14 +151,6 @@
     "id": "BEASTMASTER_CREST_UNCOMMON",
     "description": "Pet Exp Boost: %{VALUE:PET_EXP_BOOST}\n\nGains stats based on how many mythological creatures and Minos followers you've slain.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BEASTMASTER",
       "rank": 1
@@ -322,14 +160,6 @@
     "id": "BEASTMASTER_CREST_RARE",
     "description": "Pet Exp Boost: %{VALUE:PET_EXP_BOOST}\n\nGains stats based on how many mythological creatures and Minos followers you've slain.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BEASTMASTER",
       "rank": 2
@@ -339,14 +169,6 @@
     "id": "BEASTMASTER_CREST_EPIC",
     "description": "Pet Exp Boost: %{VALUE:PET_EXP_BOOST}\n\nGains stats based on how many mythological creatures and Minos followers you've slain.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BEASTMASTER",
       "rank": 3
@@ -356,14 +178,6 @@
     "id": "BEASTMASTER_CREST_LEGENDARY",
     "description": "Pet Exp Boost: %{VALUE:PET_EXP_BOOST}\n\nGains stats based on how many mythological creatures and Minos followers you've slain.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BEASTMASTER",
       "rank": 4
@@ -371,44 +185,17 @@
   },
   {
     "id": "BIG_BRAIN_TALISMAN",
-    "source": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true,
-      "soulbound": "SOLO"
-    }
+    "source": "RIFT"
   },
   {
     "id": "BINGO_COMBAT_TALISMAN",
     "source": "MISCELLANEOUS",
-    "limit": "BINGO",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    }
+    "limit": "BINGO"
   },
   {
     "id": "BINGO_TALISMAN",
     "description": "B.I.N.G.O.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "BINGO",
       "rank": 0
@@ -418,14 +205,6 @@
     "id": "BINGO_RING",
     "description": "B.I.N.G.O.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "BINGO",
       "rank": 1
@@ -435,14 +214,6 @@
     "id": "BINGO_ARTIFACT",
     "description": "B.I.N.G.O.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "BINGO",
       "rank": 2
@@ -452,14 +223,6 @@
     "id": "BINGO_RELIC",
     "description": "B.I.N.G.O.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "BINGO",
       "rank": 3
@@ -469,15 +232,6 @@
     "id": "BINGO_HEIRLOOM",
     "description": "B.I.N.G.O.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "obtainable": false
-    },
     "family": {
       "id": "BINGO",
       "rank": 4
@@ -486,42 +240,17 @@
   {
     "id": "BITS_TALISMAN",
     "description": "Whenever you gain bits, grants a %{VALUE:CHANCE} to gain double!",
-    "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "NPC"
   },
   {
     "id": "BLAZE_TALISMAN",
     "description": "Reduces the damage taken from %{MOB_TYPE:INFERNAL} mobs by %{VALUE:DAMAGE_REDUCTION}.",
-    "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MISCELLANEOUS"
   },
   {
     "id": "BLOOD_DONOR_TALISMAN",
     "description": "Do your part bro.",
     "source": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "BLOOD_DONOR",
       "rank": 0
@@ -531,15 +260,6 @@
     "id": "BLOOD_DONOR_RING",
     "description": "There's like 5 liters in you.",
     "source": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "BLOOD_DONOR",
       "rank": 1
@@ -549,15 +269,6 @@
     "id": "BLOOD_DONOR_ARTIFACT",
     "description": "The human body produces 2-3 million red blood cells per SECOND.",
     "source": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "BLOOD_DONOR",
       "rank": 2
@@ -566,30 +277,13 @@
   {
     "id": "BLOOD_GOD_CREST",
     "description": "Tracks a counter for each mob killed while worn.\n\nGain %{VALUE:BLOOD_STRENGTH} %{STAT:STRENGTH} for each digit on the counter. %{FORMAT:DARK_GRAY}(Max 7)",
-    "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "EVENT"
   },
   {
     "id": "BLUETOOTH_RING",
     "description": "Deal %{VALUE:NEARBY_DAMAGE} %{STAT:DAMAGE} if there are at least %{VALUE:NEARBY_PLAYERS} players on the island you're on.\n\n%{FORMAT:DARK_GRAY}But wait! There's more...\nAdds %{VALUE:RADIO_DAMAGE} %{STAT:DAMAGE} bonus to the %{KEYWORD:HAM_RADIO}.",
     "riftDescription": "Monster melee attacks reduce %{VALUE:REDUCE_RIFT_LOSS} less %{STAT:RIFT_TIME} if there is another player within %{VALUE:DISTANCE} blocks.",
     "source": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "BLUETOOTH",
       "rank": 0
@@ -600,14 +294,6 @@
     "description": "Deal %{VALUE:NEARBY_DAMAGE} %{STAT:DAMAGE} if there are at least %{VALUE:NEARBY_PLAYERS} players on the island you're on.\n\n%{FORMAT:DARK_GRAY}But wait! There's more...\nAdds %{VALUE:RADIO_DAMAGE} %{STAT:DAMAGE} bonus to the %{KEYWORD:HAM_RADIO}.",
     "lore": "Though it may not be bluer visually, it is in spirit.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BLUETOOTH",
       "rank": 1
@@ -617,41 +303,17 @@
     "id": "BOOK_OF_PROGRESSION",
     "description": "This book, imbued with great power, upgrades as you do.",
     "lore": "A wise novel once thought to be the cure to all problems.",
-    "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MISCELLANEOUS"
   },
   {
     "id": "BUCKET_OF_DYE",
     "description": "Increases your chance of dropping Dyes by %{VALUE:CHANCE}.",
-    "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "NPC"
   },
   {
     "id": "BURSTSTOPPER_TALISMAN",
     "description": "If an incoming hit would deal at least %{VALUE:THRESHOLD} of your %{SYMBOL:HEALTH}, multiply its damage by %{VALUE:DAMAGE_MULTIPLIER}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BURSTSTOPPER",
       "rank": 0
@@ -661,14 +323,6 @@
     "id": "BURSTSTOPPER_ARTIFACT",
     "description": "If an incoming hit would deal at least %{VALUE:THRESHOLD} of your %{SYMBOL:HEALTH}, multiply its damage by %{VALUE:DAMAGE_MULTIPLIER}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BURSTSTOPPER",
       "rank": 1
@@ -678,14 +332,6 @@
     "id": "CAMPFIRE_TALISMAN_1",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 0
@@ -695,14 +341,6 @@
     "id": "CAMPFIRE_TALISMAN_2",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 1
@@ -712,14 +350,6 @@
     "id": "CAMPFIRE_TALISMAN_3",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 2
@@ -729,14 +359,6 @@
     "id": "CAMPFIRE_TALISMAN_4",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 3
@@ -746,14 +368,6 @@
     "id": "CAMPFIRE_TALISMAN_5",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 4
@@ -763,14 +377,6 @@
     "id": "CAMPFIRE_TALISMAN_6",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 5
@@ -780,14 +386,6 @@
     "id": "CAMPFIRE_TALISMAN_7",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 6
@@ -797,14 +395,6 @@
     "id": "CAMPFIRE_TALISMAN_8",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 7
@@ -814,14 +404,6 @@
     "id": "CAMPFIRE_TALISMAN_9",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 8
@@ -831,14 +413,6 @@
     "id": "CAMPFIRE_TALISMAN_10",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 9
@@ -848,14 +422,6 @@
     "id": "CAMPFIRE_TALISMAN_11",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 10
@@ -865,14 +431,6 @@
     "id": "CAMPFIRE_TALISMAN_12",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 11
@@ -882,14 +440,6 @@
     "id": "CAMPFIRE_TALISMAN_13",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 12
@@ -899,14 +449,6 @@
     "id": "CAMPFIRE_TALISMAN_14",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 13
@@ -916,14 +458,6 @@
     "id": "CAMPFIRE_TALISMAN_15",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 14
@@ -933,14 +467,6 @@
     "id": "CAMPFIRE_TALISMAN_16",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 15
@@ -950,14 +476,6 @@
     "id": "CAMPFIRE_TALISMAN_17",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 16
@@ -967,14 +485,6 @@
     "id": "CAMPFIRE_TALISMAN_18",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 17
@@ -984,14 +494,6 @@
     "id": "CAMPFIRE_TALISMAN_19",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 18
@@ -1001,14 +503,6 @@
     "id": "CAMPFIRE_TALISMAN_20",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 19
@@ -1018,14 +512,6 @@
     "id": "CAMPFIRE_TALISMAN_21",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 20
@@ -1035,14 +521,6 @@
     "id": "CAMPFIRE_TALISMAN_22",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 21
@@ -1052,14 +530,6 @@
     "id": "CAMPFIRE_TALISMAN_23",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 22
@@ -1069,14 +539,6 @@
     "id": "CAMPFIRE_TALISMAN_24",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 23
@@ -1086,14 +548,6 @@
     "id": "CAMPFIRE_TALISMAN_25",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 24
@@ -1103,14 +557,6 @@
     "id": "CAMPFIRE_TALISMAN_26",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 25
@@ -1120,14 +566,6 @@
     "id": "CAMPFIRE_TALISMAN_27",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 26
@@ -1137,14 +575,6 @@
     "id": "CAMPFIRE_TALISMAN_28",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 27
@@ -1154,14 +584,6 @@
     "id": "CAMPFIRE_TALISMAN_29",
     "description": "Heal %{VALUE:BURN_HP}%{SYMBOL:HEALTH} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CAMPFIRE_BADGE",
       "rank": 28
@@ -1171,14 +593,6 @@
     "id": "CANDY_TALISMAN",
     "description": "Increases the drop chance of candies from mobs by %{VALUE:CHANCE} during the %{KEYWORD:SPOOKY_FESTIVAL}.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CANDY",
       "rank": 0
@@ -1188,14 +602,6 @@
     "id": "CANDY_RING",
     "description": "Increases the drop chance of candies from mobs by %{VALUE:CHANCE} during the %{KEYWORD:SPOOKY_FESTIVAL}.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CANDY",
       "rank": 1
@@ -1205,14 +611,6 @@
     "id": "CANDY_ARTIFACT",
     "description": "Increases the drop chance of candies from mobs by %{VALUE:CHANCE} during the %{KEYWORD:SPOOKY_FESTIVAL}.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CANDY",
       "rank": 2
@@ -1222,14 +620,6 @@
     "id": "CANDY_RELIC",
     "description": "Increases the drop chance of candies from mobs by %{VALUE:CHANCE} during the %{KEYWORD:SPOOKY_FESTIVAL}.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CANDY",
       "rank": 3
@@ -1238,43 +628,17 @@
   {
     "id": "CARNIVAL_MASK_BAG",
     "description": "Holds %{KEYWORDS:CARNIVAL_MASK}. Each unique Mask within this bag grants %{VALUE:MASK_INTELLIGENCE} %{STAT:INTELLIGENCE}.",
-    "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "EVENT"
   },
   {
     "id": "CATACOMBS_EXPERT_RING",
     "description": "Increases %{KEYWORDS:CATACOMB} dungeon experience by %{VALUE:EXPERIENCE}.",
-    "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    }
+    "source": "DUNGEON"
   },
   {
     "id": "CAT_TALISMAN",
     "description": null,
     "source": "QUEST",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "CAT",
       "rank": 0
@@ -1284,15 +648,6 @@
     "id": "LYNX_TALISMAN",
     "description": null,
     "source": "QUEST",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "CAT",
       "rank": 1
@@ -1302,15 +657,6 @@
     "id": "CHEETAH_TALISMAN",
     "description": null,
     "source": "QUEST",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "CAT",
       "rank": 2
@@ -1320,14 +666,6 @@
     "id": "CENTURY_TALISMAN",
     "description": "What's better than a party? A party with free goodies!",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CENTURY",
       "rank": 0
@@ -1337,14 +675,6 @@
     "id": "CENTURY_RING",
     "description": "What's better than a party? A party with free goodies and an accessory upgrade!",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CENTURY",
       "rank": 1
@@ -1355,14 +685,6 @@
     "description": "Grants %{VALUE:CHANCE} chance to find a %{KEYWORD:CHOCOLATE_RABBIT} that you haven't found yet and grants %{VALUE:CHOCOLATE} %{KEYWORD:CHOCOLATE} per second.",
     "lore": "A delightful treat from the Factory. Its crisp taste sparks joy with every bite.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CHOCOLATE",
       "rank": 0
@@ -1373,14 +695,6 @@
     "description": "Grants %{VALUE:CHANCE} chance to find a %{KEYWORD:CHOCOLATE_RABBIT} that you haven't found yet and grants %{VALUE:CHOCOLATE} %{KEYWORD:CHOCOLATE} per second.",
     "lore": "Crafted in the Factory, its smoothness melts hearts and tastes like a sweet escape.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CHOCOLATE",
       "rank": 1
@@ -1391,14 +705,6 @@
     "description": "Grants %{VALUE:CHANCE} chance to find a %{KEYWORD:CHOCOLATE_RABBIT} that you haven't found yet and grants %{VALUE:CHOCOLATE} %{KEYWORD:CHOCOLATE} per second.",
     "lore": "From the Factory's secret reserves, its rich flavor is a deep dive into indulgence.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CHOCOLATE",
       "rank": 2
@@ -1409,14 +715,6 @@
     "description": "Grants %{VALUE:CHANCE} chance to find a %{KEYWORD:CHOCOLATE_RABBIT} that you haven't found yet and grants %{VALUE:CHOCOLATE} %{KEYWORD:CHOCOLATE} per second.",
     "lore": "A Factory masterpiece - its divine taste transcends reality, offering a heavenly escape.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CHOCOLATE",
       "rank": 3
@@ -1427,14 +725,6 @@
     "description": "Grants %{VALUE:CHANCE} chance to find a %{KEYWORD:CHOCOLATE_RABBIT} that you haven't found yet and grants %{VALUE:CHOCOLATE} %{KEYWORD:CHOCOLATE} per second.",
     "lore": "The Factory's pinnacle creation - its epic taste shatters expectations, offering a taste of utopia.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CHOCOLATE",
       "rank": 4
@@ -1443,28 +733,12 @@
   {
     "id": "CHUMMING_TALISMAN",
     "description": "Listen, it's for real chums of Moby, ok?",
-    "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "NPC"
   },
   {
     "id": "COIN_TALISMAN",
     "description": "Coins start appearing around you occasionally on public islands. Lucky!",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "COIN",
       "rank": 0
@@ -1474,14 +748,6 @@
     "id": "RING_OF_COINS",
     "description": "More coins start appearing around you occasionally on public islands. Lucky!",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "COIN",
       "rank": 1
@@ -1491,14 +757,6 @@
     "id": "ARTIFACT_OF_COINS",
     "description": "Even more coins start appearing around you occasionally on public islands. Lucky!",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "COIN",
       "rank": 2
@@ -1508,29 +766,13 @@
     "id": "COMBO_MANIA_TALISMAN",
     "rift": "%{FORMAT:GOLD}Ability: Combo Mania\nCombos in the %{ZONE:TIME_CHAMBER} take %{VALUE:DURATION} seconds to expire.",
     "source": "RIFT",
-    "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "limit": "RIFT"
   },
   {
     "id": "CRUX_TALISMAN_1",
     "rift": "Defeat shies to gain %{VALUE:MILESTONE_RIFT_TIME} %{STAT:RIFT_TIME} and %{MILESTONE:CRUX_FORTUNE} %{KEYWORD:CRUX_FORTUNE} per kill milestone.\n%{FORMAT:DARK_GRAY}Crux Fortune boosts the chance for bonus crux drops.",
     "source": "RIFT",
     "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CRUX",
       "rank": 0
@@ -1541,14 +783,6 @@
     "rift": "Defeat shies to gain %{VALUE:MILESTONE_RIFT_TIME} %{STAT:RIFT_TIME} and %{MILESTONE:CRUX_FORTUNE} %{KEYWORD:CRUX_FORTUNE} per kill milestone.\n%{FORMAT:DARK_GRAY}Crux Fortune boosts the chance for bonus crux drops.",
     "source": "RIFT",
     "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CRUX",
       "rank": 1
@@ -1559,14 +793,6 @@
     "rift": "Defeat shies to gain %{VALUE:MILESTONE_RIFT_TIME} %{STAT:RIFT_TIME} and %{MILESTONE:CRUX_FORTUNE} %{KEYWORD:CRUX_FORTUNE} per kill milestone.\n%{FORMAT:DARK_GRAY}Crux Fortune boosts the chance for bonus crux drops.",
     "source": "RIFT",
     "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CRUX",
       "rank": 2
@@ -1577,14 +803,6 @@
     "rift": "Defeat shies to gain %{VALUE:MILESTONE_RIFT_TIME} %{STAT:RIFT_TIME} and %{MILESTONE:CRUX_FORTUNE} %{KEYWORD:CRUX_FORTUNE} per kill milestone.\n%{FORMAT:DARK_GRAY}Crux Fortune boosts the chance for bonus crux drops.",
     "source": "RIFT",
     "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CRUX",
       "rank": 3
@@ -1595,14 +813,6 @@
     "rift": "Defeat shies to gain %{VALUE:MILESTONE_RIFT_TIME} %{STAT:RIFT_TIME} and %{MILESTONE:CRUX_FORTUNE} %{KEYWORD:CRUX_FORTUNE} per kill milestone.\n%{FORMAT:DARK_GRAY}Crux Fortune boosts the chance for bonus crux drops.",
     "source": "RIFT",
     "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CRUX",
       "rank": 4
@@ -1613,14 +823,6 @@
     "rift": "Defeat shies to gain %{VALUE:MILESTONE_RIFT_TIME} %{STAT:RIFT_TIME} and %{MILESTONE:CRUX_FORTUNE} %{KEYWORD:CRUX_FORTUNE} per kill milestone.\n%{FORMAT:DARK_GRAY}Crux Fortune boosts the chance for bonus crux drops.",
     "source": "RIFT",
     "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CRUX",
       "rank": 5
@@ -1631,14 +833,6 @@
     "rift": "Defeat shies to gain %{VALUE:MILESTONE_RIFT_TIME} %{STAT:RIFT_TIME} and %{MILESTONE:CRUX_FORTUNE} %{KEYWORD:CRUX_FORTUNE} per kill milestone.\n%{FORMAT:DARK_GRAY}Crux Fortune boosts the chance for bonus crux drops.",
     "source": "RIFT",
     "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "CRUX",
       "rank": 6
@@ -1648,14 +842,6 @@
     "id": "RELIC_OF_COINS",
     "description": "A lot of coins start appearing around you occasionally on public islands. You may even pick up a %{FORMAT:DARK_PURPLE}Stonk of Stonks%{FORMAT:GRAY}!.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "COIN",
       "rank": 3
@@ -1665,15 +851,6 @@
     "id": "DANTE_TALISMAN",
     "description": "Official medal proving your eternal support for Dante.\n\nCan be shown to goons in place of a Happy Mask for entry into official buildings.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true,
-      "obtainable": false
-    },
     "family": {
       "id": "DANTE",
       "rank": 0
@@ -1683,14 +860,6 @@
     "id": "DANTE_RING",
     "description": "Found in a hidden warehouse. Not very useful but still pretty nice to wear.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "DANTE",
       "rank": 0
@@ -1699,56 +868,24 @@
   {
     "id": "DAY_CRYSTAL",
     "description": "Increases your %{STAT:STRENGTH} and %{STAT:DEFENSE} by %{VALUE:INCREASE} during the Day.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "DEFECTIVE_MONITOR",
     "lore": "Obtained from a Kloon who doesn't seem too stable.",
     "source": "RIFT",
-    "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "limit": "RIFT"
   },
   {
     "id": "DEVOUR_RING",
     "description": "Heal %{VALUE:HEAL}%{SYMBOL:HEALTH} when killing a monster.\n%{FORMAT:DARK_GRAY}Cooldown: %{VALUE:COOLDOWN}",
-    "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "SLAYER"
   },
   {
     "id": "DRACONIC_TALISMAN",
     "description": "Increases the damage dealt to %{KEYWORDS:DRAGON} by %{VALUE:INCREASED_DAMAGE}.",
     "lore": "Created from ripping The End of its fauna.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "DRACONIC",
       "rank": 0
@@ -1759,14 +896,6 @@
     "description": "Increases the damage dealt to %{KEYWORDS:DRAGON} by %{VALUE:INCREASED_DAMAGE}.",
     "lore": "Created from ripping The End of its fauna.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "DRACONIC",
       "rank": 1
@@ -1777,14 +906,6 @@
     "description": "Increases the damage dealt to %{KEYWORDS:DRAGON} by %{VALUE:INCREASED_DAMAGE}.",
     "lore": "Created from ripping The End of its fauna.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "DRACONIC",
       "rank": 2
@@ -1792,28 +913,12 @@
   },
   {
     "id": "DWARVEN_METAL",
-    "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MISCELLANEOUS"
   },
   {
     "id": "EMERALD_RING",
     "description": "Get %{VALUE:MINUTE_COINS} every minute!",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "EMERALD",
       "rank": 0
@@ -1823,14 +928,6 @@
     "id": "EMERALD_ARTIFACT",
     "description": "Get %{VALUE:MORE_COINS} every minute!",
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "EMERALD",
       "rank": 1
@@ -1840,14 +937,6 @@
     "id": "EMPEROR_TALISMAN",
     "description": "",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "EMPEROR",
       "rank": 0
@@ -1857,14 +946,6 @@
     "id": "EMPEROR_RING",
     "description": "",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "EMPEROR",
       "rank": 1
@@ -1874,14 +955,6 @@
     "id": "EMPEROR_ARTIFACT",
     "description": "",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "EMPEROR",
       "rank": 2
@@ -1891,14 +964,6 @@
     "id": "ENDER_ARTIFACT",
     "description": "Reduces the damage taken from Enderman, Endermites and Ender Dragons %{VALUE:REDUCTION}.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "ENDER",
       "rank": 0
@@ -1908,14 +973,6 @@
     "id": "ENDER_RELIC",
     "description": "Reduces the damage taken from Enderman, Endermites and Ender Dragons %{VALUE:REDUCTION}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "ENDER",
       "rank": 1
@@ -1924,67 +981,26 @@
   {
     "id": "ETERNAL_CRYSTAL",
     "description": null,
-    "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "obtainable": false
-    }
+    "source": "MISCELLANEOUS"
   },
   {
     "id": "EXPERIENCE_ARTIFACT",
     "description": "Increase the experience orbs you gain by %{VALUE:ORB_INCREASE} while this item is in your inventory or accessory bag.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "FARMER_ORB",
     "description": "Increases the regrowth rate of nearby crops on the public islands, regrowing an extra crop every %{VALUE:REPEAT} seconds.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "FARMING_TALISMAN",
     "description": "Increases your %{STAT:SPEED} by %{FORMAT:GREEN}+10 %{FORMAT:GRAY}while held in the %{ZONE:FARM}, %{ZONE:THE_BARN}, %{ZONE:MUSHROOM_DESERT}, and %{ZONE:GARDEN}.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "CROPIE_TALISMAN",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "FARMING",
       "rank": 0
@@ -1993,14 +1009,6 @@
   {
     "id": "SQUASH_RING",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "FARMING",
       "rank": 1
@@ -2009,14 +1017,6 @@
   {
     "id": "FERMENTO_ARTIFACT",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "FARMING",
       "rank": 2
@@ -2026,14 +1026,6 @@
     "id": "FEATHER_TALISMAN",
     "description": "Increases how high you can fall before taking fall damage by %{VALUE:FALL_DISTANCE}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "FEATHER",
       "rank": 0
@@ -2043,14 +1035,6 @@
     "id": "FEATHER_RING",
     "description": "Increases how high you can fall before taking fall damage by %{VALUE:FALL_DISTANCE}. Fall damage is also reduced by %{VALUE:FALL_REDUCTION}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "FEATHER",
       "rank": 1
@@ -2060,14 +1044,6 @@
     "id": "FEATHER_ARTIFACT",
     "description": "Increases how high you can fall before taking fall damage by %{VALUE:FALL_DISTANCE}. Fall damage is also reduced by %{VALUE:FALL_REDUCTION}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "FEATHER",
       "rank": 2
@@ -2076,41 +1052,17 @@
   {
     "id": "FIRE_TALISMAN",
     "description": "Provides immunity against damage from %{KEYWORD:FIRE}.\n\nWhile in the %{ZONE:CRIMSON_ISLE}, grants a %{VALUE:REDUCTION} damage reduction instead.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "FISH_AFFINITY_TALISMAN",
     "description": null,
-    "source": "MOB_DROP",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MOB_DROP"
   },
   {
     "id": "SMALL_FISH_BOWL",
     "description": "Increase the odds of fishing a rare Shard by %{VALUE:INCREASE}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "FISH_BOWL",
       "rank": 0
@@ -2120,14 +1072,6 @@
     "id": "MEDIUM_FISH_BOWL",
     "description": "Increase the odds of fishing a rare Shard by %{VALUE:INCREASE}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "FISH_BOWL",
       "rank": 1
@@ -2137,14 +1081,6 @@
     "id": "LARGE_FISH_BOWL",
     "description": "%{FORMAT:GREEN}Doubles %{FORMAT:GRAY}the odds of fishing a rare Shard.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "FISH_BOWL",
       "rank": 2
@@ -2154,15 +1090,6 @@
     "id": "FROZEN_CHICKEN",
     "description": null,
     "source": "QUEST",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "CHICKEN",
       "rank": 0
@@ -2173,15 +1100,6 @@
     "description": null,
     "lore": "Fried Frozen?! There is no such thing!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "CHICKEN",
       "rank": 1
@@ -2189,44 +1107,18 @@
   },
   {
     "id": "FUTURE_CALORIES",
-    "source": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    }
+    "source": "RIFT"
   },
   {
     "id": "GENERAL_MEDALLION",
     "description": "Increases the base stats of your dungeon items by %{VALUE:INCREASE} while in %{KEYWORDS:THE_CATACOMBS} for each digit on your secret count. %{FORMAT:DARK_GRAY}(Max 6%)",
     "lore": "Once worn proudly, now covered in filth and soot.",
-    "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    }
+    "source": "DUNGEON"
   },
   {
     "id": "WHITE_GIFT_TALISMAN",
     "description": "Gain %{VALUE:BONUS} more %{FORMAT:GOLD}Coins %{FORMAT:GRAY}and %{FORMAT:DARK_AQUA}Skill XP %{FORMAT:GRAY}from gifts.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "GIFT",
       "rank": 0
@@ -2236,14 +1128,6 @@
     "id": "GREEN_GIFT_TALISMAN",
     "description": "Gain %{VALUE:BONUS} more %{FORMAT:GOLD}Coins %{FORMAT:GRAY}and %{FORMAT:DARK_AQUA}Skill XP %{FORMAT:GRAY}from gifts.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "GIFT",
       "rank": 1
@@ -2253,14 +1137,6 @@
     "id": "BLUE_GIFT_TALISMAN",
     "description": "Gain %{VALUE:BONUS} more %{FORMAT:GOLD}Coins %{FORMAT:GRAY}and %{FORMAT:DARK_AQUA}Skill XP %{FORMAT:GRAY}from gifts.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "GIFT",
       "rank": 2
@@ -2270,14 +1146,6 @@
     "id": "PURPLE_GIFT_TALISMAN",
     "description": "Gain %{VALUE:BONUS} more %{FORMAT:GOLD}Coins %{FORMAT:GRAY}and %{FORMAT:DARK_AQUA}Skill XP %{FORMAT:GRAY}from gifts.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "GIFT",
       "rank": 3
@@ -2287,14 +1155,6 @@
     "id": "GOLD_GIFT_TALISMAN",
     "description": "Gain %{VALUE:BONUS} more %{FORMAT:GOLD}Coins %{FORMAT:GRAY}and %{FORMAT:DARK_AQUA}Skill XP %{FORMAT:GRAY}from gifts.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "GIFT",
       "rank": 4
@@ -2304,14 +1164,6 @@
     "id": "GLACIAL_TALISMAN",
     "description": "Grants %{VALUE:JERRY_WISDOM} on %{ZONE:JERRYS_WORKSHOP}.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "GLACIAL",
       "rank": 0
@@ -2321,14 +1173,6 @@
     "id": "GLACIAL_RING",
     "description": "Grants %{VALUE:JERRY_WISDOM} on %{ZONE:JERRYS_WORKSHOP}.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "GLACIAL",
       "rank": 1
@@ -2338,14 +1182,6 @@
     "id": "GLACIAL_ARTIFACT",
     "description": "Grants %{VALUE:JERRY_WISDOM} on %{ZONE:JERRYS_WORKSHOP}.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "GLACIAL",
       "rank": 2
@@ -2354,28 +1190,12 @@
   {
     "id": "GRAVITY_TALISMAN",
     "description": "Gives between %{VALUE:LOWEST} and %{VALUE:HIGHEST} %{STAT:STRENGTH} and %{STAT:DEFENSE} the closer you are to the spawn of an Island.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "GREAT_SPOOK_TALISMAN",
     "description": "Obtained during the %{NPC:ALCHEMIST} experiments!",
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "GREAT_SPOOK",
       "rank": 0
@@ -2385,14 +1205,6 @@
     "id": "GREAT_SPOOK_RING",
     "description": "Obtained during the %{NPC:ALCHEMIST} experiments!",
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "GREAT_SPOOK",
       "rank": 0
@@ -2402,14 +1214,6 @@
     "id": "GREAT_SPOOK_ARTIFACT",
     "description": "Obtained during the %{NPC:ALCHEMIST} experiments!",
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "GREAT_SPOOK",
       "rank": 0
@@ -2418,42 +1222,18 @@
   {
     "id": "HANDY_BLOOD_CHALICE",
     "description": "Costs %{VALUE:REPEAT_COST} %{STAT:SOULFLOW} per 5s in combat:\n- Gain %{VALUE:SOULFLOW_FEROCITY} %{STAT:FEROCITY}",
-    "source": "MOB_DROP",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MOB_DROP"
   },
   {
     "id": "HARMONIOUS_SURGERY_TOOLKIT",
     "rift": "If you touch a larva which another player touched, you both gain %{VALUE:INCREASE} %{KEYWORD:LARVA_SILK} once it is harvested.",
     "source": "RIFT",
-    "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "limit": "RIFT"
   },
   {
     "id": "HASTE_RING",
     "description": "Grants permanent %{FORMAT:YELLOW}Haste II%{FORMAT:GRAY}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "HASTE",
       "rank": 0
@@ -2463,14 +1243,6 @@
     "id": "HASTE_ARTIFACT",
     "description": "Grants permanent %{FORMAT:YELLOW}Haste III%{FORMAT:GRAY}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "HASTE",
       "rank": 1
@@ -2480,14 +1252,6 @@
     "id": "PARTY_HAT_CRAB",
     "description": "%{FORMAT:GOLD}Ability: Party Time!\nGain %{VALUE:PARTY_INTELLIGENCE} %{STAT:INTELLIGENCE} while on your head for each SkyBlock year you've been playing.\n\nObtained: %{FORMAT:YELLOW}2020",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "HATCESSORY",
       "rank": 0
@@ -2497,14 +1261,6 @@
     "id": "PARTY_HAT_CRAB_ANIMATED",
     "description": "%{FORMAT:GOLD}Ability: Party Time!\nGain %{VALUE:PARTY_INTELLIGENCE} %{STAT:INTELLIGENCE} while on your head for each SkyBlock year you've been playing.\n\nObtained: %{FORMAT:YELLOW}2022",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "HATCESSORY",
       "rank": 0
@@ -2514,14 +1270,6 @@
     "id": "PARTY_HAT_SLOTH",
     "description": "%{FORMAT:GOLD}Ability: Party Time!\nGain %{VALUE:PARTY_INTELLIGENCE} %{STAT:INTELLIGENCE} while on your head for each SkyBlock year you've been playing.\n\nObtained: %{FORMAT:YELLOW}2023",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "HATCESSORY",
       "rank": 0
@@ -2531,14 +1279,6 @@
     "id": "BALLOON_HAT_2024",
     "description": "Show your pride for SkyBlock's %{FORMAT:LIGHT_PURPLE}5th Anniversary %{FORMAT:GRAY}with a balloon!\n\n%{FORMAT:GOLD}Ability: Party Time!\nGain %{VALUE:PARTY_INTELLIGENCE} %{STAT:INTELLIGENCE} while on your head for each SkyBlock year you've been playing.\n\nObtained: %{FORMAT:YELLOW}2024",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "HATCESSORY",
       "rank": 0
@@ -2548,14 +1288,6 @@
     "id": "BALLOON_HAT_2025",
     "description": "Show your pride for SkyBlock's %{FORMAT:LIGHT_PURPLE}6th Anniversary %{FORMAT:GRAY}with a balloon!\n\n%{FORMAT:GOLD}Ability: Party Time!\nGain %{VALUE:PARTY_INTELLIGENCE} %{STAT:INTELLIGENCE} while on your head for each SkyBlock year you've been playing.\n\nObtained: %{FORMAT:YELLOW}2025",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    },
     "family": {
       "id": "HATCESSORY",
       "rank": 0
@@ -2565,14 +1297,6 @@
     "id": "HEALING_TALISMAN",
     "description": null,
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "HEALING",
       "rank": 0
@@ -2582,14 +1306,6 @@
     "id": "HEALING_RING",
     "description": null,
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "HEALING",
       "rank": 1
@@ -2598,41 +1314,16 @@
   {
     "id": "HEGEMONY_ARTIFACT",
     "description": "Counts for twice the %{KEYWORD:MAGICAL_POWER} in your %{KEYWORD:ACCESSORY_BAG}.",
-    "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "EVENT"
   },
   {
     "id": "HOCUS_POCUS_CIPHER",
-    "source": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    }
+    "source": "RIFT"
   },
   {
     "id": "HUNTER_TALISMAN",
     "description": null,
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "HUNTER",
       "rank": 0
@@ -2642,14 +1333,6 @@
     "id": "HUNTER_RING",
     "description": null,
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "HUNTER",
       "rank": 1
@@ -2659,14 +1342,6 @@
     "id": "INTIMIDATION_",
     "description": "Level %{VALUE:LEVEL} monsters will no longer target you.",
     "source": "NPC",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "INTIMIDATION",
       "rank": 0
@@ -2676,14 +1351,6 @@
     "id": "INTIMIDATION_RING",
     "description": "Monsters at or below Level %{VALUE:LEVEL} will no longer target you.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "INTIMIDATION",
       "rank": 1
@@ -2693,14 +1360,6 @@
     "id": "INTIMIDATION_ARTIFACT",
     "description": "Monsters at or below Level %{VALUE:LEVEL} will no longer target you.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "INTIMIDATION",
       "rank": 2
@@ -2710,14 +1369,6 @@
     "id": "INTIMIDATION_RELIC",
     "description": "Monsters at or below Level %{VALUE:LEVEL} will no longer target you.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "INTIMIDATION",
       "rank": 3
@@ -2728,16 +1379,6 @@
     "description": "Increases your total %{STAT:INTELLIGENCE} by %{VALUE:INTELLIGENCE}.",
     "rift": "Increases your total %{STAT:RIFT_TIME} by %{VALUE:RIFT_TIME}.",
     "source": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "IQ",
       "rank": 0
@@ -2748,16 +1389,6 @@
     "description": "Increases your total %{STAT:INTELLIGENCE} by %{VALUE:INTELLIGENCE}.",
     "rift": "Increases your total %{STAT:RIFT_TIME} by %{VALUE:RIFT_TIME}.",
     "source": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "IQ",
       "rank": 1
@@ -2766,43 +1397,17 @@
   {
     "id": "JACOBUS_REGISTER",
     "description": null,
-    "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    }
+    "source": "NPC"
   },
   {
     "id": "JAKE_PLUSHIE",
     "description": "A mystery was solved!\n\nIncreases the number of %{KEYWORDS:PELT} obtained when hunting animals by %{VALUE:INCREASE}.",
-    "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    }
+    "source": "QUEST"
   },
   {
     "id": "JERRY_TALISMAN_GREEN",
     "description": "Wear to prove you love Jerry, or wear to prove you hate Jerry.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "JERRY",
       "rank": 0
@@ -2812,14 +1417,6 @@
     "id": "JERRY_TALISMAN_BLUE",
     "description": "Wear to prove you love Jerry, or wear to prove you hate Jerry.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "JERRY",
       "rank": 1
@@ -2829,14 +1426,6 @@
     "id": "JERRY_TALISMAN_PURPLE",
     "description": "Wear to prove you love Jerry, or wear to prove you hate Jerry.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "JERRY",
       "rank": 2
@@ -2846,14 +1435,6 @@
     "id": "JERRY_TALISMAN_GOLDEN",
     "description": "Wear to prove you love Jerry, or wear to prove you hate Jerry.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "JERRY",
       "rank": 3
@@ -2862,29 +1443,13 @@
   {
     "id": "JUNGLE_AMULET",
     "description": null,
-    "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "NPC"
   },
   {
     "id": "JUNK_TALISMAN",
     "description": "Grants %{VALUE:BAYOU_TREASURE_CHANCE} %{STAT:TREASURE_CHANCE} while on the %{ZONE:BACKWATER_BAYOU}.",
     "lore": "One man's trash is another man's treasure.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "JUNK",
       "rank": 0
@@ -2895,14 +1460,6 @@
     "description": "Grants %{VALUE:BAYOU_TREASURE_CHANCE} %{STAT:TREASURE_CHANCE} while on the %{ZONE:BACKWATER_BAYOU}.",
     "lore": "One man's trash is another man's treasure.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "JUNK",
       "rank": 1
@@ -2913,14 +1470,6 @@
     "description": "Grants %{VALUE:BAYOU_TREASURE_CHANCE} %{STAT:TREASURE_CHANCE} while on the %{ZONE:BACKWATER_BAYOU}.",
     "lore": "One man's trash is another man's treasure.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "JUNK",
       "rank": 2
@@ -2929,29 +1478,12 @@
   {
     "id": "KING_TALISMAN",
     "description": "Commissions grant %{VALUE:HOTM_EXP} %{KEYWORD:HOTM} Exp.",
-    "source": "QUEST",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    }
+    "source": "QUEST"
   },
   {
     "id": "BURNING_KUUDRA_CORE",
     "lore": "A remnant of the core of Kuudra.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "KUUDRA_CORE",
       "rank": 0
@@ -2961,14 +1493,6 @@
     "id": "FIERY_KUUDRA_CORE",
     "lore": "A fragment of the core of Kuudra.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "KUUDRA_CORE",
       "rank": 1
@@ -2978,14 +1502,6 @@
     "id": "INFERNAL_KUUDRA_CORE",
     "lore": "The dark core of Kuudra!",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "KUUDRA_CORE",
       "rank": 2
@@ -2995,15 +1511,6 @@
     "id": "KUUDRA_FOLLOWER_ARTIFACT",
     "description": "Reduces damage taken from Kuudra Followers by %{VALUE:REDUCTION}.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "KUUDRA_FOLLOWER",
       "rank": 0
@@ -3013,15 +1520,6 @@
     "id": "KUUDRA_FOLLOWER_RELIC",
     "description": "Reduces damage taken from Kuudra Followers by %{VALUE:REDUCTION}.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "KUUDRA_FOLLOWER",
       "rank": 1
@@ -3030,28 +1528,12 @@
   {
     "id": "LAVA_TALISMAN",
     "description": "Provides immunity against damage from most %{KEYWORD:LAVA}.\n\nWhile in the %{ZONE:CRIMSON_ISLE}, grants a %{VALUE:REDUCTION} damage reduction instead.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "LUCKY_HOOF",
     "description": "Gain %{VALUE:CHANCE} chance to find Trick or Treat Chests.",
     "source": "MOB_DROP",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "HOOF",
       "rank": 0
@@ -3060,14 +1542,6 @@
   {
     "id": "LUSH_TALISMAN",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "LUSH",
       "rank": 0
@@ -3076,14 +1550,6 @@
   {
     "id": "LUSH_RING",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "LUSH",
       "rank": 1
@@ -3092,14 +1558,6 @@
   {
     "id": "LUSH_ARTIFACT",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "LUSH",
       "rank": 2
@@ -3109,14 +1567,6 @@
     "id": "ETERNAL_HOOF",
     "description": "Gain %{VALUE:CHANCE} chance to find Trick or Treat Chests.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "HOOF",
       "rank": 1
@@ -3125,42 +1575,17 @@
   {
     "id": "MAGIC_8_BALL",
     "description": "Every %{FORMAT:GREEN}SkyBlock Season%{FORMAT:GRAY}, the %{FORMAT:DARK_PURPLE}Magic 8 Ball %{FORMAT:GRAY}will grant one of the following bonuses:\n\n%{SYMBOL:POINTED_STAR} It is certain.\n   %{VALUE:SEASONAL_FARMING_FORTUNE} %{STAT:FARMING_FORTUNE}\n   %{VALUE:SEASONAL_FARMING_WISDOM} %{STAT:FARMING_WISDOM}\n%{SYMBOL:POINTED_STAR} Reply hazy, try again.\n   %{VALUE:SEASONAL_FORAGING_FORTUNE} %{STAT:FORAGING_FORTUNE}\n   %{VALUE:SEASONAL_FORAGING_WISDOM} %{STAT:FORAGING_WISDOM}\n%{SYMBOL:POINTED_STAR} Don't count on it.\n   %{VALUE:SEASONAL_MINING_FORTUNE} %{STAT:MINING_FORTUNE}\n   %{VALUE:SEASONAL_MINING_WISDOM} %{STAT:MINING_WISDOM}\n%{SYMBOL:POINTED_STAR} As I see it, yes.\n   %{VALUE:SEASONAL_FISHING_SPEED} %{STAT:FISHING_SPEED}\n   %{VALUE:SEASONAL_FISHING_WISDOM} %{STAT:FISHING_WISDOM}\n%{SYMBOL:POINTED_STAR} My sources say no.\n   %{VALUE:SEASONAL_STRENGTH} %{STAT:STRENGTH}\n   %{VALUE:SEASONAL_COMBAT_WISDOM} %{STAT:COMBAT_WISDOM}",
-    "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "EVENT"
   },
   {
     "id": "MAGNETIC_TALISMAN",
     "description": "Increase the item pick up range by %{VALUE:PICKUP_RANGE}.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "MASTER_SKULL_TIER_1",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 0
@@ -3170,15 +1595,6 @@
     "id": "MASTER_SKULL_TIER_2",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 1
@@ -3188,15 +1604,6 @@
     "id": "MASTER_SKULL_TIER_3",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 2
@@ -3206,15 +1613,6 @@
     "id": "MASTER_SKULL_TIER_4",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 3
@@ -3224,15 +1622,6 @@
     "id": "MASTER_SKULL_TIER_5",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 4
@@ -3242,15 +1631,6 @@
     "id": "MASTER_SKULL_TIER_6",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 5
@@ -3260,15 +1640,6 @@
     "id": "MASTER_SKULL_TIER_7",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 6
@@ -3278,16 +1649,6 @@
     "id": "MASTER_SKULL_TIER_8",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true,
-      "obtainable": false
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 7
@@ -3297,16 +1658,6 @@
     "id": "MASTER_SKULL_TIER_9",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true,
-      "obtainable": false
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 8
@@ -3316,16 +1667,6 @@
     "id": "MASTER_SKULL_TIER_10",
     "description": "Grants %{VALUE:MM_HEALTH} %{STAT:HEALTH} and %{STAT:STRENGTH} while in %{KEYWORD:MASTER_MODE} Dungeons.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true,
-      "obtainable": false
-    },
     "family": {
       "id": "MASTER_SKULL",
       "rank": 9
@@ -3334,42 +1675,17 @@
   {
     "id": "MELODY_HAIR",
     "description": "A single strand of hair from Melody's head.\n\nLeft-Click: %{FORMAT:YELLOW}Tune up!\nRight-Click: %{FORMAT:LIGHT_PURPLE}Play note!",
-    "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    }
+    "source": "QUEST"
   },
   {
     "id": "MINE_TALISMAN",
     "description": "Grants %{VALUE:INCREASE} %{STAT:WALK_SPEED} while on %{ZONE:MINING_ISLANDS}.",
-    "source": "NPC",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "NPC"
   },
   {
     "id": "MINERAL_TALISMAN",
     "description": null,
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "MINERAL",
       "rank": 0
@@ -3379,14 +1695,6 @@
     "id": "GLOSSY_MINERAL_TALISMAN",
     "description": null,
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "MINERAL",
       "rank": 1
@@ -3395,30 +1703,12 @@
   {
     "id": "MINIATURIZED_TUBULATOR",
     "lore": "Don't hate the player, hate the game. - Ice T",
-    "source": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true,
-      "soulbound": "SOLO"
-    }
+    "source": "RIFT"
   },
   {
     "id": "MOONGLADE_TALISMAN",
     "description": null,
     "source": "NPC",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "MOONGLADE",
       "rank": 0
@@ -3428,14 +1718,6 @@
     "id": "MOONGLADE_RING",
     "description": null,
     "source": "NPC",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "MOONGLADE",
       "rank": 1
@@ -3445,14 +1727,6 @@
     "id": "MOONGLADE_ARTIFACT",
     "description": null,
     "source": "NPC",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "MOONGLADE",
       "rank": 2
@@ -3461,82 +1735,33 @@
   {
     "id": "NETHERRACK_LOOKING_SUNSHADE",
     "description": "Makes you invisible to Dive Ghasts.",
-    "source": "MOB_DROP",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MOB_DROP"
   },
   {
     "id": "NETHER_ARTIFACT",
     "description": "Reduces the damage taken from Zombie Pigmen, Magma Cubes, Blazes and Ghasts by %{VALUE:REDUCTION}.\n\nWhile in the %{ZONE:CRIMSON_ISLE}, you will receive the damage reduction from all mobs.",
-    "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "EVENT"
   },
   {
     "id": "NEW_YEAR_CAKE_BAG",
     "description": "Holds %{KEYWORDS:NEW_YEAR_CAKE}. Each unique %{KEYWORD:NEW_YEAR_CAKE} within this bag grants %{VALUE:CAKE_HEALTH} %{STAT:HEALTH}.",
-    "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "EVENT"
   },
   {
     "id": "NIGHT_CRYSTAL",
     "description": "Increases your %{STAT:STRENGTH} and %{STAT:DEFENSE} by %{VALUE:INCREASE} during the Night.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "NIGHT_VISION_CHARM",
     "description": "Grants Night Vision while this item is in your inventory.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "ODGERS_BRONZE_TOOTH",
     "description": null,
     "lore": "A perfectly fine tooth, besides some wear and tear...",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "ODGERS_TOOTH",
       "rank": 0
@@ -3547,15 +1772,6 @@
     "description": null,
     "lore": "A perfectly fine tooth, besides a broken chunk...",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "ODGERS_TOOTH",
       "rank": 1
@@ -3566,15 +1782,6 @@
     "description": null,
     "lore": "A perfectly fine tooth, besides its weight...",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "ODGERS_TOOTH",
       "rank": 2
@@ -3585,15 +1792,6 @@
     "description": null,
     "lore": "A perfectly fine tooth, besides its radiant brightness...",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "ODGERS_TOOTH",
       "rank": 3
@@ -3602,42 +1800,18 @@
   {
     "id": "PANDORAS_BOX",
     "description": "Complete changes to earn stats and level up the Pandora's Box.\n\nYou receive %{VALUE:CHALLENGE_HEALTH} %{SYMBOL:HEALTH} and %{VALUE:CHALLENGE_DAMAGE} %{SYMBOL:DAMAGE} per 2 challenges you complete.\n\n%{FORMAT:RED}Note! %{FORMAT:GRAY}You must have this item in your inventory or accessory bag when completing a challenge.",
-    "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MISCELLANEOUS"
   },
   {
     "id": "GARLIC_FLAVORED_GUMMY_BEAR",
     "rift": "Gain %{VALUE:EXP} %{FORMAT:DARK_AQUA}COmbat Exp %{FORMAT:GRAY}from mob kills in the %{ZONE:RIFT}.",
     "source": "RIFT",
-    "limit": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "limit": "RIFT"
   },
   {
     "id": "PERSONAL_COMPACTOR_4000",
     "description": "Automatically turns certain materials in your inventory into their enchanted form.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PERSONAL_COMPACTOR",
       "rank": 0
@@ -3647,14 +1821,6 @@
     "id": "PERSONAL_COMPACTOR_5000",
     "description": "Automatically turns certain materials in your inventory into their enchanted form.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PERSONAL_COMPACTOR",
       "rank": 1
@@ -3664,14 +1830,6 @@
     "id": "PERSONAL_COMPACTOR_6000",
     "description": "Automatically turns certain materials in your inventory into their enchanted form.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PERSONAL_COMPACTOR",
       "rank": 2
@@ -3681,14 +1839,6 @@
     "id": "PERSONAL_COMPACTOR_7000",
     "description": "Automatically turns certain materials in your inventory into their enchanted form.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PERSONAL_COMPACTOR",
       "rank": 3
@@ -3698,14 +1848,6 @@
     "id": "PERSONAL_DELETOR_4000",
     "description": "Automatically deletes specific items on pickup.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PERSONAL_DELETOR",
       "rank": 0
@@ -3715,14 +1857,6 @@
     "id": "PERSONAL_DELETOR_5000",
     "description": "Automatically deletes specific items on pickup.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PERSONAL_DELETOR",
       "rank": 1
@@ -3732,14 +1866,6 @@
     "id": "PERSONAL_DELETOR_6000",
     "description": "Automatically deletes specific items on pickup.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PERSONAL_DELETOR",
       "rank": 2
@@ -3749,14 +1875,6 @@
     "id": "PERSONAL_DELETOR_7000",
     "description": "Automatically deletes specific items on pickup.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PERSONAL_DELETOR",
       "rank": 3
@@ -3766,14 +1884,6 @@
     "id": "PESTHUNTER_BADGE",
     "description": "Can be used to enable or disable your %{STAT:BONUS_PEST_CHANCE} stat.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PESTHUNTER",
       "rank": 0
@@ -3783,14 +1893,6 @@
     "id": "PESTHUNTER_RING",
     "description": "Can be used to enable or disable your %{STAT:BONUS_PEST_CHANCE} stat.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PESTHUNTER",
       "rank": 1
@@ -3800,14 +1902,6 @@
     "id": "PESTHUNTER_ARTIFACT",
     "description": "Can be used to enable or disable your %{STAT:BONUS_PEST_CHANCE} stat.",
     "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PESTHUNTER",
       "rank": 2
@@ -3817,14 +1911,6 @@
     "id": "BROKEN_PIGGY_BANK",
     "description": "It broke!",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PIGGY",
       "rank": 0
@@ -3834,14 +1920,6 @@
     "id": "CRACKED_PIGGY_BANK",
     "description": "Saves %{VALUE:SAVED_COINS} of your coins on death.\nOnly when in inventory or Accessory Bag.\n%{FORMAT:RED}Very fragile!\n\n%{FORMAT:DARK_GRAY}Triggers when losing 20k+ coins.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PIGGY",
       "rank": 1
@@ -3851,14 +1929,6 @@
     "id": "PIGGY_BANK",
     "description": "Saves your coins from death.\nOnly when in inventory or Accessory Bag.\n%{FORMAT:RED}Fragile!\n\n%{FORMAT:DARK_GRAY}Triggers when losing 20k+ coins.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PIGGY",
       "rank": 2
@@ -3867,56 +1937,23 @@
   {
     "id": "PIGS_FOOT",
     "description": "Like a Rabbit's Foot, but more useless.",
-    "source": "QUEST",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    }
+    "source": "QUEST"
   },
   {
     "id": "POCKET_ESPRESSO_MACHINE",
     "description": "Costs %{VALUE:REPEAT_COST} %{STAT:SOULFLOW} per 5s in combat:\n- Gain %{VALUE:SOULFLOW_INTELLIGENCE} %{STAT:INTELLIGENCE}",
-    "source": "MOB_DROP",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MOB_DROP"
   },
   {
     "id": "POTATO_TALISMAN",
     "description": "Your potato minions farm %{VALUE:MINION_SPEED} faster while wearing on your island.",
     "lore": "Forged by the Potato King after winning the Great Potato War.",
-    "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": true
-    }
+    "source": "EVENT"
   },
   {
     "id": "POTION_AFFINITY_TALISMAN",
     "description": "Increases the duration of any consumed Potion by %{VALUE:DURATION}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "POTION_AFFINITY",
       "rank": 0
@@ -3926,14 +1963,6 @@
     "id": "RING_POTION_AFFINITY",
     "description": "Increases the duration of any consumed Potion by %{VALUE:DURATION}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "POTION_AFFINITY",
       "rank": 1
@@ -3943,14 +1972,6 @@
     "id": "ARTIFACT_POTION_AFFINITY",
     "description": "Increases the duration of any consumed Potion by %{VALUE:DURATION}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "POTION_AFFINITY",
       "rank": 2
@@ -3960,14 +1981,6 @@
     "id": "POWER_TALISMAN",
     "description": "Allows you to harness the power of %{VALUE:GEMSTONE_COUNT} Gemstones, although only half of the normal power can be harnessed!",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "POWER",
       "rank": 0
@@ -3977,14 +1990,6 @@
     "id": "POWER_RING",
     "description": "Allows you to harness the power of %{VALUE:GEMSTONE_COUNT} Gemstones, although only half of the normal power can be harnessed!",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "POWER",
       "rank": 1
@@ -3994,14 +1999,6 @@
     "id": "POWER_ARTIFACT",
     "description": "Allows you to harness the power of %{VALUE:GEMSTONE_COUNT} Gemstones, although only half of the normal power can be harnessed!",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "POWER",
       "rank": 2
@@ -4011,14 +2008,6 @@
     "id": "POWER_RELIC",
     "description": "Allows you to harness the power of %{VALUE:GEMSTONE_COUNT} Gemstones, although only half of the normal power can be harnessed!",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "POWER",
       "rank": 3
@@ -4028,14 +2017,6 @@
     "id": "PRESSURE_TALISMAN",
     "description": null,
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PRESSURE",
       "rank": 0
@@ -4045,14 +2026,6 @@
     "id": "PRESSURE_RING",
     "description": null,
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PRESSURE",
       "rank": 1
@@ -4062,14 +2035,6 @@
     "id": "PRESSURE_ARTIFACT",
     "description": null,
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "PRESSURE",
       "rank": 2
@@ -4078,55 +2043,23 @@
   {
     "id": "PULSE_RING",
     "description": "Charge up by combining a %{KEYWORD:THUNDER_BOTTLE} (Full) with this item in an anvil.",
-    "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MISCELLANEOUS"
   },
   {
     "id": "PUNCHCARD_ARTIFACT",
     "rift": "%{FORMAT:GOLD}Ability: Punch in! %{FORMAT:RESET}%{FORMAT:YELLOW}%{FORMAT:BOLD}LEFT CLICK\nPunch another player while this is in your inventory to both regain %{VALUE:REGAIN_RIFT_TIME} %{STAT:RIFT_TIME}.\n%{FORMAT:DARK_GRAY}Usable once per player per rift visit up to 20 players.",
     "source": "RIFT",
-    "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "limit": "RIFT"
   },
   {
     "id": "REAPER_ORB",
     "description": "Gain a stack of %{VALUE:STACKED_STRENGTH} %{STAT:STRENGTH} for every mob killed in the last %{VALUE:RECENT} seconds.",
-    "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "SLAYER"
   },
   {
     "id": "RED_CLAW_TALISMAN",
     "description": null,
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RED_CLAW",
       "rank": 0
@@ -4136,14 +2069,6 @@
     "id": "RED_CLAW_RING",
     "description": null,
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RED_CLAW",
       "rank": 1
@@ -4153,14 +2078,6 @@
     "id": "RED_CLAW_ARTIFACT",
     "description": null,
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RED_CLAW",
       "rank": 2
@@ -4170,15 +2087,6 @@
     "id": "RESPIRATION_TALISMAN",
     "description": "You hold your breath as you enter the Rift, allowing you to delay loss of Rift TIem by %{VALUE:DELAY} seconds.",
     "source": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "RESPIRATION",
       "rank": 0
@@ -4188,15 +2096,6 @@
     "id": "RESPIRATION_RING",
     "description": "You hold your breath as you enter the Rift, allowing you to delay loss of Rift TIem by %{VALUE:DELAY} seconds.",
     "source": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "RESPIRATION",
       "rank": 1
@@ -4206,15 +2105,6 @@
     "id": "RESPIRATION_ARTIFACT",
     "description": "You hold your breath as you enter the Rift, allowing you to delay loss of Rift TIem by %{VALUE:DELAY} seconds.",
     "source": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "RESPIRATION",
       "rank": 2
@@ -4223,57 +2113,24 @@
   {
     "id": "RIFT_PRISM",
     "description": "While in your accessory bag, you may join the %{ZONE:RIFT} at %{FORMAT:GREEN}no cost%{FORMAT:GRAY}.\n\nTalk with %{NPC:ERIHANN} in the Wizard Tower of the Hub to consume this accessory.",
-    "source": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    }
+    "source": "RIFT"
   },
   {
     "id": "RING_OF_BROKEN_LOVE",
     "lore": "This time around, fate really got in the way of love.",
     "source": "RIFT",
-    "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "limit": "RIFT"
   },
   {
     "id": "RING_OF_ETERNAL_LOVE",
     "rift": "Ramero and Joliet's love transcends the boundaries of time, space and fate itself.",
     "source": "RIFT",
-    "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "limit": "RIFT"
   },
   {
     "id": "RUNEBLADE_TALISMAN",
     "description": "Your Axes deal %{VALUE:GALATEA_DAMAGE} more %{STAT:DAMAGE} to creatures on %{ZONE:GALATEA}.",
     "source": "MOB_DROP",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RUNEBLADE",
       "rank": 0
@@ -4283,14 +2140,6 @@
     "id": "RUNEBLADE_RING",
     "description": "Your Axes deal %{VALUE:GALATEA_DAMAGE} more %{STAT:DAMAGE} to creatures on %{ZONE:GALATEA}.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RUNEBLADE",
       "rank": 1
@@ -4300,14 +2149,6 @@
     "id": "RUNEBLADE_ARTIFACT",
     "description": "Your Axes deal %{VALUE:GALATEA_DAMAGE} more %{STAT:DAMAGE} to creatures on %{ZONE:GALATEA}.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RUNEBLADE",
       "rank": 2
@@ -4316,46 +2157,19 @@
   {
     "id": "RUNEBOOK",
     "description": "Tracks a counter for each %{KEYWORD:RUNIC} mob killed while in your accessory bag or inventory.\n\nIncrease rarity and gain %{VALUE:RUNEBOOK_WISDOM} %{STAT:RUNECRAFTING_WISDOM} for each digit on the counter. %{FORMAT:DARK_GRAY}(Max 4 digits)",
-    "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "upgradeable": false
-    }
+    "source": "EVENT"
   },
   {
     "id": "SATELITE",
     "rift": "High altitude, slow attitude. The procrastinator's dream stone.\n\n%{FORMAT:GOLD}Ability: Bullet Time\nSlow down the loss of %{STAT:RIFT_TIME} by %{VALUE:SLOW_RIFT_TIME} in elevated areas.",
     "source": "RIFT",
-    "limit": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "limit": "RIFT"
   },
   {
     "id": "SCARF_STUDIES",
     "description": "Gain %{VALUE:EXPERIENCE} more Dungeons class experience.",
     "lore": "The collection of his studies, beautiful handwriting!",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "SCARF",
       "rank": 0
@@ -4366,16 +2180,6 @@
     "description": "Gain %{VALUE:EXPERIENCE} more Dungeons class experience.",
     "lore": "A research on how to preserve and enhance class abilities in death.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "SCARF",
       "rank": 1
@@ -4386,16 +2190,6 @@
     "description": "Gain %{VALUE:EXPERIENCE} more Dungeons class experience.",
     "lore": "Dark and powerful spells, includes his favorite \"Barrier\" that his Professor taught him.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true,
-      "riftTransferrable": true
-    },
     "family": {
       "id": "SCARF",
       "rank": 2
@@ -4405,14 +2199,6 @@
     "id": "SCAVENGER_TALISMAN",
     "description": "Grants %{VALUE:KILLED_COINS} per level of the killed enemy.",
     "source": "NPC",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SCAVENGER",
       "rank": 0
@@ -4422,14 +2208,6 @@
     "id": "SCAVENGER_RING",
     "description": "Grants %{VALUE:KILLED_COINS} per level of the killed enemy.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SCAVENGER",
       "rank": 1
@@ -4439,14 +2217,6 @@
     "id": "SCAVENGER_ARTIFACT",
     "description": "Grants %{VALUE:KILLED_COINS} per level of the killed enemy.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SCAVENGER",
       "rank": 2
@@ -4456,14 +2226,6 @@
     "id": "SEA_CREATURE_TALISMAN",
     "description": "Take %{VALUE:LESS_DAMAGE} less damage from Sea Creatures.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SEA_CREATURE",
       "rank": 0
@@ -4473,14 +2235,6 @@
     "id": "SEA_CREATURE_RING",
     "description": "Take %{VALUE:LESS_DAMAGE} less damage from Sea Creatures.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SEA_CREATURE",
       "rank": 1
@@ -4490,14 +2244,6 @@
     "id": "SEA_CREATURE_ARTIFACT",
     "description": "Take %{VALUE:LESS_DAMAGE} less damage from Sea Creatures.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SEA_CREATURE",
       "rank": 2
@@ -4507,14 +2253,6 @@
     "id": "SEAL_TALISMAN",
     "description": null,
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SEAL",
       "rank": 0
@@ -4524,14 +2262,6 @@
     "id": "SEAL_RING",
     "description": null,
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SEAL",
       "rank": 1
@@ -4541,15 +2271,6 @@
     "id": "SHADY_RING",
     "description": "Get %{VALUE:DISCOUNT} off on most shops.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "DARK_AUCTION",
       "rank": 0
@@ -4559,15 +2280,6 @@
     "id": "CROOKED_ARTIFACT",
     "description": "Get %{VALUE:DISCOUNT} off on most shops.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "DARK_AUCTION",
       "rank": 1
@@ -4577,15 +2289,6 @@
     "id": "SEAL_OF_THE_FAMILY",
     "description": "Get %{VALUE:DISCOUNT} off on most shops.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    },
     "family": {
       "id": "DARK_AUCTION",
       "rank": 2
@@ -4595,14 +2298,6 @@
     "id": "RAGGEDY_SHARK_TOOTH_NECKLACE",
     "description": "Grants %{VALUE:CHANCE} chance to get Shark Teeth during %{KEYWORDS:FISHING FESTIVAL}.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SHARK_TOOTH",
       "rank": 0
@@ -4612,14 +2307,6 @@
     "id": "DULL_SHARK_TOOTH_NECKLACE",
     "description": "Grants %{VALUE:CHANCE} chance to get Shark Teeth during %{KEYWORDS:FISHING FESTIVAL}.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SHARK_TOOTH",
       "rank": 1
@@ -4629,14 +2316,6 @@
     "id": "HONED_SHARK_TOOTH_NECKLACE",
     "description": "Grants %{VALUE:CHANCE} chance to get Shark Teeth during %{KEYWORDS:FISHING FESTIVAL}.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SHARK_TOOTH",
       "rank": 2
@@ -4646,14 +2325,6 @@
     "id": "SHARP_SHARK_TOOTH_NECKLACE",
     "description": "Grants %{VALUE:CHANCE} chance to get Shark Teeth during %{KEYWORDS:FISHING FESTIVAL}.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SHARK_TOOTH",
       "rank": 3
@@ -4663,14 +2334,6 @@
     "id": "RAZOR_SHARP_SHARK_TOOTH_NECKLACE",
     "description": "Grants %{VALUE:CHANCE} chance to get Shark Teeth during %{KEYWORDS:FISHING FESTIVAL}.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SHARK_TOOTH",
       "rank": 4
@@ -4679,41 +2342,17 @@
   {
     "id": "SHENS_REGALIA",
     "description": "According to the rumors, %{KEYWORD:SHEN} himself is crafting special items. Have this in your inventory to gain access to a unique room hidden below the %{KEYWORD:AUCTION_HOUSE}.",
-    "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "MISCELLANEOUS"
   },
   {
     "id": "SKELETON_TALISMAN",
     "description": "Reduces the damage taken from Skeletons by %{VALUE:REDUCTION}.",
-    "source": "NPC",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "NPC"
   },
   {
     "id": "SOULFLOW_PILE",
     "description": "%{FORMAT:GOLD}Ability: Overflow Mana\nWhen leaving combat, convert up to %{VALUE:COMBAT_SOULFLOW} %{STAT:SOULFLOW} into %{VALUE:COMBAT_OVERFLOW} %{STAT:OVERFLOW_MANA}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOULFLOW",
       "rank": 0
@@ -4723,14 +2362,6 @@
     "id": "SOULFLOW_BATTERY",
     "description": "%{FORMAT:GOLD}Ability: Overflow Mana\nWhen leaving combat, convert up to %{VALUE:COMBAT_SOULFLOW} %{STAT:SOULFLOW} into %{VALUE:COMBAT_OVERFLOW} %{STAT:OVERFLOW_MANA}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOULFLOW",
       "rank": 1
@@ -4740,14 +2371,6 @@
     "id": "SOULFLOW_SUPERCELL",
     "description": "%{FORMAT:GOLD}Ability: Overflow Mana\nWhen leaving combat, convert up to %{VALUE:COMBAT_SOULFLOW} %{STAT:SOULFLOW} into %{VALUE:COMBAT_OVERFLOW} %{STAT:OVERFLOW_MANA}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOULFLOW",
       "rank": 2
@@ -4757,14 +2380,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_1",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 0
@@ -4774,14 +2389,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_2",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 1
@@ -4791,14 +2398,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_3",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 2
@@ -4808,14 +2407,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_4",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 3
@@ -4825,14 +2416,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_5",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 4
@@ -4842,14 +2425,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_6",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 5
@@ -4859,14 +2434,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_7",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 6
@@ -4876,14 +2443,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_8",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 7
@@ -4893,14 +2452,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_9",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 8
@@ -4910,14 +2461,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_10",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 9
@@ -4927,14 +2470,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_11",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 10
@@ -4944,14 +2479,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_12",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 11
@@ -4961,14 +2488,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_13",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 12
@@ -4978,14 +2497,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_14",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 13
@@ -4995,14 +2506,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_15",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 14
@@ -5012,14 +2515,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_16",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 15
@@ -5029,14 +2524,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_17",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 16
@@ -5046,14 +2533,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_18",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 17
@@ -5063,14 +2542,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_19",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 18
@@ -5080,14 +2551,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_20",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 19
@@ -5097,14 +2560,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_21",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 20
@@ -5114,14 +2569,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_22",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 21
@@ -5131,14 +2578,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_23",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 22
@@ -5148,14 +2587,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_24",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 23
@@ -5165,14 +2596,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_25",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 24
@@ -5182,14 +2605,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_26",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 25
@@ -5199,14 +2614,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_27",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 26
@@ -5216,14 +2623,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_28",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 27
@@ -5233,14 +2632,6 @@
     "id": "SOUL_CAMPFIRE_TALISMAN_29",
     "description": "Grants %{VALUE:BURN_DEFENSE}%{SYMBOL:DEFENSE} per second while burning.",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SOUL_CAMPFIRE_BADGE",
       "rank": 28
@@ -5249,15 +2640,6 @@
   {
     "id": "TALISMAN_OF_SPACE",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "obtainable": false
-    },
     "family": {
       "id": "SPACE",
       "rank": 0
@@ -5266,15 +2648,6 @@
   {
     "id": "RING_OF_SPACE",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "obtainable": false
-    },
     "family": {
       "id": "SPACE",
       "rank": 1
@@ -5283,15 +2656,6 @@
   {
     "id": "ARTIFACT_OF_SPACE",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "obtainable": false
-    },
     "family": {
       "id": "SPACE",
       "rank": 2
@@ -5301,14 +2665,6 @@
     "id": "SPEED_TALISMAN",
     "description": null,
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SPEED",
       "rank": 0
@@ -5318,14 +2674,6 @@
     "id": "SPEED_RING",
     "description": null,
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SPEED",
       "rank": 1
@@ -5335,14 +2683,6 @@
     "id": "SPEED_ARTIFACT",
     "description": null,
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SPEED",
       "rank": 2
@@ -5352,14 +2692,6 @@
     "id": "SPIDER_TALISMAN",
     "description": "Reduces the damage taken from Cave Spiders, Spiders, and Silverfish by %{VALUE:REDUCTION}.",
     "source": "MOB_DROP",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SPIDER",
       "rank": 0
@@ -5369,14 +2701,6 @@
     "id": "SPIDER_RING",
     "description": "Reduces the damage taken from Cave Spiders, Spiders, and Silverfish by %{VALUE:REDUCTION}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SPIDER",
       "rank": 1
@@ -5386,14 +2710,6 @@
     "id": "SPIDER_ARTIFACT",
     "description": "Reduces the damage taken from Cave Spiders, Spiders, and Silverfish by %{VALUE:REDUCTION}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "SPIDER",
       "rank": 2
@@ -5403,14 +2719,6 @@
     "id": "SPIKED_ATROCITY",
     "description": "%{VALUE:CHANCE} chance not to consume bait.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "BAIT",
       "rank": 1
@@ -5419,29 +2727,12 @@
   {
     "id": "SURVIVOR_CUBE",
     "description": null,
-    "source": "SLAYER",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    }
+    "source": "SLAYER"
   },
   {
     "id": "TARANTULA_TALISMAN",
     "description": "Every %{VALUE:NTH_HIT} melee hit on the same enemy deals %{VALUE:NTH_DAMAGE} damage.",
     "source": "MOB_DROP",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "TARANTULA",
       "rank": 0
@@ -5451,14 +2742,6 @@
     "id": "TARANTULA_RING",
     "description": "Every %{VALUE:NTH_HIT} melee hit on the same enemy deals %{VALUE:NTH_DAMAGE} damage.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "TARANTULA",
       "rank": 1
@@ -5467,56 +2750,20 @@
   {
     "id": "TEST_BUCKET_PLEASE_IGNORE",
     "lore": "Was it all a test?",
-    "source": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true,
-      "soulbound": "SOLO"
-    }
+    "source": "RIFT"
   },
   {
     "id": "TRAPPER_CREST",
     "description": "Upgrades to %{RARITY:UNCOMMON} if you collect %{VALUE:PELTS} %{KEYWORDS:PELT} while %{NPC:FINNEGAN} is in office.\n\nIncreases the odds of finding %{KEYWORD:ENDANGERED} or %{KEYWORD:ELUSIVE} mobs by %{VALUE:ODDS}.",
-    "source": "NPC",
-    "attributes": {
-      "sellable": false,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "NPC"
   },
   {
     "id": "TINY_DANCER",
-    "source": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true,
-      "soulbound": "SOLO"
-    }
+    "source": "RIFT"
   },
   {
     "id": "TITANIUM_TALISMAN",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "TITANIUM",
       "rank": 0
@@ -5525,14 +2772,6 @@
   {
     "id": "TITANIUM_RING",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "TITANIUM",
       "rank": 1
@@ -5541,14 +2780,6 @@
   {
     "id": "TITANIUM_ARTIFACT",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "TITANIUM",
       "rank": 2
@@ -5557,14 +2788,6 @@
   {
     "id": "TITANIUM_RELIC",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "TITANIUM",
       "rank": 3
@@ -5574,15 +2797,6 @@
     "id": "TREASURE_TALISMAN",
     "description": "Grants %{VALUE:EXTRA_LOOT} extra loot to end of dungeon chests.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "TREASURE",
       "rank": 0
@@ -5592,15 +2806,6 @@
     "id": "TREASURE_RING",
     "description": "Grants %{VALUE:EXTRA_LOOT} extra loot to end of dungeon chests.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "TREASURE",
       "rank": 0
@@ -5610,15 +2815,6 @@
     "id": "TREASURE_ARTIFACT",
     "description": "Grants %{VALUE:EXTRA_LOOT} extra loot to end of dungeon chests.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "TREASURE",
       "rank": 0
@@ -5628,14 +2824,6 @@
     "id": "VACCINE_TALISMAN",
     "description": "Reduces the effect of %{KEYWORD:POISON} by %{VALUE:REDUCTION}.",
     "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "VACCINE",
       "rank": 0
@@ -5645,14 +2833,6 @@
     "id": "VACCINE_RING",
     "description": "Reduces the effect of %{KEYWORD:POISON} by %{VALUE:REDUCTION}.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "VACCINE",
       "rank": 1
@@ -5662,14 +2842,6 @@
     "id": "VACCINE_ARTIFACT",
     "description": "Reduces the effect of %{KEYWORD:POISON} by %{VALUE:REDUCTION}.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "VACCINE",
       "rank": 2
@@ -5679,56 +2851,23 @@
     "id": "VAMPIRE_DENTIST_RELIC",
     "description": "Apply a natural regen tick when you deal melee damage. %{FORMAT:GRAY}(1s cooldown)",
     "rift": "Heal %{VALUE:HEAL}%{SYMBOL:HEALTH} from healing melons.",
-    "source": "RIFT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "riftTransferrable": true
-    }
+    "source": "RIFT"
   },
   {
     "id": "VILLAGE_TALISMAN",
     "description": "Increases your %{STAT:WALK_SPEED} by %{VALUE:INCREASE} while held in the %{ZONE:VILLAGE}.",
-    "source": "NPC",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "NPC"
   },
   {
     "id": "WARDING_TRINKET",
     "source": "RIFT",
-    "limit": "RIFT",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "limit": "RIFT"
   },
   {
     "id": "WEDDING_RING_0",
     "description": "Grants a 1 in 1,000,000,000,000 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 0
@@ -5739,14 +2878,6 @@
     "description": "Grants a 1 in 100,000,000,000 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 1
@@ -5757,14 +2888,6 @@
     "description": "Grants a 1 in 10,000,000,000 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 2
@@ -5775,14 +2898,6 @@
     "description": "Grants a 1 in 1,000,000,000 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 3
@@ -5793,14 +2908,6 @@
     "description": "Grants a 1 in 100,000,000 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 4
@@ -5811,14 +2918,6 @@
     "description": "Grants a 1 in 1,000,000 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 5
@@ -5829,14 +2928,6 @@
     "description": "Grants a 1 in 100,000 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 6
@@ -5847,14 +2938,6 @@
     "description": "Grants a 1 in 10,000 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 7
@@ -5865,14 +2948,6 @@
     "description": "Grants a 1 in 1,000 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 8
@@ -5883,14 +2958,6 @@
     "description": "Grants a 1 in 100 chance to deal %{VALUE:LOVE_DAMAGE} damage.",
     "lore": "True love is tough to find, but finding it hits you hard!",
     "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "RING_OF_LOVE",
       "rank": 9
@@ -5899,28 +2966,12 @@
   {
     "id": "WOOD_TALISMAN",
     "description": "Increases your %{STAT:WALK_SPEED} by %{VALUE:INCREASE} while held in the %{ZONE:FOREST}, %{ZONE:GRAVEYARD}, and %{ZONE:WILDERNESS}.",
-    "source": "COLLECTION",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    }
+    "source": "COLLECTION"
   },
   {
     "id": "WITHER_ARTIFACT",
     "description": "Reduces the damage taken from Withers by %{VALUE:REDUCTION}.",
     "source": "EVENT",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "WITHER",
       "rank": 0
@@ -5930,15 +2981,6 @@
     "id": "WITHER_RELIC",
     "description": "Reduces the damage taken from Withers by %{VALUE:REDUCTION}.",
     "source": "DUNGEON",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "dungeonable": true
-    },
     "family": {
       "id": "WITHER",
       "rank": 1
@@ -5947,29 +2989,12 @@
   {
     "id": "WOLF_PAW",
     "description": null,
-    "source": "QUEST",
-    "attributes": {
-      "sellable": false,
-      "tradeable": false,
-      "auctionable": false,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false,
-      "soulbound": "SOLO"
-    }
+    "source": "QUEST"
   },
   {
     "id": "WOLF_TALISMAN",
     "description": "Reduces the damage taken from Wolves by %{VALUE:REDUCTION}.",
     "source": "MOB_DROP",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "WOLF",
       "rank": 0
@@ -5979,14 +3004,6 @@
     "id": "WOLF_RING",
     "description": "Reduces the damage taken from Wolves by %{VALUE:REDUCTION}.",
     "source": "MISCELLANEOUS",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "WOLF",
       "rank": 1
@@ -5996,14 +3013,6 @@
     "id": "ZOMBIE_TALISMAN",
     "description": "Reduces the damage taken from Zombies by %{VALUE:REDUCTION}.",
     "source": "NPC",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "ZOMBIE",
       "rank": 0
@@ -6013,14 +3022,6 @@
     "id": "ZOMBIE_RING",
     "description": "Reduces the damage taken from Zombies by %{VALUE:REDUCTION}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "ZOMBIE",
       "rank": 1
@@ -6030,14 +3031,6 @@
     "id": "ZOMBIE_ARTIFACT",
     "description": "Reduces the damage taken from Zombies by %{VALUE:REDUCTION}.",
     "source": "SLAYER",
-    "attributes": {
-      "sellable": true,
-      "tradeable": true,
-      "auctionable": true,
-      "reforgeable": false,
-      "enchantable": false,
-      "museumable": false
-    },
     "family": {
       "id": "ZOMBIE",
       "rank": 2
