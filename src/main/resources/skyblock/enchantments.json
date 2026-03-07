@@ -11,45 +11,45 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 3,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 4,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 5,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 6,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 7,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 8,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 9,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 10,
-        "applyCost": {}
+        "cost": {}
       }
     ],
     "stats": [
@@ -101,37 +101,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       }
@@ -165,7 +165,7 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       }
@@ -195,43 +195,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "ENSNARED_SNAIL"
         }
@@ -267,19 +267,19 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 80
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       }
@@ -313,43 +313,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -383,37 +383,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 0
         }
       }
@@ -446,37 +446,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       }
@@ -513,13 +513,13 @@
     "levels": [
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -559,45 +559,45 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 3,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 4,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 5,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 6,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 7,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 8,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 9,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 10,
-        "applyCost": {}
+        "cost": {}
       }
     ],
     "stats": [
@@ -666,31 +666,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -724,37 +724,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "CHAIN_END_TIMES"
         }
@@ -790,37 +790,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -868,45 +868,45 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 3,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 4,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 5,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 6,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 7,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 8,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 9,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 10,
-        "applyCost": {}
+        "cost": {}
       }
     ],
     "stats": [
@@ -958,31 +958,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -1014,19 +1014,19 @@
     "levels": [
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 80
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       }
@@ -1068,43 +1068,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -1144,37 +1144,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -1208,45 +1208,45 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 3,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 4,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 5,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 6,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 7,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 8,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 9,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 10,
-        "applyCost": {}
+        "cost": {}
       }
     ],
     "stats": [
@@ -1299,25 +1299,25 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       }
@@ -1349,7 +1349,7 @@
     "levels": [
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -1368,19 +1368,19 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       }
@@ -1413,19 +1413,19 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       }
@@ -1455,31 +1455,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -1515,31 +1515,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -1600,62 +1600,72 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
-          "item": "SIL_EX"
+        "cost": {
+          "items": {
+            "SIL_EX": 1
+          }
         }
       },
       {
         "level": 7,
-        "applyCost": {
-          "item": "SIL_EX"
+        "cost": {
+          "items": {
+            "SIL_EX": 1
+          }
         }
       },
       {
         "level": 8,
-        "applyCost": {
-          "item": "SIL_EX"
+        "cost": {
+          "items": {
+            "SIL_EX": 1
+          }
         }
       },
       {
         "level": 9,
-        "applyCost": {
-          "item": "SIL_EX"
+        "cost": {
+          "items": {
+            "SIL_EX": 1
+          }
         }
       },
       {
         "level": 10,
-        "applyCost": {
-          "item": "SIL_EX"
+        "cost": {
+          "items": {
+            "SIL_EX": 1
+          }
         }
       }
     ],
@@ -1696,43 +1706,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "ENDSTONE_IDOL"
         }
@@ -1770,37 +1780,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -1837,31 +1847,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 0
         }
       }
@@ -1893,45 +1903,45 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 3,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 4,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 5,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 6,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 7,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 8,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 9,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 10,
-        "applyCost": {}
+        "cost": {}
       }
     ],
     "stats": [
@@ -1983,61 +1993,61 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 80
         }
       },
       {
         "level": 8,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 9,
-        "applyCost": {
+        "cost": {
           "experience": 120
         }
       },
       {
         "level": 10,
-        "applyCost": {
+        "cost": {
           "experience": 140
         }
       }
@@ -2095,61 +2105,61 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 90
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 180
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 240
         }
       },
       {
         "level": 8,
-        "applyCost": {
+        "cost": {
           "experience": 300
         }
       },
       {
         "level": 9,
-        "applyCost": {
+        "cost": {
           "experience": 360
         }
       },
       {
         "level": 10,
-        "applyCost": {
+        "cost": {
           "experience": 420
         }
       }
@@ -2188,19 +2198,19 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 0
         }
       }
@@ -2244,43 +2254,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -2317,31 +2327,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -2373,13 +2383,13 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -2421,19 +2431,19 @@
     "levels": [
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -2466,25 +2476,25 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       },
       {
         "level": 4,
-        "applyCost": {}
+        "cost": {}
       }
     ],
     "stats": [
@@ -2513,43 +2523,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "SEVERED_PINCER"
         }
@@ -2587,43 +2597,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 200,
           "item": ""
         }
@@ -2678,37 +2688,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       }
@@ -2745,31 +2755,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -2805,43 +2815,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       }
@@ -2879,61 +2889,61 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 90
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 180
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 240
         }
       },
       {
         "level": 8,
-        "applyCost": {
+        "cost": {
           "experience": 300
         }
       },
       {
         "level": 9,
-        "applyCost": {
+        "cost": {
           "experience": 360
         }
       },
       {
         "level": 10,
-        "applyCost": {
+        "cost": {
           "experience": 420
         }
       }
@@ -2970,37 +2980,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 5
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 0
         }
       }
@@ -3034,45 +3044,45 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 3,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 4,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 5,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 6,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 7,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 8,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 9,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 10,
-        "applyCost": {}
+        "cost": {}
       }
     ],
     "stats": [
@@ -3145,31 +3155,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 27
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 41
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 55
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 68
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 82
         }
       }
@@ -3201,61 +3211,61 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 80
         }
       },
       {
         "level": 8,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 9,
-        "applyCost": {
+        "cost": {
           "experience": 120
         }
       },
       {
         "level": 10,
-        "applyCost": {
+        "cost": {
           "experience": 140
         }
       }
@@ -3299,31 +3309,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       }
@@ -3357,13 +3367,13 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       }
@@ -3394,31 +3404,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -3464,37 +3474,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -3556,31 +3566,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -3615,31 +3625,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -3673,43 +3683,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -3743,43 +3753,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "GOLD_BOTTLE_CAP"
         }
@@ -3814,37 +3824,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -3880,19 +3890,19 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       }
@@ -3926,61 +3936,61 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 90
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 180
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 240
         }
       },
       {
         "level": 8,
-        "applyCost": {
+        "cost": {
           "experience": 300
         }
       },
       {
         "level": 9,
-        "applyCost": {
+        "cost": {
           "experience": 360
         }
       },
       {
         "level": 10,
-        "applyCost": {
+        "cost": {
           "experience": 420
         }
       }
@@ -4017,37 +4027,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       }
@@ -4080,31 +4090,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -4174,31 +4184,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 23
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 91
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 136
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 179
         }
       }
@@ -4234,37 +4244,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 5
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 9
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 13
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 18
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 23
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "PESTHUNTING_GUIDE"
         }
@@ -4311,7 +4321,7 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       }
@@ -4339,43 +4349,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 8
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 16
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 24
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 36
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 48
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "TROUBLED_BUBBLE"
         }
@@ -4410,43 +4420,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -4482,31 +4492,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -4542,43 +4552,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -4615,37 +4625,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -4682,31 +4692,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -4742,43 +4752,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       }
@@ -4812,13 +4822,13 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       }
@@ -4847,19 +4857,19 @@
     "levels": [
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       }
@@ -4899,31 +4909,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 18
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 23
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 37
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 36
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       }
@@ -4955,31 +4965,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 80
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       }
@@ -5039,31 +5049,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -5096,7 +5106,7 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -5116,25 +5126,25 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       }
@@ -5169,31 +5179,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -5227,37 +5237,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "GOLDEN_BOUNTY"
         }
@@ -5295,31 +5305,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -5353,43 +5363,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -5429,7 +5439,7 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       }
@@ -5452,19 +5462,19 @@
     "levels": [
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       }
@@ -5504,31 +5514,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 80
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       }
@@ -5565,7 +5575,7 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 5
         }
       }
@@ -5591,43 +5601,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "SEVERED_HAND"
         }
@@ -5665,31 +5675,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -5721,25 +5731,25 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 0
         }
       }
@@ -5781,43 +5791,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 0,
           "item": "OCTOPUS_TENDRIL"
         }
@@ -5852,7 +5862,7 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {}
+        "cost": {}
       }
     ],
     "stats": [
@@ -5882,61 +5892,61 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 45
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 90
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 180
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 240
         }
       },
       {
         "level": 8,
-        "applyCost": {
+        "cost": {
           "experience": 300
         }
       },
       {
         "level": 9,
-        "applyCost": {
+        "cost": {
           "experience": 360
         }
       },
       {
         "level": 10,
-        "applyCost": {
+        "cost": {
           "experience": 420
         }
       }
@@ -5973,19 +5983,19 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       }
@@ -6015,37 +6025,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 5
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 0
         }
       }
@@ -6083,13 +6093,13 @@
     "levels": [
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 300
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 500
         }
       }
@@ -6122,19 +6132,19 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       }
@@ -6177,43 +6187,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -6264,43 +6274,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 9
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 13
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 18
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 23
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 27
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 91
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 179
         }
       }
@@ -6348,19 +6358,19 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 55
         }
       }
@@ -6393,43 +6403,43 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 7,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -6477,45 +6487,45 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 2,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 3,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 4,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 5,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 6,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 7,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 8,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 9,
-        "applyCost": {}
+        "cost": {}
       },
       {
         "level": 10,
-        "applyCost": {}
+        "cost": {}
       }
     ],
     "stats": [
@@ -6568,13 +6578,13 @@
     "levels": [
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       }
@@ -6621,7 +6631,7 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       }
@@ -6652,31 +6662,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 75
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -6709,31 +6719,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -6765,31 +6775,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -6821,31 +6831,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -6877,31 +6887,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -6933,31 +6943,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -6989,31 +6999,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -7045,31 +7055,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -7101,31 +7111,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -7157,31 +7167,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -7213,31 +7223,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -7274,31 +7284,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -7347,19 +7357,19 @@
     "levels": [
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 120
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 140
         }
       }
@@ -7412,31 +7422,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -7471,31 +7481,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -7557,31 +7567,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -7626,31 +7636,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -7695,31 +7705,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -7754,19 +7764,19 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       }
@@ -7821,13 +7831,13 @@
     "levels": [
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -7889,31 +7899,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -7972,31 +7982,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8033,31 +8043,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8106,31 +8116,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8187,31 +8197,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8248,31 +8258,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8318,7 +8328,7 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       }
@@ -8351,31 +8361,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8432,31 +8442,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8513,31 +8523,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8596,31 +8606,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8655,31 +8665,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8736,13 +8746,13 @@
     "levels": [
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 300
         }
       }
@@ -8794,31 +8804,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8855,31 +8865,31 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 150
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 250
         }
       }
@@ -8937,37 +8947,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -9002,37 +9012,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 40
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 50
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 200
         }
       }
@@ -9107,19 +9117,19 @@
     "levels": [
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 60
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 80
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       }
@@ -9152,37 +9162,37 @@
     "levels": [
       {
         "level": 1,
-        "applyCost": {
+        "cost": {
           "experience": 10
         }
       },
       {
         "level": 2,
-        "applyCost": {
+        "cost": {
           "experience": 15
         }
       },
       {
         "level": 3,
-        "applyCost": {
+        "cost": {
           "experience": 20
         }
       },
       {
         "level": 4,
-        "applyCost": {
+        "cost": {
           "experience": 25
         }
       },
       {
         "level": 5,
-        "applyCost": {
+        "cost": {
           "experience": 30
         }
       },
       {
         "level": 6,
-        "applyCost": {
+        "cost": {
           "experience": 100
         }
       }
