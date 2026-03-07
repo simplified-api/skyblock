@@ -1,0 +1,97 @@
+[
+  {
+    "id": "PRIVATE_ISLAND",
+    "name": "Private Island",
+    "format": "GREEN"
+  },
+  {
+    "id": "THE_GARDEN",
+    "name": "The Garden",
+    "format": "GREEN"
+  },
+  {
+    "id": "HUB",
+    "name": "Hub",
+    "format": "WHITE"
+  },
+  {
+    "id": "THE_PARK",
+    "name": "The Park",
+    "format": "AQUA"
+  },
+  {
+    "id": "GALATEA",
+    "name": "Galatea",
+    "format": "LIGHT_GREEN"
+  },
+  {
+    "id": "THE_BARN",
+    "name": "The Barn",
+    "format": "AQUA"
+  },
+  {
+    "id": "MUSHROOM_DESERT",
+    "name": "Mushroom Desert",
+    "format": "YELLOW"
+  },
+  {
+    "id": "SPIDERS_DEN",
+    "name": "Spider's Den",
+    "format": "RED"
+  },
+  {
+    "id": "THE_END",
+    "name": "The End",
+    "format": "LIGHT_PURPLE"
+  },
+  {
+    "id": "CRIMSON_ISLE",
+    "name": "Crimson Isle",
+    "format": "RED"
+  },
+  {
+    "id": "GOLD_MINE",
+    "name": "Gold Mine",
+    "format": "GOLD"
+  },
+  {
+    "id": "DEEP_CAVERNS",
+    "name": "Deep Caverns",
+    "format": "AQUA"
+  },
+  {
+    "id": "DWARVEN_MINES",
+    "name": "Dwarven Mines",
+    "format": "DARK_GREEN"
+  },
+  {
+    "id": "CRYSTAL_HOLLOWS",
+    "name": "Crystal Hollows",
+    "format": "DARK_PURPLE"
+  },
+  {
+    "id": "FISHING_ISLANDS",
+    "name": "Fishing Islands",
+    "format": "WHITE"
+  },
+  {
+    "id": "JERRYS_WORKSHOP",
+    "name": "Jerry's Workshop",
+    "format": "RED"
+  },
+  {
+    "id": "RIFT_DIMENSION",
+    "name": "Rift Dimension",
+    "format": "LIGHT_PURPLE"
+  },
+  {
+    "id": "DUNGEON_HUB",
+    "name": "Dungeon Hub",
+    "format": "RED"
+  },
+  {
+    "id": "LIMBO",
+    "name": "Limbo",
+    "format": "AQUA"
+  }
+]
