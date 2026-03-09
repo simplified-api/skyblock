@@ -1291,12 +1291,12 @@
   {
     "id": "BOGGED",
     "name": "Bogged",
-    "description": "",
+    "description": "Learn to swim before you learn to dive!",
     "bracket": 4,
-    "max_tier": 15,
+    "max_tier": 20,
     "category": "GALATEA",
     "mobTypes": [
-      "WOODLAND",
+      "SKELETAL",
       "AQUATIC"
     ]
   },
@@ -1971,9 +1971,9 @@
   {
     "id": "MITHRIL_GRUBBER",
     "name": "Mithril Grubber",
-    "description": "",
-    "bracket": 4,
-    "maxTier": 15,
+    "description": "I die a little every time I take out a Grubber...",
+    "bracket": 3,
+    "maxTier": 10,
     "category": "FISHING",
     "subcategory": "FISHING",
     "mobTypes": []
@@ -2191,16 +2191,18 @@
     ]
   },
 
-
   {
     "id": "FIERY_SCUTTLER",
     "name": "Firey Scuttler",
-    "description": "",
-    "bracket": 0,
-    "maxTier": 0,
+    "description": "Small guy, big attitude.",
+    "bracket": 5,
+    "maxTier": 15,
     "category": "FISHING",
     "subcategory": "LAVA",
-    "mobTypes": []
+    "mobTypes": [
+      "MAGMATIC",
+      "ANIMAL"
+    ]
   },
   {
     "id": "FIRE_EEL",
@@ -2218,12 +2220,16 @@
   {
     "id": "FIREPROOF_WITCH",
     "name": "Fireproof Witch",
-    "description": "",
-    "bracket": 0,
-    "maxTier": 0,
+    "description": "Her brewing sessions have seen much success as of late.",
+    "bracket": 4,
+    "maxTier": 15,
     "category": "FISHING",
     "subcategory": "LAVA",
-    "mobTypes": []
+    "mobTypes": [
+      "MAGMATIC",
+      "HUMANOID",
+      "ARCANE"
+    ]
   },
   {
     "id": "FLAMING_WORM",
@@ -2241,12 +2247,15 @@
   {
     "id": "FRIED_CHICKEN",
     "name": "Fried Chicken",
-    "description": "",
-    "bracket": 0,
-    "maxTier": 0,
+    "description": "Is it ready to eat, then?",
+    "bracket": 4,
+    "maxTier": 20,
     "category": "FISHING",
     "subcategory": "LAVA",
-    "mobTypes": []
+    "mobTypes": [
+      "MAGMATIC",
+      "ANIMAL"
+    ]
   },
   {
     "id": "LAVA_BLAZE",
@@ -2256,7 +2265,10 @@
     "maxTier": 15,
     "category": "FISHING",
     "subcategory": "LAVA",
-    "mobTypes": []
+    "mobTypes": [
+      "MAGMATIC",
+      "INFERNAL"
+    ]
   },
   {
     "id": "LAVA_FLAME",
@@ -2292,7 +2304,10 @@
     "maxTier": 15,
     "category": "FISHING",
     "subcategory": "LAVA",
-    "mobTypes": []
+    "mobTypes": [
+      "MAGMATIC",
+      "UNDEAD"
+    ]
   },
   {
     "id": "LORD_JAWBUS",
@@ -2342,7 +2357,11 @@
     "maxTier": 5,
     "category": "FISHING",
     "subcategory": "LAVA",
-    "mobTypes": []
+    "mobTypes": [
+      "MAGMATIC",
+      "ELUSIVE",
+      "ANIMAL"
+    ]
   },
   {
     "id": "PYROCLASTIC_WORM",
@@ -2361,11 +2380,15 @@
     "id": "RAGNAROK",
     "name": "Ragnarok",
     "description": "",
-    "bracket": 0,
-    "maxTier": 0,
+    "bracket": 7,
+    "maxTier": 15,
     "category": "FISHING",
     "subcategory": "LAVA",
-    "mobTypes": []
+    "mobTypes": [
+      "MAGMATIC",
+      "SKELETAL",
+      "ELUSIVE"
+    ]
   },
   {
     "id": "TAURUS",
@@ -2659,12 +2682,16 @@
   {
     "id": "TITANOBOA",
     "name": "Titanoboa",
-    "description": "",
-    "bracket": 0,
-    "maxTier": 0,
+    "description": "Yet another great reason to keep away from the Backwater Bayou.",
+    "bracket": 7,
+    "maxTier": 15,
     "category": "FISHING",
     "subcategory": "BACKWATER_BAYOU",
-    "mobTypes": []
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL",
+      "ELUSIVE"
+    ]
   },
   {
     "id": "TRASH_GOBBLER",
@@ -3039,35 +3066,3 @@
     ]
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
