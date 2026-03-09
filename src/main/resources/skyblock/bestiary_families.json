@@ -1,0 +1,3073 @@
+[
+  {
+    "id": "BAT",
+    "name": "Bat",
+    "description": "Can be found hanging around.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "YOUR_ISLAND",
+    "mobTypes": [
+      "ANIMAL",
+      "AIRBORNE"
+    ]
+  },
+  {
+    "id": "CREEPER",
+    "name": "Creeper",
+    "description": "Look out for their hiss!",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "YOUR_ISLAND",
+    "mobTypes": [
+      "CUBIC"
+    ]
+  },
+  {
+    "id": "ENDERMAN",
+    "name": "Enderman",
+    "description": "Don't like making eye contact.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "YOUR_ISLAND",
+    "mobTypes": [
+      "ENDER"
+    ]
+  },
+  {
+    "id": "SKELETON",
+    "name": "Skeleton",
+    "description": "Just a normal skelly.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "YOUR_ISLAND",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SLIME",
+    "name": "Slime",
+    "description": "World's loudest creatures.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "YOUR_ISLAND",
+    "mobTypes": [
+      "CUBIC"
+    ]
+  },
+  {
+    "id": "SPIDER",
+    "name": "Spider",
+    "description": "Likes to climb.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "YOUR_ISLAND",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "WITCH",
+    "name": "Witch",
+    "description": "Masters of alchemy.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "YOUR_ISLAND",
+    "mobTypes": [
+      "HUMANOID",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "ZOMBIE",
+    "name": "Zombie",
+    "description": "Brains.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "YOUR_ISLAND",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+
+  {
+    "id": "CRYPT_GHOUL",
+    "name": "Crypt Ghoul",
+    "description": "Long buried, newly unburied.",
+    "bracket": 1,
+    "maxTier": 15,
+    "category": "HUB",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "GOLDEN_GHOUL",
+    "name": "Golden Ghoul",
+    "description": "A ghoul that fell into molten gold.",
+    "format": "GOLD",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "HUB",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "GRAVEYARD_ZOMBIE",
+    "name": "Graveyard Zombie",
+    "description": "Brains.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "HUB",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "OLD_WOLF",
+    "name": "Old Wolf",
+    "description": "Wolves older than the island itself.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "HUB",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "SHINY_PIG",
+    "name": "Shiny Pig",
+    "description": "",
+    "bracket": 1,
+    "maxTier": 15,
+    "category": "HUB",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "WOLF",
+    "name": "Wolf",
+    "description": "Roaming the remains of a Castle far from its best days.",
+    "bracket": 1,
+    "maxTier": 15,
+    "category": "HUB",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "ZOMBIE_VILLAGER",
+    "name": "Zombie Villager",
+    "description": "The real enemy isn't the dead - it's the living.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "HUB",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+
+  {
+    "id": "CHICKEN",
+    "name": "Chicken",
+    "description": "Wishes it could fly.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "THE_FARMING_ISLANDS",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "COW",
+    "name": "Cow",
+    "description": "Natural predator of grass.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "THE_FARMING_ISLANDS",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "MUSHROOM_COW",
+    "name": "Mushroom Cow",
+    "description": "Technically a health code violation.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "THE_FARMING_ISLANDS",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "PIG",
+    "name": "Pig",
+    "description": "Smells like Bacon.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "THE_FARMING_ISLANDS",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "RABBIT",
+    "name": "Rabbit",
+    "description": "Never stops hopping.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "THE_FARMING_ISLANDS",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "SHEEP",
+    "name": "Sheep",
+    "description": "Beep beep I'm a sheep.",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "THE_FARMING_ISLANDS",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+
+  {
+    "id": "BEETLE",
+    "name": "Beetle",
+    "description": "A particularly gross pest.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "CRICKET",
+    "name": "Cricket",
+    "description": "Usually just a hop, skip, and a jump away.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "DRAGONFLY",
+    "name": "Dragonfly",
+    "description": "Glides by in a blur of wings and whispers.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "EARTHWORM",
+    "name": "Earthworm",
+    "description": "Big, scary, and pink.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "FIELD_MOUSE",
+    "name": "Field Mouse",
+    "description": "A shy little fellow!",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "FIREFLY",
+    "name": "Firefly",
+    "description": "Flickers softly - here one moment, gone the next.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "FLY",
+    "name": "Fly",
+    "description": "A common Garden pest, known for its big eyes.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "LOCUST",
+    "name": "Locust",
+    "description": "Pretty loud, and pretty annoying.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "MITE",
+    "name": "Mite",
+    "description": "Try and you just mite.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "MOSQUITO",
+    "name": "Mosquito",
+    "description": "One of nature's most useless creatures.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "MOTH",
+    "name": "Moth",
+    "description": "Fluttering around a Garden near you.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "PRAYING_MANTIS",
+    "name": "Praying Mantis",
+    "description": "Strikes fast - *blink* - and it's already gone.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "RAT",
+    "name": "Rat",
+    "description": "Quick, yet nasty.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "SLUG",
+    "name": "Slug",
+    "description": "Methodical in movement, ineffective in survival.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "PEST"
+    ]
+  },
+  {
+    "id": "TIMESTALK_CLONE",
+    "name": "Timestalk Clone",
+    "description": "There can only be one, sometimes two apparently.",
+    "bracket": 7,
+    "maxTier": 10,
+    "category": "GARDEN",
+    "mobTypes": []
+  },
+  {
+    "id": "ZOMBUDDY",
+    "name": "Zombuddy",
+    "description": "Zombuddy that I used to know.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "GARDEN",
+    "mobTypes": [
+      "SHIELDED"
+    ]
+  },
+
+  {
+    "id": "ARACHNE",
+    "name": "Arachne",
+    "description": "The strongest spider in the den.",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "ARACHNES_BROOD",
+    "name": "Arachne's Brood",
+    "description": "Brood of Arachne.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "ARACHNES_KEEPER",
+    "name": "Arachne's Keeper",
+    "description": "Keeper of Arachne.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "BROODMOTHER",
+    "name": "Broodmother",
+    "description": "The Broodmother to end all Broodmothers.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "DASHER_SPIDER",
+    "name": "Dasher Spider",
+    "description": "Dashingly striking, watch for this spider's long jumps!",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "GRAVEL_SKELETON",
+    "name": "Gravel Skeleton",
+    "description": "These Skeletons just never stay dead.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "RAIN_SLIME",
+    "name": "Rain Slime",
+    "description": "These Slimes enjoy rain...and jumping to their deaths.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "CUBIC"
+    ]
+  },
+  {
+    "id": "SILVERFISH",
+    "name": "Silverfish",
+    "description": "Though weak alone, they find strength in numbers.",
+    "bracket": 1,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "SPIDER_JOCKEY",
+    "name": "Spider Jockey",
+    "description": "The Skeletons have been controlling Spiders since the dawn of minekind.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD",
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SPLITTER_SPIDER",
+    "name": "Splitter Spider",
+    "description": "If you think you've killed this spider, think again.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "VORACIOUS_SPIDER",
+    "name": "Voracious Spider",
+    "description": "This spider is quite voracious.",
+    "bracket": 1,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "WEAVER_SPIDER",
+    "name": "Weaver Spider",
+    "description": "Spins a web of lies.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "SPIDERS_DEN",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+
+  {
+    "id": "DRAGON",
+    "name": "Dragon",
+    "description": "Inside the Dragon's Den, there is no escape from the fury of the beasts.",
+    "bracket": 5,
+    "maxTier": 20,
+    "category": "THE_END",
+    "mobTypes": [
+      "ENDER",
+      "ARCANE",
+      "AIRBORNE"
+    ]
+  },
+  {
+    "id": "END_STONE_PROTECTOR",
+    "name": "End Stone Protector",
+    "description": "Risen from the debris of Endstone.",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "THE_END",
+    "mobTypes": [
+      "CONSTRUCT",
+      "ENDER"
+    ]
+  },
+  {
+    "id": "ENDERMAN",
+    "name": "Enderman",
+    "description": "Not your mother's endermen.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_END",
+    "mobTypes": [
+      "ENDER"
+    ]
+  },
+  {
+    "id": "ENDERMITE",
+    "name": "Endermite",
+    "description": "Hidden in the stone of The End.",
+    "bracket": 5,
+    "maxTier": 25,
+    "category": "THE_END",
+    "mobTypes": [
+      "ARTHROPOD",
+      "ENDER"
+    ]
+  },
+  {
+    "id": "OBSIDIAN_DEFENDER",
+    "name": "Obsidian Defender",
+    "description": "Forged from the forces of hot and cold.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_END",
+    "mobTypes": [
+      "ENDER",
+      "WITHER"
+    ]
+  },
+  {
+    "id": "SEER",
+    "name": "Seer",
+    "description": "Always watching.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_END",
+    "mobTypes": [
+      "ENDER"
+    ]
+  },
+  {
+    "id": "VOIDLING_EXTREMIST",
+    "name": "Voidling Extremist",
+    "description": "The top lieutenants of the void heraldry.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "THE_END",
+    "mobTypes": [
+      "ENDER"
+    ]
+  },
+  {
+    "id": "VOIDLING_FANATIC",
+    "name": "Voidling Fanatic",
+    "description": "A step beyond zealotry.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_END",
+    "mobTypes": [
+      "ENDER"
+    ]
+  },
+  {
+    "id": "ZEALOT",
+    "name": "Zealot",
+    "description": "Unwavering in their devotion to the Dragon.",
+    "bracket": 3,
+    "maxTier": 25,
+    "category": "THE_END",
+    "mobTypes": [
+      "ENDER"
+    ]
+  },
+
+  {
+    "id": "ASHFANG",
+    "name": "Ashfang",
+    "description": "They also call themselves \"The Twins\".",
+    "format": "DARK_GRAY",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "INFERNAL",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "BARBARIAN_DUKE_X",
+    "name": "Barbarian Duke X",
+    "description": "He's got anger issues.",
+    "format": "DARK_GRAY",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "HUMANOID",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "BLADESOUL",
+    "name": "Bladesoul",
+    "description": "Used to be a prince.",
+    "format": "DARK_GRAY",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "WITHER",
+      "SKELETAL",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "BLAZE",
+    "name": "Blaze",
+    "description": "They started the fire.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "FLAMING_SPIDER",
+    "name": "Flaming Spider",
+    "description": "Can't stop burning.",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "ARTHROPOD",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "FLARE",
+    "name": "Flare",
+    "description": "Oh baby, a triple!",
+    "bracket": 1,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "GHAST",
+    "name": "Ghast",
+    "description": "Their screams can be heard from miles away.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "CUBIC",
+      "AIRBORNE"
+    ]
+  },
+  {
+    "id": "KADA_KNIGHT",
+    "name": "Kada Knight",
+    "description": "A short walk for you is a long walk for them.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "ANIMAL",
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "MAGE_OUTLAW",
+    "name": "Mage Outlaw",
+    "description": "Ate too much Sulphur.",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "HUMANOID",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "MAGMA_BOSS",
+    "name": "Magma Boss",
+    "description": "Like a Magma Cube, but bigger.",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "CUBIC",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "MAGMA_CUBE",
+    "name": "Magma Cube",
+    "description": "Like Slime, but hotter.",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "CUBIC",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "MAGMA_CUBE_RIDER",
+    "name": "Magma Cube Rider",
+    "description": "Relatively docile...until you push them.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "UNDEAD",
+      "CUBIC",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "MATCHO",
+    "name": "Matcho",
+    "description": "Has quite an explosive temper.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "HUMANOID",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "MILLENNIA_AGED_BLAZE",
+    "name": "Millennia-Aged Blaze",
+    "description": "Blazes rarely live past the age of 900.",
+    "format": "DARK_RED",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "INFERNAL",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "MUSHROOM_BULL",
+    "name": "Mushroom Bull",
+    "description": "Born with digestive problems.",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "SMOLDERING_BLAZE",
+    "name": "Smoldering Blaze",
+    "description": "It's on fire. But more than usual.",
+    "bracket": 2,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "INFERNAL",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "TENTACLE",
+    "name": "Tentacle",
+    "description": "Offspring of The Matriarch.",
+    "bracket": 5,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "INFERNAL",
+      "CUBIC"
+    ]
+  },
+  {
+    "id": "VANQUISHER",
+    "name": "Vanquisher",
+    "description": "The embodiment of vengeful souls that come for revenge.",
+    "format": "DARK_PURPLE",
+    "bracket": 5,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "WITHER",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "WITHER_SKELETON",
+    "name": "Wither Skeleton",
+    "description": "Keepers of the Crimson Isle.",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "WITHER",
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "WITHER_SPECTRE",
+    "name": "Wither Spectre",
+    "description": "Hasn't seen light in ages.",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "CRIMSON_ISLE",
+    "mobTypes": [
+      "WITHER",
+      "ARCANE"
+    ]
+  },
+
+  {
+    "id": "EMERALD_SLIME",
+    "name": "Emerald Slime",
+    "description": "It is said that these slimes absorb emeralds to grow larger.",
+    "bracket": 1,
+    "maxTier": 10,
+    "category": "DEEP_CAVERNS",
+    "mobTypes": [
+      "CUBIC"
+    ]
+  },
+  {
+    "id": "LAPIS_ZOMBIE",
+    "name": "Lapis Zombie",
+    "description": "These zombies adapted to their environment, using the lapis around them as a defense mechanism.",
+    "bracket": 1,
+    "maxTier": 10,
+    "category": "DEEP_CAVERNS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "MINER_SKELETON",
+    "name": "Miner Skeleton",
+    "description": "These skeletons have crafted gear from the diamonds around them - resulting in a look both fashionable and protective.",
+    "bracket": 1,
+    "maxTier": 10,
+    "category": "DEEP_CAVERNS",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "MINER_ZOMBIE",
+    "name": "Miner Zombie",
+    "description": "Like their skeleton counterparts, these zombies have bedazzled themselves throughout the years.",
+    "bracket": 1,
+    "maxTier": 10,
+    "category": "DEEP_CAVERNS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "REDSTONE_PIGMAN",
+    "name": "Redstone Pigman",
+    "description": "These pigmen will defend their redstone to the death.",
+    "bracket": 1,
+    "maxTier": 10,
+    "category": "DEEP_CAVERNS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "SNEAKY_CREEPER",
+    "name": "Sneaky Creeper",
+    "description": "They be creepin'.",
+    "bracket": 1,
+    "maxTier": 10,
+    "category": "DEEP_CAVERNS",
+    "mobTypes": [
+      "CUBIC"
+    ]
+  },
+
+  {
+    "id": "DIAMOND_GOBLIN",
+    "name": "Diamond Goblin",
+    "description": "Does nothing but steal, even from its fellow goblins.",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "HUMANOID",
+      "SHIELDED",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "GHOST",
+    "name": "Ghost",
+    "description": "It is hard to find that which you cannot see.",
+    "bracket": 2,
+    "maxTier": 25,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "ARCANE",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "GLACITE_BOWMAN",
+    "name": "Glacite Bowman",
+    "description": "Unable to see, it hunts by sound.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "GLACIAL",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "GLACITE_CAVER",
+    "name": "Glacite Caver",
+    "description": "Dug too deep and never looked back.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "GLACIAL",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "GLACITE_MAGE",
+    "name": "Glacite Mage",
+    "description": "Unknowing and unpredictable in its destruction.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "GLACIAL",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "GLACITE_MUTT",
+    "name": "Glacite Mutt",
+    "description": "Remarkably loyal, even in death.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "GLACIAL",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "GLACITE_WALKER",
+    "name": "Glacite Walker",
+    "description": "Guardians of the Gate to the icy caves below.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "GLACIAL",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "GOBLIN",
+    "name": "Goblin",
+    "description": "The Goblins have plagued the DWARVEN_MINES for centuries.",
+    "bracket": 2,
+    "maxTier": 20,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "HUMANOID",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "GOBLIN_RAIDERS",
+    "name": "Goblin Raiders",
+    "description": "If it moves, it gets smashed.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "HUMANOID",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "GOLDEN_GOBLIN",
+    "name": "Golden Goblin",
+    "description": "Take the things you love in life, and run with them.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "HUMANOID",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "POWDER_GHAST",
+    "name": "Powder Ghast",
+    "description": "Powder and coal replaces ash and soot!",
+    "bracket": 1,
+    "maxTier": 5,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "CUBIC",
+      "AIRBORNE",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "STAR_SENTRY",
+    "name": "Star Sentry",
+    "description": "Defenders of the Fallen Star.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "ARCANE",
+      "CONSTRUCT",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "TREASURE_HOARDER",
+    "name": "Treasure Hoarder",
+    "description": "The real treasure was the gold we found along the way.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "DWARVEN_MINES",
+    "mobTypes": [
+      "HUMANOID",
+      "SUBTERRANEAN"
+    ]
+  },
+
+  {
+    "id": "AUTOMATON",
+    "name": "Automaton",
+    "description": "Ancient robots which protect the lands of the Precursor from whomever dares to trespass.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "SUBTERRANEAN",
+      "CONSTRUCT",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "BAL",
+    "name": "Bal",
+    "description": "Scourge of Khazad-dûm.",
+    "format": "RED",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "CUBIC",
+      "INFERNAL",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "BOSS_CORLEONE",
+    "name": "Boss Corleone",
+    "description": "The mastermind behind Team Treasurite.",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "HUMANOID",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "BUTTERFLY",
+    "name": "Butterfly",
+    "description": "Beautiful critters that roam around harmlessly in Fairy regions.",
+    "format": "YELLOW",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "ARCANE",
+      "AIRBORNE",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "GRUNT",
+    "name": "Grunt",
+    "description": "Team Treasurite is up to no good. Prepare for trouble!",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "KEY_GUARDIAN",
+    "name": "Key Guardian",
+    "description": "Works as a locksmith.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "UNDEAD",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "SLUDGE",
+    "name": "Sludge",
+    "description": "They say that the juice of these slimes has valuable magical properties.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "CUBIC",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "THYST",
+    "name": "Thyst",
+    "description": "These infectious worms nourish themselves from Amethyst veins.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "ARTHROPOD",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "WORM",
+    "name": "Worm",
+    "description": "Stone worms can and will eat anything.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "SUBTERRANEAN",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "YOG",
+    "name": "Yog",
+    "description": "Born in the depths, risen from magma.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "CRYSTAL_HOLLOWS",
+    "mobTypes": [
+      "CUBIC",
+      "INFERNAL",
+      "SUBTERRANEAN"
+    ]
+  },
+
+  {
+    "id": "HOWLING_SPIRIT",
+    "name": "Howling Spirit",
+    "description": "Howling at the moon.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "THE_PARK",
+    "mobTypes": [
+      "ANIMAL",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "PACK_SPIRIT",
+    "name": "Pack Spirit",
+    "description": "Spirit of the Wolf.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "THE_PARK",
+    "mobTypes": [
+      "ANIMAL",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "SOUL_OF_THE_ALPHA",
+    "name": "Soul of the Alpha",
+    "description": "Alpha wolf.",
+    "format": "DARK_AQUA",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "THE_PARK",
+    "mobTypes": [
+      "ANIMAL",
+      "ARCANE"
+    ]
+  },
+
+  {
+    "id": "BOGGED",
+    "name": "Bogged",
+    "description": "",
+    "bracket": 4,
+    "max_tier": 15,
+    "category": "GALATEA",
+    "mobTypes": [
+      "WOODLAND",
+      "AQUATIC"
+    ]
+  },
+  {
+    "id": "CHILL",
+    "name": "Chill",
+    "description": "No chill.",
+    "bracket": 4,
+    "max_tier": 15,
+    "category": "GALATEA",
+    "mobTypes": [
+      "WOODLAND",
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "ENT",
+    "name": "Ent",
+    "description": "Thinks photosynthesis is a surface-plant propaganda invented by leafy elites to sell fertilizers.",
+    "bracket": 4,
+    "max_tier": 15,
+    "category": "GALATEA",
+    "mobTypes": [
+      "WOODLAND",
+      "AQUATIC"
+    ]
+  },
+  {
+    "id": "STRIDERSURFER",
+    "name": "Stridersurfer",
+    "description": "Ugliest crossover.",
+    "bracket": 4,
+    "max_tier": 15,
+    "category": "GALATEA",
+    "mobTypes": [
+      "MAGMATIC",
+      "UNDEAD",
+      "WOODLAND"
+    ]
+  },
+  {
+    "id": "TADGANG",
+    "name": "Tadgang",
+    "description": "They grow up so fast.",
+    "bracket": 4,
+    "max_tier": 15,
+    "category": "GALATEA",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "THE_LOCK_EMPEROR",
+    "name": "The Lock Emperor",
+    "description": "What exists within the Lock without his knowledge exists without his consent.",
+    "bracket": 5,
+    "max_tier": 15,
+    "category": "GALATEA",
+    "mobTypes": [
+      "AQUATIC",
+      "SKELETAL",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "TIDETOT",
+    "name": "Tidetot",
+    "description": "They are a little washed up.",
+    "bracket": 4,
+    "max_tier": 15,
+    "category": "GALATEA",
+    "mobTypes": [
+      "WOODLAND",
+      "UNDEAD"
+    ]
+  },
+
+  {
+    "id": "CRAZY_WITCH",
+    "name": "Crazy Witch",
+    "description": "This witch is brewing up trouble.",
+    "bracket": 2,
+    "maxTier": 10,
+    "category": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "SPOOKY",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "HEADLESS_HORSEMAN",
+    "name": "Headless Horseman",
+    "description": "Some say he lost his mind long before he lost his head.",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "SPOOKY",
+      "SKELETAL",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "PHANTOM_SPIRIT",
+    "name": "Phantom Spirit",
+    "description": "Possess the supernatural ability to...possess...you.",
+    "bracket": 2,
+    "maxTier": 10,
+    "category": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "SPOOKY",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "SCARY_JERRY",
+    "name": "Scary JERRY",
+    "description": "He's very scary.",
+    "bracket": 2,
+    "maxTier": 10,
+    "category": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "SPOOKY",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "TRICK_OR_TREATER",
+    "name": "Trick or Treater",
+    "description": "It's always a trick.",
+    "bracket": 2,
+    "maxTier": 10,
+    "category": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "SPOOKY",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "WITHER_GOURD",
+    "name": "Wither Gourd",
+    "description": "Who throws a pumpkin? Honestly!",
+    "bracket": 2,
+    "maxTier": 10,
+    "category": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "SPOOKY",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "WRAITH",
+    "name": "Wraith",
+    "description": "Haunting SkyBlock islands everywhere.",
+    "bracket": 2,
+    "maxTier": 10,
+    "category": "SPOOKY_FESTIVAL",
+    "mobTypes": []
+  },
+
+  {
+    "id": "ANGRY_ARCHEOLOGIST",
+    "name": "Angry Archeologist",
+    "description": "Angered by what he's found below.",
+    "bracket": 5,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "HUMANOID",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "BAT",
+    "name": "Bat",
+    "description": "Likes to keep to themselves.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "ANIMAL",
+      "AIRBORNE"
+    ]
+  },
+  {
+    "id": "CELLAR_SPIDER",
+    "name": "Cellar Spider",
+    "description": "Creepy crawler.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "ARTHROPOD",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "CRYPT_DREADLORD",
+    "name": "Crypt Dreadlord",
+    "description": "Trained in the dark art of wither magic.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD",
+      "WITHER",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "CRYPT_LURKER",
+    "name": "Crypt Lurker",
+    "description": "Lurking in the shadows.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "CRYPT_SOULEATER",
+    "name": "Crypt Souleater",
+    "description": "A soul a day keeps the doctor away.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD",
+      "WITHER",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "FELS",
+    "name": "Fels",
+    "description": "Hide and Seek Champion.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "GOLEM",
+    "name": "Golem",
+    "description": "Prefers to sleep in, grumpy if disturbed.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "CONSTRUCT",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "KING_MIDAS",
+    "name": "King Midas",
+    "description": "He loves gold.",
+    "bracket": 5,
+    "maxTier": 20,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "LONELY_SPIDER",
+    "name": "Lonely Spider",
+    "description": "So lonely.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "LOST_ADVENTURER",
+    "name": "Lost Adventurer",
+    "description": "Long lost to the depths of THE_CATACOMBS.",
+    "bracket": 5,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "HUMANOID",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "MIMIC",
+    "name": "Mimic",
+    "description": "Classic RPG trope, in block form.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "ARCANE",
+      "CONSTRUCT"
+    ]
+  },
+  {
+    "id": "SCARED_SKELETON",
+    "name": "Scared Skeleton",
+    "description": "Scared of its own shadow.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SHADOW_ASSASSIN",
+    "name": "Shadow Assassin",
+    "description": "Silent, but deadly.",
+    "bracket": 5,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "HUMANOID",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "SKELETON_GRUNT",
+    "name": "Skeleton Grunt",
+    "description": "Just more grunts in the platoon.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SKELETON_LORD",
+    "name": "Skeleton Lord",
+    "description": "Despite the lack of organs, still managed to be promoted.",
+    "bracket": 5,
+    "maxTier": 20,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SKELETON_MASTER",
+    "name": "Skeleton Master",
+    "description": "Leader of the Catacombs' skeleton army.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SKELETON_SOLDIER",
+    "name": "Skeleton Soldier",
+    "description": "Defenders of the Catacombs.",
+    "bracket": 1,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SKELETOR",
+    "name": "Skeletor",
+    "description": "I am Skeletor.",
+    "bracket": 5,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "SKELETAL",
+      "CONSTRUCT"
+    ]
+  },
+  {
+    "id": "SNIPER",
+    "name": "Sniper",
+    "description": "Said to have sniped adventurers from floors away.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SUPER_ARCHER",
+    "name": "Super Archer",
+    "description": "Bouncy, yet dangerous.",
+    "bracket": 5,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SUPER_TANK_ZOMBIE",
+    "name": "Super Tank Zombie",
+    "description": "Heftiest zombie.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "TANK_ZOMBIE",
+    "name": "Tank Zombie",
+    "description": "Hefty zombie.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "TERRACOTTA",
+    "name": "Terracotta",
+    "description": "Stained Hardened Clay.",
+    "bracket": 1,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "CONSTRUCT",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "UNDEAD",
+    "name": "Undead",
+    "description": "The Watcher's personal henchmen.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "UNDEAD_SKELETON",
+    "name": "Undead Skeleton",
+    "description": "Redundant name.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD",
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "WITHER_GUARD",
+    "name": "Wither Guard",
+    "description": "Never stopped anyone from entering the factory, but is trying his best.",
+    "bracket": 5,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "WITHER",
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "WITHER_HUSK",
+    "name": "Wither Husk",
+    "description": "A shell of their former self.",
+    "bracket": 5,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "WITHER",
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "WITHER_MINER",
+    "name": "Wither Miner",
+    "description": "Kept in servitude for breaking blocks around the factory.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "WITHER",
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "WITHERMANCER",
+    "name": "Withermancer",
+    "description": "Learned their sorcery from the most vicious of teachers.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "WITHER",
+      "SKELETAL",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "ZOMBIE_COMMANDER",
+    "name": "Zombie Commander",
+    "description": "Leader of the Undead.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "ZOMBIE_GRUNT",
+    "name": "Zombie Grunt",
+    "description": "Just more grunts in the platoon.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "ZOMBIE_KNIGHT",
+    "name": "Zombie Knight",
+    "description": "Knighted by Necron himself.",
+    "bracket": 4,
+    "maxTier": 25,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "ZOMBIE_LORD",
+    "name": "Zombie Lord",
+    "description": "Commander among commanders.",
+    "bracket": 5,
+    "maxTier": 20,
+    "category": "THE_CATACOMBS",
+    "mobTypes": [
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "ZOMBIE_SOLDIER",
+    "name": "Zombie Soldier",
+    "description": "Defenders of the Catacombs.",
+    "bracket": 1,
+    "maxTier": 15,
+    "category": "THE_CATACOMBS",
+    "mobTypes": ["UNDEAD"]
+  },
+
+  {
+    "id": "ABYSSAL_MINER",
+    "name": "Abyssal Miner",
+    "description": "Didn't escape before the cave-in.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "UNDEAD",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "AGARIMOO",
+    "name": "Agarimoo",
+    "description": "Glactose-based heterogenous polysaccharide derived from rift algae.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "BLUE_RINGED_OCTOPUS",
+    "name": "Blue Ringed Octopus",
+    "description": "Quite the escape artist.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "CARROT_KING",
+    "name": "Carrot King",
+    "description": "Has a vicious streak a mile wide.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "CATFISH",
+    "name": "Catfish",
+    "description": "Looked different in the pictures.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "DEEP_SEA_PROTECTOR",
+    "name": "Deep Sea Protector",
+    "description": "Nobody knows what it protects.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "CONSTRUCT"
+    ]
+  },
+  {
+    "id": "FROG_MAN",
+    "name": "Frog Man",
+    "description": "You'd think it'd make a normal frog sound, but it actually just says 'Ribbit' out loud.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "GUARDIAN_DEFENDER",
+    "name": "Guardian Defender",
+    "description": "Defends the sea.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "MITHRIL_GRUBBER",
+    "name": "Mithril Grubber",
+    "description": "",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": []
+  },
+  {
+    "id": "NIGHT_SQUID",
+    "name": "Night Squid",
+    "description": "Just a lowly squid...at night!",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "OASIS_RABBIT",
+    "name": "Oasis Rabbit",
+    "description": "Loyal subject of the Carrot King.",
+    "bracket": 3,
+    "maxTier": 10,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "OASIS_SHEEP",
+    "name": "Oasis Sheep",
+    "description": "A test subject to see if a sheep shrinks when it dries.",
+    "bracket": 3,
+    "maxTier": 10,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "POISONED_WATER_WORM",
+    "name": "Poisoned Water Worm",
+    "description": "Somebody's poisoned the waterhole!",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "SUBTERRANEAN",
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "RIDER_OF_THE_DEEP",
+    "name": "Rider of the Deep",
+    "description": "The chicken is the one in charge.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "UNDEAD",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "SEA_ARCHER",
+    "name": "Sea Archer",
+    "description": "Though a gifted archer, has a love for fistfights.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "SKELETAL"
+    ]
+  },
+  {
+    "id": "SEA_GUARDIAN",
+    "name": "Sea Guardian",
+    "description": "Guards the sea.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "SEA_LEECH",
+    "name": "Sea Leech",
+    "description": "See, a leech!",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "SEA_WALKER",
+    "name": "Sea Walker",
+    "description": "Why swim when you can simply walk?",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "SEA_WITCH",
+    "name": "Sea Witch",
+    "description": "She'll turn you into a newt!",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "HUMANOID",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "SNAPPING_TURTLE",
+    "name": "Snapping Turtle",
+    "description": "Doesn't look like its very good at it's job.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "SQUID",
+    "name": "Squid",
+    "description": "Just a lowly squid.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "WATER_HYDRA",
+    "name": "Water Hydra",
+    "description": "Unlike a regular hydra, this one grows another body as well!",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "WATER_WORM",
+    "name": "Water Worm",
+    "description": "Hasn't been poisoned...yet.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "SUBTERRANEAN"
+    ]
+  },
+  {
+    "id": "WETWING",
+    "name": "Wetwing",
+    "description": "It's not like chickens can really fly anyways.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "UNDEAD",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "WIKI_TIKI",
+    "name": "Wiki Tiki",
+    "description": "An ancient fragment of the Kalhuiki tribe, lost from long before they went underground.",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING",
+    "mobTypes": [
+      "AQUATIC",
+      "CONSTRUCT",
+      "ELUSIVE"
+    ]
+  },
+
+
+  {
+    "id": "FIERY_SCUTTLER",
+    "name": "Firey Scuttler",
+    "description": "",
+    "bracket": 0,
+    "maxTier": 0,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": []
+  },
+  {
+    "id": "FIRE_EEL",
+    "name": "Fire Eel",
+    "description": "Tastes like battery acid.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "FIREPROOF_WITCH",
+    "name": "Fireproof Witch",
+    "description": "",
+    "bracket": 0,
+    "maxTier": 0,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": []
+  },
+  {
+    "id": "FLAMING_WORM",
+    "name": "Flaming Worm",
+    "description": "Like a regular worm, but on fire.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "FRIED_CHICKEN",
+    "name": "Fried Chicken",
+    "description": "",
+    "bracket": 0,
+    "maxTier": 0,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": []
+  },
+  {
+    "id": "LAVA_BLAZE",
+    "name": "Lava Blaze",
+    "description": "Is it made of lava or does it just live in it?",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": []
+  },
+  {
+    "id": "LAVA_FLAME",
+    "name": "Lava Flame",
+    "description": "Incarnation of pure heat.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "LAVA_LEECH",
+    "name": "Lava Leech",
+    "description": "It's hard to love-a leech.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "ARTHROPOD"
+    ]
+  },
+  {
+    "id": "LAVA_PIGMAN",
+    "name": "Lava Pigman",
+    "description": "Normally, dunking pork in lava causes it to get charred. But not this one!",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": []
+  },
+  {
+    "id": "LORD_JAWBUS",
+    "name": "Lord Jawbus",
+    "description": "The mighty magma lord.",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "CONSTRUCT",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "MAGMA_SLUG",
+    "name": "Magma Slug",
+    "description": "Moves. Very. Slowly.",
+    "bracket": 2,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "CUBIC"
+    ]
+  },
+  {
+    "id": "MOOGMA",
+    "name": "Moogma",
+    "description": "Produces 100% fresh magma on a daily basis!",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "PLHLEGBLAST",
+    "name": "Plhlegblast",
+    "description": "Hard to spell, even harder to find.",
+    "bracket": 7,
+    "maxTier": 5,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": []
+  },
+  {
+    "id": "PYROCLASTIC_WORM",
+    "name": "Pyroclastic Worm",
+    "description": "Travels up to 10 miles downhill during eruptions.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "CUBIC"
+    ]
+  },
+  {
+    "id": "RAGNAROK",
+    "name": "Ragnarok",
+    "description": "",
+    "bracket": 0,
+    "maxTier": 0,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": []
+  },
+  {
+    "id": "TAURUS",
+    "name": "Taurus",
+    "description": "Could never date a Pisces.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "HUMANOID",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "THUNDER",
+    "name": "Thunder",
+    "description": "This is what happens on a bad forecast.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "LAVA",
+    "mobTypes": [
+      "MAGMATIC",
+      "ARCANE",
+      "ELUSIVE"
+    ]
+  },
+
+  {
+    "id": "GRIM_REAPER",
+    "name": "Grim Reaper",
+    "description": "An old friend.",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "AQUATIC",
+      "SPOOKY",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "NIGHTMARE",
+    "name": "Nightmare",
+    "description": "The end is neigh.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "AQUATIC",
+      "SPOOKY",
+      "UNDEAD"
+    ]
+  },
+  {
+    "id": "PHANTOM_FISHER",
+    "name": "Phantom Fisher",
+    "description": "Who is fishing who?",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "AQUATIC",
+      "SPOOKY",
+      "ARCANE"
+    ]
+  },
+  {
+    "id": "SCARECROW",
+    "name": "Scarecrow",
+    "description": "Also found at a yellow brick road.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "AQUATIC",
+      "SPOOKY"
+    ]
+  },
+  {
+    "id": "WEREWOLF",
+    "name": "Werewolf",
+    "description": "A very careful and aware wolf.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "SPOOKY_FESTIVAL",
+    "mobTypes": [
+      "AQUATIC",
+      "SPOOKY",
+      "ANIMAL"
+    ]
+  },
+
+  {
+    "id": "BLUE_SHARK",
+    "name": "Blue Shark",
+    "description": "Camouflages well with his environment.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING_FESTIVAL",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "GREAT_WHITE_SHARK",
+    "name": "Great White Shark",
+    "description": "Most famous of all sharks.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING_FESTIVAL",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "NURSE_SHARK",
+    "name": "Nurse Shark",
+    "description": "Still studying to become a doctor.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING_FESTIVAL",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "TIGER_SHARK",
+    "name": "Tiger Shark",
+    "description": "Like a regular tiger, but swims.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "FISHING_FESTIVAL",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+
+  {
+    "id": "FROSTY",
+    "name": "Frosty",
+    "description": "Wasa jolly happy soul.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "WINTER",
+    "mobTypes": [
+      "AQUATIC",
+      "FROZEN",
+      "CONSTRUCT"
+    ]
+  },
+  {
+    "id": "FROZEN_STEVE",
+    "name": "Frozen Steve",
+    "description": "\"Fell\" into Jerry's Pond.",
+    "bracket": 3,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "WINTER",
+    "mobTypes": [
+      "AQUATIC",
+      "FROZEN",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "GRINCH",
+    "name": "Grinch",
+    "description": "How the Grinch Stole Jerry Season.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "WINTER",
+    "mobTypes": [
+      "AQUATIC",
+      "FROZEN",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "NUTCRACKER",
+    "name": "Nutcracker",
+    "description": "A toy brought to life.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "WINTER",
+    "mobTypes": [
+      "AQUATIC",
+      "FROZEN",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "REINDRAKE",
+    "name": "Reindrake",
+    "description": "A Reindrake forms from the depths.",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "WINTER",
+    "mobTypes": [
+      "FROZEN",
+      "SHIELDED",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "YETI",
+    "name": "Yeti",
+    "description": "The cooler cousin of Bigfoot.",
+    "bracket": 6,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "WINTER",
+    "mobTypes": [
+      "AQUATIC",
+      "FROZEN",
+      "HUMANOID"
+    ]
+  },
+
+  {
+    "id": "ALLIGATOR",
+    "name": "Alligator",
+    "description": "Just because he has thick skin doesn't mean he doesn't get sad sometimes.",
+    "bracket": 5,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "BACKWATER_BAYOU",
+    "mobTypes": [
+      "AQUATIC",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "BANSHEE",
+    "name": "Banshee",
+    "description": "Scream, scream, let it all out!",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "BACKWATER_BAYOU",
+    "mobTypes": [
+      "AQUATIC",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "BAYOU_SLUDGE",
+    "name": "Bayou Sludge",
+    "description": "Swampy swampy swamp.",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "BACKWATER_BAYOU",
+    "mobTypes": [
+      "AQUATIC",
+      "CUBIC"
+    ]
+  },
+  {
+    "id": "DUMPSTER_DIVER",
+    "name": "Dumpster Diver",
+    "description": "Everybody was dumpster divin'!",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "BACKWATER_BAYOU",
+    "mobTypes": [
+      "AQUATIC",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "TITANOBOA",
+    "name": "Titanoboa",
+    "description": "",
+    "bracket": 0,
+    "maxTier": 0,
+    "category": "FISHING",
+    "subcategory": "BACKWATER_BAYOU",
+    "mobTypes": []
+  },
+  {
+    "id": "TRASH_GOBBLER",
+    "name": "Trash Gobbler",
+    "description": "Yummers!",
+    "bracket": 4,
+    "maxTier": 15,
+    "category": "FISHING",
+    "subcategory": "BACKWATER_BAYOU",
+    "mobTypes": [
+      "AQUATIC",
+      "ARTHROPOD"
+    ]
+  },
+
+  {
+    "id": "CRETAN_BULL",
+    "name": "Cretan Bull",
+    "description": "A very angry fella.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "GAIA_CONSTRUCT",
+    "name": "Gaia Construct",
+    "description": "A construct truly connected to the Earth.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "CONSTRUCT"
+    ]
+  },
+  {
+    "id": "HARPY",
+    "name": "Harpy",
+    "description": "The winged terror.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "HUMANOID",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "KING_MINOS",
+    "name": "King Minos",
+    "description": "Rules with an iron fist and a fluffy sheep.",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "HUMANOID",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "MANTICORE",
+    "name": "Manticore",
+    "description": "Boasts an insatiable hunger.",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "HUMANOID",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "MINOS_CHAMPION",
+    "name": "Minos Champion",
+    "description": "The champion of King Minos.",
+    "bracket": 5,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "MINOS_HUNTER",
+    "name": "Minos Hunter",
+    "description": "The hunter becomes the hunted.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "HUMANOID"
+    ]
+  },
+  {
+    "id": "MINOS_INQUISITOR",
+    "name": "Minos Inquisitor",
+    "description": "The ultimate guardian of Minos' Literature.",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "HUMANOID",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "MINOTAUR",
+    "name": "Minotaur",
+    "description": "Buys his axes in bulk.",
+    "bracket": 5,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "HUMANOID",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "SIAMESE_LYNX",
+    "name": "Siamese Lynx",
+    "description": "Not separated at birth.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "ANIMAL"
+    ]
+  },
+  {
+    "id": "SPHINX",
+    "name": "Sphinx",
+    "description": "A Cquizical Qreature.",
+    "bracket": 7,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "HUMANOID",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "STRANDED_NYMPH",
+    "name": "Stranded Nymph",
+    "description": "JUst add water!",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "MYTHOLOGICAL",
+    "mobTypes": [
+      "MYTHOLOGICAL",
+      "AQUATIC",
+      "HUMANOID"
+    ]
+  },
+
+  {
+    "id": "BLUE_JERRY",
+    "name": "Blue Jerry",
+    "description": "Jerry?",
+    "bracket": 5,
+    "maxTier": 10,
+    "category": "JERRY",
+    "mobTypes": [
+      "HUMANOID",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "GOLDEN_JERRY",
+    "name": "Golden Jerry",
+    "description": "Jerry?!",
+    "bracket": 7,
+    "maxTier": 10,
+    "category": "JERRY",
+    "mobTypes": [
+      "HUMANOID",
+      "SHIELDED",
+      "ELUSIVE"
+    ]
+  },
+  {
+    "id": "GREEN_JERRY",
+    "name": "Green Jerry",
+    "description": "Jerry.",
+    "bracket": 4,
+    "maxTier": 10,
+    "category": "JERRY",
+    "mobTypes": [
+      "HUMANOID",
+      "SHIELDED"
+    ]
+  },
+  {
+    "id": "PURPLE_JERRY",
+    "name": "Purple Jerry",
+    "description": "Jerry!",
+    "bracket": 6,
+    "maxTier": 10,
+    "category": "JERRY",
+    "mobTypes": [
+      "HUMANOID",
+      "SHIELDED"
+    ]
+  },
+
+  {
+    "id": "BLAZING_GOLEM",
+    "name": "Blazing Golem",
+    "description": "Trained by Lord Jawbus to serve Kuudra.",
+    "bracket": 3,
+    "maxTier": 10,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "CONSTRUCT",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "BLIGHT",
+    "name": "Blight",
+    "description": "A blight upon the lands of SkyBlock.",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "UNDEAD",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "DROPSHIP",
+    "name": "Dropship",
+    "description": "Contrary to popular belief, does not actually drop ships.",
+    "bracket": 3,
+    "maxTier": 10,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "CUBIC",
+      "ARCANE",
+      "AIRBORNE"
+    ]
+  },
+  {
+    "id": "EXPLOSIVE_IMP",
+    "name": "Explosive Imp",
+    "description": "Has an explosive temper.",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "UNDEAD",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "INFERNO_MAGMA_CUBE",
+    "name": "Inferno Magma Cube",
+    "description": "So hot, it has to be measured in Kelvin.",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "CUBIC",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "KUUDRA_BERSERKER",
+    "name": "KUUDRA Berserker",
+    "description": "A single look at KUUDRA drove him into a frenzy.",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "UNDEAD",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "KUUDRA_FOLLOWER",
+    "name": "KUUDRA Follower",
+    "description": "Believes in the return of Kuudra.",
+    "bracket": 2,
+    "maxTier": 20,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "UNDEAD",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "KUUDRA_KNOCKER",
+    "name": "KUUDRA Knocker",
+    "description": "He is the one who knocks.",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "UNDEAD",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "KUUDRA_LANDMINE",
+    "name": "KUUDRA Landmine",
+    "description": "Stepping on them seems to cause no harm!",
+    "bracket": 3,
+    "maxTier": 20,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "UNDEAD",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "KUUDRA_SLASHER",
+    "name": "KUUDRA Slasher",
+    "description": "Hash-slinging.",
+    "bracket": 5,
+    "maxTier": 10,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "CUBIC",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "MAGMA_FOLLOWER",
+    "name": "Magma Follower",
+    "description": "Follows magma, wherever it flows.",
+    "bracket": 5,
+    "maxTier": 10,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "CUBIC",
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "WANDERING_BLAZE",
+    "name": "Wandering Blaze",
+    "description": "Lacks the legs to actually wander around, flies instead.",
+    "bracket": 4,
+    "maxTier": 20,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "INFERNAL"
+    ]
+  },
+  {
+    "id": "WITHER_SENTRY",
+    "name": "Wither Sentry",
+    "description": "Sentry down!",
+    "bracket": 4,
+    "maxTier": 10,
+    "category": "KUUDRA",
+    "mobTypes": [
+      "WITHER",
+      "CONSTRUCT"
+    ]
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
