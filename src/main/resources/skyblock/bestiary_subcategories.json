@@ -1,0 +1,44 @@
+[
+  {
+    "id": "FISHING",
+    "name": "Fishing",
+    "format": "DARK_AQUA",
+    "categoryId": "FISHING",
+    "ordinal": 0
+  },
+  {
+    "id": "LAVA",
+    "name": "Lava",
+    "format": "RED",
+    "categoryId": "FISHING",
+    "ordinal": 1
+  },
+  {
+    "id": "SPOOKY_FESTIVAL",
+    "name": "Spooky Festival",
+    "format": "GOLD",
+    "categoryId": "FISHING",
+    "ordinal": 2
+  },
+  {
+    "id": "FISHING_FESTIVAL",
+    "name": "Fishing Festival",
+    "format": "AQUA",
+    "categoryId": "FISHING",
+    "ordinal": 3
+  },
+  {
+    "id": "WINTER",
+    "name": "Winter",
+    "format": "WHITE",
+    "categoryId": "FISHING",
+    "ordinal": 4
+  },
+  {
+    "id": "BACKWATER_BAYOU",
+    "name": "Backwater Bayou",
+    "format": "DARK_GREEN",
+    "categoryId": "FISHING",
+    "ordinal": 5
+  }
+]
