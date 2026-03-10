@@ -1,0 +1,4269 @@
+[
+  {
+    "id": "BAT",
+    "name": "Bat",
+    "familyId": "BAT",
+    "level": 1,
+    "health": 6,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 100,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 34
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CREEPER",
+    "name": "Creeper",
+    "familyId": "CREEPER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "ENDERMAN",
+    "name": "Enderman",
+    "familyId": "ENDERMAN",
+    "level": 50,
+    "health": 9000,
+    "damage": 700,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SKELETON",
+    "name": "Skeleton",
+    "familyId": "SKELETON",
+    "level": 1,
+    "health": 100,
+    "damage": 15,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 6
+      },
+      "xpOrbs": 1
+    }
+  },
+  {
+    "id": "SLIME",
+    "name": "Slime",
+    "familyId": "SLIME",
+    "level": 1,
+    "health": 80,
+    "damage": 15,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SPIDER",
+    "name": "Spider",
+    "familyId": "SPIDER",
+    "level": 1,
+    "health": 120,
+    "damage": 40,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WITCH",
+    "name": "Witch",
+    "familyId": "WITCH",
+    "level": 1,
+    "health": 150,
+    "damage": 20,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 4
+    }
+  },
+  {
+    "id": "ZOMBIE",
+    "name": "Zombie",
+    "familyId": "ZOMBIE",
+    "level": 1,
+    "health": 100,
+    "damage": 20,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 6
+      },
+      "xpOrbs": 1
+    }
+  },
+  {
+    "id": "CRYPT_GHOUL",
+    "name": "Crypt Ghoul",
+    "familyId": "CRYPT_GHOUL",
+    "level": 30,
+    "health": 2000,
+    "damage": 350,
+    "defense": 0,
+    "killStats": {
+      "coins": 13,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 36
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "GOLDEN_GHOUL",
+    "name": "Golden Ghoul",
+    "familyId": "GOLDEN_GHOUL",
+    "level": 60,
+    "health": 45000,
+    "damage": 800,
+    "defense": 0,
+    "killStats": {
+      "coins": 100,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 50
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "GRAVEYARD_ZOMBIE",
+    "name": "Graveyard Zombie",
+    "familyId": "GRAVEYARD_ZOMBIE",
+    "level": 1,
+    "health": 100,
+    "damage": 20,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 6
+      },
+      "xpOrbs": 1
+    }
+  },
+  {
+    "id": "OLD_WOLF",
+    "name": "Old Wolf",
+    "familyId": "OLD_WOLF",
+    "level": 50,
+    "health": 15000,
+    "damage": 720,
+    "defense": 0,
+    "killStats": {
+      "coins": 40,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 40
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SHINY_PIG",
+    "name": "Shiny Pig",
+    "familyId": "SHINY_PIG",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WOLF",
+    "name": "Wolf",
+    "familyId": "WOLF",
+    "level": 15,
+    "health": 250,
+    "damage": 90,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 15
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "ZOMBIE_VILLAGER",
+    "name": "Zombie Villager",
+    "familyId": "ZOMBIE_VILLAGER",
+    "level": 1,
+    "health": 120,
+    "damage": 24,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 7
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CHICKEN",
+    "name": "Chicken",
+    "familyId": "CHICKEN",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 2
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "COW",
+    "name": "Cow",
+    "familyId": "COW",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 3
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MUSHROOM_COW",
+    "name": "Mushroom Cow",
+    "familyId": "MUSHROOM_COW",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "PIG",
+    "name": "Pig",
+    "familyId": "PIG",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 3
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "RABBIT",
+    "name": "Rabbit",
+    "familyId": "RABBIT",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 3
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SHEEP",
+    "name": "Sheep",
+    "familyId": "SHEEP",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 3
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BEETLE",
+    "name": "Beetle",
+    "familyId": "BEETLE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "CRICKET",
+    "name": "Cricket",
+    "familyId": "CRICKET",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "DRAGONFLY",
+    "name": "Dragonfly",
+    "familyId": "DRAGONFLY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "EARTHWORM",
+    "name": "Earthworm",
+    "familyId": "EARTHWORM",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "FIELD_MOUSE",
+    "name": "Field Mouse",
+    "familyId": "FIELD_MOUSE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 10000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 6000
+      },
+      "xpOrbs": 50
+    }
+  },
+  {
+    "id": "FIREFLY",
+    "name": "Firefly",
+    "familyId": "FIREFLY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "FLY",
+    "name": "Fly",
+    "familyId": "FLY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "LOCUST",
+    "name": "Locust",
+    "familyId": "LOCUST",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "MITE",
+    "name": "Mite",
+    "familyId": "MITE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "MOSQUITO",
+    "name": "Mosquito",
+    "familyId": "MOSQUITO",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "MOTH",
+    "name": "Moth",
+    "familyId": "MOTH",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "PRAYING_MANTIS",
+    "name": "Praying Mantis",
+    "familyId": "PRAYING_MANTIS",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "RAT",
+    "name": "Rat",
+    "familyId": "RAT",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "SLUG",
+    "name": "Slug",
+    "familyId": "SLUG",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FARMING",
+        "amount": 1500
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "TIMESTALK_CLONE",
+    "name": "Timestalk Clone",
+    "familyId": "TIMESTALK_CLONE",
+    "level": 100,
+    "health": 20,
+    "damage": 50,
+    "defense": 10000,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 6
+      },
+      "xpOrbs": 1
+    }
+  },
+  {
+    "id": "ZOMBUDDY",
+    "name": "Zombuddy",
+    "familyId": "ZOMBUDDY",
+    "level": 1,
+    "health": 20,
+    "damage": 20,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 6
+      },
+      "xpOrbs": 1
+    }
+  },
+  {
+    "id": "ARACHNE",
+    "name": "Arachne",
+    "familyId": "ARACHNE",
+    "level": 500,
+    "health": 100000,
+    "damage": 6000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "ARACHNES_BROOD",
+    "name": "Arachne's Brood",
+    "familyId": "ARACHNES_BROOD",
+    "level": 0,
+    "health": 4000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "ARACHNES_KEEPER",
+    "name": "Arachne's Keeper",
+    "familyId": "ARACHNES_KEEPER",
+    "level": 0,
+    "health": 3000,
+    "damage": 200,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BROODMOTHER",
+    "name": "Broodmother",
+    "familyId": "BROODMOTHER",
+    "level": 12,
+    "health": 6000,
+    "damage": 250,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "DASHER_SPIDER",
+    "name": "Dasher Spider",
+    "familyId": "DASHER_SPIDER",
+    "level": 4,
+    "health": 160,
+    "damage": 55,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GRAVEL_SKELETON",
+    "name": "Gravel Skeleton",
+    "familyId": "GRAVEL_SKELETON",
+    "level": 2,
+    "health": 100,
+    "damage": 35,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "RAIN_SLIME",
+    "name": "Rain Slime",
+    "familyId": "RAIN_SLIME",
+    "level": 8,
+    "health": 200,
+    "damage": 100,
+    "defense": 0,
+    "killStats": {
+      "coins": 5,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 4
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SILVERFISH",
+    "name": "Silverfish",
+    "familyId": "SILVERFISH",
+    "level": 3,
+    "health": 50,
+    "damage": 40,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 5
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SPIDER_JOCKEY",
+    "name": "Spider Jockey",
+    "familyId": "SPIDER_JOCKEY",
+    "level": 3,
+    "health": 220,
+    "damage": 45,
+    "defense": 0,
+    "killStats": {
+      "coins": 2,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 9
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SPLITTER_SPIDER",
+    "name": "Splitter Spider",
+    "familyId": "SPLITTER_SPIDER",
+    "level": 2,
+    "health": 180,
+    "damage": 30,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "VORACIOUS_SPIDER",
+    "name": "Voracious Spider",
+    "familyId": "VORACIOUS_SPIDER",
+    "level": 10,
+    "health": 1000,
+    "damage": 100,
+    "defense": 0,
+    "killStats": {
+      "coins": 2,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 10
+      },
+      "xpOrbs": 3
+    }
+  },
+  {
+    "id": "WEAVER_SPIDER",
+    "name": "Weaver Spider",
+    "familyId": "WEAVER_SPIDER",
+    "level": 3,
+    "health": 160,
+    "damage": 35,
+    "defense": 0,
+    "killStats": {
+      "coins": 2,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 9
+      },
+      "xpOrbs": 6
+    }
+  },
+  {
+    "id": "DRAGON",
+    "name": "Dragon",
+    "familyId": "DRAGON",
+    "level": 100,
+    "health": 7500000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "END_STONE_PROTECTOR",
+    "name": "End Stone Protector",
+    "familyId": "END_STONE_PROTECTOR",
+    "level": 100,
+    "health": 5000000,
+    "damage": 1200,
+    "defense": 150,
+    "killStats": {
+      "coins": 100,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "ENDERMAN",
+    "name": "Enderman",
+    "familyId": "ENDERMAN",
+    "level": 50,
+    "health": 9000,
+    "damage": 700,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "ENDERMITE",
+    "name": "Endermite",
+    "familyId": "ENDERMITE",
+    "level": 40,
+    "health": 2300,
+    "damage": 475,
+    "defense": 0,
+    "killStats": {
+      "coins": 11,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 28
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "OBSIDIAN_DEFENDER",
+    "name": "Obsidian Defender",
+    "familyId": "OBSIDIAN_DEFENDER",
+    "level": 55,
+    "health": 10000,
+    "damage": 200,
+    "defense": 0,
+    "killStats": {
+      "coins": 15,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 40
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SEER",
+    "name": "Seer",
+    "familyId": "SEER",
+    "level": 55,
+    "health": 9500,
+    "damage": 500,
+    "defense": 0,
+    "killStats": {
+      "coins": 15,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 40
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "VOIDLING_EXTREMIST",
+    "name": "Voidling Extremist",
+    "familyId": "VOIDLING_EXTREMIST",
+    "level": 100,
+    "health": 8000000,
+    "damage": 13500,
+    "defense": 0,
+    "killStats": {
+      "coins": 100,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 750
+      },
+      "xpOrbs": 35
+    }
+  },
+  {
+    "id": "VOIDLING_FANATIC",
+    "name": "Voidling Fanatic",
+    "familyId": "VOIDLING_FANATIC",
+    "level": 85,
+    "health": 750000,
+    "damage": 3500,
+    "defense": 0,
+    "killStats": {
+      "coins": 20,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 110
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "ZEALOT",
+    "name": "Zealot",
+    "familyId": "ZEALOT",
+    "level": 55,
+    "health": 2000,
+    "damage": 1250,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "ASHFANG",
+    "name": "Ashfang",
+    "familyId": "ASHFANG",
+    "level": 200,
+    "health": 50000000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BARBARIAN_DUKE_X",
+    "name": "Barbarian Duke X",
+    "familyId": "BARBARIAN_DUKE_X",
+    "level": 200,
+    "health": 70000000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BLADESOUL",
+    "name": "Bladesoul",
+    "familyId": "BLADESOUL",
+    "level": 200,
+    "health": 50000000,
+    "damage": 4000,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 4000
+      },
+      "xpOrbs": 5000
+    }
+  },
+  {
+    "id": "BLAZE",
+    "name": "Blaze",
+    "familyId": "BLAZE",
+    "level": 0,
+    "health": 700000,
+    "damage": 3000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "FLAMING_SPIDER",
+    "name": "Flaming Spider",
+    "familyId": "FLAMING_SPIDER",
+    "level": 80,
+    "health": 1000000,
+    "damage": 2000,
+    "defense": 0,
+    "killStats": {
+      "coins": 20,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 120
+      },
+      "xpOrbs": 100
+    }
+  },
+  {
+    "id": "FLARE",
+    "name": "Flare",
+    "familyId": "FLARE",
+    "level": 90,
+    "health": 5000000,
+    "damage": 3500,
+    "defense": 0,
+    "killStats": {
+      "coins": 20,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 120
+      },
+      "xpOrbs": 100
+    }
+  },
+  {
+    "id": "GHAST",
+    "name": "Ghast",
+    "familyId": "GHAST",
+    "level": 85,
+    "health": 100000,
+    "damage": 5000,
+    "defense": 0,
+    "killStats": {
+      "coins": 30,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 50
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "KADA_KNIGHT",
+    "name": "Kada Knight",
+    "familyId": "KADA_KNIGHT",
+    "level": 90,
+    "health": 800000,
+    "damage": 2750,
+    "defense": 0,
+    "killStats": {
+      "coins": 20,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 90
+      },
+      "xpOrbs": 100
+    }
+  },
+  {
+    "id": "MAGE_OUTLAW",
+    "name": "Mage Outlaw",
+    "familyId": "MAGE_OUTLAW",
+    "level": 0,
+    "health": 70000000,
+    "damage": 4000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MAGMA_BOSS",
+    "name": "Magma Boss",
+    "familyId": "MAGMA_BOSS",
+    "level": 100,
+    "health": 200000000,
+    "damage": 2000,
+    "defense": 0,
+    "killStats": {
+      "coins": 125,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 200
+    }
+  },
+  {
+    "id": "MAGMA_CUBE",
+    "name": "Magma Cube",
+    "familyId": "MAGMA_CUBE",
+    "level": 75,
+    "health": 400000,
+    "damage": 3000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MAGMA_CUBE_RIDER",
+    "name": "Magma Cube Rider",
+    "familyId": "MAGMA_CUBE_RIDER",
+    "level": 0,
+    "health": 1200000,
+    "damage": 4000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MATCHO",
+    "name": "Matcho",
+    "familyId": "MATCHO",
+    "level": 0,
+    "health": 750000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MILLENNIAAGED_BLAZE",
+    "name": "Millennia-Aged Blaze",
+    "familyId": "MILLENNIA_AGED_BLAZE",
+    "level": 110,
+    "health": 12000000,
+    "damage": 15000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MUSHROOM_BULL",
+    "name": "Mushroom Bull",
+    "familyId": "MUSHROOM_BULL",
+    "level": 80,
+    "health": 1000000,
+    "damage": 4000,
+    "defense": 0,
+    "killStats": {
+      "coins": 21,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 120
+      },
+      "xpOrbs": 100
+    }
+  },
+  {
+    "id": "SMOLDERING_BLAZE",
+    "name": "Smoldering Blaze",
+    "familyId": "SMOLDERING_BLAZE",
+    "level": 95,
+    "health": 2000000,
+    "damage": 3900,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TENTACLE",
+    "name": "Tentacle",
+    "familyId": "TENTACLE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "VANQUISHER",
+    "name": "Vanquisher",
+    "familyId": "VANQUISHER",
+    "level": 100,
+    "health": 5000000,
+    "damage": 5000,
+    "defense": 0,
+    "killStats": {
+      "coins": 100,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 1000
+      },
+      "xpOrbs": 50
+    }
+  },
+  {
+    "id": "WITHER_SKELETON",
+    "name": "Wither Skeleton",
+    "familyId": "WITHER_SKELETON",
+    "level": 70,
+    "health": 300000,
+    "damage": 3000,
+    "defense": 0,
+    "killStats": {
+      "coins": 20,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 13
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WITHER_SPECTRE",
+    "name": "Wither Spectre",
+    "familyId": "WITHER_SPECTRE",
+    "level": 70,
+    "health": 300000,
+    "damage": 2000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "EMERALD_SLIME",
+    "name": "Emerald Slime",
+    "familyId": "EMERALD_SLIME",
+    "level": 10,
+    "health": 150,
+    "damage": 100,
+    "defense": 0,
+    "killStats": {
+      "coins": 8,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 15
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "LAPIS_ZOMBIE",
+    "name": "Lapis Zombie",
+    "familyId": "LAPIS_ZOMBIE",
+    "level": 7,
+    "health": 200,
+    "damage": 50,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MINER_SKELETON",
+    "name": "Miner Skeleton",
+    "familyId": "MINER_SKELETON",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MINER_ZOMBIE",
+    "name": "Miner Zombie",
+    "familyId": "MINER_ZOMBIE",
+    "level": 20,
+    "health": 300,
+    "damage": 250,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "REDSTONE_PIGMAN",
+    "name": "Redstone Pigman",
+    "familyId": "REDSTONE_PIGMAN",
+    "level": 10,
+    "health": 250,
+    "damage": 75,
+    "defense": 0,
+    "killStats": {
+      "coins": 12,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 20
+      },
+      "xpOrbs": 25
+    }
+  },
+  {
+    "id": "SNEAKY_CREEPER",
+    "name": "Sneaky Creeper",
+    "familyId": "SNEAKY_CREEPER",
+    "level": 3,
+    "health": 120,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 8
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "DIAMOND_GOBLIN",
+    "name": "Diamond Goblin",
+    "familyId": "DIAMOND_GOBLIN",
+    "level": 50,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GHOST",
+    "name": "Ghost",
+    "familyId": "GHOST",
+    "level": 250,
+    "health": 1000000,
+    "damage": 1000,
+    "defense": 0,
+    "killStats": {
+      "coins": 125,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 100
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GLACITE_BOWMAN",
+    "name": "Glacite Bowman",
+    "familyId": "GLACITE_BOWMAN",
+    "level": 0,
+    "health": 750000,
+    "damage": 6250,
+    "defense": 1000,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GLACITE_CAVER",
+    "name": "Glacite Caver",
+    "familyId": "GLACITE_CAVER",
+    "level": 0,
+    "health": 800000,
+    "damage": 6500,
+    "defense": 1000,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GLACITE_MAGE",
+    "name": "Glacite Mage",
+    "familyId": "GLACITE_MAGE",
+    "level": 0,
+    "health": 825000,
+    "damage": 6250,
+    "defense": 1000,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GLACITE_MUTT",
+    "name": "Glacite Mutt",
+    "familyId": "GLACITE_MUTT",
+    "level": 0,
+    "health": 750000,
+    "damage": 6000,
+    "defense": 1000,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GLACITE_WALKER",
+    "name": "Glacite Walker",
+    "familyId": "GLACITE_WALKER",
+    "level": 45,
+    "health": 888,
+    "damage": 500,
+    "defense": 1000,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 40
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GOBLIN",
+    "name": "Goblin",
+    "familyId": "GOBLIN",
+    "level": 5,
+    "health": 200,
+    "damage": 20,
+    "defense": 0,
+    "killStats": {
+      "coins": 10,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 60
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GOBLIN_RAIDERS",
+    "name": "Goblin Raiders",
+    "familyId": "GOBLIN_RAIDERS",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GOLDEN_GOBLIN",
+    "name": "Golden Goblin",
+    "familyId": "GOLDEN_GOBLIN",
+    "level": 50,
+    "health": 3,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "POWDER_GHAST",
+    "name": "Powder Ghast",
+    "familyId": "POWDER_GHAST",
+    "level": 0,
+    "health": 100,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "STAR_SENTRY",
+    "name": "Star Sentry",
+    "familyId": "STAR_SENTRY",
+    "level": 0,
+    "health": 10,
+    "damage": 400,
+    "defense": 0,
+    "killStats": {
+      "coins": 100,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TREASURE_HOARDER",
+    "name": "Treasure Hoarder",
+    "familyId": "TREASURE_HOARDER",
+    "level": 70,
+    "health": 15000,
+    "damage": 500,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 70
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "AUTOMATON",
+    "name": "Automaton",
+    "familyId": "AUTOMATON",
+    "level": 150,
+    "health": 20000,
+    "damage": 750,
+    "defense": 0,
+    "killStats": {
+      "coins": 10,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 45
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BAL",
+    "name": "Bal",
+    "familyId": "BAL",
+    "level": 100,
+    "health": 200,
+    "damage": 100,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 1000
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BOSS_CORLEONE",
+    "name": "Boss Corleone",
+    "familyId": "BOSS_CORLEONE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 50,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 150
+      },
+      "xpOrbs": 50
+    }
+  },
+  {
+    "id": "BUTTERFLY",
+    "name": "Butterfly",
+    "familyId": "BUTTERFLY",
+    "level": 100,
+    "health": 100,
+    "damage": 1000,
+    "defense": 0,
+    "killStats": {
+      "coins": 10,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 50
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GRUNT",
+    "name": "Grunt",
+    "familyId": "GRUNT",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 2,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 25
+      },
+      "xpOrbs": 2
+    }
+  },
+  {
+    "id": "KEY_GUARDIAN",
+    "name": "Key Guardian",
+    "familyId": "KEY_GUARDIAN",
+    "level": 100,
+    "health": 250000,
+    "damage": 100,
+    "defense": 0,
+    "killStats": {
+      "coins": 8,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 60
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SLUDGE",
+    "name": "Sludge",
+    "familyId": "SLUDGE",
+    "level": 100,
+    "health": 25000,
+    "damage": 900,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 1
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "THYST",
+    "name": "Thyst",
+    "familyId": "THYST",
+    "level": 20,
+    "health": 5000,
+    "damage": 250,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WORM",
+    "name": "Worm",
+    "familyId": "WORM",
+    "level": 5,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 5,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 30
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "YOG",
+    "name": "Yog",
+    "familyId": "YOG",
+    "level": 100,
+    "health": 35000,
+    "damage": 1500,
+    "defense": 0,
+    "killStats": {
+      "coins": 4,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 45
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "HOWLING_SPIRIT",
+    "name": "Howling Spirit",
+    "familyId": "HOWLING_SPIRIT",
+    "level": 35,
+    "health": 7000,
+    "damage": 450,
+    "defense": 0,
+    "killStats": {
+      "coins": 11,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 22
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "PACK_SPIRIT",
+    "name": "Pack Spirit",
+    "familyId": "PACK_SPIRIT",
+    "level": 30,
+    "health": 6000,
+    "damage": 300,
+    "defense": 0,
+    "killStats": {
+      "coins": 11,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 22
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SOUL_OF_THE_ALPHA",
+    "name": "Soul of the Alpha",
+    "familyId": "SOUL_OF_THE_ALPHA",
+    "level": 55,
+    "health": 31150,
+    "damage": 1425,
+    "defense": 0,
+    "killStats": {
+      "coins": 50,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 50
+      },
+      "xpOrbs": 15
+    }
+  },
+  {
+    "id": "BOGGED",
+    "name": "Bogged",
+    "familyId": "BOGGED",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CHILL",
+    "name": "Chill",
+    "familyId": "CHILL",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "ENT",
+    "name": "Ent",
+    "familyId": "ENT",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "STRIDERSURFER",
+    "name": "Stridersurfer",
+    "familyId": "STRIDERSURFER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TADGANG",
+    "name": "Tadgang",
+    "familyId": "TADGANG",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "THE_LOCK_EMPEROR",
+    "name": "The Lock Emperor",
+    "familyId": "THE_LOCK_EMPEROR",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TIDETOT",
+    "name": "Tidetot",
+    "familyId": "TIDETOT",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CRAZY_WITCH",
+    "name": "Crazy Witch",
+    "familyId": "CRAZY_WITCH",
+    "level": 0,
+    "health": 1,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "HEADLESS_HORSEMAN",
+    "name": "Headless Horseman",
+    "familyId": "HEADLESS_HORSEMAN",
+    "level": 100,
+    "health": 3000000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "PHANTOM_SPIRIT",
+    "name": "Phantom Spirit",
+    "familyId": "PHANTOM_SPIRIT",
+    "level": 35,
+    "health": 10,
+    "damage": 50,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SCARY_JERRY",
+    "name": "Scary JERRY",
+    "familyId": "SCARY_JERRY",
+    "level": 30,
+    "health": 12,
+    "damage": 50,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TRICK_OR_TREATER",
+    "name": "Trick or Treater",
+    "familyId": "TRICK_OR_TREATER",
+    "level": 30,
+    "health": 10,
+    "damage": 50,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WITHER_GOURD",
+    "name": "Wither Gourd",
+    "familyId": "WITHER_GOURD",
+    "level": 35,
+    "health": 11,
+    "damage": 50,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 20
+      },
+      "xpOrbs": 1
+    }
+  },
+  {
+    "id": "WRAITH",
+    "name": "Wraith",
+    "familyId": "WRAITH",
+    "level": 50,
+    "health": 15,
+    "damage": 50,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 20
+      },
+      "xpOrbs": 1
+    }
+  },
+  {
+    "id": "ANGRY_ARCHEOLOGIST",
+    "name": "Angry Archeologist",
+    "familyId": "ANGRY_ARCHEOLOGIST",
+    "level": 0,
+    "health": 9500,
+    "damage": 320,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BAT",
+    "name": "Bat",
+    "familyId": "BAT",
+    "level": 1,
+    "health": 6,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 100,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 34
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CELLAR_SPIDER",
+    "name": "Cellar Spider",
+    "familyId": "CELLAR_SPIDER",
+    "level": 0,
+    "health": 22000,
+    "damage": 560,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CRYPT_DREADLORD",
+    "name": "Crypt Dreadlord",
+    "familyId": "CRYPT_DREADLORD",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CRYPT_LURKER",
+    "name": "Crypt Lurker",
+    "familyId": "CRYPT_LURKER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CRYPT_SOULEATER",
+    "name": "Crypt Souleater",
+    "familyId": "CRYPT_SOULEATER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "FELS",
+    "name": "Fels",
+    "familyId": "FELS",
+    "level": 0,
+    "health": 500000,
+    "damage": 13000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GOLEM",
+    "name": "Golem",
+    "familyId": "GOLEM",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "KING_MIDAS",
+    "name": "King Midas",
+    "familyId": "KING_MIDAS",
+    "level": 0,
+    "health": 300000,
+    "damage": 3760,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "LONELY_SPIDER",
+    "name": "Lonely Spider",
+    "familyId": "LONELY_SPIDER",
+    "level": 0,
+    "health": 5000,
+    "damage": 280,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "LOST_ADVENTURER",
+    "name": "Lost Adventurer",
+    "familyId": "LOST_ADVENTURER",
+    "level": 0,
+    "health": 60000,
+    "damage": 360,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MIMIC",
+    "name": "Mimic",
+    "familyId": "MIMIC",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SCARED_SKELETON",
+    "name": "Scared Skeleton",
+    "familyId": "SCARED_SKELETON",
+    "level": 42,
+    "health": 19000,
+    "damage": 360,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 40
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "SHADOW_ASSASSIN",
+    "name": "Shadow Assassin",
+    "familyId": "SHADOW_ASSASSIN",
+    "level": 0,
+    "health": 500000,
+    "damage": 3280,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SKELETON_GRUNT",
+    "name": "Skeleton Grunt",
+    "familyId": "SKELETON_GRUNT",
+    "level": 40,
+    "health": 18000,
+    "damage": 360,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 40
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "SKELETON_LORD",
+    "name": "Skeleton Lord",
+    "familyId": "SKELETON_LORD",
+    "level": 150,
+    "health": 2000000,
+    "damage": 24000,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 130
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "SKELETON_MASTER",
+    "name": "Skeleton Master",
+    "familyId": "SKELETON_MASTER",
+    "level": 78,
+    "health": 52000,
+    "damage": 2625,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SKELETON_SOLDIER",
+    "name": "Skeleton Soldier",
+    "familyId": "SKELETON_SOLDIER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SKELETOR",
+    "name": "Skeletor",
+    "familyId": "SKELETOR",
+    "level": 80,
+    "health": 250000,
+    "damage": 3560,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SNIPER",
+    "name": "Sniper",
+    "familyId": "SNIPER",
+    "level": 43,
+    "health": 13000,
+    "damage": 800,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 45
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "SUPER_ARCHER",
+    "name": "Super Archer",
+    "familyId": "SUPER_ARCHER",
+    "level": 90,
+    "health": 400000,
+    "damage": 4240,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 70
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "SUPER_TANK_ZOMBIE",
+    "name": "Super Tank Zombie",
+    "familyId": "SUPER_TANK_ZOMBIE",
+    "level": 90,
+    "health": 20000,
+    "damage": 2320,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TANK_ZOMBIE",
+    "name": "Tank Zombie",
+    "familyId": "TANK_ZOMBIE",
+    "level": 40,
+    "health": 1500,
+    "damage": 320,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 40
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "TERRACOTTA",
+    "name": "Terracotta",
+    "familyId": "TERRACOTTA",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "UNDEAD",
+    "name": "Undead",
+    "familyId": "UNDEAD",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "UNDEAD_SKELETON",
+    "name": "Undead Skeleton",
+    "familyId": "UNDEAD_SKELETON",
+    "level": 40,
+    "health": 25000,
+    "damage": 800,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 36
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "WITHER_GUARD",
+    "name": "Wither Guard",
+    "familyId": "WITHER_GUARD",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WITHER_HUSK",
+    "name": "Wither Husk",
+    "familyId": "WITHER_HUSK",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WITHER_MINER",
+    "name": "Wither Miner",
+    "familyId": "WITHER_MINER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WITHERMANCER",
+    "name": "Withermancer",
+    "familyId": "WITHERMANCER",
+    "level": 90,
+    "health": 300000,
+    "damage": 4640,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 80
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "ZOMBIE_COMMANDER",
+    "name": "Zombie Commander",
+    "familyId": "ZOMBIE_COMMANDER",
+    "level": 0,
+    "health": 1700000,
+    "damage": 8800,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 95
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "ZOMBIE_GRUNT",
+    "name": "Zombie Grunt",
+    "familyId": "ZOMBIE_GRUNT",
+    "level": 0,
+    "health": 22000,
+    "damage": 320,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 40
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "ZOMBIE_KNIGHT",
+    "name": "Zombie Knight",
+    "familyId": "ZOMBIE_KNIGHT",
+    "level": 0,
+    "health": 170000,
+    "damage": 2280,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 56
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "ZOMBIE_LORD",
+    "name": "Zombie Lord",
+    "familyId": "ZOMBIE_LORD",
+    "level": 0,
+    "health": 5000000,
+    "damage": 20000,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 130
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "ZOMBIE_SOLDIER",
+    "name": "Zombie Soldier",
+    "familyId": "ZOMBIE_SOLDIER",
+    "level": 0,
+    "health": 140000,
+    "damage": 1640,
+    "defense": 0,
+    "killStats": {
+      "coins": 1,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 52
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "ABYSSAL_MINER",
+    "name": "Abyssal Miner",
+    "familyId": "ABYSSAL_MINER",
+    "level": 150,
+    "health": 2000000,
+    "damage": 1300,
+    "defense": 0,
+    "killStats": {
+      "coins": 10,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 770
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "AGARIMOO",
+    "name": "Agarimoo",
+    "familyId": "AGARIMOO",
+    "level": 35,
+    "health": 55000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 60,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 80
+      },
+      "xpOrbs": 32
+    }
+  },
+  {
+    "id": "BLUE_RINGED_OCTOPUS",
+    "name": "Blue Ringed Octopus",
+    "familyId": "BLUE_RINGED_OCTOPUS",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CARROT_KING",
+    "name": "Carrot King",
+    "familyId": "CARROT_KING",
+    "level": 25,
+    "health": 32000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 810
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CATFISH",
+    "name": "Catfish",
+    "familyId": "CATFISH",
+    "level": 23,
+    "health": 26000,
+    "damage": 250,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 405
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "DEEP_SEA_PROTECTOR",
+    "name": "Deep Sea Protector",
+    "familyId": "DEEP_SEA_PROTECTOR",
+    "level": 60,
+    "health": 150000,
+    "damage": 300,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 1000
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "FROG_MAN",
+    "name": "Frog Man",
+    "familyId": "FROG_MAN",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GUARDIAN_DEFENDER",
+    "name": "Guardian Defender",
+    "familyId": "GUARDIAN_DEFENDER",
+    "level": 45,
+    "health": 70000,
+    "damage": 250,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 1150
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MITHRIL_GRUBBER",
+    "name": "Mithril Grubber",
+    "familyId": "MITHRIL_GRUBBER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "NIGHT_SQUID",
+    "name": "Night Squid",
+    "familyId": "NIGHT_SQUID",
+    "level": 6,
+    "health": 4000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 270
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "OASIS_RABBIT",
+    "name": "Oasis Rabbit",
+    "familyId": "OASIS_RABBIT",
+    "level": 10,
+    "health": 6000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "OASIS_SHEEP",
+    "name": "Oasis Sheep",
+    "familyId": "OASIS_SHEEP",
+    "level": 10,
+    "health": 6000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "POISONED_WATER_WORM",
+    "name": "Poisoned Water Worm",
+    "familyId": "POISONED_WATER_WORM",
+    "level": 25,
+    "health": 75000,
+    "damage": 4000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 270
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "RIDER_OF_THE_DEEP",
+    "name": "Rider of the Deep",
+    "familyId": "RIDER_OF_THE_DEEP",
+    "level": 20,
+    "health": 20000,
+    "damage": 225,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 270
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SEA_ARCHER",
+    "name": "Sea Archer",
+    "familyId": "SEA_ARCHER",
+    "level": 15,
+    "health": 7000,
+    "damage": 140,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 169
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SEA_GUARDIAN",
+    "name": "Sea Guardian",
+    "familyId": "SEA_GUARDIAN",
+    "level": 10,
+    "health": 5000,
+    "damage": 150,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 101
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SEA_LEECH",
+    "name": "Sea Leech",
+    "familyId": "SEA_LEECH",
+    "level": 30,
+    "health": 60000,
+    "damage": 30,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 675
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SEA_WALKER",
+    "name": "Sea Walker",
+    "familyId": "SEA_WALKER",
+    "level": 4,
+    "health": 1000,
+    "damage": 60,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 68
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SEA_WITCH",
+    "name": "Sea Witch",
+    "familyId": "SEA_WITCH",
+    "level": 15,
+    "health": 6000,
+    "damage": 150,
+    "defense": 0,
+    "killStats": {
+      "coins": 10,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 400
+      },
+      "xpOrbs": 30
+    }
+  },
+  {
+    "id": "SNAPPING_TURTLE",
+    "name": "Snapping Turtle",
+    "familyId": "SNAPPING_TURTLE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SQUID",
+    "name": "Squid",
+    "familyId": "SQUID",
+    "level": 1,
+    "health": 750,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 41
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WATER_HYDRA",
+    "name": "Water Hydra",
+    "familyId": "WATER_HYDRA",
+    "level": 100,
+    "health": 500000,
+    "damage": 400,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 2025
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WATER_WORM",
+    "name": "Water Worm",
+    "familyId": "WATER_WORM",
+    "level": 20,
+    "health": 50000,
+    "damage": 300,
+    "defense": 0,
+    "killStats": {
+      "coins": 10,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 240
+      },
+      "xpOrbs": 10
+    }
+  },
+  {
+    "id": "WETWING",
+    "name": "Wetwing",
+    "familyId": "WETWING",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WIKI_TIKI",
+    "name": "Wiki Tiki",
+    "familyId": "WIKI_TIKI",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "FIREY_SCUTTLER",
+    "name": "Firey Scuttler",
+    "familyId": "FIERY_SCUTTLER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "FIRE_EEL",
+    "name": "Fire Eel",
+    "familyId": "FIRE_EEL",
+    "level": 220,
+    "health": 2000000,
+    "damage": 9500,
+    "defense": 0,
+    "killStats": {
+      "coins": 1200,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 2200
+      },
+      "xpOrbs": 2000
+    }
+  },
+  {
+    "id": "FIREPROOF_WITCH",
+    "name": "Fireproof Witch",
+    "familyId": "FIREPROOF_WITCH",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "FLAMING_WORM",
+    "name": "Flaming Worm",
+    "familyId": "FLAMING_WORM",
+    "level": 50,
+    "health": 100000,
+    "damage": 500,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 240
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "FRIED_CHICKEN",
+    "name": "Fried Chicken",
+    "familyId": "FRIED_CHICKEN",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "LAVA_BLAZE",
+    "name": "Lava Blaze",
+    "familyId": "LAVA_BLAZE",
+    "level": 100,
+    "health": 400000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 548
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "LAVA_FLAME",
+    "name": "Lava Flame",
+    "familyId": "LAVA_FLAME",
+    "level": 230,
+    "health": 1500000,
+    "damage": 9000,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 2100
+      },
+      "xpOrbs": 2000
+    }
+  },
+  {
+    "id": "LAVA_LEECH",
+    "name": "Lava Leech",
+    "familyId": "LAVA_LEECH",
+    "level": 220,
+    "health": 1000000,
+    "damage": 8000,
+    "defense": 0,
+    "killStats": {
+      "coins": 500,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 1400
+      },
+      "xpOrbs": 1000
+    }
+  },
+  {
+    "id": "LAVA_PIGMAN",
+    "name": "Lava Pigman",
+    "familyId": "LAVA_PIGMAN",
+    "level": 100,
+    "health": 450000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 568
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "LORD_JAWBUS",
+    "name": "Lord Jawbus",
+    "familyId": "LORD_JAWBUS",
+    "level": 600,
+    "health": 100000000,
+    "damage": 15000,
+    "defense": 0,
+    "killStats": {
+      "coins": 10000,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 40000
+      },
+      "xpOrbs": 20000
+    }
+  },
+  {
+    "id": "MAGMA_SLUG",
+    "name": "Magma Slug",
+    "familyId": "MAGMA_SLUG",
+    "level": 200,
+    "health": 500000,
+    "damage": 6000,
+    "defense": 0,
+    "killStats": {
+      "coins": 20,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 730
+      },
+      "xpOrbs": 100
+    }
+  },
+  {
+    "id": "MOOGMA",
+    "name": "Moogma",
+    "familyId": "MOOGMA",
+    "level": 210,
+    "health": 750000,
+    "damage": 7000,
+    "defense": 0,
+    "killStats": {
+      "coins": 100,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 950
+      },
+      "xpOrbs": 200
+    }
+  },
+  {
+    "id": "PLHLEGBLAST",
+    "name": "Plhlegblast",
+    "familyId": "PLHLEGBLAST",
+    "level": 300,
+    "health": 500000000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "PYROCLASTIC_WORM",
+    "name": "Pyroclastic Worm",
+    "familyId": "PYROCLASTIC_WORM",
+    "level": 240,
+    "health": 1200000,
+    "damage": 8000,
+    "defense": 0,
+    "killStats": {
+      "coins": 200,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 1100
+      },
+      "xpOrbs": 400
+    }
+  },
+  {
+    "id": "RAGNAROK",
+    "name": "Ragnarok",
+    "familyId": "RAGNAROK",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TAURUS",
+    "name": "Taurus",
+    "familyId": "TAURUS",
+    "level": 250,
+    "health": 3000000,
+    "damage": 11000,
+    "defense": 0,
+    "killStats": {
+      "coins": 2000,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 4300
+      },
+      "xpOrbs": 4000
+    }
+  },
+  {
+    "id": "THUNDER",
+    "name": "Thunder",
+    "familyId": "THUNDER",
+    "level": 400,
+    "health": 35000000,
+    "damage": 10000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GRIM_REAPER",
+    "name": "Grim Reaper",
+    "familyId": "GRIM_REAPER",
+    "level": 190,
+    "health": 3000000,
+    "damage": 2100,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 3950
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "NIGHTMARE",
+    "name": "Nightmare",
+    "familyId": "NIGHTMARE",
+    "level": 24,
+    "health": 35000,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 820
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "PHANTOM_FISHER",
+    "name": "Phantom Fisher",
+    "familyId": "PHANTOM_FISHER",
+    "level": 160,
+    "health": 1000000,
+    "damage": 1000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 2525
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SCARECROW",
+    "name": "Scarecrow",
+    "familyId": "SCARECROW",
+    "level": 9,
+    "health": 4500,
+    "damage": 150,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 400
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WEREWOLF",
+    "name": "Werewolf",
+    "familyId": "WEREWOLF",
+    "level": 50,
+    "health": 50000,
+    "damage": 250,
+    "defense": 0,
+    "killStats": {
+      "coins": 1000,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 1235
+      },
+      "xpOrbs": 50
+    }
+  },
+  {
+    "id": "BLUE_SHARK",
+    "name": "Blue Shark",
+    "familyId": "BLUE_SHARK",
+    "level": 20,
+    "health": 25000,
+    "damage": 150,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 810
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GREAT_WHITE_SHARK",
+    "name": "Great White Shark",
+    "familyId": "GREAT_WHITE_SHARK",
+    "level": 180,
+    "health": 1500000,
+    "damage": 750,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 2025
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "NURSE_SHARK",
+    "name": "Nurse Shark",
+    "familyId": "NURSE_SHARK",
+    "level": 6,
+    "health": 2500,
+    "damage": 80,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 405
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TIGER_SHARK",
+    "name": "Tiger Shark",
+    "familyId": "TIGER_SHARK",
+    "level": 50,
+    "health": 250000,
+    "damage": 300,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 1013
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "FROSTY",
+    "name": "Frosty",
+    "familyId": "FROSTY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "FROZEN_STEVE",
+    "name": "Frozen Steve",
+    "familyId": "FROZEN_STEVE",
+    "level": 7,
+    "health": 1500,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 101
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GRINCH",
+    "name": "Grinch",
+    "familyId": "GRINCH",
+    "level": 21,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 405
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "NUTCRACKER",
+    "name": "Nutcracker",
+    "familyId": "NUTCRACKER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "REINDRAKE",
+    "name": "Reindrake",
+    "familyId": "REINDRAKE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "YETI",
+    "name": "Yeti",
+    "familyId": "YETI",
+    "level": 175,
+    "health": 2000000,
+    "damage": 1000,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "FISHING",
+        "amount": 4050
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "ALLIGATOR",
+    "name": "Alligator",
+    "familyId": "ALLIGATOR",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BANSHEE",
+    "name": "Banshee",
+    "familyId": "BANSHEE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BAYOU_SLUDGE",
+    "name": "Bayou Sludge",
+    "familyId": "BAYOU_SLUDGE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "DUMPSTER_DIVER",
+    "name": "Dumpster Diver",
+    "familyId": "DUMPSTER_DIVER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TITANOBOA",
+    "name": "Titanoboa",
+    "familyId": "TITANOBOA",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "TRASH_GOBBLER",
+    "name": "Trash Gobbler",
+    "familyId": "TRASH_GOBBLER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "CRETAN_BULL",
+    "name": "Cretan Bull",
+    "familyId": "CRETAN_BULL",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GAIA_CONSTRUCT",
+    "name": "Gaia Construct",
+    "familyId": "GAIA_CONSTRUCT",
+    "level": 280,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "HARPY",
+    "name": "Harpy",
+    "familyId": "HARPY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "KING_MINOS",
+    "name": "King Minos",
+    "familyId": "KING_MINOS",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MANTICORE",
+    "name": "Manticore",
+    "familyId": "MANTICORE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MINOS_CHAMPION",
+    "name": "Minos Champion",
+    "familyId": "MINOS_CHAMPION",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MINOS_HUNTER",
+    "name": "Minos Hunter",
+    "familyId": "MINOS_HUNTER",
+    "level": 15,
+    "health": 2000,
+    "damage": 300,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MINOS_INQUISITOR",
+    "name": "Minos Inquisitor",
+    "familyId": "MINOS_INQUISITOR",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MINOTAUR",
+    "name": "Minotaur",
+    "familyId": "MINOTAUR",
+    "level": 45,
+    "health": 1500000,
+    "damage": 350,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SIAMESE_LYNX",
+    "name": "Siamese Lynx",
+    "familyId": "SIAMESE_LYNX",
+    "level": 25,
+    "health": 30000,
+    "damage": 250,
+    "defense": 0,
+    "killStats": {
+      "coins": 80,
+      "experience": {
+        "skillId": "COMBAT",
+        "amount": 20
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "SPHINX",
+    "name": "Sphinx",
+    "familyId": "SPHINX",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "STRANDED_NYMPH",
+    "name": "Stranded Nymph",
+    "familyId": "STRANDED_NYMPH",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BLUE_JERRY",
+    "name": "Blue Jerry",
+    "familyId": "BLUE_JERRY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GOLDEN_JERRY",
+    "name": "Golden Jerry",
+    "familyId": "GOLDEN_JERRY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "GREEN_JERRY",
+    "name": "Green Jerry",
+    "familyId": "GREEN_JERRY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "PURPLE_JERRY",
+    "name": "Purple Jerry",
+    "familyId": "PURPLE_JERRY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BLAZING_GOLEM",
+    "name": "Blazing Golem",
+    "familyId": "BLAZING_GOLEM",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "BLIGHT",
+    "name": "Blight",
+    "familyId": "BLIGHT",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "DROPSHIP",
+    "name": "Dropship",
+    "familyId": "DROPSHIP",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "EXPLOSIVE_IMP",
+    "name": "Explosive Imp",
+    "familyId": "EXPLOSIVE_IMP",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "INFERNO_MAGMA_CUBE",
+    "name": "Inferno Magma Cube",
+    "familyId": "INFERNO_MAGMA_CUBE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "KUUDRA_BERSERKER",
+    "name": "KUUDRA Berserker",
+    "familyId": "KUUDRA_BERSERKER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "KUUDRA_FOLLOWER",
+    "name": "KUUDRA Follower",
+    "familyId": "KUUDRA_FOLLOWER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "KUUDRA_KNOCKER",
+    "name": "KUUDRA Knocker",
+    "familyId": "KUUDRA_KNOCKER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "KUUDRA_LANDMINE",
+    "name": "KUUDRA Landmine",
+    "familyId": "KUUDRA_LANDMINE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "KUUDRA_SLASHER",
+    "name": "KUUDRA Slasher",
+    "familyId": "KUUDRA_SLASHER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "MAGMA_FOLLOWER",
+    "name": "Magma Follower",
+    "familyId": "MAGMA_FOLLOWER",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WANDERING_BLAZE",
+    "name": "Wandering Blaze",
+    "familyId": "WANDERING_BLAZE",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  },
+  {
+    "id": "WITHER_SENTRY",
+    "name": "Wither Sentry",
+    "familyId": "WITHER_SENTRY",
+    "level": 0,
+    "health": 0,
+    "damage": 0,
+    "defense": 0,
+    "killStats": {
+      "coins": 0,
+      "experience": {
+        "skillId": "",
+        "amount": 0
+      },
+      "xpOrbs": 0
+    }
+  }
+]
