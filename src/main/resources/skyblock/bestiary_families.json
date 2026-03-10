@@ -1293,7 +1293,7 @@
     "name": "Bogged",
     "description": "Learn to swim before you learn to dive!",
     "bracket": 4,
-    "max_tier": 20,
+    "maxTier": 20,
     "category": "GALATEA",
     "mobTypes": [
       "SKELETAL",
@@ -1305,7 +1305,7 @@
     "name": "Chill",
     "description": "No chill.",
     "bracket": 4,
-    "max_tier": 15,
+    "maxTier": 15,
     "category": "GALATEA",
     "mobTypes": [
       "WOODLAND",
@@ -1317,7 +1317,7 @@
     "name": "Ent",
     "description": "Thinks photosynthesis is a surface-plant propaganda invented by leafy elites to sell fertilizers.",
     "bracket": 4,
-    "max_tier": 15,
+    "maxTier": 15,
     "category": "GALATEA",
     "mobTypes": [
       "WOODLAND",
@@ -1329,7 +1329,7 @@
     "name": "Stridersurfer",
     "description": "Ugliest crossover.",
     "bracket": 4,
-    "max_tier": 15,
+    "maxTier": 15,
     "category": "GALATEA",
     "mobTypes": [
       "MAGMATIC",
@@ -1342,7 +1342,7 @@
     "name": "Tadgang",
     "description": "They grow up so fast.",
     "bracket": 4,
-    "max_tier": 15,
+    "maxTier": 15,
     "category": "GALATEA",
     "mobTypes": [
       "AQUATIC",
@@ -1354,7 +1354,7 @@
     "name": "The Lock Emperor",
     "description": "What exists within the Lock without his knowledge exists without his consent.",
     "bracket": 5,
-    "max_tier": 15,
+    "maxTier": 15,
     "category": "GALATEA",
     "mobTypes": [
       "AQUATIC",
@@ -1367,7 +1367,7 @@
     "name": "Tidetot",
     "description": "They are a little washed up.",
     "bracket": 4,
-    "max_tier": 15,
+    "maxTier": 15,
     "category": "GALATEA",
     "mobTypes": [
       "WOODLAND",
