@@ -1,134 +1,156 @@
 [
   {
     "id": "PRIVATE_ISLAND",
-    "remoteId": "DYNAMIC",
     "name": "Private Island",
-    "format": "GREEN"
+    "format": "GREEN",
+    "gameType": "SKYBLOCK",
+    "mode": "DYNAMIC"
   },
   {
     "id": "THE_GARDEN",
-    "remoteId": "GARDEN",
     "name": "The Garden",
-    "format": "GREEN"
+    "format": "GREEN",
+    "gameType": "SKYBLOCK",
+    "mode": "GARDEN"
   },
   {
     "id": "HUB",
-    "remoteId": "HUB",
     "name": "Hub",
-    "format": "WHITE"
+    "format": "WHITE",
+    "gameType": "SKYBLOCK",
+    "mode": "HUB"
   },
   {
     "id": "DARK_AUCTION",
-    "remoteId": "DARK_AUCTION",
     "name": "Dark Auction",
-    "format": "DARK_PURPLE"
+    "format": "DARK_PURPLE",
+    "gameType": "SKYBLOCK",
+    "mode": "DARK_AUCTION"
   },
   {
     "id": "THE_PARK",
-    "remoteId": "FORAGING_1",
     "name": "The Park",
-    "format": "AQUA"
+    "format": "AQUA",
+    "gameType": "SKYBLOCK",
+    "mode": "FORAGING_1"
   },
   {
     "id": "GALATEA",
-    "remoteId": "FORAGING_2",
     "name": "Galatea",
-    "format": "GREEN"
+    "format": "GREEN",
+    "gameType": "SKYBLOCK",
+    "mode": "FORAGING_2"
   },
   {
     "id": "THE_FARMING_ISLANDS",
-    "remoteId": "FARMING_1",
     "name": "The Farming Islands",
-    "format": "GREEN"
+    "format": "GREEN",
+    "gameType": "SKYBLOCK",
+    "mode": "FARMING_1"
   },
   {
     "id": "SPIDERS_DEN",
-    "remoteId": "COMBAT_1",
     "name": "Spider's Den",
-    "format": "RED"
+    "format": "RED",
+    "gameType": "SKYBLOCK",
+    "mode": "COMBAT_1"
   },
   {
     "id": "THE_END",
-    "remoteId": "COMBAT_3",
     "name": "The End",
-    "format": "LIGHT_PURPLE"
+    "format": "LIGHT_PURPLE",
+    "gameType": "SKYBLOCK",
+    "mode": "COMBAT_3"
   },
   {
     "id": "CRIMSON_ISLE",
-    "remoteId": "CRIMSON_ISLE",
     "name": "Crimson Isle",
-    "format": "RED"
+    "format": "RED",
+    "gameType": "SKYBLOCK",
+    "mode": "CRIMSON_ISLE"
   },
   {
     "id": "KUUDRAS_HOLLOW",
-    "remoteId": "INSTANCED",
     "name": "Kuudra's Hollow",
-    "format": "RED"
+    "format": "RED",
+    "gameType": "SKYBLOCK",
+    "mode": "INSTANCED"
   },
   {
     "id": "THE_CATACOMBS",
-    "remoteId": "DUNGEON",
     "name": "The Catacombs",
-    "format": "RED"
+    "format": "RED",
+    "gameType": "SKYBLOCK",
+    "mode": "DUNGEON"
   },
   {
     "id": "GOLD_MINE",
-    "remoteId": "MINING_1",
     "name": "Gold Mine",
-    "format": "GOLD"
+    "format": "GOLD",
+    "gameType": "SKYBLOCK",
+    "mode": "MINING_1"
   },
   {
     "id": "DEEP_CAVERNS",
-    "remoteId": "MINING_2",
     "name": "Deep Caverns",
-    "format": "AQUA"
+    "format": "AQUA",
+    "gameType": "SKYBLOCK",
+    "mode": "MINING_2"
   },
   {
     "id": "DWARVEN_MINES",
-    "remoteId": "MINING_3",
     "name": "Dwarven Mines",
-    "format": "DARK_GREEN"
+    "format": "DARK_GREEN",
+    "gameType": "SKYBLOCK",
+    "mode": "MINING_3"
   },
   {
     "id": "CRYSTAL_HOLLOWS",
-    "remoteId": "CRYSTAL_HOLLOWS",
     "name": "Crystal Hollows",
-    "format": "DARK_PURPLE"
+    "format": "DARK_PURPLE",
+    "gameType": "SKYBLOCK",
+    "mode": "CRYSTAL_HOLLOWS"
   },
   {
     "id": "BACKWATER_BAYOU",
-    "remoteId": "FISHING_1",
     "name": "Backwater Bayou",
-    "format": "GREEN"
+    "format": "GREEN",
+    "gameType": "SKYBLOCK",
+    "mode": "FISHING_1"
   },
   {
     "id": "JERRYS_WORKSHOP",
-    "remoteId": "WINTER",
     "name": "Jerry's Workshop",
-    "format": "RED"
+    "format": "RED",
+    "gameType": "SKYBLOCK",
+    "mode": "WINTER"
   },
   {
     "id": "THE_RIFT",
-    "remoteId": "RIFT",
     "name": "The Rift",
-    "format": "GREEN"
+    "format": "GREEN",
+    "gameType": "SKYBLOCK",
+    "mode": "RIFT"
   },
   {
     "id": "DUNGEON_HUB",
-    "remoteId": "DUNGEON_HUB",
     "name": "Dungeon Hub",
-    "format": "RED"
+    "format": "RED",
+    "gameType": "SKYBLOCK",
+    "mode": "DUNGEON_HUB"
   },
   {
-    "id": "LOBBY",
-    "remoteId": "LOBBY",
+    "id": "NETWORK_LOBBY",
     "name": "Network Lobby",
-    "format": "AQUA"
+    "format": "AQUA",
+    "gameType": "MAIN",
+    "mode": "LOBBY"
   },
   {
-    "id": "LIMBO",
-    "remoteId": "LIMBO",
-    "name": "Limbo",
-    "format": "AQUA"
+    "id": "PROTOTYPE_LOBBY",
+    "name": "Prototype Lobby",
+    "format": "AQUA",
+    "gameType": "PROTOTYPE",
+    "mode": "LOBBY"
   }
 ]
