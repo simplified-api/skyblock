@@ -3,6 +3,9 @@
     "id": "CATACOMBS_BOSS_LUCK",
     "name": "Boss Luck",
     "description": "Increases the quality of boss rewards in %{ZONE:THE_CATACOMBS} by %{BOSS_LUCK}.",
+    "regions": [
+      "THE_CATACOMBS"
+    ],
     "stats": [
       {
         "id": "BOSS_LUCK",
@@ -59,6 +62,9 @@
     "id": "CATACOMBS_LOOTING",
     "name": "Looting",
     "description": "Increases the quality of mob loot drops in %{ZONE:THE_CATACOMBS} by %{LOOT_QUALITY}.",
+    "regions": [
+      "THE_CATACOMBS"
+    ],
     "stats": [
       {
         "id": "LOOT_QUALITY",
