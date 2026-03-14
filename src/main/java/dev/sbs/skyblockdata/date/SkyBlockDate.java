@@ -71,31 +71,31 @@ public class SkyBlockDate extends SimpleDate {
         super(isRealTime ? milliseconds : milliseconds + Launch.SKYBLOCK);
     }
 
-    public @NotNull SkyBlockDate append(int year) {
+    public @NotNull SkyBlockDate add(int year) {
         return new SkyBlockDate(this.getYear() + year, this.getMonth(), this.getDay(), this.getHour());
     }
 
-    public @NotNull SkyBlockDate append(int year, @NotNull Season season) {
-        return this.append(year, season.ordinal() + 1);
+    public @NotNull SkyBlockDate add(int year, @NotNull Season season) {
+        return this.add(year, season.ordinal() + 1);
     }
 
-    public @NotNull SkyBlockDate append(int year, @Range(from = 1, to = 12) int month) {
+    public @NotNull SkyBlockDate add(int year, @Range(from = 1, to = 12) int month) {
         return new SkyBlockDate(this.getYear() + year, this.getMonth() + month, this.getDay(), this.getHour());
     }
 
-    public @NotNull SkyBlockDate append(int year, @NotNull Season season, @Range(from = 1, to = 31) int day) {
-        return this.append(year, season.ordinal() + 1, day);
+    public @NotNull SkyBlockDate add(int year, @NotNull Season season, @Range(from = 1, to = 31) int day) {
+        return this.add(year, season.ordinal() + 1, day);
     }
 
-    public @NotNull SkyBlockDate append(int year, @Range(from = 1, to = 12) int month, @Range(from = 1, to = 31) int day) {
-        return this.append(year, month, day, 0);
+    public @NotNull SkyBlockDate add(int year, @Range(from = 1, to = 12) int month, @Range(from = 1, to = 31) int day) {
+        return this.add(year, month, day, 0);
     }
 
-    public @NotNull SkyBlockDate append(int year, @NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
-        return this.append(year, season.ordinal() + 1, day, hour);
+    public @NotNull SkyBlockDate add(int year, @NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
+        return this.add(year, season.ordinal() + 1, day, hour);
     }
 
-    public @NotNull SkyBlockDate append(int year, @Range(from = 1, to = 12) int month, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
+    public @NotNull SkyBlockDate add(int year, @Range(from = 1, to = 12) int month, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
         return new SkyBlockDate(this.getYear() + year, this.getMonth() + month, this.getDay() + day, this.getHour() + hour);
     }
 
@@ -150,7 +150,7 @@ public class SkyBlockDate extends SimpleDate {
             if (specialMayorDate.getYear() >= fromDate.getYear())
                 mayors.add(new Election(specialMayorDate.getYear()));
 
-            specialMayorDate = specialMayorDate.append(8);
+            specialMayorDate = specialMayorDate.add(8);
         }
 
         return mayors;
@@ -174,7 +174,7 @@ public class SkyBlockDate extends SimpleDate {
             if (specialMayorDate.getYear() >= fromDate.getYear())
                 specialMayors.add(new SpecialElection(specialMayorDate.getYear(), SPECIAL_MAYOR_CYCLE.get(iterations % 3)));
 
-            specialMayorDate = specialMayorDate.append(8);
+            specialMayorDate = specialMayorDate.add(8);
             iterations++;
         }
 
@@ -280,6 +280,34 @@ public class SkyBlockDate extends SimpleDate {
             .append(this.getDay())
             .append(this.getHour())
             .build();
+    }
+
+    public @NotNull SkyBlockDate subtract(int year) {
+        return new SkyBlockDate(this.getYear() - year, this.getMonth(), this.getDay(), this.getHour());
+    }
+
+    public @NotNull SkyBlockDate subtract(int year, @NotNull Season season) {
+        return this.subtract(year, season.ordinal() + 1);
+    }
+
+    public @NotNull SkyBlockDate subtract(int year, @Range(from = 1, to = 12) int month) {
+        return new SkyBlockDate(this.getYear() - year, this.getMonth() - month, this.getDay(), this.getHour());
+    }
+
+    public @NotNull SkyBlockDate subtract(int year, @NotNull Season season, @Range(from = 1, to = 31) int day) {
+        return this.subtract(year, season.ordinal() - 1, day);
+    }
+
+    public @NotNull SkyBlockDate subtract(int year, @Range(from = 1, to = 12) int month, @Range(from = 1, to = 31) int day) {
+        return this.subtract(year, month, day, 0);
+    }
+
+    public @NotNull SkyBlockDate subtract(int year, @NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
+        return this.subtract(year, season.ordinal() - 1, day, hour);
+    }
+
+    public @NotNull SkyBlockDate subtract(int year, @Range(from = 1, to = 12) int month, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
+        return new SkyBlockDate(this.getYear() - year, this.getMonth() - month, this.getDay() - day, this.getHour() - hour);
     }
 
     @NoArgsConstructor(access = AccessLevel.PRIVATE)
