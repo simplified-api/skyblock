@@ -141,7 +141,7 @@
     "id": "CATACOMBS_HEALTH",
     "name": "Health Essence",
     "description": "Increases your base %{STAT:HEALTH} in %{ZONE:THE_CATACOMBS} by %{HEALTH}.",
-    "zones": [
+    "regions": [
       "THE_CATACOMBS"
     ],
     "stats": [
@@ -210,7 +210,7 @@
     "id": "CATACOMBS_DEFENSE",
     "name": "Defense Essence",
     "description": "Increases your base %{STAT:DEFENSE} in %{ZONE:THE_CATACOMBS} by %{DEFENSE}.",
-    "zones": [
+    "regions": [
       "THE_CATACOMBS"
     ],
     "stats": [
@@ -279,7 +279,7 @@
     "id": "CATACOMBS_STRENGTH",
     "name": "Strength Essence",
     "description": "Increases your base %{STAT:STRENGTH} in %{ZONE:THE_CATACOMBS} by %{STRENGTH}.",
-    "zones": [
+    "regions": [
       "THE_CATACOMBS"
     ],
     "stats": [
@@ -348,7 +348,7 @@
     "id": "CATACOMBS_INTELLIGENCE",
     "name": "Intelligence Essence",
     "description": "Increases your base %{STAT:INTELLIGENCE} in %{ZONE:THE_CATACOMBS} by %{INTELLIGENCE}.",
-    "zones": [
+    "regions": [
       "THE_CATACOMBS"
     ],
     "stats": [
@@ -417,7 +417,7 @@
     "id": "CATACOMBS_CRIT_DAMAGE",
     "name": "Critical Essence",
     "description": "Increases your base %{STAT:CRIT_DAMAGE} in %{ZONE:THE_CATACOMBS} by %{CRIT_DAMAGE}.",
-    "zones": [
+    "regions": [
       "THE_CATACOMBS"
     ],
     "stats": [
@@ -1284,7 +1284,7 @@
     "id": "COMBAT_WISDOM_IN_END",
     "name": "Ender Training",
     "description": "Gain %{COMBAT_WISDOM} %{STAT:COMBAT_WISDOM} while in %{ZONE:THE_END}.",
-    "zones": [
+    "regions": [
       "THE_END"
     ],
     "stats": [
@@ -1806,7 +1806,7 @@
     "id": "SPIDER_TRAINING",
     "name": "Spider Training",
     "description": "Increases your %{STAT:COMBAT_WISDOM} by %{COMBAT_WISDOM} while on the %{ZONE:SPIDERS_DEN}.",
-    "zones": [
+    "regions": [
       "SPIDERS_DEN"
     ],
     "stats": [
@@ -2236,7 +2236,7 @@
     "id": "DRAKE_PIPER",
     "name": "Drake Piper",
     "description": "Increases the chance to spawn a Reindrake by %{REINDRAKE_SPAWN_CHANCE} while fishing on %{ZONE:JERRYS_WORKSHOP}.",
-    "zones": [
+    "regions": [
       "JERRY_WORKSHOP"
     ],
     "stats": [
@@ -2692,7 +2692,7 @@
     "id": "CRIMSON_TRAINING",
     "name": "Crimson Training",
     "description": "Increases your %{STAT:COMBAT_WISDOM} by %{COMBAT_WISDOM} while on the %{ZONE:CRIMSON_ISLE} and in the %{KEYWORD:KUUDRA_BOSS_FIGHT}.",
-    "zones": [
+    "regions": [
       "CRIMSON_ISLE"
     ],
     "stats": [
@@ -2741,7 +2741,7 @@
     "id": "WITHER_PIPER",
     "name": "Wither Piper",
     "description": "%{VANQUISHER_SPAWN_CHANCE} increased chance to find %{MOBS:VANQUISHER} on the %{ZONE:CRIMSON_ISLE}.",
-    "zones": [
+    "regions": [
       "CRIMSON_ISLE"
     ],
     "stats": [
@@ -2947,8 +2947,7 @@
       "GOLD_MINES",
       "DEEP_CAVERNS",
       "DWARVEN_MINES",
-      "CRYSTAL_HOLLOWS",
-      "GLACITE_TUNNELS"
+      "CRYSTAL_HOLLOWS"
     ],
     "stats": [
       {
@@ -3062,7 +3061,7 @@
     "id": "EAGER_MINER",
     "name": "Eager Miner",
     "description": "Increase your %{STAT:MINING_SPEED} by %{MINING_SPEED} while on %{ZONE:MINING_ISLANDS}.",
-    "zones": [
+    "regions": [
       "GOLD_MINES",
       "DEEP_CAVERNS",
       "DWARVEN_MINES",
@@ -3185,7 +3184,7 @@
     "id": "MIDAS_LURE",
     "name": "Midas Lure",
     "description": "Increases your chances of fishing up a %{KEYWORD:TROPHY_FISH_GOLD} in the %{ZONE:CRIMSON_ISLE} by %{TROPHY_FISH_GOLD_CHANCE}.",
-    "zones": [
+    "regions": [
       "CRIMSON_ISLE"
     ],
     "stats": [
@@ -3305,7 +3304,7 @@
     "id": "RADIANT_FISHER",
     "name": "Radiant Fisher",
     "description": "Increases your chances of fishing up a %{KEYWORD:TROPHY_FISH_DIAMOND} in the %{ZONE:CRIMSON_ISLE} by %{TROPHY_FISH_DIAMOND_CHANCE}.",
-    "zones": [
+    "regions": [
       "CRIMSON_ISLE"
     ],
     "stats": [
@@ -3606,12 +3605,11 @@
     "id": "UNDER_PRESSURE",
     "name": "Under Pressure",
     "description": "Increases your %{STAT:STRENGTH} by %{STRENGTH} while on %{ZONE:MINING_ISLANDS}.",
-    "zones": [
+    "regions": [
       "GOLD_MINES",
       "DEEP_CAVERNS",
       "DWARVEN_MINES",
-      "CRYSTAL_HOLLOWS",
-      "GLACITE_TUNNELS"
+      "CRYSTAL_HOLLOWS"
     ],
     "stats": [
       {
@@ -4212,7 +4210,7 @@
     "id": "FOREST_TRAINING",
     "name": "Forest Training",
     "description": "Increases your %{STAT:FORAGING_WISDOM} by %{FORAGING_WISDOM} while on the %{ZONE:FORAGING_ISLANDS}.",
-    "zones": [
+    "regions": [
       "GALATEA"
     ],
     "stats": [
