@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "BLENDED_FISH_MIXIN",
+    "id": "BLENDED_FISH_MIXIN",
     "stats": [
       {
         "id": "FISHY_TREATS",
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "itemId": "DEEPTERROR_MIXIN",
+    "id": "DEEPTERROR_MIXIN",
     "regions": [
       "THE_END",
       "CRIMSON_ISLE"
@@ -38,7 +38,7 @@
     ]
   },
   {
-    "itemId": "END_PORTAL_FUMES_MIXIN",
+    "id": "END_PORTAL_FUMES_MIXIN",
     "stats": [
       {
         "id": "OVERFLOW",
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "itemId": "GABAGOEY_MIXIN",
+    "id": "GABAGOEY_MIXIN",
     "stats": [
       {
         "id": "TRUE_DEFENCE",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "itemId": "HOT_CHOCOLATE_MIXIN",
+    "id": "HOT_CHOCOLATE_MIXIN",
     "stats": [
       {
         "id": "PET_LUCK",
@@ -85,7 +85,7 @@
     ]
   },
   {
-    "itemId": "MUSHED_MUSHROOM_MIXIN",
+    "id": "MUSHED_MUSHROOM_MIXIN",
     "stats": [
       {
         "id": "FISHING_SPEED",
@@ -98,7 +98,7 @@
     ]
   },
   {
-    "itemId": "PIG_BRAIN_MIXIN",
+    "id": "PIG_BRAIN_MIXIN",
     "stats": [
       {
         "id": "SHINY_STUFF_DROP_CHANCE",
@@ -111,7 +111,7 @@
     ]
   },
   {
-    "itemId": "SPIDER_EGG_MIXIN",
+    "id": "SPIDER_EGG_MIXIN",
     "stats": [
       {
         "id": "CRIT_DAMAGE",
@@ -124,7 +124,7 @@
     ]
   },
   {
-    "itemId": "WOLF_FUR_MIXIN",
+    "id": "WOLF_FUR_MIXIN",
     "stats": [
       {
         "id": "FIRST_HIT_MAGIC_FIND",
@@ -137,7 +137,7 @@
     ]
   },
   {
-    "itemId": "ZOMBIE_BRAIN_MIXIN",
+    "id": "ZOMBIE_BRAIN_MIXIN",
     "stats": [
       {
         "id": "FEROCITY",
