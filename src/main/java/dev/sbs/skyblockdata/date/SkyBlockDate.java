@@ -374,7 +374,7 @@ public class SkyBlockDate extends SimpleDate {
 
     /**
      * Returns the next {@code next} upcoming regular mayor {@link Election Elections}
-     * starting from the given date. Elections occur every 8 SkyBlock years, beginning
+     * starting from the given date. Elections occur every SkyBlock year, beginning
      * at {@link Launch#MAYOR_ELECTIONS_START}.
      *
      * @param next the number of upcoming elections to return (minimum 1)
@@ -383,14 +383,14 @@ public class SkyBlockDate extends SimpleDate {
      */
     public static @NotNull ConcurrentList<Election> getMayors(int next, @NotNull SkyBlockDate fromDate) {
         next = Math.max(next, 1);
-        SkyBlockDate specialMayorDate = new SkyBlockDate(Launch.MAYOR_ELECTIONS_START);
+        SkyBlockDate mayorDate = new SkyBlockDate(Launch.MAYOR_ELECTIONS_START);
         ConcurrentList<Election> mayors = Concurrent.newList();
 
         while (mayors.size() < next) {
-            if (specialMayorDate.getYear() >= fromDate.getYear())
-                mayors.add(new Election(specialMayorDate.getYear()));
+            if (mayorDate.getYear() >= fromDate.getYear())
+                mayors.add(new Election(mayorDate.getYear()));
 
-            specialMayorDate = specialMayorDate.add(8);
+            mayorDate = mayorDate.add(1);
         }
 
         return mayors;
