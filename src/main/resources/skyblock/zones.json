@@ -1269,7 +1269,7 @@
     "id": "BACKWATER_BAYOU",
     "name": "Backwater Bayou",
     "format": "DARK_GREEN",
-    "region": "FISHING_ISLANDS"
+    "region": "BACKWATER_BAYOU"
   },
   {
     "id": "JERRYS_WORKSHOP",
@@ -1341,295 +1341,295 @@
     "id": "COLOSSEUM",
     "name": "Colosseum",
     "format": "AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "BLACK_LAGOON",
     "name": "Black Lagoon",
     "format": "DARK_GRAY",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "LAGOON_CAVE",
     "name": "Lagoon Cave",
     "format": "DARK_GRAY",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "LAGOON_HUT",
     "name": "Lagoon Hut",
     "format": "DARK_AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "LEECHES_LAIR",
     "name": "Leeches Lair",
     "format": "RED",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "AROUND_COLESSEUM",
     "name": "Around Colesseum",
     "format": "GRAY",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "DREADFARM",
     "name": "Dreadfarm",
     "format": "YELLOW",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "GREAT_BEANSTALK",
     "name": "Great Beanstalk",
     "format": "GREEN",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "LIVING_CAVE",
     "name": "Living Cave",
     "format": "BLUE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "LIVING_STILLNESS",
     "name": "Living Stillness",
     "format": "AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "THE_MOUNTAINTOP",
     "name": "The Mountaintop",
     "format": "GRAY",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "WALK_OF_FAME",
     "name": "Walk of Fame",
     "format": "YELLOW",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "WIZARD_BRAWL",
     "name": "Wizard Brawl",
     "format": "DARK_PURPLE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "CEREBRAL_CITADEL",
     "name": "Cerebral Citadel",
     "format": "AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "CONTINUUM",
     "name": "Continuum",
     "format": "DARK_PURPLE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "THE_VENTS",
     "name": "The Vents",
     "format": "GRAY",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "ROSES_END",
     "name": "Rose's End",
     "format": "RED",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "TRIAL_GROUNDS",
     "name": "Trial Grounds",
     "format": "DARK_PURPLE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "WIZARDMAN_BUREAU",
     "name": "Wizardman Bureau",
     "format": "LIGHT_PURPLE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "OTHERSIDE",
     "name": "Otherside",
     "format": "GRAY",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "RIFT_GALLERY",
     "name": "Rift Gallery",
     "format": "LIGHT_PURPLE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "RIFT_GALLERY_ENTRANCE",
     "name": "Rift Gallery Entrance",
     "format": "LIGHT_PURPLE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "STILLGORE_CHÂTEAU",
     "name": "Stillgore Château",
     "format": "RED",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "FAIRYLOSOPHY_TOWER",
     "name": "Fairylosophy Tower",
     "format": "LIGHT_PURPLE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "OUBLIETTE",
     "name": "Oubliette",
     "format": "RED",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "TIME_CHAMBER",
     "name": "Time Chamber",
     "format": "GREEN",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "VILLAGE_PLAZA",
     "name": "Village Plaza",
     "format": "AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "BARRIER_STREET",
     "name": "Barrier Street",
     "format": "GOLD",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "BARRY_CENTER",
     "name": "Barry Center",
     "format": "AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "BARRY_HQ",
     "name": "Barry HQ",
     "format": "AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "DÉJÀ_VU_ALLEY",
     "name": "Déjà Vu Alley",
     "format": "GREEN",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "EMPTY_BANK",
     "name": "Empty Bank",
     "format": "GOLD",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "HALF-EATEN_CAVE",
     "name": "Half-Eaten Cave",
     "format": "GOLD",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "MURDER_HOUSE",
     "name": "Murder House",
     "format": "GREEN",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "LONELY_TERRACE",
     "name": "Lonely Terrace",
     "format": "BLUE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "PHOTON_PATHWAY",
     "name": "Photon Pathway",
     "format": "AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "TAYLORS",
     "name": "Taylor's",
     "format": "RED",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "\"YOUR\"_ISLAND",
     "name": "\"Your\" Island",
     "format": "GREEN",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "WEST_VILLAGE",
     "name": "West Village",
     "format": "DARK_AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "CAKE_HOUSE",
     "name": "Cake House",
     "format": "LIGHT_PURPLE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "DOLPHIN_TRAINER",
     "name": "Dolphin Trainer",
     "format": "AQUA",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "INFESTED_HOUSE",
     "name": "Infested House",
     "format": "GREEN",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "MIRRORVERSE",
     "name": "Mirrorverse",
     "format": "WHITE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "WYLD_WOODS",
     "name": "Wyld Woods",
     "format": "GREEN",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "BROKEN_CAGE",
     "name": "Broken Cage",
     "format": "DARK_RED",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "ENIGMAS_CRIB",
     "name": "Enigma's Crib",
     "format": "DARK_PURPLE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "PUMPGROTTO",
     "name": "Pumpgrotto",
     "format": "BLUE",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "SHIFTED_TAVERN",
     "name": "Shifted Tavern",
     "format": "GREEN",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "BOOK_IN_A_BOOK",
     "name": "Book in a Book",
     "format": "YELLOW",
-    "region": "RIFT_DIMENSION"
+    "region": "THE_RIFT"
   },
   {
     "id": "DUNGEON_HUB",
@@ -1641,6 +1641,6 @@
     "id": "LIMBO",
     "name": "Limbo",
     "format": "AQUA",
-    "region": "LIMBO"
+    "region": "PROTOTYPE_LOBBY"
   }
 ]
