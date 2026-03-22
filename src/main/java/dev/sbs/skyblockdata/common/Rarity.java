@@ -19,6 +19,7 @@ public enum Rarity {
     EPIC(ChatFormat.DARK_PURPLE, 12, true, true),
     LEGENDARY(ChatFormat.GOLD, 16, true, true),
     MYTHIC(ChatFormat.LIGHT_PURPLE, 22, true, false),
+    @SerializedName(alternate = { "SUPREME" }, value = "DIVINE")
     DIVINE(ChatFormat.AQUA, 0, true, false),
     SPECIAL(ChatFormat.RED, 3, true, true),
     VERY_SPECIAL(ChatFormat.RED, 5, true, false),
