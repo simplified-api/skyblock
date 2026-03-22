@@ -2,98 +2,98 @@
   {
     "id": "BLOBFISH",
     "name": "Blobfish",
-    "format": "COMMON"
+    "rarity": "COMMON"
   },
   {
     "id": "GUSHER",
     "name": "Gusher",
-    "format": "COMMON",
+    "rarity": "COMMON",
     "zone": "BLAZING_VOLCANO"
   },
   {
     "id": "OBFUSCATED_FISH_1",
     "name": "Obfuscated 1",
-    "format": "COMMON"
+    "rarity": "COMMON"
   },
   {
     "id": "STEAMING_HOT_FLOUNDER",
     "name": "Steaming-Hot Flounder",
-    "format": "COMMON",
+    "rarity": "COMMON",
     "zone": "BLAZING_VOLCANO"
   },
   {
     "id": "SULPHUR_SKITTER",
     "name": "Sulphur Skitter",
-    "format": "COMMON"
+    "rarity": "COMMON"
   },
   {
     "id": "FLYFISH",
     "name": "Flyfish",
-    "format": "UNCOMMON"
+    "rarity": "UNCOMMON"
   },
   {
     "id": "OBFUSCATED_FISH_2",
     "name": "Obfuscated 2",
-    "format": "UNCOMMON"
+    "rarity": "UNCOMMON"
   },
   {
     "id": "SLUGFISH",
     "name": "Slugfish",
-    "format": "UNCOMMON"
+    "rarity": "UNCOMMON"
   },
   {
     "id": "LAVA_HORSE",
     "name": "Lava Horse",
-    "format": "RARE"
+    "rarity": "RARE"
   },
   {
     "id": "MANA_RAY",
     "name": "Mana Ray",
-    "format": "RARE"
+    "rarity": "RARE"
   },
   {
     "id": "OBFUSCATED_FISH_3",
     "name": "Obfuscated 3",
-    "format": "RARE"
+    "rarity": "RARE"
   },
   {
     "id": "VANILLE",
     "name": "Vanille",
-    "format": "RARE"
+    "rarity": "RARE"
   },
   {
     "id": "VOLCANIC_STONEFISH",
     "name": "Volcanic Stonefish",
-    "format": "RARE",
+    "rarity": "RARE",
     "zone": "BLAZING_VOLCANO"
   },
   {
     "id": "KARATE_FISH",
     "name": "Karate Fish",
-    "format": "EPIC",
+    "rarity": "EPIC",
     "zone": "DOJO"
   },
   {
     "id": "MOLDFIN",
     "name": "Moldfin",
-    "format": "EPIC",
+    "rarity": "EPIC",
     "zone": "MYSTIC_MARSH"
   },
   {
     "id": "SKELETON_FISH",
     "name": "Skeleton Fish",
-    "format": "EPIC",
+    "rarity": "EPIC",
     "zone": "BURNING_DESERT"
   },
   {
     "id": "SOUL_FISH",
     "name": "Soul Fish",
-    "format": "EPIC",
+    "rarity": "EPIC",
     "zone": "STRONGHOLD"
   },
   {
     "id": "GOLDEN_FISH",
     "name": "Golden Fish",
-    "format": "LEGENDARY"
+    "rarity": "LEGENDARY"
   }
 ]
