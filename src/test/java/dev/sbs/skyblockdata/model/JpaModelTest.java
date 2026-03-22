@@ -401,7 +401,7 @@ public class JpaModelTest {
         assertThat(first.getItem(), notNullValue());
 
         // @ForeignIds("regionIds") resolution on a mixin with regions
-        Mixin deepterror = repo.findFirst(Mixin::getItemId, "DEEPTERROR_MIXIN").orElseThrow();
+        Mixin deepterror = repo.findFirst(Mixin::getId, "DEEPTERROR_MIXIN").orElseThrow();
         assertThat(deepterror.getRegionIds(), not(empty()));
         assertThat(deepterror.getRegions(), not(empty()));
     }
