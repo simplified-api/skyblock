@@ -188,11 +188,6 @@
     "source": "RIFT"
   },
   {
-    "id": "BINGO_COMBAT_TALISMAN",
-    "source": "MISCELLANEOUS",
-    "limit": "BINGO"
-  },
-  {
     "id": "BINGO_TALISMAN",
     "description": "B.I.N.G.O.",
     "source": "NPC",
