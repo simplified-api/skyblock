@@ -1,5 +1,10 @@
 [
   {
+    "id": "OTHER",
+    "name": "Other",
+    "format": "WHITE"
+  },
+  {
     "id": "COMBAT",
     "name": "Combat",
     "format": "RED"
@@ -38,5 +43,10 @@
     "id": "WISDOM",
     "name": "Wisdom",
     "format": "DARK_AQUA"
+  },
+  {
+    "id": "RIFT",
+    "name": "Rift",
+    "format": "DARK_PURPLE"
   }
 ]
