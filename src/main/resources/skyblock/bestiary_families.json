@@ -3929,7 +3929,7 @@
     "description": "A very angry fella.",
     "bracket": 4,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "ANIMAL"
@@ -3945,7 +3945,7 @@
     "description": "A construct truly connected to the Earth.",
     "bracket": 4,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "CONSTRUCT"
@@ -3963,7 +3963,7 @@
     "description": "The winged terror.",
     "bracket": 4,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "HUMANOID",
@@ -3980,7 +3980,7 @@
     "description": "Rules with an iron fist and a fluffy sheep.",
     "bracket": 7,
     "maxTier": 15,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "HUMANOID",
@@ -3996,7 +3996,7 @@
     "description": "Boasts an insatiable hunger.",
     "bracket": 7,
     "maxTier": 15,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "HUMANOID",
@@ -4012,7 +4012,7 @@
     "description": "The champion of King Minos.",
     "bracket": 5,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "HUMANOID"
@@ -4029,7 +4029,7 @@
     "description": "The hunter becomes the hunted.",
     "bracket": 4,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "HUMANOID"
@@ -4047,7 +4047,7 @@
     "description": "The ultimate guardian of Minos' Literature.",
     "bracket": 7,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "HUMANOID",
@@ -4064,7 +4064,7 @@
     "description": "Buys his axes in bulk.",
     "bracket": 5,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "HUMANOID",
@@ -4082,7 +4082,7 @@
     "description": "Not separated at birth.",
     "bracket": 4,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "ANIMAL"
@@ -4101,7 +4101,7 @@
     "description": "A Cquizical Qreature.",
     "bracket": 7,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "HUMANOID",
@@ -4118,7 +4118,7 @@
     "description": "JUst add water!",
     "bracket": 4,
     "maxTier": 20,
-    "category": "MYTHOLOGICAL",
+    "category": "MYTHOLOGICAL_CREATURES",
     "mobTypes": [
       "MYTHOLOGICAL",
       "AQUATIC",
