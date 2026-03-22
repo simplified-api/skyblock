@@ -367,7 +367,7 @@
     "description": "A half-vampire, half-thrall immortal golem creation representing the multiverse coven in combat.",
     "maxLevel": 5,
     "maxTier": 5,
-    "mobType": "",
+    "mobType": "UNDEAD",
     "weightModifier": 0.0,
     "weightDivider": 0,
     "levels": [
