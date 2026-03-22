@@ -3,11 +3,9 @@ package dev.sbs.minecraftapi.skyblock.date;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import dev.sbs.api.builder.EqualsBuilder;
-import dev.sbs.api.builder.HashCodeBuilder;
 import dev.sbs.api.collection.concurrent.Concurrent;
 import dev.sbs.api.collection.concurrent.ConcurrentList;
-import dev.sbs.api.util.SimpleDate;
+import dev.sbs.api.util.time.SimpleDate;
 import dev.sbs.minecraftapi.client.hypixel.response.skyblock.election.Election;
 import dev.sbs.minecraftapi.client.hypixel.response.skyblock.election.SpecialElection;
 import lombok.AccessLevel;
@@ -17,6 +15,7 @@ import org.jetbrains.annotations.Range;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Objects;
 
 /**
  * SkyBlock DateTime converter.
@@ -104,12 +103,10 @@ public class SkyBlockDate extends SimpleDate {
         if (this == o) return true;
         if (!(o instanceof SkyBlockDate that)) return false;
 
-        return new EqualsBuilder()
-            .append(this.getYear(), that.getYear())
-            .append(this.getMonth(), that.getMonth())
-            .append(this.getDay(), that.getDay())
-            .append(this.getHour(), that.getHour())
-            .build();
+        return this.getYear() == that.getYear()
+            && this.getMonth() == that.getMonth()
+            && this.getDay() == that.getDay()
+            && this.getHour() == that.getHour();
     }
 
     public static long getRealTime(@NotNull Season season) {
@@ -274,12 +271,7 @@ public class SkyBlockDate extends SimpleDate {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder()
-            .append(this.getYear())
-            .append(this.getMonth())
-            .append(this.getDay())
-            .append(this.getHour())
-            .build();
+        return Objects.hash(this.getYear(), this.getMonth(), this.getDay(), this.getHour());
     }
 
     public @NotNull SkyBlockDate subtract(int year) {
