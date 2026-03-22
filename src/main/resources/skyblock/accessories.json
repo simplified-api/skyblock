@@ -1334,7 +1334,7 @@
     }
   },
   {
-    "id": "INTIMIDATION_",
+    "id": "INTIMIDATION_TALISMAN",
     "description": "Level %{VALUE:LEVEL} monsters will no longer target you.",
     "source": "NPC",
     "family": {
