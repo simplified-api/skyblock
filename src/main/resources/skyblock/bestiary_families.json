@@ -1,6 +1,6 @@
 [
   {
-    "id": "BAT",
+    "id": "ISLAND_BAT",
     "name": "Bat",
     "description": "Can be found hanging around.",
     "bracket": 1,
@@ -29,7 +29,7 @@
     ]
   },
   {
-    "id": "ENDERMAN",
+    "id": "ISLAND_ENDERMAN",
     "name": "Enderman",
     "description": "Don't like making eye contact.",
     "bracket": 1,
@@ -840,7 +840,7 @@
     ]
   },
   {
-    "id": "ENDERMAN",
+    "id": "END_ENDERMAN",
     "name": "Enderman",
     "description": "Not your mother's endermen.",
     "bracket": 4,
@@ -2024,7 +2024,7 @@
     ]
   },
   {
-    "id": "BAT",
+    "id": "DUNGEON_BAT",
     "name": "Bat",
     "description": "Likes to keep to themselves.",
     "bracket": 4,
