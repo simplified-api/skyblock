@@ -2243,7 +2243,7 @@
     "name": "Drake Piper",
     "description": "Increases the chance to spawn a Reindrake by %{REINDRAKE_SPAWN_CHANCE} while fishing on %{ZONE:JERRYS_WORKSHOP}.",
     "regions": [
-      "JERRY_WORKSHOP"
+      "JERRYS_WORKSHOP"
     ],
     "stats": [
       {
@@ -2950,7 +2950,7 @@
     "name": "Dwarven Training",
     "description": "Increases your %{STAT:MINING_WISDOM} by %{MINING_WISDOM} while on %{ZONE:MINING_ISLANDS}.",
     "zones": [
-      "GOLD_MINES",
+      "GOLD_MINE",
       "DEEP_CAVERNS",
       "DWARVEN_MINES",
       "CRYSTAL_HOLLOWS"
@@ -3068,11 +3068,10 @@
     "name": "Eager Miner",
     "description": "Increase your %{STAT:MINING_SPEED} by %{MINING_SPEED} while on %{ZONE:MINING_ISLANDS}.",
     "regions": [
-      "GOLD_MINES",
+      "GOLD_MINE",
       "DEEP_CAVERNS",
       "DWARVEN_MINES",
-      "CRYSTAL_HOLLOWS",
-      "GLACITE_TUNNELS"
+      "CRYSTAL_HOLLOWS"
     ],
     "stats": [
       {
@@ -3612,7 +3611,7 @@
     "name": "Under Pressure",
     "description": "Increases your %{STAT:STRENGTH} by %{STRENGTH} while on %{ZONE:MINING_ISLANDS}.",
     "regions": [
-      "GOLD_MINES",
+      "GOLD_MINE",
       "DEEP_CAVERNS",
       "DWARVEN_MINES",
       "CRYSTAL_HOLLOWS"
