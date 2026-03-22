@@ -1,5 +1,10 @@
 [
   {
+    "id": "NONE",
+    "name": "None",
+    "type": "OTHER"
+  },
+  {
     "id": "OTHER",
     "name": "Other",
     "type": "OTHER"
@@ -199,5 +204,50 @@
     "id": "WAND",
     "name": "Wand",
     "type": "WEAPON"
+  },
+  {
+    "id": "CONSUMABLE",
+    "name": "Consumable",
+    "type": "CONSUMABLE"
+  },
+  {
+    "id": "DUNGEON_PASS",
+    "name": "Dungeon Pass",
+    "type": "CONSUMABLE"
+  },
+  {
+    "id": "FISHING_ROD_PART",
+    "name": "Fishing Rod Part",
+    "type": "OTHER"
+  },
+  {
+    "id": "GARDEN_CHIP",
+    "name": "Garden Chip",
+    "type": "OTHER"
+  },
+  {
+    "id": "MUTATION",
+    "name": "Mutation",
+    "type": "OTHER"
+  },
+  {
+    "id": "PORTAL",
+    "name": "Portal",
+    "type": "OTHER"
+  },
+  {
+    "id": "WATERING_CAN",
+    "name": "Watering Can",
+    "type": "TOOL"
+  },
+  {
+    "id": "SHOVEL",
+    "name": "Shovel",
+    "type": "TOOL"
+  },
+  {
+    "id": "SPADE",
+    "name": "Spade",
+    "type": "TOOL"
   }
 ]
