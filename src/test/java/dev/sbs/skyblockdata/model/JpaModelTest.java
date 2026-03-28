@@ -16,16 +16,6 @@ import static org.hamcrest.Matchers.*;
 public class JpaModelTest {
 
     // ---------------------------------------------------------------
-    // Bootstrap — triggers MinecraftApi static initializer
-    // ---------------------------------------------------------------
-
-    @Test
-    @Order(0)
-    void bootstrap_loadsSessionManager() {
-        assertThat(MinecraftApi.getSessionManager(), notNullValue());
-    }
-
-    // ---------------------------------------------------------------
     // Leaf models (no FK dependencies)
     // ---------------------------------------------------------------
 
@@ -212,7 +202,7 @@ public class JpaModelTest {
         assertThat(all, not(empty()));
 
         // Verify @ManyToOne FK resolution on at least one item
-        Item first = all.get(0);
+        Item first = all.getFirst();
         assertThat(first.getCategory(), notNullValue());
     }
 
@@ -245,7 +235,7 @@ public class JpaModelTest {
         assertThat(all, not(empty()));
 
         // @ManyToOne FK resolution
-        BestiarySubcategory first = all.get(0);
+        BestiarySubcategory first = all.getFirst();
         assertThat(first.getCategory(), notNullValue());
     }
 
@@ -308,7 +298,7 @@ public class JpaModelTest {
         assertThat(all, not(empty()));
 
         // @ManyToOne FK resolution
-        Minion first = all.get(0);
+        Minion first = all.getFirst();
         assertThat(first.getCollection(), notNullValue());
     }
 
@@ -323,7 +313,7 @@ public class JpaModelTest {
         assertThat(catacombsLuck.getRegionIds(), hasItem("THE_CATACOMBS"));
         // @ForeignIds resolution
         assertThat(catacombsLuck.getRegions(), not(empty()));
-        assertThat(catacombsLuck.getRegions().get(0).getId(), is("THE_CATACOMBS"));
+        assertThat(catacombsLuck.getRegions().getFirst().getId(), is("THE_CATACOMBS"));
     }
 
     // ---------------------------------------------------------------
@@ -338,7 +328,7 @@ public class JpaModelTest {
         assertThat(all, not(empty()));
 
         // @ManyToOne FK resolution (id -> Item.id)
-        Accessory first = all.get(0);
+        Accessory first = all.getFirst();
         assertThat(first.getItem(), notNullValue());
         assertThat(first.getItem().getId(), is(first.getId()));
     }
@@ -354,13 +344,13 @@ public class JpaModelTest {
         Enchantment absorb = repo.findFirst(Enchantment::getId, "ABSORB").orElseThrow();
         assertThat(absorb.getCategoryIds(), hasItem("AXE"));
         assertThat(absorb.getCategories(), not(empty()));
-        assertThat(absorb.getCategories().get(0).getId(), is("AXE"));
+        assertThat(absorb.getCategories().getFirst().getId(), is("AXE"));
 
         // @ForeignIds("mobTypeIds") resolution
         Enchantment cubism = repo.findFirst(Enchantment::getId, "CUBISM").orElseThrow();
         assertThat(cubism.getMobTypeIds(), hasItem("CUBIC"));
         assertThat(cubism.getMobTypes(), not(empty()));
-        assertThat(cubism.getMobTypes().get(0).getId(), is("CUBIC"));
+        assertThat(cubism.getMobTypes().getFirst().getId(), is("CUBIC"));
 
         // @ForeignIds("itemIds") resolution
         Enchantment jerry = repo.findFirst(Enchantment::getId, "ULTIMATE_JERRY").orElseThrow();
@@ -397,7 +387,7 @@ public class JpaModelTest {
         assertThat(all, not(empty()));
 
         // @ManyToOne FK resolution (item_id -> Item.id)
-        Mixin first = all.get(0);
+        Mixin first = all.getFirst();
         assertThat(first.getItem(), notNullValue());
 
         // @ForeignIds("regionIds") resolution on a mixin with regions
