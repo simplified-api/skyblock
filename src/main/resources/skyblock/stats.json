@@ -177,7 +177,6 @@
     "base": 100,
     "multiplicable": false
   },
-
   {
     "id": "BONUS_PEST_CHANCE",
     "name": "Bonus Pest Chance",
@@ -286,7 +285,6 @@
     "visible": true,
     "multiplicable": false
   },
-
   {
     "id": "FISHING_SPEED",
     "name": "Fishing Speed",
@@ -334,7 +332,6 @@
     "visible": true,
     "multiplicable": false
   },
-
   {
     "id": "BREAKING_POWER",
     "name": "Breaking Power",
@@ -425,7 +422,6 @@
     "visible": true,
     "multiplicable": false
   },
-
   {
     "id": "SWEEP",
     "name": "Sweep",
@@ -462,7 +458,6 @@
     "visible": true,
     "multiplicable": false
   },
-
   {
     "id": "PULL",
     "name": "Pull",
@@ -481,7 +476,6 @@
     "visible": true,
     "multiplicable": false
   },
-
   {
     "id": "COMBAT_WISDOM",
     "name": "Combat Wisdom",
@@ -590,7 +584,6 @@
     "visible": true,
     "multiplicable": false
   },
-
   {
     "id": "WALK_SPEED",
     "name": "Speed",
@@ -669,7 +662,6 @@
     "visible": true,
     "multiplicable": false
   },
-
   {
     "id": "ABSORPTION",
     "name": "Absorption",
@@ -724,7 +716,6 @@
     "visible": false,
     "multiplicable": false
   },
-
   {
     "id": "RIFT_TIME",
     "name": "Rift Time",
