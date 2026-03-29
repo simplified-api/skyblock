@@ -4,7 +4,7 @@ import dev.sbs.api.collection.concurrent.ConcurrentList;
 import dev.sbs.api.persistence.JpaModel;
 import dev.sbs.api.persistence.RepositoryFactory;
 import dev.sbs.api.persistence.strategy.RefreshStrategy;
-import dev.sbs.minecraftapi.model.Item;
+import dev.sbs.minecraftapi.persistence.model.Item;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
