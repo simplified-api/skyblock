@@ -1815,6 +1815,19 @@
     ]
   },
   {
+    "id": "NESSIE",
+    "name": "Nessie",
+    "description": "",
+    "bracket": 7,
+    "maxTier": 15,
+    "category": "GALATEA",
+    "mobTypes": [
+      "WOODLAND",
+      "AQUATIC"
+    ],
+    "mobs": []
+  },
+  {
     "id": "STRIDERSURFER",
     "name": "Stridersurfer",
     "description": "Ugliest crossover.",
@@ -2892,8 +2905,8 @@
     "subcategory": "FISHING",
     "mobTypes": [
       "AQUATIC",
-      "UNDEAD",
-      "SUBTERRANEAN"
+      "SUBTERRANEAN",
+      "ELUSIVE"
     ],
     "mobs": [
       "zombie_miner_150"
@@ -2925,7 +2938,8 @@
     "subcategory": "FISHING",
     "mobTypes": [
       "AQUATIC",
-      "ANIMAL"
+      "ANIMAL",
+      "ELUSIVE"
     ],
     "mobs": [
       "blue_ringed_octopus_275"
@@ -3237,7 +3251,8 @@
     "subcategory": "FISHING",
     "mobTypes": [
       "AQUATIC",
-      "HUMANOID"
+      "HUMANOID",
+      "ELUSIVE"
     ],
     "mobs": [
       "water_hydra_100"
@@ -3583,7 +3598,7 @@
     "mobTypes": [
       "AQUATIC",
       "SPOOKY",
-      "ARCANE"
+      "ELUSIVE"
     ],
     "mobs": [
       "grim_reaper_190"
@@ -3617,7 +3632,7 @@
     "mobTypes": [
       "AQUATIC",
       "SPOOKY",
-      "ARCANE"
+      "ELUSIVE"
     ],
     "mobs": [
       "phantom_fisherman_160"
@@ -3683,7 +3698,8 @@
     "subcategory": "FISHING_FESTIVAL",
     "mobTypes": [
       "AQUATIC",
-      "ANIMAL"
+      "ANIMAL",
+      "ELUSIVE"
     ],
     "mobs": [
       "great_white_shark_180"
@@ -3726,7 +3742,7 @@
     "id": "FROSTY",
     "name": "Frosty",
     "description": "Wasa jolly happy soul.",
-    "bracket": 3,
+    "bracket": 4,
     "maxTier": 15,
     "category": "FISHING",
     "subcategory": "WINTER",
@@ -3743,7 +3759,7 @@
     "id": "FROZEN_STEVE",
     "name": "Frozen Steve",
     "description": "\"Fell\" into Jerry's Pond.",
-    "bracket": 3,
+    "bracket": 4,
     "maxTier": 15,
     "category": "FISHING",
     "subcategory": "WINTER",
@@ -3760,7 +3776,7 @@
     "id": "GRINCH",
     "name": "Grinch",
     "description": "How the Grinch Stole Jerry Season.",
-    "bracket": 6,
+    "bracket": 4,
     "maxTier": 15,
     "category": "FISHING",
     "subcategory": "WINTER",
@@ -3777,7 +3793,7 @@
     "id": "NUTCRACKER",
     "name": "Nutcracker",
     "description": "A toy brought to life.",
-    "bracket": 5,
+    "bracket": 4,
     "maxTier": 15,
     "category": "FISHING",
     "subcategory": "WINTER",
@@ -3811,14 +3827,14 @@
     "id": "YETI",
     "name": "Yeti",
     "description": "The cooler cousin of Bigfoot.",
-    "bracket": 6,
+    "bracket": 5,
     "maxTier": 15,
     "category": "FISHING",
     "subcategory": "WINTER",
     "mobTypes": [
       "AQUATIC",
       "FROZEN",
-      "HUMANOID"
+      "ELUSIVE"
     ],
     "mobs": [
       "yeti_175"
@@ -3835,7 +3851,8 @@
     "subcategory": "BACKWATER_BAYOU",
     "mobTypes": [
       "AQUATIC",
-      "ANIMAL"
+      "ANIMAL",
+      "ELUSIVE"
     ],
     "mobs": [
       "alligator_120"
