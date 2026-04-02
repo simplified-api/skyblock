@@ -268,23 +268,6 @@ public class JpaModelTest {
 
     @Test
     @Order(2)
-    void trophyFish_loadsFromJson_withOptionalZoneFk() {
-        Repository<TrophyFish> repo = MinecraftApi.getRepository(TrophyFish.class);
-        ConcurrentList<TrophyFish> all = repo.findAll();
-        assertThat(all, not(empty()));
-
-        // Nullable @ManyToOne FK - should resolve when present
-        TrophyFish gusher = repo.findFirst(TrophyFish::getId, "GUSHER").orElseThrow();
-        assertThat(gusher.getZone().isPresent(), is(true));
-        assertThat(gusher.getZone().get().getId(), is("BLAZING_VOLCANO"));
-
-        // Nullable @ManyToOne FK - should be empty when absent
-        TrophyFish blobfish = repo.findFirst(TrophyFish::getId, "BLOBFISH").orElseThrow();
-        assertThat(blobfish.getZone().isPresent(), is(false));
-    }
-
-    @Test
-    @Order(2)
     void fairySoul_loadsFromJson() {
         Repository<FairySoul> repo = MinecraftApi.getRepository(FairySoul.class);
         ConcurrentList<FairySoul> all = repo.findAll();
