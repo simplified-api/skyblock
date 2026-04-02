@@ -3,10 +3,11 @@ package dev.sbs.minecraftapi.persistence;
 import dev.sbs.api.collection.concurrent.ConcurrentList;
 import dev.sbs.api.persistence.JpaModel;
 import dev.sbs.api.persistence.RepositoryFactory;
-import dev.sbs.api.persistence.strategy.RefreshStrategy;
+import dev.sbs.api.persistence.source.Source;
 import dev.sbs.minecraftapi.persistence.model.Item;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Repository factory for SkyBlock JSON-backed models scoped to the
@@ -16,6 +17,6 @@ import org.jetbrains.annotations.NotNull;
 public class SkyBlockFactory implements RepositoryFactory {
 
     private final @NotNull ConcurrentList<Class<JpaModel>> models = RepositoryFactory.resolveModels(Item.class);
-    private final @NotNull RefreshStrategy<?> defaultStrategy = RefreshStrategy.json("skyblock");
+    private final @Nullable Source<?> defaultSource = Source.json("skyblock");
 
 }
