@@ -377,7 +377,7 @@ public class Item implements JpaModel {
         private @NotNull ConcurrentMap<String, String> parent = Concurrent.newMap();
         @SerializedName("armor_set_donation_xp")
         @Getter(AccessLevel.NONE)
-        private @NotNull ConcurrentMap<String, String> armorSetDonationXP = Concurrent.newMap();
+        private @NotNull ConcurrentMap<String, Integer> armorSetDonationXP = Concurrent.newMap();
         @SerializedName("game_stage")
         @Enumerated(EnumType.STRING)
         private @NotNull GameStage gameStage = GameStage.UNKNOWN;
@@ -386,7 +386,6 @@ public class Item implements JpaModel {
             return this.armorSetDonationXP.stream()
                 .findFirst()
                 .map(ConcurrentMap.Entry::getValue)
-                .map(Integer::parseInt)
                 .orElse(this.getDonationXP());
         }
 
