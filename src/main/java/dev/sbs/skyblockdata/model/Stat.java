@@ -6,7 +6,7 @@ import dev.sbs.api.collection.concurrent.ConcurrentMap;
 import dev.sbs.api.persistence.JpaModel;
 import dev.sbs.api.persistence.type.GsonType;
 import dev.sbs.minecraftapi.MinecraftApi;
-import dev.sbs.minecraftapi.render.text.ChatFormat;
+import dev.sbs.minecraftapi.generator.text.ChatFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

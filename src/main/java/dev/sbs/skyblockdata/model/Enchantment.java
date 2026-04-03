@@ -6,7 +6,7 @@ import dev.sbs.api.collection.concurrent.ConcurrentList;
 import dev.sbs.api.persistence.ForeignIds;
 import dev.sbs.api.persistence.JpaModel;
 import dev.sbs.api.persistence.type.GsonType;
-import dev.sbs.minecraftapi.render.text.ChatFormat;
+import dev.sbs.minecraftapi.generator.text.ChatFormat;
 import dev.sbs.minecraftapi.skyblock.common.Rarity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
