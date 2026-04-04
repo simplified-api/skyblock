@@ -119,3 +119,4 @@ gradle-app.setting
 
 # Generated H2 schema for IntelliJ JPA resolution
 .schema/
+.gitnexus
