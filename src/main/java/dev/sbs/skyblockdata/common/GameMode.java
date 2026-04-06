@@ -1,7 +1,7 @@
 package dev.sbs.minecraftapi.skyblock.common;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.api.util.StringUtil;
+import dev.simplified.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
 
 public enum GameMode {

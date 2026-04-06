@@ -1,8 +1,8 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.api.persistence.JpaModel;
 import dev.sbs.minecraftapi.generator.text.ChatFormat;
+import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

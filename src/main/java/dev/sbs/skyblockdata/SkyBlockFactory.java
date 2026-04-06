@@ -1,10 +1,10 @@
 package dev.sbs.minecraftapi.persistence;
 
-import dev.sbs.api.collection.concurrent.ConcurrentList;
-import dev.sbs.api.persistence.JpaModel;
-import dev.sbs.api.persistence.RepositoryFactory;
-import dev.sbs.api.persistence.source.Source;
 import dev.sbs.minecraftapi.persistence.model.Item;
+import dev.simplified.collection.ConcurrentList;
+import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.RepositoryFactory;
+import dev.simplified.persistence.source.Source;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

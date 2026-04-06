@@ -1,10 +1,10 @@
 package dev.sbs.minecraftapi.persistence.model;
 
-import dev.sbs.api.collection.concurrent.Concurrent;
-import dev.sbs.api.collection.concurrent.ConcurrentList;
-import dev.sbs.api.persistence.JpaModel;
-import dev.sbs.api.persistence.type.GsonType;
-import dev.sbs.api.util.StringUtil;
+import dev.simplified.collection.Concurrent;
+import dev.simplified.collection.ConcurrentList;
+import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.type.GsonType;
+import dev.simplified.util.StringUtil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

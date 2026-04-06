@@ -1,14 +1,14 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.api.collection.concurrent.Concurrent;
-import dev.sbs.api.collection.concurrent.ConcurrentList;
-import dev.sbs.api.collection.concurrent.ConcurrentMap;
-import dev.sbs.api.persistence.ForeignIds;
-import dev.sbs.api.persistence.JpaModel;
-import dev.sbs.api.persistence.type.GsonType;
 import dev.sbs.minecraftapi.MinecraftApi;
 import dev.sbs.minecraftapi.skyblock.common.Rarity;
+import dev.simplified.collection.Concurrent;
+import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.persistence.ForeignIds;
+import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

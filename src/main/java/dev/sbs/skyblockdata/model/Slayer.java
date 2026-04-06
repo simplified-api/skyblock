@@ -1,13 +1,13 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.api.collection.concurrent.Concurrent;
-import dev.sbs.api.collection.concurrent.ConcurrentList;
-import dev.sbs.api.collection.concurrent.ConcurrentMap;
-import dev.sbs.api.persistence.JpaModel;
-import dev.sbs.api.persistence.type.GsonType;
-import dev.sbs.api.tuple.pair.Pair;
 import dev.sbs.minecraftapi.MinecraftApi;
+import dev.simplified.collection.Concurrent;
+import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.collection.tuple.pair.Pair;
+import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -1,8 +1,8 @@
 package dev.sbs.minecraftapi.skyblock.common;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.api.util.StringUtil;
 import dev.sbs.minecraftapi.generator.text.ChatFormat;
+import dev.simplified.util.StringUtil;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;

@@ -1,6 +1,6 @@
 package dev.sbs.minecraftapi.persistence.model;
 
-import dev.sbs.api.persistence.JpaModel;
+import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

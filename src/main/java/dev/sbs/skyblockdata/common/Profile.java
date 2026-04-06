@@ -1,11 +1,11 @@
 package dev.sbs.minecraftapi.skyblock.common;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.api.collection.concurrent.Concurrent;
-import dev.sbs.api.collection.concurrent.ConcurrentMap;
-import dev.sbs.api.tuple.pair.Pair;
-import dev.sbs.api.util.StreamUtil;
-import dev.sbs.api.util.StringUtil;
+import dev.simplified.collection.Concurrent;
+import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.collection.StreamUtil;
+import dev.simplified.collection.tuple.pair.Pair;
+import dev.simplified.util.StringUtil;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
