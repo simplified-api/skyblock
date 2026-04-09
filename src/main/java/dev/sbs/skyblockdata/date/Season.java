@@ -1,6 +1,6 @@
 package dev.sbs.minecraftapi.skyblock.date;
 
-import dev.sbs.minecraftapi.generator.text.ChatFormat;
+import dev.sbs.renderer.text.ChatFormat;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;

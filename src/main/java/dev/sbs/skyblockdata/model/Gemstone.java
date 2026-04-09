@@ -1,8 +1,8 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.minecraftapi.generator.text.ChatFormat;
 import dev.sbs.minecraftapi.skyblock.common.Rarity;
+import dev.sbs.renderer.text.ChatFormat;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;

@@ -1,6 +1,6 @@
 package dev.sbs.minecraftapi.persistence.model;
 
-import dev.sbs.minecraftapi.generator.text.ChatFormat;
+import dev.sbs.renderer.text.ChatFormat;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
