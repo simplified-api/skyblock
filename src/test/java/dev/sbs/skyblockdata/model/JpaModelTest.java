@@ -1,8 +1,8 @@
 package dev.sbs.minecraftapi.model;
 
 import dev.sbs.minecraftapi.MinecraftApi;
-import dev.sbs.minecraftapi.generator.text.ChatFormat;
 import dev.sbs.minecraftapi.persistence.model.*;
+import dev.sbs.renderer.text.ChatFormat;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.Repository;
 import org.junit.jupiter.api.MethodOrderer;
