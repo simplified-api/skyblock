@@ -1,7 +1,7 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import dev.sbs.minecraftapi.MinecraftApi;
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
@@ -30,7 +30,7 @@ public class Region implements JpaModel {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "format", nullable = false)
-    private @NotNull ChatFormat format = ChatFormat.GRAY;
+    private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GRAY;
 
     @Column(name = "game_type", nullable = false)
     private @NotNull String gameType = "";

@@ -2,7 +2,7 @@ package dev.sbs.minecraftapi.model;
 
 import dev.sbs.minecraftapi.MinecraftApi;
 import dev.sbs.minecraftapi.persistence.model.*;
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.Repository;
 import org.junit.jupiter.api.MethodOrderer;
@@ -29,7 +29,7 @@ public class JpaModelTest {
 
         Region hub = repo.findFirst(Region::getId, "HUB").orElseThrow();
         assertThat(hub.getName(), is("Hub"));
-        assertThat(hub.getFormat(), is(ChatFormat.WHITE));
+        assertThat(hub.getFormat(), is(ChatColor.Legacy.WHITE));
         assertThat(hub.getGameType(), is("SKYBLOCK"));
         assertThat(hub.getMode(), is("HUB"));
     }
@@ -43,7 +43,7 @@ public class JpaModelTest {
 
         StatCategory combat = repo.findFirst(StatCategory::getId, "COMBAT").orElseThrow();
         assertThat(combat.getName(), is("Combat"));
-        assertThat(combat.getFormat(), is(ChatFormat.RED));
+        assertThat(combat.getFormat(), is(ChatColor.Legacy.RED));
     }
 
     @Test
@@ -55,7 +55,7 @@ public class JpaModelTest {
 
         MobType undead = repo.findFirst(MobType::getId, "UNDEAD").orElseThrow();
         assertThat(undead.getName(), is("Undead"));
-        assertThat(undead.getFormat(), is(ChatFormat.DARK_GREEN));
+        assertThat(undead.getFormat(), is(ChatColor.Legacy.DARK_GREEN));
     }
 
     @Test

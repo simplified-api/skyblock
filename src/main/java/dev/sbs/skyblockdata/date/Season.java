@@ -1,6 +1,6 @@
 package dev.sbs.minecraftapi.skyblock.date;
 
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
@@ -12,20 +12,20 @@ import org.jetbrains.annotations.NotNull;
 @RequiredArgsConstructor
 public enum Season {
 
-    EARLY_SPRING("Early Spring", ChatFormat.GREEN),
-    SPRING("Spring", ChatFormat.GREEN),
-    LATE_SPRING("Late Spring", ChatFormat.GREEN),
-    EARLY_SUMMER("Early Summer", ChatFormat.YELLOW),
-    SUMMER("Summer", ChatFormat.YELLOW),
-    LATE_SUMMER("Late Summer", ChatFormat.YELLOW),
-    EARLY_AUTUMN("Early Autumn", ChatFormat.GOLD),
-    AUTUMN("Autumn", ChatFormat.GOLD),
-    LATE_AUTUMN("Late Autumn", ChatFormat.GOLD),
-    EARLY_WINTER("Early Winter", ChatFormat.AQUA),
-    WINTER("Winter", ChatFormat.AQUA),
-    LATE_WINTER("Late Winter", ChatFormat.AQUA);
+    EARLY_SPRING("Early Spring", ChatColor.Legacy.GREEN),
+    SPRING("Spring", ChatColor.Legacy.GREEN),
+    LATE_SPRING("Late Spring", ChatColor.Legacy.GREEN),
+    EARLY_SUMMER("Early Summer", ChatColor.Legacy.YELLOW),
+    SUMMER("Summer", ChatColor.Legacy.YELLOW),
+    LATE_SUMMER("Late Summer", ChatColor.Legacy.YELLOW),
+    EARLY_AUTUMN("Early Autumn", ChatColor.Legacy.GOLD),
+    AUTUMN("Autumn", ChatColor.Legacy.GOLD),
+    LATE_AUTUMN("Late Autumn", ChatColor.Legacy.GOLD),
+    EARLY_WINTER("Early Winter", ChatColor.Legacy.AQUA),
+    WINTER("Winter", ChatColor.Legacy.AQUA),
+    LATE_WINTER("Late Winter", ChatColor.Legacy.AQUA);
 
     private final @NotNull String name;
-    private final @NotNull ChatFormat format;
+    private final @NotNull ChatColor format;
 
 }

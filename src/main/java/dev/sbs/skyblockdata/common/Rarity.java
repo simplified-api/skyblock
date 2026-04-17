@@ -1,7 +1,7 @@
 package dev.sbs.minecraftapi.skyblock.common;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.util.StringUtil;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -13,21 +13,21 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public enum Rarity {
 
-    COMMON(ChatFormat.WHITE, 3, false, true),
-    UNCOMMON(ChatFormat.GREEN, 5, false, true),
-    RARE(ChatFormat.BLUE, 8, false, true),
-    EPIC(ChatFormat.DARK_PURPLE, 12, true, true),
-    LEGENDARY(ChatFormat.GOLD, 16, true, true),
-    MYTHIC(ChatFormat.LIGHT_PURPLE, 22, true, false),
+    COMMON(ChatColor.Legacy.WHITE, 3, false, true),
+    UNCOMMON(ChatColor.Legacy.GREEN, 5, false, true),
+    RARE(ChatColor.Legacy.BLUE, 8, false, true),
+    EPIC(ChatColor.Legacy.DARK_PURPLE, 12, true, true),
+    LEGENDARY(ChatColor.Legacy.GOLD, 16, true, true),
+    MYTHIC(ChatColor.Legacy.LIGHT_PURPLE, 22, true, false),
     @SerializedName(alternate = { "SUPREME" }, value = "DIVINE")
-    DIVINE(ChatFormat.AQUA, 0, true, false),
-    SPECIAL(ChatFormat.RED, 3, true, true),
-    VERY_SPECIAL(ChatFormat.RED, 5, true, false),
-    ULTIMATE(ChatFormat.DARK_RED, 0, false, false),
+    DIVINE(ChatColor.Legacy.AQUA, 0, true, false),
+    SPECIAL(ChatColor.Legacy.RED, 3, true, true),
+    VERY_SPECIAL(ChatColor.Legacy.RED, 5, true, false),
+    ULTIMATE(ChatColor.Legacy.DARK_RED, 0, false, false),
     @SerializedName(alternate = { "UNOBTAINABLE" }, value = "ADMIN")
-    ADMIN(ChatFormat.DARK_RED, 0, false, false);
+    ADMIN(ChatColor.Legacy.DARK_RED, 0, false, false);
 
-    private final @NotNull ChatFormat format;
+    private final @NotNull ChatColor format;
     private final int magicPower;
     private final boolean enrichable;
     private final boolean recombobulatable;

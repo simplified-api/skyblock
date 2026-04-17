@@ -2,6 +2,7 @@ package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
 import dev.sbs.minecraftapi.skyblock.common.Rarity;
+import dev.sbs.renderer.text.ChatColor;
 import dev.sbs.renderer.text.ChatFormat;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
@@ -101,10 +102,10 @@ public class Enchantment implements JpaModel {
     @RequiredArgsConstructor
     public enum Type {
 
-        NORMAL(ChatFormat.BLUE, false),
-        ULTIMATE(ChatFormat.LIGHT_PURPLE, true);
+        NORMAL(ChatColor.Legacy.BLUE, false),
+        ULTIMATE(ChatColor.Legacy.LIGHT_PURPLE, true);
 
-        private final @NotNull ChatFormat format;
+        private final @NotNull ChatColor format;
         private final boolean bold;
 
         @Override

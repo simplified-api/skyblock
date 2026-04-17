@@ -1,7 +1,7 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,7 +30,7 @@ public class Zone implements JpaModel {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "format", nullable = false)
-    private @NotNull ChatFormat format = ChatFormat.GRAY;
+    private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GRAY;
 
     @SerializedName("region")
     @Column(name = "region_id", nullable = false)

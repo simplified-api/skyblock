@@ -1,6 +1,6 @@
 package dev.sbs.minecraftapi.persistence.model;
 
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
@@ -33,7 +33,7 @@ public class Mayor implements JpaModel {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "format", nullable = false)
-    private @NotNull ChatFormat format = ChatFormat.LIGHT_PURPLE;
+    private @NotNull ChatColor.Legacy format = ChatColor.Legacy.LIGHT_PURPLE;
 
     @Column(name = "perks", nullable = false)
     private @NotNull ConcurrentList<Perk> perks = Concurrent.newList();
@@ -93,7 +93,7 @@ public class Mayor implements JpaModel {
         @Enumerated(EnumType.STRING)
         private @NotNull Stat.Type type = Stat.Type.NONE;
         @Enumerated(EnumType.STRING)
-        private @NotNull ChatFormat format = ChatFormat.GREEN;
+        private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GREEN;
         private double value;
 
         @Override
