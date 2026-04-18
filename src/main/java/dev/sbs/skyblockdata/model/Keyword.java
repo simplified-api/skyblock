@@ -1,6 +1,6 @@
 package dev.sbs.minecraftapi.persistence.model;
 
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,7 +31,7 @@ public class Keyword implements JpaModel {
     private @NotNull Optional<String> symbol = Optional.empty();
 
     @Column(name = "format")
-    private @NotNull Optional<ChatFormat> format = Optional.empty();
+    private @NotNull Optional<ChatColor.Legacy> format = Optional.empty();
 
     public boolean hasPlural() {
         return this.getPlural().isPresent();

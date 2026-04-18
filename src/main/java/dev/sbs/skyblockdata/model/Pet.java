@@ -2,7 +2,7 @@ package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
 import dev.sbs.minecraftapi.skyblock.common.Rarity;
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -22,7 +22,6 @@ import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
-import java.util.Optional;
 
 @Getter
 @Entity
@@ -177,17 +176,12 @@ public class Pet implements JpaModel {
         @Enumerated(EnumType.STRING)
         private @NotNull Stat.Type type = Stat.Type.NONE;
         @Enumerated(EnumType.STRING)
-        private @NotNull ChatFormat format = ChatFormat.GREEN;
+        private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GREEN;
         @Getter(AccessLevel.NONE)
         private @NotNull ConcurrentMap<Rarity, Value> values = Concurrent.newMap();
 
         public @NotNull ConcurrentMap<Rarity, Value> getValues() {
             return this.values;
-        }
-
-        public @NotNull Optional<Stat> getStat() {
-            return dev.sbs.minecraftapi.MinecraftApi.getRepository(Stat.class)
-                .findFirst(Stat::getId, this.getId());
         }
 
         @Override

@@ -1,7 +1,6 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.minecraftapi.MinecraftApi;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
@@ -72,11 +71,6 @@ public class Minion implements JpaModel {
         @SerializedName("item")
         private @NotNull String itemId = "";
         private @NotNull Item.Cost upgradeCost = new Item.Cost();
-
-        public @NotNull Item getItem() {
-            return MinecraftApi.getRepository(Item.class)
-                .findFirstOrNull(Item::getId, this.getItemId());
-        }
 
         @Override
         public boolean equals(Object o) {

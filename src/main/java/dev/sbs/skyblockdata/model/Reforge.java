@@ -1,7 +1,6 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.minecraftapi.MinecraftApi;
 import dev.sbs.minecraftapi.skyblock.common.Rarity;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
@@ -108,11 +107,6 @@ public class Reforge implements JpaModel {
 
         private @NotNull String id = "";
         private @NotNull ConcurrentMap<Rarity, Double> values = Concurrent.newMap();
-
-        public @NotNull Optional<Stat> getStat() {
-            return MinecraftApi.getRepository(Stat.class)
-                .findFirst(Stat::getId, this.getId());
-        }
 
         @Override
         public boolean equals(Object o) {

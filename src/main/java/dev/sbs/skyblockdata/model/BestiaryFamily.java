@@ -1,7 +1,7 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.ForeignIds;
@@ -39,7 +39,7 @@ public class BestiaryFamily implements JpaModel {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "format", nullable = false)
-    private @NotNull ChatFormat format = ChatFormat.GREEN;
+    private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GREEN;
 
     @Column(name = "bracket", nullable = false)
     private int bracket = 1;

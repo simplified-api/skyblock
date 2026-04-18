@@ -2,7 +2,7 @@ package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
 import dev.sbs.minecraftapi.skyblock.common.Rarity;
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
@@ -36,7 +36,7 @@ public class Gemstone implements JpaModel {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "format", nullable = false)
-    private @NotNull ChatFormat format = ChatFormat.WHITE;
+    private @NotNull ChatColor.Legacy format = ChatColor.Legacy.WHITE;
 
     @SerializedName("stat")
     @Column(name = "stat_id", nullable = false)

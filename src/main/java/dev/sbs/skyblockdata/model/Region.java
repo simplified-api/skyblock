@@ -1,6 +1,5 @@
 package dev.sbs.minecraftapi.persistence.model;
 
-import dev.sbs.minecraftapi.MinecraftApi;
 import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
@@ -10,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
@@ -38,11 +38,8 @@ public class Region implements JpaModel {
     @Column(name = "mode", nullable = false)
     private @NotNull String mode = "";
 
-    public @NotNull ConcurrentList<Zone> getZones() {
-        return MinecraftApi.getRepository(Zone.class)
-            .findAll(Zone::getRegionId, this.getId())
-            .collect(Concurrent.toUnmodifiableList());
-    }
+    @OneToMany(mappedBy = "region")
+    private @NotNull ConcurrentList<Zone> zones = Concurrent.newList();
 
     @Override
     public boolean equals(Object o) {

@@ -1,8 +1,7 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.minecraftapi.MinecraftApi;
-import dev.sbs.renderer.text.ChatFormat;
+import dev.sbs.renderer.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
@@ -20,7 +19,6 @@ import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
-import java.util.Optional;
 
 @Getter
 @Entity
@@ -41,7 +39,7 @@ public class Stat implements JpaModel {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "format", nullable = false)
-    private @NotNull ChatFormat format = ChatFormat.WHITE;
+    private @NotNull ChatColor.Legacy format = ChatColor.Legacy.WHITE;
 
     @SerializedName("category")
     @Column(name = "category_id", nullable = false)
@@ -114,13 +112,8 @@ public class Stat implements JpaModel {
         @Enumerated(EnumType.STRING)
         private @NotNull Type type = Type.NONE;
         @Enumerated(EnumType.STRING)
-        private @NotNull ChatFormat format = ChatFormat.GREEN;
+        private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GREEN;
         private @NotNull ConcurrentMap<Integer, Double> values = Concurrent.newMap();
-
-        public @NotNull Optional<Stat> getStat() {
-            return MinecraftApi.getRepository(Stat.class)
-                .findFirst(Stat::getId, this.getId());
-        }
 
         @Override
         public boolean equals(Object o) {

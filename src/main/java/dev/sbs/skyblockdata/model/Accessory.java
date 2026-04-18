@@ -1,6 +1,5 @@
 package dev.sbs.minecraftapi.persistence.model;
 
-import dev.sbs.minecraftapi.MinecraftApi;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
@@ -12,7 +11,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -112,36 +110,6 @@ public class Accessory implements JpaModel {
         @Override
         public int hashCode() {
             return Objects.hash(this.getId(), this.getRank());
-        }
-
-    }
-
-    @Getter
-    @GsonType
-    @AllArgsConstructor
-    public static class Substitute {
-
-        private @NotNull String id;
-        private double value;
-
-        public @NotNull Stat getStat() {
-            return MinecraftApi.getRepository(Stat.class)
-                .findFirstOrNull(Stat::getId, this.getId());
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Substitute that = (Substitute) o;
-
-            return this.getValue() == that.getValue()
-                && Objects.equals(this.getId(), that.getId());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getId(), this.getValue());
         }
 
     }
