@@ -1,7 +1,7 @@
 package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.minecraftapi.client.mojang.response.MojangProperty;
+import dev.sbs.minecraftapi.persistence.SkinTexture;
 import dev.sbs.minecraftapi.skyblock.common.GameStage;
 import dev.sbs.minecraftapi.skyblock.common.Rarity;
 import dev.simplified.collection.Concurrent;
@@ -150,7 +150,7 @@ public class Item implements JpaModel {
     private @NotNull Optional<String> origin = Optional.empty();
 
     @Column(name = "skin")
-    private @NotNull Optional<MojangProperty> skin = Optional.empty();
+    private @NotNull Optional<SkinTexture> skin = Optional.empty();
 
     @Column(name = "furniture")
     private @NotNull Optional<String> furniture = Optional.empty();

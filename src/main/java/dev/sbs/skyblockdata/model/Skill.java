@@ -1,6 +1,6 @@
 package dev.sbs.minecraftapi.persistence.model;
 
-import dev.sbs.minecraftapi.MinecraftApi;
+import dev.sbs.minecraftapi.persistence.SkyBlockData;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -100,7 +100,7 @@ public class Skill implements JpaModel {
         private @NotNull ConcurrentList<String> unlocks = Concurrent.newList();
 
         public @NotNull ConcurrentMap<String, Double> getEffects() {
-            return MinecraftApi.getRepository(Stat.class)
+            return SkyBlockData.getRepository(Stat.class)
                 .stream()
                 .map(stat -> Pair.of(
                     stat.getId(),
