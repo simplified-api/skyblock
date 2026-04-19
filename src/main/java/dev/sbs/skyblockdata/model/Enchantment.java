@@ -2,8 +2,8 @@ package dev.sbs.minecraftapi.persistence.model;
 
 import com.google.gson.annotations.SerializedName;
 import dev.sbs.minecraftapi.skyblock.common.Rarity;
-import dev.sbs.renderer.text.ChatColor;
-import dev.sbs.renderer.text.ChatFormat;
+import lib.minecraft.text.ChatColor;
+import lib.minecraft.text.ChatFormat;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.ForeignIds;

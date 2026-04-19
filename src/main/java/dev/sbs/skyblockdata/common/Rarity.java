@@ -1,7 +1,7 @@
 package dev.sbs.minecraftapi.skyblock.common;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.renderer.text.ChatColor;
+import lib.minecraft.text.ChatColor;
 import dev.simplified.util.StringUtil;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

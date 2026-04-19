@@ -1,6 +1,6 @@
 package dev.sbs.minecraftapi.skyblock.date;
 
-import dev.sbs.renderer.text.ChatColor;
+import lib.minecraft.text.ChatColor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;

@@ -1,6 +1,6 @@
 package dev.sbs.minecraftapi.persistence.model;
 
-import dev.sbs.renderer.text.ChatColor;
+import lib.minecraft.text.ChatColor;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
