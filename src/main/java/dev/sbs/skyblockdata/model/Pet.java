@@ -1,7 +1,7 @@
-package dev.sbs.minecraftapi.persistence.model;
+package dev.sbs.skyblockdata.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.minecraftapi.skyblock.common.Rarity;
+import dev.sbs.skyblockdata.common.Rarity;
 import lib.minecraft.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
@@ -182,6 +182,13 @@ public class Pet implements JpaModel {
 
         public @NotNull ConcurrentMap<Rarity, Value> getValues() {
             return this.values;
+        }
+
+        /** Resolves the referenced {@link Stat} via {@link dev.sbs.skyblockdata.SkyBlockData#getRepository}, matching on the substitute's {@code id}. */
+        public @NotNull java.util.Optional<Stat> getStat() {
+            if (this.id.isEmpty())
+                return java.util.Optional.empty();
+            return dev.sbs.skyblockdata.SkyBlockData.getRepository(Stat.class).findFirst(Stat::getId, this.id);
         }
 
         @Override

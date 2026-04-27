@@ -1,7 +1,8 @@
-package dev.sbs.minecraftapi.persistence.model;
+package dev.sbs.skyblockdata.model;
 
 import com.google.gson.annotations.SerializedName;
 import lib.minecraft.text.ChatColor;
+import dev.sbs.skyblockdata.SkyBlockData;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
@@ -19,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
+import java.util.Optional;
 
 @Getter
 @Entity
@@ -114,6 +116,13 @@ public class Stat implements JpaModel {
         @Enumerated(EnumType.STRING)
         private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GREEN;
         private @NotNull ConcurrentMap<Integer, Double> values = Concurrent.newMap();
+
+        /** Resolves the referenced {@link Stat} via {@link SkyBlockData#getRepository}, matching on the substitute's {@code id}. */
+        public @NotNull Optional<Stat> getStat() {
+            if (this.id.isEmpty())
+                return Optional.empty();
+            return SkyBlockData.getRepository(Stat.class).findFirst(Stat::getId, this.id);
+        }
 
         @Override
         public boolean equals(Object o) {

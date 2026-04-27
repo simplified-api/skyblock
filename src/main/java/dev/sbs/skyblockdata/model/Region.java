@@ -1,4 +1,4 @@
-package dev.sbs.minecraftapi.persistence.model;
+package dev.sbs.skyblockdata.model;
 
 import lib.minecraft.text.ChatColor;
 import dev.simplified.collection.Concurrent;

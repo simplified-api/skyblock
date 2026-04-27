@@ -1,6 +1,6 @@
-package dev.sbs.minecraftapi.persistence.model;
+package dev.sbs.skyblockdata.model;
 
-import dev.sbs.minecraftapi.skyblock.common.Rarity;
+import dev.sbs.skyblockdata.common.Rarity;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

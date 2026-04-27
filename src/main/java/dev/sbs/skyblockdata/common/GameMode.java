@@ -1,4 +1,4 @@
-package dev.sbs.minecraftapi.skyblock.common;
+package dev.sbs.skyblockdata.common;
 
 import com.google.gson.annotations.SerializedName;
 import dev.simplified.util.StringUtil;

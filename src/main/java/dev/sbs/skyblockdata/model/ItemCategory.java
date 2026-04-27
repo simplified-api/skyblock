@@ -1,4 +1,4 @@
-package dev.sbs.minecraftapi.persistence.model;
+package dev.sbs.skyblockdata.model;
 
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;

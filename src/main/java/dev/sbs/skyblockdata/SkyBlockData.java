@@ -1,4 +1,4 @@
-package dev.sbs.minecraftapi.persistence;
+package dev.sbs.skyblockdata;
 
 import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.CacheMissingStrategy;
@@ -23,10 +23,6 @@ import org.jetbrains.annotations.NotNull;
  * repository access plus the canonical H2-backed session bootstrap. Call
  * {@link #connect(GsonSettings)} (or an overload) once at startup before any
  * {@link #getRepository(Class)} lookup against a SkyBlock model.
- * <p>
- * This is the forward-looking replacement for the persistence-facing helpers currently on
- * {@code MinecraftApi} - once the persistence package is extracted into its own module,
- * callers depend on {@code SkyBlockData} directly and {@code MinecraftApi} becomes deletable.
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class SkyBlockData {

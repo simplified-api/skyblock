@@ -1,10 +1,8 @@
-package dev.sbs.minecraftapi.skyblock.date;
+package dev.sbs.skyblockdata.date;
 
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import dev.sbs.minecraftapi.client.hypixel.response.skyblock.election.Election;
-import dev.sbs.minecraftapi.client.hypixel.response.skyblock.election.SpecialElection;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.util.time.SimpleDate;

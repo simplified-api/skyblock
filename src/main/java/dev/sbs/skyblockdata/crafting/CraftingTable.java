@@ -1,4 +1,4 @@
-package dev.sbs.minecraftapi.skyblock.crafting;
+package dev.sbs.skyblockdata.crafting;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

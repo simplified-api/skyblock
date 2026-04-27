@@ -1,11 +1,11 @@
-package dev.sbs.minecraftapi.skyblock.crafting;
+package dev.sbs.skyblockdata.crafting;
 
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
-import static dev.sbs.minecraftapi.skyblock.crafting.CraftingTable.*;
+import static dev.sbs.skyblockdata.crafting.CraftingTable.*;
 
 @Getter
 public enum CraftingRecipe {

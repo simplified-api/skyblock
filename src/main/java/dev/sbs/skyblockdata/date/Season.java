@@ -1,4 +1,4 @@
-package dev.sbs.minecraftapi.skyblock.date;
+package dev.sbs.skyblockdata.date;
 
 import lib.minecraft.text.ChatColor;
 import lombok.Getter;

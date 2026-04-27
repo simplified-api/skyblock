@@ -1,4 +1,4 @@
-package dev.sbs.minecraftapi.persistence.model;
+package dev.sbs.skyblockdata.model;
 
 import com.google.gson.annotations.SerializedName;
 import lib.minecraft.text.ChatColor;

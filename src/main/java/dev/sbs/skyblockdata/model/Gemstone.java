@@ -1,7 +1,7 @@
-package dev.sbs.minecraftapi.persistence.model;
+package dev.sbs.skyblockdata.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.minecraftapi.skyblock.common.Rarity;
+import dev.sbs.skyblockdata.common.Rarity;
 import lib.minecraft.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;

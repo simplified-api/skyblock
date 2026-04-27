@@ -1,9 +1,9 @@
-package dev.sbs.minecraftapi.persistence.model;
+package dev.sbs.skyblockdata.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.sbs.minecraftapi.persistence.SkinTexture;
-import dev.sbs.minecraftapi.skyblock.common.GameStage;
-import dev.sbs.minecraftapi.skyblock.common.Rarity;
+import dev.sbs.skyblockdata.SkinTexture;
+import dev.sbs.skyblockdata.common.GameStage;
+import dev.sbs.skyblockdata.common.Rarity;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;

@@ -1,6 +1,6 @@
-package dev.sbs.minecraftapi.persistence;
+package dev.sbs.skyblockdata;
 
-import dev.sbs.minecraftapi.persistence.model.Item;
+import dev.sbs.skyblockdata.model.Item;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.RepositoryFactory;

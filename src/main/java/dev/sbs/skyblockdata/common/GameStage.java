@@ -1,4 +1,4 @@
-package dev.sbs.minecraftapi.skyblock.common;
+package dev.sbs.skyblockdata.common;
 
 public enum GameStage {
 

@@ -1,4 +1,4 @@
-package dev.sbs.minecraftapi.persistence;
+package dev.sbs.skyblockdata;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
