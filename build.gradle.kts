@@ -34,6 +34,9 @@ dependencies {
     testRuntimeOnly(libs.junit.jupiter.engine)
     testImplementation(libs.junit.platform.launcher)
 
+    // Sibling API modules (composite-build substitutes by project name)
+    api("com.github.simplified-api:github:master-SNAPSHOT")
+
     // Simplified Libraries (github.com/simplified-dev)
     api("com.github.simplified-dev:collections:master-SNAPSHOT")
     api("com.github.simplified-dev:utils:master-SNAPSHOT")

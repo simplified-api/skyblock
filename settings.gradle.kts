@@ -1,1 +1,1 @@
-rootProject.name = "skyblock-data-api"
+rootProject.name = "skyblock-data"
