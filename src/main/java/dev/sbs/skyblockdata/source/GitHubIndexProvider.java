@@ -60,7 +60,7 @@ public final class GitHubIndexProvider implements IndexProvider {
                 "Failed to load manifest for source '%s' (HTTP %d): %s",
                 this.sourceId,
                 ex.getStatus().getCode(),
-                ex.getGithubResponse().getReason()
+                ex.getResponse().getReason()
             );
         }
     }

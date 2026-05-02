@@ -46,7 +46,7 @@ public final class GitHubFileFetcher implements FileFetcher {
                 path,
                 this.sourceId,
                 ex.getStatus().getCode(),
-                ex.getGithubResponse().getReason()
+                ex.getResponse().getReason()
             );
         }
     }
