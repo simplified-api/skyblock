@@ -1,6 +1,7 @@
 package dev.sbs.skyblockdata.model;
 
 import com.google.gson.annotations.SerializedName;
+import dev.sbs.skyblockdata.SkyBlockData;
 import dev.sbs.skyblockdata.common.Rarity;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
@@ -108,7 +109,9 @@ public class Reforge implements JpaModel {
         private @NotNull String id = "";
         private @NotNull ConcurrentMap<Rarity, Double> values = Concurrent.newMap();
 
-        /** Resolves the referenced {@link Stat} via {@link dev.sbs.skyblockdata.SkyBlockData#getRepository}, matching on the substitute's {@code id}. */
+        /**
+         * Resolves the referenced {@link Stat} via {@link SkyBlockData#getRepository}, matching on the substitute's {@code id}.
+         */
         public @NotNull Optional<Stat> getStat() {
             if (this.id.isEmpty())
                 return Optional.empty();

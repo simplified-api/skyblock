@@ -24,10 +24,14 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface SkyBlockGitDataContract extends GitHubGitDataContract {
 
-    /** The SkyBlock-Simplified GitHub organization that owns the data repo. */
+    /**
+     * The SkyBlock-Simplified GitHub organization that owns the data repo.
+     */
     @NotNull String OWNER = SkyBlockDataContract.OWNER;
 
-    /** The repo name that hosts the SkyBlock JSON data corpus. */
+    /**
+     * The repo name that hosts the SkyBlock JSON data corpus.
+     */
     @NotNull String REPO = SkyBlockDataContract.REPO;
 
     /**

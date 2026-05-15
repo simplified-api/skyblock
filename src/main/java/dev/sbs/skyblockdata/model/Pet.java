@@ -1,8 +1,8 @@
 package dev.sbs.skyblockdata.model;
 
 import com.google.gson.annotations.SerializedName;
+import dev.sbs.skyblockdata.SkyBlockData;
 import dev.sbs.skyblockdata.common.Rarity;
-import lib.minecraft.text.ChatColor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -17,6 +17,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lib.minecraft.text.ChatColor;
 import lombok.AccessLevel;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
@@ -184,7 +185,9 @@ public class Pet implements JpaModel {
             return this.values;
         }
 
-        /** Resolves the referenced {@link Stat} via {@link dev.sbs.skyblockdata.SkyBlockData#getRepository}, matching on the substitute's {@code id}. */
+        /**
+         * Resolves the referenced {@link Stat} via {@link SkyBlockData#getRepository}, matching on the substitute's {@code id}.
+         */
         public @NotNull java.util.Optional<Stat> getStat() {
             if (this.id.isEmpty())
                 return java.util.Optional.empty();

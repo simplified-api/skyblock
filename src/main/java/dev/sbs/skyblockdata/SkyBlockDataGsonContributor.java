@@ -6,11 +6,13 @@ import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.JpaExclusionStrategy;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ServiceLoader;
+
 /**
  * Registers the SkyBlock-specific type adapters and the JPA exclusion strategy
  * with {@link GsonSettings#defaults()}.
  * <p>
- * Discovered via the {@link java.util.ServiceLoader} entry at
+ * Discovered via the {@link ServiceLoader} entry at
  * {@code META-INF/services/dev.simplified.gson.GsonContributor} whenever this
  * module is on the classpath; consumers of {@code GsonSettings.defaults()} get
  * the adapters automatically without touching their own bootstrap code.

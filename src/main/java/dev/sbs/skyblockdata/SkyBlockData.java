@@ -4,11 +4,13 @@ import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.CacheMissingStrategy;
 import dev.simplified.persistence.JpaCacheProvider;
 import dev.simplified.persistence.JpaConfig;
+import dev.simplified.persistence.JpaExclusionStrategy;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
 import dev.simplified.persistence.driver.H2MemoryDriver;
+import dev.simplified.persistence.source.Source;
 import dev.simplified.util.Logging;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -34,7 +36,7 @@ public final class SkyBlockData {
 
     /**
      * {@link SkyBlockFactory} instance that resolves the SkyBlock JPA model package and the
-     * {@code skyblock/} JSON {@link dev.simplified.persistence.source.Source}.
+     * {@code skyblock/} JSON {@link Source}.
      */
     @Getter private static final @NotNull SkyBlockFactory factory = new SkyBlockFactory();
 
@@ -54,7 +56,7 @@ public final class SkyBlockData {
      * {@link JpaCacheProvider#EHCACHE} second-level cache provider.
      *
      * @param gsonSettings pre-configured settings carrying the SkyBlock-specific type adapters
-     *     and the {@link dev.simplified.persistence.JpaExclusionStrategy}; internally mutated to
+     *     and the {@link JpaExclusionStrategy}; internally mutated to
      *     {@link GsonSettings.StringType#DEFAULT} so empty strings round-trip on
      *     {@code nullable=false} columns
      * @return the newly registered SkyBlock {@link JpaSession}
@@ -70,7 +72,7 @@ public final class SkyBlockData {
      *
      * @param provider the JCache provider that backs the Hibernate second-level cache
      * @param gsonSettings pre-configured settings carrying the SkyBlock-specific type adapters
-     *     and the {@link dev.simplified.persistence.JpaExclusionStrategy}; internally mutated to
+     *     and the {@link JpaExclusionStrategy}; internally mutated to
      *     {@link GsonSettings.StringType#DEFAULT} so empty strings round-trip on
      *     {@code nullable=false} columns
      * @return the newly registered SkyBlock {@link JpaSession}

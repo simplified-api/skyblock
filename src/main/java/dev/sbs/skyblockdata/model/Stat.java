@@ -117,7 +117,9 @@ public class Stat implements JpaModel {
         private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GREEN;
         private @NotNull ConcurrentMap<Integer, Double> values = Concurrent.newMap();
 
-        /** Resolves the referenced {@link Stat} via {@link SkyBlockData#getRepository}, matching on the substitute's {@code id}. */
+        /**
+         * Resolves the referenced {@link Stat} via {@link SkyBlockData#getRepository}, matching on the substitute's {@code id}.
+         */
         public @NotNull Optional<Stat> getStat() {
             if (this.id.isEmpty())
                 return Optional.empty();

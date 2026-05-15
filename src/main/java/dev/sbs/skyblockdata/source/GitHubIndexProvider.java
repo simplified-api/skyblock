@@ -6,6 +6,7 @@ import dev.sbs.skyblockdata.contract.SkyBlockDataContract;
 import dev.simplified.persistence.exception.JpaException;
 import dev.simplified.persistence.source.IndexProvider;
 import dev.simplified.persistence.source.ManifestIndex;
+import dev.simplified.persistence.source.RemoteJsonSource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
@@ -15,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  * endpoint.
  *
  * <p>Implements the {@link IndexProvider} SAM so it can feed directly into a
- * {@link dev.simplified.persistence.source.RemoteJsonSource}. Every {@link #loadIndex()} call
+ * {@link RemoteJsonSource}. Every {@link #loadIndex()} call
  * issues one HTTP GET to {@code data/v1/index.json} on the configured branch and parses the
  * response body into a {@link ManifestIndex} via the supplied Gson instance.
  *
@@ -30,16 +31,24 @@ import org.jetbrains.annotations.NotNull;
 @RequiredArgsConstructor
 public final class GitHubIndexProvider implements IndexProvider {
 
-    /** The path to the manifest file inside the {@code skyblock-data} repo, relative to repo root. */
+    /**
+     * The path to the manifest file inside the {@code skyblock-data} repo, relative to repo root.
+     */
     private static final @NotNull String MANIFEST_PATH = "data/v1/index.json";
 
-    /** The human-readable source id matching {@code ExternalAssetState.sourceId}. */
+    /**
+     * The human-readable source id matching {@code ExternalAssetState.sourceId}.
+     */
     private final @NotNull String sourceId;
 
-    /** The SkyBlock data contract proxy for the GitHub REST API. */
+    /**
+     * The SkyBlock data contract proxy for the GitHub REST API.
+     */
     private final @NotNull SkyBlockDataContract contract;
 
-    /** The Gson instance used to deserialize the manifest body into a {@link ManifestIndex}. */
+    /**
+     * The Gson instance used to deserialize the manifest body into a {@link ManifestIndex}.
+     */
     private final @NotNull Gson gson;
 
     @Override

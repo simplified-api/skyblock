@@ -29,16 +29,24 @@ import org.jetbrains.annotations.NotNull;
 @RequiredArgsConstructor
 public final class SkyBlockDataService {
 
-    /** The SkyBlock-Simplified GitHub organization that owns the data repo. */
+    /**
+     * The SkyBlock-Simplified GitHub organization that owns the data repo.
+     */
     public static final @NotNull String OWNER = "skyblock-simplified";
 
-    /** The repo name that hosts the SkyBlock JSON data corpus. */
+    /**
+     * The repo name that hosts the SkyBlock JSON data corpus.
+     */
     public static final @NotNull String REPO = "skyblock-data";
 
-    /** Read-side proxy configured with {@code Accept: application/vnd.github.raw+json}. */
+    /**
+     * Read-side proxy configured with {@code Accept: application/vnd.github.raw+json}.
+     */
     private final @NotNull GitHubContentsContract read;
 
-    /** Write-side proxy configured with {@code Accept: application/vnd.github+json}. */
+    /**
+     * Write-side proxy configured with {@code Accept: application/vnd.github+json}.
+     */
     private final @NotNull GitHubContentsWriteContract write;
 
     /**

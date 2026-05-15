@@ -719,34 +719,54 @@ public class SkyBlockDate extends SimpleDate {
     @NoArgsConstructor(access = AccessLevel.PRIVATE)
     public static class Length {
 
-        /** The number of minutes in one SkyBlock hour. */
+        /**
+         * The number of minutes in one SkyBlock hour.
+         */
         public static final long MINUTES_TOTAL = 60;
 
-        /** The number of hours in one SkyBlock day. */
+        /**
+         * The number of hours in one SkyBlock day.
+         */
         public static final long HOURS_TOTAL = 24;
 
-        /** The number of days in one SkyBlock month (season). */
+        /**
+         * The number of days in one SkyBlock month (season).
+         */
         public static final long DAYS_TOTAL = 31;
 
-        /** The number of months (seasons) in one SkyBlock year. */
+        /**
+         * The number of months (seasons) in one SkyBlock year.
+         */
         public static final long MONTHS_TOTAL = 12;
 
-        /** Real-time milliseconds per SkyBlock minute (~833.33ms). */
+        /**
+         * Real-time milliseconds per SkyBlock minute (~833.33ms).
+         */
         public static final double MINUTE_MS = 50000.0 / 60;
 
-        /** Real-time milliseconds per SkyBlock hour (50,000ms). */
+        /**
+         * Real-time milliseconds per SkyBlock hour (50,000ms).
+         */
         public static final long HOUR_MS = (long) (MINUTES_TOTAL * MINUTE_MS);
 
-        /** Real-time milliseconds per SkyBlock day (1,200,000ms). */
+        /**
+         * Real-time milliseconds per SkyBlock day (1,200,000ms).
+         */
         public static final long DAY_MS = HOURS_TOTAL * HOUR_MS;
 
-        /** Real-time milliseconds per SkyBlock month (37,200,000ms). */
+        /**
+         * Real-time milliseconds per SkyBlock month (37,200,000ms).
+         */
         public static final long MONTH_MS = DAYS_TOTAL * DAY_MS;
 
-        /** Real-time milliseconds per SkyBlock year (446,400,000ms). */
+        /**
+         * Real-time milliseconds per SkyBlock year (446,400,000ms).
+         */
         public static final long YEAR_MS = MONTHS_TOTAL * MONTH_MS;
 
-        /** Real-time milliseconds per Traveling Zoo cycle (half a SkyBlock year). */
+        /**
+         * Real-time milliseconds per Traveling Zoo cycle (half a SkyBlock year).
+         */
         public static final long ZOO_CYCLE_MS = YEAR_MS / 2;
 
     }

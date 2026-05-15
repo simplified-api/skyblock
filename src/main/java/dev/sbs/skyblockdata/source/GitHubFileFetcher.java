@@ -4,6 +4,7 @@ import api.simplified.github.exception.GitHubApiException;
 import dev.sbs.skyblockdata.contract.SkyBlockDataContract;
 import dev.simplified.persistence.exception.JpaException;
 import dev.simplified.persistence.source.FileFetcher;
+import dev.simplified.persistence.source.RemoteJsonSource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
@@ -13,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
  * via the Contents REST endpoint with the {@code raw+json} media type.
  *
  * <p>Implements the {@link FileFetcher} SAM so it pairs with {@link GitHubIndexProvider} inside
- * a {@link dev.simplified.persistence.source.RemoteJsonSource}. Every {@link #fetchFile(String)}
+ * a {@link RemoteJsonSource}. Every {@link #fetchFile(String)}
  * call forwards the repo-root-relative path to the SkyBlock data contract without mutation.
  *
  * <p>Any {@link GitHubApiException} raised by the contract is re-thrown wrapped in
@@ -26,10 +27,14 @@ import org.jetbrains.annotations.NotNull;
 @RequiredArgsConstructor
 public final class GitHubFileFetcher implements FileFetcher {
 
-    /** The human-readable source id matching {@code ExternalAssetState.sourceId}. */
+    /**
+     * The human-readable source id matching {@code ExternalAssetState.sourceId}.
+     */
     private final @NotNull String sourceId;
 
-    /** The SkyBlock data contract proxy for the GitHub REST API. */
+    /**
+     * The SkyBlock data contract proxy for the GitHub REST API.
+     */
     private final @NotNull SkyBlockDataContract contract;
 
     @Override
