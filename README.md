@@ -1,4 +1,4 @@
-# skyblock-data-api
+# skyblock
 
 JPA entities + static locator for the SkyBlock game-data set that sibling services
 (`simplified-data`, `simplified-bot`, `simplified-server`) consume. Extracted from
