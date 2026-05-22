@@ -35,14 +35,14 @@ dependencies {
     testImplementation(libs.junit.platform.launcher)
 
     // Sibling API modules (composite-build substitutes by project name)
-    api("com.github.simplified-api:github") { version { strictly("e1346ca") } }
+    api("com.github.simplified-api:github") { version { strictly("e37cc6f") } }
 
     // Simplified Libraries (github.com/simplified-dev)
     api("com.github.simplified-dev:collections") { version { strictly("2f2aa58") } }
     api("com.github.simplified-dev:utils") { version { strictly("a2f3ccd") } }
     api("com.github.simplified-dev:reflection") { version { strictly("c02511a") } }
     api("com.github.simplified-dev:gson-extras") { version { strictly("26278a3") } }
-    api("com.github.simplified-dev:persistence") { version { strictly("2357776") } }
+    api("com.github.simplified-dev:persistence") { version { strictly("533206b") } }
 
     // Minecraft-Library (github.com/minecraft-library)
     // StatCategory, Rarity, BestiaryCategory, etc. store ChatColor values.
