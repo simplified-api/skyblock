@@ -42,7 +42,7 @@ dependencies {
     api("com.github.simplified-dev:utils") { version { strictly("37dc4a8") } }
     api("com.github.simplified-dev:reflection") { version { strictly("b2cf834") } }
     api("com.github.simplified-dev:gson-extras") { version { strictly("f42ee07") } }
-    api("com.github.simplified-dev:persistence") { version { strictly("aee878c") } }
+    api("com.github.simplified-dev:persistence") { version { strictly("cacdb62") } }
 
     // Minecraft-Library (github.com/minecraft-library)
     // StatCategory, Rarity, BestiaryCategory, etc. store ChatColor values.
