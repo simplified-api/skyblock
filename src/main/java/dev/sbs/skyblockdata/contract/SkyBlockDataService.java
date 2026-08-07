@@ -30,9 +30,9 @@ import org.jetbrains.annotations.NotNull;
 public final class SkyBlockDataService {
 
     /**
-     * The SkyBlock-Simplified GitHub organization that owns the data repo.
+     * The GitHub organization that owns the data repo.
      */
-    public static final @NotNull String OWNER = "skyblock-simplified";
+    public static final @NotNull String OWNER = "simplified-api";
 
     /**
      * The repo name that hosts the SkyBlock JSON data corpus.

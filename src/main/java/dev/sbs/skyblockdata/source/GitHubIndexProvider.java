@@ -10,15 +10,18 @@ import dev.simplified.persistence.source.RemoteJsonSource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Loads the {@code skyblock-data/data/v1/index.json} manifest via the GitHub REST API Contents
  * endpoint.
  *
  * <p>Implements the {@link IndexProvider} SAM so it can feed directly into a
- * {@link RemoteJsonSource}. Every {@link #loadIndex()} call
- * issues one HTTP GET to {@code data/v1/index.json} on the configured branch and parses the
- * response body into a {@link ManifestIndex} via the supplied Gson instance.
+ * {@link RemoteJsonSource}, which asks for the manifest on every load rather than caching one
+ * itself - so a session with one source per model would otherwise fetch the same file once per
+ * model. The first call issues one HTTP GET to {@code data/v1/index.json} on the configured branch,
+ * parses the body into a {@link ManifestIndex} via the supplied Gson instance, and holds it;
+ * {@link #refresh()} discards it.
  *
  * <p>Any {@link GitHubApiException} raised by the contract is re-thrown wrapped in
  * {@link JpaException} with the HTTP status code and the source id carried in the message and
@@ -51,8 +54,35 @@ public final class GitHubIndexProvider implements IndexProvider {
      */
     private final @NotNull Gson gson;
 
+    /**
+     * The manifest held from the first successful load, or {@code null} before one.
+     */
+    private volatile @Nullable ManifestIndex manifest;
+
     @Override
     public @NotNull ManifestIndex loadIndex() throws JpaException {
+        ManifestIndex held = this.manifest;
+
+        if (held == null) {
+            synchronized (this) {
+                if (this.manifest == null)
+                    this.manifest = this.fetchIndex();
+
+                held = this.manifest;
+            }
+        }
+
+        return held;
+    }
+
+    /**
+     * Discards the held manifest so the next {@link #loadIndex()} fetches a fresh one.
+     */
+    public void refresh() {
+        this.manifest = null;
+    }
+
+    private @NotNull ManifestIndex fetchIndex() throws JpaException {
         try {
             byte[] bytes = this.contract.getFileContent(MANIFEST_PATH);
             String rawJson = new String(bytes, java.nio.charset.StandardCharsets.UTF_8);
