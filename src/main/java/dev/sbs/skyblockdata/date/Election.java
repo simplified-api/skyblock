@@ -1,6 +1,5 @@
 package dev.sbs.skyblockdata.date;
 
-import dev.simplified.gson.PostInit;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,15 +10,33 @@ import java.util.Objects;
 
 @Getter
 @NoArgsConstructor
-public class Election implements PostInit {
+public class Election {
 
     private int year;
-    private transient Cycle voting;
-    private transient Cycle term;
 
     public Election(int year) {
         this.year = year;
-        this.postInit();
+    }
+
+    /**
+     * Window in which this election's year votes, opening late summer and closing the following late
+     * spring
+     */
+    public @NotNull Cycle getVoting() {
+        return new Cycle(
+            new SkyBlockDate(this.getYear(), Season.LATE_SUMMER, 27, 0),
+            new SkyBlockDate(this.getYear() + 1, Season.LATE_SPRING, 27, 0)
+        );
+    }
+
+    /**
+     * Window in which the elected mayor holds office, running from the close of voting for a full year
+     */
+    public @NotNull Cycle getTerm() {
+        return new Cycle(
+            new SkyBlockDate(this.getYear() + 1, Season.LATE_SPRING, 27, 0),
+            new SkyBlockDate(this.getYear() + 2, Season.LATE_SPRING, 27, 0)
+        );
     }
 
     @Override
@@ -28,26 +45,12 @@ public class Election implements PostInit {
 
         Election election = (Election) o;
 
-        return this.getYear() == election.getYear()
-            && Objects.equals(this.getVoting(), election.getVoting())
-            && Objects.equals(this.getTerm(), election.getTerm());
+        return this.getYear() == election.getYear();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getYear(), this.getVoting(), this.getTerm());
-    }
-
-    @Override
-    public void postInit() {
-        this.voting = new Cycle(
-            new SkyBlockDate(this.getYear(), Season.LATE_SUMMER, 27, 0),
-            new SkyBlockDate(this.getYear() + 1, Season.LATE_SPRING, 27, 0)
-        );
-        this.term = new Cycle(
-            new SkyBlockDate(this.getYear() + 1, Season.LATE_SPRING, 27, 0),
-            new SkyBlockDate(this.getYear() + 2, Season.LATE_SPRING, 27, 0)
-        );
+        return Objects.hash(this.getYear());
     }
 
     @Override
