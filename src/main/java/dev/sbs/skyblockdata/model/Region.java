@@ -1,8 +1,6 @@
 package dev.sbs.skyblockdata.model;
 
 import lib.minecraft.text.ChatColor;
-import dev.simplified.collection.Concurrent;
-import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,6 +12,8 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -38,8 +38,12 @@ public class Region implements JpaModel {
     @Column(name = "mode", nullable = false)
     private @NotNull String mode = "";
 
+    /**
+     * Zones this region contains, owned by {@link Zone#getRegion()} and populated by the provider,
+     * which supplies its own list implementation
+     */
     @OneToMany(mappedBy = "region")
-    private @NotNull ConcurrentList<Zone> zones = Concurrent.newList();
+    private @NotNull List<Zone> zones = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {

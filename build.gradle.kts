@@ -35,14 +35,14 @@ dependencies {
     testImplementation(libs.junit.platform.launcher)
 
     // Sibling API modules (composite-build substitutes by project name)
-    api("com.github.simplified-api:github") { version { strictly("38da22c") } }
+    api("com.github.simplified-api:github") { version { strictly("b36fe4c") } }
 
     // Simplified Libraries (github.com/simplified-dev)
-    api("com.github.simplified-dev:collections") { version { strictly("652c22d") } }
-    api("com.github.simplified-dev:utils") { version { strictly("7c2feb7") } }
-    api("com.github.simplified-dev:reflection") { version { strictly("7a28c3a") } }
-    api("com.github.simplified-dev:gson-extras") { version { strictly("2ba8143") } }
-    api("com.github.simplified-dev:persistence") { version { strictly("78bfa94") } }
+    api("com.github.simplified-dev:collections") { version { strictly("7699a31") } }
+    api("com.github.simplified-dev:utils") { version { strictly("036cc09") } }
+    api("com.github.simplified-dev:reflection") { version { strictly("33b2f05") } }
+    api("com.github.simplified-dev:gson-extras") { version { strictly("6421324") } }
+    api("com.github.simplified-dev:persistence") { version { strictly("d2ee7b4") } }
 
     // Minecraft-Library (github.com/minecraft-library)
     // StatCategory, Rarity, BestiaryCategory, etc. store ChatColor values.
@@ -60,8 +60,21 @@ idea {
     }
 }
 
+val envFile = layout.projectDirectory.file(".env").asFile
+
 tasks {
     test {
         useJUnitPlatform()
+
+        // SkyBlockFactory reads its token off the test JVM's own environment, and Gradle has no
+        // notion of .env. Without one the reads are unauthenticated, which GitHub caps at 60
+        // requests per hour per IP - a session connect spends about 42 of them
+        doFirst {
+            if (envFile.isFile) {
+                envFile.readLines()
+                    .filter { it.contains('=') && !it.startsWith('#') }
+                    .forEach { environment(it.substringBefore('='), it.substringAfter('=')) }
+            }
+        }
     }
 }
