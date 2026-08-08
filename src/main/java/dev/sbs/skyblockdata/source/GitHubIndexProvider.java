@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
  * the original exception retained as the cause.
  *
  * @see IndexProvider
- * @see dev.simplified.persistence.source.RemoteJsonSource
+ * @see RemoteJsonSource
  */
 @Log4j2
 @RequiredArgsConstructor

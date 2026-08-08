@@ -14,14 +14,14 @@ import org.jetbrains.annotations.NotNull;
  * via the Contents REST endpoint with the {@code raw+json} media type.
  *
  * <p>Implements the {@link FileFetcher} SAM so it pairs with {@link GitHubIndexProvider} inside
- * a {@link RemoteJsonSource}. Every {@link #fetchFile(String)}
- * call forwards the repo-root-relative path to the SkyBlock data contract without mutation.
+ * a {@link RemoteJsonSource}. Every {@link #fetchFile(String)} call forwards the
+ * repo-root-relative path to the SkyBlock data contract without mutation.
  *
  * <p>Any {@link GitHubApiException} raised by the contract is re-thrown wrapped in
  * {@link JpaException} with HTTP status, source id, and path included in the message.
  *
  * @see FileFetcher
- * @see dev.simplified.persistence.source.RemoteJsonSource
+ * @see RemoteJsonSource
  */
 @Log4j2
 @RequiredArgsConstructor
