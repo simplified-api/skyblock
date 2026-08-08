@@ -3,7 +3,7 @@
 The Hypixel SkyBlock game-data layer: 41 JPA entities loaded into an embedded H2 database from the [skyblock-data](https://github.com/simplified-api/skyblock-data) repository, plus the SkyBlock calendar and the mayor election cycle it drives.
 
 > [!IMPORTANT]
-> The base package is **`dev.sbs.skyblockdata`**, not `api.simplified.skyblock`. This module carries the game's own vocabulary rather than a vendor's API surface, and it is the one repository under `Simplified-Api` whose package root does not follow the family prefix.
+> The base package is **`dev.simplified.skyblock`**, not `api.simplified.skyblock`. This module carries the game's own vocabulary rather than a vendor's API surface, so it is the one repository under `Simplified-Api` whose package root does not follow the family prefix - it takes the `Simplified-Dev` prefix instead.
 
 ## Table of Contents
 
@@ -96,7 +96,7 @@ pets.findFirst(Pet::getId, "AMMONITE").orElseThrow().getSkill().getId();   // "F
 
 ## Models
 
-41 entity classes live in `dev.sbs.skyblockdata.model`, alongside `BuffEffectsModel` - an interface several of them implement rather than an entity of its own. `RepositoryFactory.resolveModels(Item.class)` scans that package, so adding a model is a matter of putting the class there and giving `skyblock-data` a matching manifest entry - nothing registers it by name.
+41 entity classes live in `dev.simplified.skyblock.model`, alongside `BuffEffectsModel` - an interface several of them implement rather than an entity of its own. `RepositoryFactory.resolveModels(Item.class)` scans that package, so adding a model is a matter of putting the class there and giving `skyblock-data` a matching manifest entry - nothing registers it by name.
 
 | Group | Models |
 |-------|--------|
@@ -251,7 +251,7 @@ user `sa`, empty password. The directory is gitignored and excluded from the IDE
 ```
 skyblock/
 ├── src/
-│   ├── main/java/dev/sbs/skyblockdata/
+│   ├── main/java/dev/simplified/skyblock/
 │   │   ├── SkyBlockData.java                  # static locator: connect() + getRepository()
 │   │   ├── SkyBlockFactory.java               # one RemoteJsonSource per model, over GitHub
 │   │   ├── SkyBlockDataGsonContributor.java   # SPI hook: date adapters + JpaExclusionStrategy

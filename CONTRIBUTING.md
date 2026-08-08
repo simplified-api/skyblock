@@ -180,7 +180,7 @@ Javadoc:
 
 Nothing registers a model by name. `RepositoryFactory.resolveModels(Item.class)` scans the package `Item` lives in, so the class's location is its registration.
 
-1. Put the entity in `dev.sbs.skyblockdata.model`, implementing `JpaModel`.
+1. Put the entity in `dev.simplified.skyblock.model`, implementing `JpaModel`.
 2. Give every column a **non-null default**. Hibernate's `nullable = false` plus a Gson-absent field is a constraint violation at load, and the default is what absorbs a corpus entry that predates the column.
 3. Model the relations:
    - a single FK is `@ManyToOne` + `@JoinColumn` beside the raw `*_id` column;
@@ -224,7 +224,7 @@ and leave identity as the year alone.
 - **Schema check** - required when your change adds or renames a column:
 
   ```bash
-  ./gradlew test --tests '*SchemaExporter*' || java -cp <test-classpath> dev.sbs.skyblockdata.schema.SchemaExporter
+  ./gradlew test --tests '*SchemaExporter*' || java -cp <test-classpath> dev.simplified.skyblock.schema.SchemaExporter
   ```
 
   Re-attach `.schema/` in the IDE afterwards so column resolution matches the entity.
@@ -281,7 +281,7 @@ For a calendar issue, include the real epoch millisecond and the SkyBlock coordi
 A brief overview to help you find your way around the codebase:
 
 ```
-dev.sbs.skyblockdata/
+dev.simplified.skyblock/
 ├── SkyBlockData.java                 # static locator: connect() + getRepository()
 ├── SkyBlockFactory.java              # RepositoryFactory; one RemoteJsonSource per model
 ├── SkyBlockDataGsonContributor.java  # SPI hook, priority 100
@@ -314,7 +314,7 @@ SkyBlockData.connect(gsonSettings)
 
 ### Two Election classes
 
-`dev.sbs.skyblockdata.date.Election` and `api.simplified.hypixel.response.skyblock.election.Election` are separate types with the same arithmetic. This one drives `SkyBlockDate`'s mayor forecasting; that one is a DTO bound off the Hypixel wire. They are not interchangeable and neither converts to the other - `ElectionTest` here and the equivalent case in the hypixel suite pin the same millisecond values on purpose.
+`dev.simplified.skyblock.date.Election` and `api.simplified.hypixel.response.skyblock.election.Election` are separate types with the same arithmetic. This one drives `SkyBlockDate`'s mayor forecasting; that one is a DTO bound off the Hypixel wire. They are not interchangeable and neither converts to the other - `ElectionTest` here and the equivalent case in the hypixel suite pin the same millisecond values on purpose.
 
 ## Legal
 

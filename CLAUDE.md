@@ -1,15 +1,16 @@
 # skyblock
 
 The SkyBlock game-data layer: 41 JPA entities in an embedded H2 session, the SkyBlock calendar, and
-three façades over the `github` module that fetch the corpus. Root **`dev.sbs.skyblockdata.**`** -
-not `api.simplified.skyblock`, and it is the one repository under `Simplified-Api` whose package root
-does not follow the family prefix.
+three façades over the `github` module that fetch the corpus. Root **`dev.simplified.skyblock.**`** -
+not `api.simplified.skyblock`. It is the one repository under `Simplified-Api` whose package root
+does not follow the family prefix; it carries the `Simplified-Dev` prefix instead, because the module
+holds the game's own vocabulary rather than a vendor's API surface.
 
 ## Build
 
-- Gradle `group` is `dev.sbs`, the package root is `dev.sbs.skyblockdata`, and the JitPack coordinate
-  is `com.github.simplified-api:skyblock`. The directory name, the coordinate and the package are
-  three different words for one thing.
+- Gradle `group` is `dev.sbs`, the package root is `dev.simplified.skyblock`, and the JitPack
+  coordinate is `com.github.simplified-api:skyblock`. Three org spellings for one module, none of
+  them derived from another - only the trailing `skyblock` is shared.
 - Every dependency is `api(...)` with an inline `strictly()` pin, including the `github` sibling - a
   data-layer module depending on a vendor-API module, because the corpus is served over the GitHub
   Contents API.
@@ -87,7 +88,7 @@ then fails on the first date column, which reads as a corpus problem.
 
 ## Two Election classes, one arithmetic
 
-`dev.sbs.skyblockdata.date.Election` and `api.simplified.hypixel.response.skyblock.election.Election`
+`dev.simplified.skyblock.date.Election` and `api.simplified.hypixel.response.skyblock.election.Election`
 are distinct types with identical cycle arithmetic. This one drives `SkyBlockDate`'s mayor
 forecasting; that one is a DTO bound off the Hypixel wire. Neither converts to the other, and both
 suites pin the same millisecond values so a divergence surfaces on one side.
