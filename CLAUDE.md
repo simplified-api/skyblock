@@ -1,14 +1,11 @@
 # skyblock
 
 The SkyBlock game-data layer: 41 JPA entities in an embedded H2 session, the SkyBlock calendar, and
-three façades over the `github` module that fetch the corpus. Root **`dev.simplified.skyblock.**`** -
-not `api.simplified.skyblock`. It is the one repository under `Simplified-Api` whose package root
-does not follow the family prefix; it carries the `Simplified-Dev` prefix instead, because the module
-holds the game's own vocabulary rather than a vendor's API surface.
+three façades over the `github` module that fetch the corpus. Root **`api.simplified.skyblock.**`**.
 
 ## Build
 
-- Gradle `group` is `dev.sbs`, the package root is `dev.simplified.skyblock`, and the JitPack
+- Gradle `group` is `dev.sbs`, the package root is `api.simplified.skyblock`, and the JitPack
   coordinate is `com.github.simplified-api:skyblock`. Three org spellings for one module, none of
   them derived from another - only the trailing `skyblock` is shared.
 - Every dependency is `api(...)` with an inline `strictly()` pin, including the `github` sibling - a
@@ -88,7 +85,7 @@ then fails on the first date column, which reads as a corpus problem.
 
 ## Two Election classes, one arithmetic
 
-`dev.simplified.skyblock.date.Election` and `api.simplified.hypixel.response.skyblock.election.Election`
+`api.simplified.skyblock.date.Election` and `api.simplified.hypixel.response.skyblock.election.Election`
 are distinct types with identical cycle arithmetic. This one drives `SkyBlockDate`'s mayor
 forecasting; that one is a DTO bound off the Hypixel wire. Neither converts to the other, and both
 suites pin the same millisecond values so a divergence surfaces on one side.
