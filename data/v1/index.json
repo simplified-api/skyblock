@@ -1,6 +1,6 @@
 {
-  "commit_sha": "2a98321fae31f7e2869b80086023b3c0f341b9c6",
-  "count": 42,
+  "commit_sha": "ba73f40bc1eb715c4a9a1eae96aa524049b92068",
+  "count": 41,
   "files": [
     {
       "bytes": 82265,
@@ -366,15 +366,6 @@
       "table_name": "regions"
     },
     {
-      "bytes": 211,
-      "category": "world",
-      "content_sha256": "2f702d09d0a4d4b42ba40dd05b5c2368da45963f122e61989470075df9f1f750",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.ZodiacEvent",
-      "path": "data/v1/world/zodiac_events.json",
-      "table_name": "zodiac_events"
-    },
-    {
       "bytes": 31825,
       "category": "world",
       "content_sha256": "015f6af20988a139d3b7e5b745e76367d0f1fdc24e2cd7ddd733f2fc9ee2352d",
@@ -384,6 +375,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-12T07:33:13Z",
+  "generated_at": "2026-08-12T07:33:44Z",
   "version": 1
 }
