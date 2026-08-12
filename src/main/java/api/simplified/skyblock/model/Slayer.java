@@ -159,6 +159,7 @@ public class Slayer implements JpaModel {
          * The cumulative experience needed to reach the level, counted from zero rather than from the
          * level below.
          */
+        @SerializedName("totalExpRequired")
         private int totalRequiredXP;
 
         /**

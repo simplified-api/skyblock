@@ -1,6 +1,7 @@
 package api.simplified.skyblock.model;
 
 import api.simplified.skyblock.SkyBlockData;
+import com.google.gson.annotations.SerializedName;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -149,6 +150,7 @@ public class Skill implements JpaModel {
          * The cumulative experience needed to reach the level, counted from zero rather than from the
          * level below.
          */
+        @SerializedName("totalExpRequired")
         private int totalRequiredXP;
 
         /**
