@@ -19,17 +19,17 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * The stat one named pet ability contributes, optionally gated on a held pet item or on the kind of
+ * The stat one named pet perk contributes, optionally gated on a held pet item or on the kind of
  * mob being fought.
  *
  * <p>
- * A pet has several abilities, so a pet has several of these rows and the key is generated rather
+ * A pet has several perks, so a pet has several of these rows and the key is generated rather
  * than being the pet id. The table is declared and joined but ships no rows today.
  */
 @Getter
 @Entity
-@Table(name = "bonus_pet_ability_stats")
-public class BonusPetAbilityStat implements JpaModel, BuffEffectsModel {
+@Table(name = "bonus_pet_perk_stats")
+public class BonusPetPerkStat implements JpaModel, BuffEffectsModel {
 
     /**
      * The surrogate key, generated on insert and carrying no game meaning.
@@ -40,17 +40,17 @@ public class BonusPetAbilityStat implements JpaModel, BuffEffectsModel {
     private long id;
 
     /**
-     * The pet whose ability this is.
+     * The pet whose perk this is.
      */
     @Column(name = "pet_id", nullable = false)
     private @NotNull String petId = "";
 
     /**
-     * Which of that pet's abilities the row describes, matched by name against the pet's declared
-     * abilities rather than joined by id.
+     * Which of that pet's perks the row describes, matched by name against the pet's declared
+     * perks rather than joined by id.
      */
-    @Column(name = "ability_name", nullable = false)
-    private @NotNull String abilityName = "";
+    @Column(name = "perk_name", nullable = false)
+    private @NotNull String perkName = "";
 
     /**
      * Whether the granted values are percentages rather than flat amounts.
@@ -73,7 +73,7 @@ public class BonusPetAbilityStat implements JpaModel, BuffEffectsModel {
     private @Nullable String requiredMobTypeKey;
 
     /**
-     * Flat stat additions the ability grants, keyed by {@link Stat} id.
+     * Flat stat additions the perk grants, keyed by {@link Stat} id.
      */
     @Column(name = "effects", nullable = false)
     private @NotNull ConcurrentMap<String, Double> effects = Concurrent.newMap();
@@ -143,12 +143,12 @@ public class BonusPetAbilityStat implements JpaModel, BuffEffectsModel {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
 
-        BonusPetAbilityStat that = (BonusPetAbilityStat) o;
+        BonusPetPerkStat that = (BonusPetPerkStat) o;
 
         return this.getId() == that.getId()
             && this.isPercentage() == that.isPercentage()
             && Objects.equals(this.getPetId(), that.getPetId())
-            && Objects.equals(this.getAbilityName(), that.getAbilityName())
+            && Objects.equals(this.getPerkName(), that.getPerkName())
             && Objects.equals(this.getRequiredItemId(), that.getRequiredItemId())
             && Objects.equals(this.getRequiredMobTypeKey(), that.getRequiredMobTypeKey())
             && Objects.equals(this.getEffects(), that.getEffects())
@@ -157,7 +157,7 @@ public class BonusPetAbilityStat implements JpaModel, BuffEffectsModel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getId(), this.getPetId(), this.getAbilityName(), this.isPercentage(), this.getRequiredItemId(), this.getRequiredMobTypeKey(), this.getEffects(), this.getBuffEffects());
+        return Objects.hash(this.getId(), this.getPetId(), this.getPerkName(), this.isPercentage(), this.getRequiredItemId(), this.getRequiredMobTypeKey(), this.getEffects(), this.getBuffEffects());
     }
 
 }

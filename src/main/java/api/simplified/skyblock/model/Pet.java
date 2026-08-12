@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 /**
- * A pet type - a companion granting stats and abilities that scale with both its level and its
+ * A pet type - a companion granting stats and perks that scale with both its level and its
  * rarity, tied to the one skill whose experience levels it.
  *
  * @see <a href="https://hypixelskyblock.minecraft.wiki/w/Pets">Pets</a>
@@ -88,10 +88,10 @@ public class Pet implements JpaModel {
     private @NotNull ConcurrentList<Substitute> stats = Concurrent.newList();
 
     /**
-     * The pet's named abilities.
+     * The pet's named perks.
      */
-    @Column(name = "abilities", nullable = false)
-    private @NotNull ConcurrentList<Ability> abilities = Concurrent.newList();
+    @Column(name = "perks", nullable = false)
+    private @NotNull ConcurrentList<Perk> perks = Concurrent.newList();
 
     /**
      * The resolved {@link Skill}, read from the same column {@code skillId} is stored in.
@@ -114,15 +114,15 @@ public class Pet implements JpaModel {
     }
 
     /**
-     * Narrows the pet's abilities to those granting something at a given rarity.
+     * Narrows the pet's perks to those granting something at a given rarity.
      *
      * @param rarity the rarity to read the grant at
-     * @return the abilities carrying at least one stat defined for that rarity
+     * @return the perks carrying at least one stat defined for that rarity
      */
-    public @NotNull ConcurrentList<Ability> getAbilities(@NotNull Rarity rarity) {
-        return this.getAbilities()
+    public @NotNull ConcurrentList<Perk> getPerks(@NotNull Rarity rarity) {
+        return this.getPerks()
             .stream()
-            .filter(ability -> ability.getStats()
+            .filter(perk -> perk.getStats()
                 .stream()
                 .anyMatch(stat -> stat.getValues().containsKey(rarity))
             )
@@ -143,12 +143,12 @@ public class Pet implements JpaModel {
             && Objects.equals(this.getSkillId(), that.getSkillId())
             && Objects.equals(this.getType(), that.getType())
             && Objects.equals(this.getStats(), that.getStats())
-            && Objects.equals(this.getAbilities(), that.getAbilities());
+            && Objects.equals(this.getPerks(), that.getPerks());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getLowestRarity(), this.getSkillId(), this.getType(), this.getMaxLevel(), this.isPassive(), this.getStats(), this.getAbilities());
+        return Objects.hash(this.getId(), this.getName(), this.getLowestRarity(), this.getSkillId(), this.getType(), this.getMaxLevel(), this.isPassive(), this.getStats(), this.getPerks());
     }
 
     /**
@@ -186,38 +186,38 @@ public class Pet implements JpaModel {
     }
 
     /**
-     * One named ability a pet grants alongside its flat stats.
+     * One named perk a pet grants alongside its flat stats.
      */
     @Getter
     @GsonType
-    public static class Ability {
+    public static class Perk {
 
         /**
-         * The name the ability is shown under.
+         * The name the perk is shown under.
          */
         private @NotNull String name = "";
 
         /**
-         * The template line describing the ability, carrying the placeholders its stats fill in.
+         * The template line describing the perk, carrying the placeholders its stats fill in.
          */
         private @NotNull String description = "";
 
         /**
-         * Whether the ability grants a flat amount rather than one that scales with the pet's level.
+         * Whether the perk grants a flat amount rather than one that scales with the pet's level.
          */
         private boolean flatStat = false;
         @Getter(AccessLevel.NONE)
         private @NotNull ConcurrentList<Substitute> stats = Concurrent.newList();
 
         /**
-         * The stats the ability grants, across every rarity it is defined at.
+         * The stats the perk grants, across every rarity it is defined at.
          */
         public @NotNull ConcurrentList<Substitute> getStats() {
             return this.stats;
         }
 
         /**
-         * Narrows the ability's stats to those defined at a given rarity.
+         * Narrows the perk's stats to those defined at a given rarity.
          *
          * @param rarity the rarity to read the grant at
          * @return the stat references carrying a value for that rarity
@@ -244,7 +244,7 @@ public class Pet implements JpaModel {
         public boolean equals(Object o) {
             if (o == null || getClass() != o.getClass()) return false;
 
-            Ability that = (Ability) o;
+            Perk that = (Perk) o;
 
             return this.isFlatStat() == that.isFlatStat()
                 && Objects.equals(this.getName(), that.getName())

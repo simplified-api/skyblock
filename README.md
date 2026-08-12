@@ -104,7 +104,7 @@ pets.findFirst(Pet::getId, "AMMONITE").orElseThrow().getSkill().getId();   // "F
 | Progression | `Skill`, `Collection`, `Slayer`, `Minion`, `HotmPerk`, `Power`, `MelodySong` |
 | Combat | `MobType`, `BestiaryCategory`, `BestiarySubcategory`, `BestiaryFamily` |
 | Stats | `Stat`, `StatCategory`, `HotPotatoStat` |
-| Bonuses | `BonusArmorSet`, `BonusItemStat`, `BonusItemRarity`, `BonusReforgeStat`, `BonusEnchantmentStat`, `BonusPetAbilityStat` |
+| Bonuses | `BonusArmorSet`, `BonusItemStat`, `BonusItemRarity`, `BonusReforgeStat`, `BonusEnchantmentStat`, `BonusPetPerkStat` |
 | World | `Region`, `Zone`, `FairySoul`, `ShopPerk`, `Mayor`, `Event` |
 | Consumables | `Potion`, `PotionGroup`, `Brew`, `Essence` |
 | Other | `Pet`, `Keyword` |
