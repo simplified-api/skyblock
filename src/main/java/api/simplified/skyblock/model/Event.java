@@ -217,19 +217,55 @@ public class Event implements JpaModel {
     }
 
     /**
-     * One rule for when an {@link Event} runs, as an anchor plus a list of phases that repeats
-     * forever from it.
+     * One rule for when an {@link Event} runs, held as a starting point plus a repeating on/off
+     * pattern rather than a list of dates, so a single row answers for every occurrence there has
+     * ever been and every one still to come.
+     *
+     * <p>
+     * The Traveling Zoo, in full:
+     *
+     * <pre><code>
+     * {
+     *   "anchor": { "year": 50, "month": 4 },
+     *   "phases": [
+     *     { "days": 3 },
+     *     { "months": 5, "days": 28 },
+     *     { "days": 3 },
+     *     { "months": 5, "days": 28 }
+     *   ],
+     *   "rotation": ["BLUE_WHALE", "TIGER", "LION", "MONKEY", "ELEPHANT", "GIRAFFE"]
+     * }
+     * </code></pre>
+     *
+     * <p>
+     * Laid out along the calendar, that reads:
+     *
+     * <pre><code>
+     *   Y50 M4                    Y50 M10                    Y51 M4
+     *   +------+---------------------+------+---------------------+
+     *   |  0   |          1          |  2   |          3          |
+     *   | RUN  |         gap         | RUN  |         gap         |
+     *   |3 days|       5mo 28d       |3 days|       5mo 28d       |
+     *   +------+---------------------+------+---------------------+
+     *   '----------------------- one period ----------------------'
+     *
+     *   372 days is exactly one SkyBlock year, so the zoo lands on
+     *   Early Summer and Early Winter of every year, forever.
+     * </code></pre>
      *
      * <p>
      * The phase list alternates strictly by index - an even index is a run and an odd index is the
      * idle gap after it - and the whole list is one period. An odd-length list takes an implicit
-     * trailing gap of zero, so the number of runs in a period is {@code (size + 1) / 2}.
+     * trailing gap of zero, so the number of runs in a period is {@code (size + 1) / 2}. Nothing
+     * requires the gaps to match each other, which is what lets four gatherings a month and a
+     * single yearly visit share one grammar.
      *
      * <p>
      * The anchor is any representative of a run rather than the first one, so a query behind the
-     * anchor folds forward instead of running out of schedule. A rule this grammar cannot state at
-     * all leaves the anchor absent and puts the rule in {@link #note}, which is what makes a
-     * schedule carrying only prose different from no schedule at all.
+     * anchor folds forward instead of running out of schedule - a twelve-year event anchored on
+     * year 479 still answers for year 407, at run index {@code -6}. A rule this grammar cannot
+     * state at all leaves the anchor absent and puts the rule in {@link #note}, which is what makes
+     * a schedule carrying only prose different from no schedule at all.
      */
     @Getter
     @GsonType
@@ -444,11 +480,37 @@ public class Event implements JpaModel {
     }
 
     /**
-     * One instant, held as the calendar components that name it rather than as a millisecond count.
+     * One point on a calendar, held as the components that name it rather than as a millisecond
+     * count, so an anchor reads as a date a person can check rather than a number they cannot.
      *
      * <p>
-     * Every component defaults to the earliest position it can take, so an anchor spells out only
-     * the coordinates that matter and the rest read as the opening of the year.
+     * Two anchors, one on each {@link Clock}:
+     *
+     * <pre><code>
+     * { "year": 50, "month": 4 }
+     * { "year": 2026, "month": 3, "day": 24, "hour": 5, "clock": "REAL" }
+     * </code></pre>
+     *
+     * <p>
+     * Every component defaults to the earliest position it can take, so the first of those names
+     * Y50 M4 D1 at midnight and an anchor spells out only the coordinates that matter:
+     *
+     * <pre><code>
+     *   component   default     reads as
+     *   ---------   -------     --------
+     *   year        1           year one
+     *   month       1           the first month of that year
+     *   day         1           the first day of that month
+     *   hour        0           midnight
+     *   minute      0           the top of the hour
+     *   clock       SKYBLOCK    the accelerated in-game calendar
+     * </code></pre>
+     *
+     * <p>
+     * The component names are singular where a {@link Phase}'s are plural, and that is the whole
+     * difference between the two - this names a position and a phase measures a length.
+     * {@link #toRealTime()} resolves the components on the clock they name, and is the only place
+     * the calendar arithmetic happens.
      */
     @Getter
     @GsonType
@@ -521,13 +583,37 @@ public class Event implements JpaModel {
     }
 
     /**
-     * One span of a {@link Schedule}'s cycle, held as unmultiplied unit counts rather than as a
-     * millisecond total.
+     * One span of a {@link Schedule}'s cycle, held as unmultiplied unit counts because only the
+     * {@link Clock} knows what a unit is worth.
      *
      * <p>
-     * The counts stay counts because the clock decides what each is worth. Multiplying a phase out
-     * at load time would read a real-world week on the SkyBlock clock and be wrong by a factor of
-     * 72.
+     * Three spans, two clocks:
+     *
+     * <pre><code>
+     * { "days": 3 }                    three SkyBlock days, which is one real hour
+     * { "days": 3, "clock": "REAL" }   three real days
+     * { "months": 5, "days": 28 }      183 SkyBlock days
+     * </code></pre>
+     *
+     * <p>
+     * The counts stay counts because {@link #toMilliseconds()} is where the multiplication happens,
+     * and the SkyBlock calendar runs at seventy-two times real time:
+     *
+     * <pre><code>
+     *   SkyBlock unit       real-world span
+     *   -------------       ---------------
+     *   minute              833.33 ms
+     *   hour, 60 minutes    50 seconds
+     *   day, 24 hours       20 minutes
+     *   month, 31 days      10 hours 20 minutes
+     *   year, 12 months     5 days 4 hours
+     * </code></pre>
+     *
+     * <p>
+     * Multiplying a phase out at load time would read a real-world week on the SkyBlock clock and
+     * be wrong by that same factor of seventy-two. Under {@link Clock#REAL} the year and month
+     * counts contribute nothing, because neither a real-world year nor a real-world month is a
+     * fixed length of time.
      */
     @Getter
     @GsonType
@@ -610,11 +696,38 @@ public class Event implements JpaModel {
 
     /**
      * A single run of a {@link Schedule}, bounded by the two real-world instants it opens and
-     * closes at.
+     * closes at, and worked out at the moment it is asked for so that it belongs to no column and
+     * no row.
      *
      * <p>
-     * It is worked out from the schedule's anchor and phases at the moment it is asked for, so it
-     * belongs to no column and no row.
+     * The Traveling Zoo, asked about Y505 M4 D1, answers:
+     *
+     * <pre><code>
+     *   schedule   the rule anchored at Y50 M4
+     *   start      Y505 M4 D1
+     *   end        three SkyBlock days later
+     *   index      910
+     *   rotation   ELEPHANT
+     * </code></pre>
+     *
+     * <p>
+     * The index counts runs from the anchor and goes negative behind it, so it is a position in the
+     * cycle rather than a tally of runs that have happened:
+     *
+     * <pre><code>
+     *   index:  -2        -1         0         1         2
+     *           +-----+   +-----+   +-----+   +-----+   +-----+
+     *      .....|#####|...|#####|...|#####|...|#####|...|#####|.....
+     *           +-----+   +-----+   +-----+   +-----+   +-----+
+     *                                  ^
+     *                                  the run the anchor names
+     * </code></pre>
+     *
+     * <p>
+     * Index 910 is 455 SkyBlock years past that anchor at two runs a year, and
+     * {@link #getRotation()} takes it modulo the six-entry rotation to reach the pet that visit
+     * offers. An occurrence whose {@link #end} equals its {@link #start} models an instant rather
+     * than a span.
      */
     @Getter
     @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
@@ -653,12 +766,34 @@ public class Event implements JpaModel {
     }
 
     /**
-     * Which calendar a piece of a {@link Schedule} is measured against - the accelerated in-game one
-     * or the real-world one.
+     * Which calendar a piece of a {@link Schedule} is measured against, named on the piece itself so
+     * that one schedule can pin a real-world date and still measure its spans in SkyBlock days.
+     *
+     * <p>
+     * The SkyBlock Anniversary mixes them deliberately - a SkyBlock anchor, a real-world span:
+     *
+     * <pre><code>
+     * {
+     *   "anchor": { "year": 495, "month": 11, "day": 21 },
+     *   "phases": [ { "days": 7, "clock": "REAL" } ],
+     *   "limit": 1
+     * }
+     * </code></pre>
+     *
+     * <p>
+     * What the choice decides:
+     *
+     * <pre><code>
+     *   clock      a Moment reads as       a Phase multiplies out by
+     *   -----      -----------------       -------------------------
+     *   SKYBLOCK   a SkyBlock date         fixed spans, minute up to year
+     *   REAL       a UTC date and time     days, hours and minutes only
+     * </code></pre>
      *
      * <p>
      * An anchor is read on the clock it names and a phase's unit counts are multiplied out on it, so
-     * a schedule that mixes the two is stating that mixture deliberately.
+     * a schedule that mixes the two is stating that mixture deliberately. A real-world year and a
+     * real-world month vary in length, which is why neither measures anything a phase can carry.
      */
     public enum Clock {
 
@@ -676,7 +811,29 @@ public class Event implements JpaModel {
     }
 
     /**
-     * What sets an event running, and so how much of its timing a {@link Schedule} is able to state.
+     * What sets an event running, and so how much of its timing a {@link Schedule} is able to state,
+     * which makes it the field to read before trusting a walk to answer anything.
+     *
+     * <p>
+     * It sets the expectation the schedules then meet:
+     *
+     * <pre><code>
+     * { "trigger": "SKYBLOCK_CALENDAR", "schedules": [ { "anchor": ..., "phases": [ ... ] } ] }
+     * { "trigger": "UNSCHEDULED",       "schedules": [] }
+     * </code></pre>
+     *
+     * <p>
+     * Read across all five:
+     *
+     * <pre><code>
+     *   trigger             a schedule for it states
+     *   -------             ------------------------
+     *   SKYBLOCK_CALENDAR   an anchor and phases, in full
+     *   MAYOR_PERK          the calendar slots the perk fills, gated on a term
+     *   REAL_WORLD          a fixed window as anchor and phases, a moving one as prose
+     *   PLAYER_STARTED      nothing, and the schedule list is empty
+     *   UNSCHEDULED         nothing, and the schedule list is empty
+     * </code></pre>
      *
      * <p>
      * A calendar-driven event follows entirely from an anchor and a phase list. A mayoral term, a

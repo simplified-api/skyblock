@@ -58,7 +58,7 @@ public class Zone implements JpaModel {
 
     /**
      * The {@link Region} row behind {@link #regionId}, resolved on the same column and the inverse of
-     * {@link Region#getZones()}.
+     * {@link Region#zones}.
      */
     @ManyToOne
     @JoinColumn(name = "region_id", referencedColumnName = "id", insertable = false, updatable = false)

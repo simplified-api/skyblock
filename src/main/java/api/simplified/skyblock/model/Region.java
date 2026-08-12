@@ -62,7 +62,7 @@ public class Region implements JpaModel {
     private @NotNull String mode = "";
 
     /**
-     * Zones this region contains, owned by {@link Zone#getRegion()} and populated by the provider,
+     * Zones this region contains, owned by {@link Zone#region} and populated by the provider,
      * which supplies its own list implementation. It takes no part in equality, so region identity is
      * the bound columns alone.
      */
