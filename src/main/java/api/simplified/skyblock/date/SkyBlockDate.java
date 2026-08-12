@@ -29,9 +29,8 @@ import java.util.Objects;
  * An instance can be built from calendar components or from a real-time epoch value.
  * {@link #getRealTime()}, inherited from {@link SimpleDate}, reports the underlying
  * real-world epoch; {@link #getSkyBlockTime()} reports the SkyBlock milliseconds since
- * launch. The static {@link #getRealTime(Season, int, int, int)} and
- * {@link #getSkyBlockTime(Season, int, int, int)} helpers convert season coordinates to
- * either scale without an instance.
+ * launch. A calendar month is named by a {@link Season}, which carries its own month
+ * number, so a season and a month are the same coordinate under two spellings.
  *
  * <p>
  * Mayor elections run on this same clock, so {@link #getMayors(int, SkyBlockDate)} and
@@ -58,46 +57,6 @@ public class SkyBlockDate extends SimpleDate {
     public static final ConcurrentList<String> SPECIAL_MAYOR_CYCLE = Concurrent.newUnmodifiableList("SCORPIUS", "DERPY", "JERRY");
 
     /**
-     * Creates a new {@code SkyBlockDate} at the given season and day of the first SkyBlock
-     * year, with hour and minute defaulting to 0.
-     *
-     * <p>
-     * The position comes from {@link #getRealTime(Season, int, int, int)}, which carries no
-     * year term, so the result always lands in year 1.
-     *
-     * @param season the SkyBlock season (month) the offset counts from
-     * @param day the day of the season (1-31)
-     */
-    public SkyBlockDate(@NotNull Season season, @Range(from = 1, to = 31) int day) {
-        this(season, day, 0);
-    }
-
-    /**
-     * Creates a new {@code SkyBlockDate} at the given season, day and hour of the first
-     * SkyBlock year, with minute defaulting to 0.
-     *
-     * @param season the SkyBlock season (month) the offset counts from
-     * @param day the day of the season (1-31)
-     * @param hour the hour of the day (0-23)
-     */
-    public SkyBlockDate(@NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
-        this(season, day, hour, 0);
-    }
-
-    /**
-     * Creates a new {@code SkyBlockDate} at the given season, day, hour and minute of the
-     * first SkyBlock year.
-     *
-     * @param season the SkyBlock season (month) the offset counts from
-     * @param day the day of the season (1-31)
-     * @param hour the hour of the day (0-23)
-     * @param minute the minute of the hour (0-59), subtracted from the offset
-     */
-    public SkyBlockDate(@NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour, @Range(from = 0, to = 59) int minute) {
-        this(getRealTime(season, day, hour, minute), false);
-    }
-
-    /**
      * Creates a new {@code SkyBlockDate} for the given year, season, and day,
      * with hour defaulting to 0.
      *
@@ -106,7 +65,7 @@ public class SkyBlockDate extends SimpleDate {
      * @param day the day of the season (1-31)
      */
     public SkyBlockDate(int year, @NotNull Season season, @Range(from = 1, to = 31) int day) {
-        this(year, (season.ordinal() + 1), day);
+        this(year, season.getMonth(), day);
     }
 
     /**
@@ -145,7 +104,7 @@ public class SkyBlockDate extends SimpleDate {
      * @param minute the minute of the hour (0-59)
      */
     public SkyBlockDate(int year, @NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour, @Range(from = 0, to = 59) int minute) {
-        this(year, (season.ordinal() + 1), day, hour, minute);
+        this(year, season.getMonth(), day, hour, minute);
     }
 
     /**
@@ -214,7 +173,7 @@ public class SkyBlockDate extends SimpleDate {
      * @return a new date with the years and season added
      */
     public @NotNull SkyBlockDate add(int year, @NotNull Season season) {
-        return this.add(year, season.ordinal() + 1);
+        return this.add(year, season.getMonth());
     }
 
     /**
@@ -238,7 +197,7 @@ public class SkyBlockDate extends SimpleDate {
      * @return a new date with the years, season, and days added
      */
     public @NotNull SkyBlockDate add(int year, @NotNull Season season, @Range(from = 1, to = 31) int day) {
-        return this.add(year, season.ordinal() + 1, day);
+        return this.add(year, season.getMonth(), day);
     }
 
     /**
@@ -264,7 +223,7 @@ public class SkyBlockDate extends SimpleDate {
      * @return a new date with the years, season, days, and hours added
      */
     public @NotNull SkyBlockDate add(int year, @NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
-        return this.add(year, season.ordinal() + 1, day, hour);
+        return this.add(year, season.getMonth(), day, hour);
     }
 
     /**
@@ -290,61 +249,6 @@ public class SkyBlockDate extends SimpleDate {
             && this.getMonth() == that.getMonth()
             && this.getDay() == that.getDay()
             && this.getHour() == that.getHour();
-    }
-
-    /**
-     * Returns the real-time millisecond offset for the first day of the given season,
-     * with day defaulting to 1.
-     *
-     * @param season the SkyBlock season
-     * @return the real-time millisecond offset
-     */
-    public static long getRealTime(@NotNull Season season) {
-        return getRealTime(season, 1);
-    }
-
-    /**
-     * Returns the real-time millisecond offset for the given season and day,
-     * with hour defaulting to 1.
-     *
-     * @param season the SkyBlock season
-     * @param day the day of the season (1-31)
-     * @return the real-time millisecond offset
-     */
-    public static long getRealTime(@NotNull Season season, @Range(from = 1, to = 31) int day) {
-        return getRealTime(season, day, 1);
-    }
-
-    /**
-     * Returns the real-time millisecond offset for the given season, day, and hour,
-     * with minute defaulting to 0.
-     *
-     * @param season the SkyBlock season
-     * @param day the day of the season (1-31)
-     * @param hour the hour of the day (0-23)
-     * @return the real-time millisecond offset
-     */
-    public static long getRealTime(@NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
-        return getRealTime(season, day, hour, 0);
-    }
-
-    /**
-     * Returns the real-time millisecond offset for the given season, day, hour,
-     * and minute.
-     *
-     * @param season the SkyBlock season
-     * @param day the day of the season (1-31)
-     * @param hour the hour of the day (0-23)
-     * @param minute the minute of the hour (0-59), subtracted from the offset
-     * @return the real-time millisecond offset
-     */
-    public static long getRealTime(@NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour, @Range(from = 0, to = 59) int minute) {
-        long month_millis = (season.ordinal() + 1) * Length.MONTH_MS;
-        long day_millis = day * Length.DAY_MS;
-        long hour_millis = hour * Length.HOUR_MS;
-        long minute_millis = (long) (minute * Length.MINUTE_MS);
-
-        return month_millis + day_millis + hour_millis - minute_millis;
     }
 
     /**
@@ -435,56 +339,6 @@ public class SkyBlockDate extends SimpleDate {
         }
 
         return specialMayors;
-    }
-
-    /**
-     * Returns the SkyBlock elapsed millisecond offset for the first day of the given
-     * season, with day defaulting to 1.
-     *
-     * @param season the SkyBlock season
-     * @return the SkyBlock elapsed millisecond offset
-     */
-    public static long getSkyBlockTime(@NotNull Season season) {
-        return getSkyBlockTime(season, 1);
-    }
-
-    /**
-     * Returns the SkyBlock elapsed millisecond offset for the given season and day,
-     * with hour defaulting to 1.
-     *
-     * @param season the SkyBlock season
-     * @param day the day of the season (1-31)
-     * @return the SkyBlock elapsed millisecond offset
-     */
-    public static long getSkyBlockTime(@NotNull Season season, @Range(from = 1, to = 31) int day) {
-        return getSkyBlockTime(season, day, 1);
-    }
-
-    /**
-     * Returns the SkyBlock elapsed millisecond offset for the given season, day,
-     * and hour, with minute defaulting to 0.
-     *
-     * @param season the SkyBlock season
-     * @param day the day of the season (1-31)
-     * @param hour the hour of the day (0-23)
-     * @return the SkyBlock elapsed millisecond offset
-     */
-    public static long getSkyBlockTime(@NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
-        return getSkyBlockTime(season, day, hour, 0);
-    }
-
-    /**
-     * Returns the SkyBlock elapsed millisecond offset for the given season, day, hour,
-     * and minute.
-     *
-     * @param season the SkyBlock season
-     * @param day the day of the season (1-31)
-     * @param hour the hour of the day (0-23)
-     * @param minute the minute of the hour
-     * @return the SkyBlock elapsed millisecond offset
-     */
-    public static long getSkyBlockTime(@NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour, int minute) {
-        return getRealTime(season, day, hour, minute) - Launch.SKYBLOCK;
     }
 
     /**
@@ -586,7 +440,7 @@ public class SkyBlockDate extends SimpleDate {
      * @return a new date with the years and season subtracted
      */
     public @NotNull SkyBlockDate subtract(int year, @NotNull Season season) {
-        return this.subtract(year, season.ordinal() + 1);
+        return this.subtract(year, season.getMonth());
     }
 
     /**
@@ -610,7 +464,7 @@ public class SkyBlockDate extends SimpleDate {
      * @return a new date with the years, season, and days subtracted
      */
     public @NotNull SkyBlockDate subtract(int year, @NotNull Season season, @Range(from = 1, to = 31) int day) {
-        return this.subtract(year, season.ordinal() - 1, day);
+        return this.subtract(year, season.getMonth(), day);
     }
 
     /**
@@ -636,7 +490,7 @@ public class SkyBlockDate extends SimpleDate {
      * @return a new date with the years, season, days, and hours subtracted
      */
     public @NotNull SkyBlockDate subtract(int year, @NotNull Season season, @Range(from = 1, to = 31) int day, @Range(from = 0, to = 23) int hour) {
-        return this.subtract(year, season.ordinal() - 1, day, hour);
+        return this.subtract(year, season.getMonth(), day, hour);
     }
 
     /**
@@ -681,9 +535,12 @@ public class SkyBlockDate extends SimpleDate {
         public static final long MAYOR_ELECTIONS_START = new SkyBlockDate(88, Season.LATE_SUMMER, 27, 0).getRealTime();
 
         /**
-         * Late spring 27 of SkyBlock year 88, the day of the year a mayor term closes on.
+         * Late spring 27 of SkyBlock year 89, the close of the first mayor term.
+         * <p>
+         * Voting opens late summer of one year and closes late spring of the next, so the close of
+         * a term sits a year after {@link #MAYOR_ELECTIONS_START} rather than earlier in its year.
          */
-        public static final long MAYOR_ELECTIONS_END = new SkyBlockDate(88, Season.LATE_SPRING, 27, 0).getRealTime();
+        public static final long MAYOR_ELECTIONS_END = new SkyBlockDate(89, Season.LATE_SPRING, 27, 0).getRealTime();
 
         /**
          * Late summer 27 of SkyBlock year 96, the first day special mayor voting ever opened.
@@ -691,10 +548,12 @@ public class SkyBlockDate extends SimpleDate {
         public static final long SPECIAL_ELECTIONS_START = new SkyBlockDate(96, Season.LATE_SUMMER, 27, 0).getRealTime();
 
         /**
-         * Late spring 27 of SkyBlock year 96, the day of the year a special mayor term closes
-         * on.
+         * Late spring 27 of SkyBlock year 97, the close of the first special mayor term.
+         * <p>
+         * It follows {@link #SPECIAL_ELECTIONS_START} by a year for the same reason a regular term
+         * does.
          */
-        public static final long SPECIAL_ELECTIONS_END = new SkyBlockDate(96, Season.LATE_SPRING, 27, 0).getRealTime();
+        public static final long SPECIAL_ELECTIONS_END = new SkyBlockDate(97, Season.LATE_SPRING, 27, 0).getRealTime();
 
     }
 
