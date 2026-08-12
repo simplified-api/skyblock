@@ -46,7 +46,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 2.0,
           "UNCOMMON": 3.0,
@@ -94,7 +94,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 2.0,
@@ -130,7 +130,7 @@
     ],
     "stats": [
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 10.0,
           "UNCOMMON": 20.0,
@@ -166,7 +166,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 8.0,
           "UNCOMMON": 10.0,
@@ -214,7 +214,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 2.0,
@@ -274,7 +274,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 2.0,
           "UNCOMMON": 3.0,
@@ -466,7 +466,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 2.0,
@@ -527,7 +527,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 2.0,
           "UNCOMMON": 3.0,
@@ -744,7 +744,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 2.0,
           "UNCOMMON": 3.0,
@@ -1650,7 +1650,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 2.0,
@@ -1846,7 +1846,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 1.0,
@@ -2712,7 +2712,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 1.0,
@@ -2823,7 +2823,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 1.0,
@@ -2944,7 +2944,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 2.0,
@@ -3019,7 +3019,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 2.0,
           "UNCOMMON": 3.0,
@@ -3188,7 +3188,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 1.0,
@@ -3558,7 +3558,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "values": {
           "COMMON": 1.0,
           "UNCOMMON": 1.0,

@@ -249,5 +249,20 @@
     "id": "SPADE",
     "name": "Spade",
     "type": "TOOL"
+  },
+  {
+    "id": "FARMING_TOOL",
+    "name": "Farming Tool",
+    "type": "TOOL"
+  },
+  {
+    "id": "SACK",
+    "name": "Sack",
+    "type": "OTHER"
+  },
+  {
+    "id": "CAPSULE",
+    "name": "Capsule",
+    "type": "OTHER"
   }
 ]

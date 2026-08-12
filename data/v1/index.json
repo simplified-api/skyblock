@@ -1,5 +1,5 @@
 {
-  "commit_sha": "c68b6fe1f5174e9958c1581b125ef299f02ac0cf",
+  "commit_sha": "7f1ee68ff7cdd8c108a6cb0879cb3abd3b97ef61",
   "count": 41,
   "files": [
     {
@@ -21,9 +21,9 @@
       "table_name": "bits_items"
     },
     {
-      "bytes": 3686,
+      "bytes": 3908,
       "category": "items",
-      "content_sha256": "3a20e013084bfb0d4b0e663dafeec4e566a99fe9998d348238bdff2c4e2f6494",
+      "content_sha256": "b09499d5a8d0d87864a0a899d80b91d8104a0b76d1b49123bdb4f4a24b7d5751",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.ItemCategory",
       "path": "data/v1/items/item_categories.json",
@@ -213,27 +213,27 @@
       "table_name": "potions"
     },
     {
-      "bytes": 9169,
+      "bytes": 9121,
       "category": "modifiers",
-      "content_sha256": "449d4b090741e3dd89a0dee2f8d49a0ee48dcccc98342ffdeea33b1dcfaded06",
+      "content_sha256": "31a25c01baa8608526497f0d48a79e2a947520de673f5525cde0aae28f4ccf06",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Power",
       "path": "data/v1/modifiers/powers.json",
       "table_name": "powers"
     },
     {
-      "bytes": 101732,
+      "bytes": 101630,
       "category": "modifiers",
-      "content_sha256": "b6dae04d689bb6ce6702c750bdf599ef69f9a3d1845bf3483a30ebf501d0e469",
+      "content_sha256": "629ea0e14978c79f965409e26d25d4274b0be4b15dfe09aba2e392e58908347d",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Reforge",
       "path": "data/v1/modifiers/reforges.json",
       "table_name": "reforges"
     },
     {
-      "bytes": 103666,
+      "bytes": 103660,
       "category": "modifiers",
-      "content_sha256": "b5d6189448c16354624928cc9d521ef73affa721934b5d7d14414f540c2f26dc",
+      "content_sha256": "9a0ae8083ba02ba0fb3c7c16d9e223424cacbe26be88a02eab8067f6038628ef",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.ShopPerk",
       "path": "data/v1/modifiers/shop_perks.json",
@@ -285,9 +285,9 @@
       "table_name": "minions"
     },
     {
-      "bytes": 333340,
+      "bytes": 333328,
       "category": "player",
-      "content_sha256": "81bb4c89c726056d7fc03faa4cdadfc55c84be2b60d27e30572e9b257825eeef",
+      "content_sha256": "5c4daa69a19c4f4ea6708dff36af7fa079ec4c37754b26d3963dc14bc4c06318",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Pet",
       "path": "data/v1/player/pets.json",
@@ -375,6 +375,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-12T09:39:09Z",
+  "generated_at": "2026-08-12T10:09:05Z",
   "version": 1
 }

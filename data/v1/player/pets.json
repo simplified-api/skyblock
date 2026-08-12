@@ -3608,7 +3608,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "precision": 2,
         "values": {
           "LEGENDARY": {
@@ -5261,7 +5261,7 @@
         }
       },
       {
-        "id": "BONUS_ATTACK_SPEED",
+        "id": "ATTACK_SPEED",
         "precision": 2,
         "values": {
           "EPIC": {

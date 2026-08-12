@@ -1470,7 +1470,7 @@
   {
     "id": "DRAGON_REFORGES_BUFF",
     "name": "Two-Headed Strike",
-    "description": "Renowned and Spiked Reforges apply an extra %{REFORGE_ATTACK_SPEED} %{STAT:BONUS_ATTACK_SPEED} on your gear.",
+    "description": "Renowned and Spiked Reforges apply an extra %{REFORGE_ATTACK_SPEED} %{STAT:ATTACK_SPEED} on your gear.",
     "stats": [
       {
         "id": "REFORGE_ATTACK_SPEED",
