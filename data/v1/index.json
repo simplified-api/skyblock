@@ -1,5 +1,5 @@
 {
-  "commit_sha": "ba73f40bc1eb715c4a9a1eae96aa524049b92068",
+  "commit_sha": "87935bbc0ff65134ce106451f0ae944e6d81b2b8",
   "count": 41,
   "files": [
     {
@@ -249,9 +249,9 @@
       "table_name": "stat_categories"
     },
     {
-      "bytes": 16069,
+      "bytes": 17279,
       "category": "modifiers",
-      "content_sha256": "94207a4ed71e0b0a5a99637f0ba7b5f105fcdb9431b221a562b7ccef6ce4a738",
+      "content_sha256": "400d0b6a15c8ce1b331ed7fcbd8b90c26518c0dbdd8243464c0dec9c3387b917",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Stat",
       "path": "data/v1/modifiers/stats.json",
@@ -375,6 +375,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-12T07:33:44Z",
+  "generated_at": "2026-08-12T09:35:41Z",
   "version": 1
 }

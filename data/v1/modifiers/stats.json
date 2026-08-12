@@ -83,8 +83,8 @@
     "multiplicable": true
   },
   {
-    "id": "BONUS_ATTACK_SPEED",
-    "name": "Bonus Attack Speed",
+    "id": "ATTACK_SPEED",
+    "name": "Attack Speed",
     "symbol": "⚔",
     "format": "YELLOW",
     "category": "COMBAT",
@@ -92,6 +92,7 @@
     "enrichment": 0.5,
     "powerMultiplier": 0.3,
     "tuningMultiplier": 0.3,
+    "cap": 100,
     "multiplicable": false
   },
   {
@@ -113,6 +114,7 @@
     "category": "COMBAT",
     "visible": true,
     "base": 3,
+    "cap": 15,
     "multiplicable": false
   },
   {
@@ -181,6 +183,15 @@
     "id": "BONUS_PEST_CHANCE",
     "name": "Bonus Pest Chance",
     "symbol": "ൠ",
+    "format": "DARK_GREEN",
+    "category": "FARMING",
+    "visible": true,
+    "multiplicable": false
+  },
+  {
+    "id": "OVERBLOOM",
+    "name": "Overbloom",
+    "symbol": "☘",
     "format": "DARK_GREEN",
     "category": "FARMING",
     "visible": true,
@@ -286,12 +297,40 @@
     "multiplicable": false
   },
   {
+    "id": "SUNFLOWER_FORTUNE",
+    "name": "Sunflower Fortune",
+    "symbol": "☘",
+    "format": "GOLD",
+    "category": "FARMING",
+    "visible": true,
+    "multiplicable": false
+  },
+  {
+    "id": "MOONFLOWER_FORTUNE",
+    "name": "Moonflower Fortune",
+    "symbol": "☘",
+    "format": "GOLD",
+    "category": "FARMING",
+    "visible": true,
+    "multiplicable": false
+  },
+  {
+    "id": "WILD_ROSE_FORTUNE",
+    "name": "Wild Rose Fortune",
+    "symbol": "☘",
+    "format": "GOLD",
+    "category": "FARMING",
+    "visible": true,
+    "multiplicable": false
+  },
+  {
     "id": "FISHING_SPEED",
     "name": "Fishing Speed",
     "symbol": "☂",
     "format": "AQUA",
     "category": "FISHING",
     "visible": true,
+    "cap": 300,
     "multiplicable": false
   },
   {
@@ -316,7 +355,7 @@
   },
   {
     "id": "TROPHY_FISH_CHANCE",
-    "name": "Trophy Fish Chance",
+    "name": "Trophy Chance",
     "symbol": "♔",
     "format": "GOLD",
     "category": "FISHING",
@@ -357,6 +396,7 @@
     "format": "YELLOW",
     "category": "MINING",
     "visible": true,
+    "cap": 10000,
     "multiplicable": false
   },
   {
@@ -459,6 +499,15 @@
     "multiplicable": false
   },
   {
+    "id": "HELIX_FORTUNE",
+    "name": "Helix Fortune",
+    "symbol": "☘",
+    "format": "GOLD",
+    "category": "FORAGING",
+    "visible": true,
+    "multiplicable": false
+  },
+  {
     "id": "PULL",
     "name": "Pull",
     "symbol": "ᛷ",
@@ -469,7 +518,7 @@
   },
   {
     "id": "HUNTER_FORTUNE",
-    "name": "Hunter Fortune",
+    "name": "Hunting Fortune",
     "symbol": "☘",
     "format": "LIGHT_PURPLE",
     "category": "HUNTING",
@@ -487,7 +536,7 @@
   },
   {
     "id": "FARMING_WISDOM",
-    "name": "Foraging Wisdom",
+    "name": "Farming Wisdom",
     "symbol": "☯",
     "format": "DARK_AQUA",
     "category": "WISDOM",
@@ -496,7 +545,7 @@
   },
   {
     "id": "FISHING_WISDOM",
-    "name": "",
+    "name": "Fishing Wisdom",
     "symbol": "☯",
     "format": "DARK_AQUA",
     "category": "WISDOM",
@@ -606,6 +655,7 @@
     "category": "MISCELLANEOUS",
     "visible": true,
     "enrichment": 0.5,
+    "cap": 900,
     "multiplicable": true
   },
   {
@@ -663,6 +713,15 @@
     "multiplicable": false
   },
   {
+    "id": "TRACKING",
+    "name": "Tracking",
+    "symbol": "☘",
+    "format": "LIGHT_PURPLE",
+    "category": "MISCELLANEOUS",
+    "visible": true,
+    "multiplicable": false
+  },
+  {
     "id": "ABSORPTION",
     "name": "Absorption",
     "symbol": "❤",
@@ -709,7 +768,7 @@
   },
   {
     "id": "OVERFLOW",
-    "name": "Overflow",
+    "name": "Overflow Mana",
     "symbol": "⸎",
     "format": "DARK_AQUA",
     "category": "OTHER",
