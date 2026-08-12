@@ -1,6 +1,6 @@
 {
-  "commit_sha": "5766457d4ffdee0bc3930883d0a2c2e7038af63f",
-  "count": 41,
+  "commit_sha": "2a98321fae31f7e2869b80086023b3c0f341b9c6",
+  "count": 42,
   "files": [
     {
       "bytes": 82265,
@@ -312,6 +312,15 @@
       "table_name": "slayers"
     },
     {
+      "bytes": 14659,
+      "category": "world",
+      "content_sha256": "d60f6518d188bdfc8d5f6a638c9b5dc1e65266b7863142f4de4dde55d18c1a1e",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Event",
+      "path": "data/v1/world/events.json",
+      "table_name": "events"
+    },
+    {
       "bytes": 4,
       "category": "world",
       "content_sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
@@ -375,6 +384,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-12T07:32:39Z",
+  "generated_at": "2026-08-12T07:33:13Z",
   "version": 1
 }

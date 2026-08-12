@@ -54,6 +54,7 @@ MODEL_CLASS_BY_TABLE: Dict[str, str] = {
     "collections": f"{MODEL_PACKAGE}.Collection",
     "enchantments": f"{MODEL_PACKAGE}.Enchantment",
     "essences": f"{MODEL_PACKAGE}.Essence",
+    "events": f"{MODEL_PACKAGE}.Event",
     "fairy_souls": f"{MODEL_PACKAGE}.FairySoul",
     "gemstones": f"{MODEL_PACKAGE}.Gemstone",
     "hot_potato_stats": f"{MODEL_PACKAGE}.HotPotatoStat",
