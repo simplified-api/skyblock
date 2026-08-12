@@ -1,5 +1,5 @@
 {
-  "commit_sha": "46991d526775319fc79eb8518bf9a85ea4ed29f3",
+  "commit_sha": "5766457d4ffdee0bc3930883d0a2c2e7038af63f",
   "count": 41,
   "files": [
     {
@@ -330,9 +330,9 @@
       "table_name": "keywords"
     },
     {
-      "bytes": 15142,
+      "bytes": 16472,
       "category": "world",
-      "content_sha256": "99f019a63a8ce3ed60585ee9d9d6b8cc05bbb6c98b583319d95afb4c81d6a1e9",
+      "content_sha256": "5ef666fba04957243c6f790e85e15ed2c22434fe20bdc7fd3030ba9c4e304e6f",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Mayor",
       "path": "data/v1/world/mayors.json",
@@ -375,6 +375,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-07T23:00:44Z",
+  "generated_at": "2026-08-12T07:32:39Z",
   "version": 1
 }

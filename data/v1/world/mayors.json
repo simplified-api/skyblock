@@ -555,5 +555,49 @@
         ]
       }
     ]
+  },
+  {
+    "id": "DANTE_CANDIDATE",
+    "name": "Dante",
+    "special": true,
+    "perks": [
+      {
+        "id": "ECONOMY_RESTORATION",
+        "name": "Economy Restoration",
+        "description": "Auction House and Bazaar tax is %{VALUE:TAX_AMOUNT} the normal amount, shops take a %{VALUE:SHOP_TAX} cut, chatting costs %{VALUE:CHAT_FEE} coins a minute, and travelling between islands costs %{VALUE:TRAVEL_TOLL} coins.",
+        "stats": [
+          {
+            "id": "TAX_AMOUNT",
+            "precision": 0,
+            "type": "MULTIPLY",
+            "value": 2
+          },
+          {
+            "id": "SHOP_TAX",
+            "precision": 0,
+            "type": "PERCENT",
+            "value": 10
+          },
+          {
+            "id": "CHAT_FEE",
+            "precision": 0,
+            "type": "NONE",
+            "value": 10
+          },
+          {
+            "id": "TRAVEL_TOLL",
+            "precision": 0,
+            "type": "NONE",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "INCREASE_SECURITY",
+        "name": "Increase Security",
+        "description": "Goons bar the public buildings from anyone without a Happy Mask or Dante's Talisman, the sun never rises, and the Traveling Zoo, Spooky Festival and Season of Jerry do not run.",
+        "stats": []
+      }
+    ]
   }
 ]
