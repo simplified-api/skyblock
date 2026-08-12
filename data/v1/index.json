@@ -1,5 +1,5 @@
 {
-  "commit_sha": "7f1ee68ff7cdd8c108a6cb0879cb3abd3b97ef61",
+  "commit_sha": "ca348020f5d79f616a0facd35be67b6d0b341aae",
   "count": 41,
   "files": [
     {
@@ -127,9 +127,9 @@
       "category": "modifiers",
       "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
       "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusPetAbilityStat",
-      "path": "data/v1/modifiers/bonus_pet_ability_stats.json",
-      "table_name": "bonus_pet_ability_stats"
+      "model_class": "api.simplified.skyblock.model.BonusPetPerkStat",
+      "path": "data/v1/modifiers/bonus_pet_perk_stats.json",
+      "table_name": "bonus_pet_perk_stats"
     },
     {
       "bytes": 3,
@@ -375,6 +375,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-12T10:09:05Z",
+  "generated_at": "2026-08-12T10:25:37Z",
   "version": 1
 }
