@@ -1,5 +1,5 @@
 {
-  "commit_sha": "87935bbc0ff65134ce106451f0ae944e6d81b2b8",
+  "commit_sha": "c68b6fe1f5174e9958c1581b125ef299f02ac0cf",
   "count": 41,
   "files": [
     {
@@ -30,9 +30,9 @@
       "table_name": "item_categories"
     },
     {
-      "bytes": 7102271,
+      "bytes": 7082076,
       "category": "items",
-      "content_sha256": "5d441be58118ec179a412678a21858204b9213a27a57a5034d49fd05550bd1da",
+      "content_sha256": "97b48d3f489f9f594771834e5f53433090b0ba7540e60b7e6a2e3f665873b942",
       "extra_bytes": 247,
       "extra_path": "data/v1/items/items_extra.json",
       "extra_sha256": "9f4951706115426b4b8fe8d2986f210cfd80c6cfd3f6221c2ca4e90e523c2800",
@@ -258,9 +258,9 @@
       "table_name": "stats"
     },
     {
-      "bytes": 163046,
+      "bytes": 175777,
       "category": "player",
-      "content_sha256": "04eae29a10abb46f46508b419d55116d59d46bf23613e70eebc5f875b436cc3a",
+      "content_sha256": "756956ea2ab044f7159259cf7f5a70fc74d03b1a56251b60c55bf2cdb592291e",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Collection",
       "path": "data/v1/player/collections.json",
@@ -294,9 +294,9 @@
       "table_name": "pets"
     },
     {
-      "bytes": 171557,
+      "bytes": 180366,
       "category": "player",
-      "content_sha256": "da3a3b385e9aed06ca1421e34bd29718122a29b318b6e0f6840e982ca848719c",
+      "content_sha256": "565b77b0cfccbda06ac8d5c7faad2487f63b25a6e027dc1dec617df488bf2daf",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Skill",
       "path": "data/v1/player/skills.json",
@@ -375,6 +375,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-12T09:35:41Z",
+  "generated_at": "2026-08-12T09:39:09Z",
   "version": 1
 }
