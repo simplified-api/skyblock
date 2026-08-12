@@ -19,26 +19,51 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * One top-level tab of the Bestiary, the in-game record of a member's kills against every mob.
+ *
+ * <p>
+ * A category is normally a place - Your Island, the Catacombs - which is why most rows name a
+ * {@link Region}.
+ *
+ * @see <a href="https://hypixelskyblock.minecraft.wiki/w/Bestiary">Bestiary</a>
+ */
 @Getter
 @Entity
 @Table(name = "bestiary_categories")
 public class BestiaryCategory implements JpaModel {
 
+    /**
+     * The category's own id, the value a {@link BestiaryFamily} names as its category.
+     */
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
 
+    /**
+     * The label the menu shows for the category.
+     */
     @Column(name = "name", nullable = false)
     private @NotNull String name = "";
 
+    /**
+     * The region this category corresponds to, bound from the key {@code region} and absent for the
+     * categories that are not a place.
+     */
     @SerializedName("region")
     @Column(name = "region_id")
     private @NotNull Optional<String> regionId = Optional.empty();
 
+    /**
+     * The colour the menu draws the category name in.
+     */
     @Enumerated(EnumType.STRING)
     @Column(name = "format", nullable = false)
     private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GREEN;
 
+    /**
+     * The category's slot in the menu order, {@code -1} for unplaced.
+     */
     @Column(name = "ordinal", nullable = false)
     private int ordinal = -1;
 
@@ -47,6 +72,10 @@ public class BestiaryCategory implements JpaModel {
     @JoinColumn(name = "region_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @Nullable Region region;
 
+    /**
+     * The resolved {@link Region} behind the category's region id, empty for a category that is not
+     * a place.
+     */
     public @NotNull Optional<Region> getRegion() {
         return Optional.ofNullable(this.region);
     }

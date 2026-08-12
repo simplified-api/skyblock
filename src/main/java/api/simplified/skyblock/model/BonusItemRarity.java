@@ -16,31 +16,54 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * The stat contribution an {@link Item} makes purely on account of its rarity, separate from the
+ * stats printed on the item itself.
+ *
+ * <p>
+ * The table is declared and joined but ships no rows today.
+ */
 @Getter
 @Entity
 @Table(name = "bonus_item_rarities")
 public class BonusItemRarity implements JpaModel, BuffEffectsModel {
 
+    /**
+     * The item this contribution belongs to, and the row's own key; bound from the key
+     * {@code item}.
+     */
     @Id
     @SerializedName("item")
     @Column(name = "item_id", nullable = false)
     private @NotNull String itemId = "";
 
+    /**
+     * Flat stat additions the rarity grants, keyed by {@link Stat} id.
+     */
     @Column(name = "effects", nullable = false)
     private @NotNull ConcurrentMap<String, Double> effects = Concurrent.newMap();
 
+    /**
+     * Conditional or non-numeric effects keyed by name, typed loosely because the payload shape
+     * differs per effect.
+     */
     @Column(name = "buff_effects", nullable = false)
     private @NotNull ConcurrentMap<String, Object> buffEffects = Concurrent.newMap();
 
+    /**
+     * The resolved {@link Item} behind the item id.
+     */
     @ManyToOne
     @JoinColumn(name = "item_id", referencedColumnName = "id", insertable = false, updatable = false)
     private Item item;
 
+    /** {@inheritDoc} */
     @Override
     public @NotNull Map<String, Double> getEffects() {
         return this.effects;
     }
 
+    /** {@inheritDoc} */
     @Override
     public @NotNull Map<String, Object> getBuffEffects() {
         return this.buffEffects;

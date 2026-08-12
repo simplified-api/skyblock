@@ -12,24 +12,50 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+/**
+ * A pet item - the single consumable slotted onto a pet to improve it, one per pet.
+ *
+ * <p>
+ * The table ships no rows today, so a lookup against it resolves nothing; a row would say which pet
+ * item it is and what holding it grants.
+ *
+ * @see <a href="https://hypixelskyblock.minecraft.wiki/w/Pet_Items">Pet Items</a>
+ */
 @Getter
 @Entity
 @Table(name = "pet_items")
 public class PetItem implements JpaModel {
 
+    /**
+     * The pet item's id, matching the item id the wire names on the pet holding it.
+     */
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
 
+    /**
+     * Display name of the pet item.
+     */
     @Column(name = "name", nullable = false)
     private @NotNull String name = "";
 
+    /**
+     * Whether the granted values are percentages rather than flat amounts.
+     */
     @Column(name = "percentage", nullable = false)
     private boolean percentage;
 
+    /**
+     * What the item grants, as {@link Stat.Substitute} references.
+     */
     @Column(name = "stats", nullable = false)
     private @NotNull ConcurrentList<Stat.Substitute> stats = Concurrent.newList();
 
+    /**
+     * Negates the {@code percentage} flag.
+     *
+     * @return {@code true} when the granted values are flat amounts rather than percentages
+     */
     public boolean notPercentage() {
         return !this.isPercentage();
     }
