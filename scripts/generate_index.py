@@ -79,7 +79,6 @@ MODEL_CLASS_BY_TABLE: Dict[str, str] = {
     "slayers": f"{MODEL_PACKAGE}.Slayer",
     "stat_categories": f"{MODEL_PACKAGE}.StatCategory",
     "stats": f"{MODEL_PACKAGE}.Stat",
-    "zodiac_events": f"{MODEL_PACKAGE}.ZodiacEvent",
     "zones": f"{MODEL_PACKAGE}.Zone",
 }
 
