@@ -36,14 +36,6 @@ import java.util.Objects;
 public class Pet implements JpaModel {
 
     /**
-     * The unique pet counts that award each pet score milestone, in ascending order.
-     */
-    public static final @NotNull ConcurrentList<Integer> PET_SCORE = Concurrent.newList(
-        10, 25, 50, 75, 100, 130, 175,
-        225, 275, 325, 375, 450, 500
-    );
-
-    /**
      * The pet's id, matching the pet type the wire names.
      */
     @Id

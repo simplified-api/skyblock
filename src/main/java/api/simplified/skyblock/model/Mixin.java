@@ -52,6 +52,13 @@ public class Mixin implements JpaModel {
     private @NotNull ConcurrentList<String> regionIds = Concurrent.newList();
 
     /**
+     * What the mixin grants while it is active, as {@link Stat.Substitute} references whose amounts
+     * are keyed by the mixin's level.
+     */
+    @Column(name = "stats", nullable = false)
+    private @NotNull ConcurrentList<Stat.Substitute> stats = Concurrent.newList();
+
+    /**
      * The resolved {@link Item}, read from the same {@code id} column the mixin is keyed by.
      */
     @ManyToOne
@@ -72,12 +79,13 @@ public class Mixin implements JpaModel {
 
         return Objects.equals(this.getId(), that.getId())
             && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getRegionIds(), that.getRegionIds());
+            && Objects.equals(this.getRegionIds(), that.getRegionIds())
+            && Objects.equals(this.getStats(), that.getStats());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getRegionIds());
+        return Objects.hash(this.getId(), this.getName(), this.getRegionIds(), this.getStats());
     }
 
 }
