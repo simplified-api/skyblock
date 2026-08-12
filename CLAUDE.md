@@ -105,9 +105,10 @@ Everything above it (`HOUR_MS`, `DAY_MS`, `MONTH_MS`, `YEAR_MS`) is a `long` cas
 so the rounding happens once and reordering the multiplications changes results.
 
 - A year is 12 seasons of 31 days - 372 days, not 365.
-- `Launch.SKYBLOCK` is `1560275700000L`. `MAYOR_ELECTIONS_START` and `SPECIAL_ELECTIONS_START` are
-  themselves computed by constructing a `SkyBlockDate`, so a change to the conversion moves the
-  anchors it is measured against.
+- `Launch.SKYBLOCK` is `1560275700000L`, and it is the only constant `Launch` holds. Every other
+  anchor is a year on the type that owns it - `Election.FIRST_YEAR`, `SpecialElection.FIRST_YEAR`,
+  or a `Moment` in the events corpus - and each is turned into an instant by constructing a
+  `SkyBlockDate`, so a change to the conversion moves every anchor measured against it.
 - Other modules pin exact epoch millisecond values derived from these. A change here is evaluated
   against those pinned numbers, never against the expression that produces them.
 

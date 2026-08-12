@@ -3,8 +3,6 @@ package api.simplified.skyblock.date;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import dev.simplified.collection.Concurrent;
-import dev.simplified.collection.ConcurrentList;
 import dev.simplified.util.time.SimpleDate;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -32,11 +30,6 @@ import java.util.Objects;
  * launch. A calendar month is named by a {@link Season}, which carries its own month
  * number, so a season and a month are the same coordinate under two spellings.
  *
- * <p>
- * Mayor elections run on this same clock, so {@link #getMayors(int, SkyBlockDate)} and
- * {@link #getSpecialMayors(int, SkyBlockDate)} forecast them by stepping a date forward one
- * year or eight years at a time.
- *
  * @see <a href="https://hypixelskyblock.minecraft.wiki/w/Calendar">Calendar</a>
  */
 public class SkyBlockDate extends SimpleDate {
@@ -45,16 +38,6 @@ public class SkyBlockDate extends SimpleDate {
      * Pattern that renders a real-world instant as a full date with its time zone.
      */
     private static final SimpleDateFormat FULL_DATE_FORMAT = new SimpleDateFormat("MMMMM dd, yyyy HH:mm z");
-
-    /**
-     * The repeating cycle of Traveling Zoo pet types, in the order the zoo offers them.
-     */
-    public static final ConcurrentList<String> ZOO_CYCLE = Concurrent.newUnmodifiableList("ELEPHANT", "GIRAFFE", "BLUE_WHALE", "TIGER", "LION", "MONKEY");
-
-    /**
-     * The repeating cycle of special mayor names, in the order they take office.
-     */
-    public static final ConcurrentList<String> SPECIAL_MAYOR_CYCLE = Concurrent.newUnmodifiableList("SCORPIUS", "DERPY", "JERRY");
 
     /**
      * Creates a new {@code SkyBlockDate} for the given year, season, and day,
@@ -252,96 +235,6 @@ public class SkyBlockDate extends SimpleDate {
     }
 
     /**
-     * The next regular mayor {@link Election} due from the current time.
-     */
-    public static @NotNull Election getNextMayor() {
-        return getMayors(1).findFirstOrNull();
-    }
-
-    /**
-     * Collects the regular mayor {@link Election Elections} due from the current time.
-     *
-     * @param next how many upcoming elections to return, clamped to at least 1
-     * @return the upcoming regular mayor elections, in calendar order
-     */
-    public static @NotNull ConcurrentList<Election> getMayors(int next) {
-        return getMayors(next, new SkyBlockDate(System.currentTimeMillis()));
-    }
-
-    /**
-     * Collects the regular mayor {@link Election Elections} due from the given date.
-     *
-     * <p>
-     * One election is held every SkyBlock year, counting from
-     * {@link Launch#MAYOR_ELECTIONS_START}, and any whose year precedes the given date is
-     * skipped.
-     *
-     * @param next how many upcoming elections to return, clamped to at least 1
-     * @param fromDate the date to start counting from
-     * @return the upcoming regular mayor elections, in calendar order
-     */
-    public static @NotNull ConcurrentList<Election> getMayors(int next, @NotNull SkyBlockDate fromDate) {
-        next = Math.max(next, 1);
-        SkyBlockDate mayorDate = new SkyBlockDate(Launch.MAYOR_ELECTIONS_START);
-        ConcurrentList<Election> mayors = Concurrent.newList();
-
-        while (mayors.size() < next) {
-            if (mayorDate.getYear() >= fromDate.getYear())
-                mayors.add(new Election(mayorDate.getYear()));
-
-            mayorDate = mayorDate.add(1);
-        }
-
-        return mayors;
-    }
-
-    /**
-     * The next {@link SpecialElection} due from the current time.
-     */
-    public static @NotNull SpecialElection getNextSpecialMayor() {
-        return getSpecialMayors(1).findFirstOrNull();
-    }
-
-    /**
-     * Collects the {@link SpecialElection SpecialElections} due from the current time.
-     *
-     * @param next how many upcoming special elections to return, clamped to at least 1
-     * @return the upcoming special mayor elections, in calendar order
-     */
-    public static @NotNull ConcurrentList<SpecialElection> getSpecialMayors(int next) {
-        return getSpecialMayors(next, new SkyBlockDate(System.currentTimeMillis()));
-    }
-
-    /**
-     * Collects the {@link SpecialElection SpecialElections} due from the given date.
-     *
-     * <p>
-     * One is held every eighth SkyBlock year, counting from
-     * {@link Launch#SPECIAL_ELECTIONS_START} and walking {@link #SPECIAL_MAYOR_CYCLE} in
-     * order, and any whose year precedes the given date is skipped.
-     *
-     * @param next how many upcoming special elections to return, clamped to at least 1
-     * @param fromDate the date to start counting from
-     * @return the upcoming special mayor elections, in calendar order
-     */
-    public static @NotNull ConcurrentList<SpecialElection> getSpecialMayors(int next, @NotNull SkyBlockDate fromDate) {
-        next = Math.max(next, 1);
-        SkyBlockDate specialMayorDate = new SkyBlockDate(SkyBlockDate.Launch.SPECIAL_ELECTIONS_START);
-        ConcurrentList<SpecialElection> specialMayors = Concurrent.newList();
-        int iterations = 0;
-
-        while (specialMayors.size() < next) {
-            if (specialMayorDate.getYear() >= fromDate.getYear())
-                specialMayors.add(new SpecialElection(specialMayorDate.getYear(), SPECIAL_MAYOR_CYCLE.get(iterations % 3)));
-
-            specialMayorDate = specialMayorDate.add(8);
-            iterations++;
-        }
-
-        return specialMayors;
-    }
-
-    /**
      * Day of the SkyBlock month this date falls on, counted from 1.
      */
     @Override
@@ -519,42 +412,6 @@ public class SkyBlockDate extends SimpleDate {
          */
         public static final long SKYBLOCK = 1560275700000L;
 
-        /**
-         * The instant the Traveling Zoo first arrived, 66 SkyBlock years after launch.
-         */
-        public static final long ZOO = SKYBLOCK + (Length.YEAR_MS * 66);
-
-        /**
-         * The instant Jacob's farming contests returned, 114 SkyBlock years after launch.
-         */
-        public static final long JACOB = SKYBLOCK + (Length.YEAR_MS * 114);
-
-        /**
-         * Late summer 27 of SkyBlock year 88, the first day mayor voting ever opened.
-         */
-        public static final long MAYOR_ELECTIONS_START = new SkyBlockDate(88, Season.LATE_SUMMER, 27, 0).getRealTime();
-
-        /**
-         * Late spring 27 of SkyBlock year 89, the close of the first mayor term.
-         * <p>
-         * Voting opens late summer of one year and closes late spring of the next, so the close of
-         * a term sits a year after {@link #MAYOR_ELECTIONS_START} rather than earlier in its year.
-         */
-        public static final long MAYOR_ELECTIONS_END = new SkyBlockDate(89, Season.LATE_SPRING, 27, 0).getRealTime();
-
-        /**
-         * Late summer 27 of SkyBlock year 96, the first day special mayor voting ever opened.
-         */
-        public static final long SPECIAL_ELECTIONS_START = new SkyBlockDate(96, Season.LATE_SUMMER, 27, 0).getRealTime();
-
-        /**
-         * Late spring 27 of SkyBlock year 97, the close of the first special mayor term.
-         * <p>
-         * It follows {@link #SPECIAL_ELECTIONS_START} by a year for the same reason a regular term
-         * does.
-         */
-        public static final long SPECIAL_ELECTIONS_END = new SkyBlockDate(97, Season.LATE_SPRING, 27, 0).getRealTime();
-
     }
 
     /**
@@ -612,11 +469,6 @@ public class SkyBlockDate extends SimpleDate {
          * Real-time milliseconds per SkyBlock year (446,400,000ms).
          */
         public static final long YEAR_MS = MONTHS_TOTAL * MONTH_MS;
-
-        /**
-         * Real-time milliseconds per Traveling Zoo cycle (half a SkyBlock year).
-         */
-        public static final long ZOO_CYCLE_MS = YEAR_MS / 2;
 
     }
 
