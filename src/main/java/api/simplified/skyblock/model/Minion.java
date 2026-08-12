@@ -16,31 +16,57 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+/**
+ * A minion type - the worker a member places on the private island to harvest one resource from the
+ * area around it, upgradeable through a ladder of tiers that each cost more and work faster.
+ *
+ * @see <a href="https://hypixelskyblock.minecraft.wiki/w/Minions">Minions</a>
+ */
 @Getter
 @Entity
 @Table(name = "minions")
 public class Minion implements JpaModel {
 
+    /**
+     * The unique minion craft counts that unlock each further minion slot on the island, from the
+     * none the first slot needs up to the 850 the last one does.
+     */
     public static final @NotNull ConcurrentList<Integer> UNIQUE_CRAFTS = Concurrent.newList(
         0, 5, 15, 30, 50, 75,
         100, 125, 150, 175, 200, 225, 250, 275, 300, 350,
         400, 450, 500, 550, 600, 650, 700, 750, 800, 850
     );
 
+    /**
+     * The minion's id.
+     */
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
 
+    /**
+     * The name the minion is shown under.
+     */
     @Column(name = "name", nullable = false)
     private @NotNull String name = "";
 
+    /**
+     * The stored id of the collection the minion feeds - a collection group such as
+     * {@code FARMING}, so it never carries the colon a collection item id can.
+     */
     @SerializedName("collection")
     @Column(name = "collection_id", nullable = false)
     private @NotNull String collectionId = "";
 
+    /**
+     * The minion's upgrade ladder, one entry per tier.
+     */
     @Column(name = "tiers", nullable = false)
     private @NotNull ConcurrentList<Tier> tiers = Concurrent.newList();
 
+    /**
+     * The resolved {@link Collection}, read from the same column {@code collectionId} is stored in.
+     */
     @ManyToOne
     @JoinColumn(name = "collection_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Collection collection;
@@ -62,14 +88,32 @@ public class Minion implements JpaModel {
         return Objects.hash(this.getId(), this.getName(), this.getCollectionId(), this.getTiers());
     }
 
+    /**
+     * One rung of a minion's upgrade ladder.
+     */
     @Getter
     @GsonType
     public static class Tier {
 
+        /**
+         * The tier number.
+         */
         private int tier;
+
+        /**
+         * Seconds between the minion's actions, so a lower value is a faster minion.
+         */
         private double speed;
+
+        /**
+         * The stored id of the {@link Item} the minion is at this tier.
+         */
         @SerializedName("item")
         private @NotNull String itemId = "";
+
+        /**
+         * What upgrading to this tier costs.
+         */
         private @NotNull Item.Cost upgradeCost = new Item.Cost();
 
         @Override

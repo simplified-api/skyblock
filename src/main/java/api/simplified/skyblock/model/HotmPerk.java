@@ -12,21 +12,44 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+/**
+ * One node of the Heart of the Mountain, the mining skill tree unlocked in the Dwarven Mines and
+ * levelled with powder.
+ *
+ * <p>
+ * The powder a node costs is not modelled, and no nodes are supplied today, so a lookup finds
+ * nothing until the data source carries them.
+ *
+ * @see <a href="https://hypixelskyblock.minecraft.wiki/w/Heart_of_the_Mountain">Heart of the Mountain</a>
+ */
 @Getter
 @Entity
 @Table(name = "hotm_perks")
 public class HotmPerk implements JpaModel {
 
+    /**
+     * The perk's id, matching the key a member's Heart of the Mountain tree stores it under.
+     */
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
 
+    /**
+     * The perk's display name.
+     */
     @Column(name = "name", nullable = false)
     private @NotNull String name = "";
 
+    /**
+     * What the perk grants, each a reference to a {@link Stat} by id whose values are keyed by perk
+     * level.
+     */
     @Column(name = "stats", nullable = false)
     private @NotNull ConcurrentList<Stat.Substitute> stats = Concurrent.newList();
 
+    /**
+     * How far the perk can be levelled, {@code 0} for the one-shot nodes that are simply unlocked.
+     */
     @Column(name = "max_level", nullable = false)
     private int maxLevel = 0;
 

@@ -16,18 +16,34 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+/**
+ * A collection group - Farming, Mining, Combat, Foraging, Fishing or Rift - and, under it, every
+ * resource whose gathered total unlocks tiers of recipes and rewards.
+ *
+ * @see <a href="https://hypixelskyblock.minecraft.wiki/w/Collections">Collections</a>
+ */
 @Getter
 @Entity
 @Table(name = "collections")
 public class Collection implements JpaModel {
 
+    /**
+     * The group's id, one of the six skill-shaped names.
+     */
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
 
+    /**
+     * The group's display name.
+     */
     @Column(name = "name", nullable = false)
     private @NotNull String name = "";
 
+    /**
+     * Every collection in the group, keyed by collection id. That id can carry a colon, so
+     * {@code INK_SACK:3} and {@code INK_SACK} are different keys and never fold together.
+     */
     @Column(name = "items", nullable = false)
     private @NotNull ConcurrentMap<String, Item> items = Concurrent.newMap();
 
@@ -47,20 +63,41 @@ public class Collection implements JpaModel {
         return Objects.hash(this.getId(), this.getName(), this.getItems());
     }
 
+    /**
+     * One gathered resource inside a collection group, together with the tier ladder its running
+     * total climbs.
+     */
     @Getter
     @GsonType
     @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
     public static class Item {
 
+        /**
+         * The resource's display name.
+         */
         private @NotNull String name;
+
+        /**
+         * How many tiers the collection offers.
+         */
         private int maxTiers;
+
+        /**
+         * The tier ladder itself, in ascending order.
+         */
         @Getter(AccessLevel.NONE)
         private @NotNull ConcurrentList<Tier> tiers = Concurrent.newList();
 
+        /**
+         * The tier ladder itself, in ascending order.
+         */
         public @NotNull ConcurrentList<Tier> getTiers() {
             return this.tiers;
         }
 
+        /**
+         * Amount of the resource that unlocks the final tier, read off the last rung of the ladder.
+         */
         public int getMaxRequired() {
             return this.getTiers().get(this.getTiers().size() - 1).getAmountRequired();
         }
@@ -83,13 +120,28 @@ public class Collection implements JpaModel {
 
     }
 
+    /**
+     * One rung of a collection's ladder - the amount that unlocks it and what it hands out.
+     */
     @Getter
     @GsonType
     @NoArgsConstructor(access = AccessLevel.PRIVATE)
     public static class Tier {
 
+        /**
+         * The tier number, counting from one.
+         */
         private int tier;
+
+        /**
+         * Cumulative amount of the resource that unlocks this tier.
+         */
         private int amountRequired;
+
+        /**
+         * Reward lines this tier hands out - recipes and SkyBlock experience, exactly as the menu
+         * prints them.
+         */
         private @NotNull ConcurrentList<String> unlocks = Concurrent.newList();
 
         @Override
