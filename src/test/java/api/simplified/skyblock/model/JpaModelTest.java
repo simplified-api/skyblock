@@ -1,6 +1,7 @@
 package api.simplified.skyblock.model;
 
 import api.simplified.skyblock.SkyBlockData;
+import api.simplified.skyblock.date.SkyBlockDate.Length;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.Repository;
@@ -10,6 +11,10 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -93,14 +98,6 @@ public class JpaModelTest {
     void melodySong_loadsFromJson() {
         Repository<MelodySong> repo = SkyBlockData.getRepository(MelodySong.class);
         ConcurrentList<MelodySong> all = repo.findAll();
-        assertThat(all, not(empty()));
-    }
-
-    @Test
-    @Order(1)
-    void zodiacEvent_loadsFromJson() {
-        Repository<ZodiacEvent> repo = SkyBlockData.getRepository(ZodiacEvent.class);
-        ConcurrentList<ZodiacEvent> all = repo.findAll();
         assertThat(all, not(empty()));
     }
 
@@ -304,6 +301,97 @@ public class JpaModelTest {
         // @ForeignIds resolution
         assertThat(catacombsLuck.getRegions(), not(empty()));
         assertThat(catacombsLuck.getRegions().getFirst().getId(), is("THE_CATACOMBS"));
+    }
+
+    @Test
+    @Order(2)
+    void event_loadsFromJson() {
+        Repository<Event> repo = SkyBlockData.getRepository(Event.class);
+        ConcurrentList<Event> all = repo.findAll();
+        assertThat(all, not(empty()));
+
+        Event pig = repo.findFirst(Event::getId, "YEAR_OF_THE_PIG").orElseThrow();
+        assertThat(pig.getSlot().orElseThrow(), is(11));
+        assertThat(pig.getSchedules().getFirst().getPeriod(), is(Length.YEAR_MS * 12));
+
+        // @ForeignIds("mayorIds") resolution
+        Event fishingFestival = repo.findFirst(Event::getId, "FISHING_FESTIVAL").orElseThrow();
+        assertThat(fishingFestival.getMayorIds(), hasItem("FISHING_CANDIDATE"));
+        assertThat(fishingFestival.getMayors(), not(empty()));
+    }
+
+    @Test
+    @Order(2)
+    void everyMayorIdResolvesToARow() {
+        Repository<Event> repo = SkyBlockData.getRepository(Event.class);
+
+        // @ForeignIds drops an id that names no row without saying so, so the only way an
+        // unresolvable mayor surfaces is a count that disagrees with the ids beside it
+        for (Event event : repo.findAll()) {
+            assertThat(event.getId(), event.getMayors().size(), is(event.getMayorIds().size()));
+            assertThat(event.getId(), event.getSuppressedByMayors().size(), is(event.getSuppressedByMayorIds().size()));
+        }
+
+        Event travelingZoo = repo.findFirst(Event::getId, "TRAVELING_ZOO").orElseThrow();
+        assertThat(travelingZoo.getSuppressedByMayorIds(), hasItem("DANTE_CANDIDATE"));
+        assertThat(travelingZoo.getSuppressedByMayors().getFirst().getName(), is("Dante"));
+    }
+
+    @Test
+    @Order(2)
+    void triggerMatchesSchedule() {
+        Repository<Event> repo = SkyBlockData.getRepository(Event.class);
+
+        for (Event event : repo.findAll()) {
+            switch (event.getTrigger()) {
+                case SKYBLOCK_CALENDAR -> {
+                    for (Event.Schedule schedule : event.getSchedules()) {
+                        if (!schedule.isComputable()) continue;
+
+                        assertThat(event.getId(), schedule.getAnchor().orElseThrow().getClock(), is(Event.Clock.SKYBLOCK));
+
+                        for (Event.Phase phase : schedule.getPhases())
+                            assertThat(event.getId(), phase.getClock(), is(Event.Clock.SKYBLOCK));
+                    }
+                }
+                case REAL_WORLD -> {
+                    for (Event.Schedule schedule : event.getSchedules()) {
+                        if (!schedule.isComputable()) continue;
+
+                        assertThat(
+                            event.getId(),
+                            schedule.getPhases().stream().anyMatch(phase -> phase.getClock() == Event.Clock.REAL),
+                            is(true)
+                        );
+                    }
+                }
+                case MAYOR_PERK -> assertThat(event.getId(), event.getMayorIds(), not(empty()));
+                case PLAYER_STARTED, UNSCHEDULED -> assertThat(
+                    event.getId(),
+                    event.getSchedules().stream().noneMatch(Event.Schedule::isComputable),
+                    is(true)
+                );
+            }
+        }
+    }
+
+    @Test
+    @Order(2)
+    void mayorIdsMatchSchedules() {
+        Repository<Event> repo = SkyBlockData.getRepository(Event.class);
+
+        for (Event event : repo.findAll()) {
+            Set<String> scheduled = event.getSchedules()
+                .stream()
+                .map(Event.Schedule::getMayorId)
+                .flatMap(Optional::stream)
+                .collect(Collectors.toSet());
+
+            // the denormalised list is what a query reads, so it has to say exactly what the
+            // schedules say and carry no id twice
+            assertThat(event.getId(), Set.copyOf(event.getMayorIds()), is(scheduled));
+            assertThat(event.getId(), event.getMayorIds().size(), is(scheduled.size()));
+        }
     }
 
     // ---------------------------------------------------------------

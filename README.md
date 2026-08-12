@@ -105,7 +105,7 @@ pets.findFirst(Pet::getId, "AMMONITE").orElseThrow().getSkill().getId();   // "F
 | Combat | `MobType`, `BestiaryCategory`, `BestiarySubcategory`, `BestiaryFamily` |
 | Stats | `Stat`, `StatCategory`, `HotPotatoStat` |
 | Bonuses | `BonusArmorSet`, `BonusItemStat`, `BonusItemRarity`, `BonusReforgeStat`, `BonusEnchantmentStat`, `BonusPetAbilityStat` |
-| World | `Region`, `Zone`, `FairySoul`, `ShopPerk`, `Mayor`, `ZodiacEvent` |
+| World | `Region`, `Zone`, `FairySoul`, `ShopPerk`, `Mayor`, `Event` |
 | Consumables | `Potion`, `PotionGroup`, `Brew`, `Essence` |
 | Other | `Pet`, `Keyword` |
 
@@ -181,7 +181,7 @@ date.getDay();             // 27
 
 `SkyBlockDate.RealTime` and `SkyBlockDate.SkyBlockTime` are the two bindable subtypes - a wire field carrying a real epoch binds to the first, one carrying elapsed SkyBlock milliseconds to the second, and each has its own Gson adapter registered by the SPI contributor.
 
-`Launch` and `Length` hold the anchors: the launch epoch, the Traveling Zoo and Jacob's Contest starts, the first mayor and special-mayor elections, and every millisecond constant the conversions are built from. `ZOO_CYCLE` and `SPECIAL_MAYOR_CYCLE` are the two repeating rotations.
+`Launch` holds the one instant the calendar is measured from, and `Length` every millisecond constant the conversions are built from. What recurs on that calendar lives on `Event`, and the election years live on `Election` and `SpecialElection`.
 
 ### Elections
 
@@ -196,9 +196,9 @@ election.getTerm().getStart();     // the same instant voting closes
 election.getTerm().getEnd();       // late spring 27, year 280
 ```
 
-A term begins the moment voting closes, so `term.start` and `voting.end` are the same millisecond. `SpecialElection` adds the special mayor's name and folds it into identity - two special elections of one year with different mayors are not equal.
+A term begins the moment voting closes, so `term.start` and `voting.end` are the same millisecond. `SpecialElection` adds the special mayor's id and folds it into identity - two special elections of one year with different mayors are not equal.
 
-`SkyBlockDate.getNextMayor()` and `getNextSpecialMayor()` forecast forward from the cycle anchors.
+`Election.next()` and `Election.upcoming(int)` forecast forward from `Election.FIRST_YEAR`, one election a SkyBlock year. `SpecialElection` answers the same two questions every eighth year, taking the mayor from `SpecialElection.mayorIdOf(int)`, which walks `ROTATION` and consults `OVERRIDES` for the one year that stood outside it.
 
 ## Data Repository Contracts
 

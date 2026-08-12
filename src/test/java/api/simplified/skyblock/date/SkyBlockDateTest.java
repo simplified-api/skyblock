@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -58,15 +57,6 @@ class SkyBlockDateTest {
 
             assertThat(bySeason.getRealTime(), is(equalTo(byMonth.getRealTime())));
         }
-    }
-
-    @Test
-    @DisplayName("a term closes after the voting that opened it")
-    void electionWindowsRunForward() {
-        assertThat(SkyBlockDate.Launch.MAYOR_ELECTIONS_END,
-            is(greaterThan(SkyBlockDate.Launch.MAYOR_ELECTIONS_START)));
-        assertThat(SkyBlockDate.Launch.SPECIAL_ELECTIONS_END,
-            is(greaterThan(SkyBlockDate.Launch.SPECIAL_ELECTIONS_START)));
     }
 
 }

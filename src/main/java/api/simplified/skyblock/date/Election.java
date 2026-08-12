@@ -1,5 +1,7 @@
 package api.simplified.skyblock.date;
 
+import dev.simplified.collection.Concurrent;
+import dev.simplified.collection.ConcurrentList;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +29,11 @@ import java.util.Objects;
 @Getter
 @NoArgsConstructor
 public class Election {
+
+    /**
+     * SkyBlock year mayor voting first opened in, and the earliest year an election is held in.
+     */
+    public static final int FIRST_YEAR = 88;
 
     /**
      * SkyBlock year this election is held in, and the whole of its identity.
@@ -62,6 +69,51 @@ public class Election {
             new SkyBlockDate(this.getYear() + 1, Season.LATE_SPRING, 27, 0),
             new SkyBlockDate(this.getYear() + 2, Season.LATE_SPRING, 27, 0)
         );
+    }
+
+    /**
+     * Finds the next election due from the current time.
+     *
+     * @return the earliest election not behind the current SkyBlock year
+     */
+    public static @NotNull Election next() {
+        return upcoming(1).getFirst();
+    }
+
+    /**
+     * Collects the elections due from the current time.
+     *
+     * @param next how many elections to return, clamped to at least one
+     * @return the upcoming elections, in calendar order
+     */
+    public static @NotNull ConcurrentList<? extends Election> upcoming(int next) {
+        return upcoming(next, new SkyBlockDate(System.currentTimeMillis()));
+    }
+
+    /**
+     * Collects the elections due from the given date.
+     *
+     * <p>
+     * One election is held every SkyBlock year from {@link #FIRST_YEAR} onwards, and any whose year
+     * precedes the given date is skipped.
+     *
+     * <p>
+     * The result is a forecast to read rather than a list to add to, which is why its element type
+     * is bounded: {@link SpecialElection} answers the same question about the years it stands in and
+     * returns its own kind.
+     *
+     * @param next how many elections to return, clamped to at least one
+     * @param fromDate the date to start counting from
+     * @return the upcoming elections, in calendar order
+     */
+    public static @NotNull ConcurrentList<? extends Election> upcoming(int next, @NotNull SkyBlockDate fromDate) {
+        next = Math.max(next, 1);
+        ConcurrentList<Election> elections = Concurrent.newList();
+
+        for (int year = Math.max(FIRST_YEAR, fromDate.getYear()); elections.size() < next; year++)
+            elections.add(new Election(year));
+
+        return elections;
     }
 
     @Override
