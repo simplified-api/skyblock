@@ -1,5 +1,5 @@
 {
-  "commit_sha": "ca348020f5d79f616a0facd35be67b6d0b341aae",
+  "commit_sha": "19b2c716124005c7c21ee1151e26d44f565dc4aa",
   "count": 41,
   "files": [
     {
@@ -33,9 +33,9 @@
       "bytes": 7082076,
       "category": "items",
       "content_sha256": "97b48d3f489f9f594771834e5f53433090b0ba7540e60b7e6a2e3f665873b942",
-      "extra_bytes": 247,
+      "extra_bytes": 465,
       "extra_path": "data/v1/items/items_extra.json",
-      "extra_sha256": "9f4951706115426b4b8fe8d2986f210cfd80c6cfd3f6221c2ca4e90e523c2800",
+      "extra_sha256": "b006e73dd42d86ca2bbf6a0efc677cb4faad4ec765305ced594f8087d48f4bcb",
       "has_extra": true,
       "model_class": "api.simplified.skyblock.model.Item",
       "path": "data/v1/items/items.json",
@@ -375,6 +375,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-12T10:25:37Z",
+  "generated_at": "2026-08-13T01:20:47Z",
   "version": 1
 }
