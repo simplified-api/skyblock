@@ -70,7 +70,7 @@ public class FairySoul implements JpaModel {
     /**
      * The {@link Zone} resolved from {@link #zoneId}, mapped read-only onto the same column.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "zone_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Zone zone;
 

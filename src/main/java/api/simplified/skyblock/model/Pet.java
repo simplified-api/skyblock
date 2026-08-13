@@ -96,7 +96,7 @@ public class Pet implements JpaModel {
     /**
      * The resolved {@link Skill}, read from the same column {@code skillId} is stored in.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "skill_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Skill skill;
 

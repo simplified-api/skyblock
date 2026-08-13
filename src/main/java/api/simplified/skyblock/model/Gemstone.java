@@ -73,7 +73,7 @@ public class Gemstone implements JpaModel {
     /**
      * The {@link Stat} resolved from {@link #statId}, mapped read-only onto the same column.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "stat_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Stat stat;
 

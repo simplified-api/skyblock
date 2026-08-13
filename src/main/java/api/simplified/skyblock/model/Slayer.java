@@ -91,7 +91,7 @@ public class Slayer implements JpaModel {
     /**
      * The {@link MobType} row behind {@link #mobTypeId}, resolved on the same column.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "mob_type_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull MobType mobType;
 

@@ -67,7 +67,7 @@ public class Minion implements JpaModel {
     /**
      * The resolved {@link Collection}, read from the same column {@code collectionId} is stored in.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "collection_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Collection collection;
 

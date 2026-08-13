@@ -69,7 +69,7 @@ public class Accessory implements JpaModel {
     /**
      * The resolved {@link Item} this accessory decorates, joined on the shared id.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Item item;
 

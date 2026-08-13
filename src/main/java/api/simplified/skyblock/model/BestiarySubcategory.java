@@ -63,7 +63,7 @@ public class BestiarySubcategory implements JpaModel {
     /**
      * The resolved {@link BestiaryCategory} behind the category id.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull BestiaryCategory category;
 

@@ -178,7 +178,7 @@ public class Item implements JpaModel {
     /**
      * The resolved {@link ItemCategory}, read from the same column {@code categoryId} is stored in.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull ItemCategory category;
 
