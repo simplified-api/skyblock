@@ -1570,6 +1570,172 @@
     ]
   },
   {
+    "id": "CROW",
+    "name": "Crow",
+    "lowestRarity": "COMMON",
+    "skill": "COMBAT",
+    "type": "PET",
+    "maxLevel": 100,
+    "passive": false,
+    "skin": "ewogICJ0aW1lc3RhbXAiIDogMTc2MjgwMjExODUxMCwKICAicHJvZmlsZUlkIiA6ICJmODJmNTQ1MDIzZDA0MTFkYmVlYzU4YWI4Y2JlMTNjNyIsCiAgInByb2ZpbGVOYW1lIiA6ICJSZXNwb25kZW50cyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jMzFlN2UxYzYxNDYzOWJiYzk1YTBkODFmZjdlNWY3ZjYwNmQ5YjMzMTE1Y2YyYmYyYTQwY2RjYmJiNTMxMzI0IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
+    "stats": [
+      {
+        "id": "INTELLIGENCE",
+        "precision": 1,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 1.5
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 1.5
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 1.5
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 1.5
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 1.5
+          }
+        }
+      },
+      {
+        "id": "ABILITY_DAMAGE",
+        "precision": 1,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.2
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.2
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.2
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.2
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.2
+          }
+        }
+      }
+    ],
+    "perks": [
+      {
+        "id": "QUICK_HANDS",
+        "name": "Quick Hands",
+        "description": "Lowers the cooldown of your %{FORMAT:RED}Weapon %{FORMAT:GRAY}abilities by %{VALUE:REDUCE}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "REDUCE",
+            "precision": 2,
+            "type": "PERCENT",
+            "values": {
+              "COMMON": {
+                "base": 3.0,
+                "scalar": 0.07
+              },
+              "UNCOMMON": {
+                "base": 3.0,
+                "scalar": 0.07
+              },
+              "RARE": {
+                "base": 3.0,
+                "scalar": 0.07
+              },
+              "EPIC": {
+                "base": 3.0,
+                "scalar": 0.12
+              },
+              "LEGENDARY": {
+                "base": 3.0,
+                "scalar": 0.12
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "CAMOUFLAGE",
+        "name": "Camouflage",
+        "description": "After casting an ability, increase your %{STAT:DEFENSE} by %{VALUE:DEFENSE} for %{VALUE:DURATION}.\n%{FORMAT:DARK_GRAY}Capped at 500 Defense",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "DEFENSE",
+            "precision": 2,
+            "type": "PLUS_PERCENT",
+            "values": {
+              "RARE": {
+                "base": 5.0,
+                "scalar": 0.1
+              },
+              "EPIC": {
+                "base": 5.0,
+                "scalar": 0.15
+              },
+              "LEGENDARY": {
+                "base": 5.0,
+                "scalar": 0.15
+              }
+            }
+          },
+          {
+            "id": "DURATION",
+            "precision": 0,
+            "type": "SECONDS",
+            "values": {
+              "RARE": {
+                "base": 20.0,
+                "scalar": 0.0
+              },
+              "EPIC": {
+                "base": 20.0,
+                "scalar": 0.0
+              },
+              "LEGENDARY": {
+                "base": 20.0,
+                "scalar": 0.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "INSIGHTFUL",
+        "name": "Insightful",
+        "description": "Gives a %{VALUE:CHANCE} chance to not consume Mana when using an ability.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "CHANCE",
+            "precision": 2,
+            "type": "PERCENT",
+            "values": {
+              "LEGENDARY": {
+                "base": 3.0,
+                "scalar": 0.12
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "DOLPHIN",
     "name": "Dolphin",
     "lowestRarity": "COMMON",
@@ -7459,6 +7625,153 @@
     ]
   },
   {
+    "id": "ORCHID_MANTIS",
+    "name": "Orchid Mantis",
+    "lowestRarity": "COMMON",
+    "skill": "FARMING",
+    "type": "PET",
+    "maxLevel": 100,
+    "passive": false,
+    "skin": "ewogICJ0aW1lc3RhbXAiIDogMTc4MjE3MjQzMzMyOSwKICAicHJvZmlsZUlkIiA6ICJlOThhZTBlMTI5MDg0ZDA5OTk0MTg4N2Q2YTk0ZTI2NCIsCiAgInByb2ZpbGVOYW1lIiA6ICJTZXh5SGF1c2VNYXN0ZXIiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzY5MDNhOTUyMDU2NGMyMmJjNjZiMDVkMjE2MWIyM2U1NGZmOTYxMjg0ZTYzZTY4NDA2NWFlMDc4MWM5Y2Q5NyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
+    "stats": [
+      {
+        "id": "WALK_SPEED",
+        "precision": 1,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.3
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.3
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.3
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.3
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.3
+          }
+        }
+      },
+      {
+        "id": "OVERBLOOM",
+        "precision": 2,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.15
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.15
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.15
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.15
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.15
+          }
+        }
+      }
+    ],
+    "perks": [
+      {
+        "id": "INTELLIGENT_SPECIMEN",
+        "name": "Intelligent Specimen",
+        "description": "Earn %{VALUE:INCREASE} more Farming Tool Exp.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "INCREASE",
+            "precision": 1,
+            "type": "PLUS_PERCENT",
+            "values": {
+              "COMMON": {
+                "base": 0.0,
+                "scalar": 0.1
+              },
+              "UNCOMMON": {
+                "base": 0.0,
+                "scalar": 0.2
+              },
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.2
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 0.2
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "SWIFT_SICKLES",
+        "name": "Swift Sickles",
+        "description": "Convert every 3%{SYMBOL:WALK_SPEED} %{STAT:WALK_SPEED} you have above 100 into %{VALUE:FARMING_FORTUNE} %{STAT:FARMING_FORTUNE}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "FARMING_FORTUNE",
+            "precision": 3,
+            "type": "FLAT",
+            "values": {
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.005
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 0.01
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.01
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ORCHID_NECTAR",
+        "name": "Orchid Nectar",
+        "description": "You have a %{VALUE:CHANCE} chance to find Jelly or Plant Matter when farming crops.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "CHANCE",
+            "precision": 4,
+            "type": "PERCENT",
+            "values": {
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.0002
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "OWL",
     "name": "Owl",
     "lowestRarity": "LEGENDARY",
@@ -8214,6 +8527,104 @@
     ]
   },
   {
+    "id": "PRECURSOR_DRONE",
+    "name": "Precursor Drone",
+    "lowestRarity": "COMMON",
+    "skill": "COMBAT",
+    "type": "PET",
+    "maxLevel": 100,
+    "passive": false,
+    "skin": "ewogICJ0aW1lc3RhbXAiIDogMTc2NDY1OTI2MzU2NSwKICAicHJvZmlsZUlkIiA6ICI1MTAwZGZmZDI0NDI0M2I0OGQxMmVkZTVkMjgxMzk2ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJFbGVjdHJvbmljU2V4IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzUxYWFlMjg4YWI5ZDUzNTRmZGE0ZTM5NWEzNjQyMWJkMjYxYTliNjIxM2RiYjc4NmQ3YWIzOTQ2NWU0NzljZTkiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
+    "stats": [
+      {
+        "id": "SEA_CREATURE_CHANCE",
+        "precision": 1,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.1
+          }
+        }
+      },
+      {
+        "id": "MINING_FORTUNE",
+        "precision": 1,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.3
+          }
+        }
+      },
+      {
+        "id": "FORAGING_FORTUNE",
+        "precision": 1,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.3
+          }
+        }
+      }
+    ],
+    "perks": [
+      {
+        "id": "CONTRABAND",
+        "name": "Contraband",
+        "description": "Catching a %{KEYWORD:SEA_CREATURE} has a %{VALUE:CHANCE} chance to also give you %{KEYWORD:TREASURE}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "CHANCE",
+            "precision": 0,
+            "type": "PERCENT",
+            "values": {
+              "COMMON": {
+                "base": 10.0,
+                "scalar": 0.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "GRUNGLE",
+        "name": "Grungle",
+        "description": "You can now ONLY throw your Foraging Axe, but it has no throwing penalty anymore.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "DEFAULT",
+            "precision": 0,
+            "type": "NONE",
+            "values": {
+              "COMMON": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "MINING_OFF_CAMERA",
+        "name": "Mining Off Camera",
+        "description": "While mining, each collection progress grants a %{VALUE:CHANCE} chance to drop a random enchanted mining item.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "CHANCE",
+            "precision": 3,
+            "type": "PERCENT",
+            "values": {
+              "COMMON": {
+                "base": 0.005,
+                "scalar": 0.0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "RABBIT",
     "name": "Rabbit",
     "lowestRarity": "COMMON",
@@ -8915,6 +9326,146 @@
     ]
   },
   {
+    "id": "ROSE_DRAGON",
+    "name": "Rose Dragon",
+    "lowestRarity": "LEGENDARY",
+    "skill": "FARMING",
+    "type": "PET",
+    "maxLevel": 200,
+    "passive": false,
+    "skin": "ewogICJ0aW1lc3RhbXAiIDogMTc2MTE3MzAyMjM0NywKICAicHJvZmlsZUlkIiA6ICJjOWI3OWY2OGEyZGY0YjA1ODUwOWRlMzg5YjM5ZDUyYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJ3cmVlcGVyX2Jvb3AiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWI3YzNkZTA3NWEyYmIyMzhlZjUxNDMxMjA2YjEwZDU4NmNiMmE1YjFjYzQxZmU4NTFjYzVmMGIwMmQzNTdjNyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
+    "stats": [
+      {
+        "id": "WALK_SPEED",
+        "precision": 1,
+        "values": {
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.5
+          }
+        }
+      },
+      {
+        "id": "FARMING_FORTUNE",
+        "precision": 1,
+        "values": {
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.2
+          }
+        }
+      }
+    ],
+    "perks": [
+      {
+        "id": "GARDEN_POWER",
+        "name": "Garden Power",
+        "description": "Grants %{VALUE:FARMING_FORTUNE} %{STAT:FARMING_FORTUNE} per Farming level.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "FARMING_FORTUNE",
+            "precision": 3,
+            "type": "FLAT",
+            "values": {
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.015
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ROSY_SCALES",
+        "name": "Rosy Scales",
+        "description": "Grants %{VALUE:FARMING_FORTUNE} %{STAT:FARMING_FORTUNE} and %{VALUE:WALK_SPEED} %{STAT:WALK_SPEED} per Crop Milestone.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "FARMING_FORTUNE",
+            "precision": 5,
+            "type": "FLAT",
+            "values": {
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.00075
+              }
+            }
+          },
+          {
+            "id": "WALK_SPEED",
+            "precision": 4,
+            "type": "FLAT",
+            "values": {
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.0005
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "DRAGONS_GLUTTONY",
+        "name": "Dragon's Gluttony",
+        "description": "Grants %{VALUE:OVERBLOOM} %{STAT:OVERBLOOM}.",
+        "flatStat": true,
+        "stats": [
+          {
+            "id": "OVERBLOOM",
+            "precision": 1,
+            "type": "FLAT",
+            "values": {
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "SPIRITUAL_PERFECTION",
+        "name": "Spiritual Perfection",
+        "description": "Gain %{VALUE:MORE_COPPER} more Copper from Garden Visitors and from analyzing Mutations.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "MORE_COPPER",
+            "precision": 1,
+            "type": "PERCENT",
+            "values": {
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "SYMBIOSIS",
+        "name": "Symbiosis",
+        "description": "If you own a max level %{PET:ROSE_DRAGON}, grants %{VALUE:FARMING_FORTUNE} for every other unique maxed Farming Pet that you own.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "FARMING_FORTUNE",
+            "precision": 0,
+            "type": "FLAT",
+            "values": {
+              "LEGENDARY": {
+                "base": 3.0,
+                "scalar": 0.0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "SCATHA",
     "name": "Scatha",
     "lowestRarity": "RARE",
@@ -9026,6 +9577,179 @@
               "LEGENDARY": {
                 "base": 0.0,
                 "scalar": 0.2
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SEAL",
+    "name": "Seal",
+    "lowestRarity": "COMMON",
+    "skill": "FISHING",
+    "type": "PET",
+    "maxLevel": 100,
+    "passive": false,
+    "skin": "ewogICJ0aW1lc3RhbXAiIDogMTc3MDE2MTI5MjM4NiwKICAicHJvZmlsZUlkIiA6ICIzMjFjNTBiMjJhY2Q0OGUxOGEyMGU0N2I2ZThhYjE2ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJsaWdodDEzMzM3IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNhNzcyOGJiZjZmNTNmNmMxZTNiMTIxNzc4ZTJjMjE3NWY2YzI3MDMyZGJkOWE1ZmIzYTBkODc0N2UxMDRmNjciLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
+    "stats": [
+      {
+        "id": "FISHING_SPEED",
+        "precision": 2,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.35
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.35
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.35
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.35
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.35
+          }
+        }
+      },
+      {
+        "id": "SEA_CREATURE_CHANCE",
+        "precision": 2,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.05
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.05
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.05
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.05
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.05
+          }
+        }
+      },
+      {
+        "id": "TREASURE_CHANCE",
+        "precision": 2,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.01
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.01
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.01
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.01
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.01
+          }
+        }
+      }
+    ],
+    "perks": [
+      {
+        "id": "SHOWBOATER",
+        "name": "Showboater",
+        "description": "Increases your chance of catching %{FORMAT:DARK_PURPLE}Bouncy Beach Balls %{FORMAT:GRAY}and %{FORMAT:GOLD}Giant Bouncy Beach Balls %{FORMAT:GRAY}during the %{FORMAT:BLUE}Year of the Seal %{FORMAT:GRAY}by %{VALUE:CHANCE}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "CHANCE",
+            "precision": 2,
+            "type": "PERCENT",
+            "values": {
+              "COMMON": {
+                "base": 0.0,
+                "scalar": 0.5
+              },
+              "UNCOMMON": {
+                "base": 0.0,
+                "scalar": 0.75
+              },
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.75
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 1.0
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 1.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "PEAK_PERFORMANCE",
+        "name": "Peak Performance",
+        "description": "Gain a %{VALUE:CHANCE} chance to materialize some %{FORMAT:BLUE}Treasure Bait %{FORMAT:GRAY}in your inventory upon catching %{KEYWORD:TREASURE}.\nMaterializes %{FORMAT:GREEN}Golden Bait %{FORMAT:GRAY}instead during the %{FORMAT:BLUE}Year of the Seal%{FORMAT:GRAY}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "CHANCE",
+            "precision": 3,
+            "type": "PERCENT",
+            "values": {
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.035
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 0.05
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.05
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "AMPHIBIOUS",
+        "name": "Amphibious",
+        "description": "Increases the base stats of this pet by %{VALUE:MORE_STATS} during the %{FORMAT:BLUE}Year of the Seal%{FORMAT:GRAY}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "MORE_STATS",
+            "precision": 0,
+            "type": "PERCENT",
+            "values": {
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 1.0
               }
             }
           }
@@ -9585,6 +10309,199 @@
               "LEGENDARY": {
                 "base": 0.0,
                 "scalar": 0.4
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SLOTH",
+    "name": "Sloth",
+    "lowestRarity": "COMMON",
+    "skill": "FORAGING",
+    "type": "PET",
+    "maxLevel": 100,
+    "passive": false,
+    "skin": "ewogICJ0aW1lc3RhbXAiIDogMTc4MzY5MzIzNzg5MSwKICAicHJvZmlsZUlkIiA6ICI4YmM3MjdlYThjZjA0YWUzYTI4MDVhY2YzNjRjMmQyNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJub3RpbnZlbnRpdmUiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTQ2ODUzN2UxZTk5MDQwYjc2MGM4M2U1MzA5NmM4Njg3MGNkY2Q5Mjg1ZDUzMzAwNzYxZDBlMzZmZjllMTkyZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9",
+    "stats": [
+      {
+        "id": "SWEEP",
+        "precision": 2,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.25
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.25
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.25
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.25
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.25
+          }
+        }
+      },
+      {
+        "id": "FORAGING_FORTUNE",
+        "precision": 2,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.25
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.25
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.25
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.25
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.25
+          }
+        }
+      }
+    ],
+    "perks": [
+      {
+        "id": "SLOW_START",
+        "name": "Slow Start",
+        "description": "Every %{FORMAT:GREEN}60s%{FORMAT:GRAY}, your next cut gains %{VALUE:SWEEP} %{STAT:SWEEP} and %{VALUE:FORAGING_FORTUNE} %{STAT:FORAGING_FORTUNE}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "SWEEP",
+            "precision": 2,
+            "type": "FLAT",
+            "values": {
+              "COMMON": {
+                "base": 0.0,
+                "scalar": 0.15
+              },
+              "UNCOMMON": {
+                "base": 0.0,
+                "scalar": 0.2
+              },
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.2
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 0.25
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.25
+              }
+            }
+          },
+          {
+            "id": "FORAGING_FORTUNE",
+            "precision": 1,
+            "type": "FLAT",
+            "values": {
+              "COMMON": {
+                "base": 0.0,
+                "scalar": 0.3
+              },
+              "UNCOMMON": {
+                "base": 0.0,
+                "scalar": 0.4
+              },
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.4
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 0.5
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.5
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "STRONK_ARM",
+        "name": "Stronk Arm",
+        "description": "Gains %{VALUE:SWEEP} %{STAT:SWEEP} and %{VALUE:FORAGING_FORTUNE} %{STAT:FORAGING_FORTUNE} on %{FORMAT:DARK_GREEN}Axe %{FORMAT:GRAY}throws.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "SWEEP",
+            "precision": 1,
+            "type": "FLAT",
+            "values": {
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.2
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 0.4
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.4
+              }
+            }
+          },
+          {
+            "id": "FORAGING_FORTUNE",
+            "precision": 1,
+            "type": "FLAT",
+            "values": {
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.5
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 1.0
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 1.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "STARLYNS_FAVORITE",
+        "name": "Starlyn's Favorite",
+        "description": "Cutting %{FORMAT:GREEN}Trees %{FORMAT:GRAY}give %{VALUE:INCREASE} more points towards %{FORMAT:LIGHT_PURPLE}Starlyn Contests%{FORMAT:GRAY}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "INCREASE",
+            "precision": 1,
+            "type": "PERCENT",
+            "values": {
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.2
               }
             }
           }
@@ -12140,6 +13057,153 @@
               "LEGENDARY": {
                 "base": 10.0,
                 "scalar": 0.1
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "WITCH",
+    "name": "Witch",
+    "lowestRarity": "COMMON",
+    "skill": "ALCHEMY",
+    "type": "PET",
+    "maxLevel": 100,
+    "passive": false,
+    "skin": "ewogICJ0aW1lc3RhbXAiIDogMTc2NzgxNDI4Mjk0OCwKICAicHJvZmlsZUlkIiA6ICIyY2Y2MzExZjUyMTM0NTE2YTEyNTY3NWUwMzk3NmU2MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJmaWdodHN0b2NrIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhZjgxOGIwNGQ2YWU5OGE2OWFkOGQ5NDYzZDhkMDM3OTkyMWQzZWI3OTIyMmUxYzYyNzJmNjUzNzJkODA3NzUiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
+    "stats": [
+      {
+        "id": "INTELLIGENCE",
+        "precision": 0,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 1.0
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 1.0
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 1.0
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 1.0
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 1.0
+          }
+        }
+      },
+      {
+        "id": "ALCHEMY_WISDOM",
+        "precision": 2,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.05
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.05
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.05
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.05
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.05
+          }
+        }
+      }
+    ],
+    "perks": [
+      {
+        "id": "TOIL_AND_TROUBLE",
+        "name": "Toil and Trouble",
+        "description": "Increases your chance of dropping Ingredients during the %{KEYWORD:YEAR_OF_THE_WITCH} by %{VALUE:CHANCE}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "CHANCE",
+            "precision": 2,
+            "type": "PERCENT",
+            "values": {
+              "COMMON": {
+                "base": 0.0,
+                "scalar": 0.5
+              },
+              "UNCOMMON": {
+                "base": 0.0,
+                "scalar": 0.75
+              },
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.75
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 1.0
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 1.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ALCHEMISM",
+        "name": "Alchemism",
+        "description": "Reduces how long Potions take to brew by %{VALUE:REDUCE}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "REDUCE",
+            "precision": 1,
+            "type": "PERCENT",
+            "values": {
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.4
+              },
+              "EPIC": {
+                "base": 0.0,
+                "scalar": 0.5
+              },
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 0.5
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "WITCHING_HOUR",
+        "name": "Witching Hour",
+        "description": "Increases the base stats of this pet by %{VALUE:INCREASE} during the %{KEYWORD:YEAR_OF_THE_WITCH}.",
+        "flatStat": false,
+        "stats": [
+          {
+            "id": "INCREASE",
+            "precision": 0,
+            "type": "PERCENT",
+            "values": {
+              "LEGENDARY": {
+                "base": 0.0,
+                "scalar": 1.0
               }
             }
           }
