@@ -1502,7 +1502,7 @@
   {
     "id": "DRAIN",
     "name": "Drain",
-    "description": "Heals for %{VALUE:HEAL} of your max health per %{VALUE:PER_CD} %{STAT:CRIT_DAMAGE} you deal per hit, up to %{VALUE:MAX_CD} %{STAT:CRIT_DAMAGE}.",
+    "description": "Regen %{VALUE:REGEN} %{STAT:VITALITY} every time you hit a mob.\n%{FORMAT:DARK_GRAY}(1s cooldown)",
     "type": "NORMAL",
     "requiredLevel": 15,
     "conflict": "STEAL",
@@ -1546,39 +1546,15 @@
     ],
     "stats": [
       {
-        "id": "HEAL",
+        "id": "REGEN",
         "precision": 1,
-        "type": "PERCENT",
+        "type": "FLAT",
         "values": {
-          "1": 0.2,
-          "2": 0.3,
-          "3": 0.4,
-          "4": 0.5,
-          "5": 0.6
-        }
-      },
-      {
-        "id": "PER_CD",
-        "precision": 1,
-        "type": "NONE",
-        "values": {
-          "1": 100,
-          "2": 100,
-          "3": 100,
-          "4": 100,
-          "5": 100
-        }
-      },
-      {
-        "id": "MAX_CD",
-        "precision": 1,
-        "type": "NONE",
-        "values": {
-          "1": 1000,
-          "2": 1000,
-          "3": 1000,
-          "4": 1000,
-          "5": 1000
+          "1": 0.5,
+          "2": 1,
+          "3": 1.5,
+          "4": 2,
+          "5": 2.5
         }
       }
     ]

@@ -351,11 +351,11 @@
         "values": {
           "EPIC": {
             "base": 0.0,
-            "scalar": 0.4
+            "scalar": 0.5
           },
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.4
+            "scalar": 0.5
           }
         }
       }
@@ -4500,6 +4500,10 @@
           "LEGENDARY": {
             "base": 0.0,
             "scalar": 0.1
+          },
+          "MYTHIC": {
+            "base": 0.0,
+            "scalar": 0.1
           }
         }
       },
@@ -4526,6 +4530,10 @@
           "LEGENDARY": {
             "base": 0.0,
             "scalar": 0.5
+          },
+          "MYTHIC": {
+            "base": 0.0,
+            "scalar": 0.5
           }
         }
       }
@@ -4534,7 +4542,7 @@
       {
         "id": "ODYSSEY",
         "name": "Odyssey",
-        "description": "%{KEYWORDS:MYTHOLOGICAL_CREATURE} you find and burrows you dig scale in %{FORMAT:RED}difficulty %{FORMAT:GRAY}and %{FORMAT:GOLD}rewards %{FORMAT:GRAY}based on your equipped Griffin's rarity.",
+        "description": "%{VALUE:DEFAULT} types of %{KEYWORDS:MYTHOLOGICAL_CREATURE} can spawn from Griffin Burrows. Their stats scale with this pet's rarity.",
         "flatStat": false,
         "stats": [
           {
@@ -4542,87 +4550,60 @@
             "precision": 0,
             "type": "NONE",
             "values": {
-              "COMMON": {},
-              "UNCOMMON": {},
-              "RARE": {},
-              "EPIC": {},
-              "LEGENDARY": {}
+              "COMMON": {
+                "base": 10.0,
+                "scalar": 0.0
+              },
+              "UNCOMMON": {
+                "base": 10.0,
+                "scalar": 0.0
+              },
+              "RARE": {
+                "base": 10.0,
+                "scalar": 0.0
+              },
+              "EPIC": {
+                "base": 10.0,
+                "scalar": 0.0
+              },
+              "LEGENDARY": {
+                "base": 10.0,
+                "scalar": 0.0
+              },
+              "MYTHIC": {
+                "base": 12.0,
+                "scalar": 0.0
+              }
             }
           }
         ]
       },
       {
-        "id": "LEGENDARY_CONSTITUTION",
-        "name": "Legendary Constitution",
-        "description": "Permanent %{EFFECT:REGENERATION} %{VALUE:REGEN} and %{EFFECT:STRENGTH} %{VALUE:STR}.",
+        "id": "SACRED_STRENGTH",
+        "name": "Sacred Strength",
+        "description": "Gain %{VALUE:STR} %{STAT:STRENGTH} when above 85% of your maximum %{STAT:HEALTH}.",
         "flatStat": false,
         "stats": [
-          {
-            "id": "REGEN",
-            "precision": 0,
-            "type": "NONE",
-            "values": {
-              "UNCOMMON": {
-                "base": 5.0,
-                "scalar": 0.0
-              },
-              "RARE": {
-                "base": 6.0,
-                "scalar": 0.0
-              },
-              "EPIC": {
-                "base": 6.0,
-                "scalar": 0.0
-              },
-              "LEGENDARY": {
-                "base": 7.0,
-                "scalar": 0.0
-              }
-            }
-          },
           {
             "id": "STR",
-            "precision": 0,
-            "type": "NONE",
-            "values": {
-              "UNCOMMON": {
-                "base": 7.0,
-                "scalar": 0.0
-              },
-              "RARE": {
-                "base": 7.0,
-                "scalar": 0.0
-              },
-              "EPIC": {
-                "base": 8.0,
-                "scalar": 0.0
-              },
-              "LEGENDARY": {
-                "base": 8.0,
-                "scalar": 0.0
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "PERPETUAL_EMPATHY",
-        "name": "Perpetual Empathy",
-        "description": "Heal nearby players for %{VALUE:DEFAULT} of the final damage you receive.\n%{FORMAT:DARK_GRAY}Excludes other griffins.",
-        "flatStat": false,
-        "stats": [
-          {
-            "id": "DEFAULT",
             "precision": 2,
             "type": "PERCENT",
             "values": {
+              "RARE": {
+                "base": 0.0,
+                "scalar": 0.1
+              },
               "EPIC": {
                 "base": 0.0,
-                "scalar": 0.16
+                "scalar": 0.15
               },
               "LEGENDARY": {
                 "base": 0.0,
-                "scalar": 0.2
+                "scalar": 0.15
+              },
+              "MYTHIC": {
+                "base": 0.0,
+                "scalar": 0.15
               }
             }
           }
@@ -4631,27 +4612,39 @@
       {
         "id": "KING_OF_KINGS",
         "name": "King of Kings",
-        "description": "Gain %{VALUE:STRENGTH} %{STAT:STRENGTH} when about %{VALUE:HEALTH} health.",
+        "description": "Grants %{VALUE:MYTHOLOGICAL_MAGIC_FIND} %{STAT:MAGIC_FIND} on %{KEYWORDS:MYTHOLOGICAL_CREATURE}.",
         "flatStat": false,
         "stats": [
           {
-            "id": "STRENGTH",
-            "precision": 2,
-            "type": "PERCENT",
+            "id": "MYTHOLOGICAL_MAGIC_FIND",
+            "precision": 1,
+            "type": "FLAT",
             "values": {
               "LEGENDARY": {
-                "base": 1.0,
-                "scalar": 0.14
+                "base": 0.0,
+                "scalar": 0.2
+              },
+              "MYTHIC": {
+                "base": 0.0,
+                "scalar": 0.2
               }
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "ANCIENT_EARTH",
+        "name": "Ancient Earth",
+        "description": "Grants %{VALUE:PER_BURROW} %{STAT:TRACKING} on Griffin Burrows for each burrow excavated in your current chain.",
+        "flatStat": true,
+        "stats": [
           {
-            "id": "HEALTH",
+            "id": "PER_BURROW",
             "precision": 0,
-            "type": "PERCENT",
+            "type": "FLAT",
             "values": {
-              "LEGENDARY": {
-                "base": 85.0,
+              "MYTHIC": {
+                "base": 1.0,
                 "scalar": 0.0
               }
             }
@@ -6369,7 +6362,7 @@
       },
       {
         "id": "DEFENSE",
-        "precision": 4,
+        "precision": 2,
         "values": {
           "COMMON": {
             "base": 0.0,
@@ -8273,43 +8266,49 @@
             "scalar": 0.15
           }
         }
+      },
+      {
+        "id": "POTATO_FORTUNE",
+        "precision": 2,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
+            "scalar": 0.2
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.2
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.2
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.2
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.2
+          }
+        }
       }
     ],
     "perks": [
       {
-        "id": "RIDABLE",
-        "name": "Ridable",
-        "description": "%{KEYWORD:RIDABLE}",
+        "id": "HAMFISTED",
+        "name": "Hamfisted",
+        "description": "Increases Coin gain from Shiny Pigs by %{VALUE:DEFAULT}.",
         "flatStat": false,
         "stats": [
           {
             "id": "DEFAULT",
-            "precision": 0,
-            "type": "NONE",
-            "values": {
-              "COMMON": {},
-              "UNCOMMON": {},
-              "RARE": {},
-              "EPIC": {},
-              "LEGENDARY": {}
-            }
-          }
-        ]
-      },
-      {
-        "id": "RUN",
-        "name": "Run",
-        "description": "Increases the speed of your mount by %{VALUE:DEFAULT}.",
-        "flatStat": false,
-        "stats": [
-          {
-            "id": "DEFAULT",
-            "precision": 1,
+            "precision": 2,
             "type": "PERCENT",
             "values": {
               "COMMON": {
                 "base": 0.0,
-                "scalar": 0.3
+                "scalar": 0.2
               },
               "UNCOMMON": {
                 "base": 0.0,
@@ -8332,46 +8331,46 @@
         ]
       },
       {
-        "id": "SPRINT",
-        "name": "Sprint",
-        "description": "While holding an %{ITEM:ENCHANTED_CARROT_ON_A_STICK}, increases the speed of your mount by %{VALUE:DEFAULT}.",
+        "id": "SHINING_STAMPEDE",
+        "name": "Shining Stampede",
+        "description": "Grants %{VALUE:PER_TIER} %{STAT:POTATO_FORTUNE} per Shiny Pig Bestiary tier.",
         "flatStat": false,
         "stats": [
           {
-            "id": "DEFAULT",
-            "precision": 1,
-            "type": "PERCENT",
+            "id": "PER_TIER",
+            "precision": 2,
+            "type": "FLAT",
             "values": {
               "RARE": {
                 "base": 0.0,
-                "scalar": 0.4
+                "scalar": 0.04
               },
               "EPIC": {
                 "base": 0.0,
-                "scalar": 0.5
+                "scalar": 0.05
               },
               "LEGENDARY": {
                 "base": 0.0,
-                "scalar": 0.5
+                "scalar": 0.05
               }
             }
           }
         ]
       },
       {
-        "id": "TRAMPLE",
-        "name": "Trample",
-        "description": "Your pig will break all crops that it walks over while on your pivate island or Garden. While riding, %{STAT:FARMING_FORTUNE} and %{FORMAT:GREEN}Farming Exp %{FORMAT:GRAY}gain is reduced by %{VALUE:REDUCED}.",
+        "id": "PIG_PARADE",
+        "name": "Pig Parade",
+        "description": "Increases the base stats of this pet by %{VALUE:INCREASE} during the Year of the Pig.",
         "flatStat": false,
         "stats": [
           {
-            "id": "REDUCED",
-            "precision": 0,
+            "id": "INCREASE",
+            "precision": 2,
             "type": "PERCENT",
             "values": {
               "LEGENDARY": {
-                "base": 75.0,
-                "scalar": 0.0
+                "base": 0.0,
+                "scalar": 1.0
               }
             }
           }
@@ -11238,6 +11237,16 @@
             "scalar": 0.05
           }
         }
+      },
+      {
+        "id": "TROPHY_FISH_CHANCE",
+        "precision": 2,
+        "values": {
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.05
+          }
+        }
       }
     ],
     "perks": [
@@ -11263,17 +11272,17 @@
       {
         "id": "PURSUIT",
         "name": "Pursuit",
-        "description": "Gain %{VALUE:MAGIC_FIND} %{STAT:MAGIC_FIND} against %{KEYWORDS:SEA_CREATURE}.",
+        "description": "Increases the chance of catching %{FORMAT:GOLD}Gold %{FORMAT:GRAY}and %{FORMAT:AQUA}Diamond %{FORMAT:GRAY}tier Trophy Fish by %{VALUE:CHANCE}.",
         "flatStat": false,
         "stats": [
           {
-            "id": "MAGIC_FIND",
+            "id": "CHANCE",
             "precision": 2,
-            "type": "FLAT",
+            "type": "PERCENT",
             "values": {
               "LEGENDARY": {
                 "base": 0.0,
-                "scalar": 0.08
+                "scalar": 0.1
               }
             }
           }
