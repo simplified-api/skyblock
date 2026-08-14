@@ -1,5 +1,5 @@
 {
-  "commit_sha": "31eb02a61c3619fd2d8860ff0eaf7091e0f79e6d",
+  "commit_sha": "02812965426a0c0c92dbe7a4bdf7eae1e9f3b8ce",
   "count": 34,
   "files": [
     {
@@ -96,9 +96,9 @@
       "table_name": "buffs"
     },
     {
-      "bytes": 162916,
+      "bytes": 162912,
       "category": "modifiers",
-      "content_sha256": "130708f5dba0b8f28b944061777a57bc67984b421848d23072eb53ca4dad3005",
+      "content_sha256": "4598ae33024242b9ed62377809683007df439c6ee8ca9f6337252f8a9a0581d1",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Enchantment",
       "path": "data/v1/modifiers/enchantments.json",
@@ -312,6 +312,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-14T02:25:35Z",
+  "generated_at": "2026-08-14T03:19:38Z",
   "version": 1
 }
