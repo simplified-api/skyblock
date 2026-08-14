@@ -1,5 +1,9 @@
 name: Regenerate Index
 
+# The index names both a data file and the model class that binds it, so the job
+# watches the corpus and the model sources alike: a rename in either one stales
+# the index.
+#
 # Pull requests run the generator in --check mode: a PR whose data/v1/index.json
 # is out of sync with the tree fails the check, forcing the contributor to run
 # `python scripts/generate_index.py` locally and push the updated index as part
@@ -8,18 +12,23 @@ name: Regenerate Index
 # Pushes to master run the generator in write mode and commit the refreshed
 # index back to master if it changed. This covers direct pushes and merged
 # squashes that did not carry a refreshed index.
+#
+# The generator reads Java source as text, so both jobs need Python alone - no
+# JDK step and no Gradle step belongs here.
 
 on:
   push:
     branches: [master]
     paths:
       - 'data/v1/**'
+      - 'src/main/java/api/simplified/skyblock/model/**'
       - 'scripts/generate_index.py'
       - '.github/workflows/regenerate-index.yml'
   pull_request:
     branches: [master]
     paths:
       - 'data/v1/**'
+      - 'src/main/java/api/simplified/skyblock/model/**'
       - 'scripts/generate_index.py'
       - '.github/workflows/regenerate-index.yml'
 
