@@ -1,6 +1,5 @@
 package api.simplified.skyblock.model;
 
-import api.simplified.skyblock.date.Election;
 import api.simplified.skyblock.date.Season;
 import api.simplified.skyblock.date.SkyBlockDate.Length;
 import api.simplified.skyblock.date.SkyBlockDate;
@@ -89,6 +88,12 @@ class EventTest {
         }
         """;
 
+    /**
+     * The SkyBlock year mayor voting first opened in, which the fixture names as its schedule anchor
+     * and the walk counts its occurrences from.
+     */
+    private static final long FIRST_ELECTION_YEAR = 88;
+
     private static Gson gson() {
         // the string type connect derives, so a fixture binds the way the corpus does
         return GsonSettings.defaults()
@@ -100,20 +105,22 @@ class EventTest {
 
     @Test
     @DisplayName("the mayor election schedule reproduces the election arithmetic to the millisecond")
-    void mayorElectionMatchesElection() {
+    void mayorElectionMatchesTheVotingWindow() {
         Event event = gson().fromJson(MAYOR_ELECTION, Event.class);
-        Election.Cycle voting = new Election(278).getVoting();
         Event.Occurrence occurrence = event.getOccurrenceAt(1684145700000L).orElseThrow();
 
-        // the same two instants the election reports, asserted against both the literals and the
-        // election, so either side drifting fails here
+        // voting opens late summer 27 of its year and closes late spring 27 of the next, asserted
+        // against both the literals and the calendar arithmetic, so either side drifting fails here
+        SkyBlockDate votingStart = new SkyBlockDate(278, Season.LATE_SUMMER, 27, 0);
+        SkyBlockDate votingEnd = new SkyBlockDate(279, Season.LATE_SPRING, 27, 0);
+
         assertThat(occurrence.getStart(), is(equalTo(1684145700000L)));
         assertThat(occurrence.getEnd(), is(equalTo(1684480500000L)));
-        assertThat(occurrence.getStart(), is(equalTo(voting.getStart().getRealTime())));
-        assertThat(occurrence.getEnd(), is(equalTo(voting.getEnd().getRealTime())));
+        assertThat(occurrence.getStart(), is(equalTo(votingStart.getRealTime())));
+        assertThat(occurrence.getEnd(), is(equalTo(votingEnd.getRealTime())));
 
         // one run per SkyBlock year, counted from the year voting first opened
-        assertThat(occurrence.getIndex(), is(equalTo(278L - Election.FIRST_YEAR)));
+        assertThat(occurrence.getIndex(), is(equalTo(278L - FIRST_ELECTION_YEAR)));
     }
 
     @Test
