@@ -266,19 +266,19 @@
     ],
     "levels": [
       {
-        "level": 1,
+        "level": 3,
         "cost": {
           "experience": 60
         }
       },
       {
-        "level": 2,
+        "level": 4,
         "cost": {
           "experience": 80
         }
       },
       {
-        "level": 3,
+        "level": 5,
         "cost": {
           "experience": 100
         }
@@ -290,9 +290,9 @@
         "precision": 0,
         "type": "FLAT",
         "values": {
-          "1": 15,
-          "2": 20,
-          "3": 25
+          "3": 15,
+          "4": 20,
+          "5": 25
         }
       }
     ]
@@ -1185,12 +1185,12 @@
         "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 10,
-          "2": 20,
-          "3": 30,
-          "4": 40,
-          "5": 60,
-          "6": 80
+          "1": 5,
+          "2": 10,
+          "3": 15,
+          "4": 20,
+          "5": 30,
+          "6": 40
         }
       }
     ]
@@ -2729,12 +2729,12 @@
         "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 10,
-          "2": 20,
-          "3": 30,
-          "4": 40,
-          "5": 60,
-          "6": 80
+          "1": 5,
+          "2": 10,
+          "3": 15,
+          "4": 20,
+          "5": 30,
+          "6": 40
         }
       }
     ]
@@ -3554,7 +3554,7 @@
   {
     "id": "LIFE_STEAL",
     "name": "Life Steal",
-    "description": "Heals for %{VALUE:HEAL} of your max health each time you hit a mob.",
+    "description": "Heals %{VALUE:HEAL} each time you hit a mob.",
     "type": "NORMAL",
     "requiredLevel": 5,
     "conflict": "STEAL",
@@ -3599,13 +3599,13 @@
       {
         "id": "HEAL",
         "precision": 1,
-        "type": "PERCENT",
+        "type": "FLAT",
         "values": {
-          "1": 0.5,
-          "2": 1.0,
-          "3": 1.5,
-          "4": 2.0,
-          "5": 2.5
+          "1": 2.4,
+          "2": 4.8,
+          "3": 7.2,
+          "4": 9.6,
+          "5": 12
         }
       }
     ]
@@ -4877,12 +4877,12 @@
     "stats": [
       {
         "id": "WEEKDAY_VITALITY",
-        "precision": 1,
+        "precision": 0,
         "type": "FLAT",
         "values": {
-          "3": 2.4,
-          "4": 3.2,
-          "5": 4.0
+          "3": 1,
+          "4": 2,
+          "5": 3
         }
       },
       {
@@ -5214,11 +5214,11 @@
         "precision": 0,
         "type": "FLAT",
         "values": {
-          "1": 5,
-          "2": 10,
-          "3": 15,
-          "4": 20,
-          "5": 25
+          "1": 3,
+          "2": 6,
+          "3": 9,
+          "4": 12,
+          "5": 15
         }
       }
     ]
@@ -7377,12 +7377,12 @@
     "stats": [
       {
         "id": "PER_BOBBER",
-        "precision": 0,
+        "precision": 1,
         "type": "PLUS_PERCENT",
         "values": {
-          "3": 0.3,
-          "4": 0.4,
-          "5": 0.5
+          "3": 0.6,
+          "4": 0.8,
+          "5": 1.0
         }
       },
       {
@@ -7400,9 +7400,9 @@
         "precision": 0,
         "type": "NONE",
         "values": {
-          "3": 10,
-          "4": 10,
-          "5": 10
+          "3": 5,
+          "4": 5,
+          "5": 5
         }
       }
     ]
@@ -8075,14 +8075,14 @@
     "stats": [
       {
         "id": "DEFENSE_INCREASE",
-        "precision": 0,
+        "precision": 1,
         "type": "PLUS_PERCENT",
         "values": {
-          "1": 5,
-          "2": 10,
-          "3": 15,
-          "4": 20,
-          "5": 25
+          "1": 2.5,
+          "2": 5,
+          "3": 7.5,
+          "4": 10,
+          "5": 12.5
         }
       },
       {
@@ -8347,7 +8347,7 @@
   {
     "id": "ULTIMATE_REFRIGERATE",
     "name": "Refrigerate",
-    "description": "Grants %{VALUE:MANA_DEFENSE} of the mana used to cast abilities as %{STAT:DEFENSE} for %{VALUE:DURATION}, up to %{VALUE:MAX_DEFENSE} %{STAT:DEFENSE}.",
+    "description": "Grants %{VALUE:MANA_DEFENSE} of the mana used to cast abilities as %{STAT:DEFENSE} for %{VALUE:DURATION}, up to %{VALUE:MAX_DEFENSE} %{STAT:DEFENSE} per armor piece.",
     "type": "ULTIMATE",
     "requiredLevel": 20,
     "conflict": "ULTIMATE",
@@ -8393,14 +8393,14 @@
     "stats": [
       {
         "id": "MANA_DEFENSE",
-        "precision": 0,
+        "precision": 2,
         "type": "PERCENT",
         "values": {
-          "1": 5,
-          "2": 10,
-          "3": 15,
-          "4": 20,
-          "5": 25
+          "1": 3,
+          "2": 3.75,
+          "3": 4.5,
+          "4": 5.25,
+          "5": 6
         }
       },
       {
@@ -8420,11 +8420,11 @@
         "precision": 0,
         "type": "NONE",
         "values": {
-          "1": 1000,
-          "2": 1000,
-          "3": 1000,
-          "4": 1000,
-          "5": 1000
+          "1": 150,
+          "2": 150,
+          "3": 150,
+          "4": 150,
+          "5": 150
         }
       }
     ]
@@ -8936,7 +8936,7 @@
   {
     "id": "VAMPIRISM",
     "name": "Vampirism",
-    "description": "Heals for %{VALUE:HEAL} of your missing health whenever you kill an enemy.",
+    "description": "Heals %{VALUE:HEAL} whenever you kill an enemy.",
     "type": "NORMAL",
     "requiredLevel": 15,
     "categories": [
@@ -8986,14 +8986,14 @@
       {
         "id": "HEAL",
         "precision": 0,
-        "type": "PERCENT",
+        "type": "FLAT",
         "values": {
-          "1": 1,
-          "2": 2,
-          "3": 3,
-          "4": 4,
-          "5": 5,
-          "6": 6
+          "1": 5,
+          "2": 10,
+          "3": 15,
+          "4": 20,
+          "5": 25,
+          "6": 30
         }
       }
     ]
