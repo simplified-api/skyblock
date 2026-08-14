@@ -51,6 +51,7 @@ MODEL_CLASS_BY_TABLE: Dict[str, str] = {
     "bonus_pet_perk_stats": f"{MODEL_PACKAGE}.BonusPetPerkStat",
     "bonus_reforge_stats": f"{MODEL_PACKAGE}.BonusReforgeStat",
     "brews": f"{MODEL_PACKAGE}.Brew",
+    "buffs": f"{MODEL_PACKAGE}.Buff",
     "collections": f"{MODEL_PACKAGE}.Collection",
     "enchantments": f"{MODEL_PACKAGE}.Enchantment",
     "essences": f"{MODEL_PACKAGE}.Essence",

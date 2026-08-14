@@ -1,6 +1,6 @@
 {
-  "commit_sha": "ca348020f5d79f616a0facd35be67b6d0b341aae",
-  "count": 41,
+  "commit_sha": "4c37add8b06e95fe18eb2cfb14c02bdeba9c86b5",
+  "count": 42,
   "files": [
     {
       "bytes": 82265,
@@ -33,9 +33,9 @@
       "bytes": 7082076,
       "category": "items",
       "content_sha256": "97b48d3f489f9f594771834e5f53433090b0ba7540e60b7e6a2e3f665873b942",
-      "extra_bytes": 247,
+      "extra_bytes": 465,
       "extra_path": "data/v1/items/items_extra.json",
-      "extra_sha256": "9f4951706115426b4b8fe8d2986f210cfd80c6cfd3f6221c2ca4e90e523c2800",
+      "extra_sha256": "b006e73dd42d86ca2bbf6a0efc677cb4faad4ec765305ced594f8087d48f4bcb",
       "has_extra": true,
       "model_class": "api.simplified.skyblock.model.Item",
       "path": "data/v1/items/items.json",
@@ -148,6 +148,15 @@
       "model_class": "api.simplified.skyblock.model.Brew",
       "path": "data/v1/modifiers/brews.json",
       "table_name": "brews"
+    },
+    {
+      "bytes": 3,
+      "category": "modifiers",
+      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Buff",
+      "path": "data/v1/modifiers/buffs.json",
+      "table_name": "buffs"
     },
     {
       "bytes": 162916,
@@ -375,6 +384,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-12T10:25:37Z",
+  "generated_at": "2026-08-14T00:32:19Z",
   "version": 1
 }
