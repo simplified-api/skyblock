@@ -266,19 +266,19 @@
     ],
     "levels": [
       {
-        "level": 1,
+        "level": 3,
         "cost": {
           "experience": 60
         }
       },
       {
-        "level": 2,
+        "level": 4,
         "cost": {
           "experience": 80
         }
       },
       {
-        "level": 3,
+        "level": 5,
         "cost": {
           "experience": 100
         }
@@ -290,9 +290,9 @@
         "precision": 0,
         "type": "FLAT",
         "values": {
-          "1": 15,
-          "2": 20,
-          "3": 25
+          "3": 15,
+          "4": 20,
+          "5": 25
         }
       }
     ]
@@ -1185,12 +1185,12 @@
         "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 10,
-          "2": 20,
-          "3": 30,
-          "4": 40,
-          "5": 60,
-          "6": 80
+          "1": 5,
+          "2": 10,
+          "3": 15,
+          "4": 20,
+          "5": 30,
+          "6": 40
         }
       }
     ]
@@ -1486,9 +1486,9 @@
     ],
     "stats": [
       {
-        "id": "",
+        "id": "DISTANCE",
         "precision": 0,
-        "type": "PERCENT",
+        "type": "NONE",
         "values": {
           "1": 2,
           "2": 4,
@@ -1502,7 +1502,7 @@
   {
     "id": "DRAIN",
     "name": "Drain",
-    "description": "Heals for %{VALUE:HEAL} of your max health per %{VALUE:PER_CD} %{STAT:CRIT_DAMAGE} you deal per hit, up to %{VALUE:MAX_CD} %{STAT:CRIT_DAMAGE}.",
+    "description": "Regen %{VALUE:REGEN}%{SYMBOL:VITALITY} every time you hit a mob. %{FORMAT:DARK_GRAY}(1s cooldown)",
     "type": "NORMAL",
     "requiredLevel": 15,
     "conflict": "STEAL",
@@ -1546,39 +1546,15 @@
     ],
     "stats": [
       {
-        "id": "HEAL",
+        "id": "REGEN",
         "precision": 1,
-        "type": "PERCENT",
+        "type": "FLAT",
         "values": {
-          "1": 0.2,
-          "2": 0.3,
-          "3": 0.4,
-          "4": 0.5,
-          "5": 0.6
-        }
-      },
-      {
-        "id": "PER_CD",
-        "precision": 1,
-        "type": "NONE",
-        "values": {
-          "1": 100,
-          "2": 100,
-          "3": 100,
-          "4": 100,
-          "5": 100
-        }
-      },
-      {
-        "id": "MAX_CD",
-        "precision": 1,
-        "type": "NONE",
-        "values": {
-          "1": 1000,
-          "2": 1000,
-          "3": 1000,
-          "4": 1000,
-          "5": 1000
+          "1": 0.5,
+          "2": 1,
+          "3": 1.5,
+          "4": 2,
+          "5": 2.5
         }
       }
     ]
@@ -2091,8 +2067,8 @@
   },
   {
     "id": "FEROCIOUS_MANA",
-    "name": "Ferocious Mana",
-    "description": "Gain %{VALUE:MANA_STAT} of mana used near you as %{STAT:FEROCITY} for 10 seconds, capped at 50 %{STAT:FEROCITY}.",
+    "name": "Vivacious Vitality",
+    "description": "Convert %{VALUE:CONVERSION} of %{STAT:VITALITY} used as %{STAT:ATTACK_SPEED} for 10 seconds. %{FORMAT:DARK_GRAY}(Max %{VALUE:MAX_ATTACK_SPEED} %{STAT:ATTACK_SPEED})",
     "type": "NORMAL",
     "requiredLevel": 22,
     "categories": [
@@ -2166,20 +2142,37 @@
     ],
     "stats": [
       {
-        "id": "MANA_STAT",
-        "precision": 1,
+        "id": "CONVERSION",
+        "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 0.1,
-          "2": 0.1,
-          "3": 0.2,
-          "4": 0.2,
-          "5": 0.2,
-          "6": 0.3,
-          "7": 0.4,
-          "8": 0.4,
-          "9": 0.5,
-          "10": 0.5
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7,
+          "8": 8,
+          "9": 9,
+          "10": 10
+        }
+      },
+      {
+        "id": "MAX_ATTACK_SPEED",
+        "precision": 0,
+        "type": "NONE",
+        "values": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5
         }
       }
     ]
@@ -2729,12 +2722,12 @@
         "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 10,
-          "2": 20,
-          "3": 30,
-          "4": 40,
-          "5": 60,
-          "6": 80
+          "1": 5,
+          "2": 10,
+          "3": 15,
+          "4": 20,
+          "5": 30,
+          "6": 40
         }
       }
     ]
@@ -2858,7 +2851,7 @@
     ],
     "stats": [
       {
-        "id": "PROJECTILE_DEFENSE",
+        "id": "HEALTH",
         "precision": 0,
         "type": "FLAT",
         "values": {
@@ -2875,8 +2868,8 @@
   },
   {
     "id": "HARDENED_MANA",
-    "name": "Hardened Mana",
-    "description": "Gain %{VALUE:MANA_STAT} of mana used near you as %{STAT:DEFENSE} for 10 seconds, capped at 400 %{STAT:DEFENSE}.",
+    "name": "Hardened Vitality",
+    "description": "Convert %{VALUE:CONVERSION} of %{STAT:VITALITY} used as %{STAT:DEFENSE} for 10 seconds. %{FORMAT:DARK_GRAY}(Max %{VALUE:MAX_DEFENSE} %{STAT:DEFENSE})",
     "type": "NORMAL",
     "requiredLevel": 22,
     "categories": [
@@ -2950,20 +2943,37 @@
     ],
     "stats": [
       {
-        "id": "MANA_STAT",
-        "precision": 1,
+        "id": "CONVERSION",
+        "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 0.1,
-          "2": 0.2,
-          "3": 0.3,
-          "4": 0.4,
-          "5": 0.5,
-          "6": 0.6,
-          "7": 0.7,
-          "8": 0.8,
-          "9": 0.9,
-          "10": 1.0
+          "1": 4,
+          "2": 8,
+          "3": 12,
+          "4": 16,
+          "5": 20,
+          "6": 24,
+          "7": 28,
+          "8": 32,
+          "9": 36,
+          "10": 40
+        }
+      },
+      {
+        "id": "MAX_DEFENSE",
+        "precision": 0,
+        "type": "NONE",
+        "values": {
+          "1": 25,
+          "2": 25,
+          "3": 25,
+          "4": 25,
+          "5": 25,
+          "6": 25,
+          "7": 25,
+          "8": 25,
+          "9": 25,
+          "10": 25
         }
       }
     ]
@@ -3554,7 +3564,7 @@
   {
     "id": "LIFE_STEAL",
     "name": "Life Steal",
-    "description": "Heals for %{VALUE:HEAL} of your max health each time you hit a mob.",
+    "description": "Heal %{VALUE:HEAL}%{SYMBOL:HEALTH} every time you hit a mob.",
     "type": "NORMAL",
     "requiredLevel": 5,
     "conflict": "STEAL",
@@ -3599,13 +3609,13 @@
       {
         "id": "HEAL",
         "precision": 1,
-        "type": "PERCENT",
+        "type": "FLAT",
         "values": {
-          "1": 0.5,
-          "2": 1.0,
-          "3": 1.5,
-          "4": 2.0,
-          "5": 2.5
+          "1": 2.4,
+          "2": 4.8,
+          "3": 7.2,
+          "4": 9.6,
+          "5": 12
         }
       }
     ]
@@ -3922,8 +3932,8 @@
   },
   {
     "id": "MANA_VAMPIRE",
-    "name": "Mana Vampire",
-    "description": "Heal for %{VALUE:MANA_STAT} of mana used near you.",
+    "name": "Vampiric Vitality",
+    "description": "Heal for %{VALUE:HEAL} %{STAT:HEALTH} per %{STAT:VITALITY} used.",
     "type": "NORMAL",
     "requiredLevel": 22,
     "categories": [
@@ -3997,20 +4007,20 @@
     ],
     "stats": [
       {
-        "id": "MANA_STAT",
-        "precision": 1,
-        "type": "PERCENT",
+        "id": "HEAL",
+        "precision": 2,
+        "type": "FLAT",
         "values": {
-          "1": 0.5,
-          "2": 1.0,
-          "3": 1.5,
-          "4": 2.0,
-          "5": 2.5,
-          "6": 3.0,
-          "7": 3.5,
-          "8": 4.0,
-          "9": 4.5,
-          "10": 5.0
+          "1": 0.55,
+          "2": 0.6,
+          "3": 0.65,
+          "4": 0.7,
+          "5": 0.75,
+          "6": 0.8,
+          "7": 0.85,
+          "8": 0.9,
+          "9": 0.95,
+          "10": 1.0
         }
       }
     ]
@@ -4795,7 +4805,7 @@
     ],
     "stats": [
       {
-        "id": "PROJECTILE_DEFENSE",
+        "id": "DEFENSE",
         "precision": 0,
         "type": "FLAT",
         "values": {
@@ -4877,12 +4887,12 @@
     "stats": [
       {
         "id": "WEEKDAY_VITALITY",
-        "precision": 1,
+        "precision": 0,
         "type": "FLAT",
         "values": {
-          "3": 2.4,
-          "4": 3.2,
-          "5": 4.0
+          "3": 1,
+          "4": 2,
+          "5": 3
         }
       },
       {
@@ -5084,11 +5094,11 @@
         "precision": 0,
         "type": "FLAT",
         "values": {
-          "1": 2,
-          "2": 4,
-          "3": 6,
-          "4": 8,
-          "5": 10
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5
         }
       }
     ]
@@ -5214,11 +5224,11 @@
         "precision": 0,
         "type": "FLAT",
         "values": {
-          "1": 5,
-          "2": 10,
-          "3": 15,
-          "4": 20,
-          "5": 25
+          "1": 3,
+          "2": 6,
+          "3": 9,
+          "4": 12,
+          "5": 15
         }
       }
     ]
@@ -5547,7 +5557,7 @@
       {
         "id": "INTELLIGENCE",
         "precision": 0,
-        "type": "PERCENT",
+        "type": "FLAT",
         "values": {
           "1": 5,
           "2": 10,
@@ -5878,8 +5888,8 @@
   },
   {
     "id": "STRONG_MANA",
-    "name": "Strong Mana",
-    "description": "Gain %{VALUE:MANA_STAT} of mana used near you as %{STAT:STRENGTH} for 10 seconds, capped at 100 %{STAT:STRENGTH}.",
+    "name": "Strong Vitality",
+    "description": "Convert %{VALUE:CONVERSION} of %{STAT:VITALITY} used as %{STAT:STRENGTH} for 10 seconds. %{FORMAT:DARK_GRAY}(Max %{VALUE:MAX_STRENGTH} %{STAT:STRENGTH})",
     "type": "NORMAL",
     "requiredLevel": 22,
     "categories": [
@@ -5953,20 +5963,37 @@
     ],
     "stats": [
       {
-        "id": "MANA_STAT",
-        "precision": 1,
+        "id": "CONVERSION",
+        "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 0.1,
-          "2": 0.2,
-          "3": 0.3,
-          "4": 0.4,
-          "5": 0.5,
-          "6": 0.6,
-          "7": 0.7,
-          "8": 0.8,
-          "9": 0.9,
-          "10": 1.0
+          "1": 2,
+          "2": 4,
+          "3": 6,
+          "4": 8,
+          "5": 10,
+          "6": 12,
+          "7": 14,
+          "8": 16,
+          "9": 18,
+          "10": 20
+        }
+      },
+      {
+        "id": "MAX_STRENGTH",
+        "precision": 0,
+        "type": "NONE",
+        "values": {
+          "1": 15,
+          "2": 15,
+          "3": 15,
+          "4": 15,
+          "5": 15,
+          "6": 15,
+          "7": 15,
+          "8": 15,
+          "9": 15,
+          "10": 15
         }
       }
     ]
@@ -7377,16 +7404,16 @@
     "stats": [
       {
         "id": "PER_BOBBER",
-        "precision": 0,
+        "precision": 1,
         "type": "PLUS_PERCENT",
         "values": {
-          "3": 0.3,
-          "4": 0.4,
-          "5": 0.5
+          "3": 0.6,
+          "4": 0.8,
+          "5": 1.0
         }
       },
       {
-        "id": "",
+        "id": "DISTANCE",
         "precision": 0,
         "type": "NONE",
         "values": {
@@ -7396,13 +7423,13 @@
         }
       },
       {
-        "id": "",
+        "id": "MAX_BOBBERS",
         "precision": 0,
         "type": "NONE",
         "values": {
-          "3": 10,
-          "4": 10,
-          "5": 10
+          "3": 5,
+          "4": 5,
+          "5": 5
         }
       }
     ]
@@ -8075,14 +8102,14 @@
     "stats": [
       {
         "id": "DEFENSE_INCREASE",
-        "precision": 0,
+        "precision": 1,
         "type": "PLUS_PERCENT",
         "values": {
-          "1": 5,
-          "2": 10,
-          "3": 15,
-          "4": 20,
-          "5": 25
+          "1": 2.5,
+          "2": 5,
+          "3": 7.5,
+          "4": 10,
+          "5": 12.5
         }
       },
       {
@@ -8347,7 +8374,7 @@
   {
     "id": "ULTIMATE_REFRIGERATE",
     "name": "Refrigerate",
-    "description": "Grants %{VALUE:MANA_DEFENSE} of the mana used to cast abilities as %{STAT:DEFENSE} for %{VALUE:DURATION}, up to %{VALUE:MAX_DEFENSE} %{STAT:DEFENSE}.",
+    "description": "Convert %{VALUE:CONVERSION} of %{STAT:MANA} used as %{STAT:DEFENSE} for %{VALUE:DURATION}. %{FORMAT:DARK_GRAY}(Max %{VALUE:MAX_DEFENSE} %{STAT:DEFENSE} per armor piece, %{VALUE:MAX_TOTAL_DEFENSE} total)",
     "type": "ULTIMATE",
     "requiredLevel": 20,
     "conflict": "ULTIMATE",
@@ -8392,15 +8419,15 @@
     ],
     "stats": [
       {
-        "id": "MANA_DEFENSE",
-        "precision": 0,
+        "id": "CONVERSION",
+        "precision": 2,
         "type": "PERCENT",
         "values": {
-          "1": 5,
-          "2": 10,
-          "3": 15,
-          "4": 20,
-          "5": 25
+          "1": 3,
+          "2": 3.75,
+          "3": 4.5,
+          "4": 5.25,
+          "5": 6
         }
       },
       {
@@ -8420,11 +8447,23 @@
         "precision": 0,
         "type": "NONE",
         "values": {
-          "1": 1000,
-          "2": 1000,
-          "3": 1000,
-          "4": 1000,
-          "5": 1000
+          "1": 150,
+          "2": 150,
+          "3": 150,
+          "4": 150,
+          "5": 150
+        }
+      },
+      {
+        "id": "MAX_TOTAL_DEFENSE",
+        "precision": 0,
+        "type": "NONE",
+        "values": {
+          "1": 600,
+          "2": 600,
+          "3": 600,
+          "4": 600,
+          "5": 600
         }
       }
     ]
@@ -8936,7 +8975,7 @@
   {
     "id": "VAMPIRISM",
     "name": "Vampirism",
-    "description": "Heals for %{VALUE:HEAL} of your missing health whenever you kill an enemy.",
+    "description": "Heal %{VALUE:HEAL}%{SYMBOL:HEALTH} every time you kill a mob. %{FORMAT:DARK_GRAY}(0.5s cooldown)",
     "type": "NORMAL",
     "requiredLevel": 15,
     "categories": [
@@ -8986,14 +9025,14 @@
       {
         "id": "HEAL",
         "precision": 0,
-        "type": "PERCENT",
+        "type": "FLAT",
         "values": {
-          "1": 1,
-          "2": 2,
-          "3": 3,
-          "4": 4,
-          "5": 5,
-          "6": 6
+          "1": 5,
+          "2": 10,
+          "3": 15,
+          "4": 20,
+          "5": 25,
+          "6": 30
         }
       }
     ]

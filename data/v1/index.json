@@ -1,6 +1,6 @@
 {
-  "commit_sha": "4c37add8b06e95fe18eb2cfb14c02bdeba9c86b5",
-  "count": 42,
+  "commit_sha": "c6fffbeb9cceece003e5e712461a34327d610b61",
+  "count": 34,
   "files": [
     {
       "bytes": 82265,
@@ -42,15 +42,6 @@
       "table_name": "items"
     },
     {
-      "bytes": 3,
-      "category": "items",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.PetItem",
-      "path": "data/v1/items/pet_items.json",
-      "table_name": "pet_items"
-    },
-    {
       "bytes": 2254,
       "category": "mobs",
       "content_sha256": "c9cc46a0c4d2b95af97ebaf30dbeb9de5a8d2987a14202a467a72d7b1eda0ee5",
@@ -87,60 +78,6 @@
       "table_name": "mob_types"
     },
     {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusArmorSet",
-      "path": "data/v1/modifiers/bonus_armor_sets.json",
-      "table_name": "bonus_armor_sets"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusEnchantmentStat",
-      "path": "data/v1/modifiers/bonus_enchantment_stats.json",
-      "table_name": "bonus_enchantment_stats"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusItemRarity",
-      "path": "data/v1/modifiers/bonus_item_rarities.json",
-      "table_name": "bonus_item_rarities"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusItemStat",
-      "path": "data/v1/modifiers/bonus_item_stats.json",
-      "table_name": "bonus_item_stats"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusPetPerkStat",
-      "path": "data/v1/modifiers/bonus_pet_perk_stats.json",
-      "table_name": "bonus_pet_perk_stats"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusReforgeStat",
-      "path": "data/v1/modifiers/bonus_reforge_stats.json",
-      "table_name": "bonus_reforge_stats"
-    },
-    {
       "bytes": 4937,
       "category": "modifiers",
       "content_sha256": "84ad5657ac3f24cc375476a1c3f07bad2e976722692abc1ffa43739981aa86c8",
@@ -150,18 +87,18 @@
       "table_name": "brews"
     },
     {
-      "bytes": 3,
+      "bytes": 3289,
       "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "content_sha256": "b487ac357c2f4f68d391d587df5221cd2f64986f3b2e8567492c9d19ea41d291",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Buff",
       "path": "data/v1/modifiers/buffs.json",
       "table_name": "buffs"
     },
     {
-      "bytes": 162916,
+      "bytes": 163756,
       "category": "modifiers",
-      "content_sha256": "130708f5dba0b8f28b944061777a57bc67984b421848d23072eb53ca4dad3005",
+      "content_sha256": "f7a71475ea53266a792721276fc420087ecfb97f2e8183f2cee7945927cfad37",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Enchantment",
       "path": "data/v1/modifiers/enchantments.json",
@@ -175,15 +112,6 @@
       "model_class": "api.simplified.skyblock.model.Gemstone",
       "path": "data/v1/modifiers/gemstones.json",
       "table_name": "gemstones"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.HotPotatoStat",
-      "path": "data/v1/modifiers/hot_potato_stats.json",
-      "table_name": "hot_potato_stats"
     },
     {
       "bytes": 3,
@@ -294,9 +222,9 @@
       "table_name": "minions"
     },
     {
-      "bytes": 333328,
+      "bytes": 360481,
       "category": "player",
-      "content_sha256": "5c4daa69a19c4f4ea6708dff36af7fa079ec4c37754b26d3963dc14bc4c06318",
+      "content_sha256": "57254f5965793a6f6e0571b0affa2af63ea13371896e483d9e95225db9e4a763",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Pet",
       "path": "data/v1/player/pets.json",
@@ -384,6 +312,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-14T00:32:19Z",
+  "generated_at": "2026-08-14T07:46:50Z",
   "version": 1
 }
