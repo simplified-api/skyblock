@@ -358,20 +358,6 @@
             "scalar": 0.4
           }
         }
-      },
-      {
-        "id": "INTELLIGENCE",
-        "precision": 2,
-        "values": {
-          "EPIC": {
-            "base": 0.0,
-            "scalar": 0.75
-          },
-          "LEGENDARY": {
-            "base": 0.0,
-            "scalar": 0.75
-          }
-        }
       }
     ],
     "perks": [
@@ -1038,11 +1024,11 @@
         "values": {
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.1
+            "scalar": 1.0
           },
           "MYTHIC": {
             "base": 0.0,
-            "scalar": 0.1
+            "scalar": 1.0
           }
         }
       },
@@ -1167,28 +1153,24 @@
         "precision": 1,
         "values": {
           "COMMON": {
-            "base": 10.0,
-            "scalar": 0.2
+            "base": 0.0,
+            "scalar": 0.3
           },
           "UNCOMMON": {
-            "base": 10.0,
-            "scalar": 0.2
+            "base": 0.0,
+            "scalar": 0.3
           },
           "RARE": {
-            "base": 10.0,
-            "scalar": 0.2
+            "base": 0.0,
+            "scalar": 0.3
           },
           "EPIC": {
-            "base": 10.0,
-            "scalar": 0.2
+            "base": 0.0,
+            "scalar": 0.3
           },
           "LEGENDARY": {
-            "base": 10.0,
-            "scalar": 0.2
-          },
-          "MYTHIC": {
-            "base": 10.0,
-            "scalar": 0.2
+            "base": 0.0,
+            "scalar": 0.3
           }
         }
       },
@@ -1213,10 +1195,6 @@
             "scalar": 1.0
           },
           "LEGENDARY": {
-            "base": 0.0,
-            "scalar": 1.0
-          },
-          "MYTHIC": {
             "base": 0.0,
             "scalar": 1.0
           }
@@ -1810,15 +1788,7 @@
             "base": 0.0,
             "scalar": 0.5
           },
-          "UNCOMMON": {
-            "base": 0.0,
-            "scalar": 0.5
-          },
           "RARE": {
-            "base": 0.0,
-            "scalar": 0.5
-          },
-          "EPIC": {
             "base": 0.0,
             "scalar": 0.5
           },
@@ -1836,15 +1806,7 @@
             "base": 0.0,
             "scalar": 0.1
           },
-          "UNCOMMON": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
           "RARE": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
-          "EPIC": {
             "base": 0.0,
             "scalar": 0.1
           },
@@ -1868,9 +1830,7 @@
             "type": "NONE",
             "values": {
               "COMMON": {},
-              "UNCOMMON": {},
               "RARE": {},
-              "EPIC": {},
               "LEGENDARY": {}
             }
           }
@@ -1888,10 +1848,6 @@
             "type": "PERCENT",
             "values": {
               "RARE": {
-                "base": 0.0,
-                "scalar": 0.01
-              },
-              "EPIC": {
                 "base": 0.0,
                 "scalar": 0.01
               },
@@ -3031,11 +2987,11 @@
         "values": {
           "EPIC": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 0.15
           },
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 0.15
           }
         }
       },
@@ -3623,7 +3579,7 @@
         "values": {
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.5
+            "scalar": 0.05
           }
         }
       }
@@ -4301,6 +4257,36 @@
         "values": {
           "COMMON": {
             "base": 0.0,
+            "scalar": 0.5
+          },
+          "UNCOMMON": {
+            "base": 0.0,
+            "scalar": 0.5
+          },
+          "RARE": {
+            "base": 0.0,
+            "scalar": 0.5
+          },
+          "EPIC": {
+            "base": 0.0,
+            "scalar": 0.5
+          },
+          "LEGENDARY": {
+            "base": 0.0,
+            "scalar": 0.5
+          },
+          "MYTHIC": {
+            "base": 0.0,
+            "scalar": 0.5
+          }
+        }
+      },
+      {
+        "id": "ATTACK_SPEED",
+        "precision": 2,
+        "values": {
+          "COMMON": {
+            "base": 0.0,
             "scalar": 0.25
           },
           "UNCOMMON": {
@@ -4374,58 +4360,6 @@
           "LEGENDARY": {
             "base": 0.0,
             "scalar": 0.5
-          }
-        }
-      },
-      {
-        "id": "INTELLIGENCE",
-        "precision": 1,
-        "values": {
-          "COMMON": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
-          "UNCOMMON": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
-          "RARE": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
-          "EPIC": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
-          "LEGENDARY": {
-            "base": 0.0,
-            "scalar": 0.1
-          }
-        }
-      },
-      {
-        "id": "MAGIC_FIND",
-        "precision": 1,
-        "values": {
-          "COMMON": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
-          "UNCOMMON": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
-          "RARE": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
-          "EPIC": {
-            "base": 0.0,
-            "scalar": 0.1
-          },
-          "LEGENDARY": {
-            "base": 0.0,
-            "scalar": 0.1
           }
         }
       }
@@ -5146,23 +5080,23 @@
         "values": {
           "COMMON": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 1.0
           },
           "UNCOMMON": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 1.0
           },
           "RARE": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 1.0
           },
           "EPIC": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 1.0
           },
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 1.0
           }
         }
       }
@@ -6299,23 +6233,23 @@
         "values": {
           "COMMON": {
             "base": 0.0,
-            "scalar": 0.0
+            "scalar": 0.2
           },
           "UNCOMMON": {
             "base": 0.0,
-            "scalar": 0.0
+            "scalar": 0.2
           },
           "RARE": {
             "base": 0.0,
-            "scalar": 0.0
+            "scalar": 0.2
           },
           "EPIC": {
             "base": 0.0,
-            "scalar": 0.0
+            "scalar": 0.2
           },
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.0
+            "scalar": 0.2
           }
         }
       }
@@ -7113,23 +7047,23 @@
         "precision": 0,
         "values": {
           "COMMON": {
-            "base": 10.0,
+            "base": 0.0,
             "scalar": 1.0
           },
           "UNCOMMON": {
-            "base": 10.0,
+            "base": 0.0,
             "scalar": 1.0
           },
           "RARE": {
-            "base": 10.0,
+            "base": 0.0,
             "scalar": 1.0
           },
           "EPIC": {
-            "base": 10.0,
+            "base": 0.0,
             "scalar": 1.0
           },
           "LEGENDARY": {
-            "base": 10.0,
+            "base": 0.0,
             "scalar": 1.0
           }
         }
@@ -8007,23 +7941,23 @@
         "values": {
           "COMMON": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 0.15
           },
           "UNCOMMON": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 0.15
           },
           "RARE": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 0.15
           },
           "EPIC": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 0.15
           },
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 0.15
           }
         }
       }
@@ -8325,27 +8259,27 @@
         "values": {
           "COMMON": {
             "base": 0.0,
-            "scalar": 0.1
+            "scalar": 0.2
           },
           "UNCOMMON": {
             "base": 0.0,
-            "scalar": 0.1
+            "scalar": 0.2
           },
           "RARE": {
             "base": 0.0,
-            "scalar": 0.1
+            "scalar": 0.2
           },
           "EPIC": {
             "base": 0.0,
-            "scalar": 0.1
+            "scalar": 0.2
           },
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.1
+            "scalar": 0.2
           },
           "MYTHIC": {
             "base": 0.0,
-            "scalar": 0.1
+            "scalar": 0.2
           }
         }
       }
@@ -9586,7 +9520,7 @@
         "values": {
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 1.0
+            "scalar": 0.75
           }
         }
       },
@@ -9596,7 +9530,7 @@
         "values": {
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.5
+            "scalar": 1.5
           }
         }
       }
@@ -10374,7 +10308,7 @@
         "values": {
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.25
+            "scalar": 0.5
           }
         }
       },
@@ -10384,7 +10318,7 @@
         "values": {
           "LEGENDARY": {
             "base": 0.0,
-            "scalar": 0.08
+            "scalar": 0.05
           }
         }
       }
@@ -10716,7 +10650,6 @@
       }
     ]
   },
-
   {
     "id": "DROPLET_WISP",
     "name": "Droplet Wisp",
@@ -10783,6 +10716,7 @@
         "id": "BULWARK",
         "name": "Bulkwark",
         "description": "Kill Blazes to gain defense against them and demons.\nBonus: %{VALUE:DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE}\nNext Upgrade: %{VALUE:NEXT_DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:NEXT_TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE} %{FORMAT:DARK_GRAY}(%{VALUE:PROGRESS}/%{VALUE:REQUIRED}%{FORMAT:DARK_GRAY})",
+
         "flatStat": false,
         "stats": [
           {
@@ -11511,7 +11445,6 @@
       }
     ]
   },
-
   {
     "id": "TYRANNOSAURUS",
     "name": "T-Rex",
@@ -11578,6 +11511,7 @@
         "name": "Ferocious Roar",
         "description": "Attacks have a %{VALUE:CHANCE} chance to stun the target.\n%{FORMAT:DARK_GRAY}(10s cooldown)",
         "flatStat": false,
+
         "stats": [
           {
             "id": "CHANCE",
@@ -11843,10 +11777,6 @@
           "LEGENDARY": {
             "base": 5.0,
             "scalar": 0.1
-          },
-          "MYTHIC": {
-            "base": 5.0,
-            "scalar": 0.1
           }
         }
       },
@@ -11871,10 +11801,6 @@
             "scalar": 0.05
           },
           "LEGENDARY": {
-            "base": 0.0,
-            "scalar": 0.05
-          },
-          "MYTHIC": {
             "base": 0.0,
             "scalar": 0.05
           }
@@ -11903,10 +11829,6 @@
           "LEGENDARY": {
             "base": 0.0,
             "scalar": 0.5
-          },
-          "MYTHIC": {
-            "base": 0.0,
-            "scalar": 0.5
           }
         }
       },
@@ -11931,10 +11853,6 @@
             "scalar": 0.25
           },
           "LEGENDARY": {
-            "base": 0.0,
-            "scalar": 0.25
-          },
-          "MYTHIC": {
             "base": 0.0,
             "scalar": 0.25
           }
@@ -12070,11 +11988,11 @@
         "precision": 2,
         "values": {
           "EPIC": {
-            "base": 0.0,
+            "base": 50.0,
             "scalar": 0.25
           },
           "LEGENDARY": {
-            "base": 0.0,
+            "base": 50.0,
             "scalar": 0.25
           }
         }
@@ -12084,11 +12002,11 @@
         "precision": 1,
         "values": {
           "EPIC": {
-            "base": 0.0,
+            "base": 100.0,
             "scalar": 0.5
           },
           "LEGENDARY": {
-            "base": 0.0,
+            "base": 100.0,
             "scalar": 0.5
           }
         }
