@@ -1,5 +1,5 @@
 {
-  "commit_sha": "4c37add8b06e95fe18eb2cfb14c02bdeba9c86b5",
+  "commit_sha": "870028cb95586521835a066812f83c68cad1e7ce",
   "count": 42,
   "files": [
     {
@@ -150,9 +150,9 @@
       "table_name": "brews"
     },
     {
-      "bytes": 3,
+      "bytes": 3289,
       "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "content_sha256": "b487ac357c2f4f68d391d587df5221cd2f64986f3b2e8567492c9d19ea41d291",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Buff",
       "path": "data/v1/modifiers/buffs.json",
@@ -384,6 +384,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-14T00:32:19Z",
+  "generated_at": "2026-08-14T01:41:50Z",
   "version": 1
 }
