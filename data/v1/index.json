@@ -1,6 +1,6 @@
 {
-  "commit_sha": "870028cb95586521835a066812f83c68cad1e7ce",
-  "count": 42,
+  "commit_sha": "39d5b365a53747f869a173d31474a435e5e49704",
+  "count": 36,
   "files": [
     {
       "bytes": 82265,
@@ -85,60 +85,6 @@
       "model_class": "api.simplified.skyblock.model.MobType",
       "path": "data/v1/mobs/mob_types.json",
       "table_name": "mob_types"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusArmorSet",
-      "path": "data/v1/modifiers/bonus_armor_sets.json",
-      "table_name": "bonus_armor_sets"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusEnchantmentStat",
-      "path": "data/v1/modifiers/bonus_enchantment_stats.json",
-      "table_name": "bonus_enchantment_stats"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusItemRarity",
-      "path": "data/v1/modifiers/bonus_item_rarities.json",
-      "table_name": "bonus_item_rarities"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusItemStat",
-      "path": "data/v1/modifiers/bonus_item_stats.json",
-      "table_name": "bonus_item_stats"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusPetPerkStat",
-      "path": "data/v1/modifiers/bonus_pet_perk_stats.json",
-      "table_name": "bonus_pet_perk_stats"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.BonusReforgeStat",
-      "path": "data/v1/modifiers/bonus_reforge_stats.json",
-      "table_name": "bonus_reforge_stats"
     },
     {
       "bytes": 4937,
@@ -384,6 +330,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-14T01:41:50Z",
+  "generated_at": "2026-08-14T02:01:50Z",
   "version": 1
 }
