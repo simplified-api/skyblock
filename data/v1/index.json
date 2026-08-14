@@ -1,5 +1,5 @@
 {
-  "commit_sha": "6734830514cf96e9e6e922aeb5b002a3666c7ea7",
+  "commit_sha": "c6fffbeb9cceece003e5e712461a34327d610b61",
   "count": 34,
   "files": [
     {
@@ -96,9 +96,9 @@
       "table_name": "buffs"
     },
     {
-      "bytes": 163492,
+      "bytes": 163756,
       "category": "modifiers",
-      "content_sha256": "b100594313545a0522e582e75e559960a4dab3855d29db5c8a5c70a1a0258d14",
+      "content_sha256": "f7a71475ea53266a792721276fc420087ecfb97f2e8183f2cee7945927cfad37",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Enchantment",
       "path": "data/v1/modifiers/enchantments.json",
@@ -222,9 +222,9 @@
       "table_name": "minions"
     },
     {
-      "bytes": 360488,
+      "bytes": 360481,
       "category": "player",
-      "content_sha256": "2c50fb459acedcd002cece132ff075b04249bc8877c5be382977727baa42534e",
+      "content_sha256": "57254f5965793a6f6e0571b0affa2af63ea13371896e483d9e95225db9e4a763",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Pet",
       "path": "data/v1/player/pets.json",
@@ -312,6 +312,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-14T07:34:52Z",
+  "generated_at": "2026-08-14T07:46:50Z",
   "version": 1
 }

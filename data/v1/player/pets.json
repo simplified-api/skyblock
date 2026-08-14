@@ -1120,7 +1120,7 @@
       {
         "id": "LOOTING",
         "name": "Looting",
-        "description": "Gaint %{VALUE:DEFAULT} more collection items from monsters!",
+        "description": "Gain %{VALUE:DEFAULT} more collection items from monsters!",
         "flatStat": false,
         "stats": [
           {
@@ -11640,9 +11640,8 @@
       },
       {
         "id": "BULWARK",
-        "name": "Bulkwark",
+        "name": "Bulwark",
         "description": "Kill Blazes to gain defense against them and demons.\nBonus: %{VALUE:DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE}\nNext Upgrade: %{VALUE:NEXT_DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:NEXT_TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE} %{FORMAT:DARK_GRAY}(%{VALUE:PROGRESS}/%{VALUE:REQUIRED}%{FORMAT:DARK_GRAY})",
-
         "flatStat": false,
         "stats": [
           {
@@ -11809,7 +11808,7 @@
       },
       {
         "id": "BULWARK",
-        "name": "Bulkwark",
+        "name": "Bulwark",
         "description": "Kill Blazes to gain defense against them and demons.\nBonus: %{VALUE:DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE}\nNext Upgrade: %{VALUE:NEXT_DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:NEXT_TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE} %{FORMAT:DARK_GRAY}(%{VALUE:PROGRESS}/%{VALUE:REQUIRED}%{FORMAT:DARK_GRAY})",
         "flatStat": false,
         "stats": [
@@ -12018,7 +12017,7 @@
       },
       {
         "id": "BULWARK",
-        "name": "Bulkwark",
+        "name": "Bulwark",
         "description": "Kill Blazes to gain defense against them and demons.\nBonus: %{VALUE:DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE}\nNext Upgrade: %{VALUE:NEXT_DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:NEXT_TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE} %{FORMAT:DARK_GRAY}(%{VALUE:PROGRESS}/%{VALUE:REQUIRED}%{FORMAT:DARK_GRAY})",
         "flatStat": false,
         "stats": [
@@ -12227,7 +12226,7 @@
       },
       {
         "id": "BULWARK",
-        "name": "Bulkwark",
+        "name": "Bulwark",
         "description": "Kill Blazes to gain defense against them and demons.\nBonus: %{VALUE:DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE}\nNext Upgrade: %{VALUE:NEXT_DEFENSE}%{SYMBOL:DEFENSE} & %{VALUE:NEXT_TRUE_DEFENSE}%{SYMBOL:TRUE_DEFENSE} %{FORMAT:DARK_GRAY}(%{VALUE:PROGRESS}/%{VALUE:REQUIRED}%{FORMAT:DARK_GRAY})",
         "flatStat": false,
         "stats": [
@@ -12437,7 +12436,6 @@
         "name": "Ferocious Roar",
         "description": "Attacks have a %{VALUE:CHANCE} chance to stun the target.\n%{FORMAT:DARK_GRAY}(10s cooldown)",
         "flatStat": false,
-
         "stats": [
           {
             "id": "CHANCE",

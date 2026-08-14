@@ -8374,7 +8374,7 @@
   {
     "id": "ULTIMATE_REFRIGERATE",
     "name": "Refrigerate",
-    "description": "Grants %{VALUE:MANA_DEFENSE} of the mana used to cast abilities as %{STAT:DEFENSE} for %{VALUE:DURATION}, up to %{VALUE:MAX_DEFENSE} %{STAT:DEFENSE} per armor piece.",
+    "description": "Convert %{VALUE:CONVERSION} of %{STAT:MANA} used as %{STAT:DEFENSE} for %{VALUE:DURATION}. %{FORMAT:DARK_GRAY}(Max %{VALUE:MAX_DEFENSE} %{STAT:DEFENSE} per armor piece, %{VALUE:MAX_TOTAL_DEFENSE} total)",
     "type": "ULTIMATE",
     "requiredLevel": 20,
     "conflict": "ULTIMATE",
@@ -8419,7 +8419,7 @@
     ],
     "stats": [
       {
-        "id": "MANA_DEFENSE",
+        "id": "CONVERSION",
         "precision": 2,
         "type": "PERCENT",
         "values": {
@@ -8452,6 +8452,18 @@
           "3": 150,
           "4": 150,
           "5": 150
+        }
+      },
+      {
+        "id": "MAX_TOTAL_DEFENSE",
+        "precision": 0,
+        "type": "NONE",
+        "values": {
+          "1": 600,
+          "2": 600,
+          "3": 600,
+          "4": 600,
+          "5": 600
         }
       }
     ]
