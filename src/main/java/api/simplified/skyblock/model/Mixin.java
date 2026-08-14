@@ -61,7 +61,7 @@ public class Mixin implements JpaModel {
     /**
      * The resolved {@link Item}, read from the same {@code id} column the mixin is keyed by.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Item item;
 

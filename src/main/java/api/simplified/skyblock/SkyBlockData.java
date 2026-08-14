@@ -43,12 +43,19 @@ public final class SkyBlockData {
     /**
      * Retrieves the {@link Repository} that caches all entities of the given model type.
      *
+     * <p>
+     * The rows are held in memory and scanned rather than queried, so a caller resolving many ids
+     * against one table pays a single round trip for all of them. A held row can be up to that
+     * repository's {@link Repository#getCacheDuration() cache duration} stale, because the refresh
+     * cycle moves a repository's stamp before it deletes the rows its source has withdrawn. A caller
+     * that needs the uncached answer asks {@link #getSessionManager()} for the repository instead.
+     *
      * @param tClass the {@link JpaModel} class to find a repository for
      * @param <T> the entity type
      * @return the repository caching entities of type {@code T}
      */
     public static <T extends JpaModel> @NotNull Repository<T> getRepository(@NotNull Class<T> tClass) {
-        return sessionManager.getRepository(tClass);
+        return new ReferenceIndex<>(sessionManager.getRepository(tClass), ReferenceIndex.holdFor(tClass));
     }
 
     /**
@@ -78,6 +85,8 @@ public final class SkyBlockData {
      * @return the newly registered SkyBlock {@link JpaSession}
      */
     public static @NotNull JpaSession connect(@NotNull JpaCacheProvider provider, @NotNull GsonSettings gsonSettings) {
+        ReferenceIndex.clear();
+
         return sessionManager.connect(
             JpaConfig.builder()
                 .withDriver(new H2MemoryDriver())

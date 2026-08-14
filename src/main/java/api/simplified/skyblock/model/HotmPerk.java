@@ -1,7 +1,5 @@
 package api.simplified.skyblock.model;
 
-import dev.simplified.collection.Concurrent;
-import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,6 +13,11 @@ import java.util.Objects;
 /**
  * One node of the Heart of the Mountain, the mining skill tree unlocked in the Dwarven Mines and
  * levelled with powder.
+ *
+ * <p>
+ * A node is its identity and how far it levels. What one grants is held on {@link Buff}, under a
+ * {@code PERK} subject naming this id, so a contribution is read from there rather than from a
+ * column here.
  *
  * <p>
  * The powder a node costs is not modelled, and no nodes are supplied today, so a lookup finds
@@ -41,13 +44,6 @@ public class HotmPerk implements JpaModel {
     private @NotNull String name = "";
 
     /**
-     * What the perk grants, each a reference to a {@link Stat} by id whose values are keyed by perk
-     * level.
-     */
-    @Column(name = "stats", nullable = false)
-    private @NotNull ConcurrentList<Stat.Substitute> stats = Concurrent.newList();
-
-    /**
      * How far the perk can be levelled, {@code 0} for the one-shot nodes that are simply unlocked.
      */
     @Column(name = "max_level", nullable = false)
@@ -61,13 +57,12 @@ public class HotmPerk implements JpaModel {
 
         return this.getMaxLevel() == that.getMaxLevel()
             && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getStats(), that.getStats());
+            && Objects.equals(this.getName(), that.getName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getStats(), this.getMaxLevel());
+        return Objects.hash(this.getId(), this.getName(), this.getMaxLevel());
     }
 
 }

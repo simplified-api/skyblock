@@ -120,7 +120,7 @@ public class Stat implements JpaModel {
     /**
      * The {@link StatCategory} row behind {@link #categoryId}, resolved on the same column.
      */
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull StatCategory category;
 
