@@ -1486,9 +1486,9 @@
     ],
     "stats": [
       {
-        "id": "",
+        "id": "DISTANCE",
         "precision": 0,
-        "type": "PERCENT",
+        "type": "NONE",
         "values": {
           "1": 2,
           "2": 4,
@@ -2858,7 +2858,7 @@
     ],
     "stats": [
       {
-        "id": "PROJECTILE_DEFENSE",
+        "id": "HEALTH",
         "precision": 0,
         "type": "FLAT",
         "values": {
@@ -4795,7 +4795,7 @@
     ],
     "stats": [
       {
-        "id": "PROJECTILE_DEFENSE",
+        "id": "DEFENSE",
         "precision": 0,
         "type": "FLAT",
         "values": {
@@ -7386,7 +7386,7 @@
         }
       },
       {
-        "id": "",
+        "id": "DISTANCE",
         "precision": 0,
         "type": "NONE",
         "values": {
@@ -7396,7 +7396,7 @@
         }
       },
       {
-        "id": "",
+        "id": "MAX_BOBBERS",
         "precision": 0,
         "type": "NONE",
         "values": {
