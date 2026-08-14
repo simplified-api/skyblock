@@ -32,12 +32,12 @@ public final class SkyBlockDataService {
     /**
      * The GitHub organization that owns the data repo.
      */
-    public static final @NotNull String OWNER = "simplified-api";
+    public static final @NotNull String OWNER = SkyBlockDataContract.OWNER;
 
     /**
      * The repo name that hosts the SkyBlock JSON data corpus.
      */
-    public static final @NotNull String REPO = "skyblock-data";
+    public static final @NotNull String REPO = SkyBlockDataContract.REPO;
 
     /**
      * Read-side proxy configured with {@code Accept: application/vnd.github.raw+json}.
