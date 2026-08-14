@@ -1,9 +1,19 @@
+# Force LF line endings for every text file on every platform.
+#
+# content_sha256 in data/v1/index.json is taken over each file's bytes exactly as
+# they sit in the working tree, so a CRLF checkout hashes differently from what
+# Linux CI computes and every entry in the manifest fails its check at once - not
+# one of them, all of them. This rule is what keeps a Windows clone and CI
+# agreeing on the digest, so it is load-bearing rather than cosmetic.
 * text=auto eol=lf
 
+# Windows scripts need CRLF - gradlew.bat is tracked and a batch file with LF
+# endings fails on the shell that runs it.
 *.bat   text eol=crlf
 *.cmd   text eol=crlf
 *.ps1   text eol=crlf
 
+# Binary types, declared so git never attempts an end-of-line conversion.
 *.png   binary
 *.jpg   binary
 *.jpeg  binary

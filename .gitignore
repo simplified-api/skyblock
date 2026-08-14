@@ -117,6 +117,7 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
+### Project
 # Environment variables
 .env
 
@@ -128,3 +129,33 @@ texturepacks/
 craftedfury.json
 .claude/
 notes/
+
+### Editors beyond JetBrains
+# JSON editing happens in more places than Java editing does.
+.vscode/
+*.swp
+*.swo
+*~
+
+### Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+### Python
+# scripts/generate_index.py runs from the repo root, and importing it writes
+# scripts/__pycache__/. The generator needs no virtualenv, but a contributor who
+# makes one anyway should not see it in git status.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+### Local experimentation
+# A hand-edit of a large data file leaves a sibling beside it; items.json.bak
+# under data/v1/items/ is exactly the shape of that accident.
+*.bak
+*.tmp
+scratch/
