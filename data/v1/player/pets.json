@@ -11263,7 +11263,7 @@
             "values": {
               "LEGENDARY": {
                 "base": 0.0,
-                "scalar": 0.15
+                "scalar": 0.1
               }
             }
           }
@@ -11301,7 +11301,7 @@
             "values": {
               "LEGENDARY": {
                 "base": 0.0,
-                "scalar": 0.75
+                "scalar": 0.5
               }
             }
           }

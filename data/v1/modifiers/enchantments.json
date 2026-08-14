@@ -1502,7 +1502,7 @@
   {
     "id": "DRAIN",
     "name": "Drain",
-    "description": "Regen %{VALUE:REGEN} %{STAT:VITALITY} every time you hit a mob.\n%{FORMAT:DARK_GRAY}(1s cooldown)",
+    "description": "Regen %{VALUE:REGEN}%{SYMBOL:VITALITY} every time you hit a mob. %{FORMAT:DARK_GRAY}(1s cooldown)",
     "type": "NORMAL",
     "requiredLevel": 15,
     "conflict": "STEAL",
@@ -2067,8 +2067,8 @@
   },
   {
     "id": "FEROCIOUS_MANA",
-    "name": "Ferocious Mana",
-    "description": "Gain %{VALUE:MANA_STAT} of mana used near you as %{STAT:FEROCITY} for 10 seconds, capped at 50 %{STAT:FEROCITY}.",
+    "name": "Vivacious Vitality",
+    "description": "Convert %{VALUE:CONVERSION} of %{STAT:VITALITY} used as %{STAT:ATTACK_SPEED} for 10 seconds. %{FORMAT:DARK_GRAY}(Max %{VALUE:MAX_ATTACK_SPEED} %{STAT:ATTACK_SPEED})",
     "type": "NORMAL",
     "requiredLevel": 22,
     "categories": [
@@ -2142,20 +2142,37 @@
     ],
     "stats": [
       {
-        "id": "MANA_STAT",
-        "precision": 1,
+        "id": "CONVERSION",
+        "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 0.1,
-          "2": 0.1,
-          "3": 0.2,
-          "4": 0.2,
-          "5": 0.2,
-          "6": 0.3,
-          "7": 0.4,
-          "8": 0.4,
-          "9": 0.5,
-          "10": 0.5
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7,
+          "8": 8,
+          "9": 9,
+          "10": 10
+        }
+      },
+      {
+        "id": "MAX_ATTACK_SPEED",
+        "precision": 0,
+        "type": "NONE",
+        "values": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5
         }
       }
     ]
@@ -2851,8 +2868,8 @@
   },
   {
     "id": "HARDENED_MANA",
-    "name": "Hardened Mana",
-    "description": "Gain %{VALUE:MANA_STAT} of mana used near you as %{STAT:DEFENSE} for 10 seconds, capped at 400 %{STAT:DEFENSE}.",
+    "name": "Hardened Vitality",
+    "description": "Convert %{VALUE:CONVERSION} of %{STAT:VITALITY} used as %{STAT:DEFENSE} for 10 seconds. %{FORMAT:DARK_GRAY}(Max %{VALUE:MAX_DEFENSE} %{STAT:DEFENSE})",
     "type": "NORMAL",
     "requiredLevel": 22,
     "categories": [
@@ -2926,20 +2943,37 @@
     ],
     "stats": [
       {
-        "id": "MANA_STAT",
-        "precision": 1,
+        "id": "CONVERSION",
+        "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 0.1,
-          "2": 0.2,
-          "3": 0.3,
-          "4": 0.4,
-          "5": 0.5,
-          "6": 0.6,
-          "7": 0.7,
-          "8": 0.8,
-          "9": 0.9,
-          "10": 1.0
+          "1": 4,
+          "2": 8,
+          "3": 12,
+          "4": 16,
+          "5": 20,
+          "6": 24,
+          "7": 28,
+          "8": 32,
+          "9": 36,
+          "10": 40
+        }
+      },
+      {
+        "id": "MAX_DEFENSE",
+        "precision": 0,
+        "type": "NONE",
+        "values": {
+          "1": 25,
+          "2": 25,
+          "3": 25,
+          "4": 25,
+          "5": 25,
+          "6": 25,
+          "7": 25,
+          "8": 25,
+          "9": 25,
+          "10": 25
         }
       }
     ]
@@ -3530,7 +3564,7 @@
   {
     "id": "LIFE_STEAL",
     "name": "Life Steal",
-    "description": "Heals %{VALUE:HEAL} each time you hit a mob.",
+    "description": "Heal %{VALUE:HEAL}%{SYMBOL:HEALTH} every time you hit a mob.",
     "type": "NORMAL",
     "requiredLevel": 5,
     "conflict": "STEAL",
@@ -3898,8 +3932,8 @@
   },
   {
     "id": "MANA_VAMPIRE",
-    "name": "Mana Vampire",
-    "description": "Heal for %{VALUE:MANA_STAT} of mana used near you.",
+    "name": "Vampiric Vitality",
+    "description": "Heal for %{VALUE:HEAL} %{STAT:HEALTH} per %{STAT:VITALITY} used.",
     "type": "NORMAL",
     "requiredLevel": 22,
     "categories": [
@@ -3973,20 +4007,20 @@
     ],
     "stats": [
       {
-        "id": "MANA_STAT",
-        "precision": 1,
-        "type": "PERCENT",
+        "id": "HEAL",
+        "precision": 2,
+        "type": "FLAT",
         "values": {
-          "1": 0.5,
-          "2": 1.0,
-          "3": 1.5,
-          "4": 2.0,
-          "5": 2.5,
-          "6": 3.0,
-          "7": 3.5,
-          "8": 4.0,
-          "9": 4.5,
-          "10": 5.0
+          "1": 0.55,
+          "2": 0.6,
+          "3": 0.65,
+          "4": 0.7,
+          "5": 0.75,
+          "6": 0.8,
+          "7": 0.85,
+          "8": 0.9,
+          "9": 0.95,
+          "10": 1.0
         }
       }
     ]
@@ -5854,8 +5888,8 @@
   },
   {
     "id": "STRONG_MANA",
-    "name": "Strong Mana",
-    "description": "Gain %{VALUE:MANA_STAT} of mana used near you as %{STAT:STRENGTH} for 10 seconds, capped at 100 %{STAT:STRENGTH}.",
+    "name": "Strong Vitality",
+    "description": "Convert %{VALUE:CONVERSION} of %{STAT:VITALITY} used as %{STAT:STRENGTH} for 10 seconds. %{FORMAT:DARK_GRAY}(Max %{VALUE:MAX_STRENGTH} %{STAT:STRENGTH})",
     "type": "NORMAL",
     "requiredLevel": 22,
     "categories": [
@@ -5929,20 +5963,37 @@
     ],
     "stats": [
       {
-        "id": "MANA_STAT",
-        "precision": 1,
+        "id": "CONVERSION",
+        "precision": 0,
         "type": "PERCENT",
         "values": {
-          "1": 0.1,
-          "2": 0.2,
-          "3": 0.3,
-          "4": 0.4,
-          "5": 0.5,
-          "6": 0.6,
-          "7": 0.7,
-          "8": 0.8,
-          "9": 0.9,
-          "10": 1.0
+          "1": 2,
+          "2": 4,
+          "3": 6,
+          "4": 8,
+          "5": 10,
+          "6": 12,
+          "7": 14,
+          "8": 16,
+          "9": 18,
+          "10": 20
+        }
+      },
+      {
+        "id": "MAX_STRENGTH",
+        "precision": 0,
+        "type": "NONE",
+        "values": {
+          "1": 15,
+          "2": 15,
+          "3": 15,
+          "4": 15,
+          "5": 15,
+          "6": 15,
+          "7": 15,
+          "8": 15,
+          "9": 15,
+          "10": 15
         }
       }
     ]
@@ -8912,7 +8963,7 @@
   {
     "id": "VAMPIRISM",
     "name": "Vampirism",
-    "description": "Heals %{VALUE:HEAL} whenever you kill an enemy.",
+    "description": "Heal %{VALUE:HEAL}%{SYMBOL:HEALTH} every time you kill a mob. %{FORMAT:DARK_GRAY}(0.5s cooldown)",
     "type": "NORMAL",
     "requiredLevel": 15,
     "categories": [
