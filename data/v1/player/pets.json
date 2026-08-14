@@ -1092,7 +1092,7 @@
         "flatStat": true,
         "stats": [
           {
-            "id": "",
+            "id": "PET_LUCK",
             "precision": 0,
             "type": "FLAT",
             "values": {
@@ -1716,7 +1716,7 @@
             }
           },
           {
-            "id": "FISHING_SPEED",
+            "id": "PLAYERS",
             "precision": 2,
             "type": "FLAT",
             "values": {
@@ -2215,7 +2215,7 @@
         "flatStat": false,
         "stats": [
           {
-            "id": "MAGIC_FIND",
+            "id": "DEFAULT",
             "precision": 1,
             "type": "PERCENT",
             "values": {
@@ -5218,11 +5218,11 @@
       {
         "id": "RIDE_INTO_BATTLE",
         "name": "Ride Into Battle",
-        "description": "",
+        "description": "While riding your horse, gain +%{VALUE:BOW_DAMAGE} bow damage.",
         "flatStat": false,
         "stats": [
           {
-            "id": "While riding your horse, gain +%{VALUE:BOW_DAMAGE} bow damage.",
+            "id": "BOW_DAMAGE",
             "precision": 2,
             "type": "PERCENT",
             "values": {
@@ -5353,7 +5353,7 @@
       {
         "id": "PACK_SLAYER",
         "name": "Pack Slayer",
-        "description": "Gain %{VALUE:DEFAULT} Combat XP against %{FORMAT:GREEN}Wolves%{VALUE:GRAY}.",
+        "description": "Gain %{VALUE:DEFAULT} Combat XP against %{FORMAT:GREEN}Wolves%{FORMAT:GRAY}.",
         "flatStat": false,
         "stats": [
           {
@@ -7888,7 +7888,7 @@
         "flatStat": false,
         "stats": [
           {
-            "id": "DAMAGE",
+            "id": "STRENGTH",
             "precision": 2,
             "type": "FLAT",
             "values": {
@@ -10509,7 +10509,7 @@
       {
         "id": "SPIRIT_COOLDOWNS",
         "name": "Spirit Cooldowns",
-        "description": "Reduces the cooldown of your ghost abilities in dungeons by %{VALUE:REDUCE.}",
+        "description": "Reduces the cooldown of your ghost abilities in dungeons by %{VALUE:REDUCE}.",
         "flatStat": false,
         "stats": [
           {
@@ -11980,7 +11980,7 @@
       {
         "id": "HEMORRHAGE",
         "name": "Hemorrhage",
-        "description": "Melee attacks reduce healing by %{VALUE:REDUCE} for %{DURATION}.",
+        "description": "Melee attacks reduce healing by %{VALUE:REDUCE} for %{VALUE:DURATION}.",
         "flatStat": false,
         "stats": [
           {
