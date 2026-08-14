@@ -1,0 +1,139 @@
+[
+  {
+    "id": "RECOMBOBULATED",
+    "name": "Recombobulator 3000",
+    "subject": { "kind": "ITEM" },
+    "conditions": [
+      {
+        "input": { "kind": "TAG", "path": "tag.ExtraAttributes.rarity_upgrades", "read": "NUMBER" },
+        "op": "GTE",
+        "amount": 1
+      }
+    ],
+    "rules": [
+      {
+        "channels": ["RARITY"],
+        "operation": "ADD",
+        "value": { "kind": "NUMBER", "amount": 1 }
+      }
+    ]
+  },
+  {
+    "id": "TIER_BOOSTED",
+    "name": "Tier Boost",
+    "subject": { "kind": "ITEM" },
+    "conditions": [
+      {
+        "input": { "kind": "TAG", "path": "tag.ExtraAttributes.baseStatBoostPercentage", "read": "NUMBER" },
+        "op": "GTE",
+        "amount": 50
+      }
+    ],
+    "rules": [
+      {
+        "channels": ["RARITY"],
+        "operation": "ADD",
+        "value": { "kind": "NUMBER", "amount": 1 }
+      }
+    ]
+  },
+  {
+    "id": "POWER_ARTIFACT",
+    "name": "Power Artifact",
+    "subject": { "kind": "ITEM", "carrierId": "POWER_ARTIFACT" },
+    "conditions": [
+      {
+        "input": {
+          "kind": "TAG",
+          "path": "tag.ExtraAttributes.gems",
+          "read": "COUNT",
+          "matching": "PERFECT"
+        },
+        "op": "GTE",
+        "amount": 7
+      }
+    ],
+    "rules": [
+      {
+        "channels": ["RARITY"],
+        "operation": "ADD",
+        "value": { "kind": "NUMBER", "amount": 1 }
+      }
+    ]
+  },
+  {
+    "id": "PANDORAS_BOX",
+    "name": "Pandora's Box",
+    "subject": { "kind": "ITEM", "carrierId": "PANDORAS_BOX" },
+    "rules": [
+      {
+        "channels": ["RARITY"],
+        "operation": "SET",
+        "value": {
+          "kind": "LOOKUP",
+          "lookup": {
+            "on": { "kind": "TAG", "path": "tag.ExtraAttributes.pandora-rarity", "read": "TEXT" },
+            "mode": "EXACT",
+            "amounts": {
+              "COMMON": 0,
+              "UNCOMMON": 1,
+              "RARE": 2,
+              "EPIC": 3,
+              "LEGENDARY": 4,
+              "MYTHIC": 5,
+              "DIVINE": 6,
+              "SPECIAL": 7,
+              "VERY_SPECIAL": 8,
+              "SUPREME": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "PULSE_RING",
+    "name": "Pulse Ring",
+    "subject": { "kind": "ITEM", "carrierId": "PULSE_RING" },
+    "rules": [
+      {
+        "channels": ["RARITY"],
+        "operation": "ADD",
+        "value": {
+          "kind": "LOOKUP",
+          "lookup": {
+            "on": { "kind": "TAG", "path": "tag.ExtraAttributes.thunder_charge", "read": "NUMBER" },
+            "mode": "THRESHOLD_CUMULATIVE",
+            "amounts": {
+              "150000": 1,
+              "1000000": 1,
+              "5000000": 1
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "TRAPPER_CREST",
+    "name": "Trapper Crest",
+    "subject": { "kind": "ITEM", "carrierId": "TRAPPER_CREST" },
+    "rules": [
+      {
+        "channels": ["RARITY"],
+        "operation": "ADD",
+        "value": {
+          "kind": "LOOKUP",
+          "lookup": {
+            "on": { "kind": "TAG", "path": "tag.ExtraAttributes.pelts_earned", "read": "NUMBER" },
+            "mode": "THRESHOLD_CUMULATIVE",
+            "amounts": {
+              "100": 1,
+              "500": 1
+            }
+          }
+        }
+      }
+    ]
+  }
+]

@@ -60,21 +60,12 @@ idea {
     }
 }
 
-val envFile = layout.projectDirectory.file(".env").asFile
-
 tasks {
     test {
         useJUnitPlatform()
 
-        // SkyBlockFactory reads its token off the test JVM's own environment, and Gradle has no
-        // notion of .env. Without one the reads are unauthenticated, which GitHub caps at 60
-        // requests per hour per IP - a session connect spends about 42 of them
-        doFirst {
-            if (envFile.isFile) {
-                envFile.readLines()
-                    .filter { it.contains('=') && !it.startsWith('#') }
-                    .forEach { environment(it.substringBefore('='), it.substringAfter('=')) }
-            }
-        }
+        // the corpus is a tracked directory of this project, and a forked test JVM inherits no
+        // notion of where the project is
+        systemProperty("skyblock.corpus.root", layout.projectDirectory.asFile.absolutePath)
     }
 }

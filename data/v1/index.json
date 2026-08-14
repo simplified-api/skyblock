@@ -1,0 +1,317 @@
+{
+  "commit_sha": "c6fffbeb9cceece003e5e712461a34327d610b61",
+  "count": 34,
+  "files": [
+    {
+      "bytes": 82265,
+      "category": "items",
+      "content_sha256": "eb2becf6c655d0d87fc65495adca4db401504d78bd94a65d97a1d619cbdf8bf3",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Accessory",
+      "path": "data/v1/items/accessories.json",
+      "table_name": "accessories"
+    },
+    {
+      "bytes": 4929,
+      "category": "items",
+      "content_sha256": "e700a20ea53480aad7d29416c3d39e5e16f6c8ed0f3608b104591c1080bf97e2",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.BitsItem",
+      "path": "data/v1/items/bits_items.json",
+      "table_name": "bits_items"
+    },
+    {
+      "bytes": 3908,
+      "category": "items",
+      "content_sha256": "b09499d5a8d0d87864a0a899d80b91d8104a0b76d1b49123bdb4f4a24b7d5751",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.ItemCategory",
+      "path": "data/v1/items/item_categories.json",
+      "table_name": "item_categories"
+    },
+    {
+      "bytes": 7082076,
+      "category": "items",
+      "content_sha256": "97b48d3f489f9f594771834e5f53433090b0ba7540e60b7e6a2e3f665873b942",
+      "extra_bytes": 465,
+      "extra_path": "data/v1/items/items_extra.json",
+      "extra_sha256": "b006e73dd42d86ca2bbf6a0efc677cb4faad4ec765305ced594f8087d48f4bcb",
+      "has_extra": true,
+      "model_class": "api.simplified.skyblock.model.Item",
+      "path": "data/v1/items/items.json",
+      "table_name": "items"
+    },
+    {
+      "bytes": 2254,
+      "category": "mobs",
+      "content_sha256": "c9cc46a0c4d2b95af97ebaf30dbeb9de5a8d2987a14202a467a72d7b1eda0ee5",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.BestiaryCategory",
+      "path": "data/v1/mobs/bestiary_categories.json",
+      "table_name": "bestiary_categories"
+    },
+    {
+      "bytes": 92118,
+      "category": "mobs",
+      "content_sha256": "6f43ff1ffe2e4d43165b7e080c063e90f9cddbfb10e981eb5587d5fbd5450f9c",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.BestiaryFamily",
+      "path": "data/v1/mobs/bestiary_families.json",
+      "table_name": "bestiary_families"
+    },
+    {
+      "bytes": 769,
+      "category": "mobs",
+      "content_sha256": "52e667c776403834e2b9198875a17ede6743689d91c73417aa818b6eeeb6f53b",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.BestiarySubcategory",
+      "path": "data/v1/mobs/bestiary_subcategories.json",
+      "table_name": "bestiary_subcategories"
+    },
+    {
+      "bytes": 2277,
+      "category": "mobs",
+      "content_sha256": "7d3b91051eff71bccd83ff4926dda8b50ac58b7ffc583fbda7449b7c930ac0fc",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.MobType",
+      "path": "data/v1/mobs/mob_types.json",
+      "table_name": "mob_types"
+    },
+    {
+      "bytes": 4937,
+      "category": "modifiers",
+      "content_sha256": "84ad5657ac3f24cc375476a1c3f07bad2e976722692abc1ffa43739981aa86c8",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Brew",
+      "path": "data/v1/modifiers/brews.json",
+      "table_name": "brews"
+    },
+    {
+      "bytes": 3289,
+      "category": "modifiers",
+      "content_sha256": "b487ac357c2f4f68d391d587df5221cd2f64986f3b2e8567492c9d19ea41d291",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Buff",
+      "path": "data/v1/modifiers/buffs.json",
+      "table_name": "buffs"
+    },
+    {
+      "bytes": 163756,
+      "category": "modifiers",
+      "content_sha256": "f7a71475ea53266a792721276fc420087ecfb97f2e8183f2cee7945927cfad37",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Enchantment",
+      "path": "data/v1/modifiers/enchantments.json",
+      "table_name": "enchantments"
+    },
+    {
+      "bytes": 12393,
+      "category": "modifiers",
+      "content_sha256": "6d4831f1c727bbd719b4c3cd130b07f7c040239f2b1759bf03a8d4ce1298a41b",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Gemstone",
+      "path": "data/v1/modifiers/gemstones.json",
+      "table_name": "gemstones"
+    },
+    {
+      "bytes": 3,
+      "category": "modifiers",
+      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.HotmPerk",
+      "path": "data/v1/modifiers/hotm_perks.json",
+      "table_name": "hotm_perks"
+    },
+    {
+      "bytes": 2415,
+      "category": "modifiers",
+      "content_sha256": "1aa715eca4d46029fabebc6dbccb2db28a9d1df3e93214df5dcace1c889baacd",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Mixin",
+      "path": "data/v1/modifiers/mixins.json",
+      "table_name": "mixins"
+    },
+    {
+      "bytes": 2327,
+      "category": "modifiers",
+      "content_sha256": "03b73edf797ea61d3b51b2fd8d3e2d08fce78bb5b4ec1102d8f93fef2400ec07",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.PotionGroup",
+      "path": "data/v1/modifiers/potion_groups.json",
+      "table_name": "potion_groups"
+    },
+    {
+      "bytes": 20929,
+      "category": "modifiers",
+      "content_sha256": "a25d8a8d43a89436390d1edf5d6b4325ebaed00f3f05d7575676f2655bf2ca1e",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Potion",
+      "path": "data/v1/modifiers/potions.json",
+      "table_name": "potions"
+    },
+    {
+      "bytes": 9121,
+      "category": "modifiers",
+      "content_sha256": "31a25c01baa8608526497f0d48a79e2a947520de673f5525cde0aae28f4ccf06",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Power",
+      "path": "data/v1/modifiers/powers.json",
+      "table_name": "powers"
+    },
+    {
+      "bytes": 101630,
+      "category": "modifiers",
+      "content_sha256": "629ea0e14978c79f965409e26d25d4274b0be4b15dfe09aba2e392e58908347d",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Reforge",
+      "path": "data/v1/modifiers/reforges.json",
+      "table_name": "reforges"
+    },
+    {
+      "bytes": 103660,
+      "category": "modifiers",
+      "content_sha256": "9a0ae8083ba02ba0fb3c7c16d9e223424cacbe26be88a02eab8067f6038628ef",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.ShopPerk",
+      "path": "data/v1/modifiers/shop_perks.json",
+      "table_name": "shop_perks"
+    },
+    {
+      "bytes": 774,
+      "category": "modifiers",
+      "content_sha256": "1ea51c69a88e7bb07cce8dfbc9ed2b84bca2652cd4e9c4bf2db4b7abab867232",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.StatCategory",
+      "path": "data/v1/modifiers/stat_categories.json",
+      "table_name": "stat_categories"
+    },
+    {
+      "bytes": 17279,
+      "category": "modifiers",
+      "content_sha256": "400d0b6a15c8ce1b331ed7fcbd8b90c26518c0dbdd8243464c0dec9c3387b917",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Stat",
+      "path": "data/v1/modifiers/stats.json",
+      "table_name": "stats"
+    },
+    {
+      "bytes": 175777,
+      "category": "player",
+      "content_sha256": "756956ea2ab044f7159259cf7f5a70fc74d03b1a56251b60c55bf2cdb592291e",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Collection",
+      "path": "data/v1/player/collections.json",
+      "table_name": "collections"
+    },
+    {
+      "bytes": 672,
+      "category": "player",
+      "content_sha256": "0400a55ad158f00fa25bbf980f1fe6c0ff00b5f22aa8b296c34a4e8e29c7b166",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Essence",
+      "path": "data/v1/player/essences.json",
+      "table_name": "essences"
+    },
+    {
+      "bytes": 167612,
+      "category": "player",
+      "content_sha256": "0c23200cd44edb2686bef82cf039754bc2af9070c5a9413f97a76b423c88a2ca",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Minion",
+      "path": "data/v1/player/minions.json",
+      "table_name": "minions"
+    },
+    {
+      "bytes": 360481,
+      "category": "player",
+      "content_sha256": "57254f5965793a6f6e0571b0affa2af63ea13371896e483d9e95225db9e4a763",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Pet",
+      "path": "data/v1/player/pets.json",
+      "table_name": "pets"
+    },
+    {
+      "bytes": 180366,
+      "category": "player",
+      "content_sha256": "565b77b0cfccbda06ac8d5c7faad2487f63b25a6e027dc1dec617df488bf2daf",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Skill",
+      "path": "data/v1/player/skills.json",
+      "table_name": "skills"
+    },
+    {
+      "bytes": 17428,
+      "category": "player",
+      "content_sha256": "619713a74b04594603fe49603bc5c90cef0779bc75be5bd2f771d4d0a6c64cbe",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Slayer",
+      "path": "data/v1/player/slayers.json",
+      "table_name": "slayers"
+    },
+    {
+      "bytes": 14659,
+      "category": "world",
+      "content_sha256": "d60f6518d188bdfc8d5f6a638c9b5dc1e65266b7863142f4de4dde55d18c1a1e",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Event",
+      "path": "data/v1/world/events.json",
+      "table_name": "events"
+    },
+    {
+      "bytes": 4,
+      "category": "world",
+      "content_sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.FairySoul",
+      "path": "data/v1/world/fairy_souls.json",
+      "table_name": "fairy_souls"
+    },
+    {
+      "bytes": 12848,
+      "category": "world",
+      "content_sha256": "1df1b8192aa818285b233f036c73fd2540481243c7ee52d2c5103ed67967098e",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Keyword",
+      "path": "data/v1/world/keywords.json",
+      "table_name": "keywords"
+    },
+    {
+      "bytes": 16472,
+      "category": "world",
+      "content_sha256": "5ef666fba04957243c6f790e85e15ed2c22434fe20bdc7fd3030ba9c4e304e6f",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Mayor",
+      "path": "data/v1/world/mayors.json",
+      "table_name": "mayors"
+    },
+    {
+      "bytes": 1556,
+      "category": "world",
+      "content_sha256": "7e37229975fbb3adb90e60af6fa89fd341d4646a04cb4fac2f43e15b1484c5b8",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.MelodySong",
+      "path": "data/v1/world/melody_songs.json",
+      "table_name": "melody_songs"
+    },
+    {
+      "bytes": 3011,
+      "category": "world",
+      "content_sha256": "244516f65aab3124a3113cf5827f19aa6493adbefab6381cb7d37433a21bbc5d",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Region",
+      "path": "data/v1/world/regions.json",
+      "table_name": "regions"
+    },
+    {
+      "bytes": 31825,
+      "category": "world",
+      "content_sha256": "015f6af20988a139d3b7e5b745e76367d0f1fdc24e2cd7ddd733f2fc9ee2352d",
+      "has_extra": false,
+      "model_class": "api.simplified.skyblock.model.Zone",
+      "path": "data/v1/world/zones.json",
+      "table_name": "zones"
+    }
+  ],
+  "generated_at": "2026-08-14T07:46:50Z",
+  "version": 1
+}

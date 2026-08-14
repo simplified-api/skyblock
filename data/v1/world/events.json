@@ -1,0 +1,468 @@
+[
+  {
+    "id": "CULT_OF_THE_FALLEN_STAR",
+    "name": "Cult of the Fallen Star",
+    "description": "The cult gathers in the Crimson Isle four times a SkyBlock month.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 1, "day": 7 },
+        "phases": [
+          { "hours": 6 },
+          { "days": 6, "hours": 18 },
+          { "hours": 6 },
+          { "days": 6, "hours": 18 },
+          { "hours": 6 },
+          { "days": 6, "hours": 18 },
+          { "hours": 6 },
+          { "days": 9, "hours": 18 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "DARK_AUCTION",
+    "name": "Dark Auction",
+    "description": "Rare items are sold off one at a time to the highest bidder.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 1 },
+        "phases": [
+          { "days": 0 },
+          { "days": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HARVEST_FEAST",
+    "name": "Harvest Feast",
+    "description": "A harvest celebration whose four in-season crops rotate while it runs.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 487, "month": 7 },
+        "phases": [
+          { "months": 3 },
+          { "months": 9 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HOPPITYS_HUNT",
+    "name": "Hoppity's Hunt",
+    "description": "Chocolate eggs spawn across the islands for players to hunt down.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 346 },
+        "phases": [
+          { "months": 3 },
+          { "months": 9 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "JACOBS_FARMING_CONTEST",
+    "name": "Jacob's Farming Contest",
+    "description": "Farmers compete on a chosen set of crops, and the largest collections take the top reward brackets.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 101, "day": 2 },
+        "phases": [
+          { "days": 1 },
+          { "days": 2 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "JERRYS_WORKSHOP",
+    "name": "Jerry's Workshop",
+    "description": "Jerry's snowy island opens to visitors, with gifts to gather and a chicken race to run.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 37, "month": 12 },
+        "phases": [
+          { "months": 1 },
+          { "months": 11 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "MAYOR_ELECTION",
+    "name": "Mayor Election",
+    "description": "Five candidates stand for office and players vote for the one whose perks they want.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 88, "month": 6, "day": 27 },
+        "phases": [
+          { "months": 9 },
+          { "months": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NEW_YEAR_CELEBRATION",
+    "name": "New Year Celebration",
+    "description": "The Baker joins Jerry in the Village to hand out New Year Cakes and sell the bag that stores them.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 1, "month": 12, "day": 29 },
+        "phases": [
+          { "days": 3 },
+          { "months": 11, "days": 28 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "RAFFLE_OF_THE_CENTURY",
+    "name": "Raffle of the Century",
+    "description": "Players join one of Rezzus's five teams and enter earned tickets into draws for Century Cakes and prizes.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 300 },
+        "phases": [
+          { "years": 1 },
+          { "years": 99 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SEASON_OF_JERRY",
+    "name": "Season of Jerry",
+    "description": "Players take the snow cannons of Defend Jerry's Workshop and hold waves of magma cubes off the gift piles.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 37, "month": 12, "day": 24 },
+        "phases": [
+          { "days": 3 },
+          { "months": 11, "days": 28 }
+        ]
+      }
+    ],
+    "suppressedBy": ["DANTE_CANDIDATE"]
+  },
+  {
+    "id": "SHENS_AUCTION",
+    "name": "Shen's Auction",
+    "description": "Players bid on Shen's rare stock in the auction room beneath the Hub's Auction House.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "note": "A new auction opens every SkyBlock year. That period is stated in prose and no anchor is published, so there is no occurrence for a phase list to walk from."
+      }
+    ]
+  },
+  {
+    "id": "SPOOKY_FESTIVAL",
+    "name": "Spooky Festival",
+    "description": "Spooky mobs spawn across the islands and any kill can drop candy for the Fear Mongerer's leaderboard.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 27, "month": 8, "day": 29 },
+        "phases": [
+          { "days": 3 },
+          { "months": 11, "days": 28 }
+        ]
+      }
+    ],
+    "suppressedBy": ["DANTE_CANDIDATE"]
+  },
+  {
+    "id": "STARLYN_CONTEST",
+    "name": "Starlyn Contest",
+    "description": "Agatha and Miria rank the points players earn chopping, gathering and hunting on Moonglade Marsh and Torrhus Canyon.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "note": "A contest runs every SkyBlock day and lasts exactly one SkyBlock day, so one ends as the next begins. No anchor is published, only a real-world release date, so there is no point on the SkyBlock clock for a phase list to start from."
+      }
+    ]
+  },
+  {
+    "id": "TRAVELING_ZOO",
+    "name": "Traveling Zoo",
+    "description": "Oringo the Traveling Zookeeper visits the Hub with pets to trade.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 50, "month": 4 },
+        "phases": [
+          { "days": 3 },
+          { "months": 5, "days": 28 },
+          { "days": 3 },
+          { "months": 5, "days": 28 }
+        ],
+        "rotation": ["BLUE_WHALE", "TIGER", "LION", "MONKEY", "ELEPHANT", "GIRAFFE"]
+      }
+    ],
+    "suppressedBy": ["DANTE_CANDIDATE"]
+  },
+  {
+    "id": "YEAR_OF_THE_PIG",
+    "name": "Year of the Pig",
+    "description": "A named SkyBlock year spent chasing Shiny Pigs and collecting their treasures.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 407 },
+        "phases": [
+          { "years": 1 },
+          { "years": 11 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "YEAR_OF_THE_SEAL",
+    "name": "Year of the Seal",
+    "description": "A named SkyBlock year spent fishing up beach balls and trading Fishy Treats with Lukas the Aquarist.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 402 },
+        "phases": [
+          { "years": 1 },
+          { "years": 11 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "YEAR_OF_THE_WITCH",
+    "name": "Year of the Witch",
+    "description": "A named SkyBlock year spent gathering ingredients from slain mobs and brewing them into Witches Stew.",
+    "trigger": "SKYBLOCK_CALENDAR",
+    "schedules": [
+      {
+        "anchor": { "year": 476 },
+        "phases": [
+          { "years": 1 },
+          { "years": 11 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CARNIVAL",
+    "name": "Carnival",
+    "description": "A fairground on the Hub Island whose minigames pay out Carnival Tokens to spend with Doug.",
+    "trigger": "MAYOR_PERK",
+    "schedules": [
+      {
+        "mayor": "EVENTS_CANDIDATE",
+        "note": "The whole of Foxy's term, opening when she takes office and closing when her successor does. A term is an election outcome rather than a fixed calendar position, so no anchor and phase list can walk it."
+      }
+    ],
+    "mayors": ["EVENTS_CANDIDATE"]
+  },
+  {
+    "id": "FISHING_FESTIVAL",
+    "name": "Fishing Festival",
+    "description": "Sea creature spawn rates rise and Sharks can be fished up.",
+    "trigger": "MAYOR_PERK",
+    "schedules": [
+      {
+        "mayor": "FISHING_CANDIDATE",
+        "anchor": { "year": 89, "month": 6 },
+        "phases": [
+          { "days": 3 },
+          { "days": 28 }
+        ]
+      },
+      {
+        "mayor": "EVENTS_CANDIDATE",
+        "anchor": { "year": 89, "month": 6, "day": 22 },
+        "phases": [
+          { "days": 3 },
+          { "months": 11, "days": 28 }
+        ]
+      }
+    ],
+    "mayors": ["FISHING_CANDIDATE", "EVENTS_CANDIDATE"]
+  },
+  {
+    "id": "MINING_FIESTA",
+    "name": "Mining Fiesta",
+    "description": "Mining on public islands doubles its drops and turns up Refined Minerals and Glossy Gemstones.",
+    "trigger": "MAYOR_PERK",
+    "schedules": [
+      {
+        "mayor": "MINING_CANDIDATE",
+        "anchor": { "year": 89, "month": 2 },
+        "phases": [
+          { "days": 7 },
+          { "months": 1, "days": 24 },
+          { "days": 7 },
+          { "months": 1, "days": 24 },
+          { "days": 7 },
+          { "months": 1, "days": 24 },
+          { "days": 7 },
+          { "months": 1, "days": 24 },
+          { "days": 7 },
+          { "months": 3, "days": 24 }
+        ]
+      },
+      {
+        "mayor": "EVENTS_CANDIDATE",
+        "anchor": { "year": 89, "month": 6, "day": 22 },
+        "phases": [
+          { "days": 7 },
+          { "months": 11, "days": 24 }
+        ]
+      }
+    ],
+    "mayors": ["MINING_CANDIDATE", "EVENTS_CANDIDATE"]
+  },
+  {
+    "id": "MYTHOLOGICAL_RITUAL",
+    "name": "Mythological Ritual",
+    "description": "Griffin Burrows open across the Hub Island, dug up with a spade for treasure and Mythological creatures.",
+    "trigger": "MAYOR_PERK",
+    "schedules": [
+      {
+        "mayor": "PETS_CANDIDATE",
+        "note": "The whole of Diana's term, opening when she takes office and closing when her successor does. A term is an election outcome rather than a fixed calendar position, so no anchor and phase list can walk it."
+      }
+    ],
+    "mayors": ["PETS_CANDIDATE"]
+  },
+  {
+    "id": "STOCK_OF_STONKS",
+    "name": "Stock of Stonks",
+    "description": "Richard takes coin bids in the Trade Center and pays them out in Stock of Stonks to spend at Liz's shop.",
+    "trigger": "MAYOR_PERK",
+    "schedules": [
+      {
+        "mayor": "ECONOMIST_CANDIDATE",
+        "note": "One auction every SkyBlock month, resolving at month end, for as long as Diaz holds office. The month grid is fixed but the term that gates it is an election outcome rather than a fixed calendar position, so no anchor and phase list can walk it."
+      }
+    ],
+    "mayors": ["ECONOMIST_CANDIDATE"]
+  },
+  {
+    "id": "BINGO",
+    "name": "Bingo",
+    "description": "A card of objectives run on a separate profile for the first week of each real month.",
+    "trigger": "REAL_WORLD",
+    "schedules": [
+      {
+        "note": "Days 1 through 7 of every real-world month. A Gregorian month is not a fixed span, so no anchor and phase list can walk it."
+      }
+    ]
+  },
+  {
+    "id": "KUUDRA_LOREMASTER",
+    "name": "Kuudra Loremaster",
+    "description": "The Loremaster appears in the Crimson Isle to recount the lore of Kuudra.",
+    "trigger": "REAL_WORLD",
+    "schedules": [
+      {
+        "anchor": { "year": 2026, "month": 3, "day": 24, "hour": 5, "clock": "REAL" },
+        "phases": [
+          { "days": 1, "clock": "REAL" },
+          { "days": 6, "clock": "REAL" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SKYBLOCK_ANNIVERSARY",
+    "name": "SkyBlock Anniversary",
+    "description": "A celebration of the real-world day SkyBlock launched on Hypixel.",
+    "trigger": "REAL_WORLD",
+    "schedules": [
+      {
+        "anchor": { "year": 495, "month": 11, "day": 21 },
+        "phases": [
+          { "days": 7, "clock": "REAL" }
+        ],
+        "limit": 1,
+        "note": "The published window is a single dated run. The celebration returns around the real-world anniversary in June, but that date is chosen each year rather than derived, so no anchor and phase list can reach past this one."
+      }
+    ]
+  },
+  {
+    "id": "THE_GREAT_SPOOK",
+    "name": "The Great Spook",
+    "description": "SkyBlock is haunted for Halloween, and items available at no other time appear in the Village.",
+    "trigger": "REAL_WORLD",
+    "schedules": [
+      {
+        "note": "Once per real-world year, in real-world October, for about two real-world weeks. The start moves from year to year - October 28 in one, October 5 in the next - so there is no offset an anchor could carry."
+      }
+    ]
+  },
+  {
+    "id": "TYASHOI_ALCHEMIST",
+    "name": "Tyashoi Alchemist",
+    "description": "The Tyashoi Alchemist stands in front of the Village Alchemy Shop and trades goods found nowhere else.",
+    "trigger": "REAL_WORLD",
+    "schedules": [
+      {
+        "note": "Present for the whole of The Great Spook and only then, so it inherits that event's variable October window. A schedule can state a clock rule but not a dependency on another event, and the event it rides carries no anchor of its own."
+      }
+    ]
+  },
+  {
+    "id": "UDELS_ABIPHONE_KEYNOTE",
+    "name": "Udel's Abiphone Keynote",
+    "description": "Udel delivers a keynote presentation on the latest Abiphone.",
+    "trigger": "REAL_WORLD",
+    "schedules": [
+      {
+        "note": "Held on the day of a real-world Apple Inc. event. A third party sets those dates and they are not reliably annual, so no anchor and phase list can predict one."
+      }
+    ]
+  },
+  {
+    "id": "CHICKEN_RACE",
+    "name": "Chicken Race",
+    "description": "A player rides a chicken through a course of airborne Cluckpoints in Jerry's Workshop, each one adding time to the run.",
+    "trigger": "PLAYER_STARTED",
+    "schedules": []
+  },
+  {
+    "id": "A_HONK_AND_SEEK_ADVENTURE",
+    "name": "A Honk and Seek Adventure",
+    "description": "Chuckleton visits the Hub and sets tasks that reward thirteen parody versions of familiar SkyBlock items.",
+    "trigger": "UNSCHEDULED",
+    "schedules": []
+  },
+  {
+    "id": "FIRE_SALE",
+    "name": "Fire Sale",
+    "description": "Elizabeth sells exclusive cosmetics for SkyBlock Gems in the Community Center, and the stock never returns.",
+    "trigger": "UNSCHEDULED",
+    "schedules": []
+  },
+  {
+    "id": "RESISTANCE_MOVEMENT",
+    "name": "Resistance Movement",
+    "description": "A one-time uprising against Mayor Dante, announced through an NPC a day ahead.",
+    "trigger": "UNSCHEDULED",
+    "schedules": []
+  },
+  {
+    "id": "THE_GREAT_POTATO_WAR",
+    "name": "The Great Potato War",
+    "description": "Two players race for the highest Potato Collection, and the Potato King brings commemorative rewards to the Hub when it settles.",
+    "trigger": "UNSCHEDULED",
+    "schedules": []
+  }
+]

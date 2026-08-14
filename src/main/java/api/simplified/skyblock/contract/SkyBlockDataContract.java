@@ -10,8 +10,9 @@ import api.simplified.github.response.GitHubPutResponse;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Sub-interface façade over the generic GitHub contracts that pre-binds the SkyBlock-Simplified
- * data repository as the owner and repo of every call.
+ * Sub-interface façade over the generic GitHub contracts that pre-binds
+ * {@value #OWNER}/{@value #REPO} as the owner and repo of every call, and names the manifest the
+ * JSON corpus is discovered through.
  *
  * <p>Extends {@link GitHubContentsContract} and {@link GitHubContentsWriteContract} so the
  * inherited annotated methods carry through for any caller that wants them, while the SkyBlock-
@@ -41,7 +42,12 @@ public interface SkyBlockDataContract extends GitHubContentsContract, GitHubCont
     /**
      * The repo name that hosts the SkyBlock JSON data corpus.
      */
-    @NotNull String REPO = "skyblock-data";
+    @NotNull String REPO = "skyblock";
+
+    /**
+     * The manifest mapping every corpus file to its model, relative to the repo root.
+     */
+    @NotNull String MANIFEST_PATH = "data/v1/index.json";
 
     /**
      * Fetches the current tip commit on {@code master} of the SkyBlock data repo.

@@ -6,8 +6,7 @@ import api.simplified.github.GitHubContentsWriteContract;
 import api.simplified.github.exception.GitHubApiException;
 import api.simplified.skyblock.contract.SkyBlockDataContract;
 import api.simplified.skyblock.model.Item;
-import api.simplified.skyblock.source.GitHubFileFetcher;
-import api.simplified.skyblock.source.GitHubIndexProvider;
+import com.google.gson.Gson;
 import dev.simplified.client.Client;
 import dev.simplified.client.ClientConfig;
 import dev.simplified.collection.Concurrent;
@@ -16,18 +15,25 @@ import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.RepositoryFactory;
+import dev.simplified.persistence.exception.JpaException;
 import dev.simplified.persistence.source.FileFetcher;
 import dev.simplified.persistence.source.IndexProvider;
+import dev.simplified.persistence.source.ManifestIndex;
 import dev.simplified.persistence.source.RemoteJsonSource;
 import dev.simplified.persistence.source.Source;
 import dev.simplified.util.StringUtil;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.nio.charset.StandardCharsets;
+
 /**
  * Repository factory for the SkyBlock models scoped to the {@link Item} package, loading each one
- * from the {@code skyblock-data} repository over the GitHub Contents API.
+ * over the GitHub Contents API from the corpus its {@link SkyBlockDataContract} is bound to.
  *
  * <p>Every model gets its own {@link RemoteJsonSource} sharing one {@link IndexProvider} and one
  * {@link FileFetcher}, so the manifest that maps a model class to its file is fetched once and the
@@ -39,11 +45,12 @@ import org.jetbrains.annotations.Nullable;
  * repeatedly. Callers that already own configured proxies should pass a
  * {@link SkyBlockDataContract} instead.
  */
+@Log4j2
 @Getter
 public class SkyBlockFactory implements RepositoryFactory {
 
     /**
-     * Identifies this source in exception messages and in the external asset state tables.
+     * Identifies this dataset in exception messages and in the external asset state tables.
      */
     public static final @NotNull String SOURCE_ID = "skyblock-data";
 
@@ -60,6 +67,9 @@ public class SkyBlockFactory implements RepositoryFactory {
     private final @NotNull ConcurrentMap<Class<?>, Source<?>> sources;
     private final @Nullable Source<?> defaultSource = null;
 
+    @Getter(AccessLevel.NONE)
+    private final @NotNull ManifestSource manifestSource;
+
     /**
      * Constructs a factory against clients it builds and owns.
      */
@@ -73,15 +83,84 @@ public class SkyBlockFactory implements RepositoryFactory {
      * @param contract the read and write proxies bound to the data repository
      */
     public SkyBlockFactory(@NotNull SkyBlockDataContract contract) {
-        IndexProvider indexProvider = new GitHubIndexProvider(SOURCE_ID, contract, GsonSettings.defaults().create());
-        FileFetcher fileFetcher = new GitHubFileFetcher(SOURCE_ID, contract);
+        this.manifestSource = new ManifestSource(SOURCE_ID, contract, GsonSettings.defaults().create());
+        FileFetcher fileFetcher = fileFetcher(SOURCE_ID, contract);
 
         ConcurrentMap<Class<?>, Source<?>> sources = Concurrent.newMap();
 
         for (Class<JpaModel> model : this.getModels())
-            sources.put(model, new RemoteJsonSource<>(SOURCE_ID, indexProvider, fileFetcher, model));
+            sources.put(model, new RemoteJsonSource<>(SOURCE_ID, this.manifestSource, fileFetcher, model));
 
         this.sources = sources.toUnmodifiable();
+    }
+
+    /**
+     * Discards the held manifest so the next load fetches a fresh one.
+     */
+    public void refreshManifest() {
+        this.manifestSource.refresh();
+    }
+
+    /**
+     * Creates an index provider that reads the corpus manifest through the given contract.
+     *
+     * <p>{@link RemoteJsonSource} asks for the manifest on every load and there is one source per
+     * model, so the returned provider holds the parsed manifest from its first successful fetch
+     * rather than re-reading it once per model.
+     *
+     * @param sourceId the source id carried in exception messages and asset state rows
+     * @param contract the read proxy bound to the data repository
+     * @param gson the instance the manifest body is deserialized with
+     * @return an index provider holding the manifest after its first successful load
+     */
+    public static @NotNull IndexProvider indexProvider(
+        @NotNull String sourceId,
+        @NotNull SkyBlockDataContract contract,
+        @NotNull Gson gson
+    ) {
+        return new ManifestSource(sourceId, contract, gson);
+    }
+
+    /**
+     * Creates a file fetcher that reads one repo-root-relative path through the given contract.
+     *
+     * @param sourceId the source id carried in exception messages and asset state rows
+     * @param contract the read proxy bound to the data repository
+     * @return a file fetcher forwarding each path to the contract without mutation
+     */
+    public static @NotNull FileFetcher fileFetcher(@NotNull String sourceId, @NotNull SkyBlockDataContract contract) {
+        return path -> fetchFile(sourceId, contract, path);
+    }
+
+    /**
+     * Fetches the raw UTF-8 body of a single corpus file.
+     *
+     * @param sourceId the source id carried in exception messages and asset state rows
+     * @param contract the read proxy bound to the data repository
+     * @param path the repo-root-relative file path
+     * @return the file body decoded as UTF-8
+     * @throws JpaException if GitHub answers with a non-2xx status
+     */
+    private static @NotNull String fetchFile(
+        @NotNull String sourceId,
+        @NotNull SkyBlockDataContract contract,
+        @NotNull String path
+    ) throws JpaException {
+        try {
+            byte[] bytes = contract.getFileContent(path);
+            String body = new String(bytes, StandardCharsets.UTF_8);
+            log.debug("Fetched file '{}' from source '{}' ({} bytes)", path, sourceId, bytes.length);
+            return body;
+        } catch (GitHubApiException ex) {
+            throw new JpaException(
+                ex,
+                "Failed to fetch file '%s' from source '%s' (HTTP %d): %s",
+                path,
+                sourceId,
+                ex.getStatus().getCode(),
+                ex.getResponse().getReason()
+            );
+        }
     }
 
     /**
@@ -119,6 +198,81 @@ public class SkyBlockFactory implements RepositoryFactory {
         );
 
         return SkyBlockDataContract.from(read.getContract(), write.getContract());
+    }
+
+    /**
+     * An index provider reading the corpus manifest through a data contract and holding the parsed
+     * result until it is discarded.
+     */
+    @RequiredArgsConstructor
+    private static final class ManifestSource implements IndexProvider {
+
+        /**
+         * The human-readable source id matching {@code ExternalAssetState.sourceId}.
+         */
+        private final @NotNull String sourceId;
+
+        /**
+         * The SkyBlock data contract proxy for the GitHub REST API.
+         */
+        private final @NotNull SkyBlockDataContract contract;
+
+        /**
+         * The Gson instance used to deserialize the manifest body into a {@link ManifestIndex}.
+         */
+        private final @NotNull Gson gson;
+
+        /**
+         * The manifest held from the first successful load, or {@code null} before one.
+         */
+        private volatile @Nullable ManifestIndex manifest;
+
+        /** {@inheritDoc} */
+        @Override
+        public @NotNull ManifestIndex loadIndex() throws JpaException {
+            ManifestIndex held = this.manifest;
+
+            if (held == null) {
+                synchronized (this) {
+                    if (this.manifest == null)
+                        this.manifest = this.fetchIndex();
+
+                    held = this.manifest;
+                }
+            }
+
+            return held;
+        }
+
+        /**
+         * Discards the held manifest so the next {@link #loadIndex()} fetches a fresh one.
+         */
+        void refresh() {
+            this.manifest = null;
+        }
+
+        private @NotNull ManifestIndex fetchIndex() throws JpaException {
+            try {
+                byte[] bytes = this.contract.getFileContent(SkyBlockDataContract.MANIFEST_PATH);
+                String rawJson = new String(bytes, StandardCharsets.UTF_8);
+                ManifestIndex manifest = this.gson.fromJson(rawJson, ManifestIndex.class);
+
+                if (manifest == null)
+                    throw new JpaException("GitHub returned empty or unparseable manifest for source '%s'", this.sourceId);
+
+                log.debug("Loaded manifest for source '{}' - {} entries", this.sourceId, manifest.getCount());
+                return manifest;
+            } catch (GitHubApiException ex) {
+                throw new JpaException(
+                    ex,
+                    "Failed to load manifest for source '%s' (HTTP %d): %s",
+                    this.sourceId,
+                    ex.getStatus().getCode(),
+                    ex.getResponse().getReason()
+                );
+            }
+        }
+
     }
 
 }
