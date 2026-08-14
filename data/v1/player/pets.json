@@ -10800,8 +10800,8 @@
     ]
   },
   {
-    "id": "FROZEN_WISP",
-    "name": "Frozen Wisp",
+    "id": "FROST_WISP",
+    "name": "Frost Wisp",
     "lowestRarity": "RARE",
     "skill": "COMBAT",
     "type": "PET",
