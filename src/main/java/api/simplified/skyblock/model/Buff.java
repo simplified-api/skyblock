@@ -1,7 +1,6 @@
 package api.simplified.skyblock.model;
 
 import api.simplified.skyblock.SkyBlockData;
-import com.google.gson.annotations.SerializedName;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -110,8 +109,7 @@ public class Buff implements JpaModel {
     /**
      * What the row attaches to, bound from {@code subject.kind}.
      */
-    @SerializedPath("subject")
-    @SerializedName("kind")
+    @SerializedPath("subject.kind")
     @Enumerated(EnumType.STRING)
     @Column(name = "subject_kind", nullable = false)
     private @NotNull Subject.Kind subjectKind = Subject.Kind.PROFILE;
@@ -120,16 +118,14 @@ public class Buff implements JpaModel {
      * Id of the carrier matched on, bound from {@code subject.carrierId} and absent to match every
      * carrier of the kind.
      */
-    @SerializedPath("subject")
-    @SerializedName("carrierId")
+    @SerializedPath("subject.carrierId")
     @Column(name = "subject_carrier_id")
     private @Nullable String subjectCarrierId;
 
     /**
      * The second-level name the kind takes, bound from {@code subject.member}.
      */
-    @SerializedPath("subject")
-    @SerializedName("member")
+    @SerializedPath("subject.member")
     @Column(name = "subject_member")
     private @Nullable String subjectMember;
 
