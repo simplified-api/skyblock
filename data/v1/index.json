@@ -1,6 +1,6 @@
 {
-  "commit_sha": "39d5b365a53747f869a173d31474a435e5e49704",
-  "count": 36,
+  "commit_sha": "31eb02a61c3619fd2d8860ff0eaf7091e0f79e6d",
+  "count": 34,
   "files": [
     {
       "bytes": 82265,
@@ -40,15 +40,6 @@
       "model_class": "api.simplified.skyblock.model.Item",
       "path": "data/v1/items/items.json",
       "table_name": "items"
-    },
-    {
-      "bytes": 3,
-      "category": "items",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.PetItem",
-      "path": "data/v1/items/pet_items.json",
-      "table_name": "pet_items"
     },
     {
       "bytes": 2254,
@@ -121,15 +112,6 @@
       "model_class": "api.simplified.skyblock.model.Gemstone",
       "path": "data/v1/modifiers/gemstones.json",
       "table_name": "gemstones"
-    },
-    {
-      "bytes": 3,
-      "category": "modifiers",
-      "content_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "has_extra": false,
-      "model_class": "api.simplified.skyblock.model.HotPotatoStat",
-      "path": "data/v1/modifiers/hot_potato_stats.json",
-      "table_name": "hot_potato_stats"
     },
     {
       "bytes": 3,
@@ -330,6 +312,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-14T02:01:50Z",
+  "generated_at": "2026-08-14T02:25:35Z",
   "version": 1
 }
