@@ -3,6 +3,9 @@ package api.simplified.skyblock.model;
 import api.simplified.skyblock.SkyBlockData;
 import api.simplified.skyblock.common.Rarity;
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.AccessLevel;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -15,12 +18,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -31,6 +31,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "stone")
 @Table(name = "reforges")
 public class Reforge implements JpaModel {
 
@@ -140,26 +141,6 @@ public class Reforge implements JpaModel {
             .collect(Concurrent.toUnmodifiableList());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Reforge that = (Reforge) o;
-
-        return this.getRequiredLevel() == that.getRequiredLevel()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getStoneId(), that.getStoneId())
-            && Objects.equals(this.getCategoryIds(), that.getCategoryIds())
-            && Objects.equals(this.getItemIds(), that.getItemIds())
-            && Objects.equals(this.getStats(), that.getStats());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getStoneId(), this.getRequiredLevel(), this.getCategoryIds(), this.getItemIds(), this.getStats());
-    }
-
     /**
      * A reference to a {@link Stat} by id, plus the flat amount the reforge grants at each rarity.
      *
@@ -169,6 +150,7 @@ public class Reforge implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Substitute {
 
         /**
@@ -189,21 +171,6 @@ public class Reforge implements JpaModel {
             if (this.id.isEmpty())
                 return Optional.empty();
             return api.simplified.skyblock.SkyBlockData.getRepository(Stat.class).findFirst(Stat::getId, this.id);
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Substitute that = (Substitute) o;
-
-            return Objects.equals(this.getId(), that.getId())
-                && Objects.equals(this.getValues(), that.getValues());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getId(), this.getValues());
         }
 
     }

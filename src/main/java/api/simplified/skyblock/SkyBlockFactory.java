@@ -7,6 +7,10 @@ import api.simplified.github.exception.GitHubApiException;
 import api.simplified.skyblock.contract.SkyBlockDataContract;
 import api.simplified.skyblock.model.Item;
 import com.google.gson.Gson;
+import dev.simplified.annotations.AccessLevel;
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.Log;
+import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.client.Client;
 import dev.simplified.client.ClientConfig;
 import dev.simplified.collection.Concurrent;
@@ -22,10 +26,6 @@ import dev.simplified.persistence.source.ManifestIndex;
 import dev.simplified.persistence.source.RemoteJsonSource;
 import dev.simplified.persistence.source.Source;
 import dev.simplified.util.StringUtil;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -45,7 +45,7 @@ import java.nio.charset.StandardCharsets;
  * repeatedly. Callers that already own configured proxies should pass a
  * {@link SkyBlockDataContract} instead.
  */
-@Log4j2
+@Log
 @Getter
 public class SkyBlockFactory implements RepositoryFactory {
 

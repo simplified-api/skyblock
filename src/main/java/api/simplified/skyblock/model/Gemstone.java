@@ -2,6 +2,8 @@ package api.simplified.skyblock.model;
 
 import api.simplified.skyblock.common.Rarity;
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
@@ -14,10 +16,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 /**
  * A gemstone type - the mining-collection stones slotted into gear that has gemstone slots, each
@@ -27,6 +26,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "stat")
 @Table(name = "gemstones")
 public class Gemstone implements JpaModel {
 
@@ -76,25 +76,6 @@ public class Gemstone implements JpaModel {
     @ManyToOne(optional = false)
     @JoinColumn(name = "stat_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Stat stat;
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Gemstone that = (Gemstone) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getSymbol(), that.getSymbol())
-            && Objects.equals(this.getFormat(), that.getFormat())
-            && Objects.equals(this.getStatId(), that.getStatId())
-            && Objects.equals(this.getValues(), that.getValues());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getSymbol(), this.getFormat(), this.getStatId(), this.getValues());
-    }
 
     /**
      * The cuts a gemstone can take, weakest to strongest.

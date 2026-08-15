@@ -1,14 +1,13 @@
 package api.simplified.skyblock.model;
 
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 /**
  * One node of the Heart of the Mountain, the mining skill tree unlocked in the Dwarven Mines and
@@ -27,6 +26,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "hotm_perks")
 public class HotmPerk implements JpaModel {
 
@@ -48,21 +48,5 @@ public class HotmPerk implements JpaModel {
      */
     @Column(name = "max_level", nullable = false)
     private int maxLevel = 0;
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        HotmPerk that = (HotmPerk) o;
-
-        return this.getMaxLevel() == that.getMaxLevel()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getMaxLevel());
-    }
 
 }

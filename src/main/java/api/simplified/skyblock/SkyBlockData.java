@@ -1,5 +1,7 @@
 package api.simplified.skyblock;
 
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.UtilityClass;
 import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.CacheMissingStrategy;
 import dev.simplified.persistence.JpaCacheProvider;
@@ -12,9 +14,6 @@ import dev.simplified.persistence.SessionManager;
 import dev.simplified.persistence.driver.H2MemoryDriver;
 import dev.simplified.persistence.source.Source;
 import dev.simplified.util.Logging;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,8 +25,8 @@ import org.jetbrains.annotations.NotNull;
  * {@link #connect(GsonSettings)} (or an overload) once at startup before any
  * {@link #getRepository(Class)} lookup against a SkyBlock model.
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class SkyBlockData {
+@UtilityClass
+public class SkyBlockData {
 
     /**
      * Dedicated {@link SessionManager} owned by the persistence layer.

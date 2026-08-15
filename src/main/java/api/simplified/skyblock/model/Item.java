@@ -4,6 +4,12 @@ import api.simplified.skyblock.SkinTexture;
 import api.simplified.skyblock.common.GameStage;
 import api.simplified.skyblock.common.Rarity;
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.AccessLevel;
+import dev.simplified.annotations.AllArgsConstructor;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.EqualsInclude;
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.NoArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -18,15 +24,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -41,6 +42,11 @@ import java.util.Optional;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = {
+    "categoryId", "can_place", "can_trade", "can_auction", "cannot_reforge", "can_recombobulate",
+    "can_burn_in_furnace", "salvageable_from_recipe", "museum", "glowing", "unstackable",
+    "dungeon_item", "rift_transferrable", "soulbound"
+})
 @Table(name = "items")
 public class Item implements JpaModel {
 
@@ -191,6 +197,7 @@ public class Item implements JpaModel {
      * {@link Rarity#ADMIN}, and {@code npcSellable} reads an NPC sell price above zero. A flag the
      * data omits keeps the permissive default, so a bare row answers true to most of them.
      */
+    @EqualsInclude
     public @NotNull Attributes getAttributes() {
         if (this.attributes == null) {
             this.attributes = new Attributes(
@@ -422,53 +429,6 @@ public class Item implements JpaModel {
         return this.getGenerator().isPresent();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Item item = (Item) o;
-
-        return this.getNpcSellPrice() == item.getNpcSellPrice()
-            && this.getAbilityDamageScaling() == item.getAbilityDamageScaling()
-            && Objects.equals(this.getAttributes(), item.getAttributes())
-            && this.getGearScore() == item.getGearScore()
-            && this.isMotesValueLostOnTransfer() == item.isMotesValueLostOnTransfer()
-            && this.getMotesSellPrice() == item.getMotesSellPrice()
-            && this.getGeneratorTier() == item.getGeneratorTier()
-            && Objects.equals(this.getMaterial(), item.getMaterial())
-            && Objects.equals(this.getId(), item.getId())
-            && Objects.equals(this.getDisplayName(), item.getDisplayName())
-            && Objects.equals(this.getRarity(), item.getRarity())
-            && Objects.equals(this.getDurability(), item.getDurability())
-            && Objects.equals(this.getCategory(), item.getCategory())
-            && Objects.equals(this.getDescription(), item.getDescription())
-            && Objects.equals(this.getColor(), item.getColor())
-            && Objects.equals(this.getOrigin(), item.getOrigin())
-            && Objects.equals(this.getSkin(), item.getSkin())
-            && Objects.equals(this.getFurniture(), item.getFurniture())
-            && Objects.equals(this.getCrystal(), item.getCrystal())
-            && Objects.equals(this.getMuseumData(), item.getMuseumData())
-            && Objects.equals(this.getSwordType(), item.getSwordType())
-            && Objects.equals(this.getMiniIslandGenerator(), item.getMiniIslandGenerator())
-            && Objects.equals(this.getDungeonizationCost(), item.getDungeonizationCost())
-            && Objects.equals(this.getCatacombsRequirements(), item.getCatacombsRequirements())
-            && Objects.equals(this.getGenerator(), item.getGenerator())
-            && Objects.equals(this.getEnchantments(), item.getEnchantments())
-            && Objects.equals(this.getGemstoneSlots(), item.getGemstoneSlots())
-            && Objects.equals(this.getItemSpecific(), item.getItemSpecific())
-            && Objects.equals(this.getPrestige(), item.getPrestige())
-            && Objects.equals(this.getRequirements(), item.getRequirements())
-            && Objects.equals(this.getSalvages(), item.getSalvages())
-            && Objects.equals(this.getStats(), item.getStats())
-            && Objects.equals(this.getTieredStats(), item.getTieredStats())
-            && Objects.equals(this.getUpgradeCosts(), item.getUpgradeCosts());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getMaterial(), this.getId(), this.getDisplayName(), this.getRarity(), this.getDurability(), this.getCategory(), this.getDescription(), this.getColor(), this.getOrigin(), this.getSkin(), this.getFurniture(), this.getCrystal(), this.getMuseumData(), this.getSwordType(), this.getMiniIslandGenerator(), this.getNpcSellPrice(), this.getAbilityDamageScaling(), this.getAttributes(), this.getGearScore(), this.getDungeonizationCost(), this.getCatacombsRequirements(), this.isMotesValueLostOnTransfer(), this.getMotesSellPrice(), this.getGenerator(), this.getGeneratorTier(), this.getEnchantments(), this.getGemstoneSlots(), this.getItemSpecific(), this.getPrestige(), this.getRequirements(), this.getSalvages(), this.getStats(), this.getTieredStats(), this.getUpgradeCosts());
-    }
-
     /**
      * What an item permits, gathered into one value with a negation helper beside each answer.
      *
@@ -479,6 +439,7 @@ public class Item implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     @NoArgsConstructor
     @AllArgsConstructor
     public static class Attributes {
@@ -574,34 +535,6 @@ public class Item implements JpaModel {
         public boolean notRiftTransferrable() { return !this.isRiftTransferrable(); }
         public boolean notObtainable() { return !this.isObtainable(); }
 
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Attributes that = (Attributes) o;
-
-            return this.isNpcSellable() == that.isNpcSellable()
-                && this.isPlaceable() == that.isPlaceable()
-                && this.isTradeable() == that.isTradeable()
-                && this.isAuctionable() == that.isAuctionable()
-                && this.isReforgeable() == that.isReforgeable()
-                && this.isRecombobulatable() == that.isRecombobulatable()
-                && this.isBurnableInFurnace() == that.isBurnableInFurnace()
-                && this.isSalvageableFromRecipe() == that.isSalvageableFromRecipe()
-                && this.isMuseumable() == that.isMuseumable()
-                && this.isGlowing() == that.isGlowing()
-                && this.isUnstackable() == that.isUnstackable()
-                && this.isDungeonItem() == that.isDungeonItem()
-                && this.isRiftTransferrable() == that.isRiftTransferrable()
-                && this.isObtainable() == that.isObtainable()
-                && Objects.equals(this.getSoulbound(), that.getSoulbound());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.isNpcSellable(), this.isPlaceable(), this.isTradeable(), this.isAuctionable(), this.isReforgeable(), this.isRecombobulatable(), this.isBurnableInFurnace(), this.isSalvageableFromRecipe(), this.isMuseumable(), this.isGlowing(), this.isUnstackable(), this.isDungeonItem(), this.isRiftTransferrable(), this.isObtainable(), this.getSoulbound());
-        }
-
     }
 
     /**
@@ -610,7 +543,6 @@ public class Item implements JpaModel {
      */
     @Getter
     @GsonType
-    @NoArgsConstructor(access = AccessLevel.NONE)
     public static class MuseumData {
 
         /**
@@ -774,6 +706,7 @@ public class Item implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Cost {
 
         /**
@@ -790,22 +723,6 @@ public class Item implements JpaModel {
          * The quantities required, keyed by {@link Item} id.
          */
         private @NotNull ConcurrentMap<String, Double> items = Concurrent.newMap();
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Cost that = (Cost) o;
-
-            return Objects.equals(this.getCurrencies(), that.getCurrencies())
-                && this.getExperience() == that.getExperience()
-                && Objects.equals(this.getItems(), that.getItems());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getCurrencies(), this.getExperience(), this.getItems());
-        }
 
         /**
          * The currencies a price can be denominated in.

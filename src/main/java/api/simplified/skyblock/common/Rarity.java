@@ -1,13 +1,12 @@
 package api.simplified.skyblock.common;
 
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EnumLookup;
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.util.StringUtil;
 import lib.minecraft.text.ChatColor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Arrays;
 
 /**
  * The tiers an item, pet or accessory can hold, ordered from lowest to highest.
@@ -19,6 +18,7 @@ import java.util.Arrays;
  * @see <a href="https://hypixelskyblock.minecraft.wiki/w/Rarity">Rarity</a>
  */
 @Getter
+@EnumLookup
 @RequiredArgsConstructor
 public enum Rarity {
 
@@ -104,37 +104,6 @@ public enum Rarity {
      */
     public @NotNull String getName() {
         return StringUtil.capitalizeFully(this.name());
-    }
-
-    /**
-     * Finds the tier of a given name, ignoring case.
-     *
-     * @param name the tier name to match
-     * @return the matching tier
-     * @throws IllegalArgumentException if no tier carries that name
-     */
-    public static @NotNull Rarity of(@NotNull String name) {
-        return Arrays.stream(values())
-            .filter(rarity -> rarity.name().equalsIgnoreCase(name))
-            .findFirst()
-            .orElseThrow(() -> new IllegalArgumentException("No rarity with name " + name));
-    }
-
-    /**
-     * Finds the tier at a given position in the ladder.
-     * <p>
-     * This is how a rarity upgrade resolves - an item's own ordinal plus one for each upgrade it
-     * carries.
-     *
-     * @param ordinal the position to read
-     * @return the tier at that position
-     * @throws IllegalArgumentException if no tier sits at that position
-     */
-    public static @NotNull Rarity of(int ordinal) {
-        return Arrays.stream(values())
-            .filter(rarity -> rarity.ordinal() == ordinal)
-            .findFirst()
-            .orElseThrow(() -> new IllegalArgumentException("No rarity with ordinal " + ordinal));
     }
 
 }

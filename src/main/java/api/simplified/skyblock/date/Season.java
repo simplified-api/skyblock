@@ -1,12 +1,13 @@
 package api.simplified.skyblock.date;
 
+import dev.simplified.annotations.EnumLookup;
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.KeyField;
+import dev.simplified.annotations.RequiredArgsConstructor;
 import lib.minecraft.text.ChatColor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.Month;
-import java.util.Arrays;
 
 /**
  * One of the twelve months of the Hypixel SkyBlock year.
@@ -21,6 +22,7 @@ import java.util.Arrays;
  * @see <a href="https://hypixelskyblock.minecraft.wiki/w/Calendar">Calendar</a>
  */
 @Getter
+@EnumLookup
 @RequiredArgsConstructor
 public enum Season {
 
@@ -88,6 +90,7 @@ public enum Season {
     /**
      * The season's month number, counting from one.
      */
+    @KeyField(strictKeys = true)
     private final int month;
 
     /**
@@ -108,10 +111,7 @@ public enum Season {
      * @throws IllegalArgumentException if no season carries that month number
      */
     public static @NotNull Season of(int month) {
-        return Arrays.stream(values())
-            .filter(season -> season.getMonth() == month)
-            .findFirst()
-            .orElseThrow(() -> new IllegalArgumentException(String.format("No season with month '%s'", month)));
+        return findByMonth(month).orElseThrow(() -> new IllegalArgumentException(String.format("No season with month '%s'", month)));
     }
 
 }

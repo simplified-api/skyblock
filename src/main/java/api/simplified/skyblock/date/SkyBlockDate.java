@@ -3,9 +3,8 @@ package api.simplified.skyblock.date;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import dev.simplified.annotations.UtilityClass;
 import dev.simplified.util.time.SimpleDate;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
@@ -403,7 +402,7 @@ public class SkyBlockDate extends SimpleDate {
     /**
      * Real-world epoch milliseconds for the moments the SkyBlock calendar is anchored to.
      */
-    @NoArgsConstructor(access = AccessLevel.PRIVATE)
+    @UtilityClass
     public static class Launch {
 
         /**
@@ -422,7 +421,7 @@ public class SkyBlockDate extends SimpleDate {
      * larger unit is an integer multiple of it - 60 minutes per hour, 24 hours per day, 31
      * days per month, 12 months per year.
      */
-    @NoArgsConstructor(access = AccessLevel.PRIVATE)
+    @UtilityClass
     public static class Length {
 
         /**

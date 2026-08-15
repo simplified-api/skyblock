@@ -1,6 +1,8 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.ForeignIds;
@@ -11,10 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 /**
  * A mixin - a rare or legendary consumable brewed into a God Potion, or drunk on its own, to add one
@@ -27,6 +26,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "item")
 @Table(name = "mixins")
 public class Mixin implements JpaModel {
 
@@ -70,22 +70,5 @@ public class Mixin implements JpaModel {
      */
     @ForeignIds("regionIds")
     private transient @NotNull ConcurrentList<Region> regions = Concurrent.newList();
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Mixin that = (Mixin) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getRegionIds(), that.getRegionIds())
-            && Objects.equals(this.getStats(), that.getStats());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getRegionIds(), this.getStats());
-    }
 
 }

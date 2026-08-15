@@ -20,13 +20,10 @@ repositories {
 
 dependencies {
     // Simplified Annotations
+    compileOnly(libs.simplified.annotations)
     annotationProcessor(libs.simplified.annotations)
-
-    // Lombok
-    compileOnly(libs.lombok)
-    annotationProcessor(libs.lombok)
-    testCompileOnly(libs.lombok)
-    testAnnotationProcessor(libs.lombok)
+    testCompileOnly(libs.simplified.annotations)
+    testAnnotationProcessor(libs.simplified.annotations)
 
     // Tests
     testImplementation(libs.hamcrest)
@@ -35,14 +32,14 @@ dependencies {
     testImplementation(libs.junit.platform.launcher)
 
     // Sibling API modules (composite-build substitutes by project name)
-    api("com.github.simplified-api:github") { version { strictly("b36fe4c") } }
+    api("com.github.simplified-api:github") { version { strictly("91d6027") } }
 
     // Simplified Libraries (github.com/simplified-dev)
-    api("com.github.simplified-dev:collections") { version { strictly("7699a31") } }
-    api("com.github.simplified-dev:utils") { version { strictly("036cc09") } }
-    api("com.github.simplified-dev:reflection") { version { strictly("33b2f05") } }
-    api("com.github.simplified-dev:gson-extras") { version { strictly("6421324") } }
-    api("com.github.simplified-dev:persistence") { version { strictly("d2ee7b4") } }
+    api("com.github.simplified-dev:collections") { version { strictly("23f01b6") } }
+    api("com.github.simplified-dev:utils") { version { strictly("381e317") } }
+    api("com.github.simplified-dev:reflection") { version { strictly("d02f3ea") } }
+    api("com.github.simplified-dev:gson-extras") { version { strictly("c4bde8d") } }
+    api("com.github.simplified-dev:persistence") { version { strictly("a1c9ca2") } }
 
     // Minecraft-Library (github.com/minecraft-library)
     // StatCategory, Rarity, BestiaryCategory, etc. store ChatColor values.

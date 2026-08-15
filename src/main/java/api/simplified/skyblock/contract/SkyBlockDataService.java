@@ -7,7 +7,7 @@ import api.simplified.github.request.PutContentRequest;
 import api.simplified.github.response.GitHubCommit;
 import api.simplified.github.response.GitHubContentEnvelope;
 import api.simplified.github.response.GitHubPutResponse;
-import lombok.RequiredArgsConstructor;
+import dev.simplified.annotations.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
 /**

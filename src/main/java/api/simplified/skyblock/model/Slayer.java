@@ -2,6 +2,8 @@ package api.simplified.skyblock.model;
 
 import api.simplified.skyblock.SkyBlockData;
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -14,11 +16,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * A slayer track - the missions where a member kills a mob type to summon and then defeat a slayer
@@ -28,6 +28,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "mobType")
 @Table(name = "slayers")
 public class Slayer implements JpaModel {
 
@@ -121,33 +122,12 @@ public class Slayer implements JpaModel {
             .collect(Concurrent.toUnmodifiableList());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Slayer that = (Slayer) o;
-
-        return this.getMaxLevel() == that.getMaxLevel()
-            && this.getMaxTier() == that.getMaxTier()
-            && this.getWeightModifier() == that.getWeightModifier()
-            && this.getWeightDivider() == that.getWeightDivider()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getDescription(), that.getDescription())
-            && Objects.equals(this.getMobTypeId(), that.getMobTypeId())
-            && Objects.equals(this.getLevels(), that.getLevels());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getDescription(), this.getMaxLevel(), this.getMaxTier(), this.getMobTypeId(), this.getWeightModifier(), this.getWeightDivider(), this.getLevels());
-    }
-
     /**
      * One level of a slayer track's ladder - what it costs to reach and what reaching it awards.
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Level {
 
         /**
@@ -211,23 +191,6 @@ public class Slayer implements JpaModel {
                 ))
                 .filter(entry -> entry.getValue() > 0.0)
                 .collect(Concurrent.toUnmodifiableMap());
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Level that = (Level) o;
-
-            return this.getLevel() == that.getLevel()
-                && this.getTotalRequiredXP() == that.getTotalRequiredXP()
-                && Objects.equals(this.getTitle(), that.getTitle())
-                && Objects.equals(this.getUnlocks(), that.getUnlocks());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getLevel(), this.getTotalRequiredXP(), this.getTitle(), this.getUnlocks());
         }
 
     }

@@ -1,15 +1,15 @@
 package api.simplified.skyblock.model;
 
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -23,6 +23,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "keywords")
 public class Keyword implements JpaModel {
 
@@ -70,24 +71,6 @@ public class Keyword implements JpaModel {
      */
     public boolean hasSymbol() {
         return this.getSymbol().isPresent();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Keyword that = (Keyword) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getPlural(), that.getPlural())
-            && Objects.equals(this.getSymbol(), that.getSymbol())
-            && Objects.equals(this.getFormat(), that.getFormat());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getPlural(), this.getSymbol(), this.getFormat());
     }
 
 }

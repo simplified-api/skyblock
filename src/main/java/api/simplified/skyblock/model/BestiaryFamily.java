@@ -1,6 +1,9 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.AccessLevel;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.ForeignIds;
@@ -14,12 +17,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
-import lombok.AccessLevel;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -35,6 +35,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = { "category", "subcategory" })
 @Table(name = "bestiary_families")
 public class BestiaryFamily implements JpaModel {
 
@@ -146,29 +147,6 @@ public class BestiaryFamily implements JpaModel {
      */
     public @NotNull ConcurrentList<Integer> getTiers() {
         return BRACKETS.get(this.getBracket() - 1);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        BestiaryFamily that = (BestiaryFamily) o;
-
-        return this.getBracket() == that.getBracket()
-            && this.getMaxTier() == that.getMaxTier()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getDescription(), that.getDescription())
-            && Objects.equals(this.getFormat(), that.getFormat())
-            && Objects.equals(this.getCategoryId(), that.getCategoryId())
-            && Objects.equals(this.getSubcategoryId(), that.getSubcategoryId())
-            && Objects.equals(this.getMobTypeIds(), that.getMobTypeIds())
-            && Objects.equals(this.getMobs(), that.getMobs());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getDescription(), this.getFormat(), this.getBracket(), this.getMaxTier(), this.getCategoryId(), this.getSubcategoryId(), this.getMobTypeIds(), this.getMobs());
     }
 
     /**

@@ -1,5 +1,8 @@
 package api.simplified.skyblock.model;
 
+import dev.simplified.annotations.AccessLevel;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
@@ -10,12 +13,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -30,6 +30,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "item")
 @Table(name = "accessories")
 public class Accessory implements JpaModel {
 
@@ -78,24 +79,6 @@ public class Accessory implements JpaModel {
      */
     public @NotNull Optional<Family> getFamily() {
         return Optional.ofNullable(this.family);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Accessory that = (Accessory) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getDescription(), that.getDescription())
-            && Objects.equals(this.getSource(), that.getSource())
-            && Objects.equals(this.getLimit(), that.getLimit())
-            && Objects.equals(this.getFamily(), that.getFamily());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getDescription(), this.getSource(), this.getLimit(), this.getFamily());
     }
 
     /**
@@ -178,6 +161,7 @@ public class Accessory implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Family {
 
         /**
@@ -190,21 +174,6 @@ public class Accessory implements JpaModel {
          * highest owned rank of a family counts toward magical power.
          */
         private int rank;
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Family that = (Family) o;
-
-            return this.getRank() == that.getRank()
-                && Objects.equals(this.getId(), that.getId());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getId(), this.getRank());
-        }
 
     }
 
