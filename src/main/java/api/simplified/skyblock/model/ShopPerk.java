@@ -1,6 +1,8 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.ForeignIds;
@@ -10,10 +12,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 /**
  * An Essence Shop perk - a permanent upgrade bought with essence at the shop of one region, unlocked
@@ -23,6 +22,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "shop_perks")
 public class ShopPerk implements JpaModel {
 
@@ -74,30 +74,12 @@ public class ShopPerk implements JpaModel {
     @ForeignIds("regionIds")
     private transient @NotNull ConcurrentList<Region> regions = Concurrent.newList();
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ShopPerk that = (ShopPerk) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getDescription(), that.getDescription())
-            && Objects.equals(this.getRegionIds(), that.getRegionIds())
-            && Objects.equals(this.getStats(), that.getStats())
-            && Objects.equals(this.getUnlocks(), that.getUnlocks());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getDescription(), this.getRegionIds(), this.getStats(), this.getUnlocks());
-    }
-
     /**
      * One rung of a perk's price ladder - the tier being bought and what it costs.
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Unlock {
 
         /**
@@ -110,21 +92,6 @@ public class ShopPerk implements JpaModel {
          * charges essence.
          */
         private @NotNull Item.Cost cost = new Item.Cost();
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Unlock that = (Unlock) o;
-
-            return this.getTier() == that.getTier()
-                && Objects.equals(this.getCost(), that.getCost());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getTier(), this.getCost());
-        }
 
     }
 

@@ -1,6 +1,8 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,10 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 /**
  * A zone - one named area inside a region, the granularity the game shows in the sidebar and the
@@ -25,6 +24,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "region")
 @Table(name = "zones")
 public class Zone implements JpaModel {
 
@@ -63,22 +63,5 @@ public class Zone implements JpaModel {
     @ManyToOne(optional = false)
     @JoinColumn(name = "region_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Region region;
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Zone that = (Zone) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getFormat(), that.getFormat())
-            && Objects.equals(this.getRegionId(), that.getRegionId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getFormat(), this.getRegionId());
-    }
 
 }

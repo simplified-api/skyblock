@@ -1,6 +1,12 @@
 package api.simplified.skyblock.model;
 
 import api.simplified.skyblock.SkyBlockData;
+import dev.simplified.annotations.AccessLevel;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.EqualsInclude;
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.RequiredArgsConstructor;
+import dev.simplified.annotations.UtilityClass;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -14,14 +20,9 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -90,6 +91,7 @@ import java.util.function.Function;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "buffs")
 public class Buff implements JpaModel {
 
@@ -176,29 +178,6 @@ public class Buff implements JpaModel {
      */
     public boolean declaresGroup() {
         return this.getGroupId() != null;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Buff that = (Buff) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getSubjectKind(), that.getSubjectKind())
-            && Objects.equals(this.getSubjectCarrierId(), that.getSubjectCarrierId())
-            && Objects.equals(this.getSubjectMember(), that.getSubjectMember())
-            && Objects.equals(this.getGroupId(), that.getGroupId())
-            && Objects.equals(this.getMemberIds(), that.getMemberIds())
-            && Objects.equals(this.getConditions(), that.getConditions())
-            && Objects.equals(this.getEffects(), that.getEffects())
-            && Objects.equals(this.getRules(), that.getRules());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getSubjectKind(), this.getSubjectCarrierId(), this.getSubjectMember(), this.getGroupId(), this.getMemberIds(), this.getConditions(), this.getEffects(), this.getRules());
     }
 
     /**
@@ -332,6 +311,7 @@ public class Buff implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true, exclude = "stage")
     public static class Rule {
 
         @Getter(AccessLevel.NONE)
@@ -406,6 +386,7 @@ public class Buff implements JpaModel {
          *
          * @return the declared stage, or the one the channels imply
          */
+        @EqualsInclude
         public @NotNull Stage getStage() {
             if (this.stage != null)
                 return this.stage;
@@ -413,30 +394,6 @@ public class Buff implements JpaModel {
             return this.getChannels().stream().allMatch(channel -> channel == Channel.RARITY)
                 ? Stage.RARITY
                 : Stage.BONUS;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Rule that = (Rule) o;
-
-            return Objects.equals(this.getStage(), that.getStage())
-                && Objects.equals(this.getChannels(), that.getChannels())
-                && Objects.equals(this.getOperation(), that.getOperation())
-                && Objects.equals(this.getTarget(), that.getTarget())
-                && Objects.equals(this.getScope(), that.getScope())
-                && Objects.equals(this.getHalf(), that.getHalf())
-                && Objects.equals(this.getUnit(), that.getUnit())
-                && Objects.equals(this.getValue(), that.getValue())
-                && Objects.equals(this.getCeiling(), that.getCeiling())
-                && Objects.equals(this.getFloor(), that.getFloor())
-                && Objects.equals(this.getWhen(), that.getWhen());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getStage(), this.getChannels(), this.getOperation(), this.getTarget(), this.getScope(), this.getHalf(), this.getUnit(), this.getValue(), this.getCeiling(), this.getFloor(), this.getWhen());
         }
 
         /**
@@ -578,6 +535,7 @@ public class Buff implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Condition {
 
         /**
@@ -625,28 +583,6 @@ public class Buff implements JpaModel {
          * A condition that must not hold.
          */
         private @Nullable Condition not;
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Condition that = (Condition) o;
-
-            return Objects.equals(this.getInput(), that.getInput())
-                && Objects.equals(this.getOp(), that.getOp())
-                && Objects.equals(this.getAmount(), that.getAmount())
-                && Objects.equals(this.getKey(), that.getKey())
-                && Objects.equals(this.getKeys(), that.getKeys())
-                && Objects.equals(this.getRanges(), that.getRanges())
-                && Objects.equals(this.getAll(), that.getAll())
-                && Objects.equals(this.getAny(), that.getAny())
-                && Objects.equals(this.getNot(), that.getNot());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getInput(), this.getOp(), this.getAmount(), this.getKey(), this.getKeys(), this.getRanges(), this.getAll(), this.getAny(), this.getNot());
-        }
 
         /**
          * How a comparison reads its two sides.
@@ -749,6 +685,7 @@ public class Buff implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Target {
 
         /**
@@ -799,24 +736,6 @@ public class Buff implements JpaModel {
                 case ALL -> true;
                 case CATEGORY -> statModel.getCategoryId().equals(this.getCategory());
             };
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Target that = (Target) o;
-
-            return Objects.equals(this.getKind(), that.getKind())
-                && Objects.equals(this.getStat(), that.getStat())
-                && Objects.equals(this.getCategory(), that.getCategory())
-                && Objects.equals(this.getExcept(), that.getExcept())
-                && Objects.equals(this.getPlus(), that.getPlus());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getKind(), this.getStat(), this.getCategory(), this.getExcept(), this.getPlus());
         }
 
         /**
@@ -879,6 +798,7 @@ public class Buff implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Term {
 
         /**
@@ -992,36 +912,6 @@ public class Buff implements JpaModel {
                 case WORLD -> this.getWorld() == null || this.getWorld().isNumeric();
                 default -> true;
             };
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Term that = (Term) o;
-
-            return Objects.equals(this.getKind(), that.getKind())
-                && Objects.equals(this.getAmount(), that.getAmount())
-                && Objects.equals(this.getName(), that.getName())
-                && Objects.equals(this.getStat(), that.getStat())
-                && Objects.equals(this.getOrigin(), that.getOrigin())
-                && Objects.equals(this.getHalf(), that.getHalf())
-                && Objects.equals(this.getChannel(), that.getChannel())
-                && Objects.equals(this.getPath(), that.getPath())
-                && Objects.equals(this.getRead(), that.getRead())
-                && Objects.equals(this.getMatching(), that.getMatching())
-                && Objects.equals(this.getCarrier(), that.getCarrier())
-                && Objects.equals(this.getWorld(), that.getWorld())
-                && Objects.equals(this.getPlayer(), that.getPlayer())
-                && Objects.equals(this.getGroup(), that.getGroup())
-                && Objects.equals(this.getLookup(), that.getLookup())
-                && Objects.equals(this.getText(), that.getText())
-                && Objects.equals(this.getInputs(), that.getInputs());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getKind(), this.getAmount(), this.getName(), this.getStat(), this.getOrigin(), this.getHalf(), this.getChannel(), this.getPath(), this.getRead(), this.getMatching(), this.getCarrier(), this.getWorld(), this.getPlayer(), this.getGroup(), this.getLookup(), this.getText(), this.getInputs());
         }
 
         /**
@@ -1303,6 +1193,7 @@ public class Buff implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Lookup {
 
         /**
@@ -1330,24 +1221,6 @@ public class Buff implements JpaModel {
          * The two-axis table, keyed by {@link #on} and then by {@link #on2}.
          */
         private @NotNull ConcurrentMap<String, ConcurrentMap<String, Double>> amountsBy2 = Concurrent.newUnmodifiableMap();
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Lookup that = (Lookup) o;
-
-            return Objects.equals(this.getOn(), that.getOn())
-                && Objects.equals(this.getOn2(), that.getOn2())
-                && Objects.equals(this.getMode(), that.getMode())
-                && Objects.equals(this.getAmounts(), that.getAmounts())
-                && Objects.equals(this.getAmountsBy2(), that.getAmountsBy2());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getOn(), this.getOn2(), this.getMode(), this.getAmounts(), this.getAmountsBy2());
-        }
 
         /**
          * How a computed key selects an entry of the table.
@@ -1719,8 +1592,8 @@ public class Buff implements JpaModel {
      * in a vocabulary this module cannot see, because the dependency runs the other way. Those are
      * checked where those names live.
      */
-    @NoArgsConstructor(access = AccessLevel.PRIVATE)
-    public static final class Validator {
+    @UtilityClass
+    public static class Validator {
 
         /**
          * Checks everything one row can be wrong about on its own.

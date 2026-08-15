@@ -1,5 +1,7 @@
 package api.simplified.skyblock.model;
 
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
@@ -11,10 +13,7 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 /**
  * One line of the bits shop - the Community Center stock sold for bits, the currency a member earns
@@ -24,6 +23,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "bits_items")
 public class BitsItem implements JpaModel {
 
@@ -53,23 +53,6 @@ public class BitsItem implements JpaModel {
      */
     @Column(name = "variants", nullable = false)
     private @NotNull ConcurrentList<Variant> variants = Concurrent.newList();
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        BitsItem that = (BitsItem) o;
-
-        return this.getCost() == that.getCost()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getType(), that.getType())
-            && Objects.equals(this.getVariants(), that.getVariants());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getType(), this.getCost(), this.getVariants());
-    }
 
     /**
      * The tab of the bits shop a listing is filed under.
@@ -140,6 +123,7 @@ public class BitsItem implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Variant {
 
         /**
@@ -151,21 +135,6 @@ public class BitsItem implements JpaModel {
          * The variant's own price in bits.
          */
         private int cost;
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Variant that = (Variant) o;
-
-            return this.getCost() == that.getCost()
-                && Objects.equals(this.getId(), that.getId());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getId(), this.getCost());
-        }
 
     }
 

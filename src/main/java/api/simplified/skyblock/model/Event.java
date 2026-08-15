@@ -3,6 +3,10 @@ package api.simplified.skyblock.model;
 import api.simplified.skyblock.date.SkyBlockDate.Length;
 import api.simplified.skyblock.date.SkyBlockDate;
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.AccessLevel;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.ForeignIds;
@@ -14,15 +18,11 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Comparator;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
@@ -49,6 +49,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "events")
 public class Event implements JpaModel {
 
@@ -196,26 +197,6 @@ public class Event implements JpaModel {
             .min(Comparator.comparingLong(Occurrence::getStart));
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Event that = (Event) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getDescription(), that.getDescription())
-            && Objects.equals(this.getTrigger(), that.getTrigger())
-            && Objects.equals(this.getSchedules(), that.getSchedules())
-            && Objects.equals(this.getMayorIds(), that.getMayorIds())
-            && Objects.equals(this.getSuppressedByMayorIds(), that.getSuppressedByMayorIds());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getDescription(), this.getTrigger(), this.getSchedules(), this.getMayorIds(), this.getSuppressedByMayorIds());
-    }
-
     /**
      * One rule for when an {@link Event} runs, held as a starting point plus a repeating on/off
      * pattern rather than a list of dates, so a single row answers for every occurrence there has
@@ -269,6 +250,7 @@ public class Event implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Schedule {
 
         /**
@@ -458,25 +440,6 @@ public class Event implements JpaModel {
             return Optional.empty();
         }
 
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Schedule that = (Schedule) o;
-
-            return this.getLimit() == that.getLimit()
-                && Objects.equals(this.getMayorId(), that.getMayorId())
-                && Objects.equals(this.getAnchor(), that.getAnchor())
-                && Objects.equals(this.getPhases(), that.getPhases())
-                && Objects.equals(this.getRotation(), that.getRotation())
-                && Objects.equals(this.getNote(), that.getNote());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getMayorId(), this.getAnchor(), this.getPhases(), this.getLimit(), this.getRotation(), this.getNote());
-        }
-
     }
 
     /**
@@ -514,6 +477,7 @@ public class Event implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Moment {
 
         /**
@@ -561,25 +525,6 @@ public class Event implements JpaModel {
                 .toEpochMilli();
         }
 
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Moment that = (Moment) o;
-
-            return this.getYear() == that.getYear()
-                && this.getMonth() == that.getMonth()
-                && this.getDay() == that.getDay()
-                && this.getHour() == that.getHour()
-                && this.getMinute() == that.getMinute()
-                && Objects.equals(this.getClock(), that.getClock());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getYear(), this.getMonth(), this.getDay(), this.getHour(), this.getMinute(), this.getClock());
-        }
-
     }
 
     /**
@@ -617,6 +562,7 @@ public class Event implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Phase {
 
         /**
@@ -671,25 +617,6 @@ public class Event implements JpaModel {
                 + (Length.DAY_MS * this.getDays())
                 + (Length.HOUR_MS * this.getHours())
                 + (long) (Length.MINUTE_MS * this.getMinutes());
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Phase that = (Phase) o;
-
-            return this.getYears() == that.getYears()
-                && this.getMonths() == that.getMonths()
-                && this.getDays() == that.getDays()
-                && this.getHours() == that.getHours()
-                && this.getMinutes() == that.getMinutes()
-                && Objects.equals(this.getClock(), that.getClock());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getYears(), this.getMonths(), this.getDays(), this.getHours(), this.getMinutes(), this.getClock());
         }
 
     }

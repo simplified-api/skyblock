@@ -3,6 +3,8 @@ package api.simplified.skyblock.model;
 import api.simplified.skyblock.SkyBlockData;
 import api.simplified.skyblock.common.Rarity;
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
@@ -18,11 +20,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
-import lombok.AccessLevel;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 /**
  * A pet type - a companion granting stats and perks that scale with both its level and its
@@ -32,6 +30,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "skill")
 @Table(name = "pets")
 public class Pet implements JpaModel {
 
@@ -129,28 +128,6 @@ public class Pet implements JpaModel {
             .collect(Concurrent.toUnmodifiableList());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Pet that = (Pet) o;
-
-        return this.getMaxLevel() == that.getMaxLevel()
-            && this.isPassive() == that.isPassive()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getLowestRarity(), that.getLowestRarity())
-            && Objects.equals(this.getSkillId(), that.getSkillId())
-            && Objects.equals(this.getType(), that.getType())
-            && Objects.equals(this.getStats(), that.getStats())
-            && Objects.equals(this.getPerks(), that.getPerks());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getLowestRarity(), this.getSkillId(), this.getType(), this.getMaxLevel(), this.isPassive(), this.getStats(), this.getPerks());
-    }
-
     /**
      * The kinds of companion a pet row can describe.
      */
@@ -190,6 +167,7 @@ public class Pet implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Perk {
 
         /**
@@ -206,15 +184,11 @@ public class Pet implements JpaModel {
          * Whether the perk grants a flat amount rather than one that scales with the pet's level.
          */
         private boolean flatStat = false;
-        @Getter(AccessLevel.NONE)
-        private @NotNull ConcurrentList<Substitute> stats = Concurrent.newList();
 
         /**
          * The stats the perk grants, across every rarity it is defined at.
          */
-        public @NotNull ConcurrentList<Substitute> getStats() {
-            return this.stats;
-        }
+        private @NotNull ConcurrentList<Substitute> stats = Concurrent.newList();
 
         /**
          * Narrows the perk's stats to those defined at a given rarity.
@@ -240,23 +214,6 @@ public class Pet implements JpaModel {
             return this.getDescription();
         }
 
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Perk that = (Perk) o;
-
-            return this.isFlatStat() == that.isFlatStat()
-                && Objects.equals(this.getName(), that.getName())
-                && Objects.equals(this.getDescription(), that.getDescription())
-                && Objects.equals(this.getStats(), that.getStats());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getName(), this.getDescription(), this.isFlatStat(), this.getStats());
-        }
-
     }
 
     /**
@@ -270,6 +227,7 @@ public class Pet implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Substitute {
 
         /**
@@ -293,15 +251,11 @@ public class Pet implements JpaModel {
          */
         @Enumerated(EnumType.STRING)
         private @NotNull ChatColor.Legacy format = ChatColor.Legacy.GREEN;
-        @Getter(AccessLevel.NONE)
-        private @NotNull ConcurrentMap<Rarity, Value> values = Concurrent.newMap();
 
         /**
          * The grant keyed by rarity, each entry the pair the level scaling is computed from.
          */
-        public @NotNull ConcurrentMap<Rarity, Value> getValues() {
-            return this.values;
-        }
+        private @NotNull ConcurrentMap<Rarity, Value> values = Concurrent.newMap();
 
         /**
          * The {@link Stat} this substitute names, looked up in the {@link SkyBlockData} repository
@@ -311,24 +265,6 @@ public class Pet implements JpaModel {
             if (this.id.isEmpty())
                 return java.util.Optional.empty();
             return api.simplified.skyblock.SkyBlockData.getRepository(Stat.class).findFirst(Stat::getId, this.id);
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Substitute that = (Substitute) o;
-
-            return this.getPrecision() == that.getPrecision()
-                && Objects.equals(this.getId(), that.getId())
-                && Objects.equals(this.getType(), that.getType())
-                && Objects.equals(this.getFormat(), that.getFormat())
-                && Objects.equals(this.getValues(), that.getValues());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getId(), this.getPrecision(), this.getType(), this.getFormat(), this.getValues());
         }
 
         /**

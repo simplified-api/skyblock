@@ -1,5 +1,7 @@
 package api.simplified.skyblock.model;
 
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
@@ -11,10 +13,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 /**
  * A mayoral candidate in the SkyBlock election - an NPC who, once elected, applies a set of global
@@ -24,6 +23,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "mayors")
 public class Mayor implements JpaModel {
 
@@ -60,29 +60,12 @@ public class Mayor implements JpaModel {
     @Column(name = "perks", nullable = false)
     private @NotNull ConcurrentList<Perk> perks = Concurrent.newList();
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Mayor that = (Mayor) o;
-
-        return this.isSpecial() == that.isSpecial()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getFormat(), that.getFormat())
-            && Objects.equals(this.getPerks(), that.getPerks());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.isSpecial(), this.getFormat(), this.getPerks());
-    }
-
     /**
      * One global effect an elected mayor applies for the whole of their term.
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Perk {
 
         /**
@@ -106,23 +89,6 @@ public class Mayor implements JpaModel {
          */
         private @NotNull ConcurrentList<Substitute> stats = Concurrent.newList();
 
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Perk that = (Perk) o;
-
-            return Objects.equals(this.getId(), that.getId())
-                && Objects.equals(this.getName(), that.getName())
-                && Objects.equals(this.getDescription(), that.getDescription())
-                && Objects.equals(this.getStats(), that.getStats());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getId(), this.getName(), this.getDescription(), this.getStats());
-        }
-
     }
 
     /**
@@ -135,6 +101,7 @@ public class Mayor implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Substitute {
 
         /**
@@ -164,24 +131,6 @@ public class Mayor implements JpaModel {
          * how a discount is spelled.
          */
         private double value;
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Substitute that = (Substitute) o;
-
-            return this.getPrecision() == that.getPrecision()
-                && this.getValue() == that.getValue()
-                && Objects.equals(this.getId(), that.getId())
-                && Objects.equals(this.getType(), that.getType())
-                && Objects.equals(this.getFormat(), that.getFormat());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getId(), this.getPrecision(), this.getType(), this.getFormat(), this.getValue());
-        }
 
     }
 

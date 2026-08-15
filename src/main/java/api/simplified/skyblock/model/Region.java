@@ -1,5 +1,7 @@
 package api.simplified.skyblock.model;
 
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,12 +11,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * A region - one of the top-level worlds a member can be in, such as the Hub, the Dwarven Mines, the
@@ -25,6 +25,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "zones")
 @Table(name = "regions")
 public class Region implements JpaModel {
 
@@ -68,23 +69,5 @@ public class Region implements JpaModel {
      */
     @OneToMany(mappedBy = "region")
     private @NotNull List<Zone> zones = new ArrayList<>();
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Region that = (Region) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getFormat(), that.getFormat())
-            && Objects.equals(this.getGameType(), that.getGameType())
-            && Objects.equals(this.getMode(), that.getMode());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getFormat(), this.getGameType(), this.getMode());
-    }
 
 }

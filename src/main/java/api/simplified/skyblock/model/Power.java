@@ -1,6 +1,9 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.AccessLevel;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
@@ -13,12 +16,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -34,6 +34,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "stone")
 @Table(name = "powers")
 public class Power implements JpaModel {
 
@@ -95,26 +96,6 @@ public class Power implements JpaModel {
      */
     public @NotNull Optional<Item> getStone() {
         return Optional.ofNullable(this.stone);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Power that = (Power) o;
-
-        return this.getRequiredCombatLevel() == that.getRequiredCombatLevel()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getStoneId(), that.getStoneId())
-            && Objects.equals(this.getStage(), that.getStage())
-            && Objects.equals(this.getBaseValues(), that.getBaseValues())
-            && Objects.equals(this.getBonuses(), that.getBonuses());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getStoneId(), this.getRequiredCombatLevel(), this.getStage(), this.getBaseValues(), this.getBonuses());
     }
 
     /**

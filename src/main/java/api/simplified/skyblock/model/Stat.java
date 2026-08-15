@@ -2,6 +2,9 @@ package api.simplified.skyblock.model;
 
 import api.simplified.skyblock.SkyBlockData;
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
@@ -15,11 +18,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -31,6 +31,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "category")
 @Table(name = "stats")
 public class Stat implements JpaModel {
 
@@ -141,31 +142,6 @@ public class Stat implements JpaModel {
         return !this.isVisible();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Stat that = (Stat) o;
-
-        return this.getBase() == that.getBase()
-            && this.getCap() == that.getCap()
-            && this.getEnrichment() == that.getEnrichment()
-            && this.getPowerMultiplier() == that.getPowerMultiplier()
-            && this.getTuningMultiplier() == that.getTuningMultiplier()
-            && this.isVisible() == that.isVisible()
-            && this.isMultiplicable() == that.isMultiplicable()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getSymbol(), that.getSymbol())
-            && Objects.equals(this.getFormat(), that.getFormat())
-            && Objects.equals(this.getCategoryId(), that.getCategoryId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getSymbol(), this.getFormat(), this.getCategoryId(), this.getBase(), this.getCap(), this.getEnrichment(), this.getPowerMultiplier(), this.getTuningMultiplier(), this.isVisible(), this.isMultiplicable());
-    }
-
     /**
      * A reference to a {@link Stat} by id, plus the amounts to render for it and how to render them.
      *
@@ -176,6 +152,7 @@ public class Stat implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Substitute {
 
         /**
@@ -213,24 +190,6 @@ public class Stat implements JpaModel {
             if (this.id.isEmpty())
                 return Optional.empty();
             return SkyBlockData.getRepository(Stat.class).findFirst(Stat::getId, this.id);
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Substitute that = (Substitute) o;
-
-            return this.getPrecision() == that.getPrecision()
-                && Objects.equals(this.getId(), that.getId())
-                && Objects.equals(this.getType(), that.getType())
-                && Objects.equals(this.getFormat(), that.getFormat())
-                && Objects.equals(this.getValues(), that.getValues());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getId(), this.getPrecision(), this.getType(), this.getFormat(), this.getValues());
         }
 
     }

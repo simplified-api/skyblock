@@ -2,6 +2,9 @@ package api.simplified.skyblock.model;
 
 import api.simplified.skyblock.common.Rarity;
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.ForeignIds;
@@ -15,11 +18,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import lib.minecraft.text.ChatFormat;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -30,6 +30,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "enchantments")
 public class Enchantment implements JpaModel {
 
@@ -130,30 +131,6 @@ public class Enchantment implements JpaModel {
     @ForeignIds("mobTypeIds")
     private transient @NotNull ConcurrentList<MobType> mobTypes = Concurrent.newList();
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Enchantment that = (Enchantment) o;
-
-        return this.getRequiredLevel() == that.getRequiredLevel()
-            && Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getDescription(), that.getDescription())
-            && Objects.equals(this.getType(), that.getType())
-            && Objects.equals(this.getConflict(), that.getConflict())
-            && Objects.equals(this.getCategoryIds(), that.getCategoryIds())
-            && Objects.equals(this.getItemIds(), that.getItemIds())
-            && Objects.equals(this.getLevels(), that.getLevels())
-            && Objects.equals(this.getStats(), that.getStats())
-            && Objects.equals(this.getMobTypeIds(), that.getMobTypeIds());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getDescription(), this.getType(), this.getRequiredLevel(), this.getConflict(), this.getCategoryIds(), this.getItemIds(), this.getLevels(), this.getStats(), this.getMobTypeIds());
-    }
-
     /**
      * The two kinds of enchantment, differing in how the name is drawn and how many one item may
      * carry.
@@ -194,6 +171,7 @@ public class Enchantment implements JpaModel {
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Level {
 
         /**
@@ -220,21 +198,6 @@ public class Enchantment implements JpaModel {
                 case 5 -> Rarity.UNCOMMON;
                 default -> Rarity.COMMON;
             };
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Level that = (Level) o;
-
-            return this.getLevel() == that.getLevel()
-                && Objects.equals(this.getApplyCost(), that.getApplyCost());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getLevel(), this.getApplyCost());
         }
 
     }

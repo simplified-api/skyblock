@@ -1,6 +1,8 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.EqualsAndHashCode;
+import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
@@ -11,10 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 /**
  * A minion type - the worker a member places on the private island to harvest one resource from the
@@ -24,6 +23,7 @@ import java.util.Objects;
  */
 @Getter
 @Entity
+@EqualsAndHashCode(useAccessors = true, exclude = "collection")
 @Table(name = "minions")
 public class Minion implements JpaModel {
 
@@ -71,28 +71,12 @@ public class Minion implements JpaModel {
     @JoinColumn(name = "collection_id", referencedColumnName = "id", insertable = false, updatable = false)
     private @NotNull Collection collection;
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Minion that = (Minion) o;
-
-        return Objects.equals(this.getId(), that.getId())
-            && Objects.equals(this.getName(), that.getName())
-            && Objects.equals(this.getCollectionId(), that.getCollectionId())
-            && Objects.equals(this.getTiers(), that.getTiers());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getName(), this.getCollectionId(), this.getTiers());
-    }
-
     /**
      * One rung of a minion's upgrade ladder.
      */
     @Getter
     @GsonType
+    @EqualsAndHashCode(useAccessors = true)
     public static class Tier {
 
         /**
@@ -115,23 +99,6 @@ public class Minion implements JpaModel {
          * What upgrading to this tier costs.
          */
         private @NotNull Item.Cost upgradeCost = new Item.Cost();
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Tier that = (Tier) o;
-
-            return this.getTier() == that.getTier()
-                && this.getSpeed() == that.getSpeed()
-                && Objects.equals(this.getItemId(), that.getItemId())
-                && Objects.equals(this.getUpgradeCost(), that.getUpgradeCost());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.getTier(), this.getSpeed(), this.getItemId(), this.getUpgradeCost());
-        }
 
     }
 
