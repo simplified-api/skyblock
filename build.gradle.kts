@@ -32,14 +32,14 @@ dependencies {
     testImplementation(libs.junit.platform.launcher)
 
     // Sibling API modules (composite-build substitutes by project name)
-    api("com.github.simplified-api:github") { version { strictly("91d6027") } }
+    api("com.github.simplified-api:github") { version { strictly("3beceab") } }
 
     // Simplified Libraries (github.com/simplified-dev)
-    api("com.github.simplified-dev:collections") { version { strictly("23f01b6") } }
-    api("com.github.simplified-dev:utils") { version { strictly("381e317") } }
-    api("com.github.simplified-dev:reflection") { version { strictly("d02f3ea") } }
-    api("com.github.simplified-dev:gson-extras") { version { strictly("c4bde8d") } }
-    api("com.github.simplified-dev:persistence") { version { strictly("a1c9ca2") } }
+    api("com.github.simplified-dev:collections") { version { strictly("8ca6cb8") } }
+    api("com.github.simplified-dev:utils") { version { strictly("821499b") } }
+    api("com.github.simplified-dev:reflection") { version { strictly("6c3b7c5") } }
+    api("com.github.simplified-dev:gson-extras") { version { strictly("f143dc1") } }
+    api("com.github.simplified-dev:persistence") { version { strictly("8ba3942") } }
 
     // Minecraft-Library (github.com/minecraft-library)
     // StatCategory, Rarity, BestiaryCategory, etc. store ChatColor values.
