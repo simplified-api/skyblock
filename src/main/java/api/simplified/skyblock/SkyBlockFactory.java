@@ -52,12 +52,12 @@ public class SkyBlockFactory implements RepositoryFactory {
     /**
      * Identifies this dataset in exception messages and in the external asset state tables.
      */
-    public static final @NotNull String SOURCE_ID = "skyblock-data";
+    public static final @NotNull String SOURCE_ID = "skyblock";
 
     /**
      * The environment variable holding the GitHub personal access token, if one is set.
      */
-    public static final @NotNull String TOKEN_VARIABLE = "SKYBLOCK_DATA_GITHUB_TOKEN";
+    public static final @NotNull String TOKEN_VARIABLE = "SKYBLOCK_GITHUB_TOKEN";
 
     private static final @NotNull String API_VERSION = "2022-11-28";
     private static final @NotNull String RAW_ACCEPT = "application/vnd.github.raw+json";
@@ -176,6 +176,23 @@ public class SkyBlockFactory implements RepositoryFactory {
      * @return the aggregated data contract
      */
     private static @NotNull SkyBlockDataContract buildContract() {
+        return clients().contract();
+    }
+
+    /**
+     * Builds the GitHub clients the corpus is served through, reading a personal access token
+     * from {@value #TOKEN_VARIABLE}.
+     *
+     * <p>Public because a consumer wiring these into its own container needs the same auth,
+     * media types and error decoding this class uses. Building a second set by hand is what
+     * drifts: the two Accept headers are not interchangeable, and a copy that misses the raw
+     * media type silently truncates a corpus file above one megabyte.
+     *
+     * <p>Each call builds a fresh set. Hold the result rather than calling this per use.
+     *
+     * @return the clients and the contract aggregating them
+     */
+    public static @NotNull Clients clients() {
         GitHubAuth auth = GitHubAuth.bearer(StringUtil.stripToEmpty(System.getenv(TOKEN_VARIABLE)));
         GsonSettings gsonSettings = GsonSettings.defaults();
 
@@ -197,8 +214,25 @@ public class SkyBlockFactory implements RepositoryFactory {
                 .build()
         );
 
-        return SkyBlockDataContract.from(read.getContract(), write.getContract());
+        return new Clients(
+            SkyBlockDataContract.from(read.getContract(), write.getContract()),
+            read,
+            write
+        );
     }
+
+    /**
+     * The GitHub clients the corpus is served through, and the contract aggregating them.
+     *
+     * @param contract the read and write proxies bound to the data repository
+     * @param read the read-side client, whose last response carries the conditional-request headers
+     * @param write the write-side client
+     */
+    public record Clients(
+        @NotNull SkyBlockDataContract contract,
+        @NotNull Client<GitHubContentsContract> read,
+        @NotNull Client<GitHubContentsWriteContract> write
+    ) {}
 
     /**
      * An index provider reading the corpus manifest through a data contract and holding the parsed
