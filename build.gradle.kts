@@ -43,7 +43,7 @@ dependencies {
 
     // Minecraft-Library (github.com/minecraft-library)
     // StatCategory, Rarity, BestiaryCategory, etc. store ChatColor values.
-    api("com.github.minecraft-library:text") { version { strictly("117775e") } }
+    api("com.github.minecraft-library:text") { version { strictly("929dab6") } }
 
     // Gson - @GsonType-annotated inner classes plus direct Deserializer/TypeAdapter usage
     api(libs.gson)
