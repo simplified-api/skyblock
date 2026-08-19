@@ -11,6 +11,7 @@ import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.collection.ConcurrentSet;
+import dev.simplified.collection.query.SearchFunction;
 import dev.simplified.gson.annotation.SerializedPath;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
@@ -25,7 +26,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 /**
  * Everything one named thing contributes to a member's stats, in one place.
@@ -1895,7 +1895,7 @@ public class Buff implements JpaModel {
                 forEachCondition(condition.getNot(), visitor);
         }
 
-        private static <T extends JpaModel> boolean unresolved(@NotNull Class<T> model, @NotNull Function<T, String> idOf, @NotNull String id) {
+        private static <T extends JpaModel> boolean unresolved(@NotNull Class<T> model, @NotNull SearchFunction<T, String> idOf, @NotNull String id) {
             return SkyBlockData.getRepository(model).findFirst(idOf, id).isEmpty();
         }
 
