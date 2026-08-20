@@ -1,6 +1,6 @@
 [
   {
-    "key": "ABSORPTION",
+    "id": "ABSORPTION",
     "name": "Absorption",
     "description": "Grants %{VALUE:ABSORPTION} of absorption.",
     "buff": true,
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "key": "ADRENALINE",
+    "id": "ADRENALINE",
     "name": "Adrenaline",
     "description": "Grants %{VALUE:ABSORPTION} of absorption and %{VALUE:WALK_SPEED} %{STAT:WALK_SPEED}.",
     "buff": true,
@@ -63,7 +63,7 @@
     ]
   },
   {
-    "key": "AGILITY",
+    "id": "AGILITY",
     "name": "Agility",
     "description": "Grants %{VALUE:WALK_SPEED} %{STAT:SPEED} and increases the chance for mob attacks to miss by %{VALUE:DODGE_CHANCE}.",
     "buff": true,
@@ -94,7 +94,7 @@
     ]
   },
   {
-    "key": "ALCHEMY_XP_BOOST",
+    "id": "ALCHEMY_XP_BOOST",
     "name": "Alchemy XP Boost",
     "description": "Gain %{VALUE:ALCHEMY_XP_BOOST} more Alchemy experience.",
     "buff": true,
@@ -113,7 +113,7 @@
     ]
   },
   {
-    "key": "ARCHERY",
+    "id": "ARCHERY",
     "name": "Archery",
     "description": "Increases bow damage by %{VALUE:BOW_DAMAGE}.",
     "buff": true,
@@ -133,7 +133,7 @@
     ]
   },
   {
-    "key": "BLINDNESS",
+    "id": "BLINDNESS",
     "name": "Blindness",
     "description": "Blinds the affected player for %{VALUE:BLINDNESS}s.",
     "buff": false,
@@ -152,7 +152,7 @@
     ]
   },
   {
-    "key": "BURNING",
+    "id": "BURNING",
     "name": "Burning",
     "description": "Damaging enemies sets them on fire, dealing %{VALUE:DAMAGE_PER_SECOND} damage per second.",
     "buff": true,
@@ -172,7 +172,7 @@
     ]
   },
   {
-    "key": "COMBAT_XP_BOOST",
+    "id": "COMBAT_XP_BOOST",
     "name": "Combat XP Boost",
     "description": "Gain %{VALUE:COMBAT_XP_BOOST} more Combat experience.",
     "buff": true,
@@ -191,7 +191,7 @@
     ]
   },
   {
-    "key": "CRITICAL",
+    "id": "CRITICAL",
     "name": "Critical",
     "description": "Grants %{VALUE:CRIT_CHANCE} %{STAT:CRIT_CHANCE}, %{VALUE:CRIT_DAMAGE} %{STAT:CRIT_DAMAGE} and %{VALUE:MAGIC_FIND_BREW} %{STAT:MAGIC_FIND}.",
     "buff": true,
@@ -222,7 +222,7 @@
     ]
   },
   {
-    "key": "DAMAGE",
+    "id": "DAMAGE",
     "name": "Damage",
     "description": "Instantly deals %{VALUE:INSTANT_HEALTH} damage.",
     "buff": false,
@@ -246,7 +246,7 @@
     ]
   },
   {
-    "key": "DODGE",
+    "id": "DODGE",
     "name": "Dodge",
     "description": "Mob attacks have a %{VALUE:DODGE_CHANCE} chance to miss.",
     "buff": true,
@@ -266,7 +266,7 @@
     ]
   },
   {
-    "key": "ENCHANTING_XP_BOOST",
+    "id": "ENCHANTING_XP_BOOST",
     "name": "Enchanting XP Boost",
     "description": "Gain %{VALUE:ENCHANTING_XP_BOOST} more Enchanting experience.",
     "buff": true,
@@ -285,7 +285,7 @@
     ]
   },
   {
-    "key": "EXPERIENCE",
+    "id": "EXPERIENCE",
     "name": "Experience",
     "description": "Gain %{VALUE:EXPERIENCE_ORBS}, %{VALUE:COMBAT_XP_BONUS_BREW:PLUS:PERCENT} Combat XP and regenerate %{VALUE:HEALTH_PER_SECOND_BREW}%{SYMBOL:HEALTH} per second.",
     "buff": true,
@@ -305,7 +305,7 @@
     ]
   },
   {
-    "key": "FARMING_XP_BOOST",
+    "id": "FARMING_XP_BOOST",
     "name": "Farming XP Boost",
     "description": "Gain %{VALUE:PERCENT} more Farming experience.",
     "buff": true,
@@ -324,14 +324,14 @@
     ]
   },
   {
-    "key": "FIRE_RESISTANCE",
+    "id": "FIRE_RESISTANCE",
     "name": "Fire Resistance",
     "description": "Grants immunity to fire and lava.",
     "buff": true,
     "brewable": true
   },
   {
-    "key": "FISHING_XP_BOOST",
+    "id": "FISHING_XP_BOOST",
     "name": "Fishing XP Boost",
     "description": "Gain %{VALUE:PERCENT} more Fishing experience.",
     "buff": true,
@@ -350,7 +350,7 @@
     ]
   },
   {
-    "key": "FORAGING_XP_BOOST",
+    "id": "FORAGING_XP_BOOST",
     "name": "Foraging XP Boost",
     "description": "Gain %{VALUE:PERCENT} more Foraging experience.",
     "buff": true,
@@ -369,7 +369,7 @@
     ]
   },
   {
-    "key": "HASTE",
+    "id": "HASTE",
     "name": "Haste",
     "description": "Increases your mining speed by %{VALUE:MINING_SPEED}.",
     "buff": true,
@@ -389,7 +389,7 @@
     ]
   },
   {
-    "key": "HEALING",
+    "id": "HEALING",
     "name": "Healing",
     "description": "Instantly heals you for %{VALUE:INSTANT_HEALTH} health.",
     "buff": true,
@@ -412,14 +412,14 @@
     ]
   },
   {
-    "key": "INVISIBILITY",
+    "id": "INVISIBILITY",
     "name": "Invisibility",
     "description": "Grants invisibility from players and mobs.",
     "buff": true,
     "brewable": true
   },
   {
-    "key": "JERRY_CANDY",
+    "id": "JERRY_CANDY",
     "name": "Jerry Candy",
     "description": "Increases a bunch of stats!",
     "buff": true,
@@ -468,7 +468,7 @@
     ]
   },
   {
-    "key": "JUMP_BOOST",
+    "id": "JUMP_BOOST",
     "name": "Jump Boost",
     "description": "Increases your jump height by %{VALUE:JUMP_BOOST} blocks.",
     "buff": true,
@@ -488,7 +488,7 @@
     ]
   },
   {
-    "key": "KINGS_SCENT",
+    "id": "KINGS_SCENT",
     "name": "King's Scent",
     "description": "Grants the stench of the Goblin King.",
     "buff": true,
@@ -505,7 +505,7 @@
     ]
   },
   {
-    "key": "KNOCKBACK",
+    "id": "KNOCKBACK",
     "name": "Knockback",
     "description": "Damaging enemies deals more knockback.",
     "buff": false,
@@ -525,7 +525,7 @@
     ]
   },
   {
-    "key": "MAGIC_FIND",
+    "id": "MAGIC_FIND",
     "name": "Magic Find",
     "description": "Gain %{VALUE:MAGIC_FIND} chance to find rare items from monsters and bosses.",
     "buff": true,
@@ -545,7 +545,7 @@
     ]
   },
   {
-    "key": "MANA",
+    "id": "MANA",
     "name": "Mana",
     "description": "Grants %{VALUE:MANA_REGEN} mana per second.",
     "buff": true,
@@ -569,7 +569,7 @@
     ]
   },
   {
-    "key": "MINING_XP_BOOST",
+    "id": "MINING_XP_BOOST",
     "name": "Mining XP Boost",
     "description": "Gain %{VALUE:PERCENT} more Mining experience.",
     "buff": true,
@@ -588,7 +588,7 @@
     ]
   },
   {
-    "key": "MUSHED_GLOWY_TONIC",
+    "id": "MUSHED_GLOWY_TONIC",
     "name": "Mushed Glowy Tonic",
     "description": "Grants %{VALUE:PERCENT} %{STAT:FISHING_SPEED}.",
     "buff": true,
@@ -605,14 +605,14 @@
     ]
   },
   {
-    "key": "NIGHT_VISION",
+    "id": "NIGHT_VISION",
     "name": "Night Vision",
     "description": "Grants greater visibility at night.",
     "buff": true,
     "brewable": true
   },
   {
-    "key": "PET_LUCK",
+    "id": "PET_LUCK",
     "name": "Pet Luck",
     "description": "Gain %{VALUE:PET_LUCK} chance to find pets and craft higher tier pets.",
     "buff": true,
@@ -632,7 +632,7 @@
     ]
   },
   {
-    "key": "POISON",
+    "id": "POISON",
     "name": "Poison",
     "description": "Poisons the affected, dealing damage over time.",
     "buff": false,
@@ -652,7 +652,7 @@
     ]
   },
   {
-    "key": "RABBIT",
+    "id": "RABBIT",
     "name": "Rabbit",
     "description": "Grants Jump Boost III and %{VALUE:WALK_SPEED} %{STAT:WALK_SPEED}.",
     "buff": true,
@@ -687,7 +687,7 @@
     ]
   },
   {
-    "key": "REGENERATION",
+    "id": "REGENERATION",
     "name": "Regeneration",
     "description": "Grants %{VALUE:HEALTH_REGEN} %{STAT:HEALTH_REGEN}.",
     "buff": true,
@@ -712,7 +712,7 @@
     ]
   },
   {
-    "key": "RESISTANCE",
+    "id": "RESISTANCE",
     "name": "Resistance",
     "description": "Increases %{STAT:DEFENSE} by %{VALUE:DEFENSE}.",
     "buff": true,
@@ -736,7 +736,7 @@
     ]
   },
   {
-    "key": "SLOWNESS",
+    "id": "SLOWNESS",
     "name": "Slowness",
     "description": "Reduces %{STAT:WALK_SPEED}.",
     "buff": false,
@@ -760,7 +760,7 @@
     ]
   },
   {
-    "key": "SPEED",
+    "id": "SPEED",
     "name": "Speed",
     "description": "Grants %{VALUE:WALK_SPEED} %{STAT:WALK_SPEED}.",
     "buff": true,
@@ -784,7 +784,7 @@
     ]
   },
   {
-    "key": "SPELUNKER",
+    "id": "SPELUNKER",
     "name": "Spelunker",
     "description": "Grants %{VALUE:MINING_FORTUNE} %{STAT:MINING_FORTUNE}.",
     "buff": true,
@@ -805,7 +805,7 @@
     ]
   },
   {
-    "key": "SPIRIT",
+    "id": "SPIRIT",
     "name": "Spirit",
     "description": "Grants %{VALUE:WALK_SPEED} %{STAT:WALK_SPEED} and %{VALUE:CRIT_DAMAGE} %{STAT:CRIT_DAMAGE}.",
     "buff": true,
@@ -836,7 +836,7 @@
     ]
   },
   {
-    "key": "STAMINA",
+    "id": "STAMINA",
     "name": "Stamina",
     "description": "Instantly heals you for %{VALUE:INSTANT_HEALTH} health and gives %{VALUE:MANA} %{STAT:MANA}.",
     "buff": true,
@@ -867,7 +867,7 @@
     ]
   },
   {
-    "key": "STRENGTH",
+    "id": "STRENGTH",
     "name": "Strength",
     "description": "Increases %{STAT:STRENGTH} by %{VALUE:STRENGTH}.",
     "buff": true,
@@ -891,7 +891,7 @@
     ]
   },
   {
-    "key": "STUN",
+    "id": "STUN",
     "name": "Stun",
     "description": "When applied to yourself, your hits have a %{VALUE:STUN_CHANCE} chance to stun enemies for %{FORMAT:GREEN}1s%{FORMAT:GRAY}. When splashed, enemies are stunned for %{VALUE:STUN_DURATION}.",
     "buff": true,
@@ -922,7 +922,7 @@
     ]
   },
   {
-    "key": "TRUE_RESISTANCE",
+    "id": "TRUE_RESISTANCE",
     "name": "True Resistance",
     "description": "Gain %{VALUE:TRUE_DEFENSE} %{STAT:TRUE_DEFENSE}.",
     "buff": true,
@@ -942,7 +942,7 @@
     ]
   },
   {
-    "key": "VENOMOUS",
+    "id": "VENOMOUS",
     "name": "Venomous",
     "description": "Grants a reduction in %{STAT:WALK_SPEED} and deals damage over time.",
     "buff": false,
@@ -973,7 +973,7 @@
     ]
   },
   {
-    "key": "WATER_BREATHING",
+    "id": "WATER_BREATHING",
     "name": "Water Breathing",
     "description": "Grants a %{VALUE:WATER_BREATHING} chance of not taking drowning damage.",
     "buff": true,
@@ -995,7 +995,7 @@
     ]
   },
   {
-    "key": "WEAKNESS",
+    "id": "WEAKNESS",
     "name": "Weakness",
     "description": "Reduces %{STAT:DAMAGE} when attacking enemies.",
     "buff": false,
@@ -1019,7 +1019,7 @@
     ]
   },
   {
-    "key": "WOUNDED",
+    "id": "WOUNDED",
     "name": "Wounded",
     "description": "Reduces %{VALUE:HEALING} of healing.",
     "buff": false,

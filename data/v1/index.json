@@ -1,5 +1,5 @@
 {
-  "commit_sha": "e3ac8ccb33ca014540a32053090f28b29ec725f7",
+  "commit_sha": "c1caa219e63affdd07bcb2874fceb607bcb8257b",
   "count": 34,
   "files": [
     {
@@ -141,9 +141,9 @@
       "table_name": "potion_groups"
     },
     {
-      "bytes": 20929,
+      "bytes": 20883,
       "category": "modifiers",
-      "content_sha256": "a25d8a8d43a89436390d1edf5d6b4325ebaed00f3f05d7575676f2655bf2ca1e",
+      "content_sha256": "55ae385546f7aa2b1880aef223c23f1cd3181196f6ab4444e61a0adca8b7146a",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Potion",
       "path": "data/v1/modifiers/potions.json",
@@ -159,9 +159,9 @@
       "table_name": "powers"
     },
     {
-      "bytes": 101630,
+      "bytes": 99792,
       "category": "modifiers",
-      "content_sha256": "629ea0e14978c79f965409e26d25d4274b0be4b15dfe09aba2e392e58908347d",
+      "content_sha256": "b546085a6583a99e013e15776b6b29a7e3759a78c65fd44c3ff2c3751d78039f",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Reforge",
       "path": "data/v1/modifiers/reforges.json",
@@ -186,9 +186,9 @@
       "table_name": "stat_categories"
     },
     {
-      "bytes": 17279,
+      "bytes": 17304,
       "category": "modifiers",
-      "content_sha256": "400d0b6a15c8ce1b331ed7fcbd8b90c26518c0dbdd8243464c0dec9c3387b917",
+      "content_sha256": "478dc5f97714bcb00f6cb20357596a819ebec39760c872e811eeea708d906817",
       "has_extra": false,
       "model_class": "api.simplified.skyblock.model.Stat",
       "path": "data/v1/modifiers/stats.json",
@@ -312,6 +312,6 @@
       "table_name": "zones"
     }
   ],
-  "generated_at": "2026-08-14T07:46:50Z",
+  "generated_at": "2026-08-20T07:19:18Z",
   "version": 1
 }

@@ -797,7 +797,7 @@
   },
   {
     "id": "RIFT_SPEED",
-    "name": "Speed",
+    "name": "Rift Speed",
     "symbol": "✦",
     "format": "WHITE",
     "category": "RIFT",
@@ -807,7 +807,7 @@
   },
   {
     "id": "RIFT_INTELLIGENCE",
-    "name": "Intelligence",
+    "name": "Rift Intelligence",
     "symbol": "✎",
     "format": "AQUA",
     "category": "RIFT",
@@ -816,7 +816,7 @@
   },
   {
     "id": "RIFT_MAGIC_FIND",
-    "name": "Magic Find",
+    "name": "Rift Magic Find",
     "symbol": "✯",
     "format": "AQUA",
     "category": "RIFT",
@@ -825,7 +825,7 @@
   },
   {
     "id": "RIFT_MANA_REGEN",
-    "name": "Mana Regen",
+    "name": "Rift Mana Regen",
     "symbol": "⚡",
     "format": "AQUA",
     "category": "RIFT",
@@ -834,7 +834,7 @@
   },
   {
     "id": "RIFT_HEARTS",
-    "name": "Hearts",
+    "name": "Rift Hearts",
     "symbol": "❤",
     "format": "RED",
     "category": "RIFT",
