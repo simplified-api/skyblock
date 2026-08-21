@@ -13,11 +13,9 @@ import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.RepositoryFactory;
 import dev.simplified.persistence.driver.H2MemoryDriver;
 import dev.simplified.persistence.exception.JpaException;
-import dev.simplified.persistence.source.FileFetcher;
-import dev.simplified.persistence.source.IndexProvider;
-import dev.simplified.persistence.source.ManifestIndex;
-import dev.simplified.persistence.source.RemoteJsonSource;
-import dev.simplified.persistence.source.Source;
+import dev.simplified.persistence.store.EntityStore;
+import dev.simplified.persistence.store.FileFetcher;
+import dev.simplified.persistence.store.ManifestIndex;
 import dev.simplified.util.Logging;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -25,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.function.Supplier;
 
 /**
  * A SkyBlock session whose reference corpus is the {@code data/v1} tree this repository ships rather
@@ -110,14 +109,14 @@ public final class LocalSkyBlockData {
     public static @NotNull JpaSession connect(@NotNull Path root) {
         ReferenceIndex.clear();
 
-        IndexProvider indexProvider = () -> readManifest(root);
+        Supplier<ManifestIndex> indexProvider = () -> readManifest(root);
         FileFetcher fileFetcher = path -> read(root.resolve(path), path);
 
         ConcurrentList<Class<JpaModel>> models = RepositoryFactory.resolveModels(Item.class);
-        ConcurrentMap<Class<?>, Source<?>> sources = Concurrent.newMap();
+        ConcurrentMap<Class<?>, EntityStore<?>> stores = Concurrent.newMap();
 
         for (Class<JpaModel> model : models)
-            sources.put(model, new RemoteJsonSource<>(SOURCE_ID, indexProvider, fileFetcher, model));
+            stores.put(model, SkyBlockFactory.documentStore(SOURCE_ID, indexProvider, fileFetcher, model));
 
         RepositoryFactory factory = new RepositoryFactory() {
             @Override
@@ -126,8 +125,8 @@ public final class LocalSkyBlockData {
             }
 
             @Override
-            public @NotNull ConcurrentMap<Class<?>, Source<?>> getSources() {
-                return sources.toUnmodifiable();
+            public @NotNull ConcurrentMap<Class<?>, EntityStore<?>> getStores() {
+                return stores.toUnmodifiable();
             }
         };
 
