@@ -12,7 +12,7 @@ import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
 import dev.simplified.persistence.driver.H2MemoryDriver;
-import dev.simplified.persistence.store.EntityStore;
+import dev.simplified.persistence.store.Source;
 import dev.simplified.util.Logging;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +35,7 @@ public class SkyBlockData {
 
     /**
      * {@link SkyBlockFactory} instance that resolves the SkyBlock JPA model package and the
-     * {@code skyblock/} JSON {@link EntityStore}.
+     * {@code skyblock/} JSON {@link Source}.
      */
     @Getter private static final @NotNull SkyBlockFactory factory = new SkyBlockFactory();
 

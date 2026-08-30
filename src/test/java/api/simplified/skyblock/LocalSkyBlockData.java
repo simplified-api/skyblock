@@ -1,10 +1,8 @@
 package api.simplified.skyblock;
-
 import api.simplified.skyblock.model.Item;
 import com.google.gson.Gson;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.JpaCacheProvider;
 import dev.simplified.persistence.JpaConfig;
@@ -13,18 +11,15 @@ import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.RepositoryFactory;
 import dev.simplified.persistence.driver.H2MemoryDriver;
 import dev.simplified.persistence.exception.JpaException;
-import dev.simplified.persistence.store.EntityStore;
 import dev.simplified.persistence.store.FileFetcher;
 import dev.simplified.persistence.store.ManifestIndex;
 import dev.simplified.util.Logging;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.function.Supplier;
-
 /**
  * A SkyBlock session whose reference corpus is the {@code data/v1} tree this repository ships rather
  * than the GitHub Contents API.
@@ -39,20 +34,16 @@ import java.util.function.Supplier;
  * JVM. Whoever connects must {@link #disconnect(JpaSession)} before yielding.
  */
 public final class LocalSkyBlockData {
-
     /**
      * System property naming the checkout root, for a runner whose working directory is not the
      * project.
      */
     public static final @NotNull String ROOT_PROPERTY = "skyblock.corpus.root";
-
     private static final @NotNull String MANIFEST_PATH = "data/v1/index.json";
     private static final @NotNull String SOURCE_ID = "skyblock-data-local";
     private static final @NotNull String SCHEMA = "skyblock_local";
-
     private LocalSkyBlockData() {
     }
-
     /**
      * Resolves the checkout the corpus is read out of.
      * <p>
@@ -64,19 +55,14 @@ public final class LocalSkyBlockData {
      */
     public static @NotNull Path root() {
         String declared = System.getProperty(ROOT_PROPERTY);
-
         Path root = (declared == null || declared.isBlank())
             ? Path.of("")
             : Path.of(declared);
-
         root = root.toAbsolutePath().normalize();
-
         if (!Files.isReadable(root.resolve(MANIFEST_PATH)))
             throw new JpaException("No corpus manifest under '%s' - name the checkout with -D%s", root, ROOT_PROPERTY);
-
         return root;
     }
-
     /**
      * Models this build declares that the checkout's manifest carries no file for.
      * <p>
@@ -92,14 +78,12 @@ public final class LocalSkyBlockData {
             .stream()
             .map(ManifestIndex.Entry::getModelClass)
             .collect(Concurrent.toList());
-
         return RepositoryFactory.resolveModels(Item.class)
             .stream()
             .map(Class::getName)
             .filter(name -> !covered.contains(name))
             .collect(Concurrent.toList());
     }
-
     /**
      * Opens a session reading every reference table out of the checkout.
      *
@@ -108,28 +92,12 @@ public final class LocalSkyBlockData {
      */
     public static @NotNull JpaSession connect(@NotNull Path root) {
         ReferenceIndex.clear();
-
         Supplier<ManifestIndex> indexProvider = () -> readManifest(root);
         FileFetcher fileFetcher = path -> read(root.resolve(path), path);
-
-        ConcurrentList<Class<JpaModel>> models = RepositoryFactory.resolveModels(Item.class);
-        ConcurrentMap<Class<?>, EntityStore<?>> stores = Concurrent.newMap();
-
-        for (Class<JpaModel> model : models)
-            stores.put(model, SkyBlockFactory.documentStore(SOURCE_ID, indexProvider, fileFetcher, model));
-
-        RepositoryFactory factory = new RepositoryFactory() {
-            @Override
-            public @NotNull ConcurrentList<Class<JpaModel>> getModels() {
-                return models;
-            }
-
-            @Override
-            public @NotNull ConcurrentMap<Class<?>, EntityStore<?>> getStores() {
-                return stores.toUnmodifiable();
-            }
-        };
-
+        RepositoryFactory factory = RepositoryFactory.of(
+            Item.class,
+            SkyBlockFactory.documentSource(SOURCE_ID, indexProvider, fileFetcher, SkyBlockFactory.corpusGson())
+        );
         return SkyBlockData.getSessionManager().connect(
             JpaConfig.common(new H2MemoryDriver(), SCHEMA)
                 .withCacheProvider(JpaCacheProvider.EHCACHE)
@@ -144,7 +112,6 @@ public final class LocalSkyBlockData {
                 .build()
         );
     }
-
     /**
      * Closes a session and unregisters it, so a later test class sees no active session.
      *
@@ -156,12 +123,10 @@ public final class LocalSkyBlockData {
             ReferenceIndex.clear();
         }
     }
-
     private static @NotNull ManifestIndex readManifest(@NotNull Path root) {
         Gson gson = GsonSettings.defaults().create();
         return gson.fromJson(read(root.resolve(MANIFEST_PATH), MANIFEST_PATH), ManifestIndex.class);
     }
-
     private static @NotNull String read(@NotNull Path path, @NotNull String reported) {
         try {
             return Files.readString(path);
@@ -169,5 +134,4 @@ public final class LocalSkyBlockData {
             throw new JpaException(exception, "Unable to read '%s' from the local corpus", reported);
         }
     }
-
 }

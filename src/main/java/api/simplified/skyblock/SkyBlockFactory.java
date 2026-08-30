@@ -16,14 +16,13 @@ import dev.simplified.client.Client;
 import dev.simplified.client.ClientConfig;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.RepositoryFactory;
 import dev.simplified.persistence.exception.JpaException;
-import dev.simplified.persistence.store.EntityStore;
 import dev.simplified.persistence.store.FileFetcher;
 import dev.simplified.persistence.store.ManifestIndex;
+import dev.simplified.persistence.store.Source;
 import dev.simplified.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -36,9 +35,9 @@ import java.util.function.Supplier;
  * Repository factory for the SkyBlock models scoped to the {@link Item} package, loading each one
  * over the GitHub Contents API from the corpus its {@link SkyBlockDataContract} is bound to.
  *
- * <p>Every model gets its own {@link EntityStore} sharing one manifest supplier and one
- * {@link FileFetcher}, so the manifest that maps a model class to its file is fetched once and the
- * per-model stores differ only in which entry they claim.
+ * <p>One {@link Source} serves every model, so the manifest that maps a model class to its file is
+ * fetched once and a read differs only in which entry it claims. The per-model registry a factory used
+ * to hold is gone.
  *
  * <p>The no-argument constructor builds its own GitHub clients and reads a personal access token
  * from {@value #TOKEN_VARIABLE}. Without one the reads are unauthenticated, which GitHub limits to
@@ -65,8 +64,7 @@ public class SkyBlockFactory implements RepositoryFactory {
     private static final @NotNull String JSON_ACCEPT = "application/vnd.github+json";
 
     private final @NotNull ConcurrentList<Class<JpaModel>> models = RepositoryFactory.resolveModels(Item.class);
-    private final @NotNull ConcurrentMap<Class<?>, EntityStore<?>> stores;
-    private final @Nullable EntityStore<?> defaultStore = null;
+    private final @NotNull Source source;
 
     @Getter(AccessLevel.NONE)
     private final @NotNull ManifestSource manifestSource;
@@ -84,15 +82,35 @@ public class SkyBlockFactory implements RepositoryFactory {
      * @param contract the read and write proxies bound to the data repository
      */
     public SkyBlockFactory(@NotNull SkyBlockDataContract contract) {
-        this.manifestSource = new ManifestSource(SOURCE_ID, contract, GsonSettings.defaults().create());
-        FileFetcher fileFetcher = fileFetcher(SOURCE_ID, contract);
+        this(contract, corpusGson());
+    }
 
-        ConcurrentMap<Class<?>, EntityStore<?>> stores = Concurrent.newMap();
+    /**
+     * Constructs a factory against an already-configured data contract and the instance corpus
+     * documents are parsed with.
+     *
+     * @param contract the read and write proxies bound to the data repository
+     * @param gson the instance corpus documents and the manifest are parsed with
+     */
+    public SkyBlockFactory(@NotNull SkyBlockDataContract contract, @NotNull Gson gson) {
+        this.manifestSource = new ManifestSource(SOURCE_ID, contract, gson);
+        this.source = documentSource(SOURCE_ID, this.manifestSource, fileFetcher(SOURCE_ID, contract), gson);
+    }
 
-        for (Class<JpaModel> model : this.getModels())
-            stores.put(model, documentStore(SOURCE_ID, this.manifestSource, fileFetcher, model));
-
-        this.stores = stores.toUnmodifiable();
+    /**
+     * Builds the instance corpus documents are parsed with.
+     *
+     * <p>Empty strings have to round-trip rather than reading as absent, because a corpus column
+     * declared {@code nullable = false} takes one and a null fails the write.
+     *
+     * @return the corpus parser
+     */
+    public static @NotNull Gson corpusGson() {
+        return GsonSettings.defaults()
+            .mutate()
+            .withStringType(GsonSettings.StringType.DEFAULT)
+            .build()
+            .create();
     }
 
     /**
@@ -123,58 +141,61 @@ public class SkyBlockFactory implements RepositoryFactory {
     }
 
     /**
-     * Creates a store loading one model's rows out of the file the manifest names for it.
+     * Creates the source every model in the corpus reads through.
      *
-     * <p>The manifest is asked for its entry matching the model's class name, the primary file is
-     * fetched and parsed, and an {@code _extra} companion is appended when the entry declares one.
+     * <p>One source serves the whole origin: a read is handed the type it wants, asks the manifest
+     * which file carries it, fetches and parses that file, and merges an {@code _extra} companion
+     * over it when the entry declares one.
      *
      * @param sourceId the source id carried in exception messages and asset state rows
      * @param manifest the supplier of the corpus manifest
      * @param fetcher the per-file fetcher
-     * @param modelClass the entity class this store loads
-     * @param <T> the entity type
-     * @return a store reading that model out of the corpus
+     * @param gson the instance documents are parsed with
+     * @return a source reading the corpus
      */
-    public static <T extends JpaModel> @NotNull EntityStore<T> documentStore(
+    public static @NotNull Source documentSource(
         @NotNull String sourceId,
         @NotNull Supplier<ManifestIndex> manifest,
         @NotNull FileFetcher fetcher,
-        @NotNull Class<T> modelClass
+        @NotNull Gson gson
     ) {
-        return repository -> {
-            try {
-                ManifestIndex.Entry entry = manifest.get()
-                    .getFiles()
-                    .stream()
-                    .filter(candidate -> candidate.getModelClass().equals(modelClass.getName()))
-                    .findFirst()
-                    .orElseThrow(() -> new JpaException(
-                        "No manifest entry for '%s' under source '%s'",
-                        modelClass.getName(),
-                        sourceId
-                    ));
+        return new Source() {
 
-                Gson gson = repository.getSession().getGson();
-                Type listType = TypeToken.getParameterized(ConcurrentList.class, repository.getType()).getType();
+            @Override
+            public <T extends JpaModel> @NotNull ConcurrentList<T> read(@NotNull Class<T> type) throws JpaException {
+                try {
+                    ManifestIndex.Entry entry = manifest.get()
+                        .getFiles()
+                        .stream()
+                        .filter(candidate -> candidate.getModelClass().equals(type.getName()))
+                        .findFirst()
+                        .orElseThrow(() -> new JpaException(
+                            "No manifest entry for '%s' under source '%s'",
+                            type.getName(),
+                            sourceId
+                        ));
 
-                ConcurrentList<T> loaded = gson.fromJson(fetcher.fetchFile(entry.getPath()), listType);
+                    Type listType = TypeToken.getParameterized(ConcurrentList.class, type).getType();
+                    ConcurrentList<T> loaded = gson.fromJson(fetcher.fetchFile(entry.getPath()), listType);
 
-                if (loaded == null)
-                    loaded = Concurrent.newList();
+                    if (loaded == null)
+                        loaded = Concurrent.newList();
 
-                if (entry.isHasExtra() && entry.getExtraPath() != null) {
-                    ConcurrentList<T> extras = gson.fromJson(fetcher.fetchFile(entry.getExtraPath()), listType);
+                    if (entry.isHasExtra() && entry.getExtraPath() != null) {
+                        ConcurrentList<T> extras = gson.fromJson(fetcher.fetchFile(entry.getExtraPath()), listType);
 
-                    if (extras != null)
-                        loaded.addAll(extras);
+                        if (extras != null)
+                            loaded.addAll(extras);
+                    }
+
+                    return loaded;
+                } catch (JpaException exception) {
+                    throw exception;
+                } catch (Exception exception) {
+                    throw new JpaException(exception, "Failed to load '%s' from source '%s'", type.getName(), sourceId);
                 }
-
-                return loaded;
-            } catch (JpaException exception) {
-                throw exception;
-            } catch (Exception exception) {
-                throw new JpaException(exception, "Failed to load '%s' from source '%s'", modelClass.getName(), sourceId);
             }
+
         };
     }
 
