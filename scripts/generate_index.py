@@ -434,10 +434,24 @@ def build_index(repo_root: Path, model_root: Path) -> dict:
             entry["extra_bytes"] = extra_path.stat().st_size
         files.append(entry)
 
+    # The consumer-facing half: a revision, and each logical document's layers in merge order.
+    # The logical name is the file stem, which is the @Table(name) byte for byte, so a consumer
+    # resolves a type to a document without the index naming a Java class.
+    documents: Dict[str, List[dict]] = {}
+    for entry in files:
+        layers = [{"path": entry["path"], "sha256": entry["content_sha256"]}]
+        if entry["has_extra"]:
+            layers.append({"path": entry["extra_path"], "sha256": entry["extra_sha256"]})
+        documents[entry["table_name"]] = layers
+
+    commit_sha = git_commit_sha(repo_root)
+
     return {
+        "revision": commit_sha or "",
+        "documents": documents,
         "version": INDEX_VERSION,
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "commit_sha": git_commit_sha(repo_root),
+        "commit_sha": commit_sha,
         "count": len(files),
         "files": files,
     }
@@ -449,8 +463,8 @@ def serialize(index: dict) -> str:
 
 
 def content_equals(a: dict, b: dict) -> bool:
-    """Compare two index dicts ignoring generated_at and commit_sha."""
-    ignored = {"generated_at", "commit_sha"}
+    """Compare two index dicts ignoring the fields that move with every commit."""
+    ignored = {"generated_at", "commit_sha", "revision"}
     a_stable = {k: v for k, v in a.items() if k not in ignored}
     b_stable = {k: v for k, v in b.items() if k not in ignored}
     return a_stable == b_stable
