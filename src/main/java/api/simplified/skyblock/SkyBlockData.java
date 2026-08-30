@@ -2,6 +2,7 @@ package api.simplified.skyblock;
 
 import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.UtilityClass;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.JpaConfig;
 import dev.simplified.persistence.JpaModel;
@@ -9,6 +10,7 @@ import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
 import dev.simplified.persistence.store.Source;
+import dev.simplified.persistence.store.WriteRequest;
 import dev.simplified.util.Logging;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,7 +39,7 @@ public class SkyBlockData {
      * Retrieves the {@link Repository} holding all entities of the given model type.
      *
      * <p>
-     * The rows are held in memory, so a finder naming an {@link dev.simplified.collection.query.Indexed}
+     * The rows are held in memory, so a finder naming an {@link Indexed}
      * property is a hash probe and a caller resolving many ids against one table pays nothing per id.
      * A held row is as old as the last hydration of its type, which
      * {@link Repository#getHydratedAt()} reports.
@@ -48,6 +50,20 @@ public class SkyBlockData {
      */
     public static <T extends JpaModel> @NotNull Repository<T> getRepository(@NotNull Class<T> tClass) {
         return sessionManager.getRepository(tClass);
+    }
+
+    /**
+     * Applies one write through the session that holds the type, and rebuilds that type.
+     *
+     * <p>A repository is a held generation and a write does not change one, so a write goes to the
+     * origin that owns the rows and the next generation reflects it. A reader holding the current
+     * one never sees it change underneath them.
+     *
+     * @param request the write to apply
+     * @param <T> the entity type
+     */
+    public static <T extends JpaModel> void write(@NotNull WriteRequest<T> request) {
+        sessionManager.write(request);
     }
 
     /**

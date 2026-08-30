@@ -592,7 +592,7 @@ public class Buff implements JpaModel {
          *
          * <pre><code>
          *   op                       reads          input is
-         *   --                       -----          --------
+         *   -                       -----          --------
          *   GT, GTE, LT, LTE         amount         a number
          *   EQ, NE                   amount or key  either, matching the side given
          *   IN, NOT_IN               keys           a key
