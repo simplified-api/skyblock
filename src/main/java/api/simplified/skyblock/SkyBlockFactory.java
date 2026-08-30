@@ -19,7 +19,8 @@ import org.jetbrains.annotations.NotNull;
  *
  * <p>The no-argument constructor reads the published corpus unauthenticated, which GitHub limits to
  * 60 requests per hour per IP - enough for a single session, not for a suite that connects
- * repeatedly. A caller with a token, or with a corpus of its own, passes a {@link Source} instead.
+ * repeatedly. A caller with a token names one on {@link #corpus()}; a caller with an origin of its
+ * own passes a {@link Source} instead.
  */
 @Getter
 public class SkyBlockFactory implements RepositoryFactory {
@@ -29,13 +30,14 @@ public class SkyBlockFactory implements RepositoryFactory {
      */
     public static final @NotNull String TOKEN_VARIABLE = "SKYBLOCK_GITHUB_TOKEN";
 
+    private static final @NotNull String OWNER = "simplified-api";
+    private static final @NotNull String REPOSITORY = "skyblock";
+    private static final @NotNull String MANIFEST_PATH = "data/v1/index.json";
+
     /**
      * The published corpus every SkyBlock model is read out of.
      */
-    public static final @NotNull GitHubCorpus CORPUS = GitHubCorpus.of("simplified-api", "skyblock")
-        .manifest("data/v1/index.json")
-        .gson(corpusSettings())
-        .build();
+    public static final @NotNull GitHubCorpus CORPUS = corpus().build();
 
     private final @NotNull ConcurrentList<Class<JpaModel>> models = RepositoryFactory.resolveModels(Item.class);
     private final @NotNull Source source;
@@ -44,7 +46,16 @@ public class SkyBlockFactory implements RepositoryFactory {
      * Constructs a factory reading the published corpus.
      */
     public SkyBlockFactory() {
-        this(CORPUS.reading());
+        this(CORPUS);
+    }
+
+    /**
+     * Constructs a factory reading the given corpus.
+     *
+     * @param corpus the repository the documents are published from
+     */
+    public SkyBlockFactory(@NotNull GitHubCorpus corpus) {
+        this(Source.documents(new CorpusOrigin(corpus), corpusSettings().create()));
     }
 
     /**
@@ -54,6 +65,34 @@ public class SkyBlockFactory implements RepositoryFactory {
      */
     public SkyBlockFactory(@NotNull Source source) {
         this.source = source;
+    }
+
+    /**
+     * Returns a factory that also writes the given corpus back.
+     *
+     * <p>Which of these two a caller builds is the whole of the difference between a deployment that
+     * reads the corpus and the one that maintains it. Nothing downstream can turn one into the other,
+     * because the write instruction is a property of the source rather than a setting on it.
+     *
+     * @param corpus the repository the documents are published from, named with a token
+     * @return a factory reading and writing that corpus
+     */
+    public static @NotNull SkyBlockFactory writing(@NotNull GitHubCorpus corpus) {
+        return new SkyBlockFactory(Source.documents(new CorpusOrigin.Writing(corpus), corpusSettings().create()));
+    }
+
+    /**
+     * Names the published corpus, leaving the token and the branch to the caller.
+     *
+     * <p>The repository, the catalogue path and the parser are what make it this corpus rather than
+     * any other, so they are bound here; a caller adds what belongs to it and builds.
+     *
+     * @return a builder over the SkyBlock data repository
+     */
+    public static @NotNull GitHubCorpus.Builder corpus() {
+        return GitHubCorpus.of(OWNER, REPOSITORY)
+            .manifest(MANIFEST_PATH)
+            .gson(corpusSettings());
     }
 
     /**

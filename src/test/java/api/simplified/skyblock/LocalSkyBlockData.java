@@ -1,5 +1,6 @@
 package api.simplified.skyblock;
 
+import api.simplified.github.ManifestIndex;
 import api.simplified.skyblock.model.Item;
 import com.google.gson.Gson;
 import dev.simplified.collection.Concurrent;
@@ -10,8 +11,7 @@ import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.RepositoryFactory;
 import dev.simplified.persistence.exception.JpaException;
-import dev.simplified.persistence.store.FileFetcher;
-import dev.simplified.persistence.store.ManifestIndex;
+import dev.simplified.persistence.store.DocumentOrigin;
 import dev.simplified.persistence.store.Source;
 import dev.simplified.util.Logging;
 import org.jetbrains.annotations.NotNull;
@@ -25,10 +25,10 @@ import java.nio.file.Path;
  * A SkyBlock session whose corpus is the {@code data/v1} tree this repository ships rather than the
  * one published over the GitHub Contents API.
  * <p>
- * Only where the layers are read from differs, so this hands the same {@link Source#documents}
- * reader a catalogue and a fetcher pointed at disk - which is what lets a suite run with no request
- * leaving the machine. Unauthenticated GitHub reads are capped at sixty an hour and one connect
- * spends about forty-two of them, so a suite that connects at all has to connect to disk.
+ * Only where the layers are read from differs, so this hands {@link Source#documents} an origin
+ * pointed at disk - which is what lets a suite run with no request leaving the machine.
+ * Unauthenticated GitHub reads are capped at sixty an hour and one connect spends about forty-two of
+ * them, so a suite that connects at all has to connect to disk.
  * <p>
  * The manager is static, so a session opened here is visible to every other test class in the same
  * JVM. Whoever connects must {@link #disconnect(JpaSession)} before yielding.
@@ -94,12 +94,7 @@ public final class LocalSkyBlockData {
      * @return the registered session, which the caller owns and must shut down
      */
     public static @NotNull JpaSession connect(@NotNull Path root) {
-        FileFetcher fetcher = path -> read(root.resolve(path), path);
-        Source source = Source.documents(
-            () -> readManifest(root),
-            fetcher,
-            SkyBlockFactory.corpusSettings().create()
-        );
+        Source source = Source.documents(new Checkout(root), SkyBlockFactory.corpusSettings().create());
 
         return SkyBlockData.getSessionManager().connect(
             JpaConfig.builder()
@@ -131,6 +126,27 @@ public final class LocalSkyBlockData {
         } catch (IOException exception) {
             throw new JpaException(exception, "Unable to read '%s' from the local corpus", reported);
         }
+    }
+
+    /**
+     * A checkout answering the same two questions a published corpus does.
+     */
+    private record Checkout(@NotNull Path root) implements DocumentOrigin {
+
+        @Override
+        public @NotNull ConcurrentList<String> layersOf(@NotNull String name) {
+            return readManifest(this.root())
+                .layersOf(name)
+                .stream()
+                .map(ManifestIndex.Layer::path)
+                .collect(Concurrent.toUnmodifiableList());
+        }
+
+        @Override
+        public @NotNull String read(@NotNull String path) {
+            return LocalSkyBlockData.read(this.root().resolve(path), path);
+        }
+
     }
 
 }
