@@ -10,6 +10,8 @@ import dev.simplified.persistence.RepositoryFactory;
 import dev.simplified.persistence.store.Source;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Optional;
+
 /**
  * Repository factory for the SkyBlock models scoped to the {@link Item} package, reading each one out
  * of the corpus published in the data repository.
@@ -40,7 +42,7 @@ public class SkyBlockFactory implements RepositoryFactory {
     public static final @NotNull GitHubCorpus CORPUS = corpus().build();
 
     private final @NotNull ConcurrentList<Class<JpaModel>> models = RepositoryFactory.resolveModels(Item.class);
-    private final @NotNull Source source;
+    private final @NotNull Optional<Source> source;
 
     /**
      * Constructs a factory reading the published corpus.
@@ -64,7 +66,7 @@ public class SkyBlockFactory implements RepositoryFactory {
      * @param source where every model's rows come from
      */
     public SkyBlockFactory(@NotNull Source source) {
-        this.source = source;
+        this.source = Optional.of(source);
     }
 
     /**
