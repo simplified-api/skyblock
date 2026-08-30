@@ -91,7 +91,6 @@ public final class LocalSkyBlockData {
      * @return the registered session, which the caller owns and must shut down
      */
     public static @NotNull JpaSession connect(@NotNull Path root) {
-        ReferenceIndex.clear();
         Supplier<ManifestIndex> indexProvider = () -> readManifest(root);
         FileFetcher fileFetcher = path -> read(root.resolve(path), path);
         RepositoryFactory factory = RepositoryFactory.of(
@@ -120,7 +119,6 @@ public final class LocalSkyBlockData {
     public static void disconnect(@Nullable JpaSession session) {
         if (session != null) {
             SkyBlockData.getSessionManager().shutdown(session);
-            ReferenceIndex.clear();
         }
     }
     private static @NotNull ManifestIndex readManifest(@NotNull Path root) {
