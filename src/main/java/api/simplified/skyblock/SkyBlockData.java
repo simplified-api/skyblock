@@ -3,26 +3,20 @@ package api.simplified.skyblock;
 import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.UtilityClass;
 import dev.simplified.gson.GsonSettings;
-import dev.simplified.persistence.CacheMissingStrategy;
-import dev.simplified.persistence.JpaCacheProvider;
 import dev.simplified.persistence.JpaConfig;
-import dev.simplified.persistence.JpaExclusionStrategy;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
-import dev.simplified.persistence.driver.H2MemoryDriver;
 import dev.simplified.persistence.store.Source;
 import dev.simplified.util.Logging;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Static locator for the SkyBlock persistence layer.
  * <p>
- * Owns a dedicated {@link SessionManager} and a {@link SkyBlockFactory}, and exposes
- * repository access plus the canonical H2-backed session bootstrap. Call
- * {@link #connect(GsonSettings)} (or an overload) once at startup before any
+ * Owns a dedicated {@link SessionManager} and a {@link SkyBlockFactory}, and exposes repository
+ * access plus the session bootstrap. Call {@link #connect(GsonSettings)} once at startup before any
  * {@link #getRepository(Class)} lookup against a SkyBlock model.
  */
 @UtilityClass
@@ -57,38 +51,19 @@ public class SkyBlockData {
     }
 
     /**
-     * Connects the SkyBlock H2 in-memory JPA session backed by the default
-     * {@link JpaCacheProvider#EHCACHE} second-level cache provider.
+     * Connects the SkyBlock session, registering every model with the {@link SessionManager} and
+     * hydrating each one from the corpus the registered {@link SkyBlockFactory} reads.
      *
-     * @param gsonSettings pre-configured settings carrying the SkyBlock-specific type adapters
-     *     and the {@link JpaExclusionStrategy}; internally mutated to
-     *     {@link GsonSettings.StringType#DEFAULT} so empty strings round-trip on
-     *     {@code nullable=false} columns
+     * <p>No driver is configured, so no database is opened: the rows the corpus publishes are held
+     * in memory and every finder answers from them.
+     *
+     * @param gsonSettings pre-configured settings carrying the SkyBlock-specific type adapters;
+     *     internally mutated to {@link GsonSettings.StringType#DEFAULT} so empty strings round-trip
      * @return the newly registered SkyBlock {@link JpaSession}
      */
     public static @NotNull JpaSession connect(@NotNull GsonSettings gsonSettings) {
-        return connect(JpaCacheProvider.EHCACHE, gsonSettings);
-    }
-
-    /**
-     * Connects the SkyBlock H2 in-memory JPA session, registering all SkyBlock JSON-backed
-     * model repositories with the {@link SessionManager} and loading the {@code skyblock/}
-     * classpath JSON resources via the registered {@link SkyBlockFactory}.
-     *
-     * @param provider the JCache provider that backs the Hibernate second-level cache
-     * @param gsonSettings pre-configured settings carrying the SkyBlock-specific type adapters
-     *     and the {@link JpaExclusionStrategy}; internally mutated to
-     *     {@link GsonSettings.StringType#DEFAULT} so empty strings round-trip on
-     *     {@code nullable=false} columns
-     * @return the newly registered SkyBlock {@link JpaSession}
-     */
-    public static @NotNull JpaSession connect(@NotNull JpaCacheProvider provider, @NotNull GsonSettings gsonSettings) {
-
         return sessionManager.connect(
             JpaConfig.builder()
-                .withDriver(new H2MemoryDriver())
-                .withSchema("skyblock")
-                .withCacheProvider(provider)
                 .withRepositoryFactory(factory)
                 .withGsonSettings(
                     gsonSettings.mutate()
@@ -96,11 +71,6 @@ public class SkyBlockData {
                         .build()
                 )
                 .withLogLevel(Logging.Level.WARN)
-                .isUsingQueryCache()
-                .isUsing2ndLevelCache()
-                .withCacheConcurrencyStrategy(CacheConcurrencyStrategy.READ_WRITE)
-                .withCacheMissingStrategy(CacheMissingStrategy.CREATE_WARN)
-                .withQueryResultsTTL(30)
                 .build()
         );
     }

@@ -7,13 +7,12 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "stat")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "gemstones")
 public class Gemstone implements JpaModel {
 
@@ -73,9 +72,8 @@ public class Gemstone implements JpaModel {
     /**
      * The {@link Stat} resolved from {@link #statId}, mapped read-only onto the same column.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "stat_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Stat stat;
+    @Linked("statId")
+    private transient @NotNull Stat stat;
 
     /**
      * The cuts a gemstone can take, weakest to strongest.

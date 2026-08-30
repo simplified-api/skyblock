@@ -8,13 +8,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A region - one of the top-level worlds a member can be in, such as the Hub, the Dwarven Mines, the
@@ -25,7 +21,7 @@ import java.util.List;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "zones")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "regions")
 public class Region implements JpaModel {
 
@@ -61,13 +57,5 @@ public class Region implements JpaModel {
      */
     @Column(name = "mode", nullable = false)
     private @NotNull String mode = "";
-
-    /**
-     * Zones this region contains, owned by {@link Zone#region} and populated by the provider,
-     * which supplies its own list implementation. It takes no part in equality, so region identity is
-     * the bound columns alone.
-     */
-    @OneToMany(mappedBy = "region")
-    private @NotNull List<Zone> zones = new ArrayList<>();
 
 }

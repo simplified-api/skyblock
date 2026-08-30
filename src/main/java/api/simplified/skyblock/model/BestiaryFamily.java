@@ -6,15 +6,13 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.ForeignIds;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +33,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = { "category", "subcategory" })
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "bestiary_families")
 public class BestiaryFamily implements JpaModel {
 
@@ -109,20 +107,18 @@ public class BestiaryFamily implements JpaModel {
     /**
      * The resolved {@link BestiaryCategory} behind the category id.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull BestiaryCategory category;
+    @Linked("categoryId")
+    private transient @NotNull BestiaryCategory category;
 
-    @ManyToOne
+    @Linked("subcategoryId")
     @Getter(AccessLevel.NONE)
-    @JoinColumn(name = "subcategory_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @Nullable BestiarySubcategory subcategory;
+    private transient @Nullable BestiarySubcategory subcategory;
 
     /**
      * The resolved {@link MobType} rows behind the mob type ids, filled in by the repository layer
      * rather than by a column.
      */
-    @ForeignIds("mobTypeIds")
+    @Linked("mobTypeIds")
     private transient @NotNull ConcurrentList<MobType> mobTypes = Concurrent.newList();
 
     /**

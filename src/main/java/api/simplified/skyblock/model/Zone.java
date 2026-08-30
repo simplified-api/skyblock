@@ -4,13 +4,12 @@ import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "region")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "zones")
 public class Zone implements JpaModel {
 
@@ -60,8 +59,7 @@ public class Zone implements JpaModel {
      * The {@link Region} row behind {@link #regionId}, resolved on the same column and the inverse of
      * {@link Region#zones}.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "region_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Region region;
+    @Linked("regionId")
+    private transient @NotNull Region region;
 
 }

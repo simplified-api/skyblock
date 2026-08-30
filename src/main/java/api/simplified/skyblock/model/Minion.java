@@ -6,12 +6,11 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "collection")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "minions")
 public class Minion implements JpaModel {
 
@@ -67,9 +66,8 @@ public class Minion implements JpaModel {
     /**
      * The resolved {@link Collection}, read from the same column {@code collectionId} is stored in.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "collection_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Collection collection;
+    @Linked("collectionId")
+    private transient @NotNull Collection collection;
 
     /**
      * One rung of a minion's upgrade ladder.

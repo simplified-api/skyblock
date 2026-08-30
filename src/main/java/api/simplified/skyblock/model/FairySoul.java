@@ -4,11 +4,10 @@ import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = { "id", "zone" })
+@EqualsAndHashCode(useAccessors = true, exclude = "id")
 @Table(name = "fairy_souls")
 public class FairySoul implements JpaModel {
 
@@ -70,8 +69,7 @@ public class FairySoul implements JpaModel {
     /**
      * The {@link Zone} resolved from {@link #zoneId}, mapped read-only onto the same column.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "zone_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Zone zone;
+    @Linked("zoneId")
+    private transient @NotNull Zone zone;
 
 }

@@ -7,8 +7,8 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.ForeignIds;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -114,21 +114,21 @@ public class Enchantment implements JpaModel {
      * The {@link ItemCategory} rows resolved from {@link #categoryIds}, filled in by the repository
      * layer rather than bound.
      */
-    @ForeignIds("categoryIds")
+    @Linked("categoryIds")
     private transient @NotNull ConcurrentList<ItemCategory> categories = Concurrent.newList();
 
     /**
      * The {@link Item} rows resolved from {@link #itemIds}, filled in by the repository layer rather
      * than bound.
      */
-    @ForeignIds("itemIds")
+    @Linked("itemIds")
     private transient @NotNull ConcurrentList<Item> items = Concurrent.newList();
 
     /**
      * The {@link MobType} rows resolved from {@link #mobTypeIds}, filled in by the repository layer
      * rather than bound.
      */
-    @ForeignIds("mobTypeIds")
+    @Linked("mobTypeIds")
     private transient @NotNull ConcurrentList<MobType> mobTypes = Concurrent.newList();
 
     /**

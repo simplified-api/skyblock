@@ -5,13 +5,11 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.ForeignIds;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "item")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "mixins")
 public class Mixin implements JpaModel {
 
@@ -61,14 +59,13 @@ public class Mixin implements JpaModel {
     /**
      * The resolved {@link Item}, read from the same {@code id} column the mixin is keyed by.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Item item;
+    @Linked("id")
+    private transient @NotNull Item item;
 
     /**
      * The resolved {@link Region} rows, filled in from {@code regionIds} rather than bound.
      */
-    @ForeignIds("regionIds")
+    @Linked("regionIds")
     private transient @NotNull ConcurrentList<Region> regions = Concurrent.newList();
 
 }

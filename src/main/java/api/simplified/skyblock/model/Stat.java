@@ -9,6 +9,7 @@ import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,8 +17,6 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +34,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "category")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "stats", indexes = @Index(columnList = "name", unique = true))
 public class Stat implements JpaModel {
 
@@ -131,9 +130,8 @@ public class Stat implements JpaModel {
     /**
      * The {@link StatCategory} row behind {@link #categoryId}, resolved on the same column.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull StatCategory category;
+    @Linked("categoryId")
+    private transient @NotNull StatCategory category;
 
     /**
      * The per-power coefficient an accessory bag calculation multiplies by - the stat's power

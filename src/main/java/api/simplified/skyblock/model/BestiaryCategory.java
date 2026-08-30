@@ -5,13 +5,12 @@ import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +29,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "region")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "bestiary_categories")
 public class BestiaryCategory implements JpaModel {
 
@@ -68,10 +67,9 @@ public class BestiaryCategory implements JpaModel {
     @Column(name = "ordinal", nullable = false)
     private int ordinal = -1;
 
-    @ManyToOne
+    @Linked("regionId")
     @Getter(AccessLevel.NONE)
-    @JoinColumn(name = "region_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @Nullable Region region;
+    private transient @Nullable Region region;
 
     /**
      * The resolved {@link Region} behind the category's region id, empty for a category that is not

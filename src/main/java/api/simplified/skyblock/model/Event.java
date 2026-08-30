@@ -9,8 +9,8 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.ForeignIds;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -108,14 +108,14 @@ public class Event implements JpaModel {
      * The {@link Mayor} rows behind {@link #mayorIds}, filled in by the repository layer rather than
      * stored in a column.
      */
-    @ForeignIds("mayorIds")
+    @Linked("mayorIds")
     private transient @NotNull ConcurrentList<Mayor> mayors = Concurrent.newList();
 
     /**
      * The {@link Mayor} rows behind {@link #suppressedByMayorIds}, filled in by the repository layer
      * rather than stored in a column.
      */
-    @ForeignIds("suppressedByMayorIds")
+    @Linked("suppressedByMayorIds")
     private transient @NotNull ConcurrentList<Mayor> suppressedByMayors = Concurrent.newList();
 
     /**

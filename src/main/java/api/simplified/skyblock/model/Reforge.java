@@ -9,14 +9,12 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
-import dev.simplified.persistence.ForeignIds;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -31,7 +29,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "stone")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "reforges")
 public class Reforge implements JpaModel {
 
@@ -83,23 +81,22 @@ public class Reforge implements JpaModel {
     @Column(name = "stats", nullable = false)
     private @NotNull ConcurrentList<Substitute> stats = Concurrent.newList();
 
-    @ManyToOne
+    @Linked("stoneId")
     @Getter(AccessLevel.NONE)
-    @JoinColumn(name = "stone_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @Nullable Item stone;
+    private transient @Nullable Item stone;
 
     /**
      * The {@link ItemCategory} rows behind {@link #categoryIds}, filled in by the repository layer
      * rather than stored in a column.
      */
-    @ForeignIds("categoryIds")
+    @Linked("categoryIds")
     private transient @NotNull ConcurrentList<ItemCategory> categories = Concurrent.newList();
 
     /**
      * The {@link Item} rows behind {@link #itemIds}, filled in by the repository layer rather than
      * stored in a column.
      */
-    @ForeignIds("itemIds")
+    @Linked("itemIds")
     private transient @NotNull ConcurrentList<Item> items = Concurrent.newList();
 
     /**

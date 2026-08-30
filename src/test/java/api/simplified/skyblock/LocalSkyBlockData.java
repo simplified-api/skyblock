@@ -4,18 +4,16 @@ import com.google.gson.Gson;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.gson.GsonSettings;
-import dev.simplified.persistence.JpaCacheProvider;
 import dev.simplified.persistence.JpaConfig;
-import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.RepositoryFactory;
-import dev.simplified.persistence.driver.H2MemoryDriver;
 import dev.simplified.persistence.exception.JpaException;
 import dev.simplified.persistence.store.FileFetcher;
 import dev.simplified.persistence.store.ManifestIndex;
 import dev.simplified.util.Logging;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -98,8 +96,7 @@ public final class LocalSkyBlockData {
             SkyBlockFactory.documentSource(SOURCE_ID, indexProvider, fileFetcher, SkyBlockFactory.corpusGson())
         );
         return SkyBlockData.getSessionManager().connect(
-            JpaConfig.common(new H2MemoryDriver(), SCHEMA)
-                .withCacheProvider(JpaCacheProvider.EHCACHE)
+            JpaConfig.builder()
                 .withRepositoryFactory(factory)
                 .withLogLevel(Logging.Level.WARN)
                 .withGsonSettings(

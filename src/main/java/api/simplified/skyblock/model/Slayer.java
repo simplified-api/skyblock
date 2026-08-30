@@ -8,12 +8,11 @@ import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,7 +27,7 @@ import java.util.Map;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "mobType")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "slayers")
 public class Slayer implements JpaModel {
 
@@ -92,9 +91,8 @@ public class Slayer implements JpaModel {
     /**
      * The {@link MobType} row behind {@link #mobTypeId}, resolved on the same column.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "mob_type_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull MobType mobType;
+    @Linked("mobTypeId")
+    private transient @NotNull MobType mobType;
 
     /**
      * Every level's effects summed into one stat map, keyed by {@link Stat} id. It is derived rather

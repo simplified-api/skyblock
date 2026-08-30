@@ -4,13 +4,12 @@ import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "category")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "bestiary_subcategories")
 public class BestiarySubcategory implements JpaModel {
 
@@ -63,8 +62,7 @@ public class BestiarySubcategory implements JpaModel {
     /**
      * The resolved {@link BestiaryCategory} behind the category id.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull BestiaryCategory category;
+    @Linked("categoryId")
+    private transient @NotNull BestiaryCategory category;
 
 }

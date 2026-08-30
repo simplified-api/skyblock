@@ -7,14 +7,13 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.util.StringUtil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +33,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "stone")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "powers")
 public class Power implements JpaModel {
 
@@ -85,10 +84,9 @@ public class Power implements JpaModel {
     @Column(name = "bonuses", nullable = false)
     private @NotNull ConcurrentMap<String, Double> bonuses = Concurrent.newMap();
 
-    @ManyToOne
+    @Linked("stoneId")
     @Getter(AccessLevel.NONE)
-    @JoinColumn(name = "stone_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @Nullable Item stone;
+    private transient @Nullable Item stone;
 
     /**
      * The {@link Item} row the power's stone id names, resolved on the same column and empty when the

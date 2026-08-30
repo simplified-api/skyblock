@@ -14,14 +14,13 @@ import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import org.jetbrains.annotations.NotNull;
@@ -184,9 +183,8 @@ public class Item implements JpaModel {
     /**
      * The resolved {@link ItemCategory}, read from the same column {@code categoryId} is stored in.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull ItemCategory category;
+    @Linked("categoryId")
+    private transient @NotNull ItemCategory category;
 
     /**
      * The hidden flags folded into one value, worked out on the first call and reused thereafter.

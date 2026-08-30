@@ -5,8 +5,8 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.ForeignIds;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -71,7 +71,7 @@ public class ShopPerk implements JpaModel {
      * The {@link Region} rows behind {@link #regionIds}, filled in by the repository layer rather
      * than stored in a column.
      */
-    @ForeignIds("regionIds")
+    @Linked("regionIds")
     private transient @NotNull ConcurrentList<Region> regions = Concurrent.newList();
 
     /**

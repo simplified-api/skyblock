@@ -4,14 +4,13 @@ import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,7 +29,7 @@ import java.util.Optional;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "item")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "accessories")
 public class Accessory implements JpaModel {
 
@@ -70,9 +69,8 @@ public class Accessory implements JpaModel {
     /**
      * The resolved {@link Item} this accessory decorates, joined on the shared id.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Item item;
+    @Linked("id")
+    private transient @NotNull Item item;
 
     /**
      * The upgrade ladder this accessory sits on, empty for one that stands alone.

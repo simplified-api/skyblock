@@ -181,7 +181,7 @@ public class JpaModelTest {
 
     @Test
     @Order(2)
-    void stat_loadsFromJson_withCategoryFk() {
+    void stat_loadsFromJson_withLinkedCategory() {
         Repository<Stat> repo = SkyBlockData.getRepository(Stat.class);
         ConcurrentList<Stat> all = repo.findAll();
         assertThat(all, not(empty()));
@@ -189,46 +189,46 @@ public class JpaModelTest {
         Stat health = repo.findFirst(Stat::getId, "HEALTH").orElseThrow();
         assertThat(health.getName(), is("Health"));
         assertThat(health.getCategoryId(), is("COMBAT"));
-        // @ManyToOne FK resolution
+        // @Linked resolution
         assertThat(health.getCategory(), notNullValue());
         assertThat(health.getCategory().getId(), is("COMBAT"));
     }
 
     @Test
     @Order(2)
-    void zone_loadsFromJson_withRegionFk() {
+    void zone_loadsFromJson_withLinkedRegion() {
         Repository<Zone> repo = SkyBlockData.getRepository(Zone.class);
         ConcurrentList<Zone> all = repo.findAll();
         assertThat(all, not(empty()));
 
         Zone hub = repo.findFirst(Zone::getId, "HUB").orElseThrow();
         assertThat(hub.getRegionId(), is("HUB"));
-        // @ManyToOne FK resolution
+        // @Linked resolution
         assertThat(hub.getRegion(), notNullValue());
         assertThat(hub.getRegion().getId(), is("HUB"));
     }
 
     @Test
     @Order(2)
-    void item_loadsFromJson_withCategoryFk() {
+    void item_loadsFromJson_withLinkedCategory() {
         Repository<Item> repo = SkyBlockData.getRepository(Item.class);
         ConcurrentList<Item> all = repo.findAll();
         assertThat(all, not(empty()));
 
-        // Verify @ManyToOne FK resolution on at least one item
+        // Verify @Linked resolution on at least one item
         Item first = all.getFirst();
         assertThat(first.getCategory(), notNullValue());
     }
 
     @Test
     @Order(2)
-    void gemstone_loadsFromJson_withStatFk() {
+    void gemstone_loadsFromJson_withLinkedStat() {
         Repository<Gemstone> repo = SkyBlockData.getRepository(Gemstone.class);
         ConcurrentList<Gemstone> all = repo.findAll();
         assertThat(all, not(empty()));
 
         Gemstone amber = repo.findFirst(Gemstone::getId, "AMBER").orElseThrow();
-        // @ManyToOne FK resolution
+        // @Linked resolution
         assertThat(amber.getStat(), notNullValue());
         assertThat(amber.getStat().getId(), is("MINING_SPEED"));
     }
@@ -243,38 +243,38 @@ public class JpaModelTest {
 
     @Test
     @Order(2)
-    void bestiarySubcategory_loadsFromJson_withCategoryFk() {
+    void bestiarySubcategory_loadsFromJson_withLinkedCategory() {
         Repository<BestiarySubcategory> repo = SkyBlockData.getRepository(BestiarySubcategory.class);
         ConcurrentList<BestiarySubcategory> all = repo.findAll();
         assertThat(all, not(empty()));
 
-        // @ManyToOne FK resolution
+        // @Linked resolution
         BestiarySubcategory first = all.getFirst();
         assertThat(first.getCategory(), notNullValue());
     }
 
     @Test
     @Order(2)
-    void pet_loadsFromJson_withSkillFk() {
+    void pet_loadsFromJson_withLinkedSkill() {
         Repository<Pet> repo = SkyBlockData.getRepository(Pet.class);
         ConcurrentList<Pet> all = repo.findAll();
         assertThat(all, not(empty()));
 
         Pet ammonite = repo.findFirst(Pet::getId, "AMMONITE").orElseThrow();
-        // @ManyToOne FK resolution
+        // @Linked resolution
         assertThat(ammonite.getSkill(), notNullValue());
         assertThat(ammonite.getSkill().getId(), is("FISHING"));
     }
 
     @Test
     @Order(2)
-    void slayer_loadsFromJson_withMobTypeFk() {
+    void slayer_loadsFromJson_withLinkedMobType() {
         Repository<Slayer> repo = SkyBlockData.getRepository(Slayer.class);
         ConcurrentList<Slayer> all = repo.findAll();
         assertThat(all, not(empty()));
 
         Slayer blaze = repo.findFirst(Slayer::getId, "BLAZE").orElseThrow();
-        // @ManyToOne FK resolution
+        // @Linked resolution
         assertThat(blaze.getMobType(), notNullValue());
         assertThat(blaze.getMobType().getId(), is("INFERNAL"));
     }
@@ -289,26 +289,26 @@ public class JpaModelTest {
 
     @Test
     @Order(2)
-    void minion_loadsFromJson_withCollectionFk() {
+    void minion_loadsFromJson_withLinkedCollection() {
         Repository<Minion> repo = SkyBlockData.getRepository(Minion.class);
         ConcurrentList<Minion> all = repo.findAll();
         assertThat(all, not(empty()));
 
-        // @ManyToOne FK resolution
+        // @Linked resolution
         Minion first = all.getFirst();
         assertThat(first.getCollection(), notNullValue());
     }
 
     @Test
     @Order(2)
-    void shopPerk_loadsFromJson_withRegionsForeignIds() {
+    void shopPerk_loadsFromJson_withLinkedRegions() {
         Repository<ShopPerk> repo = SkyBlockData.getRepository(ShopPerk.class);
         ConcurrentList<ShopPerk> all = repo.findAll();
         assertThat(all, not(empty()));
 
         ShopPerk catacombsLuck = repo.findFirst(ShopPerk::getId, "CATACOMBS_BOSS_LUCK").orElseThrow();
         assertThat(catacombsLuck.getRegionIds(), hasItem("THE_CATACOMBS"));
-        // @ForeignIds resolution
+        // @Linked resolution
         assertThat(catacombsLuck.getRegions(), not(empty()));
         assertThat(catacombsLuck.getRegions().getFirst().getId(), is("THE_CATACOMBS"));
     }
@@ -324,7 +324,7 @@ public class JpaModelTest {
         assertThat(pig.getSlot().orElseThrow(), is(11));
         assertThat(pig.getSchedules().getFirst().getPeriod(), is(Length.YEAR_MS * 12));
 
-        // @ForeignIds("mayorIds") resolution
+        // @Linked("mayorIds") resolution
         Event fishingFestival = repo.findFirst(Event::getId, "FISHING_FESTIVAL").orElseThrow();
         assertThat(fishingFestival.getMayorIds(), hasItem("FISHING_CANDIDATE"));
         assertThat(fishingFestival.getMayors(), not(empty()));
@@ -335,7 +335,7 @@ public class JpaModelTest {
     void everyMayorIdResolvesToARow() {
         Repository<Event> repo = SkyBlockData.getRepository(Event.class);
 
-        // @ForeignIds drops an id that names no row without saying so, so the only way an
+        // @Linked drops an id that names no row without saying so, so the only way an
         // unresolvable mayor surfaces is a count that disagrees with the ids beside it
         for (Event event : repo.findAll()) {
             assertThat(event.getId(), event.getMayors().size(), is(event.getMayorIds().size()));
@@ -410,12 +410,12 @@ public class JpaModelTest {
 
     @Test
     @Order(3)
-    void accessory_loadsFromJson_withItemFk() {
+    void accessory_loadsFromJson_withLinkedItem() {
         Repository<Accessory> repo = SkyBlockData.getRepository(Accessory.class);
         ConcurrentList<Accessory> all = repo.findAll();
         assertThat(all, not(empty()));
 
-        // @ManyToOne FK resolution (id -> Item.id)
+        // @Linked resolution (id -> Item.id)
         Accessory first = all.getFirst();
         assertThat(first.getItem(), notNullValue());
         assertThat(first.getItem().getId(), is(first.getId()));
@@ -423,24 +423,24 @@ public class JpaModelTest {
 
     @Test
     @Order(3)
-    void enchantment_loadsFromJson_withForeignIds() {
+    void enchantment_loadsFromJson_withLinkedRows() {
         Repository<Enchantment> repo = SkyBlockData.getRepository(Enchantment.class);
         ConcurrentList<Enchantment> all = repo.findAll();
         assertThat(all, not(empty()));
 
-        // @ForeignIds("categoryIds") resolution
+        // @Linked("categoryIds") resolution
         Enchantment absorb = repo.findFirst(Enchantment::getId, "ABSORB").orElseThrow();
         assertThat(absorb.getCategoryIds(), hasItem("AXE"));
         assertThat(absorb.getCategories(), not(empty()));
         assertThat(absorb.getCategories().getFirst().getId(), is("AXE"));
 
-        // @ForeignIds("mobTypeIds") resolution
+        // @Linked("mobTypeIds") resolution
         Enchantment cubism = repo.findFirst(Enchantment::getId, "CUBISM").orElseThrow();
         assertThat(cubism.getMobTypeIds(), hasItem("CUBIC"));
         assertThat(cubism.getMobTypes(), not(empty()));
         assertThat(cubism.getMobTypes().getFirst().getId(), is("CUBIC"));
 
-        // @ForeignIds("itemIds") resolution
+        // @Linked("itemIds") resolution
         Enchantment jerry = repo.findFirst(Enchantment::getId, "ULTIMATE_JERRY").orElseThrow();
         assertThat(jerry.getItemIds(), not(empty()));
         assertThat(jerry.getItems(), not(empty()));
@@ -448,37 +448,37 @@ public class JpaModelTest {
 
     @Test
     @Order(3)
-    void reforge_loadsFromJson_withForeignIds() {
+    void reforge_loadsFromJson_withLinkedRows() {
         Repository<Reforge> repo = SkyBlockData.getRepository(Reforge.class);
         ConcurrentList<Reforge> all = repo.findAll();
         assertThat(all, not(empty()));
 
-        // @ForeignIds("categoryIds") resolution
+        // @Linked("categoryIds") resolution
         Reforge fair = repo.findFirst(Reforge::getId, "FAIR").orElseThrow();
         assertThat(fair.getCategoryIds(), not(empty()));
         assertThat(fair.getCategories(), not(empty()));
 
-        // @ForeignIds("itemIds") resolution
+        // @Linked("itemIds") resolution
         Reforge warped = repo.findFirst(Reforge::getId, "WARPED").orElseThrow();
         assertThat(warped.getItemIds(), not(empty()));
         assertThat(warped.getItems(), not(empty()));
 
-        // Nullable @ManyToOne FK (stone) - absent
+        // Optional @Linked (stone) - absent
         assertThat(fair.getStone().isPresent(), is(false));
     }
 
     @Test
     @Order(3)
-    void mixin_loadsFromJson_withFkAndForeignIds() {
+    void mixin_loadsFromJson_withLinkedRowAndRows() {
         Repository<Mixin> repo = SkyBlockData.getRepository(Mixin.class);
         ConcurrentList<Mixin> all = repo.findAll();
         assertThat(all, not(empty()));
 
-        // @ManyToOne FK resolution (item_id -> Item.id)
+        // @Linked resolution (item_id -> Item.id)
         Mixin first = all.getFirst();
         assertThat(first.getItem(), notNullValue());
 
-        // @ForeignIds("regionIds") resolution on a mixin with regions
+        // @Linked("regionIds") resolution on a mixin with regions
         Mixin deepterror = repo.findFirst(Mixin::getId, "DEEPTERROR_MIXIN").orElseThrow();
         assertThat(deepterror.getRegionIds(), not(empty()));
         assertThat(deepterror.getRegions(), not(empty()));
@@ -486,27 +486,27 @@ public class JpaModelTest {
 
     @Test
     @Order(3)
-    void bestiaryFamily_loadsFromJson_withFkAndForeignIds() {
+    void bestiaryFamily_loadsFromJson_withLinkedRowAndRows() {
         Repository<BestiaryFamily> repo = SkyBlockData.getRepository(BestiaryFamily.class);
         ConcurrentList<BestiaryFamily> all = repo.findAll();
         assertThat(all, not(empty()));
 
-        // @ManyToOne FK resolution (category_id -> BestiaryCategory.id)
+        // @Linked resolution (category_id -> BestiaryCategory.id)
         BestiaryFamily bat = repo.findFirst(BestiaryFamily::getId, "ISLAND_BAT").orElseThrow();
         assertThat(bat.getCategory(), notNullValue());
         assertThat(bat.getCategory().getId(), is("YOUR_ISLAND"));
 
-        // @ForeignIds("mobTypeIds") resolution
+        // @Linked("mobTypeIds") resolution
         assertThat(bat.getMobTypeIds(), hasItems("ANIMAL", "AIRBORNE"));
         assertThat(bat.getMobTypes(), not(empty()));
         assertThat(bat.getMobTypes().size(), is(bat.getMobTypeIds().size()));
 
-        // Nullable @ManyToOne FK (subcategory) - present
+        // Optional @Linked (subcategory) - present
         BestiaryFamily miner = repo.findFirst(BestiaryFamily::getId, "ABYSSAL_MINER").orElseThrow();
         assertThat(miner.getSubcategory().isPresent(), is(true));
         assertThat(miner.getSubcategory().get().getId(), is("FISHING"));
 
-        // Nullable @ManyToOne FK (subcategory) - absent
+        // Optional @Linked (subcategory) - absent
         assertThat(bat.getSubcategory().isPresent(), is(false));
     }
 

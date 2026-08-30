@@ -9,6 +9,7 @@ import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import dev.simplified.util.StringUtil;
 import jakarta.persistence.Column;
@@ -16,8 +17,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "skill")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "pets")
 public class Pet implements JpaModel {
 
@@ -95,9 +94,8 @@ public class Pet implements JpaModel {
     /**
      * The resolved {@link Skill}, read from the same column {@code skillId} is stored in.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "skill_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Skill skill;
+    @Linked("skillId")
+    private transient @NotNull Skill skill;
 
     /**
      * Narrows the pet's stats to those defined at a given rarity.
