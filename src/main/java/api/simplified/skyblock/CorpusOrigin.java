@@ -6,7 +6,7 @@ import api.simplified.github.exception.GitHubApiException;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.exception.JpaException;
-import dev.simplified.persistence.store.DocumentOrigin;
+import dev.simplified.persistence.source.DocumentOrigin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;

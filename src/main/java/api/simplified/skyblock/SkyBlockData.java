@@ -9,8 +9,8 @@ import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
-import dev.simplified.persistence.store.Source;
-import dev.simplified.persistence.store.WriteRequest;
+import dev.simplified.persistence.source.Source;
+import dev.simplified.persistence.source.WriteRequest;
 import dev.simplified.util.Logging;
 import org.jetbrains.annotations.NotNull;
 

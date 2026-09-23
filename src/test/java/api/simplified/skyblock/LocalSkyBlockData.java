@@ -11,8 +11,9 @@ import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.RepositoryFactory;
 import dev.simplified.persistence.exception.JpaException;
-import dev.simplified.persistence.store.DocumentOrigin;
-import dev.simplified.persistence.store.Source;
+import dev.simplified.persistence.source.DocumentOrigin;
+import dev.simplified.persistence.source.DocumentSource;
+import dev.simplified.persistence.source.Source;
 import dev.simplified.util.Logging;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -25,7 +26,7 @@ import java.nio.file.Path;
  * A SkyBlock session whose corpus is the {@code data/v1} tree this repository ships rather than the
  * one published over the GitHub Contents API.
  * <p>
- * Only where the layers are read from differs, so this hands {@link Source#documents} an origin
+ * Only where the layers are read from differs, so this hands a {@link DocumentSource} an origin
  * pointed at disk - which is what lets a suite run with no request leaving the machine.
  * Unauthenticated GitHub reads are capped at sixty an hour and one connect spends about forty-two of
  * them, so a suite that connects at all has to connect to disk.
@@ -94,7 +95,7 @@ public final class LocalSkyBlockData {
      * @return the registered session, which the caller owns and must shut down
      */
     public static @NotNull JpaSession connect(@NotNull Path root) {
-        Source source = Source.documents(new Checkout(root), SkyBlockFactory.corpusSettings().create());
+        Source source = new DocumentSource(new Checkout(root), SkyBlockFactory.corpusSettings().create());
 
         return SkyBlockData.getSessionManager().connect(
             JpaConfig.builder()
