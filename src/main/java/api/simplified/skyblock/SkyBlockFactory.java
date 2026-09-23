@@ -9,7 +9,6 @@ import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.RepositoryFactory;
 import dev.simplified.persistence.source.DocumentSource;
 import dev.simplified.persistence.source.Source;
-import dev.simplified.persistence.source.WritableDocumentSource;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
@@ -82,7 +81,7 @@ public class SkyBlockFactory implements RepositoryFactory {
      * @return a factory reading and writing that corpus
      */
     public static @NotNull SkyBlockFactory writing(@NotNull GitHubCorpus corpus) {
-        return new SkyBlockFactory(new WritableDocumentSource(new CorpusOrigin.Writing(corpus), corpusSettings().create()));
+        return new SkyBlockFactory(new DocumentSource.Writable(new CorpusOrigin.Writing(corpus), corpusSettings().create()));
     }
 
     /**
