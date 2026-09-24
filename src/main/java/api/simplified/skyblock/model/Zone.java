@@ -3,6 +3,7 @@ package api.simplified.skyblock.model;
 import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
@@ -13,6 +14,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A zone - one named area inside a region, the granularity the game shows in the sidebar and the
@@ -25,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "zones")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Zone implements JpaModel {
 
     /**

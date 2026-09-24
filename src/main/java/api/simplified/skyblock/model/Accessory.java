@@ -3,6 +3,7 @@ package api.simplified.skyblock.model;
 import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
@@ -16,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The catalogue entry for one accessory - a talisman, ring or artifact that grants its buff merely
@@ -31,6 +33,7 @@ import java.util.Optional;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "accessories")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Accessory implements JpaModel {
 
     /**

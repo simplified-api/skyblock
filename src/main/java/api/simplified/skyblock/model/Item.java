@@ -13,6 +13,7 @@ import dev.simplified.annotations.NoArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
@@ -28,6 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.*;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The catalogue entry for one SkyBlock item - the row behind every id the wire names in an
@@ -47,6 +49,7 @@ import java.util.Optional;
     "dungeon_item", "rift_transferrable", "soulbound"
 })
 @Table(name = "items")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Item implements JpaModel {
 
     /**

@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
@@ -17,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * One top-level tab of the Bestiary, the in-game record of a member's kills against every mob.
@@ -31,6 +33,7 @@ import java.util.Optional;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "bestiary_categories")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class BestiaryCategory implements JpaModel {
 
     /**

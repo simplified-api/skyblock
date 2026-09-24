@@ -7,6 +7,7 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
@@ -21,6 +22,7 @@ import lib.minecraft.text.ChatFormat;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * One SkyBlock enchantment - the expanded form of vanilla enchanting, applied to gear from an
@@ -32,6 +34,7 @@ import java.util.Optional;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "enchantments")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Enchantment implements JpaModel {
 
     /**

@@ -4,6 +4,7 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
 import dev.simplified.util.StringUtil;
@@ -15,6 +16,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * One line of the bits shop - the Community Center stock sold for bits, the currency a member earns
  * while a Booster Cookie is active.
@@ -25,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "bits_items")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class BitsItem implements JpaModel {
 
     /**

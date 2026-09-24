@@ -5,6 +5,7 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
@@ -12,6 +13,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A mixin - a rare or legendary consumable brewed into a God Potion, or drunk on its own, to add one
@@ -26,6 +29,7 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "mixins")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Mixin implements JpaModel {
 
     /**

@@ -2,6 +2,7 @@ package api.simplified.skyblock.model;
 
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +12,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A region - one of the top-level worlds a member can be in, such as the Hub, the Dwarven Mines, the
@@ -23,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "regions")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Region implements JpaModel {
 
     /**

@@ -9,6 +9,7 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
@@ -51,6 +52,7 @@ import java.util.concurrent.TimeUnit;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "events")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Event implements JpaModel {
 
     /**

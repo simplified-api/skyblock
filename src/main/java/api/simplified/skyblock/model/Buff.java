@@ -13,6 +13,7 @@ import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.collection.ConcurrentSet;
 import dev.simplified.collection.query.SearchFunction;
 import dev.simplified.gson.annotation.SerializedPath;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
@@ -25,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
 /**
@@ -93,6 +95,7 @@ import java.util.function.Consumer;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "buffs")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Buff implements JpaModel {
 
     /**

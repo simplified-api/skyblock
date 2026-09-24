@@ -6,6 +6,7 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import dev.simplified.util.StringUtil;
@@ -19,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * An accessory bag power - the bag-wide stat profile selected at Maxwell in the Thaumaturgist, whose
@@ -35,6 +37,7 @@ import java.util.Optional;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "powers")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Power implements JpaModel {
 
     /**

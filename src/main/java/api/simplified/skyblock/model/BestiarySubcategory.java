@@ -3,6 +3,7 @@ package api.simplified.skyblock.model;
 import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
@@ -14,6 +15,8 @@ import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * A second-level grouping inside a {@link BestiaryCategory}, used where one place holds several
  * distinct groups of mobs.
@@ -24,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "bestiary_subcategories")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class BestiarySubcategory implements JpaModel {
 
     /**

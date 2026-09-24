@@ -25,8 +25,9 @@ import java.nio.file.Path;
  * <p>
  * Only where the layers are read from differs, so this hands a {@link DocumentSource} an origin
  * pointed at disk - which is what lets a suite run with no request leaving the machine.
- * Unauthenticated GitHub reads are capped at sixty an hour and one connect makes thirty-six of
- * them, so a suite that connects at all has to connect to disk.
+ * Unauthenticated GitHub requests are capped at sixty an hour and one connect makes thirty-seven of
+ * them, so a suite that connects at all has to connect to disk. A checkout fingerprints nothing, so
+ * a session held here past its ten-minute cadence re-reads every document at each tick.
  * <p>
  * The manager is static, so a session opened here is visible to every other test class in the same
  * JVM. Whoever connects must {@link #disconnect(JpaSession)} before yielding.

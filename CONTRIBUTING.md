@@ -41,7 +41,7 @@ Contributions come in two shapes: a change to the Java models under `src/`, and 
 > The index generator needs Python and nothing else - no JDK, no Gradle and no build output. It walks `data/v1/` and hashes the files it finds, reading no Java, so `python scripts/generate_index.py` works on a bare checkout and CI runs it with no Java step at all.
 
 > [!TIP]
-> `./gradlew test` reads the corpus out of `data/v1/` in this checkout, so the suite issues no network request and needs no token. `SkyBlockData.connect()` reads the published corpus unauthenticated, which GitHub caps at 60 requests an hour per IP, and one connect makes 36 reads against it. A personal access token matters only to a caller that writes the corpus back: it builds `SkyBlockData.corpus().token(GitHubToken.of("<VARIABLE>")).build()`, naming its own environment variable, and connects `new JpaConfig(JpaModel.resolveModels(Item.class), SkyBlockData.writing(corpus))` on a session manager of its own.
+> `./gradlew test` reads the corpus out of `data/v1/` in this checkout, so the suite issues no network request and needs no token. `SkyBlockData.connect()` reads the published corpus unauthenticated, which GitHub caps at 60 requests an hour per IP; one connect makes 37 requests against it, and its session one more every ten minutes. A personal access token matters only to a caller that writes the corpus back: it builds `SkyBlockData.corpus().token(GitHubToken.of("<VARIABLE>")).build()`, naming its own environment variable, and connects `new JpaConfig(JpaModel.resolveModels(Item.class), SkyBlockData.writing(corpus))` on a session manager of its own.
 
 ### Development Setup
 
@@ -348,7 +348,7 @@ When reporting bad data, include:
 
 For a calendar issue, include the real epoch millisecond and the SkyBlock coordinates you expected it to convert to, in both directions.
 
-When reporting a consumer-side failure, include when your consumer last connected (`Repository.getHydratedAt()` answers it) alongside the commit that last changed the entry - a session holds the rows it read at connect for as long as it runs, so one connected before the fix is a stale session rather than bad data.
+When reporting a consumer-side failure, include what `Repository.getHydratedAt()` and `Repository.getState()` answer for the model alongside the commit that last changed the entry - a session re-reads a document at the first ten-minute tick after the catalogue is regenerated, so a generation published before the fix, or one reporting `STALE`, is a session that has not caught up rather than bad data.
 
 > [!CAUTION]
 > Never paste a personal access token into an issue, a `.env` committed by accident, or a commit.
@@ -399,7 +399,7 @@ edit data/v1/<cat>/<table>.json  (and the entity, when the change is both)
           -> consumer's next connect      # reads index.json and every layer off master
 ```
 
-The corpus has no release and no version bump - `master` is what a consumer reads over the Contents API at connect, so a data correction reaches one without waiting on a published artifact. A session already running keeps the generation it read. The Java library is a separate question: it is consumed as a JitPack coordinate and a code change reaches a consumer only when they move their pin.
+The corpus has no release and no version bump - `master` is what a consumer reads over the Contents API at connect, so a data correction reaches one without waiting on a published artifact. A session already running picks a correction up at its first ten-minute tick after the catalogue is regenerated. The Java library is a separate question: it is consumed as a JitPack coordinate and a code change reaches a consumer only when they move their pin.
 
 ### Why the generator refuses so much
 

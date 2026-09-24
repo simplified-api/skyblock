@@ -7,6 +7,7 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
@@ -17,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A skill - one of the tracks that levels as a member performs the matching activity, each level
@@ -28,6 +30,7 @@ import java.util.Map;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "skills")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Skill implements JpaModel {
 
     /**

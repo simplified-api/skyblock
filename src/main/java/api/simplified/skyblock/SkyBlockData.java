@@ -6,6 +6,7 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.UtilityClass;
 import dev.simplified.collection.query.Indexed;
 import dev.simplified.gson.GsonSettings;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaConfig;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
@@ -27,6 +28,12 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * One {@link Source} serves every model. A read is handed the type it wants, the corpus catalogue
  * names that type's document and the layers it merges from, and nothing here has to know either.
+ * <p>
+ * Every model declares a ten-minute {@link Hydration} cadence, so a connected session keeps up with
+ * the published corpus rather than holding what it first read for its whole life. Each tick asks
+ * whether the corpus branch moved, which is one request. A tick whose branch has not moved reads
+ * nothing more; one whose branch moved reads the catalogue at the new tip, then only the documents
+ * whose fingerprint moved, each with every document linking into it.
  */
 @UtilityClass
 public class SkyBlockData {
@@ -88,7 +95,10 @@ public class SkyBlockData {
      *
      * <p>No database is opened: the rows the corpus publishes are held in memory and every finder
      * answers from them. The corpus is read unauthenticated, which GitHub limits to 60 requests per
-     * hour per IP - enough for a single session, not for a suite that connects repeatedly.
+     * hour per IP. A connect spends 37 of them - the branch tip, the catalogue at that tip, 34
+     * primary documents and one extra layer - and the ten-minute cadence one more per tick, six an
+     * hour, plus the catalogue and the moved documents at a tick that finds the branch moved. That is
+     * enough for a single session, not for a suite that connects repeatedly.
      *
      * @return the newly registered SkyBlock {@link JpaSession}
      */

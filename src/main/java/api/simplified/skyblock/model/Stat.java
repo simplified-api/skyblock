@@ -8,6 +8,7 @@ import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
@@ -24,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A stat - one of the named values a member or a mob carries, such as health, strength or mining
@@ -36,6 +38,7 @@ import java.util.Optional;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "stats", indexes = @Index(columnList = "name", unique = true))
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Stat implements JpaModel {
 
     /**

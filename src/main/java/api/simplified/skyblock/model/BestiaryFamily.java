@@ -6,6 +6,7 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
@@ -19,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * One entry in the Bestiary - a family of related mobs whose kills accumulate together toward 25
@@ -35,6 +37,7 @@ import java.util.Optional;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "bestiary_families")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class BestiaryFamily implements JpaModel {
 
     /**

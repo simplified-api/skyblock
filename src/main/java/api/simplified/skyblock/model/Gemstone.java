@@ -6,6 +6,7 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
@@ -17,6 +18,8 @@ import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * A gemstone type - the mining-collection stones slotted into gear that has gemstone slots, each
  * granting one stat scaled by both its own cut and the rarity of the slot.
@@ -27,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "gemstones")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Gemstone implements JpaModel {
 
     /**

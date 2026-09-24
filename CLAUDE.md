@@ -68,17 +68,32 @@ over the Contents API, so a data correction reaches a consumer without a release
 
 ```
 connect -> JpaConfig(resolveModels(Item.class), DocumentSource)
-  -> CorpusOrigin.layersOf            # data/v1/index.json, the layers of one document
-  -> CorpusOrigin.read                # each layer the catalogue names
+  -> CorpusOrigin.fingerprints        # the branch tip, then data/v1/index.json at that tip
+  -> CorpusOrigin.layersOf            # the held catalogue, the layers of one document
+  -> CorpusOrigin.read                # each layer the catalogue names, at the catalogue's tip
+tick, every ten minutes
+  -> CorpusOrigin.fingerprints        # the branch tip; the catalogue only when the tip moved
+  -> the moved documents, each with every document linking into it
 ```
 
 - `CorpusOrigin` asks `GitHubCorpus.manifest()` for the catalogue on **every** model's read, and
   there are 34 models. The corpus holds the parsed catalogue behind double-checked locking for exactly
   that reason; removing the hold turns one fetch into 34. The hold lives on the `GitHubCorpus`
   instance, and each `connect()` builds its own.
-- Every connect makes **36 Contents API reads**: the manifest, 34 primaries and `items_extra.json`. `connect()`
-  carries no token, and unauthenticated GitHub allows 60 an hour per IP, so a consumer gets roughly
-  one connect per hour. That budget is why the suite reads disk.
+- Every connect makes **37 requests**: the branch tip, the manifest at that tip, 34 primaries and
+  `items_extra.json`. Each ten-minute tick then makes one - the branch tip - and a tick that finds it
+  moved adds the manifest and the layers of every moved document and every document linking into
+  one. `connect()` carries no token, and unauthenticated GitHub allows 60 an hour per IP, so a
+  consumer gets one connect and its six ticks per hour, with room for what a moved tip re-reads.
+  That budget is why the suite reads disk.
+- `CorpusOrigin.read` reads every layer at the commit the held manifest was read at, never at the
+  branch. A body always comes out of the same tree as the fingerprint the session recorded for it,
+  and the client's one-minute response cache cannot replay a body from before a move. It does not
+  read at the manifest's `revision`: the generator records the commit its checkout stood at, which
+  is never the commit carrying the manifest, and a manifest regenerated locally over uncommitted
+  files names a commit that does not hold the documents it fingerprints.
+- `CorpusOrigin.Writing` polls before it answers any layers, so a write merges against the manifest
+  as the branch holds it now rather than as the writer booted with it.
 - `connect` performs network I/O and fails rather than degrading. An unreachable `api.github.com` at
   startup is a failed connect, not a slow one: the session is shut down and never registered.
 - `JpaModel.resolveModels(Item.class)` scans the package `Item` lives in and keeps the 34 `JpaModel`
@@ -165,8 +180,8 @@ holds the two anniversary balloon hats, which a regeneration of `items.json` dro
 
 An extra has no document of its own; it is the second layer of its primary's. `DocumentSource` merges
 the layers by `@Id`, so a row the extra repeats replaces the primary's in place and a new id is
-appended. `CorpusOrigin` reads it as the second layer of `items`, which is what makes a connect 36
-reads rather than 35. Adding
+appended. `CorpusOrigin` reads it as the second layer of `items`, which is what makes a connect 37
+requests rather than 36. Adding
 one without its primary is the `orphan extra` abort.
 
 A write through `SkyBlockData.writing(...)` rewrites the first layer with the whole merged document,
@@ -218,10 +233,15 @@ reaches `indexes()` first, so none of them performs I/O and a caller resolving m
 table pays nothing per id. A generation is read, linked and only then published, by one reference
 write, so a reader never sees a row whose links are still empty.
 
-- **A generation is read once.** No SkyBlock model declares `@Hydration`, so no scheduler runs and
-  the rows a connect reads stand for the life of its session; `getHydratedAt()` says when they were
-  published. Only a write through a session built on `SkyBlockData.writing(...)` rebuilds them, and it
-  rebuilds the written model plus every model linking into it.
+- **A generation is re-read only when its document moves.** Every SkyBlock model declares
+  `@Hydration(every = 10, unit = TimeUnit.MINUTES)`, so a session ticks every ten minutes. A model
+  whose manifest fingerprint has not moved keeps its generation and stays `CURRENT`; one whose
+  fingerprint moved is re-read with every model linking into it. `getHydratedAt()` says when the
+  held generation was published, not when it was last checked. A write through a session built on
+  `SkyBlockData.writing(...)` rebuilds the written model plus every model linking into it at once,
+  and again at the next tick, because the manifest is regenerated only after the commit lands. A
+  model added to `model/` without the annotation holds the rows its connect read until a write
+  covers it.
 - **A leftover session shadows the next one.** `SessionManager.getRepository` answers from the first
   registered session holding the type. `LocalSkyBlockData.disconnect` shuts a session down and
   removes it, which is what keeps one suite's rows out of the next suite's session; a suite that

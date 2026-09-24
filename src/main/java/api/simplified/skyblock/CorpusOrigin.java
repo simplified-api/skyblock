@@ -5,6 +5,7 @@ import api.simplified.github.ManifestIndex;
 import api.simplified.github.exception.GitHubApiException;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.persistence.exception.JpaException;
 import dev.simplified.persistence.source.DocumentOrigin;
 import org.jetbrains.annotations.NotNull;
@@ -15,9 +16,9 @@ import java.util.Optional;
  * The corpus a GitHub repository publishes, read as a tree of document layers.
  *
  * <p>This is the one place that speaks both languages. A repository answers paths, bytes and shas; a
- * source asks for the layers of a logical name and the text at a path. Neither side has to know the
- * other exists, and a failure crossing here stops being a GitHub failure and becomes a read or a
- * write that did not happen.
+ * source asks for the layers of a logical name, the text at a path and which documents moved. Neither
+ * side has to know the other exists, and a failure crossing here stops being a GitHub failure and
+ * becomes a read or a write that did not happen.
  */
 class CorpusOrigin implements DocumentOrigin {
 
@@ -44,13 +45,42 @@ class CorpusOrigin implements DocumentOrigin {
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The text is read at the commit the held catalogue was read at, never at the branch. It
+     * comes out of the same tree as the fingerprint a session recorded before reading it, and a
+     * commit names content that never changes, so the client's response cache cannot hand back a
+     * body from before the branch moved under a fingerprint from after it.
+     */
     @Override
     public @NotNull String read(@NotNull String path) {
         try {
-            return this.corpus.read(path);
+            return this.corpus.read(path, this.corpus.manifestCommit());
         } catch (GitHubApiException exception) {
             throw failed(exception, "read '%s'", path);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The corpus is polled first: one request asks whether the branch moved, and a moved branch
+     * costs one more for the catalogue at its new tip. Each document's fingerprint composes the hash
+     * the catalogue records for every one of its layers.
+     */
+    @Override
+    public @NotNull ConcurrentMap<String, String> fingerprints() {
+        try {
+            ManifestIndex manifest = this.corpus.poll().orElseGet(this.corpus::manifest);
+            ConcurrentMap<String, String> fingerprints = Concurrent.newMap();
+
+            for (String name : manifest.getDocuments().keySet())
+                manifest.fingerprintOf(name).ifPresent(fingerprint -> fingerprints.put(name, fingerprint));
+
+            return fingerprints;
+        } catch (GitHubApiException exception) {
+            throw failed(exception, "ask whether the corpus moved");
         }
     }
 
@@ -85,6 +115,27 @@ class CorpusOrigin implements DocumentOrigin {
 
         Writing(@NotNull GitHubCorpus corpus) {
             super(corpus);
+        }
+
+        /**
+         * {@inheritDoc}
+         *
+         * <p>The catalogue is refreshed first. A write resolves the layers it merges and rewrites
+         * through here, and nothing else need have refreshed the catalogue since the writer booted -
+         * a source written without a session never ticks, and a session's ticks are minutes apart -
+         * so without the refresh a write could resolve them from a catalogue older than the files it
+         * rewrites. A read through a writing origin is refreshed too, since nothing here tells the
+         * two apart; the refresh is one request while the branch has not moved.
+         */
+        @Override
+        public @NotNull ConcurrentList<String> layersOf(@NotNull String name) {
+            try {
+                this.corpus.poll();
+            } catch (GitHubApiException exception) {
+                throw failed(exception, "refresh the catalogue naming '%s'", name);
+            }
+
+            return super.layersOf(name);
         }
 
         /**

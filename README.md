@@ -36,6 +36,7 @@ The Hypixel SkyBlock game-data layer: 34 JPA models held in memory by a persiste
 ## Features
 
 - **One connect, then plain lookups** - `SkyBlockData.connect()` reads every model out of the published corpus and registers one session holding a repository per model; everything after that is `getRepository(Item.class).findFirst(...)`
+- **Keeps up every ten minutes** - every model declares a ten-minute `@Hydration` cadence; a tick asks whether the corpus branch moved and re-reads only the documents whose catalogue fingerprint changed, so a running session sees a data correction without reconnecting
 - **A generated catalogue** - `data/v1/index.json` names the ordered layers each document is made of and carries a SHA-256 of every layer's bytes, so a consumer can tell what moved before fetching anything
 - **A model and its table are one commit** - a model's `@Table(name = ...)` is the name of the document it reads, so a model whose document the catalogue does not carry fails every connect, the test suite's included
 - **Relations resolve** - a `@Linked` field resolves the id or id list beside it to rows of the target model before a generation is published, and a relation that may be absent comes back as `Optional`
@@ -54,7 +55,7 @@ The Hypixel SkyBlock game-data layer: 34 JPA models held in memory by a persiste
 | [Gradle](https://gradle.org/) | 8.x | Wrapper is bundled (`./gradlew`) |
 | [Git](https://git-scm.com/) | 2.x+ | For cloning the repository |
 | [Python](https://www.python.org/) | **3.8+** | Runs the index generator - standard library only, no virtualenv and no lockfile |
-| GitHub PAT | - | Only for writing the corpus back. `connect()` reads unauthenticated, which GitHub caps at 60 requests per hour per IP, and one connect makes 36 Contents API reads |
+| GitHub PAT | - | Only for writing the corpus back. `connect()` reads unauthenticated, which GitHub caps at 60 requests per hour per IP; one connect makes 37 requests and its session one more every ten minutes |
 
 ### Installation
 
@@ -228,17 +229,21 @@ The jar carries no JSON. `SkyBlockData.connect()` hands the session one source f
 SkyBlockData.connect()
   -> JpaConfig(JpaModel.resolveModels(Item.class), DocumentSource)
     -> SessionManager.connect                  # hydrates every model, then registers the session
+      -> CorpusOrigin.fingerprints()           # GET the branch tip, then data/v1/index.json at that tip
       -> DocumentSource.read(model)            # once per model, all in one pass
-        -> CorpusOrigin.layersOf(@Table name)  # GET data/v1/index.json, held after the first call
-        -> CorpusOrigin.read(path)             # GET each layer, Accept: application/vnd.github.raw+json
+        -> CorpusOrigin.layersOf(@Table name)  # the held catalogue
+        -> CorpusOrigin.read(path)             # GET each layer at the catalogue's tip, Accept: application/vnd.github.raw+json
       -> link every model, then publish every generation
+  -> every ten minutes
+    -> CorpusOrigin.fingerprints()             # GET the branch tip; the catalogue only when it moved
+    -> re-read each model whose fingerprint moved, with every model linking into it
 ```
 
 The catalogue is fetched once and held by the `GitHubCorpus` the connect builds, not once per model - every model asks the origin for its layers, so without that hold the same file would be fetched 34 times per connect. Each connect builds its own corpus, so the next connect fetches the catalogue again.
 
 Any error status GitHub answers crosses `CorpusOrigin` as a `JpaException` naming what was being read - a layer's path, or the document whose catalogue entry was asked for - the HTTP status and the reason, and the session wraps it in one naming the model that failed to hydrate, so a 404 on one model names the file rather than surfacing as a decode error. A request that never reaches GitHub is wrapped in that model-naming exception directly. A failed connect shuts its session down and registers nothing.
 
-`SkyBlockData.getRepository` answers from rows already in memory: each repository holds one generation, read in the same pass as every other model and published only after every link in that pass has been resolved. No SkyBlock model declares `@Hydration`, so the generations a connect reads stand for the life of its session, and `Repository.getHydratedAt()` says when they were published. A data correction on `master` reaches a consumer at its next connect.
+`SkyBlockData.getRepository` answers from rows already in memory: each repository holds one generation, read in the same pass as every other model and published only after every link in that pass has been resolved. Every SkyBlock model declares `@Hydration(every = 10, unit = TimeUnit.MINUTES)`, so the session ticks every ten minutes and asks for the branch tip. A tip that has not moved costs that one request and reads nothing; a moved tip fetches the catalogue at the new commit, and each model whose document's fingerprint moved is re-read at that commit together with every model linking into it. A model whose fingerprint did not move keeps its generation, and `Repository.getHydratedAt()` keeps saying when that generation was published. A data correction on `master` reaches a running consumer at the first tick after the catalogue is regenerated.
 
 ### Authentication
 
