@@ -3,7 +3,6 @@ package api.simplified.skyblock.model;
 import api.simplified.skyblock.SkyBlockData;
 import api.simplified.skyblock.common.Rarity;
 import com.google.gson.annotations.SerializedName;
-import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
@@ -18,7 +17,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
@@ -84,9 +82,12 @@ public class Reforge implements JpaModel {
     @Column(name = "stats", nullable = false)
     private @NotNull ConcurrentList<Substitute> stats = Concurrent.newList();
 
+    /**
+     * The {@link Item} row the reforge's stone id names, resolved on the same column and empty when
+     * the reforge has no stone or its stone id names no item.
+     */
     @Linked("stoneId")
-    @Getter(AccessLevel.NONE)
-    private transient @Nullable Item stone;
+    private transient @NotNull Optional<Item> stone = Optional.empty();
 
     /**
      * The {@link ItemCategory} rows behind {@link #categoryIds}, filled in by the repository layer
@@ -103,16 +104,8 @@ public class Reforge implements JpaModel {
     private transient @NotNull ConcurrentList<Item> items = Concurrent.newList();
 
     /**
-     * The {@link Item} row the reforge's stone id names, resolved on the same column and empty when
-     * the reforge has no stone.
-     */
-    public @NotNull Optional<Item> getStone() {
-        return Optional.ofNullable(this.stone);
-    }
-
-    /**
      * Whether a reforge stone id is stored. It is read off the id column rather than the resolved
-     * association, so a missing item row leaves this true while {@link #getStone()} is empty.
+     * link, so a stone id naming no item leaves this true while {@link #getStone()} is empty.
      */
     public boolean hasStone() {
         return this.stoneId.isPresent();

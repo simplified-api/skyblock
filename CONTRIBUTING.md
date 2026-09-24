@@ -221,11 +221,11 @@ Two things move together, and the connect fails when the model's half has no doc
 1. Put the entity in `api.simplified.skyblock.model`, implementing `JpaModel`, annotated `@Entity` and `@Table(name = "<table>")`, with `@Id` on its key. The table name is the document the model reads and the id is what its layers merge on; a model missing either fails the read.
 2. Give every column a **non-null default**. A key the corpus omits leaves the field at its initializer, so a column with no default binds null behind a `@NotNull` accessor and fails at whichever caller reads it. The default is what absorbs a corpus entry that predates the column.
 3. Model the relations with `@Linked`, which names the property carrying the id or ids:
-   - a single id is a raw id column beside a `transient` field of the target model, marked `@Linked("<idProperty>")`;
+   - a single id that always names a row is a raw id column beside a `transient` field of the target model, marked `@Linked("<idProperty>")`;
    - a list of ids is a raw id list beside a `transient` `ConcurrentList` of the target model, marked the same way;
-   - a relation that may be absent declares its id as `Optional<String>`, keeps the linked field `@Nullable` behind `@Getter(AccessLevel.NONE)`, and exposes a getter returning `Optional`, never null.
+   - a relation that may be absent declares its id as `Optional<String>` and its linked field as `@Linked("<idProperty>") private transient @NotNull Optional<X> x = Optional.empty();`, and the class-level `@Getter` generates the `Optional` getter. `Reforge.stone` and `BestiaryFamily.subcategory` are the canonical cases.
 
-   The target has to be a model this package registers - a link to anything else fails the connect. An id naming no row is dropped from a list and leaves a single link null without an error, which is why step 6 asserts the resolved side.
+   The target has to be a model this package registers - a link to anything else fails the connect. An id naming no row drops out of a list without an error, which is why step 6 asserts the resolved side, and leaves an `Optional` link empty. A plain single-valued link whose id is absent or names no row fails the connect, every model's with it, so a relation the data can leave out is an `Optional`, never a plain field.
 4. Add the data file at `data/v1/<category>/<table>.json`, whose stem is the `@Table` name byte for byte. A table with no rows yet ships as `[]`.
 5. Regenerate the manifest with `python scripts/generate_index.py`.
 6. Add a case to `JpaModelTest`, ordered leaves first - `@Order(1)` for leaves, `@Order(2)` and `@Order(3)` for models that link further in - and assert the *resolved* relation, not just that the list is non-empty.
@@ -319,7 +319,7 @@ git reset --hard
 
 - **The index is in the commit.** The PR check enforces it, but a PR that needs a second push to add it is a PR that regenerated after review started. A model change and its table change are one commit; a model whose document is missing fails every connect, so a PR whose suite did not run clean has not shown the two agree.
 - **Defaults on every column.** A column with no default binds null the first time the corpus omits it, and the failure surfaces at whichever caller reads the field rather than at the load that bound it.
-- **Relation direction and nullability.** `Optional` for a relation that can be absent, a plain reference for one that cannot. Getting this backwards produces a null far from its cause.
+- **Relation direction and nullability.** `Optional` for a relation that can be absent, a plain reference for one that cannot. A plain reference the data leaves out fails every connect, and an `Optional` over a relation that is always there turns a broken id into an empty link nobody notices.
 - **The diff is the change.** Reformatting noise around a one-line correction blocks a merge - not because the data is wrong, but because nobody can see whether it is.
 - **Sourcing.** A number changed without a stated source is not reviewable. Say where it came from.
 - **Schema stability.** A field added, renamed or retyped inside `v1/` is a breaking change for every consumer binding it. If the shape has to change, it goes in `v2/`.

@@ -1,7 +1,6 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
@@ -17,7 +16,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
@@ -87,17 +85,12 @@ public class Power implements JpaModel {
     @Column(name = "bonuses", nullable = false)
     private @NotNull ConcurrentMap<String, Double> bonuses = Concurrent.newMap();
 
-    @Linked("stoneId")
-    @Getter(AccessLevel.NONE)
-    private transient @Nullable Item stone;
-
     /**
      * The {@link Item} row the power's stone id names, resolved on the same column and empty when the
-     * power has no stone.
+     * power has no stone or its stone id names no item.
      */
-    public @NotNull Optional<Item> getStone() {
-        return Optional.ofNullable(this.stone);
-    }
+    @Linked("stoneId")
+    private transient @NotNull Optional<Item> stone = Optional.empty();
 
     /**
      * How far into a profile's progression a power is meant to be used, earliest first.

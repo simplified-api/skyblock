@@ -18,6 +18,8 @@ import dev.simplified.persistence.source.Source;
 import dev.simplified.persistence.source.WriteRequest;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Optional;
+
 /**
  * Static locator for the SkyBlock persistence layer.
  * <p>
@@ -83,7 +85,8 @@ public class SkyBlockData {
      * @param request the write to apply
      * @param <T> the entity type
      * @throws JpaException if no session on this manager registers the type, its source holds no write
-     *         instruction, or the write fails
+     *         instruction, an upserted row's link that is neither a list nor an {@link Optional}
+     *         carries no id or names no row, or the write fails
      */
     public static <T extends JpaModel> void write(@NotNull WriteRequest<T> request) {
         sessionManager.write(request);

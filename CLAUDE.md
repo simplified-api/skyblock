@@ -284,17 +284,23 @@ file's blob sha, which is read fresh when the request names none.
 ## Relations
 
 - A relation is a `transient` field marked `@Linked("<idProperty>")` beside the raw id column it
-  resolves, and both are readable. A field of the target type resolves one row; a `ConcurrentList` of
-  it resolves many. The raw column binds whether or not the relation resolves, so a test asserting
-  only the id passes on a broken relation.
+  resolves, and both are readable. A field of the target type resolves one row, an `Optional` of it
+  one row that may be absent, and a `ConcurrentList` of it many. The raw column binds whether or not
+  the relation resolves, so a test asserting only the id passes on a broken list or `Optional`.
 - Links resolve once per generation, after every model has been read and before any is published. An
-  id naming no row is dropped from a list and leaves a single link null, silently - `JpaModelTest`
-  compares resolved counts against id counts for that reason. A link whose target this package does
-  not register fails the connect.
-- A nullable relation is `Optional`, never null: the id is `Optional<String>`, the linked field is
-  `@Nullable` behind `@Getter(AccessLevel.NONE)`, and a hand-written getter wraps it -
-  `Reforge.getStone()` is the canonical empty case, `BestiaryFamily.getSubcategory()` the canonical
-  present-and-absent pair.
+  id naming no row drops out of a list silently - `JpaModelTest` compares resolved counts against id
+  counts for that reason - and leaves an `Optional` link empty. A plain single-valued link whose id is
+  absent or names no row fails the link pass, and with it the whole connect, every model included. A
+  link whose target this package does not register fails the connect too.
+- A relation that may be absent is `Optional`, never null: the id is `Optional<String>`, the linked
+  field is `transient @NotNull Optional<X> x = Optional.empty()`, and the class-level `@Getter`
+  generates its `Optional` getter - `Reforge.stone` is the canonical empty case,
+  `BestiaryFamily.subcategory` the canonical present-and-absent pair. A plain field over an id the
+  data can leave out fails every connect the first time it does.
+- `SkyBlockData.write` links an upsert's rows before they are written and refuses one whose plain
+  link would miss. A write straight through the `writing(...)` source reaches no session and is not
+  checked, so a row it commits whose plain link misses fails every connect until another commit
+  repairs the data.
 - `@Linked` fields never reach a document: `JpaExclusionStrategy` skips them on read and on write, so
   a row carries only the id.
 - `Rarity` carries `@SerializedName(alternate = ...)` for two historical spellings: `SUPREME` binds to

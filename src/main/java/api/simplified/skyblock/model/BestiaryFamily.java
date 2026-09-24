@@ -1,7 +1,6 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
@@ -17,7 +16,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
@@ -113,9 +111,12 @@ public class BestiaryFamily implements JpaModel {
     @Linked("categoryId")
     private transient @NotNull BestiaryCategory category;
 
+    /**
+     * The resolved {@link BestiarySubcategory} behind the subcategory id, empty for the families
+     * that are not grouped further or whose subcategory id names no subcategory.
+     */
     @Linked("subcategoryId")
-    @Getter(AccessLevel.NONE)
-    private transient @Nullable BestiarySubcategory subcategory;
+    private transient @NotNull Optional<BestiarySubcategory> subcategory = Optional.empty();
 
     /**
      * The resolved {@link MobType} rows behind the mob type ids, filled in by the repository layer
@@ -131,14 +132,6 @@ public class BestiaryFamily implements JpaModel {
         return BRACKETS
             .get(this.getBracket() - 1)
             .get(this.getMaxTier() - 1);
-    }
-
-    /**
-     * The resolved {@link BestiarySubcategory} behind the subcategory id, empty for the families
-     * that are not grouped further.
-     */
-    public @NotNull Optional<BestiarySubcategory> getSubcategory() {
-        return Optional.ofNullable(this.subcategory);
     }
 
     /**

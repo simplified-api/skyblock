@@ -1,7 +1,6 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.persistence.Hydration;
@@ -15,7 +14,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
@@ -70,16 +68,11 @@ public class BestiaryCategory implements JpaModel {
     @Column(name = "ordinal", nullable = false)
     private int ordinal = -1;
 
-    @Linked("regionId")
-    @Getter(AccessLevel.NONE)
-    private transient @Nullable Region region;
-
     /**
      * The resolved {@link Region} behind the category's region id, empty for a category that is not
-     * a place.
+     * a place or whose region id names no region.
      */
-    public @NotNull Optional<Region> getRegion() {
-        return Optional.ofNullable(this.region);
-    }
+    @Linked("regionId")
+    private transient @NotNull Optional<Region> region = Optional.empty();
 
 }
