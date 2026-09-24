@@ -3,6 +3,7 @@ package api.simplified.skyblock.model;
 import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
@@ -39,6 +40,7 @@ public class Accessory implements JpaModel {
     /**
      * The item id, and simultaneously the join key onto the {@link Item} row of the same name.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id;

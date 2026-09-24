@@ -8,6 +8,7 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
@@ -40,6 +41,7 @@ public class Pet implements JpaModel {
     /**
      * The pet's id, matching the pet type the wire names.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

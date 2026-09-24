@@ -7,6 +7,7 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
@@ -40,6 +41,7 @@ public class Enchantment implements JpaModel {
     /**
      * The enchantment's id.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

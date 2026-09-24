@@ -3,6 +3,7 @@ package api.simplified.skyblock.model;
 import api.simplified.skyblock.common.Rarity;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
@@ -31,6 +32,7 @@ public class Brew implements JpaModel {
     /**
      * The brew's id.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

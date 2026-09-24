@@ -13,6 +13,7 @@ import dev.simplified.annotations.NoArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
@@ -55,6 +56,7 @@ public class Item implements JpaModel {
     /**
      * The SkyBlock item id, and the key every other table joins on.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

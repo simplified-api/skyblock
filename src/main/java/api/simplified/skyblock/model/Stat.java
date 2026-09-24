@@ -8,6 +8,7 @@ import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
@@ -49,6 +50,7 @@ public class Stat implements JpaModel {
     /**
      * The stat's id, the key every substitute, effects map and bonus payload names it by.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -62,9 +64,10 @@ public class Stat implements JpaModel {
      * {@code Hunting Fortune}, so deriving one from the other would match nothing on fifty-three
      * reward lines. It is unique because the scrape resolves a line to exactly one stat. The table's
      * unique index over it binds only a database that maps the table; a generation read off the
-     * corpus checks nothing, so of two stats sharing a name a line credits whichever one the scan of
-     * the held rows meets first.
+     * corpus checks nothing and the {@link Indexed} it carries promises nothing unique, so of two
+     * stats sharing a name a line credits whichever one the held rows list first.
      */
+    @Indexed
     @Column(name = "name", nullable = false)
     private @NotNull String name = "";
 
@@ -289,9 +292,9 @@ public class Stat implements JpaModel {
      * {@code Damage} as well. Resolving the line takes the longest name it spells and stops, which
      * is one grant per line by construction.
      *
-     * <p>Each candidate is one {@code findFirstOrNull} over {@link #getName()}, which scans the held
-     * stat rows because no index covers the name, so the cost grows with the number of candidates
-     * the line's words spell times the size of the table.
+     * <p>Each candidate is one {@code findFirstOrNull} over {@link #getName()}, which probes the
+     * index over the name, so the cost grows with the number of candidates the line's words spell
+     * and not with the size of the table.
      */
     static final class Grants {
 
@@ -315,8 +318,8 @@ public class Stat implements JpaModel {
          * Sums what a level's reward lines grant, keyed by {@link Stat} id.
          *
          * <p>The match is on the wording the game prints, so an upstream rewording yields nothing
-         * rather than failing. Reading it scans the {@link Stat} repository and so needs a
-         * connected session.
+         * rather than failing. Reading it looks names up in the {@link Stat} repository and so
+         * needs a connected session.
          *
          * @param unlocks the reward lines, exactly as the menu prints them
          * @return the granted amount per stat id, empty when no line names a stat
@@ -378,7 +381,7 @@ public class Stat implements JpaModel {
         }
 
         /**
-         * The stat carrying one name, found by a scan of the held stat rows.
+         * The stat carrying one name, found through the index over the held stat rows' names.
          */
         private static @Nullable Stat named(@NotNull String name) {
             return SkyBlockData.getRepository(Stat.class).findFirstOrNull(Stat::getName, name);

@@ -9,6 +9,7 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
@@ -58,6 +59,7 @@ public class Event implements JpaModel {
     /**
      * The event's id, spelled as the event's name - {@code TRAVELING_ZOO}.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

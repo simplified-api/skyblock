@@ -3,6 +3,7 @@ package api.simplified.skyblock.model;
 import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
@@ -35,6 +36,7 @@ public class FairySoul implements JpaModel {
     /**
      * A numeric index for the soul, and the row's primary key.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private int id = 0;

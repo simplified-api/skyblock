@@ -4,6 +4,7 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
@@ -34,6 +35,7 @@ public class BitsItem implements JpaModel {
     /**
      * The id of the item being sold.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

@@ -74,10 +74,10 @@ public class SkyBlockData {
      * Retrieves the {@link Repository} holding all entities of the given model type.
      *
      * <p>
-     * The rows are held in memory, so no finder performs I/O. An equality finder over a property
-     * declaring {@link Indexed} probes a hash; no SkyBlock model declares one, so every finder scans
-     * the held rows. A held row is as old as the last hydration of its type, which
-     * {@link Repository#getHydratedAt()} reports.
+     * The rows are held in memory, so no finder performs I/O. Every SkyBlock model declares its id
+     * {@link Indexed} and unique, a stat also its name and a region also its mode, so an equality
+     * finder over one of those probes a hash and any other finder scans the held rows. A held row is
+     * as old as the last hydration of its type, which {@link Repository#getHydratedAt()} reports.
      *
      * @param tClass the {@link JpaModel} class to find a repository for
      * @param <T> the entity type

@@ -5,6 +5,7 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
@@ -36,6 +37,7 @@ public class Mixin implements JpaModel {
      * The mixin's item id, and the key it joins on - a mixin row decorates the {@link Item} row of
      * the same name.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

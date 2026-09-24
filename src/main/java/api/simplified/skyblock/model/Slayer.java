@@ -7,6 +7,7 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.Linked;
@@ -37,6 +38,7 @@ public class Slayer implements JpaModel {
     /**
      * The track's id, matching the key the wire uses under a member's slayer bosses.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -164,7 +166,8 @@ public class Slayer implements JpaModel {
         /**
          * Stats the level grants, read out of its {@link #unlocks} lines.
          *
-         * <p>Reading it scans the {@link Stat} repository and so needs a connected session.
+         * <p>Reading it looks names up in the {@link Stat} repository and so needs a connected
+         * session.
          */
         public @NotNull ConcurrentMap<String, Double> getEffects() {
             ConcurrentMap<String, Double> held = this.effects;

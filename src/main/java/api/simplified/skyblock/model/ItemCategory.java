@@ -2,6 +2,7 @@ package api.simplified.skyblock.model;
 
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
@@ -33,6 +34,7 @@ public class ItemCategory implements JpaModel {
      * The category's id, and the key an {@link Item}, an {@link Enchantment} or a {@link Reforge}
      * names when it points at a category.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

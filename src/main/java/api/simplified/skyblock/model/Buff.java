@@ -11,6 +11,7 @@ import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.collection.ConcurrentSet;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.collection.query.SearchFunction;
 import dev.simplified.gson.annotation.SerializedPath;
 import dev.simplified.persistence.Hydration;
@@ -101,6 +102,7 @@ public class Buff implements JpaModel {
     /**
      * The row's own key, unique across the file, and what a defect report names.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

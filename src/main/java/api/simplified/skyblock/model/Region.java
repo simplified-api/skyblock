@@ -2,6 +2,7 @@ package api.simplified.skyblock.model;
 
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
@@ -32,6 +33,7 @@ public class Region implements JpaModel {
     /**
      * The region's id.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -59,6 +61,7 @@ public class Region implements JpaModel {
     /**
      * The Hypixel server mode reported for the region, the finer half of that same match.
      */
+    @Indexed
     @Column(name = "mode", nullable = false)
     private @NotNull String mode = "";
 

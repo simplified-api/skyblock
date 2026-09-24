@@ -4,6 +4,7 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.query.Indexed;
 import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
@@ -35,6 +36,7 @@ public class Mayor implements JpaModel {
      * The candidate's id, which names the campaign slot rather than the person - the slot
      * {@code SLAYER_CANDIDATE} is Aatrox.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
