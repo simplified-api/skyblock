@@ -40,7 +40,7 @@ class CorpusOrigin implements DocumentOrigin {
                 .stream()
                 .map(ManifestIndex.Layer::path)
                 .collect(Concurrent.toUnmodifiableList());
-        } catch (GitHubApiException exception) {
+        } catch (RuntimeException exception) {
             throw failed(exception, "read the catalogue naming '%s'", name);
         }
     }
@@ -57,7 +57,7 @@ class CorpusOrigin implements DocumentOrigin {
     public @NotNull String read(@NotNull String path) {
         try {
             return this.corpus.read(path, this.corpus.manifestCommit());
-        } catch (GitHubApiException exception) {
+        } catch (RuntimeException exception) {
             throw failed(exception, "read '%s'", path);
         }
     }
@@ -68,6 +68,11 @@ class CorpusOrigin implements DocumentOrigin {
      * <p>The corpus is polled first: one request asks whether the branch moved, and a moved branch
      * costs one more for the catalogue at its new tip. Each document's fingerprint composes the hash
      * the catalogue records for every one of its layers.
+     *
+     * <p>A connect asks this before it reads any model, so its first two requests - the tip, then
+     * the catalogue at it - are made here. A failure on either, whether an error status, a request
+     * that never reaches GitHub or a body that is no catalogue, is raised as the failed check of the
+     * corpus rather than as the failure of any model.
      */
     @Override
     public @NotNull ConcurrentMap<String, String> fingerprints() {
@@ -79,7 +84,7 @@ class CorpusOrigin implements DocumentOrigin {
                 manifest.fingerprintOf(name).ifPresent(fingerprint -> fingerprints.put(name, fingerprint));
 
             return fingerprints;
-        } catch (GitHubApiException exception) {
+        } catch (RuntimeException exception) {
             throw failed(exception, "ask whether the corpus moved");
         }
     }
@@ -87,22 +92,35 @@ class CorpusOrigin implements DocumentOrigin {
     /**
      * Restates a failed request as a failed read or write.
      *
+     * <p>An error status GitHub answered is named with its HTTP status and GitHub's reason. Any other
+     * failure - a request that never reached GitHub, or a body that is no catalogue - is carried as
+     * the cause, and a {@link JpaException} already names what failed and is answered as it is.
+     *
      * @param exception the failure the corpus raised
      * @param what what was being attempted
      * @param args the values the description interpolates
      * @return the failure to raise in its place
      */
     static @NotNull JpaException failed(
-        @NotNull GitHubApiException exception,
+        @NotNull RuntimeException exception,
         @NotNull String what,
         @NotNull Object... args
     ) {
-        return new JpaException(
-            exception,
-            "Failed to " + String.format(what, args) + " (HTTP %d): %s",
-            exception.getStatus().getCode(),
-            exception.getResponse().getReason()
-        );
+        if (exception instanceof JpaException named)
+            return named;
+
+        String attempt = "Failed to " + String.format(what, args);
+
+        if (exception instanceof GitHubApiException answered)
+            return new JpaException(
+                exception,
+                "%s (HTTP %d): %s",
+                attempt,
+                answered.getStatus().getCode(),
+                answered.getResponse().getReason()
+            );
+
+        return new JpaException(exception, attempt);
     }
 
     /**
@@ -131,7 +149,7 @@ class CorpusOrigin implements DocumentOrigin {
         public @NotNull ConcurrentList<String> layersOf(@NotNull String name) {
             try {
                 this.corpus.poll();
-            } catch (GitHubApiException exception) {
+            } catch (RuntimeException exception) {
                 throw failed(exception, "refresh the catalogue naming '%s'", name);
             }
 
@@ -151,7 +169,7 @@ class CorpusOrigin implements DocumentOrigin {
             try {
                 GitHubCorpus.Blob blob = this.corpus.blob(path);
                 this.corpus.write(path, change.apply(blob.text()), blob.sha(), String.format("Update %s", path));
-            } catch (GitHubApiException exception) {
+            } catch (RuntimeException exception) {
                 throw failed(exception, "write '%s'", path);
             }
         }

@@ -239,9 +239,9 @@ SkyBlockData.connect()
     -> re-read each model whose fingerprint moved, with every model linking into it
 ```
 
-The catalogue is fetched once and held by the `GitHubCorpus` the connect builds, not once per model - every model asks the origin for its layers, so without that hold the same file would be fetched 34 times per connect. Each connect builds its own corpus, so the next connect fetches the catalogue again.
+The catalogue is held by the `GitHubCorpus` the connect builds rather than fetched once per model - every model asks the origin for its layers, so without that hold the same file would be fetched 34 times per connect. It is held until a tick finds the branch tip moved, which fetches the catalogue at the new tip in its place. Each connect builds its own corpus, so the next connect fetches the catalogue again.
 
-Any error status GitHub answers crosses `CorpusOrigin` as a `JpaException` naming what was being read - a layer's path, or the document whose catalogue entry was asked for - the HTTP status and the reason, and the session wraps it in one naming the model that failed to hydrate, so a 404 on one model names the file rather than surfacing as a decode error. A request that never reaches GitHub is wrapped in that model-naming exception directly. A failed connect shuts its session down and registers nothing.
+A failure on the connect's first two requests - the branch tip and the catalogue at that tip - crosses `CorpusOrigin` as a `JpaException` naming the corpus check, `Failed to ask whether the corpus moved`, rather than any model. A failed request after them crosses it as a `JpaException` naming what was being read - a layer's path, or the document whose catalogue entry was asked for - and the session wraps it in one naming the model that failed to hydrate, so a 404 on one model names the file rather than surfacing as a decode error. An error status GitHub answers adds the HTTP status and the reason; a request that never reaches GitHub, or a body that is no catalogue, is carried as the cause. A failed connect shuts its session down and registers nothing.
 
 `SkyBlockData.getRepository` answers from rows already in memory: each repository holds one generation, read in the same pass as every other model and published only after every link in that pass has been resolved. Every SkyBlock model declares `@Hydration(every = 10, unit = TimeUnit.MINUTES)`, so the session ticks every ten minutes and asks for the branch tip. A tip that has not moved costs that one request and reads nothing; a moved tip fetches the catalogue at the new commit, and each model whose document's fingerprint moved is re-read at that commit together with every model linking into it. A model whose fingerprint did not move keeps its generation, and `Repository.getHydratedAt()` keeps saying when that generation was published. A data correction on `master` reaches a running consumer at the first tick after the catalogue is regenerated.
 
@@ -249,7 +249,7 @@ Any error status GitHub answers crosses `CorpusOrigin` as a `JpaException` namin
 
 `connect()` reads unauthenticated: the corpus it builds carries no token, and nothing in this module reads one from the environment.
 
-Every connect makes **36 Contents API reads**: the catalogue, 34 primary files, and the one extra. Each connect builds its own corpus, so none of them starts warm.
+Every connect makes **37 requests** - the branch tip, the catalogue at that tip, 34 primaries and the extra - and a connected session one more per ten-minute tick, plus the catalogue and the moved documents at a tick that finds the tip moved. Each connect builds its own corpus, so none of them starts warm.
 
 | Mode | Budget | Connects per hour |
 |------|--------|-------------------|

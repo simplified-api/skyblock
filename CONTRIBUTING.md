@@ -396,7 +396,8 @@ edit data/v1/<cat>/<table>.json  (and the entity, when the change is both)
     -> commit both, open PR
       -> CI --check                       # fails if the index is stale
         -> merge to master
-          -> consumer's next connect      # reads index.json and every layer off master
+          -> running session's next tick  # sees the tip move, reads index.json and each moved document at it
+          -> consumer's next connect      # reads index.json and every layer at master's tip
 ```
 
 The corpus has no release and no version bump - `master` is what a consumer reads over the Contents API at connect, so a data correction reaches one without waiting on a published artifact. A session already running picks a correction up at its first ten-minute tick after the catalogue is regenerated. The Java library is a separate question: it is consumed as a JitPack coordinate and a code change reaches a consumer only when they move their pin.
