@@ -128,8 +128,8 @@ The repository uses Simplified Annotations for boilerplate reduction and enforce
 Omit braces on single-line bodies; use braces when the body wraps across multiple lines. Applies to all single-statement forms (`if`, `for`, `while`, `do`, lambda bodies).
 
 ```java
-if (session != null)
-    SkyBlockData.getSessionManager().shutdown(session);
+if (exception instanceof JpaException named)
+    return named;
 
 if (this.attributes == null) {
     this.attributes = new Attributes(
@@ -361,7 +361,7 @@ The Java package tree is one half of the checkout; `data/v1/`, `scripts/` and `.
 api.simplified.skyblock/
 ├── CorpusOrigin.java                 # the GitHub corpus as document layers; Writing adds the write
 ├── SkinTexture.java                  # base64 texture blob, a nested object on Item
-├── SkyBlockData.java                 # static locator: connect(), getRepository(), write(), corpus(), writing()
+├── SkyBlockData.java                 # static locator: connect(), connect(origin), getRepository(), corpus(), writing()
 ├── SkyBlockDataGsonContributor.java  # SPI hook: SkyBlockDate adapters, default priority
 ├── common/                           # GameStage, Rarity
 ├── date/                             # SkyBlockDate, Season
@@ -371,7 +371,7 @@ api.simplified.skyblock/
 ### Connect flow
 
 ```
-SkyBlockData.connect()
+SkyBlockData.connect()                               # a later connect returns the held session here
   -> corpusSettings()                                # defaults() with StringType.DEFAULT, so "" round-trips
   -> JpaConfig(resolveModels(Item.class), DocumentSource(CorpusOrigin))
     -> SessionManager.connect                        # registers the session only once it has hydrated
@@ -382,7 +382,7 @@ SkyBlockData.connect()
 
 `connect` parses with `SkyBlockData.corpusSettings()`, which sets `StringType.DEFAULT` on top of `GsonSettings.defaults()`. That is deliberate: the corpus carries empty strings for columns declared `nullable = false`, and the default string type would turn them into nulls.
 
-The suite takes the same route with the reads pointed at the checkout - `LocalSkyBlockData` builds a `JpaConfig` over the same resolved models and `corpusSettings()`, with a `DocumentSource` whose origin reads `data/v1/` off disk, and registers it with the same session manager, which is why `./gradlew test` needs no token.
+The suite takes the same route with the reads pointed at the checkout - it hands `SkyBlockData.connect(origin)` a `LocalSkyBlockData.Checkout`, an origin reading `data/v1/` off disk, so the session reads the same resolved models with the same `corpusSettings()`, which is why `./gradlew test` needs no token. The corpus connects once per JVM and the first connect wins, so every suite reads the session whichever suite ran first connected, and none disconnects it. A test that has to observe a connect of its own - counting the reads it makes, say - connects a `JpaConfig` over a `Checkout` on a `SessionManager` it owns.
 
 ### The Gson contributor runs last
 

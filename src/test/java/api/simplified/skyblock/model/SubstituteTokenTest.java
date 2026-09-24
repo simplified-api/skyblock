@@ -1,12 +1,11 @@
 package api.simplified.skyblock.model;
 
+import api.simplified.skyblock.LocalSkyBlockData.Checkout;
 import api.simplified.skyblock.LocalSkyBlockData;
 import api.simplified.skyblock.SkyBlockData;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.JpaSession;
 import org.jetbrains.annotations.NotNull;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -53,8 +52,6 @@ class SubstituteTokenTest {
      */
     private static final @NotNull String FILLER = "DEFAULT";
 
-    private static JpaSession session;
-
     @BeforeAll
     static void loadCorpus() {
         Path corpus = LocalSkyBlockData.root();
@@ -62,13 +59,7 @@ class SubstituteTokenTest {
         ConcurrentList<String> uncovered = LocalSkyBlockData.uncoveredModels(corpus);
         assumeTrue(uncovered.isEmpty(), "the models and the manifest are of different vintages - the manifest carries no file for " + uncovered);
 
-        session = LocalSkyBlockData.connect(corpus);
-    }
-
-    @AfterAll
-    static void releaseSession() {
-        LocalSkyBlockData.disconnect(session);
-        session = null;
+        SkyBlockData.connect(new Checkout(corpus));
     }
 
     @Test

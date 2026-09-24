@@ -2,7 +2,6 @@ package api.simplified.skyblock;
 
 import api.simplified.github.GitHubCorpus;
 import api.simplified.skyblock.model.Item;
-import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.UtilityClass;
 import dev.simplified.collection.query.Indexed;
 import dev.simplified.gson.GsonSettings;
@@ -14,20 +13,28 @@ import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
 import dev.simplified.persistence.exception.JpaException;
+import dev.simplified.persistence.source.DocumentOrigin;
 import dev.simplified.persistence.source.DocumentSource;
 import dev.simplified.persistence.source.Source;
-import dev.simplified.persistence.source.WriteRequest;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Optional;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * Static locator for the SkyBlock persistence layer.
+ * Static locator for the SkyBlock corpus.
  * <p>
- * Owns a dedicated {@link SessionManager}, names the corpus published in the data repository that
- * every SkyBlock model is read out of, and exposes repository access plus the session bootstrap. Call
- * {@link #connect()} once at startup before any {@link #getRepository(Class)} lookup against a
- * SkyBlock model.
+ * Holds the one session every SkyBlock model is read through, on a {@link SessionManager} that holds
+ * nothing else, names the corpus published in the data repository, and exposes repository access
+ * plus the session bootstrap. Call {@link #connect()} at startup before any
+ * {@link #getRepository(Class)} lookup against a SkyBlock model.
+ * <p>
+ * The corpus connects once per JVM. The first connect to succeed reads it and holds the session;
+ * every later connect returns that session and reads nothing, whichever origin it names, so no caller
+ * can force the corpus to be re-read or open a second session over it. Nothing disconnects the
+ * session: the manager's JVM shutdown hook shuts it down at exit.
+ * <p>
+ * The corpus session is read-only. A caller that writes the corpus back connects the source
+ * {@link #writing(GitHubCorpus)} returns on a {@link SessionManager} of its own and writes through
+ * that session, and a caller with tables of its own connects and reads them on its own manager too.
  * <p>
  * One {@link Source} serves every model. A read is handed the type it wants, the corpus catalogue
  * names that type's document and the layers it merges from, and nothing here has to know either.
@@ -54,9 +61,14 @@ public class SkyBlockData {
     private static final @NotNull String REPOSITORY = "skyblock";
 
     /**
-     * Dedicated {@link SessionManager} owned by the persistence layer.
+     * The manager holding the corpus session and nothing else.
      */
-    @Getter private static final @NotNull SessionManager sessionManager = new SessionManager();
+    private static final @NotNull SessionManager sessionManager = new SessionManager();
+
+    /**
+     * The corpus session, held from the first connect that succeeds.
+     */
+    private static @Nullable JpaSession session;
 
     /**
      * Retrieves the {@link Repository} holding all entities of the given model type.
@@ -76,45 +88,55 @@ public class SkyBlockData {
     }
 
     /**
-     * Applies one write through the session on this manager that registers the type, and rebuilds
-     * that type and every type linking into it.
+     * Connects the SkyBlock session over the corpus published on GitHub, or returns the session an
+     * earlier connect holds.
      *
-     * <p>A repository is a held generation and a write does not change one, so a write goes to the
-     * source that owns the rows and the next generation reflects it. A reader holding the current
-     * one never sees it change underneath them.
-     *
-     * <p>It succeeds only for a type a session over a {@link Source.Writable} registered on this
-     * manager. The corpus session {@link #connect()} registers reads a source with no write half, so a
-     * write to a SkyBlock model through it is refused.
-     *
-     * @param request the write to apply
-     * @param <T> the entity type
-     * @throws JpaException if no session on this manager registers the type, its source holds no write
-     *         instruction, an upserted row's link that is neither a list nor an {@link Optional}
-     *         carries no id or names no row, or the write fails
-     */
-    public static <T extends JpaModel> void write(@NotNull WriteRequest<T> request) {
-        sessionManager.write(request);
-    }
-
-    /**
-     * Connects the SkyBlock session, registering every model under the {@link Item} package with the
-     * {@link SessionManager} and hydrating each one from the published corpus.
+     * <p>This is {@link #connect(DocumentOrigin)} over the published corpus, and the first connect in
+     * a JVM wins in the same way: a later connect returns the held session, builds no corpus and makes
+     * no request.
      *
      * <p>No database is opened: the rows the corpus publishes are held in memory and every finder
      * answers from them. The corpus is read unauthenticated, which GitHub limits to 60 requests per
-     * hour per IP. A connect spends 37 of them - the branch tip, the catalogue at that tip, 34
-     * primary documents and one extra layer - and the ten-minute cadence one more per tick, six an
-     * hour, plus the catalogue and the moved documents at a tick that finds the branch moved. That is
-     * enough for a single session, not for a suite that connects repeatedly.
+     * hour per IP. The connect that reads spends 37 of them - the branch tip, the catalogue at that
+     * tip, 34 primary documents and one extra layer - and the ten-minute cadence one more per tick,
+     * six an hour, plus the catalogue and the moved documents at a tick that finds the branch moved.
      *
-     * @return the newly registered SkyBlock {@link JpaSession}
+     * @return the corpus session
+     * @throws JpaException if this call is the one that connects and a model fails to read or link, in
+     *         which case nothing is held and the next connect tries again
      */
-    public static @NotNull JpaSession connect() {
-        return sessionManager.connect(new JpaConfig(
-            JpaModel.resolveModels(Item.class),
-            new DocumentSource(new CorpusOrigin(corpus().build()), corpusSettings().create())
-        ));
+    public static synchronized @NotNull JpaSession connect() {
+        return session != null ? session : connect(new CorpusOrigin(corpus().build()));
+    }
+
+    /**
+     * Connects the SkyBlock session over the given origin, or returns the session an earlier connect
+     * holds.
+     *
+     * <p>The first connect in a JVM wins. It registers every model under the {@link Item} package with
+     * the {@link SessionManager} and hydrates each one from the layers the origin names, parsed with
+     * {@link #corpusSettings()}. Every later connect, over this origin or any other, returns the
+     * session that connect holds and never asks its own origin anything. Concurrent first calls
+     * connect once: one reads and the others return its session. A connect that fails holds nothing,
+     * so the next one tries again.
+     *
+     * <p>Nothing disconnects the session. The manager's JVM shutdown hook shuts it down at exit.
+     *
+     * @param origin where each document's layers are read from, asked only when this call is the one
+     *        that connects
+     * @return the corpus session
+     * @throws JpaException if this call is the one that connects and a model fails to read or link, in
+     *         which case nothing is held and the next connect tries again
+     */
+    public static synchronized @NotNull JpaSession connect(@NotNull DocumentOrigin origin) {
+        if (session == null) {
+            session = sessionManager.connect(new JpaConfig(
+                JpaModel.resolveModels(Item.class),
+                new DocumentSource(origin, corpusSettings().create())
+            ));
+        }
+
+        return session;
     }
 
     /**

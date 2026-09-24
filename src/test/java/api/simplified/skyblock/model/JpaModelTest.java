@@ -1,14 +1,13 @@
 package api.simplified.skyblock.model;
 
+import api.simplified.skyblock.LocalSkyBlockData.Checkout;
 import api.simplified.skyblock.LocalSkyBlockData;
 import api.simplified.skyblock.SkyBlockData;
 import api.simplified.skyblock.date.SkyBlockDate.Length;
 import com.google.gson.JsonObject;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.Repository;
 import lib.minecraft.text.ChatColor;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -25,17 +24,9 @@ import static org.hamcrest.Matchers.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class JpaModelTest {
 
-    private static JpaSession session;
-
     @BeforeAll
     static void connectSession() {
-        session = LocalSkyBlockData.connect(LocalSkyBlockData.root());
-    }
-
-    @AfterAll
-    static void releaseSession() {
-        LocalSkyBlockData.disconnect(session);
-        session = null;
+        SkyBlockData.connect(new Checkout(LocalSkyBlockData.root()));
     }
 
     // ---------------------------------------------------------------

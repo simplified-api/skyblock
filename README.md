@@ -35,7 +35,7 @@ The Hypixel SkyBlock game-data layer: 34 JPA models held in memory by a persiste
 
 ## Features
 
-- **One connect, then plain lookups** - `SkyBlockData.connect()` reads every model out of the published corpus and registers one session holding a repository per model; everything after that is `getRepository(Item.class).findFirst(...)`
+- **One connect, then plain lookups** - `SkyBlockData.connect()` reads every model out of the published corpus and holds one session with a repository per model; a later connect returns that session and reads nothing, and everything after the first is `getRepository(Item.class).findFirst(...)`
 - **Keeps up every ten minutes** - every model declares a ten-minute `@Hydration` cadence; a tick asks whether the corpus branch moved and re-reads only the documents whose catalogue fingerprint changed, so a running session sees a data correction without reconnecting
 - **A generated catalogue** - `data/v1/index.json` names the ordered layers each document is made of and carries a SHA-256 of every layer's bytes, so a consumer can tell what moved before fetching anything
 - **A model and its table are one commit** - a model's `@Table(name = ...)` is the name of the document it reads, so a model whose document the catalogue does not carry fails every connect, the test suite's included
@@ -84,7 +84,8 @@ cd skyblock
 ### Usage
 
 ```java
-// Once, at startup. Reads the corpus, links every model's rows, and registers the session.
+// At startup. The first connect in the JVM reads the corpus, links every model's rows, and holds
+// the session; a later one returns it.
 SkyBlockData.connect();
 
 // Anywhere thereafter.
@@ -102,7 +103,7 @@ pets.findFirst(Pet::getId, "AMMONITE").orElseThrow().getSkill().getId();   // "F
 > `connect()` parses the corpus with `SkyBlockData.corpusSettings()`, which is `GsonSettings.defaults()` with the string type set to `DEFAULT`. `defaults()` is what makes this work: it discovers every `GsonContributor` through `ServiceLoader`, so this module's registers the `SkyBlockDate.RealTime` / `SkyBlockDate.SkyBlockTime` adapters and persistence's registers the `JpaExclusionStrategy` that keeps every `@Linked` field out of a document. Code that parses corpus JSON itself starts from `corpusSettings()` for the same reason; a hand-built `GsonSettings` without those adapters fails on the first date column.
 
 > [!WARNING]
-> `connect` performs network I/O. It fetches the catalogue and every layer it names from GitHub, so an unreachable `api.github.com` at startup fails the connect rather than degrading - the session is shut down and never registered. Anything that reaches a repository before a connect succeeds throws `JpaException`.
+> `connect` performs network I/O. It fetches the catalogue and every layer it names from GitHub, so an unreachable `api.github.com` at startup fails the connect rather than degrading - the session is shut down and never registered, and the next connect tries again. Anything that reaches a repository before a connect succeeds throws `JpaException`.
 
 ## Models
 
@@ -239,9 +240,9 @@ SkyBlockData.connect()
     -> re-read each model whose fingerprint moved, with every model linking into it
 ```
 
-The catalogue is held by the `GitHubCorpus` the connect builds rather than fetched once per model - every model asks the origin for its layers, so without that hold the same file would be fetched 34 times per connect. It is held until a tick finds the branch tip moved, which fetches the catalogue at the new tip in its place. Each connect builds its own corpus, so the next connect fetches the catalogue again.
+The catalogue is held by the `GitHubCorpus` the connect builds rather than fetched once per model - every model asks the origin for its layers, so without that hold the same file would be fetched 34 times per connect. It is held until a tick finds the branch tip moved, which fetches the catalogue at the new tip in its place. Only the connect that reads builds a corpus; a later connect returns the held session and fetches nothing.
 
-A failure on the connect's first two requests - the branch tip and the catalogue at that tip - crosses `CorpusOrigin` as a `JpaException` naming the corpus check, `Failed to ask whether the corpus moved`, rather than any model. A failed request after them crosses it as a `JpaException` naming what was being read - a layer's path, or the document whose catalogue entry was asked for - and the session wraps it in one naming the model that failed to hydrate, so a 404 on one model names the file rather than surfacing as a decode error. An error status GitHub answers adds the HTTP status and the reason; a request that never reaches GitHub, or a body that is no catalogue, is carried as the cause. A failed connect shuts its session down and registers nothing.
+A failure on the connect's first two requests - the branch tip and the catalogue at that tip - crosses `CorpusOrigin` as a `JpaException` naming the corpus check, `Failed to ask whether the corpus moved`, rather than any model. A failed request after them crosses it as a `JpaException` naming what was being read - a layer's path, or the document whose catalogue entry was asked for - and the session wraps it in one naming the model that failed to hydrate, so a 404 on one model names the file rather than surfacing as a decode error. An error status GitHub answers adds the HTTP status and the reason; a request that never reaches GitHub, or a body that is no catalogue, is carried as the cause. A failed connect shuts its session down and holds nothing.
 
 `SkyBlockData.getRepository` answers from rows already in memory: each repository holds one generation, read in the same pass as every other model and published only after every link in that pass has been resolved. Every SkyBlock model declares `@Hydration(every = 10, unit = TimeUnit.MINUTES)`, so the session ticks every ten minutes and asks for the branch tip. A tip that has not moved costs that one request and reads nothing; a moved tip fetches the catalogue at the new commit, and each model whose document's fingerprint moved is re-read at that commit together with every model linking into it. A model whose fingerprint did not move keeps its generation, and `Repository.getHydratedAt()` keeps saying when that generation was published. A data correction on `master` reaches a running consumer at the first tick after the catalogue is regenerated.
 
@@ -249,16 +250,16 @@ A failure on the connect's first two requests - the branch tip and the catalogue
 
 `connect()` reads unauthenticated: the corpus it builds carries no token, and nothing in this module reads one from the environment.
 
-Every connect makes **37 requests** - the branch tip, the catalogue at that tip, 34 primaries and the extra - and a connected session one more per ten-minute tick, plus the catalogue and the moved documents at a tick that finds the tip moved. Each connect builds its own corpus, so none of them starts warm.
+The connect that reads the corpus makes **37 requests** - the branch tip, the catalogue at that tip, 34 primaries and the extra - and a connected session one more per ten-minute tick, plus the catalogue and the moved documents at a tick that finds the tip moved. The corpus connects once per JVM: the first connect to succeed makes those requests, and a later one returns the held session and makes none.
 
 | Mode | Budget | Connects per hour |
 |------|--------|-------------------|
 | Unauthenticated | 60 requests / hour / IP | roughly one |
 | Authenticated (PAT) | 5000 requests / hour | well over a hundred |
 
-Unauthenticated is enough for a single session, not for a process that connects repeatedly.
+Unauthenticated is enough for one process, not for several connecting from one IP within the hour.
 
-A token belongs to a caller that writes the corpus back. It names the corpus through `SkyBlockData.corpus()`, adds `.token(GitHubToken.of("<VARIABLE>"))` and builds, then connects `new JpaConfig(JpaModel.resolveModels(Item.class), SkyBlockData.writing(corpus))` on a `SessionManager` of its own and writes through the `JpaSession.write` that connect returns. That source reads authenticated and is the only one a `WriteRequest` can be applied through - the session `connect()` registers holds no write instruction, so `SkyBlockData.write` against a SkyBlock model fails. `GitHubToken.of` fails at startup on an unset or blank variable rather than degrading.
+A token belongs to a caller that writes the corpus back. It names the corpus through `SkyBlockData.corpus()`, adds `.token(GitHubToken.of("<VARIABLE>"))` and builds, then connects `new JpaConfig(JpaModel.resolveModels(Item.class), SkyBlockData.writing(corpus))` on a `SessionManager` of its own and writes through the `JpaSession.write` that connect returns. That source reads authenticated and is the only one a `WriteRequest` can be applied through - the session a connect holds reads a source with no write instruction, and `SkyBlockData` offers no write. `GitHubToken.of` fails at startup on an unset or blank variable rather than degrading.
 
 ## The SkyBlock Calendar
 
@@ -349,7 +350,7 @@ The corpus has a gate of its own in `python scripts/generate_index.py --check`, 
 skyblock/
 ├── src/
 │   ├── main/java/api/simplified/skyblock/
-│   │   ├── SkyBlockData.java                  # static locator: connect(), getRepository(), write(), corpus(), writing()
+│   │   ├── SkyBlockData.java                  # static locator: connect(), connect(origin), getRepository(), corpus(), writing()
 │   │   ├── CorpusOrigin.java                  # the corpus as document layers; Writing adds the write
 │   │   ├── SkyBlockDataGsonContributor.java   # SPI hook: SkyBlockDate adapters
 │   │   ├── SkinTexture.java                   # base64 texture blob, a nested object on Item
@@ -357,7 +358,7 @@ skyblock/
 │   │   ├── date/                              # SkyBlockDate, Season
 │   │   └── model/                             # the 34 JPA entities
 │   ├── main/resources/META-INF/services/      # GsonContributor SPI registration
-│   └── test/java/                             # the seven suites, LocalSkyBlockData
+│   └── test/java/                             # the nine suites, LocalSkyBlockData
 ├── data/
 │   └── v1/
 │       ├── index.json                         # generated manifest

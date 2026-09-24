@@ -26,25 +26,26 @@ production, and never a classpath resource.
 
 Two gates, and neither substitutes for the other.
 
-**`./gradlew test` is seven classes and none of them touch the network.** `JpaModelTest`,
-`BuffCorpusValidationTest`, `SubstituteTokenTest` and `StatGrantsTest` connect; `EventTest`,
-`LadderBindingTest` and `SkyBlockDateTest` bind fixture strings in-process and connect to nothing.
+**`./gradlew test` is nine classes and none of them touch the network.** `JpaModelTest`,
+`BuffCorpusValidationTest`, `SubstituteTokenTest`, `StatGrantsTest` and `SkyBlockDataTest` connect;
+`CorpusOriginTest` answers the Contents API from memory; `EventTest`, `LadderBindingTest` and
+`SkyBlockDateTest` bind fixture strings in-process and connect to nothing.
 
-The four that connect go through `LocalSkyBlockData`, which hands a `DocumentSource` a `Checkout`
-origin reading `data/v1/index.json` and the layers it names off disk under `skyblock.corpus.root`.
-`connect()` takes no origin and `CorpusOrigin` reads only a `GitHubCorpus`, so the test session
-builds its own `JpaConfig` - the same resolved models, the same `corpusSettings()` - and registers it
-with the same process-wide `SessionManager` that `SkyBlockData.getRepository` resolves against. That
-manager is static and answers from the first registered session holding a type: a session opened by
-one class is visible to every other class in the same JVM, so whoever connects must `disconnect` in
-`@AfterAll` or the next suite reads the previous one's rows.
+The five that connect hand `SkyBlockData.connect(origin)` a `LocalSkyBlockData.Checkout`, an origin
+reading `data/v1/index.json` and the layers it names off disk under `skyblock.corpus.root`, so the
+session reads the same resolved models with the same `corpusSettings()` as the published connect.
+The corpus connects once per JVM and the first connect wins: whichever suite runs first reads the
+checkout, every later connect returns that session, and nothing disconnects it. Every suite connects
+the same checkout, so that is the session each of them wants. A test whose assertions depend on
+performing a connect itself - counting the reads one makes, say - connects a `JpaConfig` over a
+`Checkout` on a `SessionManager` of its own, so it does not depend on the order the suites run in.
 
 `BuffCorpusValidationTest` and `SubstituteTokenTest` open on
 `assumeTrue(LocalSkyBlockData.uncoveredModels(root).isEmpty())`. A model this build declares that the
 committed manifest carries no document for **skips** those suites rather than failing them, so a green
 run that skipped two classes means the models and the index are of different vintages - regenerate, do
-not shrug. `JpaModelTest` and `StatGrantsTest` have no such guard and fail outright, because every
-model is read during the connect.
+not shrug. `JpaModelTest`, `StatGrantsTest` and `SkyBlockDataTest` have no such guard and fail
+outright, because every model is read during the connect.
 
 `JpaModelTest` orders its cases leaves first and deeper chains last, so a broken relation usually
 reports after the table it points at is known good.
@@ -79,13 +80,13 @@ tick, every ten minutes
 - `CorpusOrigin` asks `GitHubCorpus.manifest()` for the catalogue on **every** model's read, and
   there are 34 models. The corpus holds the parsed catalogue behind double-checked locking for exactly
   that reason; removing the hold turns one fetch into 34. The hold lives on the `GitHubCorpus`
-  instance, and each `connect()` builds its own.
-- Every connect makes **37 requests**: the branch tip, the manifest at that tip, 34 primaries and
-  `items_extra.json`. Each ten-minute tick then makes one - the branch tip - and a tick that finds it
-  moved adds the manifest and the layers of every moved document and every document linking into
-  one. `connect()` carries no token, and unauthenticated GitHub allows 60 an hour per IP, so a
-  consumer gets one connect and its six ticks per hour, with room for what a moved tip re-reads.
-  That budget is why the suite reads disk.
+  instance, and only the connect that reads builds one.
+- The connect that reads makes **37 requests**: the branch tip, the manifest at that tip, 34
+  primaries and `items_extra.json`. Each ten-minute tick then makes one - the branch tip - and a tick
+  that finds it moved adds the manifest and the layers of every moved document and every document
+  linking into one. `connect()` carries no token, and unauthenticated GitHub allows 60 an hour per
+  IP, so a consumer gets one connect and its six ticks per hour, with room for what a moved tip
+  re-reads. That budget is why the suite reads disk.
 - `CorpusOrigin.read` reads every layer at the commit the held manifest was read at, never at the
   branch. A body always comes out of the same tree as the fingerprint the session recorded for it,
   and the client's one-minute response cache cannot replay a body from before a move. It does not
@@ -207,14 +208,14 @@ thirty-four, which reads as a corrupt file rather than a header problem.
 
 ## connect() overrides the string type
 
-`SkyBlockData.connect()` parses with `SkyBlockData.corpusSettings()`, which is
+`SkyBlockData.connect()` and `connect(origin)` parse with `SkyBlockData.corpusSettings()`, which is
 `GsonSettings.defaults()` with `StringType.DEFAULT` set on top; `SkyBlockData.writing(...)` and
 `corpus()` use the same settings. `GsonSettings.defaults()` ships `StringType.NULL`, which turns an
 empty string into a null; the corpus carries empty strings on columns declared `nullable = false`, so
 without the override an empty string reads as null over the field's default, binds null behind a
 `@NotNull` accessor, and a write carries it back as an omitted key rather than `""`.
-`LocalSkyBlockData` parses with `corpusSettings()` too, and `EventTest` makes the same mutation by
-hand, which is what lets a fixture bind the way the corpus does.
+A suite's checkout is read through `connect(origin)` and so parsed the same way, and `EventTest` makes
+the same mutation by hand, which is what lets a fixture bind the way the corpus does.
 
 Every entity column also needs a **non-null field default**. Nothing checks `nullable = false` on a
 read: a key absent from one corpus entry leaves the field at its initializer, so a column with no
@@ -253,10 +254,11 @@ empty.
   and again at the next tick, because the manifest is regenerated only after the commit lands. A
   model added to `model/` without the annotation holds the rows its connect read until a write
   covers it.
-- **A leftover session shadows the next one.** `SessionManager.getRepository` answers from the first
-  registered session holding the type. `LocalSkyBlockData.disconnect` shuts a session down and
-  removes it, which is what keeps one suite's rows out of the next suite's session; a suite that
-  forgets leaves the next one reading its rows, and every assertion still passes.
+- **The corpus session is held for the JVM's life.** `SkyBlockData` holds the session the first
+  successful connect registered, on a `SessionManager` that holds nothing else, and every later
+  connect returns it whichever origin it names. A second connect can neither re-read the corpus nor
+  register a session behind the first. Nothing disconnects it; the manager's JVM shutdown hook shuts
+  it down at exit. A connect that fails holds nothing, so the next one tries again.
 
 ## Calendar constants are load-bearing
 
@@ -284,15 +286,17 @@ a `ClientConfig` carries one static header set; nothing here builds a Feign clie
 | Built by | Source | Can write |
 |---|---|---|
 | `connect()` | `DocumentSource` over `CorpusOrigin`, unauthenticated | no |
+| `connect(origin)` | `DocumentSource` over the origin handed in | no |
 | `writing(corpus)` | `DocumentSource.Writable` over `CorpusOrigin.Writing` | yes |
 
 The write instruction is a property of the source's type, not a setting on it: `CorpusOrigin.Writing`
-is the only `DocumentOrigin.Writable` here and only `writing(...)` constructs it, so a session
-connected through `connect()` has no write half to reach for and `SkyBlockData.write` against a
-SkyBlock model there fails. A write is one edit per file, committed as `Update <path>`: the file's
-text and blob sha come out of one read at the branch, the change applies to that text, and the
-commit carries that sha. A file that moved, or a body the response cache replayed from before the
-branch moved, is refused with a `409` rather than overwritten.
+is the only `DocumentOrigin.Writable` here and only `writing(...)` constructs it. The session a
+connect holds has no write half to reach for, and `SkyBlockData` offers no write: a caller that
+writes the corpus connects `writing(corpus)` on a `SessionManager` of its own and writes through that
+session. A write is one edit per file, committed as `Update <path>`: the file's text and blob sha
+come out of one read at the branch, the change applies to that text, and the commit carries that
+sha. A file that moved, or a body the response cache replayed from before the branch moved, is
+refused with a `409` rather than overwritten.
 
 ## Relations
 
@@ -310,10 +314,10 @@ branch moved, is refused with a `409` rather than overwritten.
   generates its `Optional` getter - `Reforge.stone` is the canonical empty case,
   `BestiaryFamily.subcategory` the canonical present-and-absent pair. A plain field over an id the
   data can leave out fails every connect the first time it does.
-- `SkyBlockData.write` links an upsert's rows before they are written and refuses one whose plain
-  link would miss. A write straight through the `writing(...)` source reaches no session and is not
-  checked, so a row it commits whose plain link misses fails every connect until another commit
-  repairs the data.
+- `JpaSession.write`, on a session over `writing(...)`, links an upsert's rows before they are
+  written and refuses one whose plain link would miss. A write straight through the `writing(...)`
+  source reaches no session and is not checked, so a row it commits whose plain link misses fails
+  the connect of every process that connects before another commit repairs the data.
 - `@Linked` fields never reach a document: `JpaExclusionStrategy` skips them on read and on write, so
   a row carries only the id.
 - `Rarity` carries `@SerializedName(alternate = ...)` for two historical spellings: `SUPREME` binds to
@@ -366,8 +370,8 @@ reason to skip regenerating in the PR.
   function over loaded rows, called by the gate rather than by the load.
 - Do not drop the catalogue hold in `GitHubCorpus.manifest()`. It is the difference between one
   request and 34 per connect.
-- Do not give `connect()` a switch to read disk. `LocalSkyBlockData` builds its own config for the
-  suite; a switch on the shipped connect is a production path nothing runs.
+- Do not give `connect()` a switch to read disk. A suite hands `connect(origin)` a
+  `LocalSkyBlockData.Checkout`; a switch on the shipped connect is a production path nothing runs.
 - Do not build a GitHub client here. `GitHubCorpus` assembles both Contents proxies with their two
   media types, and a second hand-built pair drifts the moment one of them is copied without the other.
 - Do not register a model by name. The package is the registration; a second mechanism would let the
