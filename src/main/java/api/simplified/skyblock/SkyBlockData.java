@@ -1,5 +1,7 @@
 package api.simplified.skyblock;
 
+import api.simplified.github.GitHubCorpus;
+import api.simplified.skyblock.model.Item;
 import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.UtilityClass;
 import dev.simplified.collection.query.Indexed;
@@ -9,31 +11,37 @@ import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
+import dev.simplified.persistence.source.DocumentSource;
 import dev.simplified.persistence.source.Source;
 import dev.simplified.persistence.source.WriteRequest;
-import dev.simplified.util.Logging;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Static locator for the SkyBlock persistence layer.
  * <p>
- * Owns a dedicated {@link SessionManager} and a {@link SkyBlockFactory}, and exposes repository
- * access plus the session bootstrap. Call {@link #connect(GsonSettings)} once at startup before any
- * {@link #getRepository(Class)} lookup against a SkyBlock model.
+ * Owns a dedicated {@link SessionManager}, names the corpus published in the data repository that
+ * every SkyBlock model is read out of, and exposes repository access plus the session bootstrap. Call
+ * {@link #connect()} once at startup before any {@link #getRepository(Class)} lookup against a
+ * SkyBlock model.
+ * <p>
+ * One {@link Source} serves every model. A read is handed the type it wants, the corpus catalogue
+ * names that type's document and the layers it merges from, and nothing here has to know either.
  */
 @UtilityClass
 public class SkyBlockData {
 
     /**
+     * The catalogue naming every document the corpus publishes, relative to the repository root.
+     */
+    static final @NotNull String MANIFEST_PATH = "data/v1/index.json";
+
+    private static final @NotNull String OWNER = "simplified-api";
+    private static final @NotNull String REPOSITORY = "skyblock";
+
+    /**
      * Dedicated {@link SessionManager} owned by the persistence layer.
      */
     @Getter private static final @NotNull SessionManager sessionManager = new SessionManager();
-
-    /**
-     * {@link SkyBlockFactory} instance that resolves the SkyBlock JPA model package and the
-     * {@code skyblock/} JSON {@link Source}.
-     */
-    @Getter private static final @NotNull SkyBlockFactory factory = new SkyBlockFactory();
 
     /**
      * Retrieves the {@link Repository} holding all entities of the given model type.
@@ -67,28 +75,63 @@ public class SkyBlockData {
     }
 
     /**
-     * Connects the SkyBlock session, registering every model with the {@link SessionManager} and
-     * hydrating each one from the corpus the registered {@link SkyBlockFactory} reads.
+     * Connects the SkyBlock session, registering every model under the {@link Item} package with the
+     * {@link SessionManager} and hydrating each one from the published corpus.
      *
-     * <p>No driver is configured, so no database is opened: the rows the corpus publishes are held
-     * in memory and every finder answers from them.
+     * <p>No database is opened: the rows the corpus publishes are held in memory and every finder
+     * answers from them. The corpus is read unauthenticated, which GitHub limits to 60 requests per
+     * hour per IP - enough for a single session, not for a suite that connects repeatedly.
      *
-     * @param gsonSettings pre-configured settings carrying the SkyBlock-specific type adapters;
-     *     internally mutated to {@link GsonSettings.StringType#DEFAULT} so empty strings round-trip
      * @return the newly registered SkyBlock {@link JpaSession}
      */
-    public static @NotNull JpaSession connect(@NotNull GsonSettings gsonSettings) {
-        return sessionManager.connect(
-            JpaConfig.builder()
-                .withRepositoryFactory(factory)
-                .withGsonSettings(
-                    gsonSettings.mutate()
-                        .withStringType(GsonSettings.StringType.DEFAULT)
-                        .build()
-                )
-                .withLogLevel(Logging.Level.WARN)
-                .build()
-        );
+    public static @NotNull JpaSession connect() {
+        return sessionManager.connect(new JpaConfig(
+            JpaModel.resolveModels(Item.class),
+            new DocumentSource(new CorpusOrigin(corpus().build()), corpusSettings().create())
+        ));
+    }
+
+    /**
+     * Returns a source that reads the given corpus and also writes it back.
+     *
+     * <p>Which of the two a caller builds is the whole of the difference between a deployment that
+     * reads the corpus and the one that maintains it. Nothing downstream can turn one into the other,
+     * because the write instruction is a property of the source rather than a setting on it.
+     *
+     * @param corpus the repository the documents are published from, named with a token
+     * @return a source reading and writing that corpus
+     */
+    public static @NotNull Source.Writable writing(@NotNull GitHubCorpus corpus) {
+        return new DocumentSource.Writable(new CorpusOrigin.Writing(corpus), corpusSettings().create());
+    }
+
+    /**
+     * Names the published corpus, leaving the token and the branch to the caller.
+     *
+     * <p>The repository, the catalogue path and the parser are what make it this corpus rather than
+     * any other, so they are bound here; a caller adds what belongs to it and builds.
+     *
+     * @return a builder over the SkyBlock data repository
+     */
+    public static @NotNull GitHubCorpus.Builder corpus() {
+        return GitHubCorpus.of(OWNER, REPOSITORY)
+            .manifest(MANIFEST_PATH)
+            .gson(corpusSettings());
+    }
+
+    /**
+     * The settings corpus documents are parsed with.
+     *
+     * <p>Empty strings have to round-trip rather than reading as absent, because a corpus column
+     * declared non-null takes one and a null fails the write.
+     *
+     * @return the corpus parser settings
+     */
+    public static @NotNull GsonSettings corpusSettings() {
+        return GsonSettings.defaults()
+            .mutate()
+            .withStringType(GsonSettings.StringType.DEFAULT)
+            .build();
     }
 
 }

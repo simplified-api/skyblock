@@ -54,7 +54,7 @@ class StatGrantsTest {
 
     @Test
     void aLevelResolvesItsGrantsOnce() {
-        Skill.Level level = session.getRepository(Skill.class)
+        Skill.Level level = session.getRepository(Skill.class).orElseThrow()
             .findFirst(Skill::getId, "ENCHANTING")
             .orElseThrow()
             .getLevels()
@@ -65,7 +65,7 @@ class StatGrantsTest {
 
     private static ConcurrentMap<String, Double> level(String skillOrSlayer, int level) {
         if ("VAMPIRE".equals(skillOrSlayer)) {
-            return session.getRepository(Slayer.class)
+            return session.getRepository(Slayer.class).orElseThrow()
                 .findFirst(Slayer::getId, skillOrSlayer)
                 .orElseThrow()
                 .getLevels()
@@ -74,7 +74,7 @@ class StatGrantsTest {
                 .getEffects();
         }
 
-        return session.getRepository(Skill.class)
+        return session.getRepository(Skill.class).orElseThrow()
             .findFirst(Skill::getId, skillOrSlayer)
             .orElseThrow()
             .getLevels()

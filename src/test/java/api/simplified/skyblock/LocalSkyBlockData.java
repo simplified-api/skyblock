@@ -9,12 +9,9 @@ import dev.simplified.gson.GsonSettings;
 import dev.simplified.persistence.JpaConfig;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
-import dev.simplified.persistence.RepositoryFactory;
 import dev.simplified.persistence.exception.JpaException;
 import dev.simplified.persistence.source.DocumentOrigin;
 import dev.simplified.persistence.source.DocumentSource;
-import dev.simplified.persistence.source.Source;
-import dev.simplified.util.Logging;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,8 +39,6 @@ public final class LocalSkyBlockData {
      */
     public static final @NotNull String ROOT_PROPERTY = "skyblock.corpus.root";
 
-    private static final @NotNull String MANIFEST_PATH = "data/v1/index.json";
-
     private LocalSkyBlockData() {}
 
     /**
@@ -62,7 +57,7 @@ public final class LocalSkyBlockData {
             : Path.of(declared);
         root = root.toAbsolutePath().normalize();
 
-        if (!Files.isReadable(root.resolve(MANIFEST_PATH)))
+        if (!Files.isReadable(root.resolve(SkyBlockData.MANIFEST_PATH)))
             throw new JpaException("No corpus manifest under '%s' - name the checkout with -D%s", root, ROOT_PROPERTY);
 
         return root;
@@ -81,7 +76,7 @@ public final class LocalSkyBlockData {
     public static @NotNull ConcurrentList<String> uncoveredModels(@NotNull Path root) {
         ManifestIndex manifest = readManifest(root);
 
-        return RepositoryFactory.resolveModels(Item.class)
+        return JpaModel.resolveModels(Item.class)
             .stream()
             .map(JpaModel::documentOf)
             .filter(name -> manifest.layersOf(name).isEmpty())
@@ -95,15 +90,10 @@ public final class LocalSkyBlockData {
      * @return the registered session, which the caller owns and must shut down
      */
     public static @NotNull JpaSession connect(@NotNull Path root) {
-        Source source = new DocumentSource(new Checkout(root), SkyBlockFactory.corpusSettings().create());
-
-        return SkyBlockData.getSessionManager().connect(
-            JpaConfig.builder()
-                .withRepositoryFactory(RepositoryFactory.of(Item.class, source))
-                .withLogLevel(Logging.Level.WARN)
-                .withGsonSettings(SkyBlockFactory.corpusSettings())
-                .build()
-        );
+        return SkyBlockData.getSessionManager().connect(new JpaConfig(
+            JpaModel.resolveModels(Item.class),
+            new DocumentSource(new Checkout(root), SkyBlockData.corpusSettings().create())
+        ));
     }
 
     /**
@@ -118,7 +108,7 @@ public final class LocalSkyBlockData {
 
     private static @NotNull ManifestIndex readManifest(@NotNull Path root) {
         Gson gson = GsonSettings.defaults().create();
-        return gson.fromJson(read(root.resolve(MANIFEST_PATH), MANIFEST_PATH), ManifestIndex.class);
+        return gson.fromJson(read(root.resolve(SkyBlockData.MANIFEST_PATH), SkyBlockData.MANIFEST_PATH), ManifestIndex.class);
     }
 
     private static @NotNull String read(@NotNull Path path, @NotNull String reported) {
