@@ -1,6 +1,5 @@
 package api.simplified.skyblock;
 
-import api.simplified.github.CorpusFixture;
 import api.simplified.github.GitHubContentsContract;
 import api.simplified.github.GitHubContentsWriteContract;
 import api.simplified.github.GitHubCorpus;
@@ -53,7 +52,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  *
  * <p>The repository answers from memory through the same contracts the client proxies, so no request
  * leaves the machine. The corpus is the one {@link SkyBlockData#corpus()} names, on its default
- * branch.
+ * branch, built over the repository's two contracts.
  */
 class CorpusOriginTest {
 
@@ -185,7 +184,7 @@ class CorpusOriginTest {
     void setUp() {
         this.repository = new Repository();
         this.repository.commit("c1", catalogue("s1", "i1", "x1"));
-        this.corpus = CorpusFixture.over(SkyBlockData.corpus(), this.repository, this.repository);
+        this.corpus = SkyBlockData.corpus().build(this.repository, this.repository);
     }
 
     @Test
