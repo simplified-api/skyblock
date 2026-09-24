@@ -48,9 +48,10 @@ public class Reforge implements JpaModel {
     private @NotNull String name = "";
 
     /**
-     * Id of the reforge stone that applies the reforge, absent for the basic reforges bought at the
-     * Blacksmith.
+     * Id of the reforge stone that applies the reforge, bound from the wire key {@code stone} and
+     * absent for the basic reforges bought at the Blacksmith.
      */
+    @SerializedName("stone")
     @Column(name = "stone_id")
     private @NotNull Optional<String> stoneId = Optional.empty();
 

@@ -52,8 +52,10 @@ public class Power implements JpaModel {
     private @NotNull String name = "";
 
     /**
-     * Id of the power stone that unlocks the power, absent for the powers unlocked by other means.
+     * Id of the power stone that unlocks the power, bound from the wire key {@code stone} and absent
+     * for the powers unlocked by other means.
      */
+    @SerializedName("stone")
     @Column(name = "stone_id")
     private @NotNull Optional<String> stoneId = Optional.empty();
 

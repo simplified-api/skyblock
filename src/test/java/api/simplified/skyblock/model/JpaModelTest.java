@@ -3,6 +3,7 @@ package api.simplified.skyblock.model;
 import api.simplified.skyblock.LocalSkyBlockData;
 import api.simplified.skyblock.SkyBlockData;
 import api.simplified.skyblock.date.SkyBlockDate.Length;
+import com.google.gson.JsonObject;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.Repository;
@@ -117,6 +118,16 @@ public class JpaModelTest {
         Repository<Power> repo = SkyBlockData.getRepository(Power.class);
         ConcurrentList<Power> all = repo.findAll();
         assertThat(all, not(empty()));
+
+        // Optional @Linked (stone) - present, read from the wire key 'stone'
+        Power silky = repo.findFirst(Power::getId, "SILKY").orElseThrow();
+        assertThat(silky.getStoneId(), is(Optional.of("LUXURIOUS_SPOOL")));
+        assertThat(silky.getStone().orElseThrow().getId(), is("LUXURIOUS_SPOOL"));
+
+        // A write serializes the stone under the key it was read from
+        JsonObject written = SkyBlockData.corpusSettings().create().toJsonTree(silky).getAsJsonObject();
+        assertThat(written.get("stone").getAsString(), is("LUXURIOUS_SPOOL"));
+        assertThat(written.has("stoneId"), is(false));
     }
 
     @Test
@@ -464,7 +475,22 @@ public class JpaModelTest {
         assertThat(warped.getItems(), not(empty()));
 
         // Optional @Linked (stone) - absent
+        assertThat(fair.hasStone(), is(false));
         assertThat(fair.getStone().isPresent(), is(false));
+
+        // Optional @Linked (stone) - present, read from the wire key 'stone'
+        assertThat(warped.getStoneId(), is(Optional.of("AOTE_STONE")));
+        assertThat(warped.getStone().orElseThrow().getId(), is("AOTE_STONE"));
+
+        // Optional @Linked (stone) - an id naming no item holds empty rather than failing the link
+        Reforge spook = repo.findFirst(Reforge::getId, "GREATER_SPOOK").orElseThrow();
+        assertThat(spook.hasStone(), is(true));
+        assertThat(spook.getStone().isPresent(), is(false));
+
+        // A write serializes the stone under the key it was read from
+        JsonObject written = SkyBlockData.corpusSettings().create().toJsonTree(warped).getAsJsonObject();
+        assertThat(written.get("stone").getAsString(), is("AOTE_STONE"));
+        assertThat(written.has("stoneId"), is(false));
     }
 
     @Test
