@@ -10,6 +10,7 @@ import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaConfig;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
 import dev.simplified.persistence.exception.JpaException;
@@ -30,6 +31,10 @@ import java.util.Optional;
  * <p>
  * One {@link Source} serves every model. A read is handed the type it wants, the corpus catalogue
  * names that type's document and the layers it merges from, and nothing here has to know either.
+ * <p>
+ * Each JVM that connects holds every row of every model in memory, once, and each {@link Linked}
+ * field points at the row its target's repository holds rather than at a copy of it. That footprint
+ * is what the corpus costs a consumer, and a lookup performs no I/O.
  * <p>
  * Every model declares a ten-minute {@link Hydration} cadence, so a connected session keeps up with
  * the published corpus rather than holding what it first read for its whole life. Each tick asks
@@ -57,9 +62,9 @@ public class SkyBlockData {
      * Retrieves the {@link Repository} holding all entities of the given model type.
      *
      * <p>
-     * The rows are held in memory, so a finder naming an {@link Indexed}
-     * property is a hash probe and a caller resolving many ids against one table pays nothing per id.
-     * A held row is as old as the last hydration of its type, which
+     * The rows are held in memory, so no finder performs I/O. An equality finder over a property
+     * declaring {@link Indexed} probes a hash; no SkyBlock model declares one, so every finder scans
+     * the held rows. A held row is as old as the last hydration of its type, which
      * {@link Repository#getHydratedAt()} reports.
      *
      * @param tClass the {@link JpaModel} class to find a repository for
