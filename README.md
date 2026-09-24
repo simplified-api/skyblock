@@ -284,7 +284,7 @@ date.getDay();             // 27
 
 `GitHubCorpus`, in the `github` module, builds the two Contents contract proxies itself. The read surface needs `Accept: application/vnd.github.raw+json` and the write surface needs `application/vnd.github+json`, and a Feign client carries one static header set - so the two proxies are built separately and no caller assembles either.
 
-`CorpusOrigin` is the one place that speaks both languages. It answers the two questions a `DocumentSource` asks - which layers a document is made of, and what text sits at a path - out of the corpus, and restates a `GitHubApiException` as a `JpaException`. Its `Writing` subtype, which only `SkyBlockData.writing(...)` builds, adds the write: one commit per file, messaged `Update <path>`, guarded by the file's blob sha, which is read fresh when a request names none.
+`CorpusOrigin` is the one place that speaks both languages. It answers the two questions a `DocumentSource` asks - which layers a document is made of, and what text sits at a path - out of the corpus, and restates a `GitHubApiException` as a `JpaException`. Its `Writing` subtype, which only `SkyBlockData.writing(...)` builds, adds the write: one commit per file, messaged `Update <path>`. The file's text and its blob sha come out of one read at the branch, the change applies to that text and the commit carries that sha, so a file that moved in between - or a body the client's response cache replayed from before the branch moved - is refused rather than overwritten.
 
 ## The Index Generator
 

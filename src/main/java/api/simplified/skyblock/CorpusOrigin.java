@@ -10,7 +10,7 @@ import dev.simplified.persistence.exception.JpaException;
 import dev.simplified.persistence.source.DocumentOrigin;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Optional;
+import java.util.function.UnaryOperator;
 
 /**
  * The corpus a GitHub repository publishes, read as a tree of document layers.
@@ -141,19 +141,16 @@ class CorpusOrigin implements DocumentOrigin {
         /**
          * {@inheritDoc}
          *
-         * <p>A repository's precondition is the file's blob sha. Without one named, the current sha
-         * is read and used, which still refuses a write over a file that moved between the read and
-         * the write.
+         * <p>The file's text and its blob sha come out of one read at the branch, and the change is
+         * committed under that sha as {@code Update <path>}. The sha is computed from the bytes the
+         * change was applied to, so a file that moved since - or a body the client's response cache
+         * replays from before the branch moved - is refused with a conflict rather than overwritten.
          */
         @Override
-        public void write(@NotNull String path, @NotNull String content, @NotNull Optional<String> precondition) {
+        public void edit(@NotNull String path, @NotNull UnaryOperator<String> change) {
             try {
-                this.corpus.write(
-                    path,
-                    content,
-                    precondition.orElseGet(() -> this.corpus.metadata(path)),
-                    String.format("Update %s", path)
-                );
+                GitHubCorpus.Blob blob = this.corpus.blob(path);
+                this.corpus.write(path, change.apply(blob.text()), blob.sha(), String.format("Update %s", path));
             } catch (GitHubApiException exception) {
                 throw failed(exception, "write '%s'", path);
             }

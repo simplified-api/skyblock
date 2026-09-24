@@ -200,9 +200,10 @@ table, not ids. An update the dump makes to such an item stays hidden until the 
 `data/v1/items/items.json` is 7,082,076 bytes over 147,227 lines. The GitHub Contents API returns a
 base64 envelope **capped at 1 MB** unless the request carries `Accept: application/vnd.github.raw+json`.
 That one file is why the read contract pins the raw media type and why the read and write surfaces
-cannot share a client: the write surface needs the JSON envelope carrying the blob sha. A consumer
-that omits the raw accept fails on this file and succeeds on the other thirty-four, which reads as a
-corrupt file rather than a header problem.
+cannot share a client: the write surface's `PUT` takes the JSON media type. A write reads the file it
+edits through the raw surface as well, and computes the blob sha from those bytes, so it never needs
+the envelope. A consumer that omits the raw accept fails on this file and succeeds on the other
+thirty-four, which reads as a corrupt file rather than a header problem.
 
 ## connect() overrides the string type
 
@@ -286,8 +287,10 @@ a `ClientConfig` carries one static header set; nothing here builds a Feign clie
 The write instruction is a property of the source's type, not a setting on it: `CorpusOrigin.Writing`
 is the only `DocumentOrigin.Writable` here and only `writing(...)` constructs it, so a session
 connected through `connect()` has no write half to reach for and `SkyBlockData.write` against a
-SkyBlock model there fails. A write is one commit per file, messaged `Update <path>`, guarded by the
-file's blob sha, which is read fresh when the request names none.
+SkyBlock model there fails. A write is one edit per file, committed as `Update <path>`: the file's
+text and blob sha come out of one read at the branch, the change applies to that text, and the
+commit carries that sha. A file that moved, or a body the response cache replayed from before the
+branch moved, is refused with a `409` rather than overwritten.
 
 ## Relations
 
