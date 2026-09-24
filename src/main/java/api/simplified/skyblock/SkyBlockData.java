@@ -83,7 +83,7 @@ public class SkyBlockData {
      * @param request the write to apply
      * @param <T> the entity type
      * @throws JpaException if no session on this manager registers the type, its source holds no write
-     *         instruction, or the rebuild after the applied write fails
+     *         instruction, or the write fails
      */
     public static <T extends JpaModel> void write(@NotNull WriteRequest<T> request) {
         sessionManager.write(request);
