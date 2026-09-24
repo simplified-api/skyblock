@@ -1,8 +1,8 @@
 # skyblock
 
-34 JPA entities in an embedded H2 session, the versioned JSON corpus they load from, the generator
-that indexes it, and the SkyBlock calendar - one tree, so a model rename and its index entry are one
-commit. Root **`api.simplified.skyblock.**`**.
+34 JPA models held in memory by a persistence session, the versioned JSON corpus they are read from,
+the generator that catalogues it, and the SkyBlock calendar - one tree, so a `@Table` rename and its
+data file are one commit. Root **`api.simplified.skyblock.**`**.
 
 The corpus is `data/v1/**`, tracked here. It is a test fixture on disk and a served artifact in
 production, and never a classpath resource.
@@ -18,38 +18,36 @@ production, and never a classpath resource.
 - The `test` task sets `skyblock.corpus.root` to the project directory. A forked test JVM inherits no
   notion of where the project is, and every suite that connects resolves the corpus through that
   property, so the build is what makes the offline connect find its files.
-- `SkyBlockFactory` reads `SKYBLOCK_DATA_GITHUB_TOKEN` off the JVM's own environment. Nothing in the
-  build injects it: the only things that read it are a production connect and a `SchemaExporter` run
-  from the IDE.
+- Nothing in this module reads a token or the environment. `SkyBlockData.connect()` reads the corpus
+  unauthenticated; a caller that writes it back names its own variable through `GitHubToken.of`, adds
+  it to `SkyBlockData.corpus()` and hands the built corpus to `SkyBlockData.writing`.
 
 ## Gates
 
 Two gates, and neither substitutes for the other.
 
-**`./gradlew test` is six classes and none of them touch the network.** `JpaModelTest`,
-`BuffCorpusValidationTest` and `SubstituteTokenTest` connect; `EventTest`, `LadderBindingTest` and
-`SkyBlockDateTest` bind fixture strings in-process and connect to nothing.
+**`./gradlew test` is seven classes and none of them touch the network.** `JpaModelTest`,
+`BuffCorpusValidationTest`, `SubstituteTokenTest` and `StatGrantsTest` connect; `EventTest`,
+`LadderBindingTest` and `SkyBlockDateTest` bind fixture strings in-process and connect to nothing.
 
-The three that connect go through `LocalSkyBlockData`, which reads `data/v1/index.json` and the files
-it names off disk under `skyblock.corpus.root`. The production factory is bound to GitHub and cannot
-be repointed, so the test session builds its own `JpaConfig` and registers it with the same
-process-wide `SessionManager` that `SkyBlockData.getRepository` resolves against. That manager is
-static: a session opened by one class is visible to every other class in the same JVM, so whoever
-connects must `disconnect` in `@AfterAll` or the next suite reads the previous one's rows.
+The four that connect go through `LocalSkyBlockData`, which hands a `DocumentSource` a `Checkout`
+origin reading `data/v1/index.json` and the layers it names off disk under `skyblock.corpus.root`.
+`connect()` takes no origin and `CorpusOrigin` reads only a `GitHubCorpus`, so the test session
+builds its own `JpaConfig` - the same resolved models, the same `corpusSettings()` - and registers it
+with the same process-wide `SessionManager` that `SkyBlockData.getRepository` resolves against. That
+manager is static and answers from the first registered session holding a type: a session opened by
+one class is visible to every other class in the same JVM, so whoever connects must `disconnect` in
+`@AfterAll` or the next suite reads the previous one's rows.
 
 `BuffCorpusValidationTest` and `SubstituteTokenTest` open on
 `assumeTrue(LocalSkyBlockData.uncoveredModels(root).isEmpty())`. A model this build declares that the
-committed manifest carries no file for **skips** those suites rather than failing them, so a green run
-that skipped two classes means the models and the index are of different vintages - regenerate, do
-not shrug. `JpaModelTest` has no such guard and fails outright, because every source is read during
-the connect.
+committed manifest carries no document for **skips** those suites rather than failing them, so a green
+run that skipped two classes means the models and the index are of different vintages - regenerate, do
+not shrug. `JpaModelTest` and `StatGrantsTest` have no such guard and fail outright, because every
+model is read during the connect.
 
-`JpaModelTest` orders its cases: `@Order(1)` is the leaf models, `@Order(2)` is everything with a
-foreign key, so a broken relation reports after the table it points at is known good.
-
-`SchemaExporter` is a `main()` under test sources, not a test. It writes the `.schema/` H2 file
-database IntelliJ reads for JPA column resolution, and it connects through `SkyBlockData.connect` -
-the GitHub path - so it is the one thing here that spends request budget.
+`JpaModelTest` orders its cases leaves first and deeper chains last, so a broken relation usually
+reports after the table it points at is known good.
 
 **`python scripts/generate_index.py --check` is the second gate**, and CI runs the same command. It
 hashes bytes and **does not parse the data**, so malformed JSON passes here and fails at the
@@ -69,61 +67,54 @@ service file - and a production connect reads every table off `master` of `simpl
 over the Contents API, so a data correction reaches a consumer without a release.
 
 ```
-connect -> SkyBlockFactory            # one RemoteJsonSource per resolved model
-  -> ManifestSource                   # data/v1/index.json
-  -> fileFetcher                      # the file the manifest names
+connect -> JpaConfig(resolveModels(Item.class), DocumentSource)
+  -> CorpusOrigin.layersOf            # data/v1/index.json, the layers of one document
+  -> CorpusOrigin.read                # each layer the catalogue names
 ```
 
-- `RemoteJsonSource` asks its `IndexProvider` for the manifest on **every** load, and there is one
-  source per model. `ManifestSource` holds the parsed manifest behind double-checked locking for
-  exactly that reason; removing the hold turns one fetch into 34. `refreshManifest()` is the only way
-  to drop it.
-- A cold connect is **36 requests**: the manifest, 34 primaries and `items_extra.json`.
-  Unauthenticated GitHub allows 60 an hour per IP, so a tokenless consumer gets roughly one connect
-  per hour. That budget is why the suite reads disk.
+- `CorpusOrigin` asks `GitHubCorpus.manifest()` for the catalogue on **every** model's read, and
+  there are 34 models. The corpus holds the parsed catalogue behind double-checked locking for exactly
+  that reason; removing the hold turns one fetch into 34. The hold lives on the `GitHubCorpus`
+  instance, and each `connect()` builds its own.
+- Every connect makes **36 Contents API reads**: the manifest, 34 primaries and `items_extra.json`. `connect()`
+  carries no token, and unauthenticated GitHub allows 60 an hour per IP, so a consumer gets roughly
+  one connect per hour. That budget is why the suite reads disk.
 - `connect` performs network I/O and fails rather than degrading. An unreachable `api.github.com` at
-  startup is a failed connect, not a slow one.
-- `RepositoryFactory.resolveModels(Item.class)` scans the package `Item` lives in and keeps the 34
-  `JpaModel` implementers. **The package is the registration**: a class dropped into `model/` is live
-  and one moved out is gone, with no list to update and no compile error either way.
-- Owner and repo are `simplified-api` / `skyblock`; the source id is `skyblock-data` and the test
-  session's is `skyblock-data-local`. `SkyBlockFactory.SOURCE_ID` keys exception messages and
-  `ExternalAssetState` rows, so it identifies the dataset rather than the repository serving it - the
-  two spellings are not a mismatch to tidy.
+  startup is a failed connect, not a slow one: the session is shut down and never registered.
+- `JpaModel.resolveModels(Item.class)` scans the package `Item` lives in and keeps the 34 `JpaModel`
+  implementers. **The package is the registration**: a class dropped into `model/` is live and one
+  moved out is gone, with no list to update and no compile error either way.
+- Owner, repo and catalogue path are `simplified-api` / `skyblock` / `data/v1/index.json`, bound once
+  in `SkyBlockData.corpus()`. The branch is `master` unless a caller names another, and the token is
+  always the caller's.
 
 ## A table is a file and a class
 
-Two things move together, and the generator **recovers** the pairing rather than storing it. A JSON
-file's stem is matched byte for byte against the `@Table(name = ...)` of an `@Entity` under
-`src/main/java/api/simplified/skyblock/model/`, and the `model_class` in the index is that source's
-package declaration plus its type name. There is no registry to keep in step, so a table rename that
-misses the other half is not a discipline failure that ships - it is a refusal.
+Two things move together, and **nothing stores the pairing**. A model's `@Table(name = ...)` is its
+document name (`JpaModel.documentOf`), the catalogue keys documents by the stem of their primary file,
+and `DocumentSource` asks the origin for the layers of that name. A model whose name the catalogue
+lacks fails its read with `The origin names no document '<name>' for '<class>'`, which fails the whole
+connect; a file no model names is a document nothing reads. There is no registry to keep in step, so a
+table rename that misses the other half is not a discipline failure that ships - it is a failed
+connect in `./gradlew test`.
 
-`scripts/generate_index.py` reads `.java` as **text**. It masks comments and string literals first,
-so no `@` can hide behind a comment or a quote, then reads balanced parentheses so
-`@Table(name = "x", indexes = @Index(name = "a"))` keys off the outer `name` rather than the
-`@Index`. No JDK, no Gradle, no `build/` - which is why `--check` runs on a bare Python container and
-the CI job carries no Java step. `--model-src PATH` points the scan at another model root.
+`scripts/generate_index.py` reads **no Java**. It walks `data/v1/<category>/*.json`, pairs each
+`_extra` with its primary, and hashes every layer. No JDK, no Gradle, no `build/` - which is why
+`--check` runs on a bare Python container and the CI job carries no Java step.
 
 | Refusal | Trigger |
 |---|---|
-| `has no model` | a primary file whose stem no `@Table(name = ...)` claims |
-| `but no data file matches` | an entity whose table name has no primary file |
-| `carries @Entity with no @Table(name = ...)` | JPA defaults the name to the entity name, which no file answers to |
-| `carries @Table with no @Entity` | `@Entity` is what makes the class a model |
-| `annotates a nested type` | either annotation below the top level; the index has no shape for it |
-| `declares type 'X', which disagrees with its file name` | the index would name a class no consumer can load |
-| `two entities claim table 'X'` | one data file binds into one class |
-| `spells @Table with a positional value` | `jakarta.persistence.Table` has no positional element |
+| `data root not found` | no `data/v1/` under the repo root |
 | `orphan extra` | an `_extra` with no primary |
 | `duplicate primary` / `duplicate extra` | two files for one `(category, table)` |
+| `two categories both publish 'X'` | one stem under two categories, which would be one document with a layer from each |
 
 Every one aborts. The generator never emits a partial index, so a stale index is always a whole
 index of an older tree rather than a half-written one.
 
 ## The digest is over working-tree bytes
 
-`content_sha256` is taken over the file exactly as stored on disk, which makes three otherwise
+Each layer's `sha256` is taken over the file exactly as stored on disk, which makes three otherwise
 cosmetic things load-bearing:
 
 - `.gitattributes` forces `* text=auto eol=lf`. **CRLF changes the digest**, so a Windows checkout
@@ -133,10 +124,10 @@ cosmetic things load-bearing:
 - The generator writes with `write_bytes`, never `write_text` - the latter translates `\n` to `\r\n`
   on Windows and produces an index that disagrees with CI's.
 - Output is `json.dumps(..., indent=2, sort_keys=True)` plus a trailing newline. Key order is
-  alphabetical, which is why `commit_sha` sits near the top of the document and `version` sits last.
+  alphabetical, which is why `documents` opens the document and `revision` sits last.
 
 `git ls-files --eol data/v1` must print `w/lf` for all 36 files. Anything else is a `.gitattributes`
-regression, and it is the one check that names the cause directly rather than reporting 34 digest
+regression, and it is the one check that names the cause directly rather than reporting 35 digest
 mismatches.
 
 A diff where every line of a file changed is a line-ending or a reformat, not a data change. Check
@@ -144,27 +135,27 @@ A diff where every line of a file changed is a line-ending or a reformat, not a 
 
 ## What the manifest means
 
-- **`count` is tables, not files.** 34 tables, 35 data files - `items_extra.json` folds into its
-  primary's entry as three fields rather than getting one of its own.
-- **`category` is presentational.** Consumers read `index.json` and never walk directories, so moving
-  a file between categories changes its `path` and nothing else about how it is found. This matters
-  more now that the corpus sits in the same checkout as the models: the directory is in the `path`
-  and nowhere else, and it is not the contract.
-- **`model_class` is the entity that binds the file**, recovered from the source carrying the
-  matching `@Table`.
-- **`generated_at` and `commit_sha` are excluded from the `--check` comparison**, and write mode
-  compares content before writing. A regeneration with no content change prints `already in sync, not
-  rewriting` rather than churning a timestamp into every commit.
+- **`documents` is keyed by logical name, and each value is layers in merge order.** 34 documents,
+  35 layers - `items_extra.json` is the second layer of `items` rather than a document of its own.
+- **The category is presentational.** Consumers read `index.json` and never walk directories, so moving
+  a file between categories changes its `path` and nothing else about how it is found. The corpus
+  sits in the same checkout as the models, the directory is in the `path` and nowhere else, and it is
+  not the contract.
+- **The catalogue names no Java class.** A model finds its document through the `@Table` name it
+  already declares, so a model rename cannot stale the index.
+- **`revision` is excluded from the `--check` comparison**, and write mode compares content before
+  writing. A regeneration with no content change prints `already in sync (34 documents), not rewriting` rather than
+  churning a revision into every commit.
 - **`v1/` is a schema-version boundary.** A breaking shape change ships as `v2/` alongside; `v1/` is
   never mutated in place. `DATA_VERSION` in the generator pins which tree it walks.
 
 ## An empty table ships as `[]`
 
-`modifiers/hotm_perks.json` and `world/fairy_souls.json` are empty arrays, not absent files. An
-entity whose table has no primary file aborts the generator, so the empty array is how a table stays
-declared and unpopulated. Deleting one to "clean up" breaks the index; `JpaModelTest` asserts
-`FairySoul` non-null rather than non-empty for the same reason, and that is the corpus rather than
-the model.
+`modifiers/hotm_perks.json` and `world/fairy_souls.json` are empty arrays, not absent files. A model
+whose table has no primary file has no document in the catalogue and fails the connect, so the empty
+array is how a table stays declared and unpopulated. Deleting one to "clean up" drops its document
+from the catalogue and fails every connect; `JpaModelTest` asserts `FairySoul` non-null rather than
+non-empty for the same reason, and that is the corpus rather than the model.
 
 ## Extras
 
@@ -172,9 +163,14 @@ the model.
 bulk-generated from an upstream dump that has never carried certain entries - `items_extra.json`
 holds the two anniversary balloon hats, which a regeneration of `items.json` drops every time.
 
-An extra has no model class and no index entry of its own; it appears as `has_extra`, `extra_path`,
-`extra_sha256` and `extra_bytes` on its primary. `RemoteJsonSource` fetches it when `has_extra` is
-true, which is the 36th request. Adding one without its primary is the `orphan extra` abort.
+An extra has no document of its own; it is the second layer of its primary's. `DocumentSource` merges
+the layers by `@Id`, so a row the extra repeats replaces the primary's in place and a new id is
+appended. `CorpusOrigin` reads it as the second layer of `items`, which is what makes a connect 36
+reads rather than 35. Adding
+one without its primary is the `orphan extra` abort.
+
+A write through `SkyBlockData.writing(...)` rewrites the first layer with the whole merged document,
+so the extra's rows land in `items.json` too; the extra itself is untouched and keeps overriding.
 
 ## items.json is over the envelope cap
 
@@ -187,42 +183,49 @@ corrupt file rather than a header problem.
 
 ## connect() overrides the string type
 
-`SkyBlockData.connect(gsonSettings)` derives a copy with `StringType.DEFAULT` before handing it to
-Hibernate, whatever you passed. `GsonSettings.defaults()` ships `StringType.NULL`, which turns an
+`SkyBlockData.connect()` parses with `SkyBlockData.corpusSettings()`, which is
+`GsonSettings.defaults()` with `StringType.DEFAULT` set on top; `SkyBlockData.writing(...)` and
+`corpus()` use the same settings. `GsonSettings.defaults()` ships `StringType.NULL`, which turns an
 empty string into a null; the corpus carries empty strings on columns declared `nullable = false`, so
-without the override the load is a constraint violation Hibernate reports against a column rather
-than against the setting. `LocalSkyBlockData` and `EventTest` both make the same mutation by hand,
-which is what lets a fixture bind the way the corpus does.
+without the override an empty string reads as null over the field's default, binds null behind a
+`@NotNull` accessor, and a write carries it back as an omitted key rather than `""`.
+`LocalSkyBlockData` parses with `corpusSettings()` too, and `EventTest` makes the same mutation by
+hand, which is what lets a fixture bind the way the corpus does.
 
-Every entity column also needs a **non-null field default**. A `nullable = false` column whose Gson
-field is absent from one corpus entry fails the entire connect, and the default is what absorbs an
-entry that predates the column.
+Every entity column also needs a **non-null field default**. Nothing checks `nullable = false` on a
+read: a key absent from one corpus entry leaves the field at its initializer, so a column with no
+default binds null behind a `@NotNull` accessor and fails at whichever caller reads it. The default is
+what absorbs an entry that predates the column.
 
 ## The contributor runs last on purpose
 
-`SkyBlockDataGsonContributor.priority()` is `100`, so `GsonSettings.defaults()` applies it after
-every default-priority contributor. `JpaExclusionStrategy` decides what Hibernate's Gson-stored
-columns serialize, and it has to see the fully registered adapter set to decide correctly - at
-default priority it decides against an incomplete one.
+The contributor that runs last is persistence's `JpaGsonContributor`: its `priority()` is `100`, so
+`GsonSettings.defaults()` applies it after every default-priority contributor. It registers
+`JpaExclusionStrategy`, which keeps every `@Linked` field out of a document in both directions, and it
+has to see the fully registered adapter set to decide correctly - at default priority it decides
+against an incomplete one.
 
-The same contributor registers `SkyBlockDate.RealTime.Adapter` and
-`SkyBlockDate.SkyBlockTime.Adapter`. A hand-built `GsonSettings` that skips the SPI connects fine and
-then fails on the first date column, which reads as a corpus problem.
+`SkyBlockDataGsonContributor` runs at the default priority and registers
+`SkyBlockDate.RealTime.Adapter` and `SkyBlockDate.SkyBlockTime.Adapter`, and nothing else. A
+hand-built `GsonSettings` that skips the SPI binds fine and then fails on the first date column, which
+reads as a corpus problem.
 
 ## A read comes off a held generation
 
-`SkyBlockData.getRepository` does not hand back the session's repository - it wraps it in
-`ReferenceIndex`, which holds one `findAll()` per model class and answers by scanning those rows.
-Every finder `Sortable` offers is written over `stream()`, so holding that one method reaches all of
-them and a caller resolving many ids against one table pays a single round trip for all of them.
+`SkyBlockData.getRepository` hands back the session's own repository, which holds one generation of
+rows in memory. Every finder `Sortable` offers is written over `stream()` and every equality finder
+reaches `indexes()` first, so none of them performs I/O and a caller resolving many ids against one
+table pays nothing per id. A generation is read, linked and only then published, by one reference
+write, so a reader never sees a row whose links are still empty.
 
-- **A held row can be one cache duration stale.** The refresh cycle moves a repository's stamp before
-  it deletes the rows its source withdrew, so a hold taken between those two steps carries a
-  withdrawn row until the stamp moves again. A caller that needs the uncached answer asks
-  `getSessionManager()` for the repository instead.
-- The holds are static and keyed by model class. Both `connect` paths and `LocalSkyBlockData.disconnect`
-  clear them, which is what keeps one suite's rows out of the next suite's session; a new connect that
-  forgets to clear reads the dead session's rows and every assertion still passes.
+- **A generation is read once.** No SkyBlock model declares `@Hydration`, so no scheduler runs and
+  the rows a connect reads stand for the life of its session; `getHydratedAt()` says when they were
+  published. Only a write through a session built on `SkyBlockData.writing(...)` rebuilds them, and it
+  rebuilds the written model plus every model linking into it.
+- **A leftover session shadows the next one.** `SessionManager.getRepository` answers from the first
+  registered session holding the type. `LocalSkyBlockData.disconnect` shuts a session down and
+  removes it, which is what keeps one suite's rows out of the next suite's session; a suite that
+  forgets leaves the next one reading its rows, and every assertion still passes.
 
 ## Calendar constants are load-bearing
 
@@ -239,35 +242,41 @@ so the rounding happens once and reordering the multiplications changes results.
 - Other modules pin exact epoch millisecond values derived from these. A change here is evaluated
   against those pinned numbers, never against the expression that produces them.
 
-## The façades cannot all be proxied
+## Reading and writing are two sources
 
-Three façades in `contract/` pre-bind `simplified-api` / `skyblock` as owner and repo - the
-repository they read is this one.
+`SkyBlockData.corpus()` names the corpus once - owner, repo, catalogue path and parser bound, token
+and branch left to the caller - and every GitHub call this module makes goes through the
+`GitHubCorpus` it builds. `GitHubCorpus` assembles its own two Contents proxies, because
+`GitHubContentsContract` and `GitHubContentsWriteContract` require different `Accept` media types and
+a `ClientConfig` carries one static header set; nothing here builds a Feign client.
 
-| Façade | Handed to one Feign client |
-|---|---|
-| `SkyBlockDataContract` | no - extends both Contents contracts |
-| `SkyBlockDataService` | no - not an interface |
-| `SkyBlockGitDataContract` | yes |
+| Built by | Source | Can write |
+|---|---|---|
+| `connect()` | `DocumentSource` over `CorpusOrigin`, unauthenticated | no |
+| `writing(corpus)` | `DocumentSource.Writable` over `CorpusOrigin.Writing` | yes |
 
-`SkyBlockDataContract` is a **type** façade. It extends `GitHubContentsContract` and
-`GitHubContentsWriteContract`, which require different `Accept` media types, and a `ClientConfig`
-carries one static header set - so the two proxies are built separately and aggregated through
-`SkyBlockDataContract.from(read, write)`. Handing the interface itself to a client builder produces a
-proxy whose read or write half is silently wrong.
-
-`SkyBlockDataService` is the same surface as a final class, kept alongside deliberately so call sites
-can be judged against both ergonomics. `SkyBlockGitDataContract` is proxyable because the Git Data
-API uses one media type throughout.
+The write instruction is a property of the source's type, not a setting on it: `CorpusOrigin.Writing`
+is the only `DocumentOrigin.Writable` here and only `writing(...)` constructs it, so a session
+connected through `connect()` has no write half to reach for and `SkyBlockData.write` against a
+SkyBlock model there fails. A write is one commit per file, messaged `Update <path>`, guarded by the
+file's blob sha, which is read fresh when the request names none.
 
 ## Relations
 
-- A single FK is `@ManyToOne` + `@JoinColumn` beside the raw `*_id` column, and both are readable.
-  The raw column binds whether or not the relation resolves, so a test asserting only the id passes
-  on a broken relation.
-- A list of ids is `@ForeignIds`, resolving to entity references beside the raw list.
-- A nullable relation is `Optional`, never null - `Reforge.getStone()` is the canonical empty case,
-  `BestiaryFamily.getSubcategory()` the canonical present-and-absent pair.
+- A relation is a `transient` field marked `@Linked("<idProperty>")` beside the raw id column it
+  resolves, and both are readable. A field of the target type resolves one row; a `ConcurrentList` of
+  it resolves many. The raw column binds whether or not the relation resolves, so a test asserting
+  only the id passes on a broken relation.
+- Links resolve once per generation, after every model has been read and before any is published. An
+  id naming no row is dropped from a list and leaves a single link null, silently - `JpaModelTest`
+  compares resolved counts against id counts for that reason. A link whose target this package does
+  not register fails the connect.
+- A nullable relation is `Optional`, never null: the id is `Optional<String>`, the linked field is
+  `@Nullable` behind `@Getter(AccessLevel.NONE)`, and a hand-written getter wraps it -
+  `Reforge.getStone()` is the canonical empty case, `BestiaryFamily.getSubcategory()` the canonical
+  present-and-absent pair.
+- `@Linked` fields never reach a document: `JpaExclusionStrategy` skips them on read and on write, so
+  a row carries only the id.
 - `Rarity` carries `@SerializedName(alternate = ...)` for two historical spellings: `SUPREME` binds to
   `DIVINE`, `UNOBTAINABLE` to `ADMIN`. The corpus still sends both.
 - A wire key that differs from its field is named explicitly and nothing else catches it: the
@@ -280,16 +289,16 @@ API uses one media type throughout.
 
 ## CI
 
-`.github/workflows/regenerate-index.yml`, triggered by `data/v1/**`,
-`src/main/java/api/simplified/skyblock/model/**`, the generator and the workflow itself. The model
-path is in the filter because a `@Table` rename stales the index exactly as a data edit does.
+`.github/workflows/regenerate-index.yml`, triggered by `data/v1/**`, the generator and the workflow
+itself. No model path is in the filter: the catalogue names no Java, so a model change cannot stale
+it.
 
 - **Pull request** - `--check`. A stale index fails, the contributor regenerates locally, and the
   generated diff stays visible in review.
 - **Push to master** - write mode, auto-committing a changed index as `github-actions[bot]`.
 
-Both jobs are Python alone. The scan reads source text, so no JDK step and no Gradle step belongs
-here, and adding one is how the cheap gate stops being cheap.
+Both jobs are Python alone. The generator walks files and hashes them, so no JDK step and no Gradle
+step belongs here, and adding one is how the cheap gate stops being cheap.
 
 The push job exists to catch a squash-merge that lost the regenerated index. It is a backstop, not a
 reason to skip regenerating in the PR.
@@ -297,10 +306,7 @@ reason to skip regenerating in the PR.
 ## Skip these
 
 - `build/`, `.gradle/` - Gradle output and daemon state.
-- `.schema/` - the H2 file database `SchemaExporter` writes for IntelliJ; excluded from the IDE module
-  by `build.gradle.kts`.
-- `.env` - the GitHub token a production connect or an IDE-run `SchemaExporter` reads. Gitignored, and
-  it stays that way.
+- `.env` - local credentials; nothing in this module reads it. Gitignored, and it stays that way.
 - `notes/` - gitignored working notes. Nothing tracked reads one, so do not cite a `notes/` path from
   a tracked file; the directory resolves for nobody who clones this.
 - `data/v1/items/items.json` - 7 MB over 147,227 lines. Read a slice, never open it whole.
@@ -313,18 +319,18 @@ reason to skip regenerating in the PR.
   `master`, so a data correction ships without a release; a second copy on the classpath shadows
   nothing and misleads everyone. `data/v1/` is a fixture the tests read off disk and an artifact
   GitHub serves - never a packaged resource.
-- Do not hardcode the model-to-table association again. The generator reads it off `@Table`, which is
-  what makes a rename impossible to desynchronise; a registry beside the models is a second place for
-  the truth to live and it drifts silently.
+- Do not keep a model-to-document registry, in the catalogue or beside the models. A model's `@Table`
+  name is its document name and the catalogue keys by file stem, so each side states the pairing once;
+  a registry is a second place for the truth to live and it drifts silently.
 - Do not give a model a field whose type is derived rather than bound. Every column is a corpus key, so
   a decode needs no repository and opens no session. `Buff.Validator` is the shape that works - a pure
   function over loaded rows, called by the gate rather than by the load.
-- Do not drop the manifest hold in `ManifestSource`. It is the difference between one request and 34
-  per connect.
-- Do not repoint the production factory at disk. `LocalSkyBlockData` builds its own config for the
-  suite; a switch on the shipped factory is a production path nothing runs.
-- Do not hand `SkyBlockDataContract` to a Feign client builder. It is a type façade over two media
-  types.
+- Do not drop the catalogue hold in `GitHubCorpus.manifest()`. It is the difference between one
+  request and 34 per connect.
+- Do not give `connect()` a switch to read disk. `LocalSkyBlockData` builds its own config for the
+  suite; a switch on the shipped connect is a production path nothing runs.
+- Do not build a GitHub client here. `GitHubCorpus` assembles both Contents proxies with their two
+  media types, and a second hand-built pair drifts the moment one of them is copied without the other.
 - Do not register a model by name. The package is the registration; a second mechanism would let the
   two disagree.
 - Do not relax a pinned epoch millisecond into a range. Those values are measurements of behaviour

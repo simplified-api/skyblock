@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing! This document explains how to get started, what to expect during the review process, and the conventions this project follows.
 
-Contributions come in two shapes: a change to the Java models and contracts under `src/`, and a change to the JSON corpus under `data/v1/`. They live in one repository and share one review, one branch and one pull request - a change that is both is one commit, and a model rename that leaves its table behind is what the index generator exists to refuse.
+Contributions come in two shapes: a change to the Java models under `src/`, and a change to the JSON corpus under `data/v1/`. They live in one repository and share one review, one branch and one pull request - a change that is both is one commit, and a `@Table` rename that leaves its file behind fails every connect, the test suite's included.
 
 ## Table of Contents
 
@@ -38,10 +38,10 @@ Contributions come in two shapes: a change to the Java models and contracts unde
 | IDE | Any | IntelliJ IDEA is the recommended editor; anything that can be told not to reformat JSON will do for the corpus |
 
 > [!NOTE]
-> The index generator needs Python and nothing else - no JDK, no Gradle and no build output. It reads the model sources as text to find each entity's `@Table(name = ...)`, so `python scripts/generate_index.py` works on a bare checkout and CI runs it with no Java step at all.
+> The index generator needs Python and nothing else - no JDK, no Gradle and no build output. It walks `data/v1/` and hashes the files it finds, reading no Java, so `python scripts/generate_index.py` works on a bare checkout and CI runs it with no Java step at all.
 
 > [!TIP]
-> `./gradlew test` reads the corpus out of `data/v1/` in this checkout, so the suite issues no network request and needs no token. A personal access token matters when you run something that connects over the GitHub Contents API - `SchemaExporter`, or a consumer application. Export it as `SKYBLOCK_DATA_GITHUB_TOKEN`; without one GitHub allows 60 requests an hour per IP and one connect spends 36 of them.
+> `./gradlew test` reads the corpus out of `data/v1/` in this checkout, so the suite issues no network request and needs no token. `SkyBlockData.connect()` reads the published corpus unauthenticated, which GitHub caps at 60 requests an hour per IP, and one connect makes 36 reads against it. A personal access token matters only to a caller that writes the corpus back: it builds `SkyBlockData.corpus().token(GitHubToken.of("<VARIABLE>")).build()`, naming its own environment variable, and connects `new JpaConfig(JpaModel.resolveModels(Item.class), SkyBlockData.writing(corpus))` on a session manager of its own.
 
 ### Development Setup
 
@@ -61,7 +61,7 @@ Contributions come in two shapes: a change to the Java models and contracts unde
    python scripts/generate_index.py --check
    ```
 
-   A clean checkout prints `ok: data/v1/index.json is in sync (34 entries)`. If it does not, your git configuration is rewriting line endings - see [Line endings](#line-endings) before going further.
+   A clean checkout prints `ok: data/v1/index.json is in sync (34 documents)`. If it does not, your git configuration is rewriting line endings - see [Line endings](#line-endings) before going further.
 
 3. **Verify the JDK toolchain**
 
@@ -86,13 +86,6 @@ Contributions come in two shapes: a change to the Java models and contracts unde
 1. Open the project root (the directory containing `settings.gradle.kts`). IntelliJ auto-imports the Gradle build.
 2. Ensure the **Project SDK** under **File > Project Structure** is set to a JDK 21 installation.
 3. Enable **annotation processing** - the annotation processor generates every accessor on every entity, and the IDE reports phantom errors until the processor runs.
-4. For JPA column resolution, run `SchemaExporter` once and attach the H2 file database it writes:
-
-   ```
-   jdbc:h2:file:$PROJECT_DIR$/.schema/skyblock;ACCESS_MODE_DATA=r
-   ```
-
-   user `sa`, empty password. `.schema/` is gitignored and excluded from the IDE module by the build script. `SchemaExporter` is a `main()` rather than a test and it connects over the network, so give its run configuration a `SKYBLOCK_DATA_GITHUB_TOKEN` and expect it to spend 36 requests.
 
 ### Editing JSON
 
@@ -135,12 +128,16 @@ The repository uses Simplified Annotations for boilerplate reduction and enforce
 Omit braces on single-line bodies; use braces when the body wraps across multiple lines. Applies to all single-statement forms (`if`, `for`, `while`, `do`, lambda bodies).
 
 ```java
-for (Class<JpaModel> model : this.getModels())
-    sources.put(model, new RemoteJsonSource<>(SOURCE_ID, this.manifestSource, fileFetcher, model));
-
-if (session != null) {
+if (session != null)
     SkyBlockData.getSessionManager().shutdown(session);
-    ReferenceIndex.clear();
+
+if (this.attributes == null) {
+    this.attributes = new Attributes(
+        this.npcSellPrice > 0,
+        this.can_place,
+        // ...
+        this.soulbound
+    );
 }
 ```
 
@@ -191,13 +188,13 @@ Javadoc:
 - **`@param` tags** - lowercase, no trailing period.
 
 > [!NOTE]
-> This module declares no exception classes of its own. Source failures are wrapped in `JpaException` from the persistence library, with the HTTP status, the source id and the path interpolated into the message and the original exception kept as the cause. Keep that shape - a wrapper that drops the path forces the next reader to guess which model failed.
+> This module declares no exception classes of its own. `CorpusOrigin` restates an error status GitHub answers as `JpaException` from the persistence library, with what was attempted - reading a layer's path, or the catalogue entry for a document - the HTTP status and the reason interpolated into the message and the original exception kept as the cause; the session wraps that in one naming the model that failed to hydrate. Keep that shape - a wrapper that drops the path forces the next reader to guess which file failed.
 
 ### Data Conventions
 
 - Every file is a JSON **array** of objects, each carrying a natural `id`.
 - An id is uppercase snake case, matching what Hypixel sends. Some ids carry a colon (`INK_SACK:3`); leave them alone.
-- A table with nothing in it ships as `[]` rather than being deleted - an entity with no file aborts the generator, so the empty array is how a table stays declared and unpopulated. `hotm_perks.json` and `fairy_souls.json` are both in that state today.
+- A table with nothing in it ships as `[]` rather than being deleted - a model whose document the catalogue does not carry fails the connect, so the empty array is how a table stays declared and unpopulated. `hotm_perks.json` and `fairy_souls.json` are both in that state today.
 - Keep entries in the order the file already uses. Re-sorting a whole file to add one entry buries the change.
 - The category directories under `data/v1/` are presentational. A consumer reads `index.json` and follows the paths it names, so moving a file between categories is a real change to every path in the manifest and never a tidy-up.
 
@@ -212,26 +209,28 @@ Javadoc:
 
 3. Stage **both** the data edits and the refreshed `data/v1/index.json`, in one commit.
 
-The generator recomputes each file's `content_sha256`, its byte length and the model class that binds it, and it prints `already in sync, not rewriting` when nothing moved - so running it when you did not need to costs nothing and leaves no diff.
+The generator recomputes each layer's `sha256` and the document it belongs to, and it prints `already in sync (34 documents), not rewriting` when nothing moved - so running it when you did not need to costs nothing and leaves no diff.
 
 > [!IMPORTANT]
 > Never hand-edit `data/v1/index.json`. It is generated output; a hand-written digest that happens to be wrong is worse than a stale one, because the check compares content and not intent.
 
 ### Adding a Model and its Table
 
-Two things move together, and the generator refuses to emit an index if either is missing. Nothing registers a model by name - `RepositoryFactory.resolveModels(Item.class)` scans the package `Item` lives in, so the class's location is its registration, and its `@Table(name = ...)` is what names the file.
+Two things move together, and the connect fails when the model's half has no document. Nothing registers a model by name - `JpaModel.resolveModels(Item.class)` scans the package `Item` lives in, so the class's location is its registration, and its `@Table(name = ...)` is what names the document.
 
-1. Put the entity in `api.simplified.skyblock.model`, implementing `JpaModel`, annotated `@Entity` and `@Table(name = "<table>")`. The type must be top level and its name must match its file name.
-2. Give every column a **non-null default**. Hibernate's `nullable = false` plus a Gson-absent field is a constraint violation at load, and the default is what absorbs a corpus entry that predates the column.
-3. Model the relations:
-   - a single FK is `@ManyToOne` + `@JoinColumn` beside the raw `*_id` column;
-   - a list of ids is `@ForeignIds`, resolving to entity references;
-   - a nullable relation returns `Optional`, never null.
+1. Put the entity in `api.simplified.skyblock.model`, implementing `JpaModel`, annotated `@Entity` and `@Table(name = "<table>")`, with `@Id` on its key. The table name is the document the model reads and the id is what its layers merge on; a model missing either fails the read.
+2. Give every column a **non-null default**. A key the corpus omits leaves the field at its initializer, so a column with no default binds null behind a `@NotNull` accessor and fails at whichever caller reads it. The default is what absorbs a corpus entry that predates the column.
+3. Model the relations with `@Linked`, which names the property carrying the id or ids:
+   - a single id is a raw id column beside a `transient` field of the target model, marked `@Linked("<idProperty>")`;
+   - a list of ids is a raw id list beside a `transient` `ConcurrentList` of the target model, marked the same way;
+   - a relation that may be absent declares its id as `Optional<String>`, keeps the linked field `@Nullable` behind `@Getter(AccessLevel.NONE)`, and exposes a getter returning `Optional`, never null.
+
+   The target has to be a model this package registers - a link to anything else fails the connect. An id naming no row is dropped from a list and leaves a single link null without an error, which is why step 6 asserts the resolved side.
 4. Add the data file at `data/v1/<category>/<table>.json`, whose stem is the `@Table` name byte for byte. A table with no rows yet ships as `[]`.
 5. Regenerate the manifest with `python scripts/generate_index.py`.
-6. Add a case to `JpaModelTest`, ordered by dependency depth - `@Order(1)` for leaves, `@Order(2)` for one FK hop, `@Order(3)` for deeper chains - and assert the *resolved* relation, not just that the list is non-empty.
+6. Add a case to `JpaModelTest`, ordered leaves first - `@Order(1)` for leaves, `@Order(2)` and `@Order(3)` for models that link further in - and assert the *resolved* relation, not just that the list is non-empty.
 
-Removing a model is the same in reverse, in one commit: delete the entity, delete its file, regenerate. Deleting either alone aborts the generator, which is the intended failure.
+Removing a model is the same in reverse, in one commit: delete the entity, delete its file, regenerate. Deleting the file alone fails every connect; deleting the entity alone leaves a document nothing reads.
 
 ### Commit Messages
 
@@ -261,7 +260,7 @@ Cheapest first. Run the index check whatever your change touched, then the rest 
   python scripts/generate_index.py --check
   ```
 
-  It covers a model change as well as a data change: the index names the entity that binds each file, so renaming a `@Table` stales it exactly as editing a JSON file does.
+  It covers a data change and nothing else: the catalogue names documents by file stem and reads no Java, so a `@Table` rename passes it and fails the connect instead. The test suite is what catches that.
 
 - **JSON validity** - the generator hashes bytes and does not parse your data, so malformed JSON passes the check above and fails at the consumer:
 
@@ -279,11 +278,9 @@ Cheapest first. Run the index check whatever your change touched, then the rest 
 
   It binds the corpus in this checkout, so it is the fastest way to find out whether an entry you edited still decodes into its entity. The corpus validation suites skip themselves rather than fail when the manifest carries no file for a model this build declares, which means the two are of different vintages - regenerating the index is what clears it.
 
-- **Relation coverage** - required when your change adds or moves a relation. Assert the resolved reference (`getCategory().getId()`), not just the raw id - the raw column binds whether or not the FK resolves, so an id-only assertion passes on a broken relation.
+- **Relation coverage** - required when your change adds or moves a relation. Assert the resolved reference (`getCategory().getId()`), not just the raw id - the raw column binds whether or not the link resolves, so an id-only assertion passes on a broken relation.
 
-- **Round-trip the columns** - required when your change touches a `@GsonType` field or a date column. Those are stored as Gson-serialized text; a missing adapter surfaces at load rather than at compile.
-
-- **Schema check** - required when your change adds or renames a column. `SchemaExporter` is a `main()` that connects over the network; run it from the IDE with a token in its environment, then re-attach `.schema/` so column resolution matches the entity.
+- **Round-trip the columns** - required when your change touches a `@GsonType` field or a date column. Those bind through Gson adapters; a missing adapter surfaces at load rather than at compile.
 
 - **Calendar changes** - `EventTest` pins exact epoch millisecond values captured from the behaviour before a change, and `SkyBlockDateTest` pins the season arithmetic those values rest on. Every constant in `Length` and `Launch` is load-bearing for both. If your change moves a pinned value, say which one moved and why the new one is right. Do not relax the assertion to a range.
 
@@ -320,8 +317,8 @@ git reset --hard
 
 ### What gets reviewed
 
-- **The index is in the commit.** The PR check enforces it, but a PR that needs a second push to add it is a PR that regenerated after review started. A model change and its table change are one commit; the generator's refusals are what enforce that, and a PR arriving without the refreshed index has bypassed them locally.
-- **Defaults on every column.** A `nullable = false` column with no default fails the whole connect the first time the corpus omits it, and the failure names Hibernate rather than the field.
+- **The index is in the commit.** The PR check enforces it, but a PR that needs a second push to add it is a PR that regenerated after review started. A model change and its table change are one commit; a model whose document is missing fails every connect, so a PR whose suite did not run clean has not shown the two agree.
+- **Defaults on every column.** A column with no default binds null the first time the corpus omits it, and the failure surfaces at whichever caller reads the field rather than at the load that bound it.
 - **Relation direction and nullability.** `Optional` for a relation that can be absent, a plain reference for one that cannot. Getting this backwards produces a null far from its cause.
 - **The diff is the change.** Reformatting noise around a one-line correction blocks a merge - not because the data is wrong, but because nobody can see whether it is.
 - **Sourcing.** A number changed without a stated source is not reviewable. Say where it came from.
@@ -338,8 +335,8 @@ When reporting a library bug, include:
 - **JDK version** (`java -version`)
 - **Operating system**
 - **The model and field** involved
-- **Whether it failed at connect or at lookup** - a connect failure is a corpus or column problem, a lookup failure is a relation or cache problem
-- **The `JpaException` message in full** - it names the source id and the path
+- **Whether it failed at connect or at lookup** - a connect failure is a corpus, column or link-target problem, a lookup failure is a relation or finder problem
+- **The `JpaException` message and its cause in full** - the message names the model, the cause names the path and the HTTP status
 - **Full stack trace** (if applicable)
 
 When reporting bad data, include:
@@ -351,7 +348,7 @@ When reporting bad data, include:
 
 For a calendar issue, include the real epoch millisecond and the SkyBlock coordinates you expected it to convert to, in both directions.
 
-When reporting a consumer-side failure, include the `content_sha256` your consumer holds for the file alongside the one currently in `data/v1/index.json` - a mismatch means a stale cache rather than bad data.
+When reporting a consumer-side failure, include when your consumer last connected (`Repository.getHydratedAt()` answers it) alongside the commit that last changed the entry - a session holds the rows it read at connect for as long as it runs, so one connected before the fix is a stale session rather than bad data.
 
 > [!CAUTION]
 > Never paste a personal access token into an issue, a `.env` committed by accident, or a commit.
@@ -362,13 +359,11 @@ The Java package tree is one half of the checkout; `data/v1/`, `scripts/` and `.
 
 ```
 api.simplified.skyblock/
-├── ReferenceIndex.java               # repository wrapper holding rows and scanning them
-├── SkinTexture.java                  # @GsonType blob, stored as a JSON column
-├── SkyBlockData.java                 # static locator: connect() + getRepository()
-├── SkyBlockDataGsonContributor.java  # SPI hook, priority 100
-├── SkyBlockFactory.java              # RepositoryFactory; one RemoteJsonSource per model
+├── CorpusOrigin.java                 # the GitHub corpus as document layers; Writing adds the write
+├── SkinTexture.java                  # base64 texture blob, a nested object on Item
+├── SkyBlockData.java                 # static locator: connect(), getRepository(), write(), corpus(), writing()
+├── SkyBlockDataGsonContributor.java  # SPI hook: SkyBlockDate adapters, default priority
 ├── common/                           # GameStage, Rarity
-├── contract/                         # the three façades over the github module
 ├── date/                             # SkyBlockDate, Season
 └── model/                            # 34 JPA entities - the package IS the registration
 ```
@@ -376,49 +371,48 @@ api.simplified.skyblock/
 ### Connect flow
 
 ```
-SkyBlockData.connect(gsonSettings)
-  -> gsonSettings.mutate().withStringType(DEFAULT)   # so "" round-trips on nullable=false columns
-  -> JpaConfig: H2MemoryDriver, schema "skyblock", EhCache L2, read-write, 30s query TTL
-    -> SkyBlockFactory.getSources()                  # one RemoteJsonSource per resolved model
-      -> ManifestSource.loadIndex()                  # data/v1/index.json, held after first call
-      -> the file fetcher                            # one raw GET per model
-        -> Gson -> entity -> Hibernate -> Repository
+SkyBlockData.connect()
+  -> corpusSettings()                                # defaults() with StringType.DEFAULT, so "" round-trips
+  -> JpaConfig(resolveModels(Item.class), DocumentSource(CorpusOrigin))
+    -> SessionManager.connect                        # registers the session only once it has hydrated
+      -> read every model                            # layersOf(@Table name), then one raw GET per layer
+      -> link every model                            # @Linked ids resolved against this pass's rows
+      -> publish every generation                    # Repository
 ```
 
-`connect` mutates the supplied `GsonSettings` to `StringType.DEFAULT` internally. That is deliberate: the corpus carries empty strings for columns declared `nullable = false`, and the default string type would turn them into nulls.
+`connect` parses with `SkyBlockData.corpusSettings()`, which sets `StringType.DEFAULT` on top of `GsonSettings.defaults()`. That is deliberate: the corpus carries empty strings for columns declared `nullable = false`, and the default string type would turn them into nulls.
 
-The suite takes the same route with the fetches pointed at the checkout - `LocalSkyBlockData` builds its own factory over `data/v1/` and registers it with the same session manager, which is why `./gradlew test` needs no token.
+The suite takes the same route with the reads pointed at the checkout - `LocalSkyBlockData` builds a `JpaConfig` over the same resolved models and `corpusSettings()`, with a `DocumentSource` whose origin reads `data/v1/` off disk, and registers it with the same session manager, which is why `./gradlew test` needs no token.
 
 ### The Gson contributor runs last
 
-`SkyBlockDataGsonContributor.priority()` returns `100`, so it applies after default-priority contributors. `JpaExclusionStrategy` has to see the fully registered type-adapter set when Gson wires the Hibernate JSON columns; registering it earlier means it decides against an incomplete picture.
+The one that runs last is persistence's `JpaGsonContributor`, whose `priority()` returns `100`, so it applies after default-priority contributors. It registers `JpaExclusionStrategy`, which keeps every `@Linked` field out of a document in both directions and has to see the fully registered type-adapter set; registering it earlier means it decides against an incomplete picture. `SkyBlockDataGsonContributor` runs at the default priority and registers the two `SkyBlockDate` adapters.
 
 ### How a data change reaches a consumer
 
 ```
 edit data/v1/<cat>/<table>.json  (and the entity, when the change is both)
-  -> python scripts/generate_index.py     # recomputes content_sha256, bytes, model_class
+  -> python scripts/generate_index.py     # recomputes each layer's sha256
     -> commit both, open PR
       -> CI --check                       # fails if the index is stale
         -> merge to master
-          -> consumer re-fetches index.json, sees a moved digest, re-fetches that file
+          -> consumer's next connect      # reads index.json and every layer off master
 ```
 
-The corpus has no release and no version bump - `master` is what a consumer reads over the Contents API, so a data correction reaches one without waiting on a published artifact. The Java library is a separate question: it is consumed as a JitPack coordinate and a code change reaches a consumer only when they move their pin.
+The corpus has no release and no version bump - `master` is what a consumer reads over the Contents API at connect, so a data correction reaches one without waiting on a published artifact. A session already running keeps the generation it read. The Java library is a separate question: it is consumed as a JitPack coordinate and a code change reaches a consumer only when they move their pin.
 
 ### Why the generator refuses so much
 
-The manifest is the only thing standing between a data edit and a consumer's binder, and every failure it prevents is silent downstream:
+The manifest is the only thing standing between a data edit and a consumer's reader, and all but the first failure it prevents are silent downstream:
 
 | Refusal | What it would otherwise be |
 |---------|----------------------------|
-| A data file whose table name matches no `@Table` | A file nobody loads, because it is in no index |
-| An entity whose `@Table` matches no data file | An index entry naming a file that 404s |
-| An `@Entity` with no `@Table(name = ...)` | An entry keyed by the class name, which no data file answers to |
-| A nested or misnamed entity type | An index naming a class no consumer can load |
-| Two entities claiming one table | One of two classes binding the file arbitrarily |
-| An extra with no primary | Hand-maintained entries silently dropped at merge time |
+| No `data/v1/` tree under the repo root | An empty catalogue every connect fails against |
+| An extra with no primary | Hand-maintained entries in no document, silently never read |
 | A duplicate primary or extra | One of two files winning arbitrarily |
+| Two categories publishing one file stem | One document with a layer from each, merged as if one overrode the other |
+
+It refuses nothing about models, because it reads none. A model whose document is missing fails the connect with `The origin names no document`; a file no model names is a document nothing reads.
 
 ## Legal
 

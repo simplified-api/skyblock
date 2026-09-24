@@ -11,6 +11,7 @@ import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.JpaSession;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
+import dev.simplified.persistence.exception.JpaException;
 import dev.simplified.persistence.source.DocumentSource;
 import dev.simplified.persistence.source.Source;
 import dev.simplified.persistence.source.WriteRequest;
@@ -61,14 +62,21 @@ public class SkyBlockData {
     }
 
     /**
-     * Applies one write through the session that holds the type, and rebuilds that type.
+     * Applies one write through the session on this manager that registers the type, and rebuilds
+     * that type and every type linking into it.
      *
      * <p>A repository is a held generation and a write does not change one, so a write goes to the
-     * origin that owns the rows and the next generation reflects it. A reader holding the current
+     * source that owns the rows and the next generation reflects it. A reader holding the current
      * one never sees it change underneath them.
+     *
+     * <p>It succeeds only for a type a session over a {@link Source.Writable} registered on this
+     * manager. The corpus session {@link #connect()} registers reads a source with no write half, so a
+     * write to a SkyBlock model through it is refused.
      *
      * @param request the write to apply
      * @param <T> the entity type
+     * @throws JpaException if no session on this manager registers the type, its source holds no write
+     *         instruction, or the rebuild after the applied write fails
      */
     public static <T extends JpaModel> void write(@NotNull WriteRequest<T> request) {
         sessionManager.write(request);
@@ -120,7 +128,7 @@ public class SkyBlockData {
     }
 
     /**
-     * The settings corpus documents are parsed with.
+     * Builds the settings corpus documents are parsed with.
      *
      * <p>Empty strings have to round-trip rather than reading as absent, because a corpus column
      * declared non-null takes one and a null fails the write.
