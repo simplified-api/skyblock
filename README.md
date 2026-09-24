@@ -40,7 +40,7 @@ The Hypixel SkyBlock game-data layer: 34 JPA models held in memory by a persiste
 - **A generated catalogue** - `data/v1/index.json` names the ordered layers each document is made of and carries a SHA-256 of every layer's bytes, so a consumer can tell what moved before fetching anything
 - **A model and its table are one commit** - a model's `@Table(name = ...)` is the name of the document it reads, so a model whose document the catalogue does not carry fails every connect, the test suite's included
 - **Relations resolve** - a `@Linked` field resolves the id or id list beside it to rows of the target model before a generation is published, and a relation that may be absent comes back as `Optional`
-- **Reads answer from held rows** - `getRepository` hands back a repository holding one generation of rows in memory, so every finder is a scan or an index probe and none performs I/O
+- **Reads answer from held rows** - `getRepository` hands back a repository holding one generation of rows in memory, so no finder performs I/O; no SkyBlock model declares `@Indexed`, so every finder is a scan of those rows
 - **No database, no second-level cache** - nothing is opened and no second-level cache sits in front of any repository; each repository publishes a whole linked generation at once, and a reader holding one never sees it change underneath them
 - **The SkyBlock calendar** - `SkyBlockDate` converts both directions between real epoch milliseconds and the accelerated 372-day in-game year
 - **Auto-registered Gson** - the date adapters and the JPA exclusion strategy attach to `GsonSettings.defaults()` by SPI, with no bootstrap code at the call site

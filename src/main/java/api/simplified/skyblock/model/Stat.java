@@ -60,8 +60,10 @@ public class Stat implements JpaModel {
      * <p>It is the wording the game prints rather than a spelling of {@link #id}, and the two are
      * allowed to differ: {@code WALK_SPEED} prints as {@code Speed} and {@code HUNTER_FORTUNE} as
      * {@code Hunting Fortune}, so deriving one from the other would match nothing on fifty-three
-     * reward lines. It is unique because the scrape resolves a line to exactly one stat, and the
-     * index says so, so two stats sharing a name fails the generation rather than crediting both.
+     * reward lines. It is unique because the scrape resolves a line to exactly one stat. The table's
+     * unique index over it binds only a database that maps the table; a generation read off the
+     * corpus checks nothing, so of two stats sharing a name a line credits whichever one the scan of
+     * the held rows meets first.
      */
     @Column(name = "name", nullable = false)
     private @NotNull String name = "";
@@ -287,8 +289,9 @@ public class Stat implements JpaModel {
      * {@code Damage} as well. Resolving the line takes the longest name it spells and stops, which
      * is one grant per line by construction.
      *
-     * <p>Each candidate is one probe against the unique index over {@link #getName()}, so the cost
-     * is the number of words in the line rather than the size of the table.
+     * <p>Each candidate is one {@code findFirstOrNull} over {@link #getName()}, which scans the held
+     * stat rows because no index covers the name, so the cost grows with the number of candidates
+     * the line's words spell times the size of the table.
      */
     static final class Grants {
 
@@ -312,7 +315,7 @@ public class Stat implements JpaModel {
          * Sums what a level's reward lines grant, keyed by {@link Stat} id.
          *
          * <p>The match is on the wording the game prints, so an upstream rewording yields nothing
-         * rather than failing. Reading it probes the {@link Stat} repository and so needs a
+         * rather than failing. Reading it scans the {@link Stat} repository and so needs a
          * connected session.
          *
          * @param unlocks the reward lines, exactly as the menu prints them
@@ -375,7 +378,7 @@ public class Stat implements JpaModel {
         }
 
         /**
-         * The stat carrying one name, in a single probe against the index that declares it unique.
+         * The stat carrying one name, found by a scan of the held stat rows.
          */
         private static @Nullable Stat named(@NotNull String name) {
             return SkyBlockData.getRepository(Stat.class).findFirstOrNull(Stat::getName, name);

@@ -164,7 +164,7 @@ public class Slayer implements JpaModel {
         /**
          * Stats the level grants, read out of its {@link #unlocks} lines.
          *
-         * <p>Reading it probes the {@link Stat} repository and so needs a connected session.
+         * <p>Reading it scans the {@link Stat} repository and so needs a connected session.
          */
         public @NotNull ConcurrentMap<String, Double> getEffects() {
             ConcurrentMap<String, Double> held = this.effects;

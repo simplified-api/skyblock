@@ -238,9 +238,11 @@ reads as a corpus problem.
 
 `SkyBlockData.getRepository` hands back the session's own repository, which holds one generation of
 rows in memory. Every finder `Sortable` offers is written over `stream()` and every equality finder
-reaches `indexes()` first, so none of them performs I/O and a caller resolving many ids against one
-table pays nothing per id. A generation is read, linked and only then published, by one reference
-write, so a reader never sees a row whose links are still empty.
+reaches `indexes()` first, so none of them performs I/O. An equality finder over an `@Indexed`
+property probes a hash; no SkyBlock model declares one, so every finder scans the held rows, and a
+caller resolving many ids against one table pays one scan per id. A generation is read, linked and
+only then published, by one reference write, so a reader never sees a row whose links are still
+empty.
 
 - **A generation is re-read only when its document moves.** Every SkyBlock model declares
   `@Hydration(every = 10, unit = TimeUnit.MINUTES)`, so a session ticks every ten minutes. A model
