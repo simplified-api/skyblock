@@ -92,8 +92,8 @@ tick, every ten minutes
   read at the manifest's `revision`: the generator records the commit its checkout stood at, which
   is never the commit carrying the manifest, and a manifest regenerated locally over uncommitted
   files names a commit that does not hold the documents it fingerprints.
-- `CorpusOrigin.Writing` polls before it answers any layers, so a write merges against the manifest
-  as the branch holds it now rather than as the writer booted with it.
+- `CorpusOrigin.Writing` polls before it answers any layers, so a write resolves its layers from the
+  manifest as the branch holds it now rather than as the writer booted with it.
 - `connect` performs network I/O and fails rather than degrading. An unreachable `api.github.com` at
   startup is a failed connect, not a slow one: the session is shut down and never registered.
 - `JpaModel.resolveModels(Item.class)` scans the package `Item` lives in and keeps the 34 `JpaModel`
@@ -184,8 +184,16 @@ appended. `CorpusOrigin` reads it as the second layer of `items`, which is what 
 requests rather than 36. Adding
 one without its primary is the `orphan extra` abort.
 
-A write through `SkyBlockData.writing(...)` rewrites the first layer with the whole merged document,
-so the extra's rows land in `items.json` too; the extra itself is untouched and keeps overriding.
+A write through `SkyBlockData.writing(...)` lands in the layer that owns each row it names - the last
+layer carrying its id - so a balloon hat is written into the extra and any other existing item into
+`items.json`. A new item is added to the extra, which a regeneration of `items.json` leaves alone,
+and a delete removes the id from every layer carrying it. Only a file the write changes is
+rewritten, one commit each, so a write touching both layers is two commits.
+
+An id in the extra overrides the primary's row of that id for good, including one a later upstream
+dump starts carrying. The generator does not refuse the pair: `duplicate extra` counts files per
+table, not ids. An update the dump makes to such an item stays hidden until the row is removed from
+`items_extra.json` by hand, since a delete through the writer removes the id from both files.
 
 ## items.json is over the envelope cap
 

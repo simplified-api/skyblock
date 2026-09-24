@@ -120,7 +120,7 @@ class CorpusOrigin implements DocumentOrigin {
         /**
          * {@inheritDoc}
          *
-         * <p>The catalogue is refreshed first. A write resolves the layers it merges and rewrites
+         * <p>The catalogue is refreshed first. A write resolves the layers it reads and rewrites
          * through here, and nothing else need have refreshed the catalogue since the writer booted -
          * a source written without a session never ticks, and a session's ticks are minutes apart -
          * so without the refresh a write could resolve them from a catalogue older than the files it

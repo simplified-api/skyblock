@@ -203,11 +203,11 @@ A document's layers are listed in merge order: the primary first, then its `_ext
 
 ### Extras
 
-`<table>_extra.json` is an optional companion merged into its primary at load time, for entries maintained by hand beside a bulk-generated file - `items_extra.json` carries the anniversary balloon hats that no upstream dump contains.
+`<table>_extra.json` is an optional companion merged into its primary at load time, for entries kept beside a bulk-generated file - `items_extra.json` carries the anniversary balloon hats that no upstream dump contains, and every item a write adds.
 
 An extra has no document of its own; it is the second layer of its primary's. The layers merge by `@Id`, so a row the extra repeats replaces the primary's row of the same id in place and a new id is appended. An extra with no matching primary aborts the generator as an orphan.
 
-A write through `SkyBlockData.writing(...)` rewrites the first layer carrying the whole merged document, so the rows an extra carries are also written into its primary; the extra itself is left as it is and keeps overriding.
+A write through `SkyBlockData.writing(...)` lands in the layer that owns each row it names, so a balloon hat is written into the extra and any other existing item into `items.json`. A new item is added to the extra, which a regeneration of `items.json` leaves alone, and a delete removes the id from every layer carrying it. Only a file the write changes is rewritten, one commit each. An id in the extra keeps overriding the primary's row even once an upstream dump carries it, since the generator's `duplicate extra` check counts files, not ids.
 
 ### Versioning
 
