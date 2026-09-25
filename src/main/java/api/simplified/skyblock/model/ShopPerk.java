@@ -5,14 +5,18 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.ForeignIds;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * An Essence Shop perk - a permanent upgrade bought with essence at the shop of one region, unlocked
@@ -24,11 +28,13 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "shop_perks")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class ShopPerk implements JpaModel {
 
     /**
      * The perk's id, matching the key the wire uses under a member's purchased perks.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -71,7 +77,7 @@ public class ShopPerk implements JpaModel {
      * The {@link Region} rows behind {@link #regionIds}, filled in by the repository layer rather
      * than stored in a column.
      */
-    @ForeignIds("regionIds")
+    @Linked("regionIds")
     private transient @NotNull ConcurrentList<Region> regions = Concurrent.newList();
 
     /**

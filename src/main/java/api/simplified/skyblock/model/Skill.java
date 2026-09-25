@@ -1,13 +1,14 @@
 package api.simplified.skyblock.model;
 
-import api.simplified.skyblock.SkyBlockData;
 import com.google.gson.annotations.SerializedName;
+import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
-import dev.simplified.collection.tuple.pair.Pair;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
@@ -15,8 +16,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A skill - one of the tracks that levels as a member performs the matching activity, each level
@@ -28,11 +31,13 @@ import java.util.Map;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "skills")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Skill implements JpaModel {
 
     /**
      * The skill's id, matching the suffix the wire uses on a member's {@code experience_skill_*} keys.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -145,44 +150,28 @@ public class Skill implements JpaModel {
         private @NotNull ConcurrentList<String> unlocks = Concurrent.newList();
 
         /**
-         * Stats the level grants, derived by scraping each {@link #unlocks} line for a {@link Stat}
-         * name and reading the number out of it - a line starting {@code +} and ending in the stat's
-         * display name is a flat grant, a last line containing {@code Grants +} is a tiered one, and
-         * an arrow means take the right-hand side.
+         * What {@link #getEffects()} resolved, held because the rows it reads cannot move underneath
+         * it: a level is rebuilt from its document every time a generation is published, so an
+         * instance only ever answers for the generation it was parsed into.
+         */
+        @Getter(AccessLevel.NONE)
+        private transient @Nullable ConcurrentMap<String, Double> effects;
+
+        /**
+         * Stats the level grants, read out of its {@link #unlocks} lines.
          *
-         * <p>
-         * The match is on the wording the game prints, so an upstream rewording silently yields
-         * nothing rather than failing. Reading it walks the {@link Stat} repository and so needs a
-         * connected session.
+         * <p>Reading it looks names up in the {@link Stat} repository and so needs a connected
+         * session.
          */
         public @NotNull ConcurrentMap<String, Double> getEffects() {
-            return SkyBlockData.getRepository(Stat.class)
-                .stream()
-                .map(stat -> Pair.of(
-                    stat.getId(),
-                    this.getUnlocks()
-                        .indexedStream()
-                        .collapseToSingle((line, index, size) -> {
-                            String value = "0.0";
+            ConcurrentMap<String, Double> held = this.effects;
 
-                            if (line.startsWith("+") && line.endsWith(stat.getName())) // Flat
-                                value = line.split("\\s+")[0];
-                            else if (line.contains("Grants +") && line.contains(stat.getName()) && index == size - 1) // Tiered
-                                value = line.split("\\s+")[2];
+            // Two readers racing here both resolve the same rows into equal maps, so the loser of
+            // the write has nothing to lose.
+            if (held == null)
+                this.effects = held = Stat.Grants.of(this.getUnlocks());
 
-                            value = value.replace("+", "");
-                            value = value.replace("%", "");
-
-                            if (value.contains("➜")) // Tiered
-                                value = value.split("➜")[1];
-
-                            return value;
-                        })
-                        .mapToDouble(Double::parseDouble)
-                        .sum()
-                ))
-                .filter(entry -> entry.getValue() > 0.0)
-                .collect(Concurrent.toUnmodifiableMap());
+            return held;
         }
 
     }

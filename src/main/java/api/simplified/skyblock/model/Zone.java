@@ -3,17 +3,20 @@ package api.simplified.skyblock.model;
 import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A zone - one named area inside a region, the granularity the game shows in the sidebar and the
@@ -24,14 +27,16 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "region")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "zones")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Zone implements JpaModel {
 
     /**
      * The zone's id, the token a description writes as {@code %{ZONE:THE_CATACOMBS}}. It can equal
      * the owning region's id where that region holds a single area.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -60,8 +65,7 @@ public class Zone implements JpaModel {
      * The {@link Region} row behind {@link #regionId}, resolved on the same column and the inverse of
      * {@link Region#zones}.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "region_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Region region;
+    @Linked("regionId")
+    private transient @NotNull Region region;
 
 }

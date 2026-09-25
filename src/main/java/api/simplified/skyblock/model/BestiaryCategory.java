@@ -1,23 +1,23 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * One top-level tab of the Bestiary, the in-game record of a member's kills against every mob.
@@ -30,13 +30,15 @@ import java.util.Optional;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "region")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "bestiary_categories")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class BestiaryCategory implements JpaModel {
 
     /**
      * The category's own id, the value a {@link BestiaryFamily} names as its category.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -68,17 +70,11 @@ public class BestiaryCategory implements JpaModel {
     @Column(name = "ordinal", nullable = false)
     private int ordinal = -1;
 
-    @ManyToOne
-    @Getter(AccessLevel.NONE)
-    @JoinColumn(name = "region_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @Nullable Region region;
-
     /**
      * The resolved {@link Region} behind the category's region id, empty for a category that is not
-     * a place.
+     * a place or whose region id names no region.
      */
-    public @NotNull Optional<Region> getRegion() {
-        return Optional.ofNullable(this.region);
-    }
+    @Linked("regionId")
+    private transient @NotNull Optional<Region> region = Optional.empty();
 
 }

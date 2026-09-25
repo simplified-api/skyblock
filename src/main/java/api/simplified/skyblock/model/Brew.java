@@ -3,6 +3,8 @@ package api.simplified.skyblock.model;
 import api.simplified.skyblock.common.Rarity;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +13,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A potion modifier, brewed in place of an Awkward Potion so that the finished potion carries an
@@ -22,11 +26,13 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "brews")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Brew implements JpaModel {
 
     /**
      * The brew's id.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

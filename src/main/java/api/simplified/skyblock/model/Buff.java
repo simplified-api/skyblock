@@ -11,7 +11,10 @@ import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
 import dev.simplified.collection.ConcurrentSet;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.collection.query.SearchFunction;
 import dev.simplified.gson.annotation.SerializedPath;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
@@ -24,8 +27,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 /**
  * Everything one named thing contributes to a member's stats, in one place.
@@ -93,11 +96,13 @@ import java.util.function.Function;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "buffs")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Buff implements JpaModel {
 
     /**
      * The row's own key, unique across the file, and what a defect report names.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -592,7 +597,7 @@ public class Buff implements JpaModel {
          *
          * <pre><code>
          *   op                       reads          input is
-         *   --                       -----          --------
+         *   -                       -----          --------
          *   GT, GTE, LT, LTE         amount         a number
          *   EQ, NE                   amount or key  either, matching the side given
          *   IN, NOT_IN               keys           a key
@@ -1895,7 +1900,7 @@ public class Buff implements JpaModel {
                 forEachCondition(condition.getNot(), visitor);
         }
 
-        private static <T extends JpaModel> boolean unresolved(@NotNull Class<T> model, @NotNull Function<T, String> idOf, @NotNull String id) {
+        private static <T extends JpaModel> boolean unresolved(@NotNull Class<T> model, @NotNull SearchFunction<T, String> idOf, @NotNull String id) {
             return SkyBlockData.getRepository(model).findFirst(idOf, id).isEmpty();
         }
 

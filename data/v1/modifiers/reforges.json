@@ -348,54 +348,6 @@
     ]
   },
   {
-    "id": "RICH",
-    "name": "Rich",
-    "requiredLevel": 0,
-    "categories": [
-      "SWORD",
-      "LONGSWORD",
-      "FISHING_ROD"
-    ],
-    "stats": [
-      {
-        "id": "INTELLIGENCE",
-        "values": {
-          "COMMON": 3.0,
-          "UNCOMMON": 6.0,
-          "RARE": 10.0,
-          "EPIC": 15.0,
-          "LEGENDARY": 20.0,
-          "MYTHIC": 20.0,
-          "DIVINE": 20.0
-        }
-      },
-      {
-        "id": "CRIT_CHANCE",
-        "values": {
-          "COMMON": 1.0,
-          "UNCOMMON": 2.0,
-          "RARE": 4.0,
-          "EPIC": 7.0,
-          "LEGENDARY": 10.0,
-          "MYTHIC": 10.0,
-          "DIVINE": 10.0
-        }
-      },
-      {
-        "id": "CRIT_DAMAGE",
-        "values": {
-          "COMMON": 1.0,
-          "UNCOMMON": 2.0,
-          "RARE": 4.0,
-          "EPIC": 7.0,
-          "LEGENDARY": 10.0,
-          "MYTHIC": 10.0,
-          "DIVINE": 10.0
-        }
-      }
-    ]
-  },
-  {
     "id": "SHARP",
     "name": "Sharp",
     "requiredLevel": 0,
@@ -1146,52 +1098,6 @@
           "LEGENDARY": 30.0,
           "MYTHIC": 40.0,
           "DIVINE": 40.0
-        }
-      }
-    ]
-  },
-  {
-    "id": "ODD",
-    "name": "Odd",
-    "requiredLevel": 0,
-    "categories": [
-      "BOW"
-    ],
-    "stats": [
-      {
-        "id": "INTELLIGENCE",
-        "values": {
-          "COMMON": -5.0,
-          "UNCOMMON": -10.0,
-          "RARE": -18.0,
-          "EPIC": -32.0,
-          "LEGENDARY": -50.0,
-          "MYTHIC": -50.0,
-          "DIVINE": -50.0
-        }
-      },
-      {
-        "id": "CRIT_CHANCE",
-        "values": {
-          "COMMON": 1.0,
-          "UNCOMMON": 2.0,
-          "RARE": 4.0,
-          "EPIC": 7.0,
-          "LEGENDARY": 10.0,
-          "MYTHIC": 10.0,
-          "DIVINE": 10.0
-        }
-      },
-      {
-        "id": "CRIT_DAMAGE",
-        "values": {
-          "COMMON": 1.0,
-          "UNCOMMON": 2.0,
-          "RARE": 4.0,
-          "EPIC": 7.0,
-          "LEGENDARY": 10.0,
-          "MYTHIC": 10.0,
-          "DIVINE": 10.0
         }
       }
     ]

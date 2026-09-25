@@ -2,6 +2,8 @@ package api.simplified.skyblock.model;
 
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +13,7 @@ import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The display vocabulary for one named game term - how it is spelled, pluralised, coloured and
@@ -25,11 +28,13 @@ import java.util.Optional;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "keywords")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Keyword implements JpaModel {
 
     /**
      * The term's id, the token a description writes as {@code %{KEYWORD:ID}}.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

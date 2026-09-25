@@ -32,18 +32,18 @@ dependencies {
     testImplementation(libs.junit.platform.launcher)
 
     // Sibling API modules (composite-build substitutes by project name)
-    api("com.github.simplified-api:github") { version { strictly("b64127c") } }
+    api("com.github.simplified-api:github") { version { strictly("7847ddf") } }
 
     // Simplified Libraries (github.com/simplified-dev)
-    api("com.github.simplified-dev:collections") { version { strictly("9696ca5") } }
-    api("com.github.simplified-dev:utils") { version { strictly("3d8af56") } }
-    api("com.github.simplified-dev:reflection") { version { strictly("158edbc") } }
-    api("com.github.simplified-dev:gson-extras") { version { strictly("ed1d77e") } }
-    api("com.github.simplified-dev:persistence") { version { strictly("2d6b0e7") } }
+    api("com.github.simplified-dev:collections") { version { strictly("4029e80") } }
+    api("com.github.simplified-dev:utils") { version { strictly("92ae878") } }
+    api("com.github.simplified-dev:reflection") { version { strictly("5186e88") } }
+    api("com.github.simplified-dev:gson-extras") { version { strictly("3ac0d4f") } }
+    api("com.github.simplified-dev:persistence") { version { strictly("ecc0e43") } }
 
     // Minecraft-Library (github.com/minecraft-library)
     // StatCategory, Rarity, BestiaryCategory, etc. store ChatColor values.
-    api("com.github.minecraft-library:text") { version { strictly("84f8f1a") } }
+    api("com.github.minecraft-library:text") { version { strictly("ab36b42") } }
 
     // Gson - @GsonType-annotated inner classes plus direct Deserializer/TypeAdapter usage
     api(libs.gson)

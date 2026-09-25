@@ -9,8 +9,10 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.ForeignIds;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -51,11 +53,13 @@ import java.util.concurrent.TimeUnit;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "events")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Event implements JpaModel {
 
     /**
      * The event's id, spelled as the event's name - {@code TRAVELING_ZOO}.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -108,14 +112,14 @@ public class Event implements JpaModel {
      * The {@link Mayor} rows behind {@link #mayorIds}, filled in by the repository layer rather than
      * stored in a column.
      */
-    @ForeignIds("mayorIds")
+    @Linked("mayorIds")
     private transient @NotNull ConcurrentList<Mayor> mayors = Concurrent.newList();
 
     /**
      * The {@link Mayor} rows behind {@link #suppressedByMayorIds}, filled in by the repository layer
      * rather than stored in a column.
      */
-    @ForeignIds("suppressedByMayorIds")
+    @Linked("suppressedByMayorIds")
     private transient @NotNull ConcurrentList<Mayor> suppressedByMayors = Concurrent.newList();
 
     /**

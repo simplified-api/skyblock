@@ -1,25 +1,25 @@
 package api.simplified.skyblock.model;
 
 import com.google.gson.annotations.SerializedName;
-import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.util.StringUtil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * An accessory bag power - the bag-wide stat profile selected at Maxwell in the Thaumaturgist, whose
@@ -34,13 +34,15 @@ import java.util.Optional;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "stone")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "powers")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Power implements JpaModel {
 
     /**
      * The power's id, matching the value the wire stores as the member's selected power.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -52,8 +54,10 @@ public class Power implements JpaModel {
     private @NotNull String name = "";
 
     /**
-     * Id of the power stone that unlocks the power, absent for the powers unlocked by other means.
+     * Id of the power stone that unlocks the power, bound from the wire key {@code stone} and absent
+     * for the powers unlocked by other means.
      */
+    @SerializedName("stone")
     @Column(name = "stone_id")
     private @NotNull Optional<String> stoneId = Optional.empty();
 
@@ -85,18 +89,12 @@ public class Power implements JpaModel {
     @Column(name = "bonuses", nullable = false)
     private @NotNull ConcurrentMap<String, Double> bonuses = Concurrent.newMap();
 
-    @ManyToOne
-    @Getter(AccessLevel.NONE)
-    @JoinColumn(name = "stone_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @Nullable Item stone;
-
     /**
      * The {@link Item} row the power's stone id names, resolved on the same column and empty when the
-     * power has no stone.
+     * power has no stone or its stone id names no item.
      */
-    public @NotNull Optional<Item> getStone() {
-        return Optional.ofNullable(this.stone);
-    }
+    @Linked("stoneId")
+    private transient @NotNull Optional<Item> stone = Optional.empty();
 
     /**
      * How far into a profile's progression a power is meant to be used, earliest first.

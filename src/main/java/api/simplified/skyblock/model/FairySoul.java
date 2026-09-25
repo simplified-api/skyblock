@@ -3,14 +3,17 @@ package api.simplified.skyblock.model;
 import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * One fairy soul's location - the collectibles scattered across the world that grant SkyBlock
@@ -25,13 +28,15 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = { "id", "zone" })
+@EqualsAndHashCode(useAccessors = true, exclude = "id")
 @Table(name = "fairy_souls")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class FairySoul implements JpaModel {
 
     /**
      * A numeric index for the soul, and the row's primary key.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private int id = 0;
@@ -70,8 +75,7 @@ public class FairySoul implements JpaModel {
     /**
      * The {@link Zone} resolved from {@link #zoneId}, mapped read-only onto the same column.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "zone_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Zone zone;
+    @Linked("zoneId")
+    private transient @NotNull Zone zone;
 
 }

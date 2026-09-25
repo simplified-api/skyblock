@@ -4,6 +4,8 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
@@ -15,6 +17,8 @@ import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * A mayoral candidate in the SkyBlock election - an NPC who, once elected, applies a set of global
  * perks to the whole server for the term.
@@ -25,12 +29,14 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "mayors")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Mayor implements JpaModel {
 
     /**
      * The candidate's id, which names the campaign slot rather than the person - the slot
      * {@code SLAYER_CANDIDATE} is Aatrox.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

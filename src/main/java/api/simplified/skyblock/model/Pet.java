@@ -8,7 +8,10 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import dev.simplified.util.StringUtil;
 import jakarta.persistence.Column;
@@ -16,11 +19,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A pet type - a companion granting stats and perks that scale with both its level and its
@@ -30,13 +33,15 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "skill")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "pets")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Pet implements JpaModel {
 
     /**
      * The pet's id, matching the pet type the wire names.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -95,9 +100,8 @@ public class Pet implements JpaModel {
     /**
      * The resolved {@link Skill}, read from the same column {@code skillId} is stored in.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "skill_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull Skill skill;
+    @Linked("skillId")
+    private transient @NotNull Skill skill;
 
     /**
      * Narrows the pet's stats to those defined at a given rarity.

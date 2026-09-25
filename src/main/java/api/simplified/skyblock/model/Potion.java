@@ -4,12 +4,16 @@ import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A potion effect - one brewable or granted buff with a level ladder, whose stats apply for as long
@@ -21,11 +25,13 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "potions")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Potion implements JpaModel {
 
     /**
      * The effect's id, matching the key the wire uses under a member's active effects.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";

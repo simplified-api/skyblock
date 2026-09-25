@@ -7,8 +7,10 @@ import dev.simplified.annotations.Getter;
 import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.ForeignIds;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,6 +23,7 @@ import lib.minecraft.text.ChatFormat;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * One SkyBlock enchantment - the expanded form of vanilla enchanting, applied to gear from an
@@ -32,11 +35,13 @@ import java.util.Optional;
 @Entity
 @EqualsAndHashCode(useAccessors = true)
 @Table(name = "enchantments")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Enchantment implements JpaModel {
 
     /**
      * The enchantment's id.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -114,21 +119,21 @@ public class Enchantment implements JpaModel {
      * The {@link ItemCategory} rows resolved from {@link #categoryIds}, filled in by the repository
      * layer rather than bound.
      */
-    @ForeignIds("categoryIds")
+    @Linked("categoryIds")
     private transient @NotNull ConcurrentList<ItemCategory> categories = Concurrent.newList();
 
     /**
      * The {@link Item} rows resolved from {@link #itemIds}, filled in by the repository layer rather
      * than bound.
      */
-    @ForeignIds("itemIds")
+    @Linked("itemIds")
     private transient @NotNull ConcurrentList<Item> items = Concurrent.newList();
 
     /**
      * The {@link MobType} rows resolved from {@link #mobTypeIds}, filled in by the repository layer
      * rather than bound.
      */
-    @ForeignIds("mobTypeIds")
+    @Linked("mobTypeIds")
     private transient @NotNull ConcurrentList<MobType> mobTypes = Concurrent.newList();
 
     /**

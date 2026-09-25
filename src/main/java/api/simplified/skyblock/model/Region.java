@@ -2,19 +2,19 @@ package api.simplified.skyblock.model;
 
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A region - one of the top-level worlds a member can be in, such as the Hub, the Dwarven Mines, the
@@ -25,13 +25,15 @@ import java.util.List;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "zones")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "regions")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Region implements JpaModel {
 
     /**
      * The region's id.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -59,15 +61,8 @@ public class Region implements JpaModel {
     /**
      * The Hypixel server mode reported for the region, the finer half of that same match.
      */
+    @Indexed
     @Column(name = "mode", nullable = false)
     private @NotNull String mode = "";
-
-    /**
-     * Zones this region contains, owned by {@link Zone#region} and populated by the provider,
-     * which supplies its own list implementation. It takes no part in equality, so region identity is
-     * the bound columns alone.
-     */
-    @OneToMany(mappedBy = "region")
-    private @NotNull List<Zone> zones = new ArrayList<>();
 
 }

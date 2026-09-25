@@ -3,17 +3,20 @@ package api.simplified.skyblock.model;
 import com.google.gson.annotations.SerializedName;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lib.minecraft.text.ChatColor;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A second-level grouping inside a {@link BestiaryCategory}, used where one place holds several
@@ -23,13 +26,15 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "category")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "bestiary_subcategories")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class BestiarySubcategory implements JpaModel {
 
     /**
      * The subcategory's id, the value a {@link BestiaryFamily} names as its subcategory.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -63,8 +68,7 @@ public class BestiarySubcategory implements JpaModel {
     /**
      * The resolved {@link BestiaryCategory} behind the category id.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull BestiaryCategory category;
+    @Linked("categoryId")
+    private transient @NotNull BestiaryCategory category;
 
 }

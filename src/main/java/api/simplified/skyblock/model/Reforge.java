@@ -3,25 +3,24 @@ package api.simplified.skyblock.model;
 import api.simplified.skyblock.SkyBlockData;
 import api.simplified.skyblock.common.Rarity;
 import com.google.gson.annotations.SerializedName;
-import dev.simplified.annotations.AccessLevel;
 import dev.simplified.annotations.EqualsAndHashCode;
 import dev.simplified.annotations.Getter;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
-import dev.simplified.persistence.ForeignIds;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A reforge - the modifier applied to a weapon, a piece of armour or a tool for coins, granting
@@ -31,13 +30,15 @@ import java.util.Optional;
  */
 @Getter
 @Entity
-@EqualsAndHashCode(useAccessors = true, exclude = "stone")
+@EqualsAndHashCode(useAccessors = true)
 @Table(name = "reforges")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Reforge implements JpaModel {
 
     /**
      * The reforge's id, matching the value the wire stores on the reforged item.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -49,9 +50,10 @@ public class Reforge implements JpaModel {
     private @NotNull String name = "";
 
     /**
-     * Id of the reforge stone that applies the reforge, absent for the basic reforges bought at the
-     * Blacksmith.
+     * Id of the reforge stone that applies the reforge, bound from the wire key {@code stone} and
+     * absent for the basic reforges bought at the Blacksmith.
      */
+    @SerializedName("stone")
     @Column(name = "stone_id")
     private @NotNull Optional<String> stoneId = Optional.empty();
 
@@ -83,36 +85,30 @@ public class Reforge implements JpaModel {
     @Column(name = "stats", nullable = false)
     private @NotNull ConcurrentList<Substitute> stats = Concurrent.newList();
 
-    @ManyToOne
-    @Getter(AccessLevel.NONE)
-    @JoinColumn(name = "stone_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @Nullable Item stone;
+    /**
+     * The {@link Item} row the reforge's stone id names, resolved on the same column and empty when
+     * the reforge has no stone or its stone id names no item.
+     */
+    @Linked("stoneId")
+    private transient @NotNull Optional<Item> stone = Optional.empty();
 
     /**
      * The {@link ItemCategory} rows behind {@link #categoryIds}, filled in by the repository layer
      * rather than stored in a column.
      */
-    @ForeignIds("categoryIds")
+    @Linked("categoryIds")
     private transient @NotNull ConcurrentList<ItemCategory> categories = Concurrent.newList();
 
     /**
      * The {@link Item} rows behind {@link #itemIds}, filled in by the repository layer rather than
      * stored in a column.
      */
-    @ForeignIds("itemIds")
+    @Linked("itemIds")
     private transient @NotNull ConcurrentList<Item> items = Concurrent.newList();
 
     /**
-     * The {@link Item} row the reforge's stone id names, resolved on the same column and empty when
-     * the reforge has no stone.
-     */
-    public @NotNull Optional<Item> getStone() {
-        return Optional.ofNullable(this.stone);
-    }
-
-    /**
      * Whether a reforge stone id is stored. It is read off the id column rather than the resolved
-     * association, so a missing item row leaves this true while {@link #getStone()} is empty.
+     * link, so a stone id naming no item leaves this true while {@link #getStone()} is empty.
      */
     public boolean hasStone() {
         return this.stoneId.isPresent();

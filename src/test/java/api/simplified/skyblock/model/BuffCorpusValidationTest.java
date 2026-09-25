@@ -1,11 +1,10 @@
 package api.simplified.skyblock.model;
 
+import api.simplified.skyblock.LocalSkyBlockData.Checkout;
 import api.simplified.skyblock.LocalSkyBlockData;
 import api.simplified.skyblock.SkyBlockData;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
-import dev.simplified.persistence.JpaSession;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -35,7 +34,6 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
  */
 class BuffCorpusValidationTest {
 
-    private static JpaSession session;
     private static ConcurrentList<Buff> rows;
 
     @BeforeAll
@@ -45,15 +43,8 @@ class BuffCorpusValidationTest {
         ConcurrentList<String> uncovered = LocalSkyBlockData.uncoveredModels(corpus);
         assumeTrue(uncovered.isEmpty(), "the models and the manifest are of different vintages - the manifest carries no file for " + uncovered);
 
-        session = LocalSkyBlockData.connect(corpus);
+        SkyBlockData.connect(new Checkout(corpus));
         rows = SkyBlockData.getRepository(Buff.class).findAll();
-    }
-
-    @AfterAll
-    static void releaseSession() {
-        LocalSkyBlockData.disconnect(session);
-        session = null;
-        rows = null;
     }
 
     @Test

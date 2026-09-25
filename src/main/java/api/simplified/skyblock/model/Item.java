@@ -13,15 +13,16 @@ import dev.simplified.annotations.NoArgsConstructor;
 import dev.simplified.collection.Concurrent;
 import dev.simplified.collection.ConcurrentList;
 import dev.simplified.collection.ConcurrentMap;
+import dev.simplified.collection.query.Indexed;
+import dev.simplified.persistence.Hydration;
 import dev.simplified.persistence.JpaModel;
+import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.type.GsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import org.jetbrains.annotations.NotNull;
@@ -29,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.*;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The catalogue entry for one SkyBlock item - the row behind every id the wire names in an
@@ -48,11 +50,13 @@ import java.util.Optional;
     "dungeon_item", "rift_transferrable", "soulbound"
 })
 @Table(name = "items")
+@Hydration(every = 10, unit = TimeUnit.MINUTES)
 public class Item implements JpaModel {
 
     /**
      * The SkyBlock item id, and the key every other table joins on.
      */
+    @Indexed(unique = true)
     @Id
     @Column(name = "id", nullable = false)
     private @NotNull String id = "";
@@ -184,9 +188,8 @@ public class Item implements JpaModel {
     /**
      * The resolved {@link ItemCategory}, read from the same column {@code categoryId} is stored in.
      */
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private @NotNull ItemCategory category;
+    @Linked("categoryId")
+    private transient @NotNull ItemCategory category;
 
     /**
      * The hidden flags folded into one value, worked out on the first call and reused thereafter.
