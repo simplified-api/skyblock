@@ -31,8 +31,9 @@ Two gates, and neither substitutes for the other.
 `CorpusOriginTest` answers the Contents API from memory; `EventTest`, `LadderBindingTest` and
 `SkyBlockDateTest` bind fixture strings in-process and connect to nothing.
 
-The five that connect hand `SkyBlockData.connect(origin)` a `LocalSkyBlockData.Checkout`, an origin
-reading `data/v1/index.json` and the layers it names off disk under `skyblock.corpus.root`, so the
+The five that connect hand `SkyBlockData.connect(source)` a `LocalSkyBlockData.checkout(root)`, a
+read-only source builder reading `data/v1/index.json` and the layers it names off disk under
+`skyblock.corpus.root`, so the
 session reads the same resolved models with the same `corpusSettings()` as the published connect.
 The corpus connects once per JVM and the first connect wins: whichever suite runs first reads the
 checkout, every later connect returns that session, and nothing disconnects it. Every suite connects
@@ -93,8 +94,9 @@ tick, every ten minutes
   read at the manifest's `revision`: the generator records the commit its checkout stood at, which
   is never the commit carrying the manifest, and a manifest regenerated locally over uncommitted
   files names a commit that does not hold the documents it fingerprints.
-- `CorpusOrigin.Writing` polls before it answers any layers, so a write resolves its layers from the
-  manifest as the branch holds it now rather than as the writer booted with it.
+- `CorpusOrigin.writing` answers layers through `refreshedLayersOf`, which polls first, so a write
+  resolves its layers from the manifest as the branch holds it now rather than as the writer booted
+  with it.
 - `connect` performs network I/O and fails rather than degrading. An unreachable `api.github.com` at
   startup is a failed connect, not a slow one: the session is shut down and never registered.
 - `JpaModel.resolveModels(Item.class)` scans the package `Item` lives in and keeps the 34 `JpaModel`
@@ -285,12 +287,13 @@ a `ClientConfig` carries one static header set; nothing here builds a Feign clie
 
 | Built by | Source | Can write |
 |---|---|---|
-| `connect()` | `DocumentSource` over `CorpusOrigin`, unauthenticated | no |
-| `connect(origin)` | `DocumentSource` over the origin handed in | no |
-| `writing(corpus)` | `DocumentSource.Writable` over `CorpusOrigin.Writing` | yes |
+| `connect()` | `DocumentSource.ReadOnly` that `CorpusOrigin.reading` fills, unauthenticated | no |
+| `connect(source)` | `DocumentSource.ReadOnly` from the builder handed in | no |
+| `writing(corpus)` | `DocumentSource.ReadWrite` that `CorpusOrigin.writing` fills | yes |
 
-The write instruction is a property of the source's type, not a setting on it: `CorpusOrigin.Writing`
-is the only `DocumentOrigin.Writable` here and only `writing(...)` constructs it. The session a
+The write instruction is a property of the source's type, not a setting on it: only a
+`DocumentSource.ReadWrite` builder takes one, and only `CorpusOrigin.writing`, reached through
+`writing(...)`, gives it one here. The session a
 connect holds has no write half to reach for, and `SkyBlockData` offers no write: a caller that
 writes the corpus connects `writing(corpus)` on a `SessionManager` of its own and writes through that
 session. A write is one edit per file, committed as `Update <path>`: the file's text and blob sha
@@ -370,8 +373,8 @@ reason to skip regenerating in the PR.
   function over loaded rows, called by the gate rather than by the load.
 - Do not drop the catalogue hold in `GitHubCorpus.manifest()`. It is the difference between one
   request and 34 per connect.
-- Do not give `connect()` a switch to read disk. A suite hands `connect(origin)` a
-  `LocalSkyBlockData.Checkout`; a switch on the shipped connect is a production path nothing runs.
+- Do not give `connect()` a switch to read disk. A suite hands `connect(source)` a
+  `LocalSkyBlockData.checkout(root)`; a switch on the shipped connect is a production path nothing runs.
 - Do not build a GitHub client here. `GitHubCorpus` assembles both Contents proxies with their two
   media types, and a second hand-built pair drifts the moment one of them is copied without the other.
 - Do not register a model by name. The package is the registration; a second mechanism would let the

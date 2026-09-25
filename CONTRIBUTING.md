@@ -382,7 +382,7 @@ SkyBlockData.connect()                               # a later connect returns t
 
 `connect` parses with `SkyBlockData.corpusSettings()`, which sets `StringType.DEFAULT` on top of `GsonSettings.defaults()`. That is deliberate: the corpus carries empty strings for columns declared `nullable = false`, and the default string type would turn them into nulls.
 
-The suite takes the same route with the reads pointed at the checkout - it hands `SkyBlockData.connect(origin)` a `LocalSkyBlockData.Checkout`, an origin reading `data/v1/` off disk, so the session reads the same resolved models with the same `corpusSettings()`, which is why `./gradlew test` needs no token. The corpus connects once per JVM and the first connect wins, so every suite reads the session whichever suite ran first connected, and none disconnects it. A test that has to observe a connect of its own - counting the reads it makes, say - connects a `JpaConfig` over a `Checkout` on a `SessionManager` it owns.
+The suite takes the same route with the reads pointed at the checkout - it hands `SkyBlockData.connect(source)` a `LocalSkyBlockData.checkout(root)`, a read-only source builder reading `data/v1/` off disk, so the session reads the same resolved models with the same `corpusSettings()`, which is why `./gradlew test` needs no token. The corpus connects once per JVM and the first connect wins, so every suite reads the session whichever suite ran first connected, and none disconnects it. A test that has to observe a connect of its own - counting the reads it makes, say - connects a `JpaConfig` over a `checkout(root)` built with `corpusSettings()` on a `SessionManager` it owns.
 
 ### The Gson contributor runs last
 

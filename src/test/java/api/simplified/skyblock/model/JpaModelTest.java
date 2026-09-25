@@ -1,6 +1,5 @@
 package api.simplified.skyblock.model;
 
-import api.simplified.skyblock.LocalSkyBlockData.Checkout;
 import api.simplified.skyblock.LocalSkyBlockData;
 import api.simplified.skyblock.SkyBlockData;
 import api.simplified.skyblock.date.SkyBlockDate.Length;
@@ -18,6 +17,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static api.simplified.skyblock.LocalSkyBlockData.checkout;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -26,7 +26,7 @@ public class JpaModelTest {
 
     @BeforeAll
     static void connectSession() {
-        SkyBlockData.connect(new Checkout(LocalSkyBlockData.root()));
+        SkyBlockData.connect(checkout(LocalSkyBlockData.root()));
     }
 
     // ---------------------------------------------------------------

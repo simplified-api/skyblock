@@ -13,7 +13,6 @@ import dev.simplified.persistence.Linked;
 import dev.simplified.persistence.Repository;
 import dev.simplified.persistence.SessionManager;
 import dev.simplified.persistence.exception.JpaException;
-import dev.simplified.persistence.source.DocumentOrigin;
 import dev.simplified.persistence.source.DocumentSource;
 import dev.simplified.persistence.source.Source;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +31,8 @@ import org.jetbrains.annotations.Nullable;
  * can force the corpus to be re-read or open a second session over it. Nothing disconnects the
  * session: the manager's JVM shutdown hook shuts it down at exit.
  * <p>
- * The corpus session is read-only. A caller that writes the corpus back connects the source
+ * The corpus session is read-only: it is connected over a {@link DocumentSource.ReadOnly}, which is
+ * no {@link Source.Writable}. A caller that writes the corpus back connects the source
  * {@link #writing(GitHubCorpus)} returns on a {@link SessionManager} of its own and writes through
  * that session, and a caller with tables of its own connects and reads them on its own manager too.
  * <p>
@@ -91,9 +91,9 @@ public class SkyBlockData {
      * Connects the SkyBlock session over the corpus published on GitHub, or returns the session an
      * earlier connect holds.
      *
-     * <p>This is {@link #connect(DocumentOrigin)} over the published corpus, and the first connect in
-     * a JVM wins in the same way: a later connect returns the held session, builds no corpus and makes
-     * no request.
+     * <p>This is {@link #connect(DocumentSource.ReadOnly.Builder)} over the published corpus, and the
+     * first connect in a JVM wins in the same way: a later connect returns the held session, builds no
+     * corpus and makes no request.
      *
      * <p>No database is opened: the rows the corpus publishes are held in memory and every finder
      * answers from them. The corpus is read unauthenticated, which GitHub limits to 60 requests per
@@ -106,33 +106,33 @@ public class SkyBlockData {
      *         which case nothing is held and the next connect tries again
      */
     public static synchronized @NotNull JpaSession connect() {
-        return session != null ? session : connect(new CorpusOrigin(corpus().build()));
+        return session != null ? session : connect(CorpusOrigin.reading(corpus().build()));
     }
 
     /**
-     * Connects the SkyBlock session over the given origin, or returns the session an earlier connect
-     * holds.
+     * Connects the SkyBlock session over the source the given builder describes, or returns the
+     * session an earlier connect holds.
      *
      * <p>The first connect in a JVM wins. It registers every model under the {@link Item} package with
-     * the {@link SessionManager} and hydrates each one from the layers the origin names, parsed with
-     * {@link #corpusSettings()}. Every later connect, over this origin or any other, returns the
-     * session that connect holds and never asks its own origin anything. Concurrent first calls
-     * connect once: one reads and the others return its session. A connect that fails holds nothing,
-     * so the next one tries again.
+     * the {@link SessionManager} and hydrates each one from the layers the source names, parsed with
+     * {@link #corpusSettings()} whatever parser the builder held. Every later connect, over this source
+     * or any other, returns the session that connect holds, never builds its own source and never asks
+     * it anything. Concurrent first calls connect once: one reads and the others return its session. A
+     * connect that fails holds nothing, so the next one tries again.
      *
      * <p>Nothing disconnects the session. The manager's JVM shutdown hook shuts it down at exit.
      *
-     * @param origin where each document's layers are read from, asked only when this call is the one
+     * @param source where each document's layers are read from, built only when this call is the one
      *        that connects
      * @return the corpus session
      * @throws JpaException if this call is the one that connects and a model fails to read or link, in
      *         which case nothing is held and the next connect tries again
      */
-    public static synchronized @NotNull JpaSession connect(@NotNull DocumentOrigin origin) {
+    public static synchronized @NotNull JpaSession connect(@NotNull DocumentSource.ReadOnly.Builder source) {
         if (session == null) {
             session = sessionManager.connect(new JpaConfig(
                 JpaModel.resolveModels(Item.class),
-                new DocumentSource(origin, corpusSettings().create())
+                source.withGson(corpusSettings().create()).build()
             ));
         }
 
@@ -143,14 +143,16 @@ public class SkyBlockData {
      * Returns a source that reads the given corpus and also writes it back.
      *
      * <p>Which of the two a caller builds is the whole of the difference between a deployment that
-     * reads the corpus and the one that maintains it. Nothing downstream can turn one into the other,
-     * because the write instruction is a property of the source rather than a setting on it.
+     * reads the corpus and the one that maintains it. Nothing downstream can turn one into the other:
+     * only a read-write builder takes the write instruction, and a built source cannot be built again.
      *
      * @param corpus the repository the documents are published from, named with a token
      * @return a source reading and writing that corpus
      */
     public static @NotNull Source.Writable writing(@NotNull GitHubCorpus corpus) {
-        return new DocumentSource.Writable(new CorpusOrigin.Writing(corpus), corpusSettings().create());
+        return CorpusOrigin.writing(corpus)
+            .withGson(corpusSettings().create())
+            .build();
     }
 
     /**

@@ -190,7 +190,7 @@ class CorpusOriginTest {
     @Test
     @DisplayName("a first check reads the branch tip, then the catalogue at that tip, and answers each document's fingerprint from it")
     void aFirstCheckReadsTheCatalogueAtTheTip() {
-        ConcurrentMap<String, String> fingerprints = new CorpusOrigin(this.corpus).fingerprints();
+        ConcurrentMap<String, String> fingerprints = CorpusOrigin.fingerprints(this.corpus);
 
         assertThat(fingerprints.keySet(), containsInAnyOrder("items", "stat_categories"));
         assertThat(fingerprints.get("items"), equalTo(this.corpus.manifest().fingerprintOf("items").orElseThrow()));
@@ -202,10 +202,8 @@ class CorpusOriginTest {
     @Test
     @DisplayName("a check against a branch that has not moved costs one request and answers the same fingerprints")
     void anUnmovedTipReadsNothingMore() {
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
-
-        ConcurrentMap<String, String> first = origin.fingerprints();
-        ConcurrentMap<String, String> second = origin.fingerprints();
+        ConcurrentMap<String, String> first = CorpusOrigin.fingerprints(this.corpus);
+        ConcurrentMap<String, String> second = CorpusOrigin.fingerprints(this.corpus);
 
         assertThat(second, equalTo(first));
         assertThat(this.repository.tipReads.get(), equalTo(2));
@@ -215,11 +213,10 @@ class CorpusOriginTest {
     @Test
     @DisplayName("a check after the branch moved reads the catalogue at the new tip, where a moved extra moves its document's fingerprint")
     void aMovedTipReadsTheCatalogueAtIt() {
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
-        ConcurrentMap<String, String> before = origin.fingerprints();
+        ConcurrentMap<String, String> before = CorpusOrigin.fingerprints(this.corpus);
         this.repository.commit("c2", catalogue("s1", "i1", "x2"));
 
-        ConcurrentMap<String, String> after = origin.fingerprints();
+        ConcurrentMap<String, String> after = CorpusOrigin.fingerprints(this.corpus);
 
         assertThat(after.keySet(), containsInAnyOrder("items", "stat_categories"));
         assertThat(after.get("items"), not(equalTo(before.get("items"))));
@@ -231,17 +228,16 @@ class CorpusOriginTest {
     @DisplayName("a layer is read at the commit the held catalogue came from rather than at the branch, until a check moves the catalogue")
     void aLayerIsReadAtTheCatalogueCommit() {
         this.repository.hold("c1", CATEGORIES, CATEGORIES_AT_TIP);
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
-        origin.fingerprints();
+        CorpusOrigin.fingerprints(this.corpus);
         this.repository.commit("c2", catalogue("s2", "i1", "x1"));
         this.repository.hold("c2", CATEGORIES, CATEGORIES_AT_BRANCH);
         this.repository.hold(BRANCH, CATEGORIES, CATEGORIES_AT_BRANCH);
 
-        assertThat(origin.read(CATEGORIES), equalTo(CATEGORIES_AT_TIP));
+        assertThat(CorpusOrigin.read(this.corpus, CATEGORIES), equalTo(CATEGORIES_AT_TIP));
 
-        origin.fingerprints();
+        CorpusOrigin.fingerprints(this.corpus);
 
-        assertThat(origin.read(CATEGORIES), equalTo(CATEGORIES_AT_BRANCH));
+        assertThat(CorpusOrigin.read(this.corpus, CATEGORIES), equalTo(CATEGORIES_AT_BRANCH));
         assertThat(
             this.repository.fileReads,
             contains(MANIFEST + "@c1", CATEGORIES + "@c1", MANIFEST + "@c2", CATEGORIES + "@c2")
@@ -253,9 +249,8 @@ class CorpusOriginTest {
     void anUnreachableTipFailsTheCheck() {
         RetryableException refused = unreachable();
         this.repository.failing = refused;
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
 
-        JpaException failure = assertThrows(JpaException.class, origin::fingerprints);
+        JpaException failure = assertThrows(JpaException.class, () -> CorpusOrigin.fingerprints(this.corpus));
 
         assertThat(failure.getMessage(), equalTo("Failed to ask whether the corpus moved"));
         assertThat(failure.getCause(), sameInstance(refused));
@@ -265,9 +260,8 @@ class CorpusOriginTest {
     @DisplayName("a check answered with a body that is no catalogue fails as the corpus check")
     void aBodyThatIsNoCatalogueFailsTheCheck() {
         this.repository.commit("c1", "null");
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
 
-        JpaException failure = assertThrows(JpaException.class, origin::fingerprints);
+        JpaException failure = assertThrows(JpaException.class, () -> CorpusOrigin.fingerprints(this.corpus));
 
         assertThat(failure.getMessage(), equalTo("Failed to ask whether the corpus moved"));
         assertThat(failure.getCause(), instanceOf(IllegalStateException.class));
@@ -278,9 +272,8 @@ class CorpusOriginTest {
     void anErrorStatusIsNamed() {
         GitHubApiException notFound = answered(404, "Not Found");
         this.repository.failing = notFound;
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
 
-        JpaException failure = assertThrows(JpaException.class, origin::fingerprints);
+        JpaException failure = assertThrows(JpaException.class, () -> CorpusOrigin.fingerprints(this.corpus));
 
         assertThat(failure.getMessage(), equalTo("Failed to ask whether the corpus moved (HTTP 404): Not Found"));
         assertThat(failure.getCause(), sameInstance(notFound));
@@ -290,15 +283,13 @@ class CorpusOriginTest {
     @DisplayName("a writing origin asks whether the branch moved before naming a document's layers, where a reading one answers the held catalogue")
     void aWritingOriginRefreshesTheCatalogue() {
         this.repository.commit("c1", catalogue("s1", "i1"));
-        CorpusOrigin reading = new CorpusOrigin(this.corpus);
-        CorpusOrigin.Writing writing = new CorpusOrigin.Writing(this.corpus);
 
-        assertThat(reading.layersOf("items"), contains(ITEMS));
+        assertThat(CorpusOrigin.layersOf(this.corpus, "items"), contains(ITEMS));
 
         this.repository.commit("c2", catalogue("s1", "i1", "x1"));
 
-        assertThat(reading.layersOf("items"), contains(ITEMS));
-        assertThat(writing.layersOf("items"), contains(ITEMS, ITEMS_EXTRA));
+        assertThat(CorpusOrigin.layersOf(this.corpus, "items"), contains(ITEMS));
+        assertThat(CorpusOrigin.refreshedLayersOf(this.corpus, "items"), contains(ITEMS, ITEMS_EXTRA));
         assertThat(this.repository.tipReads.get(), equalTo(2));
         assertThat(this.repository.fileReads, contains(MANIFEST + "@c1", MANIFEST + "@c2"));
     }
@@ -308,9 +299,8 @@ class CorpusOriginTest {
     void aFailedRefreshNamesTheDocument() {
         RetryableException refused = unreachable();
         this.repository.failing = refused;
-        CorpusOrigin.Writing writing = new CorpusOrigin.Writing(this.corpus);
 
-        JpaException failure = assertThrows(JpaException.class, () -> writing.layersOf("items"));
+        JpaException failure = assertThrows(JpaException.class, () -> CorpusOrigin.refreshedLayersOf(this.corpus, "items"));
 
         assertThat(failure.getMessage(), equalTo("Failed to refresh the catalogue naming 'items'"));
         assertThat(failure.getCause(), sameInstance(refused));

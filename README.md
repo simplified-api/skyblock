@@ -224,7 +224,7 @@ Each layer's `sha256` has to match bit for bit between a Windows contributor and
 
 ## Data Loading
 
-The jar carries no JSON. `SkyBlockData.connect()` hands the session one source for every model: a `DocumentSource` over a `CorpusOrigin`, which reads this repository's `master` over the GitHub Contents API.
+The jar carries no JSON. `SkyBlockData.connect()` hands the session one source for every model: a `DocumentSource.ReadOnly` that `CorpusOrigin` fills, which reads this repository's `master` over the GitHub Contents API.
 
 ```
 SkyBlockData.connect()
@@ -240,7 +240,7 @@ SkyBlockData.connect()
     -> re-read each model whose fingerprint moved, with every model linking into it
 ```
 
-The catalogue is held by the `GitHubCorpus` the connect builds rather than fetched once per model - every model asks the origin for its layers, so without that hold the same file would be fetched 34 times per connect. It is held until a tick finds the branch tip moved, which fetches the catalogue at the new tip in its place. Only the connect that reads builds a corpus; a later connect returns the held session and fetches nothing.
+The catalogue is held by the `GitHubCorpus` the connect builds rather than fetched once per model - every model asks the source for its layers, so without that hold the same file would be fetched 34 times per connect. It is held until a tick finds the branch tip moved, which fetches the catalogue at the new tip in its place. Only the connect that reads builds a corpus; a later connect returns the held session and fetches nothing.
 
 A failure on the connect's first two requests - the branch tip and the catalogue at that tip - crosses `CorpusOrigin` as a `JpaException` naming the corpus check, `Failed to ask whether the corpus moved`, rather than any model. A failed request after them crosses it as a `JpaException` naming what was being read - a layer's path, or the document whose catalogue entry was asked for - and the session wraps it in one naming the model that failed to hydrate, so a 404 on one model names the file rather than surfacing as a decode error. An error status GitHub answers adds the HTTP status and the reason; a request that never reaches GitHub, or a body that is no catalogue, is carried as the cause. A failed connect shuts its session down and holds nothing.
 
@@ -285,7 +285,7 @@ date.getDay();             // 27
 
 `GitHubCorpus`, in the `github` module, builds the two Contents contract proxies itself. The read surface needs `Accept: application/vnd.github.raw+json` and the write surface needs `application/vnd.github+json`, and a Feign client carries one static header set - so the two proxies are built separately and no caller assembles either.
 
-`CorpusOrigin` is the one place that speaks both languages. It answers the two questions a `DocumentSource` asks - which layers a document is made of, and what text sits at a path - out of the corpus, and restates a `GitHubApiException` as a `JpaException`. Its `Writing` subtype, which only `SkyBlockData.writing(...)` builds, adds the write: one commit per file, messaged `Update <path>`. The file's text and its blob sha come out of one read at the branch, the change applies to that text and the commit carries that sha, so a file that moved in between - or a body the client's response cache replayed from before the branch moved - is refused rather than overwritten.
+`CorpusOrigin` is the one place that speaks both languages. It fills a `DocumentSource` builder with answers to the questions a document source asks - which layers a document is made of, what text sits at a path, and which documents moved - out of the corpus, and restates a `GitHubApiException` as a `JpaException`. Its `writing` builder, which only `SkyBlockData.writing(...)` reaches, adds the write: one commit per file, messaged `Update <path>`. The file's text and its blob sha come out of one read at the branch, the change applies to that text and the commit carries that sha, so a file that moved in between - or a body the client's response cache replayed from before the branch moved - is refused rather than overwritten.
 
 ## The Index Generator
 
@@ -308,7 +308,7 @@ The generator aborts rather than emitting a partial index, naming the offending 
 | Two primaries or two extras for one table in one category | `duplicate primary` / `duplicate extra` |
 | Two categories publishing the same file stem | `two categories both publish` |
 
-The generator knows nothing of models, so it cannot hold a model and its table together. The connect does: a model whose `@Table` name the catalogue does not carry fails with `The origin names no document`, and `./gradlew test` connects every model against the checkout.
+The generator knows nothing of models, so it cannot hold a model and its table together. The connect does: a model whose `@Table` name the catalogue does not carry fails with `The source names no document`, and `./gradlew test` connects every model against the checkout.
 
 ### Continuous Integration
 
@@ -350,7 +350,7 @@ The corpus has a gate of its own in `python scripts/generate_index.py --check`, 
 skyblock/
 ├── src/
 │   ├── main/java/api/simplified/skyblock/
-│   │   ├── SkyBlockData.java                  # static locator: connect(), connect(origin), getRepository(), corpus(), writing()
+│   │   ├── SkyBlockData.java                  # static locator: connect(), connect(source), getRepository(), corpus(), writing()
 │   │   ├── CorpusOrigin.java                  # the corpus as document layers; Writing adds the write
 │   │   ├── SkyBlockDataGsonContributor.java   # SPI hook: SkyBlockDate adapters
 │   │   ├── SkinTexture.java                   # base64 texture blob, a nested object on Item
