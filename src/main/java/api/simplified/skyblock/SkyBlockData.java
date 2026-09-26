@@ -32,9 +32,12 @@ import org.jetbrains.annotations.Nullable;
  * session: the manager's JVM shutdown hook shuts it down at exit.
  * <p>
  * The corpus session is read-only: it is connected over a {@link DocumentSource.ReadOnly}, which is
- * no {@link Source.Writable}. A caller that writes the corpus back connects the source
- * {@link #writing(GitHubCorpus)} returns on a {@link SessionManager} of its own and writes through
- * that session, and a caller with tables of its own connects and reads them on its own manager too.
+ * no {@link Source.Writable}. A caller holding a token writes the corpus back through
+ * {@link JpaConfig#write} on the config {@link #writing(GitHubCorpus)} returns, which checks each
+ * write against the corpus before anything is committed. One that also reads the corpus connects
+ * that config on a {@link SessionManager} of its own -
+ * {@code new SessionManager().connect(SkyBlockData.writing(corpus))} - and writes through that
+ * session, and a caller with tables of its own connects and reads them on its own manager too.
  * <p>
  * One {@link Source} serves every model. A read is handed the type it wants, the corpus catalogue
  * names that type's document and the layers it merges from, and nothing here has to know either.
@@ -140,19 +143,41 @@ public class SkyBlockData {
     }
 
     /**
-     * Returns a source that reads the given corpus and also writes it back.
+     * Returns the config registering every model under the {@link Item} package over a source that
+     * reads the given corpus and also writes it back.
      *
-     * <p>Which of the two a caller builds is the whole of the difference between a deployment that
-     * reads the corpus and the one that maintains it. Nothing downstream can turn one into the other:
-     * only a read-write builder takes the write instruction, and a built source cannot be built again.
+     * <p>The write a caller holding a token makes is {@link JpaConfig#write} on this config. It is
+     * checked against the corpus before anything is committed: an upsert whose rows name, through a
+     * {@link Linked} field that is neither a list nor optional, a row the corpus does not carry is
+     * refused, and so is a delete of a row such a field still names. A write straight through
+     * {@link JpaConfig#source()} is not checked.
+     *
+     * <p>The check reads the documents it needs when the write is made, at the branch tip the
+     * corpus's read client answers. That client can answer the tip from its response cache for the
+     * {@code max-age} GitHub sends with it, so a commit another writer lands can go unseen that long.
+     * A corpus {@link GitHubCorpus.Builder#build()} made drops that cache after each of its own
+     * writes, so a check after one reads the tip from GitHub, and one over contracts the caller
+     * supplies drops nothing. A commit that lands only after such a write gave up on its answer can
+     * go unseen as long as another writer's can, and one landing between the check's read and the
+     * write's commit is not seen either.
+     *
+     * <p>A caller that also reads the corpus connects this config on a {@link SessionManager} of its
+     * own - {@code new SessionManager().connect(SkyBlockData.writing(corpus))} - and writes through
+     * that session, which checks a write the same way against the rows it holds and rebuilds what it
+     * changed.
+     *
+     * <p>Which source a caller builds is the whole of the difference between a deployment that reads
+     * the corpus and the one that maintains it. Nothing downstream can turn one into the other: only
+     * a read-write builder takes the write instruction, and a built source cannot be built again.
      *
      * @param corpus the repository the documents are published from, named with a token
-     * @return a source reading and writing that corpus
+     * @return a config registering every model over a source reading and writing that corpus
      */
-    public static @NotNull Source.Writable writing(@NotNull GitHubCorpus corpus) {
-        return CorpusOrigin.writing(corpus)
-            .withGson(corpusSettings().create())
-            .build();
+    public static @NotNull JpaConfig writing(@NotNull GitHubCorpus corpus) {
+        return new JpaConfig(
+            JpaModel.resolveModels(Item.class),
+            CorpusOrigin.writing(corpus).withGson(corpusSettings().create()).build()
+        );
     }
 
     /**

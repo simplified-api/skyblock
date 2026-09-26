@@ -20,7 +20,8 @@ production, and never a classpath resource.
   property, so the build is what makes the offline connect find its files.
 - Nothing in this module reads a token or the environment. `SkyBlockData.connect()` reads the corpus
   unauthenticated; a caller that writes it back names its own variable through `GitHubToken.of`, adds
-  it to `SkyBlockData.corpus()` and hands the built corpus to `SkyBlockData.writing`.
+  it to `SkyBlockData.corpus()`, hands the built corpus to `SkyBlockData.writing` and writes through
+  the `JpaConfig` it returns.
 
 ## Gates
 
@@ -94,9 +95,13 @@ tick, every ten minutes
   read at the manifest's `revision`: the generator records the commit its checkout stood at, which
   is never the commit carrying the manifest, and a manifest regenerated locally over uncommitted
   files names a commit that does not hold the documents it fingerprints.
-- `CorpusOrigin.writing` answers layers through `refreshedLayersOf`, which polls first, so a write
-  resolves its layers from the manifest as the branch holds it now rather than as the writer booted
-  with it.
+- `CorpusOrigin.writing` answers layers through `refreshedLayersOf`, which polls first, so a write,
+  and the check before it, resolve layers from the manifest at the branch tip the read client
+  answers rather than as the writer booted with it. The client can answer that tip from its response
+  cache for GitHub's one-minute `max-age`, so a commit another writer lands can go unseen that long;
+  a `GitHubCorpus` that `GitHubCorpus.Builder.build()` made drops both clients' caches after each of
+  its own writes, so a poll after one reaches GitHub, and one over contracts the caller supplies
+  drops nothing.
 - `connect` performs network I/O and fails rather than degrading. An unreachable `api.github.com` at
   startup is a failed connect, not a slow one: the session is shut down and never registered.
 - `JpaModel.resolveModels(Item.class)` scans the package `Item` lives in and keeps the 34 `JpaModel`
@@ -187,11 +192,11 @@ appended. `CorpusOrigin` reads it as the second layer of `items`, which is what 
 requests rather than 36. Adding
 one without its primary is the `orphan extra` abort.
 
-A write through `SkyBlockData.writing(...)` lands in the layer that owns each row it names - the last
-layer carrying its id - so a balloon hat is written into the extra and any other existing item into
-`items.json`. A new item is added to the extra, which a regeneration of `items.json` leaves alone,
-and a delete removes the id from every layer carrying it. Only a file the write changes is
-rewritten, one commit each, so a write touching both layers is two commits.
+A write through the `JpaConfig` `SkyBlockData.writing(...)` returns lands in the layer that owns
+each row it names - the last layer carrying its id - so a balloon hat is written into the extra and
+any other existing item into `items.json`. A new item is added to the extra, which a regeneration of
+`items.json` leaves alone, and a delete removes the id from every layer carrying it. Only a file the
+write changes is rewritten, one commit each, so a write touching both layers is two commits.
 
 An id in the extra overrides the primary's row of that id for good, including one a later upstream
 dump starts carrying. The generator does not refuse the pair: `duplicate extra` counts files per
@@ -211,13 +216,14 @@ thirty-four, which reads as a corrupt file rather than a header problem.
 ## connect() overrides the string type
 
 `SkyBlockData.connect()` and `connect(origin)` parse with `SkyBlockData.corpusSettings()`, which is
-`GsonSettings.defaults()` with `StringType.DEFAULT` set on top; `SkyBlockData.writing(...)` and
-`corpus()` use the same settings. `GsonSettings.defaults()` ships `StringType.NULL`, which turns an
-empty string into a null; the corpus carries empty strings on columns declared `nullable = false`, so
-without the override an empty string reads as null over the field's default, binds null behind a
-`@NotNull` accessor, and a write carries it back as an omitted key rather than `""`.
-A suite's checkout is read through `connect(origin)` and so parsed the same way, and `EventTest` makes
-the same mutation by hand, which is what lets a fixture bind the way the corpus does.
+`GsonSettings.defaults()` with `StringType.DEFAULT` set on top; the source of the `JpaConfig`
+`SkyBlockData.writing(...)` returns, and `corpus()`, use the same settings.
+`GsonSettings.defaults()` ships `StringType.NULL`, which turns an empty string into a null; the
+corpus carries empty strings on columns declared `nullable = false`, so without the override an
+empty string reads as null over the field's default, binds null behind a `@NotNull` accessor, and a
+write carries it back as an omitted key rather than `""`. A suite's checkout is read through
+`connect(origin)` and so parsed the same way, and `EventTest` makes the same mutation by hand, which
+is what lets a fixture bind the way the corpus does.
 
 Every entity column also needs a **non-null field default**. Nothing checks `nullable = false` on a
 read: a key absent from one corpus entry leaves the field at its initializer, so a column with no
@@ -251,11 +257,11 @@ empty.
   `@Hydration(every = 10, unit = TimeUnit.MINUTES)`, so a session ticks every ten minutes. A model
   whose manifest fingerprint has not moved keeps its generation and stays `CURRENT`; one whose
   fingerprint moved is re-read with every model linking into it. `getHydratedAt()` says when the
-  held generation was published, not when it was last checked. A write through a session built on
-  `SkyBlockData.writing(...)` rebuilds the written model plus every model linking into it at once,
-  and again at the next tick, because the manifest is regenerated only after the commit lands. A
-  model added to `model/` without the annotation holds the rows its connect read until a write
-  covers it.
+  held generation was published, not when it was last checked. A write through a session connected
+  as `new SessionManager().connect(SkyBlockData.writing(corpus))` rebuilds the written model plus
+  every model linking into it at once, and again at the next tick, because the manifest is
+  regenerated only after the commit lands. A model added to `model/` without the annotation holds
+  the rows its connect read until a write covers it.
 - **The corpus session is held for the JVM's life.** `SkyBlockData` holds the session the first
   successful connect registered, on a `SessionManager` that holds nothing else, and every later
   connect returns it whichever origin it names. A second connect can neither re-read the corpus nor
@@ -289,17 +295,19 @@ a `ClientConfig` carries one static header set; nothing here builds a Feign clie
 |---|---|---|
 | `connect()` | `DocumentSource.ReadOnly` that `CorpusOrigin.reading` fills, unauthenticated | no |
 | `connect(source)` | `DocumentSource.ReadOnly` from the builder handed in | no |
-| `writing(corpus)` | `DocumentSource.ReadWrite` that `CorpusOrigin.writing` fills | yes |
+| `writing(corpus)` | `JpaConfig` over the `DocumentSource.ReadWrite` that `CorpusOrigin.writing` fills | yes, checked by `JpaConfig.write` |
 
 The write instruction is a property of the source's type, not a setting on it: only a
 `DocumentSource.ReadWrite` builder takes one, and only `CorpusOrigin.writing`, reached through
-`writing(...)`, gives it one here. The session a
-connect holds has no write half to reach for, and `SkyBlockData` offers no write: a caller that
-writes the corpus connects `writing(corpus)` on a `SessionManager` of its own and writes through that
-session. A write is one edit per file, committed as `Update <path>`: the file's text and blob sha
-come out of one read at the branch, the change applies to that text, and the commit carries that
-sha. A file that moved, or a body the response cache replayed from before the branch moved, is
-refused with a `409` rather than overwritten.
+`writing(...)`, gives it one here. The session a connect holds has no write half to reach for, and
+`SkyBlockData` has no write of its own: a caller that writes the corpus calls `write` on the
+`JpaConfig` `writing(corpus)` returns, which checks each write against the corpus before anything is
+committed, and one that also reads connects that config -
+`new SessionManager().connect(SkyBlockData.writing(corpus))` - and writes through the session. A
+write is one edit per file, committed as `Update <path>`: the file's text and blob sha come out of
+one read at the branch, the change applies to that text, and the commit carries that sha. A file
+that moved, or a body the response cache replayed from before another writer's commit, is refused
+with a `409` rather than overwritten.
 
 ## Relations
 
@@ -317,10 +325,14 @@ refused with a `409` rather than overwritten.
   generates its `Optional` getter - `Reforge.stone` is the canonical empty case,
   `BestiaryFamily.subcategory` the canonical present-and-absent pair. A plain field over an id the
   data can leave out fails every connect the first time it does.
-- `JpaSession.write`, on a session over `writing(...)`, links an upsert's rows before they are
-  written and refuses one whose plain link would miss. A write straight through the `writing(...)`
-  source reaches no session and is not checked, so a row it commits whose plain link misses fails
-  the connect of every process that connects before another commit repairs the data.
+- `JpaConfig.write` on the config `writing(...)` returns, and `JpaSession.write` on a session
+  connected over it, refuse an upsert whose plain link names no row and a delete of a row a plain
+  link still names, before anything is committed. The config's check reads the documents it needs
+  from the corpus when the write is made, at a tip that can trail another writer's commit by the
+  cached minute and misses a commit landing between its read and the write; the session's check
+  reads the rows it holds. A write straight through the config's `source()` is not checked, so a
+  row it commits whose plain link misses fails the connect of every process that connects before
+  another commit repairs the data.
 - `@Linked` fields never reach a document: `JpaExclusionStrategy` skips them on read and on write, so
   a row carries only the id.
 - `Rarity` carries `@SerializedName(alternate = ...)` for two historical spellings: `SUPREME` binds to

@@ -41,8 +41,12 @@ class CorpusOrigin {
      *
      * <p>Building this rather than {@link #reading} is the whole of what makes a source writable, and
      * only a caller holding a token has a reason to. Its layers are resolved through
-     * {@link #refreshedLayersOf}, so a write never routes its rows by a catalogue older than the files
-     * it rewrites.
+     * {@link #refreshedLayersOf}, so a write routes its rows by the catalogue at the branch tip the
+     * read client answers rather than by the one the writer booted with. The client can answer that
+     * tip from its response cache, so it can trail a commit another writer lands by up to the
+     * {@code max-age} GitHub sends with it. A corpus {@link GitHubCorpus.Builder#build()} made drops
+     * that cache after each of its own writes, so the tip after one is read from GitHub; one over
+     * contracts the caller supplies drops nothing.
      *
      * @param corpus the corpus the layers are read out of and written back to
      * @return the builder, left for the caller to give a parser and build
@@ -99,8 +103,15 @@ class CorpusOrigin {
      * refreshed the catalogue since the writer booted - a source written without a session never
      * ticks, and a session's ticks are minutes apart - so without the refresh a write could resolve
      * them from a catalogue older than the files it rewrites. A read through a read-write source is
-     * refreshed too, since the layers answer both; the refresh is one request while the branch has
-     * not moved.
+     * refreshed too, since the layers answer both, and so is every read the check before a write
+     * makes.
+     *
+     * <p>The refresh reads the branch tip, which the read client can answer from its response cache
+     * for the {@code max-age} GitHub sends with it, a minute, so a commit another writer lands can go
+     * unseen that long. A corpus {@link GitHubCorpus.Builder#build()} made drops that cache after
+     * each of its own writes, so a refresh after one reaches GitHub; one over contracts the caller
+     * supplies drops nothing. While the branch has not moved the refresh costs at most that one
+     * request.
      *
      * @param corpus the corpus the layers are read out of
      * @param name the logical document name
@@ -122,8 +133,8 @@ class CorpusOrigin {
      *
      * <p>The text is read at the commit the held catalogue was read at, never at the branch. It comes
      * out of the same tree as the fingerprint a session recorded before reading it, and a commit names
-     * content that never changes, so the client's response cache cannot hand back a body from before
-     * the branch moved under a fingerprint from after it.
+     * content that never changes, so however long the read client's response cache holds the answer
+     * it cannot hand back a body from before the branch moved under a fingerprint from after it.
      *
      * @param corpus the corpus the layers are read out of
      * @param path a path the catalogue names, relative to the repository root
@@ -141,9 +152,9 @@ class CorpusOrigin {
     /**
      * Answers the fingerprint of every document the corpus publishes, as it stands now.
      *
-     * <p>The corpus is polled first: one request asks whether the branch moved, and a moved branch
-     * costs one more for the catalogue at its new tip. Each document's fingerprint composes the hash
-     * the catalogue records for every one of its layers.
+     * <p>The corpus is polled first: one tip read asks whether the branch moved, and a moved branch
+     * costs one more request for the catalogue at its new tip. Each document's fingerprint composes
+     * the hash the catalogue records for every one of its layers.
      *
      * <p>A connect asks this before it reads any model, so its first two requests - the tip, then the
      * catalogue at it - are made here. A failure on either, whether an error status, a request that
@@ -172,9 +183,13 @@ class CorpusOrigin {
      * Replaces the text at one path with what a change makes of it.
      *
      * <p>The file's text and its blob sha come out of one read at the branch, and the change is
-     * committed under that sha as {@code Update <path>}. The sha is computed from the bytes the change
-     * was applied to, so a file that moved since - or a body the client's response cache replays from
-     * before the branch moved - is refused with a conflict rather than overwritten.
+     * committed under that sha as {@code Update <path>}. The read client can answer that read from
+     * its response cache for the {@code max-age} GitHub sends with the file, a minute, so a commit
+     * another writer lands can go unseen that long. A corpus {@link GitHubCorpus.Builder#build()}
+     * made drops that cache after each of its own writes, so the read after one reaches GitHub; one
+     * over contracts the caller supplies drops nothing. The sha is computed from the bytes the
+     * change was applied to, so a file that moved since - or a body the cache replays from before
+     * another writer's commit - is refused with a conflict rather than overwritten.
      *
      * @param corpus the corpus the file is written back to
      * @param path a path the catalogue names, relative to the repository root
