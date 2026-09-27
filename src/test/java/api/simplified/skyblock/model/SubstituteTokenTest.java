@@ -1,6 +1,5 @@
 package api.simplified.skyblock.model;
 
-import api.simplified.skyblock.LocalSkyBlockData.Checkout;
 import api.simplified.skyblock.LocalSkyBlockData;
 import api.simplified.skyblock.SkyBlockData;
 import dev.simplified.collection.Concurrent;
@@ -14,6 +13,7 @@ import java.nio.file.Path;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static api.simplified.skyblock.LocalSkyBlockData.checkout;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.greaterThan;
@@ -59,7 +59,7 @@ class SubstituteTokenTest {
         ConcurrentList<String> uncovered = LocalSkyBlockData.uncoveredModels(corpus);
         assumeTrue(uncovered.isEmpty(), "the models and the manifest are of different vintages - the manifest carries no file for " + uncovered);
 
-        SkyBlockData.connect(new Checkout(corpus));
+        SkyBlockData.connect(checkout(corpus));
     }
 
     @Test

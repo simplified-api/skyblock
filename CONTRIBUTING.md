@@ -41,7 +41,7 @@ Contributions come in two shapes: a change to the Java models under `src/`, and 
 > The index generator needs Python and nothing else - no JDK, no Gradle and no build output. It walks `data/v1/` and hashes the files it finds, reading no Java, so `python scripts/generate_index.py` works on a bare checkout and CI runs it with no Java step at all.
 
 > [!TIP]
-> `./gradlew test` reads the corpus out of `data/v1/` in this checkout, so the suite issues no network request and needs no token. `SkyBlockData.connect()` reads the published corpus unauthenticated, which GitHub caps at 60 requests an hour per IP; one connect makes 37 requests against it, and its session one more every ten minutes. A personal access token matters only to a caller that writes the corpus back: it builds `SkyBlockData.corpus().token(GitHubToken.of("<VARIABLE>")).build()`, naming its own environment variable, and connects `new JpaConfig(JpaModel.resolveModels(Item.class), SkyBlockData.writing(corpus))` on a session manager of its own.
+> `./gradlew test` reads the corpus out of `data/v1/` in this checkout, so the suite issues no network request and needs no token. `SkyBlockData.connect()` reads the published corpus unauthenticated, which GitHub caps at 60 requests an hour per IP; one connect makes 37 requests against it, and its session one more every ten minutes. A personal access token matters only to a caller that writes the corpus back: it builds `SkyBlockData.corpus().token(GitHubToken.of("<VARIABLE>")).build()`, naming its own environment variable, and writes through `SkyBlockData.writing(corpus).write(request)`, which checks each write against the corpus before anything is committed. One that also reads what it writes connects `new SessionManager().connect(SkyBlockData.writing(corpus))` and writes through that session.
 
 ### Development Setup
 
@@ -382,7 +382,7 @@ SkyBlockData.connect()                               # a later connect returns t
 
 `connect` parses with `SkyBlockData.corpusSettings()`, which sets `StringType.DEFAULT` on top of `GsonSettings.defaults()`. That is deliberate: the corpus carries empty strings for columns declared `nullable = false`, and the default string type would turn them into nulls.
 
-The suite takes the same route with the reads pointed at the checkout - it hands `SkyBlockData.connect(origin)` a `LocalSkyBlockData.Checkout`, an origin reading `data/v1/` off disk, so the session reads the same resolved models with the same `corpusSettings()`, which is why `./gradlew test` needs no token. The corpus connects once per JVM and the first connect wins, so every suite reads the session whichever suite ran first connected, and none disconnects it. A test that has to observe a connect of its own - counting the reads it makes, say - connects a `JpaConfig` over a `Checkout` on a `SessionManager` it owns.
+The suite takes the same route with the reads pointed at the checkout - it hands `SkyBlockData.connect(source)` a `LocalSkyBlockData.checkout(root)`, a read-only source builder reading `data/v1/` off disk, so the session reads the same resolved models with the same `corpusSettings()`, which is why `./gradlew test` needs no token. The corpus connects once per JVM and the first connect wins, so every suite reads the session whichever suite ran first connected, and none disconnects it. A test that has to observe a connect of its own - counting the reads it makes, say - connects a `JpaConfig` over a `checkout(root)` built with `corpusSettings()` on a `SessionManager` it owns.
 
 ### The Gson contributor runs last
 

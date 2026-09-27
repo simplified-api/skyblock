@@ -208,7 +208,7 @@ A document's layers are listed in merge order: the primary first, then its `_ext
 
 An extra has no document of its own; it is the second layer of its primary's. The layers merge by `@Id`, so a row the extra repeats replaces the primary's row of the same id in place and a new id is appended. An extra with no matching primary aborts the generator as an orphan.
 
-A write through `SkyBlockData.writing(...)` lands in the layer that owns each row it names, so a balloon hat is written into the extra and any other existing item into `items.json`. A new item is added to the extra, which a regeneration of `items.json` leaves alone, and a delete removes the id from every layer carrying it. Only a file the write changes is rewritten, one commit each. An id in the extra keeps overriding the primary's row even once an upstream dump carries it, since the generator's `duplicate extra` check counts files, not ids.
+A write through the `JpaConfig` that `SkyBlockData.writing(...)` returns lands in the layer that owns each row it names, so a balloon hat is written into the extra and any other existing item into `items.json`. A new item is added to the extra, which a regeneration of `items.json` leaves alone, and a delete removes the id from every layer carrying it. Only a file the write changes is rewritten, one commit each. An id in the extra keeps overriding the primary's row even once an upstream dump carries it, since the generator's `duplicate extra` check counts files, not ids.
 
 ### Versioning
 
@@ -224,7 +224,7 @@ Each layer's `sha256` has to match bit for bit between a Windows contributor and
 
 ## Data Loading
 
-The jar carries no JSON. `SkyBlockData.connect()` hands the session one source for every model: a `DocumentSource` over a `CorpusOrigin`, which reads this repository's `master` over the GitHub Contents API.
+The jar carries no JSON. `SkyBlockData.connect()` hands the session one source for every model: a `DocumentSource.ReadOnly` that `CorpusOrigin` fills, which reads this repository's `master` over the GitHub Contents API.
 
 ```
 SkyBlockData.connect()
@@ -240,7 +240,7 @@ SkyBlockData.connect()
     -> re-read each model whose fingerprint moved, with every model linking into it
 ```
 
-The catalogue is held by the `GitHubCorpus` the connect builds rather than fetched once per model - every model asks the origin for its layers, so without that hold the same file would be fetched 34 times per connect. It is held until a tick finds the branch tip moved, which fetches the catalogue at the new tip in its place. Only the connect that reads builds a corpus; a later connect returns the held session and fetches nothing.
+The catalogue is held by the `GitHubCorpus` the connect builds rather than fetched once per model - every model asks the source for its layers, so without that hold the same file would be fetched 34 times per connect. It is held until a tick finds the branch tip moved, which fetches the catalogue at the new tip in its place. Only the connect that reads builds a corpus; a later connect returns the held session and fetches nothing.
 
 A failure on the connect's first two requests - the branch tip and the catalogue at that tip - crosses `CorpusOrigin` as a `JpaException` naming the corpus check, `Failed to ask whether the corpus moved`, rather than any model. A failed request after them crosses it as a `JpaException` naming what was being read - a layer's path, or the document whose catalogue entry was asked for - and the session wraps it in one naming the model that failed to hydrate, so a 404 on one model names the file rather than surfacing as a decode error. An error status GitHub answers adds the HTTP status and the reason; a request that never reaches GitHub, or a body that is no catalogue, is carried as the cause. A failed connect shuts its session down and holds nothing.
 
@@ -259,7 +259,7 @@ The connect that reads the corpus makes **37 requests** - the branch tip, the ca
 
 Unauthenticated is enough for one process, not for several connecting from one IP within the hour.
 
-A token belongs to a caller that writes the corpus back. It names the corpus through `SkyBlockData.corpus()`, adds `.token(GitHubToken.of("<VARIABLE>"))` and builds, then connects `new JpaConfig(JpaModel.resolveModels(Item.class), SkyBlockData.writing(corpus))` on a `SessionManager` of its own and writes through the `JpaSession.write` that connect returns. That source reads authenticated and is the only one a `WriteRequest` can be applied through - the session a connect holds reads a source with no write instruction, and `SkyBlockData` offers no write. `GitHubToken.of` fails at startup on an unset or blank variable rather than degrading.
+A token belongs to a caller that writes the corpus back. It names the corpus through `SkyBlockData.corpus()`, adds `.token(GitHubToken.of("<VARIABLE>"))` and builds, then writes through `SkyBlockData.writing(corpus).write(request)`. `writing` returns the `JpaConfig` registering every model over a source that reads authenticated and writes, and its `write` checks each `WriteRequest` against the corpus before anything is committed: an upsert whose single-valued, non-`Optional` `@Linked` field names a row the corpus does not carry is refused, and so is a delete of a row such a field still names. The check reads the documents it needs at the branch tip the corpus answers, which can trail another writer's commit by the minute GitHub lets a tip answer be cached. A corpus `GitHubCorpus.Builder.build()` made drops that answer after each of its own writes, so a check after one reads the tip from GitHub, and one over contracts the caller supplies drops nothing. A commit that lands only after such a write gave up on its answer can go unseen as long as another writer's can, and one landing between the check's read and the write is not seen either. A caller that also reads what it writes connects that config on a `SessionManager` of its own, `new SessionManager().connect(SkyBlockData.writing(corpus))`, and writes through the `JpaSession.write` that connect returns, which checks the same links against the rows it holds - rows that can trail another writer's commit until its next tick - and rebuilds what it changed. That config's source is the only one a `WriteRequest` can be applied through - the session a connect holds reads a source with no write instruction, and `SkyBlockData` has no write of its own. `GitHubToken.of` fails at startup on an unset or blank variable rather than degrading.
 
 ## The SkyBlock Calendar
 
@@ -285,7 +285,7 @@ date.getDay();             // 27
 
 `GitHubCorpus`, in the `github` module, builds the two Contents contract proxies itself. The read surface needs `Accept: application/vnd.github.raw+json` and the write surface needs `application/vnd.github+json`, and a Feign client carries one static header set - so the two proxies are built separately and no caller assembles either.
 
-`CorpusOrigin` is the one place that speaks both languages. It answers the two questions a `DocumentSource` asks - which layers a document is made of, and what text sits at a path - out of the corpus, and restates a `GitHubApiException` as a `JpaException`. Its `Writing` subtype, which only `SkyBlockData.writing(...)` builds, adds the write: one commit per file, messaged `Update <path>`. The file's text and its blob sha come out of one read at the branch, the change applies to that text and the commit carries that sha, so a file that moved in between - or a body the client's response cache replayed from before the branch moved - is refused rather than overwritten.
+`CorpusOrigin` is the one place that speaks both languages. It fills a `DocumentSource` builder with answers to the questions a document source asks - which layers a document is made of, what text sits at a path, and which documents moved - out of the corpus, and restates a `GitHubApiException` as a `JpaException`. Its `writing` builder, which only `SkyBlockData.writing(...)` reaches, adds the write: one commit per file, messaged `Update <path>`. The file's text and its blob sha come out of one read at the branch, the change applies to that text and the commit carries that sha, so a file that moved in between - or a body the client's response cache replayed from before another writer's commit - is refused rather than overwritten. The read client can answer the branch tip and a read at the branch from its response cache for the `max-age` GitHub sends, a minute, so a commit another writer lands can go unseen that long; a corpus `GitHubCorpus.Builder.build()` made drops that cache after each of its own writes, so its reads after one reach GitHub, and one over contracts the caller supplies drops nothing.
 
 ## The Index Generator
 
@@ -308,7 +308,7 @@ The generator aborts rather than emitting a partial index, naming the offending 
 | Two primaries or two extras for one table in one category | `duplicate primary` / `duplicate extra` |
 | Two categories publishing the same file stem | `two categories both publish` |
 
-The generator knows nothing of models, so it cannot hold a model and its table together. The connect does: a model whose `@Table` name the catalogue does not carry fails with `The origin names no document`, and `./gradlew test` connects every model against the checkout.
+The generator knows nothing of models, so it cannot hold a model and its table together. The connect does: a model whose `@Table` name the catalogue does not carry fails with `The source names no document`, and `./gradlew test` connects every model against the checkout.
 
 ### Continuous Integration
 
@@ -350,7 +350,7 @@ The corpus has a gate of its own in `python scripts/generate_index.py --check`, 
 skyblock/
 ├── src/
 │   ├── main/java/api/simplified/skyblock/
-│   │   ├── SkyBlockData.java                  # static locator: connect(), connect(origin), getRepository(), corpus(), writing()
+│   │   ├── SkyBlockData.java                  # static locator: connect(), connect(source), getRepository(), corpus(), writing()
 │   │   ├── CorpusOrigin.java                  # the corpus as document layers; Writing adds the write
 │   │   ├── SkyBlockDataGsonContributor.java   # SPI hook: SkyBlockDate adapters
 │   │   ├── SkinTexture.java                   # base64 texture blob, a nested object on Item

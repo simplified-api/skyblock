@@ -1,6 +1,5 @@
 package api.simplified.skyblock.model;
 
-import api.simplified.skyblock.LocalSkyBlockData.Checkout;
 import api.simplified.skyblock.LocalSkyBlockData;
 import api.simplified.skyblock.SkyBlockData;
 import dev.simplified.collection.ConcurrentMap;
@@ -8,6 +7,7 @@ import dev.simplified.persistence.JpaSession;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static api.simplified.skyblock.LocalSkyBlockData.checkout;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -25,7 +25,7 @@ class StatGrantsTest {
 
     @BeforeAll
     static void connectSession() {
-        session = SkyBlockData.connect(new Checkout(LocalSkyBlockData.root()));
+        session = SkyBlockData.connect(checkout(LocalSkyBlockData.root()));
     }
 
     @Test

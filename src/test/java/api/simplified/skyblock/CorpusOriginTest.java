@@ -8,7 +8,9 @@ import api.simplified.github.request.PutContentRequest;
 import api.simplified.github.response.GitHubCommit;
 import api.simplified.github.response.GitHubContentEnvelope;
 import api.simplified.github.response.GitHubPutResponse;
+import api.simplified.skyblock.model.Region;
 import api.simplified.skyblock.model.StatCategory;
+import api.simplified.skyblock.model.Zone;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import dev.simplified.client.exception.ErrorContext;
@@ -38,6 +40,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.instanceOf;
@@ -48,7 +51,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * Covers what the corpus origin asks the repository and what it raises when a request fails: the
  * fingerprints a connect and a tick ask for, the commit a layer is read at, the catalogue a writing
- * origin refreshes before naming a document's layers, and the body a write reads and commits under.
+ * origin refreshes before naming a document's layers, the body a write reads and commits under, and
+ * the documents the check before a write reads, which refuses a write naming a missing row or
+ * deleting a named one before anything is committed.
  *
  * <p>The repository answers from memory through the same contracts the client proxies, so no request
  * leaves the machine. The corpus is the one {@link SkyBlockData#corpus()} names, on its default
@@ -63,6 +68,32 @@ class CorpusOriginTest {
     private static final @NotNull String ITEMS = "data/v1/items/items.json";
     private static final @NotNull String ITEMS_EXTRA = "data/v1/items/items_extra.json";
     private static final @NotNull String CATEGORIES = "data/v1/modifiers/stat_categories.json";
+    private static final @NotNull String REGIONS = "data/v1/world/regions.json";
+    private static final @NotNull String ZONES = "data/v1/world/zones.json";
+
+    /**
+     * A catalogue carrying the two documents of the world model, where a zone's plain link names a
+     * region.
+     */
+    private static final @NotNull String WORLD = String.format(
+        "{\"revision\":\"\",\"documents\":{\"regions\":[{\"path\":\"%s\",\"sha256\":\"r1\"}],\"zones\":[{\"path\":\"%s\",\"sha256\":\"z1\"}]}}",
+        REGIONS,
+        ZONES
+    );
+
+    /**
+     * The one region at the first tip.
+     */
+    private static final @NotNull String REGIONS_AT_TIP = """
+        [{"id":"HUB","name":"Hub","format":"WHITE","gameType":"SKYBLOCK","mode":"HUB"}]
+        """;
+
+    /**
+     * The one zone at the first tip, naming the one region.
+     */
+    private static final @NotNull String ZONES_AT_TIP = """
+        [{"id":"HUB","name":"Hub","format":"WHITE","region":"HUB"}]
+        """;
 
     /**
      * The stat categories at the first tip.
@@ -190,7 +221,7 @@ class CorpusOriginTest {
     @Test
     @DisplayName("a first check reads the branch tip, then the catalogue at that tip, and answers each document's fingerprint from it")
     void aFirstCheckReadsTheCatalogueAtTheTip() {
-        ConcurrentMap<String, String> fingerprints = new CorpusOrigin(this.corpus).fingerprints();
+        ConcurrentMap<String, String> fingerprints = CorpusOrigin.fingerprints(this.corpus);
 
         assertThat(fingerprints.keySet(), containsInAnyOrder("items", "stat_categories"));
         assertThat(fingerprints.get("items"), equalTo(this.corpus.manifest().fingerprintOf("items").orElseThrow()));
@@ -202,10 +233,8 @@ class CorpusOriginTest {
     @Test
     @DisplayName("a check against a branch that has not moved costs one request and answers the same fingerprints")
     void anUnmovedTipReadsNothingMore() {
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
-
-        ConcurrentMap<String, String> first = origin.fingerprints();
-        ConcurrentMap<String, String> second = origin.fingerprints();
+        ConcurrentMap<String, String> first = CorpusOrigin.fingerprints(this.corpus);
+        ConcurrentMap<String, String> second = CorpusOrigin.fingerprints(this.corpus);
 
         assertThat(second, equalTo(first));
         assertThat(this.repository.tipReads.get(), equalTo(2));
@@ -215,11 +244,10 @@ class CorpusOriginTest {
     @Test
     @DisplayName("a check after the branch moved reads the catalogue at the new tip, where a moved extra moves its document's fingerprint")
     void aMovedTipReadsTheCatalogueAtIt() {
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
-        ConcurrentMap<String, String> before = origin.fingerprints();
+        ConcurrentMap<String, String> before = CorpusOrigin.fingerprints(this.corpus);
         this.repository.commit("c2", catalogue("s1", "i1", "x2"));
 
-        ConcurrentMap<String, String> after = origin.fingerprints();
+        ConcurrentMap<String, String> after = CorpusOrigin.fingerprints(this.corpus);
 
         assertThat(after.keySet(), containsInAnyOrder("items", "stat_categories"));
         assertThat(after.get("items"), not(equalTo(before.get("items"))));
@@ -231,17 +259,16 @@ class CorpusOriginTest {
     @DisplayName("a layer is read at the commit the held catalogue came from rather than at the branch, until a check moves the catalogue")
     void aLayerIsReadAtTheCatalogueCommit() {
         this.repository.hold("c1", CATEGORIES, CATEGORIES_AT_TIP);
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
-        origin.fingerprints();
+        CorpusOrigin.fingerprints(this.corpus);
         this.repository.commit("c2", catalogue("s2", "i1", "x1"));
         this.repository.hold("c2", CATEGORIES, CATEGORIES_AT_BRANCH);
         this.repository.hold(BRANCH, CATEGORIES, CATEGORIES_AT_BRANCH);
 
-        assertThat(origin.read(CATEGORIES), equalTo(CATEGORIES_AT_TIP));
+        assertThat(CorpusOrigin.read(this.corpus, CATEGORIES), equalTo(CATEGORIES_AT_TIP));
 
-        origin.fingerprints();
+        CorpusOrigin.fingerprints(this.corpus);
 
-        assertThat(origin.read(CATEGORIES), equalTo(CATEGORIES_AT_BRANCH));
+        assertThat(CorpusOrigin.read(this.corpus, CATEGORIES), equalTo(CATEGORIES_AT_BRANCH));
         assertThat(
             this.repository.fileReads,
             contains(MANIFEST + "@c1", CATEGORIES + "@c1", MANIFEST + "@c2", CATEGORIES + "@c2")
@@ -253,9 +280,8 @@ class CorpusOriginTest {
     void anUnreachableTipFailsTheCheck() {
         RetryableException refused = unreachable();
         this.repository.failing = refused;
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
 
-        JpaException failure = assertThrows(JpaException.class, origin::fingerprints);
+        JpaException failure = assertThrows(JpaException.class, () -> CorpusOrigin.fingerprints(this.corpus));
 
         assertThat(failure.getMessage(), equalTo("Failed to ask whether the corpus moved"));
         assertThat(failure.getCause(), sameInstance(refused));
@@ -265,9 +291,8 @@ class CorpusOriginTest {
     @DisplayName("a check answered with a body that is no catalogue fails as the corpus check")
     void aBodyThatIsNoCatalogueFailsTheCheck() {
         this.repository.commit("c1", "null");
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
 
-        JpaException failure = assertThrows(JpaException.class, origin::fingerprints);
+        JpaException failure = assertThrows(JpaException.class, () -> CorpusOrigin.fingerprints(this.corpus));
 
         assertThat(failure.getMessage(), equalTo("Failed to ask whether the corpus moved"));
         assertThat(failure.getCause(), instanceOf(IllegalStateException.class));
@@ -278,9 +303,8 @@ class CorpusOriginTest {
     void anErrorStatusIsNamed() {
         GitHubApiException notFound = answered(404, "Not Found");
         this.repository.failing = notFound;
-        CorpusOrigin origin = new CorpusOrigin(this.corpus);
 
-        JpaException failure = assertThrows(JpaException.class, origin::fingerprints);
+        JpaException failure = assertThrows(JpaException.class, () -> CorpusOrigin.fingerprints(this.corpus));
 
         assertThat(failure.getMessage(), equalTo("Failed to ask whether the corpus moved (HTTP 404): Not Found"));
         assertThat(failure.getCause(), sameInstance(notFound));
@@ -290,15 +314,13 @@ class CorpusOriginTest {
     @DisplayName("a writing origin asks whether the branch moved before naming a document's layers, where a reading one answers the held catalogue")
     void aWritingOriginRefreshesTheCatalogue() {
         this.repository.commit("c1", catalogue("s1", "i1"));
-        CorpusOrigin reading = new CorpusOrigin(this.corpus);
-        CorpusOrigin.Writing writing = new CorpusOrigin.Writing(this.corpus);
 
-        assertThat(reading.layersOf("items"), contains(ITEMS));
+        assertThat(CorpusOrigin.layersOf(this.corpus, "items"), contains(ITEMS));
 
         this.repository.commit("c2", catalogue("s1", "i1", "x1"));
 
-        assertThat(reading.layersOf("items"), contains(ITEMS));
-        assertThat(writing.layersOf("items"), contains(ITEMS, ITEMS_EXTRA));
+        assertThat(CorpusOrigin.layersOf(this.corpus, "items"), contains(ITEMS));
+        assertThat(CorpusOrigin.refreshedLayersOf(this.corpus, "items"), contains(ITEMS, ITEMS_EXTRA));
         assertThat(this.repository.tipReads.get(), equalTo(2));
         assertThat(this.repository.fileReads, contains(MANIFEST + "@c1", MANIFEST + "@c2"));
     }
@@ -308,9 +330,8 @@ class CorpusOriginTest {
     void aFailedRefreshNamesTheDocument() {
         RetryableException refused = unreachable();
         this.repository.failing = refused;
-        CorpusOrigin.Writing writing = new CorpusOrigin.Writing(this.corpus);
 
-        JpaException failure = assertThrows(JpaException.class, () -> writing.layersOf("items"));
+        JpaException failure = assertThrows(JpaException.class, () -> CorpusOrigin.refreshedLayersOf(this.corpus, "items"));
 
         assertThat(failure.getMessage(), equalTo("Failed to refresh the catalogue naming 'items'"));
         assertThat(failure.getCause(), sameInstance(refused));
@@ -321,19 +342,80 @@ class CorpusOriginTest {
     void aWriteCommitsUnderTheShaOfTheBodyItChanged() {
         this.repository.hold("c1", CATEGORIES, CATEGORIES_AT_TIP);
         this.repository.hold(BRANCH, CATEGORIES, CATEGORIES_AT_BRANCH);
-        StatCategory fighting = row("{\"id\":\"COMBAT\",\"name\":\"Fighting\",\"format\":\"DARK_RED\"}");
+        StatCategory fighting = row(StatCategory.class, "{\"id\":\"COMBAT\",\"name\":\"Fighting\",\"format\":\"DARK_RED\"}");
 
         SkyBlockData.writing(this.corpus).write(WriteRequest.upsert(StatCategory.class, List.of(fighting)));
 
         assertThat(this.repository.puts, hasSize(1));
         Put put = this.repository.puts.getFirst();
-        ConcurrentList<StatCategory> atBranch = rows(CATEGORIES_AT_BRANCH);
+        ConcurrentList<StatCategory> atBranch = rows(StatCategory.class, CATEGORIES_AT_BRANCH);
 
         assertThat(put.path(), equalTo(CATEGORIES));
         assertThat(put.request().getBranch(), equalTo(BRANCH));
         assertThat(put.request().getMessage(), equalTo("Update " + CATEGORIES));
         assertThat(put.request().getSha(), equalTo(CATEGORIES_AT_BRANCH_SHA));
-        assertThat(rows(committed(put)), contains(atBranch.getFirst(), fighting, atBranch.getLast()));
+        assertThat(rows(StatCategory.class, committed(put)), contains(atBranch.getFirst(), fighting, atBranch.getLast()));
+    }
+
+    @Test
+    @DisplayName("a checked write reads the document its plain link names before the body it changes, and commits a row naming one the corpus carries")
+    void aCheckedWriteReadsTheNamedDocumentFirst() {
+        this.holdWorld();
+        Zone carnival = row(Zone.class, "{\"id\":\"CARNIVAL\",\"name\":\"Carnival\",\"format\":\"YELLOW\",\"region\":\"HUB\"}");
+
+        SkyBlockData.writing(this.corpus).write(WriteRequest.upsert(Zone.class, List.of(carnival)));
+
+        assertThat(this.repository.fileReads, contains(MANIFEST + "@c1", REGIONS + "@c1", ZONES + "@c1", ZONES + "@" + BRANCH));
+        assertThat(this.repository.puts, hasSize(1));
+        Put put = this.repository.puts.getFirst();
+
+        assertThat(put.path(), equalTo(ZONES));
+        assertThat(rows(Zone.class, committed(put)), contains(rows(Zone.class, ZONES_AT_TIP).getFirst(), carnival));
+    }
+
+    @Test
+    @DisplayName("a write whose plain link names a row the corpus does not carry is refused once the check reads the named document, and commits nothing")
+    void aWriteNamingAMissingRowCommitsNothing() {
+        this.holdWorld();
+        Zone stranded = row(Zone.class, "{\"id\":\"STRANDED\",\"name\":\"Stranded\",\"format\":\"GRAY\",\"region\":\"NOWHERE\"}");
+
+        JpaException refused = assertThrows(
+            JpaException.class,
+            () -> SkyBlockData.writing(this.corpus).write(WriteRequest.upsert(Zone.class, List.of(stranded)))
+        );
+
+        assertThat(refused.getMessage(), equalTo(String.format("Field 'region' of '%s' names 'NOWHERE', which no row carries", Zone.class.getName())));
+        assertThat(this.repository.fileReads, contains(MANIFEST + "@c1", REGIONS + "@c1"));
+        assertThat(this.repository.puts, empty());
+    }
+
+    @Test
+    @DisplayName("a delete of a row another document's plain link still names is refused once the check reads that document, and commits nothing")
+    void aDeleteOfANamedRowCommitsNothing() {
+        this.holdWorld();
+        Region hub = rows(Region.class, REGIONS_AT_TIP).getFirst();
+
+        JpaException refused = assertThrows(
+            JpaException.class,
+            () -> SkyBlockData.writing(this.corpus).write(WriteRequest.delete(Region.class, List.of(hub)))
+        );
+
+        assertThat(refused.getMessage(), equalTo(String.format("Field 'region' of '%s' names 'HUB', which the write deletes", Zone.class.getName())));
+        assertThat(this.repository.fileReads, contains(MANIFEST + "@c1", ZONES + "@c1"));
+        assertThat(this.repository.puts, empty());
+    }
+
+    /**
+     * Commits the world catalogue at the first tip in place of the one {@link #setUp()} committed,
+     * with the one region and the one zone at that tip, and the region and the zone at the branch as
+     * well.
+     */
+    private void holdWorld() {
+        this.repository.commit("c1", WORLD);
+        this.repository.hold("c1", REGIONS, REGIONS_AT_TIP);
+        this.repository.hold("c1", ZONES, ZONES_AT_TIP);
+        this.repository.hold(BRANCH, REGIONS, REGIONS_AT_TIP);
+        this.repository.hold(BRANCH, ZONES, ZONES_AT_TIP);
     }
 
     /**
@@ -403,23 +485,27 @@ class CorpusOriginTest {
     }
 
     /**
-     * Parses one stat category the way the corpus does.
+     * Parses one row the way the corpus does.
      *
+     * @param type the row's model
      * @param json the row's text
+     * @param <T> the model type
      * @return the row
      */
-    private static @NotNull StatCategory row(@NotNull String json) {
-        return CORPUS.fromJson(json, StatCategory.class);
+    private static <T> @NotNull T row(@NotNull Class<T> type, @NotNull String json) {
+        return CORPUS.fromJson(json, type);
     }
 
     /**
-     * Parses a stat categories layer the way the corpus does.
+     * Parses a layer the way the corpus does.
      *
+     * @param type the layer's model
      * @param text the layer's text
+     * @param <T> the model type
      * @return the layer's rows, in its order
      */
-    private static @NotNull ConcurrentList<StatCategory> rows(@NotNull String text) {
-        return CORPUS.fromJson(text, TypeToken.getParameterized(ConcurrentList.class, StatCategory.class).getType());
+    private static <T> @NotNull ConcurrentList<T> rows(@NotNull Class<T> type, @NotNull String text) {
+        return CORPUS.fromJson(text, TypeToken.getParameterized(ConcurrentList.class, type).getType());
     }
 
     /**
