@@ -32,7 +32,7 @@ dependencies {
     testImplementation(libs.junit.platform.launcher)
 
     // Sibling API modules (composite-build substitutes by project name)
-    api("com.github.simplified-api:github") { version { strictly("0c7267a") } }
+    api("com.github.simplified-api:github") { version { strictly("5ced8e6") } }
 
     // Simplified Libraries (github.com/simplified-dev)
     api("com.github.simplified-dev:collections") { version { strictly("4029e80") } }
