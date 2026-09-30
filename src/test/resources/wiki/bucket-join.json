@@ -1,0 +1,38 @@
+{
+  "bucketQuery": "bucket('mob_bestiary').join('mob_stats','mob_bestiary.page_name','mob_stats.page_name').select('mob_bestiary.page_name','mob_bestiary.family','mob_bestiary.name','mob_bestiary.main','mob_bestiary.section','mob_bestiary.lore','mob_bestiary.bracket','mob_bestiary.max_tier','mob_stats.mob','mob_stats.levels','mob_stats.mob_types','mob_stats.mob_types_text').limit(5000).run()",
+  "bucket": [
+    {
+      "mob_stats.mob_types": [
+        "Infernal",
+        "Cubic"
+      ],
+      "mob_stats.levels": "75",
+      "mob_bestiary.bracket": "4",
+      "mob_bestiary.family": "Magma Cube",
+      "mob_bestiary.name": "Magma Cube",
+      "mob_stats.mob_types_text": "*[[Cubic (Mob Type)|<span class=\"hsw-gamefont\"><span class=\"light-color color-green\" style=\"\">&#xE076;&nbsp;Cubic</span></span>]]\n*[[Infernal (Mob Type)|<span class=\"hsw-gamefont\"><span class=\"color-dark_red\" style=\"\">&#xE07C;&nbsp;Infernal</span></span>]]",
+      "mob_stats.mob": "Magma Cube",
+      "mob_bestiary.main": "",
+      "mob_bestiary.lore": "Like Slime, but hotter.",
+      "mob_bestiary.section": "Crimson Isle",
+      "mob_bestiary.max_tier": 20,
+      "mob_bestiary.page_name": "Magma Cube"
+    },
+    {
+      "mob_stats.mob_types": [
+        "Ender"
+      ],
+      "mob_stats.levels": "42-50",
+      "mob_bestiary.bracket": "7",
+      "mob_bestiary.family": "Enderman",
+      "mob_bestiary.name": "Enderman",
+      "mob_stats.mob_types_text": "[[Ender|<span class=\"hsw-gamefont\"><span class=\"color-dark_purple\" style=\"\">&#xE078;&nbsp;Ender</span></span>]]",
+      "mob_stats.mob": "Enderman",
+      "mob_bestiary.main": "",
+      "mob_bestiary.lore": "Not your mother's endermen.",
+      "mob_bestiary.section": "The End",
+      "mob_bestiary.max_tier": 25,
+      "mob_bestiary.page_name": "Enderman"
+    }
+  ]
+}

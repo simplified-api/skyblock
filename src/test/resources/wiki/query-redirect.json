@@ -1,0 +1,63 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "normalized": [
+      {
+        "fromencoded": false,
+        "from": "Hoppity's_Collection",
+        "to": "Hoppity's Collection"
+      },
+      {
+        "fromencoded": false,
+        "from": "No_Such_Page_Zzq",
+        "to": "No Such Page Zzq"
+      }
+    ],
+    "redirects": [
+      {
+        "from": "Hoppity's Collection",
+        "to": "Chocolate Factory",
+        "tofragment": "Hoppity's Collection"
+      }
+    ],
+    "pages": [
+      {
+        "ns": 0,
+        "title": "No Such Page Zzq",
+        "missing": true
+      },
+      {
+        "pageid": 11482,
+        "ns": 0,
+        "title": "Harp",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "content": "{{For|the same harp for the {{Zone|Private Island}}|Personal Harp}}"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "pageid": 102739,
+        "ns": 0,
+        "title": "Chocolate Factory",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "content": "{{Infobox/Generic"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

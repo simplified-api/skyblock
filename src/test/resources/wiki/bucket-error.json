@@ -1,0 +1,4 @@
+{
+  "bucketQuery": "bucket('no_such_bucket_zzq').select('a').run()",
+  "error": "Bucket no_such_bucket_zzq does not exist."
+}

@@ -1,0 +1,27 @@
+{
+  "parse": {
+    "title": "Chocolate Factory",
+    "pageid": 102739,
+    "redirects": [
+      {
+        "from": "Hoppity's Collection",
+        "to": "Chocolate Factory",
+        "tofragment": "Hoppity's Collection"
+      }
+    ],
+    "sections": [
+      {
+        "toclevel": 1,
+        "level": "2",
+        "line": "Mechanics",
+        "number": "1",
+        "index": "1",
+        "fromtitle": "Chocolate_Factory",
+        "byteoffset": 268,
+        "anchor": "Mechanics",
+        "linkAnchor": "Mechanics"
+      }
+    ],
+    "showtoc": true
+  }
+}

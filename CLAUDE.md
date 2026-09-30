@@ -1,8 +1,8 @@
 # skyblock
 
 34 JPA models held in memory by a persistence session, the versioned JSON corpus they are read from,
-the generator that catalogues it, and the SkyBlock calendar - one tree, so a `@Table` rename and its
-data file are one commit. Root **`api.simplified.skyblock.**`**.
+the generator that catalogues it, the SkyBlock calendar, and a client for the Hypixel SkyBlock wiki -
+one tree, so a `@Table` rename and its data file are one commit. Root **`api.simplified.skyblock.**`**.
 
 The corpus is `data/v1/**`, tracked here. It is a test fixture on disk and a served artifact in
 production, and never a classpath resource.
@@ -27,10 +27,16 @@ production, and never a classpath resource.
 
 Two gates, and neither substitutes for the other.
 
-**`./gradlew test` is nine classes and none of them touch the network.** `JpaModelTest`,
+**`./gradlew test` is fourteen classes and none of them touch the network.** `JpaModelTest`,
 `BuffCorpusValidationTest`, `SubstituteTokenTest`, `StatGrantsTest` and `SkyBlockDataTest` connect;
 `CorpusOriginTest` answers the Contents API from memory; `EventTest`, `LadderBindingTest` and
-`SkyBlockDateTest` bind fixture strings in-process and connect to nothing.
+`SkyBlockDateTest` bind fixture strings in-process and connect to nothing; `WikiRequestTest`,
+`WikiResponseTest`, `WikiResponseGuardTest` and `SkyBlockWikiContractTest` render wiki requests,
+bind wiki answers cut down under `src/test/resources/wiki/` (read through `WikiFixtures`), check
+them the way a pipeline's fetch would, and answer the wiki contract from memory or through a
+recording Feign transport, and `WikiPacingTest` reads a paged read's wait off a refused policy. A
+paged read's wait for the rate limit goes to a sleeper the test supplies - one that moves a clock
+nothing else moves, or one that opens the limiter's next window - so nothing sleeps.
 
 The five that connect hand `SkyBlockData.connect(source)` a `LocalSkyBlockData.checkout(root)`, a
 read-only source builder reading `data/v1/index.json` and the layers it names off disk under
@@ -344,6 +350,190 @@ with a `409` rather than overwritten.
 - A description is a template and `%{VALUE:X}` is filled by the substitute whose id is `X`, so the id
   is the token's key rather than a note. Nothing but `SubstituteTokenTest` compares the two halves,
   and a mismatch grants zero in silence.
+
+## The wiki contract
+
+`api.simplified.skyblock.wiki` is a Feign client for `hypixelskyblock.minecraft.wiki`, a MediaWiki
+site. Nothing on the corpus path uses it: no model reads the wiki and a connect makes no wiki request.
+
+The package holds `SkyBlockWikiContract` and nothing else; the rest sits beneath it, laid out as the
+sibling `Simplified-Api` modules are:
+
+| Package | Holds |
+|---|---|
+| `wiki` | `SkyBlockWikiContract` |
+| `wiki.client` | `SkyBlockWiki` (builds the client), `WikiDecoder` (package-private), `WikiPacing`, `WikiResponseGuard` |
+| `wiki.request` | `WikiRequest`, `WikiText`, `DplQuery`, `BucketQuery` |
+| `wiki.response` | `WikiResponse` and its answers `WikiParse`, `WikiQueryResult`, `WikiSearchResult`, `WikiBucket`, with `WikiRedirect` and `WikiError` |
+| `wiki.exception` | `WikiApiException` and its `WikiErrorResponse`, and `WikiException` with its six subclasses |
+
+The contract and the guard reach helpers of the request and response types across those packages -
+`WikiRequest.require` and `parameter`, `WikiText.requireSource`, `DplQuery.countIn`,
+`BucketQuery.limitOf`, the `absorb` that merges a paged answer's parts - so those are public; a
+caller has no reason to use them. The tests follow the same packages, and `WikiFixtures` in the
+`wiki` test package reads the fixtures and holds the Gson every suite binds with.
+
+- `SkyBlockWikiContract` binds `GET /w/{title}` (`getPage`, rendered HTML) and
+  `GET /w/{title}?action=raw` (`getSource`, the source as stored), both answered as `String`, and
+  four `GET /api.php` methods taking a `@QueryMap`: parse -> `WikiParse`, query -> `WikiQueryResult`,
+  `list=search` -> `WikiSearchResult`, `action=bucket` -> `WikiBucket` (rows are `JsonObject`).
+  Typed default methods build each request and check each answer; `getWikitext` and
+  `getModuleSource` are default methods over `getSource`. The paged ones walk MediaWiki's `continue`
+  to the end and answer the parts merged, one entry per page, and refuse with
+  `IllegalStateException` a continuation the walk already followed. `SkyBlockWiki.client()` builds
+  the client from `SkyBlockWiki.config()`: a descriptive `User-Agent`, a text decoder for the two
+  `String` methods, and error decoding into `WikiApiException`. `SkyBlockWikiContractTest` sends
+  through that configuration's own decoders, error decoder and route interceptor over an in-memory
+  transport, because `Client.create` starts a DNS lookup and a `HEAD` probe of the wiki and a test
+  must not.
+- **`WikiRequest` is the one definition of every request shape.** `getParameters()` is what the
+  contract sends; `getUrl()` is the same request as a URL. A dataflow pipeline built in this project
+  takes its `SOURCE_URL` or `TRANSFORM_FETCH` URL from `WikiRequest.<shape>(...).getUrl()` rather than
+  writing a wiki URL by hand, and `WikiRequestTest` pins the shapes character for character against
+  URLs the wiki has answered. Where a shape renders more than the answered URL, the test keeps the
+  answered URL as a literal and adds exactly the difference - `redirects=1`,
+  `gapfilterredir=nonredirects`, `srinfo=totalhits` / `gsrinfo=totalhits`, or a `DplQuery`'s two
+  footers and the call naming its template - so the pin still reads against what the wiki answered,
+  and each addition has been answered by the wiki too. A shape a pipeline needs that no factory
+  renders is a factory added to `WikiRequest`, not a hand-built URL. Wikitext composites are composed
+  by `WikiText` and `DplQuery`, Bucket queries by `BucketQuery`.
+- **The two renderings encode differently on purpose.** The URL keeps a title's `/` and `:` and a
+  Bucket query's `'(),` readable. The parameter map encodes everything outside the RFC 3986 unreserved
+  characters, because Feign 13.11 passes a value made of unreserved characters and `%XX` escapes
+  through untouched and re-encodes any other value in full: a readable value holding an escape
+  (`Hoppity%27s_Hunt/Rewards`) would reach the wiki as `%2527`. For the same reason the `/w/` methods
+  take the title unencoded and a `Param.Expander` normalizes it (spaces to underscores); Feign
+  encodes it once. Title normalization lives in `WikiRequest.normalize` and nowhere else. Feign
+  writes an empty value as the bare name (`gapprefix` where the URL has `gapprefix=`); PHP reads both
+  as the empty string.
+- `list=search` renders without `formatversion=2` and `action=bucket` with `format=json&utf8=1`,
+  which answer the bound fields exactly as version 2 does; every other `api.php` shape carries
+  `format=json&formatversion=2`, and a parse carries `disablelimitreport=1`. `search` carries
+  `srinfo=totalhits` after `srprop` and `searchContents` `gsrinfo=totalhits` after `gsrlimit`; both
+  answer `query.searchinfo.totalhits`, which `WikiSearchResult.getTotalHits()` and
+  `WikiQueryResult.getTotalHits()` bind (empty for a read no search generates).
+- **Every shape that names a title and can follow a redirect carries `redirects=1`**, immediately
+  before `format`: `parsePage` and three reads of page sources (`getContents`, `searchContents`,
+  `getContentsUsingTemplate`). The wiki answers the target under its own title and names the hop in
+  `WikiParse.getRedirects()` and `WikiQueryResult.getRedirects()` (`from`, `to`, `tofragment`).
+  `getContentsByPrefix` cannot: the wiki refuses `redirects=1` beside `generator=allpages` with
+  `params` ("Use gapfilterredir=nonredirects instead of redirects when using allpages as a
+  generator"), so it carries `gapfilterredir=nonredirects` after `gaplimit` and leaves every
+  redirect under the prefix out. `list=search`, a parse of wikitext and Bucket name no title to
+  follow, and `/w/{title}` follows a redirect by itself. A raw read cannot follow one: `?action=raw`
+  of a redirect answers its stub with a `200` and `text/x-wiki` -
+  `#REDIRECT [[Chocolate Factory#Hoppity's Collection]]` for `Hoppity's_Collection`, and for a module
+  Scribunto stores as Lua the whole source `return require [[Module:Stat/Data]]`
+  (`Module:Statname/Data`; fourteen of the wiki's module redirects take that form, the rest a
+  `#REDIRECT`) - which `getWikitext` and `getModuleSource` refuse and `getSource` answers as it
+  stands.
+- Every request is a `GET` capped at `WikiRequest.MAX_URL_LENGTH`, 8,000 characters of the URL as
+  sent. The wiki's nginx answered an 8,000-character URL and refused an 8,300-character one with
+  `414`. A factory whose request would outgrow the cap throws `IllegalArgumentException`, and so
+  does a paged read whose continuation would, once the parts before it are read.
+- Rate limits live on the contract's `@Route`s: 60 `api.php` requests a minute, which Cloudflare
+  never caches, and 240 `/w/` requests a minute, which it does. The client refuses a request over
+  either with `RateLimitException` before sending it, and a single request - a parse, a Bucket
+  query, a `/w/` read - raises that refusal. A paged read sends every part, the first among them,
+  through a `WikiPacing` (`query(request, pacing)`, `search(request, pacing)`, and
+  `WikiPacing.DEFAULT` for every other paged method): it waits one request's share of the refusal's
+  window (one second for `api.php`), or until the reset instant the refusal's policy names where it
+  names one - the client's own refusal carries the route's declared policy, which names none, and
+  the wiki advertises no rate-limit headers - and sends the same part again until the limiter lets
+  it through, so a read started with the minute spent waits for the next one and a read of
+  thousands of pages completes instead of losing what it read. The waits for one part are capped at
+  `maxWait` from its first refusal (`DEFAULT_MAX_WAIT`, two minutes, two `api.php` windows); a part
+  still refused then raises the refusal. A `429` the wiki answered is raised at once.
+  `WikiPacing.of(clock, sleeper, maxWait)` is how a test runs the wait without sleeping.
+- The Feign path caps no body: `BodyBuffering` drains a response whole. `Module:Item/ApiData`
+  measured 2,021,850 bytes and `/w/Accessories` 493,934; both also fit a dataflow `UrlFetcher`'s
+  5,242,880-byte cap.
+- **An answer stops at its limit without saying so, so every limit is rendered and checked.**
+  Bucket answers at most `.limit(n)`, runs a query without one at 500, and lowers any limit over
+  5,000 to 5,000 (`includes/BucketQuery.php` of the deployed Bucket 2.1.1: `DEFAULT_LIMIT = 500`,
+  `MAX_LIMIT = 5000`, `min( limit_arg, MAX_LIMIT )`). `BucketQuery` always renders its limit,
+  `BucketQuery.DEFAULT_LIMIT` (500, so rendering it changes no answer) when none is named, and
+  `limit(n)` refuses more than `MAX_LIMIT`; an answer of as many rows as the limit is refused, since
+  Bucket cannot tell exactly-the-limit from more. `WikiBucket.requireUnderLimit` reads the limit it
+  is handed as Bucket runs it - over 5,000 as 5,000, and one that is not positive as 500 (`.limit(0)`
+  over `mob_bestiary` answered all 392 rows) - so a caller's hand-written limit cannot pass a capped
+  answer. DynamicPageList4 4.0.5 answers at most 500 pages
+  whatever `count` names (measured: no count and `count=5000` both answered 500 of 2,220), so
+  `DplQuery.MAX_COUNT` is 500 and `count(n)` refuses more. Every `DplQuery` renders one footer twice,
+  `|resultsfooter=<span class="dplquery-rows" data-rows="%PAGES%" data-total="%TOTALPAGES%"></span>`
+  and the same span as `|noresultsfooter=`; the wiki fills in the pages the result holds and the
+  pages the query matches whatever its count (`3` of `22` for `count=3` over `Infobox/Power stone`,
+  `1` of `22` for `count=1`), and writes the second in place of a result of no pages, `0` of `0`,
+  so every query writes exactly one footer. It writes the same `0` of `0` over a template the wiki
+  does not hold (`Template:No Such Template Zzq`) as over one it holds and no page uses
+  (`Template:Admins`), and names neither in `templates`, so every `DplQuery` is followed by
+  `{{#if:{{msgnw:Template:T}}|}}`: it renders nothing and names the template in `templates` with
+  whether the wiki holds it (measured `exists: false` and `exists: true`), at the cost of the
+  template's escaped source in post-expand include size (618 bytes for `Infobox/Item` and
+  `Infobox/Power stone` together, of 8,388,608). **A query over a missing template is a red link,
+  not an empty table**; a template left behind as a redirect reads as held.
+  `WikiParse.getTableRows()` reads every filled footer. **A missing footer fails rather than
+  passing**: `requireComplete()` refuses a footer the wiki left without both counts, and
+  `WikiParse.requireTableRows(n)` refuses a text holding fewer filled footers than the `n` queries
+  `DplQuery.countIn` counts in the request's `text` - by the `|resultsfooter=` footer each carries -
+  since a result whose footer is gone could be cut without a sign. A DPL call written without that
+  footer is not counted and not checked.
+- **A search reaches 10,000 hits and no further** (`WikiRequest.MAX_SEARCH_HITS`). CirrusSearch serves
+  no hit at an offset of 10,000 or more and answers the part that reaches it with no continuation, so
+  a walk ends as though complete: `srsearch=the&srnamespace=*` counted 40,812 pages, and five hits
+  asked at `sroffset=9998` answered two and no `continue` - as `generator=search` did at
+  `gsroffset=9998`. `WikiSearchResult.requireReachable()` and
+  `WikiQueryResult.requireReachable()` refuse a part whose `totalhits` exceeds 10,000, telling the
+  caller to narrow the query; the contract checks every part, so an oversized search fails on its
+  first request. An answer carrying no count passes.
+
+The wiki reports six failures with a status of 200. Where each is raised:
+
+| Failure | Arrives as | Raised as | By |
+|---|---|---|---|
+| a refusal | MediaWiki `{"error":{"code","info"}}`, or Bucket `{"error":"..."}` | `WikiErrorException` | `parse` / `query` / `search` / `bucket(WikiRequest)` and every typed method, through `WikiResponse.requireSuccess()`; the four `@QueryMap` methods return it in `getError()` |
+| a red link | a transcluded page or module, or the template a `DplQuery` selects pages by, listed in `templates` with `exists: false` | `WikiMissingPageException` | `parse(WikiRequest)` for every composite request - the ones `WikiRequest.transclude`, `moduleSources` and `templateTable` build, which the contract methods of those names send - through `WikiParse.requireComplete()` |
+| a partial composite | `<!-- WARNING: template omitted, post-expand include size too large -->` in the text, matched whole | `WikiIncludeSizeException` | the same |
+| a DPL result without its counts | a `dplquery-rows` footer whose `data-rows` or `data-total` is not a number; fewer filled footers than the request's `text` renders queries | `WikiMissingFooterException` | the same, the first through `requireComplete()` and the second through `WikiParse.requireTableRows` |
+| a result stopped at its limit | a `dplquery-rows` footer whose `data-total` exceeds its `data-rows`; a Bucket answer of as many rows as its query's `.limit(n)`; a search whose `searchinfo.totalhits` exceeds 10,000 | `WikiLimitReachedException` | the same for a DPL result; `bucket(WikiRequest)` and `queryBucket` for Bucket, through `WikiBucket.requireUnderLimit`, the limit read back out of the `query` parameter by `BucketQuery.limitOf`; `search(WikiRequest)` and `query(WikiRequest)`, with or without a pacing, and so `search(String)` and `searchContents`, on every part, through `requireReachable()` |
+| a redirect's stub | a raw source opening `#REDIRECT [[Target]]`, the magic word in any case, or a module's whole source `return require [[Module:Target]]` | `WikiRedirectException`, naming the target | `getWikitext` and `getModuleSource`, through `WikiText.requireSource`; `WikiText.redirectTarget` reads the target |
+
+All six extend `WikiException`. An error status is the client's: `NotModifiedException` for a 3xx,
+`PreconditionFailedException` for a 412, `RateLimitException` for a 429, and `WikiApiException` - a
+`JsonApiException` like `HypixelApiException`, because the client's error decoder has to produce an
+`ApiException` - for any other status of 400 or above, a 404 for a missing `/w/` page among them.
+
+- **The composite mark travels with the request.** `WikiRequest.isComposite()` is set by the three
+  composite factories and kept by `withProps`, and a composite always answers `text` and
+  `templates`, the two props the check reads: `withProps` on one refuses props that leave either out,
+  since a parse without them passes `requireComplete()` whatever it misses. The pipeline shapes that
+  answer `text` alone are loose wikitext - `parseWikitext(WikiText.transclusion(...) + ...)` with
+  `withProps("text")` - which the contract does not check.
+- `parseWikitext` checks the refusal and nothing else; a caller composing its own composite calls
+  `requireComplete()` on the answer, and `requireTableRows(n)` for the `n` `DplQuery`s it renders.
+- The red-link check fails on **any** missing document the parse reports, including one a page
+  reaches through `{{PAGENAME}}`. Loose wikitext is parsed as the page `API`, so
+  `{{:Events}}{{:Dante}}` fails on `API/UI` and `API/Dialogue`: the subpages those pages transclude
+  under their own name are absent from the composite, and the check says so rather than answering a
+  document that differs from the pages.
+- **`WikiResponseGuard.check(URI, String)` runs the contract's checks on a fetch that bypasses it**,
+  the shape a dataflow pipeline host takes as `WikiResponseGuard::check`. It reads the shape from the
+  URL and calls the same methods: every `api.php` answer in `format=json` for its refusal; a parse of
+  wikitext (`text=` and no `page`) in `formatversion=2` through `requireComplete()`, which reads red
+  links only from `templates` and the include size and DPL footers only from `text`, and - when it
+  answers `text` (named in `prop`, or no `prop` at all) - through
+  `requireTableRows(DplQuery.countIn(text))`, which is how the guard recognises a DPL composite; a
+  `list=search` or `generator=search` answer, bound as `WikiSearchResult` whatever its format
+  version, through `requireReachable()` on every part a fetcher reads; a Bucket answer against
+  `BucketQuery.limitOf` of its `query` parameter; a raw read under `/w/` or `/index.php?title=` for a
+  redirect's stub. Loose wikitext and a composite of the same text are one URL, so the guard checks
+  loose wikitext as a composite - a pipeline reaching a missing page on purpose asks for `text`
+  alone. It does not check a parse of a page past its refusal (the contract does not either), a
+  parse naming no `formatversion=2` past its refusal (format version 1 answers `text` as an object
+  and names a template's title under `*`, which `WikiParse` does not bind), a read of page sources
+  no search generates past its refusal (continuation is the fetcher's), a search whose answer
+  carries no `totalhits`, another format, or a rendered `/w/` page; a URL on another host passes
+  untouched, and a `format=json` answer that is no JSON object fails with `JsonParseException`.
 
 ## CI
 

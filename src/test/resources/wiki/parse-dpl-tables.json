@@ -1,0 +1,24 @@
+{
+  "parse": {
+    "title": "API",
+    "pageid": 89143,
+    "text": "<div class=\"mw-content-ltr mw-parser-output\" lang=\"en\" dir=\"ltr\"><table class=\"wikitable\">\n<tbody><tr>\n<th>page\n</th>\n<th>id\n</th></tr>\n<tr>\n<td><a href=\"/w/Luxurious_Spool\" title=\"Luxurious Spool\">Luxurious Spool</a>\n</td>\n<td>LUXURIOUS_SPOOL\n</td></tr>\n<tr>\n<td><a href=\"/w/Beating_Heart\" title=\"Beating Heart\">Beating Heart</a>\n</td>\n<td>BEATING_HEART\n</td></tr>\n<tr>\n<td><a href=\"/w/Dark_Orb\" title=\"Dark Orb\">Dark Orb</a>\n</td>\n<td>DARK_ORB\n</td></tr></tbody></table><p><span class=\"dplquery-rows\" data-rows=\"3\" data-total=\"22\"></span>\n</p><table class=\"wikitable\">\n<tbody><tr>\n<th>page\n</th>\n<th>id\n</th></tr>\n<tr>\n<td><a href=\"/w/Luxurious_Spool\" title=\"Luxurious Spool\">Luxurious Spool</a>\n</td>\n<td>LUXURIOUS_SPOOL\n</td></tr>\n<tr>\n<td><a href=\"/w/Beating_Heart\" title=\"Beating Heart\">Beating Heart</a>\n</td>\n<td>BEATING_HEART\n</td></tr>\n<tr>\n<td><a href=\"/w/Dark_Orb\" title=\"Dark Orb\">Dark Orb</a>\n</td>\n<td>DARK_ORB\n</td></tr>\n<tr>\n<td><a href=\"/w/Rock_Candy\" title=\"Rock Candy\">Rock Candy</a>\n</td>\n<td>ROCK_CANDY\n</td></tr>\n<tr>\n<td><a href=\"/w/Obsidian_Tablet\" title=\"Obsidian Tablet\">Obsidian Tablet</a>\n</td>\n<td>OBSIDIAN_TABLET\n</td></tr>\n<tr>\n<td><a href=\"/w/Horns_of_Torment\" title=\"Horns of Torment\">Horns of Torment</a>\n</td>\n<td>HORNS_OF_TORMENT\n</td></tr>\n<tr>\n<td><a href=\"/w/Acacia_Birdhouse\" title=\"Acacia Birdhouse\">Acacia Birdhouse</a>\n</td>\n<td>ACACIA_BIRDHOUSE\n</td></tr>\n<tr>\n<td><a href=\"/w/Hazmat_Enderman\" title=\"Hazmat Enderman\">Hazmat Enderman</a>\n</td>\n<td>HAZMAT_ENDERMAN\n</td></tr>\n<tr>\n<td><a href=\"/w/Eccentric_Painting\" title=\"Eccentric Painting\">Eccentric Painting</a>\n</td>\n<td>ECCENTRIC_PAINTING\n</td></tr>\n<tr>\n<td><a href=\"/w/Furball\" title=\"Furball\">Furball</a>\n</td>\n<td>FURBALL\n</td></tr>\n<tr>\n<td><a href=\"/w/Scorched_Books\" title=\"Scorched Books\">Scorched Books</a>\n</td>\n<td>SCORCHED_BOOKS\n</td></tr>\n<tr>\n<td><a href=\"/w/Precious_Pearl\" title=\"Precious Pearl\">Precious Pearl</a>\n</td>\n<td>PRECIOUS_PEARL\n</td></tr>\n<tr>\n<td><a href=\"/w/Ender_Monocle\" title=\"Ender Monocle\">Ender Monocle</a>\n</td>\n<td>ENDER_MONOCLE\n</td></tr>\n<tr>\n<td><a href=\"/w/End_Stone_Shulker\" title=\"End Stone Shulker\">End Stone Shulker</a>\n</td>\n<td>END_STONE_SHULKER\n</td></tr>\n<tr>\n<td><a href=\"/w/Magma_Urchin\" title=\"Magma Urchin\">Magma Urchin</a>\n</td>\n<td>MAGMA_URCHIN\n</td></tr>\n<tr>\n<td><a href=\"/w/Mandraa\" title=\"Mandraa\">Mandraa</a>\n</td>\n<td>MANDRAA\n</td></tr>\n<tr>\n<td><a href=\"/w/Vitamin_Death\" title=\"Vitamin Death\">Vitamin Death</a>\n</td>\n<td>VITAMIN_DEATH\n</td></tr>\n<tr>\n<td><a href=\"/w/Fang-tastic_Chocolate_Chip\" title=\"Fang-tastic Chocolate Chip\">Fang-tastic Chocolate Chip</a>\n</td>\n<td>CHOCOLATE_CHIP\n</td></tr>\n<tr>\n<td><a href=\"/w/Displaced_Leech\" title=\"Displaced Leech\">Displaced Leech</a>\n</td>\n<td>DISPLACED_LEECH\n</td></tr>\n<tr>\n<td><a href=\"/w/Bubba_Blister\" title=\"Bubba Blister\">Bubba Blister</a>\n</td>\n<td>BUBBA_BLISTER\n</td></tr>\n<tr>\n<td><a href=\"/w/Glacite_Chunk\" title=\"Glacite Chunk\">Glacite Chunk</a>\n</td>\n<td>GLACITE_SHARD\n</td></tr>\n<tr>\n<td><a href=\"/w/Sunflower_Butter\" title=\"Sunflower Butter\">Sunflower Butter</a>\n</td>\n<td>SUNFLOWER_BUTTER\n</td></tr></tbody></table><p><span class=\"dplquery-rows\" data-rows=\"22\" data-total=\"22\"></span>\n</p><ul><li><a href=\"/w/New_Year_Celebration\" title=\"New Year Celebration\">New Year Celebration</a>A[D29 LWI Y1 -S] C[3d -S / 11mo 28d -S]</li><li><a href=\"/w/Season_of_Jerry\" title=\"Season of Jerry\">Season of Jerry</a></li></ul><p><span class=\"dplquery-rows\" data-rows=\"2\" data-total=\"28\"></span></p></div>",
+    "templates": [
+      {
+        "ns": 0,
+        "title": "Luxurious Spool",
+        "exists": true
+      },
+      {
+        "ns": 0,
+        "title": "Beating Heart",
+        "exists": true
+      },
+      {
+        "ns": 0,
+        "title": "Dark Orb",
+        "exists": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "normalized": [
+      {
+        "fromencoded": false,
+        "from": "Dungeon_Potion",
+        "to": "Dungeon Potion"
+      },
+      {
+        "fromencoded": false,
+        "from": "God_Potion",
+        "to": "God Potion"
+      }
+    ],
+    "pages": [
+      {
+        "pageid": 61550,
+        "ns": 0,
+        "title": "Dungeon Potion",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "content": "{{Infobox/Item\n|slot={{slot|Dungeon I Potion}}{{slot|Dungeon II Potion}}{{slot|Dungeon III Potion}}{{slot|Dungeon IV Potion}}<br>{{slot|Dungeon V Potion}}{{slot|Dungeon VI Potion}}{{slot|Dungeon VII Potion}}\n|type=[[Potion]]\n|rarity={{Common}}-{{Epic}}\n|id = POTION\n}}\nThe '''Dungeon Potion''' is a '''{{Green|BUFF}}''' [[Potion]] that combines several effects into one consumable.\n"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "pageid": 65783,
+        "ns": 0,
+        "title": "God Potion",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "content": "{{Infobox/Item\n|title=God Potion\n|buy = {{Bits|1500}}\n|museum = yes\n|museum_xp = 0\n|museum_category = special\n|rarity = Special\n|id = GOD_POTION_2"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

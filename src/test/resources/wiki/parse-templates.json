@@ -1,0 +1,23 @@
+{
+  "parse": {
+    "title": "API",
+    "pageid": 89143,
+    "templates": [
+      {
+        "ns": 0,
+        "title": "Harp",
+        "exists": true
+      },
+      {
+        "ns": 0,
+        "title": "Personal Harp",
+        "exists": true
+      },
+      {
+        "ns": 10,
+        "title": "Template:For",
+        "exists": true
+      }
+    ]
+  }
+}
