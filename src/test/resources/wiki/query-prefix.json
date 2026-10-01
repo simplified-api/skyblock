@@ -1,0 +1,42 @@
+{
+  "batchcomplete": true,
+  "limits": {
+    "allpages": 500
+  },
+  "query": {
+    "pages": [
+      {
+        "pageid": 116477,
+        "ns": 0,
+        "title": "Fairy Souls/List/Hub",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "content": "{| class=\"wikitable lighttable sortable\"\n|+Note: Click on the rows to keep track of the Fairy Souls collected. This persists even after reloading or refreshing the page. \n|-\n!No.\n!class=\"unsortable\" |Minimap\n!X\n!Y\n!Z\n! Location\n! class=\"unsortable\" | Description\n! class=\"unsortable\" | Walkable?\n|-\n{{FairySoulRow|id=1|x=18|y=68|z=-3|location=Village|description=In the Well|walkable=Yes}}\n|-"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "pageid": 116478,
+        "ns": 0,
+        "title": "Fairy Souls/List/The Farming Islands",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "content": "{| class=\"wikitable lighttable sortable\"\n|+Note: Click on the rows to keep track of the Fairy Souls collected. This persists even after reloading or refreshing the page.\n|-\n!No.\n!class=\"unsortable\" |Minimap\n!X\n!Y\n!Z\n! Location\n! class=\"unsortable\" | Description\n! class=\"unsortable\" | Walkable?\n|-\n{{FairySoulRow|id=Brn-1|x=182|y=99|z=-235|location=The Barn|description=In east aqueduct (go up water)|walkable=Yes}}\n|-"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

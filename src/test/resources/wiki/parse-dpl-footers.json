@@ -1,0 +1,19 @@
+{
+  "parse": {
+    "title": "API",
+    "pageid": 89143,
+    "text": "<div class=\"mw-content-ltr mw-parser-output\" lang=\"en\" dir=\"ltr\"><ul><li><a href=\"/w/Luxurious_Spool\" title=\"Luxurious Spool\">Luxurious Spool</a></li></ul><p><span class=\"dplquery-rows\" data-rows=\"1\" data-total=\"22\"></span>\n</p><p><span class=\"dplquery-rows\" data-rows=\"0\" data-total=\"0\"></span>\n</p>\n<ul><li><a href=\"/w/Luxurious_Spool\" title=\"Luxurious Spool\">Luxurious Spool</a></li><li><a href=\"/w/Beating_Heart\" title=\"Beating Heart\">Beating Heart</a></li><li><a href=\"/w/Dark_Orb\" title=\"Dark Orb\">Dark Orb</a></li></ul><p><span class=\"dplquery-rows\" data-rows=\"3\" data-total=\"22\"></span></p></div>",
+    "templates": [
+      {
+        "ns": 10,
+        "title": "Template:Infobox/Power stone",
+        "exists": true
+      },
+      {
+        "ns": 10,
+        "title": "Template:Admins",
+        "exists": true
+      }
+    ]
+  }
+}

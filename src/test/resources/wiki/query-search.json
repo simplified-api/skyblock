@@ -1,0 +1,44 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "searchinfo": {
+      "totalhits": 12
+    },
+    "pages": [
+      {
+        "pageid": 8308,
+        "ns": 0,
+        "title": "Cheap Coffee",
+        "index": 3,
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "content": "{{Infobox/Item\n|rarity=c\n|type=[[Brews]]\n|id=CHEAP_COFFEE\n|buy = 1000\n|merchant = Bartender\n}}"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "pageid": 8309,
+        "ns": 0,
+        "title": "Tepid Green Tea",
+        "index": 9,
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "content": "{{Infobox/Item\n|rarity=c\n|type=[[Brews]]\n|id=TEPID_GREEN_TEA\n}}"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

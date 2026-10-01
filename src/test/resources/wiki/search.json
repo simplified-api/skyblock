@@ -1,0 +1,28 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "searchinfo": {
+      "totalhits": 42
+    },
+    "search": [
+      {
+        "ns": 0,
+        "title": "Dungeon Potion",
+        "pageid": 61550,
+        "snippet": "|rarity={{Common}}-{{Epic}}\n|id = POTION\n}}\nThe &#039;&#039;&#039;Dungeon Potion&#039;&#039;&#039; is a &#039;&#039;&#039;{{Green|<span class=\"searchmatch\">BUFF}}</span>&#039;&#039;&#039; [[Potion]] that combines several effects into one consumable.\n\n== Stats"
+      },
+      {
+        "ns": 0,
+        "title": "Haste Potion",
+        "pageid": 18666,
+        "snippet": "|rarity={{Common}}-{{Uncommon}}\n|id = POTION\n}}\n\nThe &#039;&#039;&#039;Haste Potion&#039;&#039;&#039; is a &#039;&#039;&#039;{{Green|<span class=\"searchmatch\">BUFF}}</span>&#039;&#039;&#039; [[Potion]] that temporarily grants a {{stat|ms}} bonus.\n\n== Stats =="
+      },
+      {
+        "ns": 0,
+        "title": "Spelunker Potion",
+        "pageid": 76638,
+        "snippet": "|id = POTION\n}}\n\nThe &#039;&#039;&#039;Spelunker Potion&#039;&#039;&#039; is a &#039;&#039;&#039;{{Green|<span class=\"searchmatch\">BUFF}}</span>&#039;&#039;&#039; [[Potion]] that temporarily grants the player an increase in {{stat|mnf}}"
+      }
+    ]
+  }
+}
